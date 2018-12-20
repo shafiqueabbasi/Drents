@@ -31,7 +31,7 @@ class Heading7 extends Component {
 	      			<div className="col-md-2"></div>
 	      		</div>
 	      	</div>
-	      	<div style={{height: '400px'}}></div>
+	      	
     	</div>
      );
 

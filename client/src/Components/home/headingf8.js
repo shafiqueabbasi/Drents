@@ -5,8 +5,8 @@ class Headingf8 extends Component {
     
     return (
     	<div>
-    		<div className="container">
-    			<div className="nav navbar navbar-fixed-bottom bgc">
+    		<div>
+    			<div className="nav navbar navbar-bottom bgc">
     				<div className="col-md-12">
     					<div className="col-md-1"></div>
     					<div className="col-md-3">
