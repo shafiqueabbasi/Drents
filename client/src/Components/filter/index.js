@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import FirstPage from '../home/firstPage';
+import Header from '../home/Header';
 import FilterPanel from './filterpanel';
 
 class FilterPage extends Component {
@@ -7,7 +7,7 @@ class FilterPage extends Component {
     
     return (
       <div className="App">
-        <FirstPage />
+        <Header />
         <FilterPanel/>
       </div>
     );
