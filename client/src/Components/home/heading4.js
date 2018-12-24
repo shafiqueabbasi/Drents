@@ -44,7 +44,7 @@ class Heading4 extends Component {
 	    							</div>
 	    					</div>
 	    					</div>
-	    					{hrLine && <div className="col-md-12">
+	    					{hrLine &&<div className="col-md-12">
 	    						<hr/>
 	    					</div>}
 	    				</div>

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Footer from '../home/headingf8';
 import Gallery from '../home/heading4';
 
 class Filterpanel extends Component {
@@ -43,14 +42,14 @@ class Filterpanel extends Component {
 							<div className="row">
 								<h3>Colors&emsp;&emsp;&nbsp;-</h3><br/>
 								<div className="circle">
-    								<div className="circle1"></div>&nbsp;
-    								<div className="circle2"></div>&nbsp;
-    								<div className="circle3"></div>
+    								<a href="#"><div className="circle1"></div></a>&nbsp;
+    								<a href="#"><div className="circle2"></div></a>&nbsp;
+    								<a href="#"><div className="circle3"></div></a>
     							</div>
     							<div className="circle">
-    								<div className="circle4"></div>&nbsp;
-    								<div className="circle5"></div>&nbsp;
-    								<div className="circle6"></div>
+    								<a href="#"><div className="circle4"></div></a>&nbsp;
+    								<a href="#"><div className="circle5"></div></a>&nbsp;
+    								<a href="#"><div className="circle6"></div></a>
     							</div>
     							<div className="col-md-7" style={{paddingBottom: '15px', margin: '40px 0 20px',borderBottom: '1px solid black'}}></div>
 							</div>
@@ -82,24 +81,24 @@ class Filterpanel extends Component {
     					
 
     				<div className="col-md-8">
-    					<div className="row" style={{height: '100%',padding:'3%', backgroundColor: 'blue'}}>
+    					<div className="row" style={{height: '100%',padding:'3%', backgroundColor: '#c2073f'}}>
     						<div class="form-group row">
 								<label class="col-md-1 control-label"></label>
-								<div class="col-md-2">
-									<select class="form-control">
+								<div className="col-md-2">
+									<select className="form-control">
 										<option>Rental Period</option>
-										<option>Single</option>
-										<option>Married</option>
-										<option>Divorsed</option>
-										<option>Other</option>
+										<option></option>
+										<option></option>
+										<option></option>
+										<option></option>
 									</select>
 								</div>
 									<label class="col-md-1 control-label"></label>
-								<div class="col-md-2">
-									<select class="form-control">
+								<div className="col-md-2">
+									<select className="form-control">
 										<option>Sizes</option>
-										<option>Male</option>
-										<option>Female</option>
+										<option></option>
+										<option></option>
 									</select>
 								</div>
 							</div>
@@ -108,10 +107,18 @@ class Filterpanel extends Component {
   						<Gallery label='Wedding' hrLine='false'/>
   						<Gallery/>
   						<Gallery/>
+
+  						<div className="form-group row">
+						<label className="col-md-12 col-xs-12 control-label" style={{textAlign: 'centers'}}></label>
+						<div class="col-md-5 col-xs-5"></div>
+						<div className="col-md-2">
+							<button className="btn btn-danger btn-lg col-md-12"><h2 style={{margin: '0'}}>More</h2></button>
+						</div>
+						<div class="col-md-5"></div>
+					</div>
     				</div>
     			</div>
     		</div>
-    		
     	</div>
 
     );
