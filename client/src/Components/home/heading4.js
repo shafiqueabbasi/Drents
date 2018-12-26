@@ -14,7 +14,7 @@ class Heading4 extends Component {
 	    			<div className="col-md-12">
 	    				<div className="row" style={{textAlign:'center'}}>
 	    					<div className="col-md-4">
-	    						<img src="./images/dress2.jpg" className="dress1"/>
+	    						<img src="./images/dress2.jpg" className="dress1" style={{width:'100%'}} />
 	    							<div>
 	    								<h2 className="h_dress">Sheta</h2>
 	    								<h3 className="h_dress">Lase Trim Shirts</h3>
@@ -22,7 +22,7 @@ class Heading4 extends Component {
 	    							</div>
 	    					</div>
 	    					<div className="col-md-4">
-	    						<img src="./images/dress1.jpg" className="dress2"/>
+	    						<img src="./images/dress1.jpg" className="dress2" style={{width:'100%'}}/>
 	    							<div>
 	    								<h2 className="h_dress">Sheta</h2>
 	    								<h3 className="h_dress">Lase Trim Shirts</h3>
@@ -30,7 +30,7 @@ class Heading4 extends Component {
 	    							</div>
 	    					</div>
 	    					<div className="col-md-4">
-	    						<img src="./images/dress3.jpg" className="dress3"/>
+	    						<img src="./images/dress3.jpg" className="dress3" style={{width:'100%'}} />
 	    							<div>
 	    								<h2 className="h_dress">Sheta</h2>
 	    								<h3 className="h_dress">Lase Trim Shirts</h3>
