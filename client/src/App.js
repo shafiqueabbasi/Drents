@@ -8,7 +8,6 @@ import Headingf8 from './Components/home/headingf8';
 import Order from './Components/order/index';
 
 
->>>>>>> caca1fd49b46488ec988d7f01eedd1e36e9fe8c8
 class App extends Component {
 	state = {
     response: '',
