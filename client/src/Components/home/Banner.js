@@ -4,11 +4,18 @@ class SecondPage extends Component {
   render() {
     
     return (
-      <div className="App" style={{marginTop: '105px'}}>
+    <div>	
+      <div className="App hidden-xs" style={{marginTop: '88px'}}>
       	<div className="Banner">
       		<img src="./images/Banner.png" style={{width: '100%'}}/>
       	</div>	
       </div>
+      <div className="App visible-xs">
+      	<div className="Banner">
+      		<img src="./images/mobile-banner.png" style={{width: '105%'}}/>
+      	</div>	
+      </div>
+    </div>  
     );
 
   }

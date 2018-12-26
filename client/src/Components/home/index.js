@@ -22,7 +22,7 @@ class Home extends Component {
         <Heading/>
         <Heading2/>
         <Heading3/>
-        <Heading4 label='About Drent'/>
+        <Heading4 label='About Drent' hrLine={true}/>
         <Heading5/>
         <Heading6/>
         <Heading7/>
