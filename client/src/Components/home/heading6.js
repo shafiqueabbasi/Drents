@@ -62,26 +62,26 @@ class Heading6 extends Component {
 			      								<img src="./images/dot.png" style={{height:'100%',width:'116%'}}/>	
 			      							</div>
 			      							<div className="col-md-10">
-			      								<h4 style={{textAlign:'left'}}>Rent 10 cloth per month</h4>
-			      							</div><br/>
+			      								<h4 style={{textAlign:'left'}}>Rent 10 cloth per month</h4><br/>
+			      							</div>
 			      							<div className="col-md-2 col-xs-2" style={{paddingTop:'8px'}}>
 			      								<img src="./images/dot.png" style={{height:'100%',width:'116%'}}/>
 			      							</div>
 			      							<div className="col-md-10">
-			      								<h4 style={{textAlign:'left'}}>Brandeds Cloths</h4>
-			      							</div><br/>
+			      								<h4 style={{textAlign:'left'}}>Brandeds Cloths</h4><br/>
+			      							</div>
 			      							<div className="col-md-2 col-xs-2" style={{paddingTop:'8px'}}>
 			      								<img src="./images/dot.png" style={{height:'100%',width:'116%'}}/>
 			      							</div>
 			      							<div className="col-md-10">
-			      								<h4 style={{textAlign:'left'}}>50 brands</h4>
-			      							</div><br/>
+			      								<h4 style={{textAlign:'left'}}>50 brands</h4><br/>
+			      							</div>
 			      							<div className="col-md-2 col-xs-2" style={{paddingTop:'8px'}}>
 			      								<img src="./images/dot.png" style={{height:'100%',width:'116%'}}/>
 			      							</div>
 			      							<div className="col-md-10">
-			      								<h4 style={{textAlign:'left'}}>Disscount Offers</h4>
-			      							</div><br/>
+			      								<h4 style={{textAlign:'left'}}>Disscount Offers</h4><br/>
+			      							</div>
 			      						</div>
 			      					</div>
 			      				</div>
