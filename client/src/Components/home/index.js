@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import logo from '../../logo.svg';
 import '../../App.css';
-import FirstPage from './firstPage';
-import SecondPage from './secondPage';
+import Header from './Header';
+import Banner from './Banner';
 import Heading from './heading';
 import Heading2 from './heading2';
 import Heading3 from './heading3';
@@ -17,12 +17,12 @@ class Home extends Component {
     
     return (
       <div className="App">
-        <FirstPage />
-        <SecondPage/>
+        <Header />
+        <Banner/>
         <Heading/>
         <Heading2/>
         <Heading3/>
-        <Heading4/>
+        <Heading4 label='About Drent'/>
         <Heading5/>
         <Heading6/>
         <Heading7/>

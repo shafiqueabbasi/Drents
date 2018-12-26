@@ -3,6 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 import Home from './Components/home/index';
 import FilterPage from './Components/filter/index';
+import Order from './Components/order/index';
+
 
 class App extends Component {
 	state = {
@@ -41,6 +43,7 @@ class App extends Component {
     return (
       <div className="App">
         <Home/>
+        <Order/>
       </div>
     );
 

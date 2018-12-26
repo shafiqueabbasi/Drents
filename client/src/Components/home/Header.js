@@ -25,6 +25,7 @@ class FirstPage extends Component {
         				<li className="head"><a href="#" className="nav">PRODUCT</a></li>
         				<li className="head"><a href="#" className="nav">TESTIMONIALS</a></li>
         				<li className="head"><a href="#" className="nav">MY PROFILE</a></li>
+                {this.props.displayIcon && <li className="head"><a href="#" className="nav"><img src="./images/bag.png" style={{marginTop:'-5px'}}/></a></li>}
       				</ul>
       			</div>
       		</div>

@@ -18,7 +18,7 @@ class Headingf8 extends Component {
     						</ul>
     					</div>
     					<div className="col-md-4">
-    						<h2>Social Media</h2>
+    						<h3>Social Media</h3>
     						<i class="fab fa-facebook-square"></i>&emsp;
     						<i class="fab fa-pinterest"></i>&emsp;
     						<i class="fab fa-twitter-square"></i>
