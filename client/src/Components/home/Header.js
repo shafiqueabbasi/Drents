@@ -5,7 +5,7 @@ class FirstPage extends Component {
     
     return (
       <div>
-      	<div className="nav navbar navbar-fixed-top bgc">
+      	<div className="nav navbar navbar-fixed-top bgc" style={{display:"none"}}>
       		<div className="container-fluid">
       			<div className="col-md-4">
       				<div className="navbar-header">

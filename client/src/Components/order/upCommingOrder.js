@@ -24,41 +24,58 @@ class UpCommingOrder extends Component {
       						<h4 className="order">Profile</h4>
       					</div>
       					<div className="col-md-2"></div>
-      					
-
       				</div>
-      				<hr className="hidden-xs" style={{borderTop:'2px solid #c2073f'}}/>
+      					<hr className="hidden-xs" style={{borderTop:'2px solid #c2073f'}}/>
       				<div className="row visible-xs">
-					<div className="nav-side-menu">
-				        <div className="menu-list">
-				            <ul>
-				                <li>
-				                  <a href="#">
-				                  <i className="fa fa-dashboard fa-lg"></i> Upcomming Order
-				                  </a>
-				                </li>
-				            </ul>
-				            <ul>
-				                <li>
-				                  <a href="#">
-				                  <i className="fa fa-dashboard fa-lg"></i> Order History
-				                  </a>
-				                </li>
-				            </ul>
-				            <ul>
-				                <li>
-				                  <a href="#">
-				                  <i className="fa fa-dashboard fa-lg"></i> Profile
-				                  </a>
-				                </li>
-				            </ul>
-				     	</div>
+						<div className="nav-side-menu">
+				        	<div className="menu-list">
+				           		<ul>
+				                	<li>
+					                  	<a href="#">
+					                  	<i className="fa fa-dashboard fa-lg"></i> Upcomming Order
+				                 		</a>
+				                	</li>
+				           		</ul>
+				            	<ul>
+				                	<li>
+				                 	<a href="#">
+				                  	<i className="fa fa-dashboard fa-lg"></i> Order History
+				                  	</a>
+				               		</li>
+				            	</ul>
+				            	<ul>
+				                	<li>
+				                	<a href="#">
+				                	<i className="fa fa-dashboard fa-lg"></i> Profile
+				                	</a>
+				                	</li>
+				            	</ul>
+				     		</div>
+						</div>
 					</div>
-      				
-      			</div>
-				
-					
-  				</div>
+					<div className="row">
+						<div className="col-md-2">
+							<img src="./images/pinksharara.jpg" style={{height: '240px'}}/>
+						</div>
+						
+						<div className="col-md-10">
+							<div className="row">
+								<div className="col-md-6">
+									<h2>Pink Sharara</h2>
+									<h4>Size: M</h4>
+									<h4>$ 5999.99</h4>
+								</div>
+								<div className="col-md-6"></div>
+								
+							</div>
+							
+							
+							
+						</div>
+						
+					</div>
+				</div>
+
       		</div>
       		<Footer/>
       	</div>
