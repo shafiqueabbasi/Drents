@@ -7,7 +7,7 @@ import UpCommingOrder from './upCommingOrder';
 import OrderHistory from './orderHistory';
 import Profile from './profile';
 import UploadDress from './uploadDress';
-import seeChart from './seeChart';
+import SeeChart from './seeChart';
 
 class Order extends Component {
 	constructor(props) {
@@ -17,6 +17,7 @@ class Order extends Component {
 			orderHis: false,
 			profile: false,
 			uploadDress: true
+
 		}
 	}
 
