@@ -163,15 +163,6 @@ class SeeChart extends Component {
   						<p style={{fontSize: '15px'}}>Our Model, Erin, is 5'8 and wears a size small. She has a 32" bust, 26" waist, and 32" hips. </p>
   					</div>
 					</div>	
-
-					
-
-
-
-
-
-
-
 			</span>	
 
       	</div>
