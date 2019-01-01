@@ -1,84 +1,124 @@
 import React, { Component } from 'react';
-import Header from '../home/Header';
-import Footer from '../home/headingf8';
 
 class UpCommingOrder extends Component {
   render() {
     
     return (
-      	<div>
-      		<div className="App" style={{marginTop: '110px'}}>
-      		<Header displayIcon={true}/>
-      			<div className="container">
-      				<div className="row  hidden-xs">
-      					<div className="col-md-2 "></div>
-      					<div className="col-md-2 col-sm-4">
-      						<h4 className="order"><u>Upcomming Order</u></h4>
-      					</div>
-      					<div className="col-md-1"></div>
-      					<div className="col-md-2 col-sm-4">
-      						<h4 className="order">Order History</h4>
-      					</div>
-      					<div className="col-md-1"></div>
-      					<div className="col-md-2 col-sm-4">
-      						<h4 className="order">Profile</h4>
-      					</div>
-      					<div className="col-md-2"></div>
-      				</div>
-      					<hr className="hidden-xs" style={{borderTop:'2px solid #c2073f'}}/>
-      				<div className="row visible-xs">
-						<div className="nav-side-menu">
-				        	<div className="menu-list">
-				           		<ul>
-				                	<li>
-					                  	<a href="#">
-					                  	<i className="fa fa-dashboard fa-lg"></i> Upcomming Order
-				                 		</a>
-				                	</li>
-				           		</ul>
-				            	<ul>
-				                	<li>
-				                 	<a href="#">
-				                  	<i className="fa fa-dashboard fa-lg"></i> Order History
-				                  	</a>
-				               		</li>
-				            	</ul>
-				            	<ul>
-				                	<li>
-				                	<a href="#">
-				                	<i className="fa fa-dashboard fa-lg"></i> Profile
-				                	</a>
-				                	</li>
-				            	</ul>
-				     		</div>
-						</div>
-					</div>
+    	<div>
+			<div className="row hidden-sm hidden-xs">
+				<div className="col-md-2 col-sm-4">
+					<img src="./images/pinksharara.jpg" style={{width: '165px'}}/>
+				</div>
+			
+				<div className="col-md-10 col-sm-5">
 					<div className="row">
-						<div className="col-md-2">
-							<img src="./images/pinksharara.jpg" style={{height: '240px'}}/>
-						</div>
-						
-						<div className="col-md-10">
+						<h1 style={{fontFamily: 'Qwigley',fontSize: '42px',color: '#c2o72f'}}>Pink Sharara</h1>
+						<div className="col-md-5 col-sm-5">
 							<div className="row">
-								<div className="col-md-6">
-									<h2>Pink Sharara</h2>
-									<h4>Size: M</h4>
-									<h4>$ 5999.99</h4>
-								</div>
-								<div className="col-md-6"></div>
-								
+								<h4>Size: M</h4>
+								<h4>$ 5999.99</h4>
 							</div>
-							
-							
-							
 						</div>
-						
+						<div className=""></div>
+						<div className="col-sm-2"></div>
+						<div className="col-md-6 col-sm-5">
+							<h4>Order Date</h4>
+							<div className="row">
+								<div className="col-md-2 col-sm-6">
+									<h4>Order</h4>
+									<h4>19/2/19</h4>
+								</div>
+								<div className="col-md-2 col-sm-6">
+									<h4>Return</h4>
+									<h4>21/2/19</h4>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
-
-      		</div>
-      		<Footer/>
-      	</div>
+			</div>
+							{/*<---hidden-sm--->*/}
+			<div className="visible-sm ">
+				<div className="row">
+				<div className=" col-sm-4">
+					<img src="./images/pinksharara.jpg" style={{height: '240px'}}/>
+				</div>
+			
+				<div className="col-sm-5">
+					<div className="row">
+						<h1 style={{fontFamily: 'Qwigley',fontSize: '42px',color: '#c2o72f'}}>Pink Sharara</h1>
+						<div className="col-sm-5">
+							<div className="row">
+								<h4>Size: M</h4>
+								<h4>$ 5999.99</h4>
+							</div>
+						</div>
+						<div className=""></div>
+						<div className="col-sm-2"></div>
+						<div className="col-sm-5">
+							<h4>Order Date</h4>
+							<div className="row">
+								<div className="col-sm-6">
+									<h4>Order</h4>
+									<h4>19/2/19</h4>
+								</div>
+								<div className="col-sm-6">
+									<h4>Return</h4>
+									<h4>21/2/19</h4>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			</div>
+				{/*<---hidden-xs--->*/}
+			<div className="row">
+				<div className="visible-xs">
+					<div className="col-xs-2"></div>
+						<div className="col-xs-6">
+							<img src="./images/pinksharara.jpg" style={{height: '240px'}}/>
+						</div>
+				</div>
+				<div className="visible-xs col-xs-12">
+					<div className="col-xs-2"></div>
+						<div className="row">
+							<div className="col-xs-"></div>
+							<div className="col-xs-8">
+								<h1 style={{fontFamily: 'Qwigley',fontSize: '42px'}}>Pink Sharara</h1>
+							</div>
+							<div className="col-xs-3"></div>
+						</div>
+						<div className="col-xs-3"></div>
+						<div className="col-xs-4">
+							<div className="row">
+								<h4>Size: M</h4>
+								<h4>$ 5999.99</h4>
+							</div>
+						</div>
+					</div>
+					<div className="row visible-xs">
+						<div className="col-xs-3"></div>
+						<div className="col-xs-6">
+							<h4>Order Date</h4>
+							<div className="row">
+								<div className="col-xs-6">
+									<h4>Order</h4>
+									<h4>19/2/19</h4>
+								</div>
+								<div className="col-xs-6">
+									<h4>Return</h4>
+									<h4>21/2/19</h4>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div className="col-md-12 hidden-xs">
+						<hr style={{borderTop:'2px solid #c2073f'}}/>
+					</div>
+			</div>
+		
+		</div>
 
 
     );

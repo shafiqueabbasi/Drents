@@ -22,17 +22,17 @@ class Filterpanel extends Component {
     							<div className="row col-md-12">
     								<h3>Sort By&emsp;&emsp;-</h3><br/>
     								<label className="container">
-									  <input type="checkbox" id="checkbox"/>
+									  <input type="checkbox" id="checkbox" style={{position: 'absolute', opacity: '0', cursor: 'pointer', height: '0', width: '0'}}/>
 									  <span className="checkmark"></span>
 									  <h4>Newest</h4>
 									</label>
 									<label className="container">
-									  <input type="checkbox"/>
+									  <input type="checkbox" style={{position: 'absolute', opacity: '0', cursor: 'pointer', height: '0', width: '0'}}/>
 									  <span className="checkmark"></span>
 									  <h4>High and Low</h4>
 									</label>
 									<label className="container">
-									  <input type="checkbox"/>
+									  <input type="checkbox" style={{position: 'absolute', opacity: '0', cursor: 'pointer', height: '0', width: '0'}}/>
 									  <span className="checkmark"></span>
 									  <h4>Low and High</h4>
 									</label>
@@ -57,12 +57,12 @@ class Filterpanel extends Component {
 								<div className="row col-md-12">
     								<h3>Weather&emsp;&nbsp;-</h3><br/>
     								<label className="container">
-									  <input type="checkbox" id="checkbox" />
+									  <input type="checkbox" id="checkbox" style={{position: 'absolute', opacity: '0', cursor: 'pointer', height: '0', width: '0'}}/>
 									  <span className="checkmark"></span>
 									  <h4>Cold Weather</h4>
 									</label>
 									<label className="container">
-									  <input type="checkbox"/>
+									  <input type="checkbox" style={{position: 'absolute', opacity: '0', cursor: 'pointer', height: '0', width: '0'}}/>
 									  <span className="checkmark"></span>
 									  <h4>Warm Weather</h4>
 									</label>

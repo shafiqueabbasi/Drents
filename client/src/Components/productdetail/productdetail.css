@@ -15,5 +15,157 @@
 
 }
 .fly{
-	height:"200px";
+	text-align: center;
+	font-family: Qwigley;
+	color: #c2073f; 
+	font-size: 35px;
 }
+.flu{
+     text-align: center;
+     border: 2px solid black;
+     border-radius: 50%;
+     height: 80px;
+     width: 80px;
+     display: inline-block;
+}
+.fluu{
+	text-align: center;
+     border: 2px solid black;
+     border-radius: 50%;
+     height: 80px;
+     width: 80px;
+     display: inline-block;
+}
+.detail1{
+	font-family: Qwigley;
+	color: #c2073f; 
+	font-size: 25px;
+	text-align: left;
+}
+.round{
+	display: inline-block;
+}
+.rental1{
+	font-family: Qwigley;
+	color: #c2073f; 
+	font-size: 45px;
+}
+.sams{
+	border: 1px solid #c2073f;
+	height: 47px;
+}
+.sam{
+	fontSize: 20px;
+	color: #c2073f; 
+	
+}
+.sand{
+	margin-top: 5px;
+	margin-left: 15px;
+}
+.sum{
+	margin-top: 3px;
+}
+.suum{
+	margin-top: 3px;
+	margin-left: 10px;
+}
+.bravoo{
+      width: 100%;
+      background-color: #c2073f; 
+}
+.dell{
+	text-align: right;
+}
+.glass{
+	font-size: 17px;
+}
+.derr{
+	text-align: center;
+}
+.hdress{
+
+}
+.dell{
+	height: 450px;
+	background-color: #c2073f;
+}
+.tissue{
+	text-align: left;
+	color: white;
+}
+.tissue2{
+
+	 border-left: 2px solid black;
+	 height: 400px;
+
+}
+.dar{
+	color: yellow;
+}
+.sung{
+	text-align: left;
+	color: white;
+}
+.sungg{
+	text-align: center;/**/
+	color: white;
+}
+.shift{
+	margin-top: 10px;
+}
+.dec{
+	color: white;
+	text-align: left;
+}
+.bottoom{
+	border-bottom: 2px solid black;
+}
+.point{
+	color: white;
+	text-align: center;
+	font-size: 17px;
+}
+.action{
+	height: 850px;
+	background-color: #c2073f;
+}
+.reaction{
+	height: 520px;
+	background-color: #c2073f;
+}
+.spoon{
+	margin-left: 109px;
+	text-align: left;
+	color: white;
+
+}
+.chair{
+	background-color: white;
+	
+}
+.ronin{
+	background-color: white;
+	margin: 10px;
+	margin-top: 25px;
+	color: black;
+}
+.form-group .form-control{
+	border-top-left-radius: 2px;
+	border-bottom-left-radius: 2px;
+	
+}
+
+.labelcustome{
+    color: #ffffff;
+    border:1px solid #c2073f;
+    width: 40%;
+    text-align: center;
+    margin-top: 2%;
+    background-color: #c2073f; 
+}
+
+input[type="file"] {
+    display: none;
+}
+

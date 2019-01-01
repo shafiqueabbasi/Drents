@@ -17,7 +17,7 @@ class Home extends Component {
     
     return (
       <div className="App">
-        <Header />
+        <Header/>
         <Banner/>
         <Heading/>
         <Heading2/>
