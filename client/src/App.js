@@ -6,7 +6,7 @@ import FilterPage from './Components/filter/index';
 import Productdetailfirstfold from './Components/productdetail/productdetailfirstfold';
 import Headingf8 from './Components/home/headingf8';
 import Order from './Components/order/index';
-
+import SeeChart from './Components/order/seeChart';
 
 class App extends Component {
 	state = {
@@ -44,7 +44,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-       <seeChart/>
+       <Productdetailfirstfold/>
 
         
         
