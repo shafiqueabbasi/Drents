@@ -265,131 +265,219 @@ class App extends Component {
                   </div>{/*row closed*/}
                 </div>{/*main container row closed*/}
               </div>{/*Main row Closed*/}
-  
+              <br/>
 
 
-              <div className="row dell hidden-sm hidden-xs">
+              <div className="row mouse">
                 <div className="container" style={{padding:"22px"}}>
                   <div className="col-md-12">
                     <div className="col-md-8 dec">
                       <div className="row">
                         <div className="col-md-6">
                           <div className="form-group">
-                            <label for="contain">Name:</label>
+                            <label for="contain"><span className="hell5">Name:</span></label>
                             <input className="form-control" type="text"/>
                           </div>
                           <div className="form-group">
-                            <label for="contain">Size Worn:</label>
+                            <label for="contain"><span className="hell5">Size Worn:</span></label>
                             <input className="form-control" type="text"/>
                           </div>
                         </div>
                         <div className="col-md-6">
                           <div className="form-group">
-                            <label for="contain">Email:</label>
+                            <label for="contain"><span className="hell5">Email:</span></label>
                             <input className="form-control" type="text"/>
                           </div>
                           <div className="form-group">
-                            <label for="contain">Wearing In:</label>
+                            <label for="contain"><span className="hell5">Wearing In:</span></label>
                             <input className="form-control" type="text"/>
                           </div>
                         </div>
                       </div>
                       <div class="form-group">
-                        <label for="exampleFormControlTextarea3">Message</label>
+                        <label for="exampleFormControlTextarea3"><span className="hell5">Message</span></label>
                           <textarea class="form-control" id="exampleFormControlTextarea3" rows="15"></textarea>
                       </div>
                     </div>{/*Col md  closed*/}
 
 
+                    {/* Col md 4 Star Session for deskstop*/}
 
-
-                    <div className="col-md-4 dec">
+                    <div className="col-md-4 dec hidden-sm hidden-xs">
                       <div className="row ronin">
                         <div className="col-md-7">
-                         <i class="fa fa-star checked" style={{fontSize:"25px" , "color":'#FFC400'}}></i>
-                         <i class="fas fa-star checked" style={{fontSize:"25px" , "color":'#FFC400'}}></i>
-                         <i class="fas fa-star checked" style={{fontSize:"25px" , "color":'#FFC400'}}></i>
-                         <i class="fas fa-star checked" style={{fontSize:"25px" , "color":'#FFC400'}}></i>
-                         <i class="fas fa-star checked" style={{fontSize:"25px" , "color":'#FFC400',}}></i>
+                         <i class="fa fa-star checked dell3"></i>
+                         <i class="fas fa-star checked dell3"></i>
+                         <i class="fas fa-star checked dell3"></i>
+                         <i class="fas fa-star checked dell3"></i>
+                         <i class="fas fa-star checked dell3"></i>
                          
                         </div>
                         <div className="col-md-5" style={{padding: '0'}}>
-                          <h4>Your Rating</h4>
+                          <h5>Your Rating</h5>
                         </div>
                         <div className="row">
                           <div className="col-md-1"></div>
-                          <div className="col-md-10" style={{borderBottom: '1px solid black'}}></div>
+                          <div className="col-md-9" style={{borderBottom: '1px solid black'}}></div>
                           <div className="col-md-1"></div>
                         </div>
 
                         <div className="col-md-7">
-                         <i class="fa fa-star checked" style={{fontSize:"25px" , "color":'#FFC400'}}></i>
-                         <i class="fas fa-star checked" style={{fontSize:"25px" , "color":'#FFC400'}}></i>
-                         <i class="fas fa-star checked" style={{fontSize:"25px" , "color":'#FFC400'}}></i>
-                         <i class="fas fa-star checked" style={{fontSize:"25px" , "color":'#FFC400'}}></i>
-                         <i class="fas fa-star checked" style={{fontSize:"25px" , "color":'#FFC400',}}></i>
+                         <i class="fas fa-star checked dell3"></i>
+                         <i class="fas fa-star checked dell3"></i>
+                         <i class="fas fa-star checked dell3"></i>
+                         <i class="fas fa-star checked dell3"></i>
+                         <i class="fas fa-star checked dell3"></i>
                         </div>
                         <div className="col-md-5" style={{padding: '0'}}>
-                          <h4>5.0 Stunner</h4>
+                          <h5>5.0 Stunner</h5>
                         </div>
 
                         <div className="col-md-7">
-                         <i class="fa fa-star checked" style={{fontSize:"25px" , "color":'#FFC400'}}></i>
-                         <i class="fas fa-star checked" style={{fontSize:"25px" , "color":'#FFC400'}}></i>
-                         <i class="fas fa-star checked" style={{fontSize:"25px" , "color":'#FFC400'}}></i>
-                         <i class="fas fa-star checked" style={{fontSize:"25px" , "color":'#FFC400'}}></i>
-                         <i class="fas fa-star checked" style={{fontSize:"25px" , "color":'#FFC400',}}></i>
+                         <i class="fas fa-star checked dell3"></i>
+                         <i class="fas fa-star checked dell3"></i>
+                         <i class="fas fa-star checked dell3"></i>
+                         <i class="fas fa-star checked dell3"></i>
+                         <i class="fas fa-star checked dell3"></i>
                         </div>
                         <div className="col-md-5" style={{padding: '0'}}>
-                          <h4>4.0 Good</h4>
+                          <h5>4.0 Good</h5>
                         </div>
 
                         <div className="col-md-7">
-                         <i class="fa fa-star checked" style={{fontSize:"25px" , "color":'#FFC400'}}></i>
-                         <i class="fas fa-star checked" style={{fontSize:"25px" , "color":'#FFC400'}}></i>
-                         <i class="fas fa-star checked" style={{fontSize:"25px" , "color":'#FFC400'}}></i>
-                         <i class="fas fa-star checked" style={{fontSize:"25px" , "color":'#FFC400'}}></i>
-                         <i class="fas fa-star checked" style={{fontSize:"25px" , "color":'#FFC400',}}></i>
+                         <i class="fa fa-star checked dell3"></i>
+                         <i class="fas fa-star checked dell3"></i>
+                         <i class="fas fa-star checked dell3"></i>
+                         <i class="fas fa-star checked dell3"></i>
+                         <i class="fas fa-star checked dell3"></i>
                         </div>
                         <div className="col-md-5" style={{padding: '0'}}>
-                          <h4>3.0 Average</h4>
+                          <h5>3.0 Average</h5>
                         </div>
 
                         <div className="col-md-7">
-                         <i class="fa fa-star checked" style={{fontSize:"25px" , "color":'#FFC400'}}></i>
-                         <i class="fas fa-star checked" style={{fontSize:"25px" , "color":'#FFC400'}}></i>
-                         <i class="fas fa-star checked" style={{fontSize:"25px" , "color":'#FFC400'}}></i>
-                         <i class="fas fa-star checked" style={{fontSize:"25px" , "color":'#FFC400'}}></i>
-                         <i class="fas fa-star checked" style={{fontSize:"25px" , "color":'#FFC400',}}></i>
+                         <i class="fa fa-star checked dell3"></i>
+                         <i class="fas fa-star checked dell3"></i>
+                         <i class="fas fa-star checked dell3"></i>
+                         <i class="fas fa-star checked dell3"></i>
+                         <i class="fas fa-star checked dell3"></i>
                         </div>
                         <div className="col-md-5" style={{padding: '0'}}>
-                          <h4>2.0 Okay</h4>
+                          <h5>2.0 Okay</h5>
                         </div>
 
                         <div className="col-md-7">
-                         <i class="fa fa-star checked" style={{fontSize:"25px" , "color":'#FFC400'}}></i>
-                         <i class="fas fa-star checked" style={{fontSize:"25px" , "color":'#FFC400'}}></i>
-                         <i class="fas fa-star checked" style={{fontSize:"25px" , "color":'#FFC400'}}></i>
-                         <i class="fas fa-star checked" style={{fontSize:"25px" , "color":'#FFC400'}}></i>
-                         <i class="fas fa-star checked" style={{fontSize:"25px" , "color":'#FFC400',}}></i>
+                         <i class="fa fa-star checked dell3"></i>
+                         <i class="fas fa-star checked dell3"></i>
+                         <i class="fas fa-star checked dell3"></i>
+                         <i class="fas fa-star checked dell3"></i>
+                         <i class="fas fa-star checked dell3"></i>
                         </div>
                         <div className="col-md-5" style={{padding: '0'}}>
-                          <h4>1.0 Bad</h4>
+                          <h5>1.0 Bad</h5>
                         </div>
                       </div>{/*Row closed*/}
 
-                      <div className="col-md-12">
-                        <h3>Upload Pictures Wearing </h3>
+                      <div className="col-md-12" style={{marginTop:'-59px'}}>
+                        <h4>Upload Pictures Wearing </h4>
                       </div>
-                        <div className="col-md-12" style={{backgroundColor: '#ffffff'}}>
+                        <div className="col-md-12" style={{backgroundColor: '#ffffff' , marginTop: '-20px'}}>
                           <div className="col-md-7"><h6 style={{color: 'black', fontSize: '49%', marginTop: '10%'}}>File size not exceed from 1 MB</h6></div>
                         
-                        <label className="labelcustome" id="#bb" > Choose File
+                        <label className="labelcustome" id="#bb" ><span className="dell5">Choose File</span>
                           <input type="file" id="File"   size="60" />
                         </label></div>
+                    </div>     
+                    {/* Col md 4 Star Session for Mobile and tab*/}
+
+
+                    <div className="visible-xs visible-sm">
+                      <div className="row ronin">
+                        <div className="col-md-7">
+                         <i class="fa fa-star checked dell3"></i>
+                         <i class="fas fa-star checked dell3"></i>
+                         <i class="fas fa-star checked dell3"></i>
+                         <i class="fas fa-star checked dell3"></i>
+                         <i class="fas fa-star checked dell3"></i>
+                         
+                        </div>
+                        <div className="col-md-5" style={{padding: '0'}}>
+                          <h5>Your Rating</h5>
+                        </div>
+                        <div className="row">
+                          <div className="col-md-1"></div>
+                          <div className="col-md-9" style={{borderBottom: '1px solid black'}}></div>
+                          <div className="col-md-1"></div>
+                        </div>
+
+                        <div className="col-md-7">
+                         <i class="fas fa-star checked dell3"></i>
+                         <i class="fas fa-star checked dell3"></i>
+                         <i class="fas fa-star checked dell3"></i>
+                         <i class="fas fa-star checked dell3"></i>
+                         <i class="fas fa-star checked dell3"></i>
+                        </div>
+                        <div className="col-md-5" style={{padding: '0'}}>
+                          <h5>5.0 Stunner</h5>
+                        </div>
+
+                        <div className="col-md-7">
+                         <i class="fas fa-star checked dell3"></i>
+                         <i class="fas fa-star checked dell3"></i>
+                         <i class="fas fa-star checked dell3"></i>
+                         <i class="fas fa-star checked dell3"></i>
+                         <i class="fas fa-star checked dell3"></i>
+                        </div>
+                        <div className="col-md-5" style={{padding: '0'}}>
+                          <h5>4.0 Good</h5>
+                        </div>
+
+                        <div className="col-md-7">
+                         <i class="fa fa-star checked dell3"></i>
+                         <i class="fas fa-star checked dell3"></i>
+                         <i class="fas fa-star checked dell3"></i>
+                         <i class="fas fa-star checked dell3"></i>
+                         <i class="fas fa-star checked dell3"></i>
+                        </div>
+                        <div className="col-md-5" style={{padding: '0'}}>
+                          <h5>3.0 Average</h5>
+                        </div>
+
+                        <div className="col-md-7">
+                         <i class="fa fa-star checked dell3"></i>
+                         <i class="fas fa-star checked dell3"></i>
+                         <i class="fas fa-star checked dell3"></i>
+                         <i class="fas fa-star checked dell3"></i>
+                         <i class="fas fa-star checked dell3"></i>
+                        </div>
+                        <div className="col-md-5" style={{padding: '0'}}>
+                          <h5>2.0 Okay</h5>
+                        </div>
+
+                        <div className="col-md-7">
+                         <i class="fa fa-star checked dell3"></i>
+                         <i class="fas fa-star checked dell3"></i>
+                         <i class="fas fa-star checked dell3"></i>
+                         <i class="fas fa-star checked dell3"></i>
+                         <i class="fas fa-star checked dell3"></i>
+                        </div>
+                        <div className="col-md-5" style={{padding: '0'}}>
+                          <h5>1.0 Bad</h5>
+                        </div>
+                      </div>{/*Row closed*/}
+
+                      <div className="col-md-12" style={{marginTop:'-59px'}}>
+                        <h4>Upload Pictures Wearing </h4>
+                      </div>
+                        <div className="col-md-12" style={{backgroundColor: '#ffffff' , marginTop: '-20px'}}>
+                          <div className="col-md-7"><h6 style={{color: 'black', fontSize: '49%', marginTop: '10%'}}>File size not exceed from 1 MB</h6></div>
                         
-                        
-                      
+                        <label className="labelcustome" id="#bb" ><span className="dell5">Choose File</span>
+                          <input type="file" id="File"   size="60" />
+                        </label></div>  
+                       
+
+
 
                     </div>{/*Col md 6 closed*/}
                   </div>{/*col md  closed*/}
