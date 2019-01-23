@@ -7,6 +7,9 @@ import Productdetailfirstfold from './Components/productdetail/productdetailfirs
 import Headingf8 from './Components/home/headingf8';
 import Order from './Components/order/index';
 import SeeChart from './Components/order/seeChart';
+import Filterpanel from './Components/filter/filterpanel';
+import LogIn from './Components/login/SignIn';
+import SignUp from './Components/login/SignUp';
 
 class App extends Component {
 	state = {
@@ -45,7 +48,7 @@ class App extends Component {
     return (
       <div className="App">
 
-       <Productdetailfirstfold/>
+       <Home/>
       
 
         
