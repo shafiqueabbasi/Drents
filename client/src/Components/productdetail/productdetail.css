@@ -114,9 +114,11 @@
 .shift{
 	margin-top: 10px;
 }
-.dec{
-	color: white;
-	text-align: left;
+.rest2{
+    color: white;
+    text-align: left;
+    font-size: 17px;
+
 }
 .bottoom{
 	border-bottom: 2px solid black;
@@ -125,9 +127,12 @@
 	color: white;
 	text-align: center;
 	font-size: 17px;
+    margin-left: 7px;
+    margin-right: 10px;
 }
+
 .action{
-	height: 850px;
+	height: 900px;
 	background-color: #c2073f;
 }
 .reaction{
@@ -144,11 +149,39 @@
 	background-color: white;
 	
 }
+@media (max-width: 1600px ){ 
 .ronin{
 	background-color: white;
-	margin: 60px;
-    margin-top: 36px;
+	margin-top: 35px;
 	color: black;
+	margin-right: 0px;
+    margin-left: 0px;
+    width:100%;
+
+}
+}
+@media (max-width: 768px ){ 
+.ronin{
+	background-color: white;
+	margin-top: 35px;
+	color: black;
+	margin-right: 0px;
+    margin-left: 168px;
+    width:50%;
+
+}
+}
+
+@media (max-width: 360px ){ 
+.ronin{
+	background-color: white;
+	margin-top: 35px;
+	color: black;
+	margin-right: 0px;
+    margin-left: 0px;
+    width:100%;
+
+}
 }
 .form-group .form-control{
 	border-top-left-radius: 2px;
@@ -159,7 +192,7 @@
 .labelcustome{
     color: #ffffff;
     border:1px solid #c2073f;
-    width: 40%;
+    width: 100%;
     text-align: center;
     margin-top: 2%;
     background-color: #c2073f; 
@@ -178,9 +211,54 @@ input[type="file"] {
 }
 .dell5{
 	font-weight: 400;
-    font-size: 20px;
+    font-size: 18px;
 }
 .hell5{
 	    font-size: 18px;
 	    font-weight: 600;
 }
+.starright{
+	text-align: right;
+}
+
+@media (max-width: 360px){
+.buttonpost{
+	background-color: #c2073f;
+    border: 2px solid white;
+    margin-left: 127px;
+    width: 51%  !important;
+}
+}
+@media (max-width: 768px){
+.buttonpost{
+	background-color: #c2073f;
+    border: 2px solid white;
+    margin-left: 35px;
+    width: 21%;
+}
+}
+@media (max-width: 1600px){
+.buttonpost{
+	background-color: #c2073f;
+    border: 2px solid white;
+    margin-left: 0px;
+    width: 100%;
+}
+}
+.poststyle{
+	font-size: 20px;
+    font-weight: bold;
+}
+.dam2{
+	margin-bottom: 8px;
+}
+.position3{
+	position: absolute;	
+}
+.absolute3{
+	position: relative;
+}
+.dec{
+		color: white;
+		text-align: left;
+	}
