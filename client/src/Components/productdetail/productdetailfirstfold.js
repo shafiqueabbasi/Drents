@@ -23,8 +23,8 @@ class Productdetailfirstfold extends Component {
 							<div className="row">
 								<div  className="col-md-3 hidden-xs hidden-sm">
 								
-									<img src="../images/productdetail/eid.jpeg" style={{width:"100%", height:"230px"}}/><br/>
-									<img src="../images/productdetail/bridal 22.jpeg" style={{width:"100%", height:"230px"}}/><br/>
+									<img src="../images/productdetail/eid.jpeg" style={{width:"100%", height:"230px"}}/><br/><br/>
+									<img src="../images/productdetail/bridal 22.jpeg" style={{width:"100%", height:"230px"}}/><br/><br/>
 									<img src="../images/productdetail/bridal2.jpeg" style={{width:"100%", height:"230px"}}/>
 
 								</div>
