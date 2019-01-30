@@ -7,13 +7,10 @@ import SignUp from './SignUp';
 
 class logIn extends Component {
   render() {
-    
+
     return (
       <div className="App">
-       
         <SignUp/>
-        
-
       </div>
     );
 

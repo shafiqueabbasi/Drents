@@ -37,7 +37,7 @@ class FirstPage extends Component {
                             <div className="modal-content">
                               <div className="modal-header">
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 className="modal-title">Sign In</h4>
+                                <h4 className="modal-title" style={{textAlign:'center'}}>Sign In</h4>
                               </div>
                               <div className="modal-body">
                                 <Login />
@@ -47,7 +47,7 @@ class FirstPage extends Component {
                               </div>
                             </div>
                           </div>
-                        </div>                      
+                        </div>
                     </li>
                     <li className="head">
                       <a href="#" className="nav" data-toggle="modal" data-target="#SignUp">Sign Up</a>
@@ -56,18 +56,16 @@ class FirstPage extends Component {
                             <div className="modal-content">
                               <div className="modal-header">
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 className="modal-title">Sign Up</h4>
+                                <h4 className="modal-title" style={{textAlign:'center'}}>Sign Up</h4>
                               </div>
                               <div className="modal-body">
                                   <SignUp />
                               </div>
-                              <div className="modal-footer">
-                                <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
-                              </div>
+                              
                             </div>
                           </div>
                         </div>
-                      
+
                     </li>
 
 
@@ -83,8 +81,8 @@ class FirstPage extends Component {
       		  </div>
       	  </div>
 
-        
-        
+
+
           <div id="myNav" className="overlay visible-xs" style={{background:'#c2073fcf'}}>
             <a href="javascript:void(0)" className="closebtn" onClick={this.closeNav}>&times;</a>
             <div className="overlay-content">

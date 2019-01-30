@@ -10,7 +10,7 @@ import SeeChart from './Components/order/seeChart';
 import Filterpanel from './Components/filter/filterpanel';
 import LogIn from './Components/login/SignIn';
 import SignUp from './Components/login/SignUp';
-
+import HttpUtils from './Service/HttpUtils';
 class App extends Component {
 	state = {
     response: '',
@@ -43,7 +43,7 @@ class App extends Component {
   };
 
 
-  
+
   render() {
     return (
       <div className="App">

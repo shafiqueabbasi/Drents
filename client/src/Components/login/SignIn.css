@@ -1,7 +1,7 @@
 
-.group{ 
-  position:relative; 
-  margin-bottom:20px; 
+.group{
+  position:relative;
+  margin-bottom:20px;
 }
 .group input 				{
   font-size:18px;
@@ -15,15 +15,11 @@
   font-weight: bold;
 }
 .login{
-	width: 55%;
-    font-size: 180%;
+	  width: 55%;
+    /* font-size: 180%; */
     font-weight: 450;
    	color: #c2073f;
 }
-
-
-
-
 /* Shared */
 .loginBtn {
   box-sizing: border-box;
@@ -79,7 +75,7 @@
 .loginBtn--google {
   /*font-family: "Roboto", Roboto, arial, sans-serif;*/
   background: #DD4B39;
-  width: 90%; 
+  width: 90%;
 }
 .loginBtn--google:before {
   border-right: #BB3F30 1px solid;
@@ -87,5 +83,26 @@
 }
 .loginBtn--google:hover,
 .loginBtn--google:focus {
-  background: #E74B37;
+  background:White;
+}
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    White;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    White;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    White;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    White;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+   color:    White;
+}
+
+::placeholder { /* Most modern browsers support this now. */
+   color:    White;
 }

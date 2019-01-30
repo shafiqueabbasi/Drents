@@ -1,16 +1,34 @@
 import React, { Component } from 'react';
+import {
+  Form,Icon, Input, Select, Button, AutoComplete,
+} from 'antd';
 import './SignIn.css'
 
 class SignIn extends Component {
+  handleSubmit = (e) => {
+     e.preventDefault();
+     this.props.form.validateFieldsAndScroll((err, values) => {
+       if (!err) {
+         console.log('Received values of form: ', values);
+       }
+     });
+   }
+
+   handleConfirmBlur = (e) => {
+     const value = e.target.value;
+     this.setState({ confirmDirty: this.state.confirmDirty || !!value });
+   }
+
+
   render() {
-    
+    const { getFieldDecorator } = this.props.form;
     return (
       	<div style={{backgroundColor: '#c2073f'}}>
       		<div className="container-fluid">
       			<div className="row">
       				<div className="col-md-2 col-sm-4 col-xs-3"></div>
-      				<div className="col-md-8 col-sm-4 col-xs-6">
-      					<a href="#"><img src="./images/Drent-logo-white.png" style={{width: '100%'}}/></a>
+      				<div className="col-md-8 col-sm-4 col-xs-6" style={{textAlign:'center'}}>
+      					<a href="#"><img src="./images/Drent-logo-white.png" style={{width: '47%'}}/></a>
       				</div>
       				<div className="col-md-2 col-sm-4 col-xs-3"></div>
       			</div>
@@ -22,27 +40,45 @@ class SignIn extends Component {
       				<div className="col-md-4 col-sm-4 col-xs-2"></div>
       			</div>
 
-      			
+
 				<div className="row">
 					<div className="col-md-2 col-sm-3 col-xs-2"></div>
 					<div className="col-md-8 col-sm-6 col-xs-8 get_form_inner">
-		    			<form name="registerForm" method="post" action="">
+		    			<Form onSubmit={this.handleSubmit}>
                 			<div className="group">
-				    			<input type="email" placeholder="Email" name="Email" required=""></input>
-		                    	<span className="smessage"></span>
-		                    	<span className="highlight"></span>
-		                    </div>
-													
-							<div className="group">
-								<input type="password" name="password" placeholder="Password" required="required"></input>
-								<input type="hidden" name="profile" value="Trainer"></input>	
-		                    	<span className="highlight"></span>
-		                	</div>
-		                </form>
+                          <Form.Item>
+                               {getFieldDecorator('email', {
+                                 rules: [{
+                                   type: 'email', message: 'The input is not valid E-mail!',
+                                 }, {
+                                   required: true, message: 'Please input your E-mail!',
+                                 }],
+                               })(
+                                 <Input placeholder="Email" />
+                               )}
+                          </Form.Item>
+		                  <span className="highlight"></span>
+		                  </div>
+
+							       <div className="group">
+                         <Form.Item>
+                             {getFieldDecorator('password', {
+                               rules: [{
+                                 required: true, message: 'Please input your password!',
+                               }, {
+                                 validator: this.validateToNextPassword,
+                               }],
+                             })(
+                               <Input type="password" placeholder="Password" />
+                             )}
+                         </Form.Item>
+		                <span className="highlight"></span>
+		                </div>
+		                </Form>
 					</div>
 					<div className="col-md-2 col-sm-3 col-xs-2"></div>
 				</div>
-			
+
 				<div className="row">
 					<div className="col-md-4 col-sm-4 col-xs-3"></div>
 					<div className="col-md-4 col-sm-4 col-xs-6" style={{textAlign: 'center'}}>
@@ -78,5 +114,5 @@ class SignIn extends Component {
 
   }
 }
-
-export default SignIn;
+const WrappedNormalSignInForm = Form.create()(SignIn);
+export default WrappedNormalSignInForm;
