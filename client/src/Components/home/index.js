@@ -17,7 +17,7 @@ class Home extends Component {
     
     return (
       <div className="App">
-        <Header/>
+        {/*<Header/>*/}
         <Banner/>
         <Heading/>
         <Heading2/>
@@ -26,7 +26,7 @@ class Home extends Component {
         <Heading5/>
         <Heading6/>
         <Heading7/>
-        <Headingf8/>
+        {/*<Headingf8/>*/}
 
       </div>
     );

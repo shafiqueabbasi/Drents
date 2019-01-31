@@ -19,9 +19,9 @@ class Headingf8 extends Component {
     					</div>
     					<div className="col-md-4 col-sm-4">
     						<h3>Social Media</h3>
-    						<i class="fab fa-facebook-square"></i>&emsp;
-    						<i class="fab fa-pinterest"></i>&emsp;
-    						<i class="fab fa-twitter-square"></i>
+    						<i className="fab fa-facebook-square"></i>&emsp;
+    						<i className="fab fa-pinterest"></i>&emsp;
+    						<i className="fab fa-twitter-square"></i>
     					</div>
     					<div className="col-md-4 col-sm-4">
     						<a href="#"><img src="./images/Drent-logo-white.png" style={{width: '80%'}}/></a>
@@ -47,9 +47,9 @@ class Headingf8 extends Component {
                                 <div className="col-xs-4"></div>
                                 <div className="col-xs-6">
                                     <h3 style={{fontSize: '16px'}}>Social Media</h3>
-                                    <i class="fab fa-facebook-square"></i>&emsp;
-                                    <i class="fab fa-pinterest"></i>&emsp;
-                                    <i class="fab fa-twitter-square"></i>
+                                    <i className="fab fa-facebook-square"></i>&emsp;
+                                    <i className="fab fa-pinterest"></i>&emsp;
+                                    <i className="fab fa-twitter-square"></i>
                                 </div>
                         </div>
                         <div className="col-xs-4"></div>

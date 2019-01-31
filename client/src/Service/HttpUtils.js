@@ -1,6 +1,6 @@
 import { AsyncStorage } from '@callstack/async-storage'
 
-const BASE_URL = 'http://localhost:5000/api';
+const BASE_URL = 'http://localhost:5000';
 // const BASE_URL = 'https://pure-hollows-17968.herokuapp.com/api';
 
 
@@ -38,7 +38,6 @@ const handleErrors = (response) => {
 const hitEndpoint = (method, endpoint, token, body) => {
     let headers = headersFor(token)
     let url = [BASE_URL, endpoint].join('/')
-
 
     return fetch(url, { method, credentials, headers, body }).then((response) => {
         return handleErrors(response)

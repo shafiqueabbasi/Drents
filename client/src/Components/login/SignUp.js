@@ -2,47 +2,61 @@ import React, { Component } from 'react';
 import {
   Form,Icon, Input, Select, Button, AutoComplete,
 } from 'antd';
+import { userActions } from '../../_actions';
+import { connect } from 'react-redux';
+
 const AutoCompleteOption = AutoComplete.Option;
 
 
 class SignUp extends Component {
-  state = {
-  confirmDirty: false,
-  autoCompleteResult: [],
-};
-handleSubmit = (e) => {
-   e.preventDefault();
-   this.props.form.validateFieldsAndScroll((err, values) => {
-     if (!err) {
-       console.log('Received values of form: ', values);
-     }
-   });
- }
+    constructor(props) {
+        super(props);
+        this.state = {
+            confirmDirty: false,
+            autoCompleteResult: []
+        };
 
- handleConfirmBlur = (e) => {
-   const value = e.target.value;
-   this.setState({ confirmDirty: this.state.confirmDirty || !!value });
- }
+        // this.handleChange = this.handleChange.bind(this);
+        // this.handleSubmit = this.handleSubmit.bind(this);
+    }
+  
+    handleSubmit = (e) => {
+        e.preventDefault();
+        this.props.form.validateFieldsAndScroll((err, values) => {
+            if (!err) {
+                console.log('Received values of form: ', values);
+                this.props.dispatch(userActions.register(values, (token) => {                
+                  localStorage.setItem('user', JSON.stringify(token));
+                }));
+                
+            }
+        });
+    }
 
- compareToFirstPassword = (rule, value, callback) => {
-   const form = this.props.form;
-   if (value && value !== form.getFieldValue('password')) {
-     callback('Two passwords that you enter is inconsistent!');
-   } else {
-     callback();
-   }
- }
+    handleConfirmBlur = (e) => {
+        const value = e.target.value;
+        this.setState({ confirmDirty: this.state.confirmDirty || !!value });
+    }
 
- validateToNextPassword = (rule, value, callback) => {
-   const form = this.props.form;
-   if (value && this.state.confirmDirty) {
-     form.validateFields(['confirm'], { force: true });
-   }
-   callback();
- }
+    compareToFirstPassword = (rule, value, callback) => {
+        const form = this.props.form;
+        if (value && value !== form.getFieldValue('password')) {
+            callback('Two passwords that you enter is inconsistent!');
+        } else {
+            callback();
+        }
+    }
 
+    validateToNextPassword = (rule, value, callback) => {
+        const form = this.props.form;
+        if (value && this.state.confirmDirty) {
+            form.validateFields(['confirm'], { force: true });
+        }
+        callback();
+    }
 
   render() {
+    console.log(this.props, 'propsssssssss')
     const { getFieldDecorator } = this.props.form;
     return (
     	     <div style={{backgroundColor: '#c2073f'}}>
@@ -138,7 +152,7 @@ handleSubmit = (e) => {
 				<div className="row">
 					<div className="col-md-3 col-sm-4 col-xs-3"></div>
 					<div className="col-md-6 col-sm-4 col-xs-6" style={{textAlign: 'center'}}>
-						<button type="submit" className="login">Next</button>
+						<button type="submit" className="login" onClick={this.handleSubmit}>Next</button>
 					</div>
 					<div className="col-md-3 col-sm-4 col-xs-3"></div>
 				</div><br/><br/><br/>
@@ -151,4 +165,14 @@ handleSubmit = (e) => {
   }
 }
 const WrappedNormalSignupForm = Form.create()(SignUp);
-export default WrappedNormalSignupForm;
+// export default WrappedNormalSignupForm;
+
+function mapStateToProps(state) {
+    const { registering } = state.registration;
+    return {
+        registering
+    };
+}
+
+const connectedRegisterPage = connect(mapStateToProps)(WrappedNormalSignupForm);
+export default connectedRegisterPage;

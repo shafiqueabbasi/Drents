@@ -2,14 +2,28 @@ import React, { Component } from 'react';
 import {
   Form,Icon, Input, Select, Button, AutoComplete,
 } from 'antd';
+import { userActions } from '../../_actions';
+import { connect } from 'react-redux';
 import './SignIn.css'
 
 class SignIn extends Component {
+    constructor(props) {
+        super(props);
+
+        // reset login status
+        this.props.dispatch(userActions.logout());
+        console.log('iiiiiiiiiiiiiiii')
+    }
+
   handleSubmit = (e) => {
      e.preventDefault();
      this.props.form.validateFieldsAndScroll((err, values) => {
        if (!err) {
          console.log('Received values of form: ', values);
+         this.props.dispatch(userActions.login(values, (token) => {
+          // document.getElementById("SignIn").click();
+          localStorage.setItem('user', JSON.stringify(token));
+        }));
        }
      });
    }
@@ -82,7 +96,7 @@ class SignIn extends Component {
 				<div className="row">
 					<div className="col-md-4 col-sm-4 col-xs-3"></div>
 					<div className="col-md-4 col-sm-4 col-xs-6" style={{textAlign: 'center'}}>
-						<button type="submit" className="login">Login</button>
+						<button type="submit" className="login" onClick={this.handleSubmit}>Login</button>
 					</div>
 					<div className="col-md-4 col-sm-4 col-xs-3"></div>
 				</div><br/><br/><br/>
@@ -114,5 +128,14 @@ class SignIn extends Component {
 
   }
 }
+
+function mapStateToProps(state) {
+    const { loggingIn } = state.authentication;
+    return {
+        loggingIn
+    };
+}
+
 const WrappedNormalSignInForm = Form.create()(SignIn);
-export default WrappedNormalSignInForm;
+const connectedLoginPage = connect(mapStateToProps)(WrappedNormalSignInForm);
+export default connectedLoginPage;
