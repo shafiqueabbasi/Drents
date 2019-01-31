@@ -5,11 +5,12 @@ const http = require('http');
 const app = express();
 const mongoose = require('mongoose');
 const router = require('./router')
-
+const cors = require('cors');
 
 
 //App setup
 app.use(morgan('combined'));
+app.use(cors());
 app.use(bodyParser.json({type:'*/*'}));
 app.use(bodyParser.urlencoded({ extended: true }));
 router(app);

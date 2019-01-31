@@ -11,6 +11,14 @@ import Filterpanel from './Components/filter/filterpanel';
 import LogIn from './Components/login/SignIn';
 import SignUp from './Components/login/SignUp';
 import HttpUtils from './Service/HttpUtils';
+
+import { Router, Route } from 'react-router-dom';
+
+import { history } from './_helpers';
+import Header from './Components/home/Header';
+import Footer from './Components/home/headingf8';
+
+
 class App extends Component {
 	state = {
     response: '',
@@ -47,7 +55,16 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-       <Home/>
+      <Header/>
+      <Router history={history}>
+          <div>
+              {/*<PrivateRoute exact path="/" component={HomePage} />
+              <PrivateRoute exact path="/about" component={AboutPage} />*/}
+              <Route path="/" component={Home} />
+              {/*<Route path="/register" component={RegisterPage} />*/}
+          </div>
+      </Router>
+      <Footer/>
       </div>
     );
 
