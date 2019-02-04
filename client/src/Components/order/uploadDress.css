@@ -1,0 +1,44 @@
+#productname{
+    margin-top: 17px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid black;
+}
+#detailname{
+    margin-top: 17px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid black;
+}
+#description{
+  margin-top: 17px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid black;
+}
+#price{
+  margin-top: 17px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid black;
+}
+.button_add{
+  width: 22%;
+  height: 31px;
+  border: none;
+  outline: none;
+  background: #c2073f;
+  color: #fff;
+  font-size: 15px;
+}
+#shareholder{
+  margin-top: 17px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid black;
+}

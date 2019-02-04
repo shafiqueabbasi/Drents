@@ -22,7 +22,7 @@ class Order extends Component {
 	}
 
   	render() {
-    
+
     return (
         <div>
       		<div className="App" style={{marginTop: '110px'}}>
@@ -113,11 +113,11 @@ class Order extends Component {
 					{this.state.orderHis && <OrderHistory/>}
 					{this.state.profile && <Profile/>}
 					{this.state.uploadDress && <UploadDress/>}
-					
-					
+
+
 				</div>
       		</div>
-      		<Footer/>
+      	
       	</div>
     );
 

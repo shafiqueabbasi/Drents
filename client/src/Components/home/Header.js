@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import  './mobileheader.css';
 import Login from '../login/SignIn';
+import { Link } from "react-router-dom";
 import SignUp from '../login/SignUp';
 import { connect } from 'react-redux';
 import { userActions } from '../../_actions';
@@ -37,7 +38,7 @@ class FirstPage extends Component {
       					    <li className="head"><a href="#" className="nav">HOME</a></li>
         				    <li className="head"><a href="#" className="nav">PRODUCT</a></li>
         				    <li className="head"><a href="#" className="nav">TESTIMONIALS</a></li>
-        				    <li className="head"><a href="#" className="nav">MY PROFILE</a></li>
+        				    <li className="head"><Link to={`/profile`} className="nav">MY PROFILE</Link></li>
                     {loggedIn && <li className="head" onClick={this.logOut}><a href="#" className="nav">Log Out</a></li>}
                     {!loggedIn && <li className="head">
                       <a href="#" className="nav" data-toggle="modal" data-target="#SignIn">Sign In</a>
@@ -70,7 +71,7 @@ class FirstPage extends Component {
                               <div className="modal-body">
                                   <SignUp />
                               </div>
-                              
+
                             </div>
                           </div>
                         </div>

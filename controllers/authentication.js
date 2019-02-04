@@ -17,6 +17,8 @@ exports.signin = function(req, res, next){
 exports.signup = function(req, res, next){
   const email = req.body.email;
   const password = req.body.password;
+  const firstname = req.body.firstname;
+  const lastname = req.body.lastname;
 
   if(!email || !password){
     return res.status(422).send({error:'you must provide email and password'})
@@ -32,13 +34,19 @@ exports.signup = function(req, res, next){
       //if a user with email does not exit, create and save user
       const user = new User({
         email:email,
-        password:password
+        password:password,
+        firstname:firstname,
+        lastname:lastname,
       });
 
       user.save(function(err){
         if(err){ return next(err); }
       });
       //Respond to request indicating user was created
-      res.json({token:tokenForUser(user)});
+      res.json({
+        token:tokenForUser(user),
+        username:user.firstname+''+user.lastname,
+        userId:user._id
+      });
     });
 }
