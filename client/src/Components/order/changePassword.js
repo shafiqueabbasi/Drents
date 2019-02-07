@@ -84,7 +84,7 @@ class ChangePassword extends Component {
                                 validator: this.validateToNextPassword,
                               }],
                             })(
-                              <Input type="password" />
+                              <Input type="password" onBlur={() => console.log('hello brotherrrrrrrr')}/>
                             )}
                         </Form.Item>
                       </div>
