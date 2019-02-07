@@ -12,17 +12,18 @@ exports.profileUpload = function(req, res, next){
       firstName:profileData.firstName,
       lastName:profileData.lastName,
       email:profileData.email,
-      height:profileData.height,
+      inputHeight:profileData.inputHeight,
       weight:profileData.weight,
       bustSize:profileData.bustSize,
       bodyType:profileData.bodyType,
       occassionAttendMost:profileData.occassionAttendMost,
-      typicalJean:profileData.typicalJean,
+      typicalJeanSize:profileData.typicalJeanSize,
       bust:profileData.bust,
       hips:profileData.hips,
       torso:profileData.torso,
       ribcage:profileData.ribcage,
-      heightLength:profileData.heightLength
+      height:profileData.height,
+      userId:profileData.userId
     });
 
     //save profile data save

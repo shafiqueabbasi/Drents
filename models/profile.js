@@ -8,17 +8,18 @@ const profileSchema = new Schema({
   firstName:{ type:String },
   lastName:{ type:String },
   email:{ type:String, unique:true },
-  height:{ type:String },
+  inputHeight:{ type:String },
   weight:{ type:String },
   bustSize:{ type:String },
   bodyType:{ type:String },
   occassionAttendMost:{ type:String},
-  typicalJean:{ type:String},
+  typicalJeanSize:{ type:String},
   bust:{ type:String },
   hips:{ type:String },
   torso:{ type:String },
   ribcage:{ type:String },
-  heightLength:{ type:String },
+  height:{ type:String },
+  userId:{ type:String }
 });
 
 

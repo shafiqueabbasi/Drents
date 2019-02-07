@@ -1,6 +1,7 @@
 const jwt  = require('jwt-simple');
 const User = require('../models/user')
 const config = require('../config');
+const bcrypt = require('bcrypt-nodejs');
 
 //creting token for user or through user.id
 function tokenForUser(user){
@@ -49,4 +50,26 @@ exports.signup = function(req, res, next){
         userId:user._id
       });
     });
+}
+
+exports.changePassword = function(req, res, next){
+  let email = 'farzanhanif123@gmail.com'
+  let password = 'far1';
+
+ User.findOne({email:email},function(err,user){
+   if(user){
+     console.log(user);
+     //const user = this;
+     bcrypt.compare(password, user.password, function(err, isMatch){
+       if(err){ return callback(err); }
+       //callback(null, isMatch);
+       if(isMatch){
+         
+       }
+       console.log(isMatch);
+     })
+   }
+ })
+
+
 }

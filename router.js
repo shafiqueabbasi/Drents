@@ -15,4 +15,7 @@ module.exports = function(app){
   app.post('/signup',Authentication.signup);
   app.post('/uploaddress',UploadDress.uploaddress);
   app.post('/uploadprofile',profileUpload.profileUpload);
+
+
+  app.post('/changepassword',Authentication.changePassword);
 }
