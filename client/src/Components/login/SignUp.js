@@ -164,6 +164,7 @@ class SignUp extends Component {
 
   }
 }
+
 const WrappedNormalSignupForm = Form.create()(SignUp);
 // export default WrappedNormalSignupForm;
 

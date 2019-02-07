@@ -3,6 +3,7 @@ import { Form, Input, Button, AutoComplete, Modal, Radio } from 'antd';
 import ChangePassword from './changePassword';
 import { TextInput, RadioInput, SelectInput } from '../_components/myInput';
 import { HttpUtils } from  '../../Service/HttpUtils';
+import { connect } from 'react-redux';
 import './profile.css';
 
 const AutoCompleteOption = AutoComplete.Option;
@@ -23,7 +24,14 @@ class Profile extends Component {
 		torso: '',
 		ribcage: '',
 		height: '',
+		userId: '',
+		profileId: ''
 	};
+
+	componentDidMount(){
+		const { _id, email } = this.props.user;
+		this.setState({userId: _id, email})
+	}
 
 	inputHandleChange = (e) => {
 		this.setState({ [e.target.id]: e.target.value })
@@ -36,17 +44,17 @@ class Profile extends Component {
 	handleSubmit = (e) => {
 		e.preventDefault();
 		const {email, firstName, lastName, inputHeight, weight, bustSize, height, bodyType,
-			ocassionAttendMost, typicalJeanSize, bust, hips, torso, ribcage} = this.state;
+			ocassionAttendMost, typicalJeanSize, bust, hips, torso, ribcage, userId} = this.state;
 		let obj = {
 			email, firstName, lastName, inputHeight, weight, bustSize, height, bodyType,
-			ocassionAttendMost, typicalJeanSize, bust, hips, torso, ribcage
+			ocassionAttendMost, typicalJeanSize, bust, hips, torso, ribcage, userId
 		}	
 		this.submit(obj)
 	}
 
 	async submit(obj){
-		// let res = await HttpUtils.post('uploadprofile', obj);
-		console.log(obj, 'resssssssssss')
+		let res = await HttpUtils.post('uploadprofile', obj);
+		console.log(res, 'resssssssssss')
 	}
 
   render() {
@@ -72,7 +80,7 @@ class Profile extends Component {
 							<div className="col-md-4 col-sm-4">
 								<div className="inputBox">
 									<div className="inputText"></div>
-								    <ChangePassword/>
+								    <ChangePassword user={this.props.user.email}/>
 								</div>
 							</div>							
 							<TextInput 
@@ -278,4 +286,14 @@ class Profile extends Component {
 }
 
 const WrappedNormalProfileForm = Form.create()(Profile);
-export default WrappedNormalProfileForm;
+
+function mapStateToProps(state) {
+	// console.log(state, 'stateeeeeee')
+    const { user } = state.authentication;
+    return {
+        user
+    };
+}
+
+const connectedProfilePage = connect(mapStateToProps)(WrappedNormalProfileForm);
+export default connectedProfilePage;

@@ -27,12 +27,13 @@ exports.profileUpload = function(req, res, next){
     });
 
     //save profile data save
-    postProfileData.save(function(err){
+    postProfileData.save(function(err, doc){
       if(err){ return next(err); }
     });
 
     //Respond to request indicating user was created
     res.json({
+      code: 200,
       data:'Profile saved successfully'
     });
 }
