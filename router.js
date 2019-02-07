@@ -16,6 +16,6 @@ module.exports = function(app){
   app.post('/uploaddress',UploadDress.uploaddress);
   app.post('/uploadprofile',profileUpload.profileUpload);
 
-
+  app.post('/comparepassword',Authentication.comparePassword);
   app.post('/changepassword',Authentication.changePassword);
 }

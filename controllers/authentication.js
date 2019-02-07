@@ -52,6 +52,31 @@ exports.signup = function(req, res, next){
     });
 }
 
+exports.comparePassword = function(req, res, next){
+  currentpassword = req.body.password;
+  email = req.body.email;
+  User.findOne({email:email},function(err,user){
+    if(user){
+      console.log(user);
+      //const user = this;
+      bcrypt.compare(currentpassword, user.password, function(err, isMatch){
+        if(err){ return callback(err); }
+        //callback(null, isMatch);
+        if(isMatch){
+          res.send({
+            msg:'password Match',
+            Match:isMatch
+          })
+        }
+        //console.log(isMatch);
+      })
+    }
+  })
+}
+
+
+
+
 exports.changePassword = function(req, res, next){
   let email = 'farzanhanif123@gmail.com'
   let password = 'far1';
@@ -64,7 +89,7 @@ exports.changePassword = function(req, res, next){
        if(err){ return callback(err); }
        //callback(null, isMatch);
        if(isMatch){
-         
+
        }
        console.log(isMatch);
      })
