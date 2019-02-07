@@ -11,7 +11,11 @@ function tokenForUser(user){
 exports.signin = function(req, res, next){
   //user has already had their email and password auth'd
   //we just need to give them a token
-  res.send({token: tokenForUser(req.user) });
+  res.send({
+    token: tokenForUser(req.user),
+    _id:req.user.id,
+    name:req.user.firstName+''+req.user.lastName
+  });
 }
 
 
@@ -79,16 +83,17 @@ exports.comparePassword = function(req, res, next){
 
 exports.changePassword = function(req, res, next){
   let email = 'farzanhanif123@gmail.com'
-  let password = 'far1';
+  let password = 'far';
+  let newPassword = '123';
 
  User.findOne({email:email},function(err,user){
    if(user){
      console.log(user);
-     //const user = this;
      bcrypt.compare(password, user.password, function(err, isMatch){
        if(err){ return callback(err); }
        //callback(null, isMatch);
        if(isMatch){
+
 
        }
        console.log(isMatch);
