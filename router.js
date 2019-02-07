@@ -1,5 +1,6 @@
 const Authentication = require('./controllers/authentication');
 const UploadDress = require('./controllers/uploadDress');
+const profileUpload = require('./controllers/profile');
 const passportService = require('./services/passport');
 const passport = require('passport');
 
@@ -13,4 +14,8 @@ module.exports = function(app){
   app.post('/signin',requireSignin, Authentication.signin);
   app.post('/signup',Authentication.signup);
   app.post('/uploaddress',UploadDress.uploaddress);
+  app.post('/uploadprofile',profileUpload.profileUpload);
+
+  app.post('/comparepassword',Authentication.comparePassword);
+  app.post('/changepassword',Authentication.changePassword);
 }

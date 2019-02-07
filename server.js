@@ -7,7 +7,6 @@ const mongoose = require('mongoose');
 const router = require('./router')
 const cors = require('cors');
 
-
 //App setup
 app.use(morgan('combined'));
 app.use(cors());
