@@ -14,7 +14,6 @@ exports.signin = function(req, res, next){
   res.send({
     token: tokenForUser(req.user),
     _id:req.user.id,
-    name:req.user.firstname+''+req.user.lastname,
     email:req.user.email
   });
 }
@@ -73,6 +72,12 @@ exports.comparePassword = function(req, res, next){
             Match:isMatch
           })
         }
+        else if(!isMatch){
+          res.send({
+            msg:'Not Match',
+            Match:isMatch
+          })
+        }
         //console.log(isMatch);
       })
     }
@@ -84,7 +89,7 @@ exports.comparePassword = function(req, res, next){
 
 exports.changePassword = function(req, res, next){
   let email = 'farzanhanif123@gmail.com'
-  let password = 'far';
+  let password = '123';
   let newPassword = '123';
 
  User.findOne({email:email},function(err,user){
