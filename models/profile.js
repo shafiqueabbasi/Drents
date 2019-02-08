@@ -19,7 +19,8 @@ const profileSchema = new Schema({
   torso:{ type:String },
   ribcage:{ type:String },
   height:{ type:String },
-  userId:{ type:String }
+  userId:{ type:String },
+  profileId:{ type:String }
 });
 
 

@@ -8,6 +8,7 @@ exports.profileUpload = function(req, res, next){
       return res.status(422).send({error:'you must provide data to save'})
     }
 
+    if(req.body.profileId == ''){
     const postProfileData = new profile({
       firstName:profileData.firstName,
       lastName:profileData.lastName,
@@ -35,4 +36,43 @@ exports.profileUpload = function(req, res, next){
     res.json({
       data:'Profile saved successfully'
     });
+
+  }//end if condition
+  else if(req.body.profileId != ''){
+    profile.findOne({"_id":req.body.profileId},function(err,existingProfile){
+      if(err){
+      return res.status(400).json({"Unexpected Error:: ": err});
+    }//end err
+      existingProfile.firstName = profileData.firstName;
+      existingProfile.lastName = profileData.lastName;
+      existingProfile.email =  profileData.email;
+      existingProfile.inputHeight =profileData.inputHeight;
+      existingProfile.weight =profileData.weight;
+      existingProfile.bustSize = profileData.bustSize;
+      existingProfile.bodyType = profileData.bodyType;
+      existingProfile.occassionAttendMost = profileData.occassionAttendMost;
+      existingProfile.typicalJeanSize = profileData.typicalJeanSize;
+      existingProfile.bust = profileData.bust;
+      existingProfile.hips = profileData.hips;
+      existingProfile.torso = profileData.torso;
+      existingProfile.ribcage = profileData.ribcage;
+      existingProfile.height = profileData.height;
+      existingProfile.userId = profileData.userId;
+
+
+      profile.save(function(err,doc){
+     if(err){
+       //console.log("profile update error::" :err);
+       return res.status(400).json({"Unexpected Error::" :err});
+     }
+     console.log('Profile data has been updated');
+     return res.send({
+         code:200,
+         msg:'Profile data updated successfully'
+       });
+   });
+
+    })
+
+  }
 }

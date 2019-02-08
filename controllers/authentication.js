@@ -88,19 +88,28 @@ exports.comparePassword = function(req, res, next){
 
 
 exports.changePassword = function(req, res, next){
-  let email = 'farzanhanif123@gmail.com'
-  let password = '123';
-  let newPassword = '123';
+  let email = req.body.email;
+  let password = req.body.currentPassword;
+  let newPassword = req.body.newPassword;
 
  User.findOne({email:email},function(err,user){
    if(user){
      console.log(user);
      bcrypt.compare(password, user.password, function(err, isMatch){
-       if(err){ return callback(err); }
+       if(err){ return //callback(err); }
        //callback(null, isMatch);
        if(isMatch){
-
-
+         user.password = newPassword;
+         user.save(function(err,doc){
+           if(err){}
+           res.send('password change');
+         })
+       }
+       else{
+         res.send({
+           code:404,
+           msg:'Current Password not match'
+         })
        }
        console.log(isMatch);
      })
