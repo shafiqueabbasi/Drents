@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import {
-  Form, Input, Tooltip,Button,
+  Form, Input, Tooltip,Button, Icon
 } from 'antd';
+import { HttpUtils } from  '../../Service/HttpUtils';
 import './uploadDress.css';
 
 class ChangePassword extends Component {
   state = {
     confirmDirty: false,
+    msg: '',
+    correct: false
     //autoCompleteResult: [],
   };
 
@@ -31,6 +34,20 @@ class ChangePassword extends Component {
       callback();
     }
   }
+
+    comparePasword = async(e) => {
+        let obj = {
+            email: this.props.user,
+            password: e.target.value
+        }
+        let res = await HttpUtils.post('comparepassword', obj)
+        console.log(res, 'resssssss')
+        if(!res.Match){
+            this.setState({msg: res.msg, correct: false})
+        }else {
+          this.setState({msg: '', correct: true})
+        }
+    }
 
     render(){
       const formItemLayout = {
@@ -84,11 +101,16 @@ class ChangePassword extends Component {
                                 validator: this.validateToNextPassword,
                               }],
                             })(
-                              <Input type="password" onBlur={() => console.log('hello brotherrrrrrrr')}/>
+                              <Input type="password" onBlur={(e) => this.comparePasword(e)}/>
                             )}
                         </Form.Item>
+                        {!!this.state.msg && <span>{this.state.msg}</span>}
                       </div>
-                      <div className="col-md-3 col-sm-3 col-12"></div>
+                      <div className="col-md-3 col-sm-3 col-12">
+                        {this.state.correct && <Icon 
+                            type="check-circle" theme="twoTone" 
+                            twoToneColor="#52c41a" style={{float: 'right'}}/>}
+                      </div>
                   </div>
                   <div className="row" style={{margin:'0px'}}>
                     <div className="col-md-5 col-sm-5 col-12"><label>New Password</label></div>
