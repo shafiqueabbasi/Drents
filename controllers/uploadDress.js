@@ -11,11 +11,11 @@ exports.uploaddress = function(req,res,next){
   const postDressData = new UploadDress({
     productName:dressupload.productName,
     detailName:dressupload.detailName,
-    Description:dressupload.Description,
-    Price:dressupload.Price,
-    Details:dressupload.Details,
+    description:dressupload.description,
+    price:dressupload.price,
+    details:dressupload.details,
     imgArray:dressupload.img,
-    Sizes:dressupload.Sizes
+    sizes:dressupload.sizes
   });
 
   postDressData.save(function(err){

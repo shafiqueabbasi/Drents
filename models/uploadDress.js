@@ -6,11 +6,11 @@ const Schema = mongoose.Schema;
 const uploadDressSchema = new Schema({
   productName:{ type:String },
   detailName:{ type:String },
-  Description:{ type:String },
-  Price:{ type:String },
-  Details:{type:Array},
-  Sizes:{ type:Array },
-  imgArray:{ type:String },
+  description:{ type:String },
+  price:{ type:String },
+  details:{type:Array},
+  sizes:{ type:Array },
+  imgArray:{ type:Array },
   userId:{ type:String },
 });
 
