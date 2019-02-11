@@ -60,12 +60,12 @@ class ChangePassword extends Component {
         },
         res = await HttpUtils.post('changePassword', obj)
         if(res && res.code === 200){
-            this.setState({ showMsg : true})                        
+            this.setState({ showMsg : true });                        
             setTimeout(() => {
-              document.getElementById("changePassword").click();
-              this.props.form.resetFields();
-              this.setState({ loader: false, correct: false, showMsg: false })
-            }, 4000)
+                document.getElementById("changePassword").click();
+                this.props.form.resetFields();
+                this.setState({ loader: false, correct: false, showMsg: false })
+            }, 4000);
         }
     }
 
