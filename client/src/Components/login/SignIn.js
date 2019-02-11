@@ -20,7 +20,6 @@ class SignIn extends Component {
        if (!err) {
          console.log('Received values of form: ', values);
          this.props.dispatch(userActions.login(values, (token) => {
-          console.log(token, 'tokennnnnnnnnnnnnnn')
           localStorage.setItem('user', JSON.stringify(token));
         }));
        }

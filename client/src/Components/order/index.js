@@ -26,7 +26,6 @@ class Order extends Component {
     return (
         <div>
       		<div className="App" style={{marginTop: '110px'}}>
-      		<Header displayIcon={true}/>
       			<div className="container">
       				<div className="row  hidden-xs hidden-sm">
       					<div className="col-md-1 col-md-1"></div>

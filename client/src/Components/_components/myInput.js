@@ -45,6 +45,27 @@ export const TextInput = props => {
     )
 }
 
+export const SelectInput = props => {
+    return(
+        <div>
+            <label htmlFor={props.name} className="col-md-2 col-sm-2">
+                {props.label}
+            </label>
+            <div className="col-sm-4 col-sm-4">
+                <select required 
+                    className="col-sm-12 col-sm-12"
+                    placeholder={props.placeholder} 
+                    name={props.name} 
+                    id={props.id} 
+                    value={props.value} 
+                    onChange={props.Change}>
+                    {props.options && props.options.map((ob)=><option key={ob.id} value={ob}>{ob}</option>)}
+                </select>
+            </div>
+        </div>   
+    )
+}
+
 // export const DatePicker = props => {
 //     return(
 //         <div className="col-md-12">
@@ -110,19 +131,3 @@ export const TextInput = props => {
 //     )
 // }
   
-export const SelectInput = props => {
-    return(
-        <div>
-            <label htmlFor={props.name}>{props.title}</label>
-            <select required 
-                className="form-control"
-                placeholder={props.placeholder} 
-                name={props.name} 
-                id={props.name} 
-                value={props.value} 
-                onChange={props.Change}>
-                {props.options && props.options.map((ob)=><option key={ob.id} value={ob}>{ob}</option>)}
-            </select>
-        </div>   
-    )
-}

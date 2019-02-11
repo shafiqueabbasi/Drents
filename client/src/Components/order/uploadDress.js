@@ -1,84 +1,134 @@
 import React, { Component } from 'react';
 import {
-  Form, Input, Checkbox, Button,Radio
+  Form, Input, Checkbox, Button, Radio, Upload, Icon, Modal
 } from 'antd';
 import { HttpUtils } from  '../../Service/HttpUtils';
+import sha1 from "sha1";
+import superagent from "superagent";
 import './uploadDress.css';
 
 class UploadDress extends Component {
-  state = {
-    confirmDirty: false,
-    name: "",
-    shareholders: [{ name: "" }],
-    arr: [],
-    arrImage:[]
-  };
-  handleSubmit = (e) => {
-    const { arr, shareholders, arrImage,price } = this.state;
-    e.preventDefault();
-    this.props.form.validateFieldsAndScroll((err, values) => {
-      if (!err) {
-        console.log('Received values of form: ', values);
-        let obj = {
-          productName:values.productname,
-          detailName:values.detailname,
-          Description:values.description,
-          Price:price,
-          Sizes:arr,
-          Details:shareholders,
-          img:arrImage
-        }
-        console.log(obj, 'objjjjjjjjjjjjj')
-        //this.postDressRecord(obj);
-      }
-    });
-  }
-  async postDressRecord(obj){
-       //let response = await HttpUtils.get('allusers');
-      const resDressUpload = await HttpUtils.post('uploaddress',obj)
-      console.log(resDressUpload,'sadasdsadsad');
-     }
+    state = {
+        confirmDirty: false,
+        name: "",
+        shareholders: [{ name: "" }],
+        arr: [],
+        previewVisible: false,
+        loader: false,
+        previewImage: '',
+        fileList: [],
+    };
 
-  handleConfirmBlur = (e) => {
-    const value = e.target.value;
-    this.setState({ confirmDirty: this.state.confirmDirty || !!value });
-  }
-  handleNameChange = evt => {
-    this.setState({ name: evt.target.value });
-  };
-  handleAddShareholder = () => {
-    this.setState({
-      shareholders: this.state.shareholders.concat([{ name: "" }])
-    });
-    //console.log(this.state.shareholder)
-  };
-  handleRemoveShareholder = idx => () => {
-    this.setState({
-      shareholders: this.state.shareholders.filter((s, sidx) => idx !== sidx)
-    });
-  };
+    handleSubmit = (e) => {        
+        e.preventDefault();
+        this.props.form.validateFieldsAndScroll((err, values) => {
+            if (!err) {
+                this.setState({loader: true})
+                this.funcForUpload(values);
+            }
+        });
+    };
 
+    async funcForUpload(values){
+        const { fileList } = this.state;
 
-  handleShareholderNameChange = idx => evt => {
-    const newShareholders = this.state.shareholders.map((shareholder, sidx) => {
-      if (idx !== sidx) return shareholder;
-      return { ...shareholder, name: evt.target.value };
-    });
-
-    this.setState({ shareholders: newShareholders });
-    console.log(newShareholders, 'llllllllllllll')
-  };
-  handleSize = e => {
-    let { arr } = this.state,
-    target = e.target.id;
-    if(arr.includes(target)){
-      arr = arr.filter((elem) => elem !== target);
-    }else {
-      arr.push(target);
+        Promise.all(fileList.map((val) => {
+            return this.uploadFile(val).then((result) => {
+                return result.body.url
+            })
+        })).then((results) => {
+            this.postDressRecord(values, results)
+        })
     }
-    this.setState({arr});
-   }
-   updateNumber = (e) => {
+
+    async postDressRecord(values, imageList){
+        const { arr, shareholders, price } = this.state,
+        obj = {
+            productName: values.productname,
+            detailName: values.detailname,
+            description: values.description,
+            price: price,
+            sizes: arr,
+            details: shareholders,
+            img: imageList
+        }
+        const resDressUpload = await HttpUtils.post('uploaddress',obj)
+        console.log(resDressUpload,'sadasdsadsad');
+    };
+
+    //--------------function for cloudnary url ---------------
+    uploadFile = (files) =>{        
+        const image = files,
+        cloudName = 'dxk0bmtei',
+        url = 'https://api.cloudinary.com/v1_1/'+cloudName+'/image/upload',
+        timestamp = Date.now()/1000,
+        uploadPreset = 'toh6r3p2',
+        paramsStr = 'timestamp='+timestamp+'&upload_preset='+uploadPreset+'U8W4mHcSxhKNRJ2_nT5Oz36T6BI',
+        signature = sha1(paramsStr),
+        params = {
+            'api_key':'878178936665133',
+            'timestamp':timestamp,
+            'upload_preset':uploadPreset,
+            'signature':signature
+        };
+
+        return new Promise((res, rej) => {
+            let uploadRequest = superagent.post(url)
+            uploadRequest.attach('file', image)
+            Object.keys(params).forEach((key) =>{
+                uploadRequest.field(key, params[key])
+            })
+
+            uploadRequest.end((err, resp) =>{
+                err ? rej(err) : res(resp);
+            })
+        })
+    }
+
+    //-----------------cloudnary function end ------------------
+
+    handleConfirmBlur = (e) => {
+        const value = e.target.value;
+        this.setState({ confirmDirty: this.state.confirmDirty || !!value });
+    };
+
+    handleNameChange = evt => {
+        this.setState({ name: evt.target.value });
+    };
+
+    handleAddShareholder = () => {
+        this.setState({
+          shareholders: this.state.shareholders.concat([{ name: "" }])
+        });
+    };
+
+    handleRemoveShareholder = idx => () => {
+        this.setState({
+          shareholders: this.state.shareholders.filter((s, sidx) => idx !== sidx)
+        });
+    };
+
+    handleShareholderNameChange = idx => evt => {
+        const newShareholders = this.state.shareholders.map((shareholder, sidx) => {
+            if (idx !== sidx) return shareholder;
+            return { ...shareholder, name: evt.target.value };
+        });
+
+        this.setState({ shareholders: newShareholders });
+    };
+
+    handleSize = e => {
+        let { arr } = this.state,
+        target = e.target.id;
+        if(arr.includes(target)){
+            arr = arr.filter((elem) => elem !== target);
+        }else {
+            arr.push(target);
+        }
+        this.setState({arr});
+    }
+
+    updateNumber = (e) => {
     const val = e.target.value;
     // If the current value passes the validity test then apply that to state
     if (e.target.validity.valid) this.setState({price: e.target.value});
@@ -87,11 +137,98 @@ class UploadDress extends Component {
     // it to some other component or data structure, but it frees up our input the way a user
     // would expect to interact with this component
     else if (val === '' || val === '-') this.setState({price: val});
-  }
-render() {
-    const { getFieldDecorator,name, shareholders  } = this.props.form;
+    }
 
-    //const { autoCompleteResult } = this.state;
+    handleCancel = () => this.setState({ previewVisible: false })
+
+    handlePreview = (file) => {
+      console.log(file, 'file 123456')
+        this.setState({
+            previewImage: file,
+            previewVisible: true,
+        });
+    }
+
+    handleChange = ({ fileList }) => this.setState({ fileList })
+
+    handleImage = (elem) => {     
+        let { fileList } = this.state,
+        self = this,
+        file = elem.target.files[0],
+        reader = new FileReader();
+
+        //Read the contents of Image File.
+        reader.readAsDataURL(file);
+        reader.onload = function (e) {
+            
+            //Initiate the JavaScript Image object.
+            var image = new Image();
+
+            //Set the Base64 string return from FileReader as source.
+            image.src = e.target.result;
+            
+            //Validate the File Height and Width.
+            image.onload = function () {
+                let height = this.height,
+                width = this.width;
+                if (height > width) {
+                    file.src = e.target.result;
+                    fileList.push(file);
+                    self.setState({ fileList });
+                    return false;
+                }
+                alert("Image must be in portrait mode.");
+                return true;
+            };
+        }
+    }
+     
+    deleteImage = (e) => {
+        let { fileList } = this.state;
+        fileList = fileList.filter((elem) => elem.src !== e.src);
+        this.setState({ fileList });
+    } 
+
+render() {
+    const { getFieldDecorator,name, shareholders  } = this.props.form,
+    { previewVisible, previewImage, fileList } = this.state;
+    
+    const uploadedImages = (
+        <div >
+            {this.state.fileList.map((elem) => {
+                return(
+                    <div className='insideDiv col-md-3'>
+                        <a className="imgContainer">
+                        <img alt='img1' 
+                            className="imgDiv"
+                            src={elem.src}                             
+                        />
+                        <span className="middle" style={{position: 'absolute', marginLeft: '-11%'}}>
+                            <a >
+                                <Icon 
+                                    title='Preview file' 
+                                    onClick={() => this.handlePreview(elem.src)}
+                                    type="eye" 
+                                    data-toggle="modal" 
+                                    data-target="#myModal"
+                                    theme="outlined"
+                                    className="inner" 
+                                />
+                            </a>
+                            <Icon 
+                                title='Remove file' 
+                                type='delete' 
+                                className="inner"
+                                onClick={() => this.deleteImage(elem)}
+                            />
+                        </span>
+                        </a>
+                    </div>
+                )
+            })}
+        </div>
+    )
+
     return (
       	<div>
           <Form onSubmit={this.handleSubmit}>
@@ -245,33 +382,41 @@ render() {
 						<div className="col-md-2 col-sm-2"><span class="input"><h3 style={{fontSize: '23px'}}>Pictures</h3><p style={{fontSize: '63%'}}>File size must not exceed to Mb</p></span></div>
 							<div className="col-md-4 col-sm-5" style={{marginTop: '1%'}}>
 								<label className="labelcustome" id="#bb"> Choose File
-    								<input type="file" id="File"   size="60" />
-    							</label><br/>
-								<label className="labelcustome" id="#bb"> Choose File
-    								<input type="file" id="File"   size="60" />
-    							</label><br/>
-								<label className="labelcustome" id="#bb"> Choose File
-    								<input type="file" id="File"   size="60" />
-    							</label>
-							</div>
-							<div className="col-md-4 col-sm-5" style={{marginTop: '1%'}}>
-								<label className="labelcustome" id="#bb"> Choose File
-    								<input type="file" id="File"   size="60" />
-    							</label><br/>
-								<label className="labelcustome" id="#bb"> Choose File
-    								<input type="file" id="File"   size="60" />
-    							</label>
-							</div>
+    								<input type="file" id="File" size="60" onChange={e => this.handleImage(e)}/>
+    							</label><br/>		
+                  	                  					
+							</div>							
 						<div className="col-md-2"></div>
 					</div>
+          <div className="row">
+              <div className="col-md-12">
+                  {fileList.length > 0 && uploadedImages}
+              </div>
+          </div>
 
+          {/* Modal Start */}
+          <div id="myModal" className="modal fade" role="dialog" style={{marginTop:'5%'}}>
+            <div className="modal-dialog">
+              <div className="modal-content" style={{width:'66%'}}>
+                <div className="modal-header">
+                  <span className="title" style={{color: 'white', textAlign: 'center'}}>
+                    Preview
+                  </span>
+                  <button type="button" className="close" data-dismiss="modal" style={{color:'white'}}>&times;</button>
+                </div>
+                <div className="modal-body">
+                  <img alt="example" style={{ width: '100%' }} src={previewImage} />
+                </div>
+              </div>
+            </div>
+          </div>
+        {/* Modal End */}          
 					<div className="row">
 						<div className="col-md-9 col-sm-8"></div>
 						<div className="col-md-3 col-sm-4">
 							<input type="submit" name="" class="button" value="post"/>
 						</div>
 					</div>
-
       			</div>
 			</div>
       </Form>
@@ -280,5 +425,6 @@ render() {
 
   }
 }
+
 const WrappedNormaluploadDressForm = Form.create()(UploadDress);
 export default WrappedNormaluploadDressForm;

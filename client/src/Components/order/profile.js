@@ -123,27 +123,30 @@ class Profile extends Component {
 								className="input"
 								Change={this.inputHandleChange}
 							/>
-							<TextInput 
+							<SelectInput 
 								label="Body Type" 
 								id="bodyType" 
 								value={this.state.bodyType} 
 								className="input"
+								options={[1,2,3,4,5]}
 								Change={this.inputHandleChange}
 							/>
-							<TextInput 
+							<SelectInput 
 								label="Occasion Atend Most" 
 								id="ocassionAttendMost" 
 								value={this.state.ocassionAttendMost} 
 								className="input"
+								options={[1,2,3,4,5]}
 								Change={this.inputHandleChange}
 							/>
-							<TextInput 
+							<SelectInput 
 								label="Typical Jean Size" 
 								id="typicalJeanSize" 
 								value={this.state.typicalJeanSize} 
 								className="input"
+								options={[1,2,3,4,5]}
 								Change={this.inputHandleChange}
-							/>						    	
+							/>	
 						</div>           						
 						<div className="row">
   							<h1 style={{fontFamily: 'Qwigley',fontSize: '200%'}}>Our All fit</h1>
