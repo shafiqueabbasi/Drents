@@ -5,8 +5,22 @@ import Home from './Components/home/index';
 import FilterPage from './Components/filter/index';
 import Productdetailfirstfold from './Components/productdetail/productdetailfirstfold';
 import Headingf8 from './Components/home/headingf8';
-import Order from './Components/order/index';
+import Profile from './Components/order/index';
+//import {BrowserRouter} from 'react-router-dom';
 import SeeChart from './Components/order/seeChart';
+import Filterpanel from './Components/filter/filterpanel';
+import { PrivateRoute } from './_components';
+//import Profile from './Components/order/'
+import LogIn from './Components/login/SignIn';
+import SignUp from './Components/login/SignUp';
+import HttpUtils from './Service/HttpUtils';
+
+import { Router, Route, BrowserRouter } from 'react-router-dom';
+
+import { history } from './_helpers';
+import Header from './Components/home/Header';
+import Footer from './Components/home/headingf8';
+
 
 class App extends Component {
 	state = {
@@ -40,16 +54,23 @@ class App extends Component {
   };
 
 
-  
+
   render() {
     return (
       <div className="App">
+			<BrowserRouter>
+	          <div>
+						<Header/>
 
-       <Productdetailfirstfold/>
-      
+	              {/*<PrivateRoute exact path="/" component={HomePage} />
+	              <PrivateRoute exact path="/about" component={AboutPage} />*/}
+	              <Route path="/" exact component={Home} />
+								<PrivateRoute path="/profile" exact component={Profile} />
+	              {/*<Route path="/register" component={RegisterPage} />*/}
+								<Footer/>
 
-        
-        
+	          </div>
+			</BrowserRouter>
       </div>
     );
 

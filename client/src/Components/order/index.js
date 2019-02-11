@@ -22,11 +22,10 @@ class Order extends Component {
 	}
 
   	render() {
-    
+
     return (
         <div>
       		<div className="App" style={{marginTop: '110px'}}>
-      		<Header displayIcon={true}/>
       			<div className="container">
       				<div className="row  hidden-xs hidden-sm">
       					<div className="col-md-1 col-md-1"></div>
@@ -113,11 +112,11 @@ class Order extends Component {
 					{this.state.orderHis && <OrderHistory/>}
 					{this.state.profile && <Profile/>}
 					{this.state.uploadDress && <UploadDress/>}
-					
-					
+
+
 				</div>
       		</div>
-      		<Footer/>
+      	
       	</div>
     );
 

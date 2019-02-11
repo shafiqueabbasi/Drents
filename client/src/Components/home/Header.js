@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
 import  './mobileheader.css';
+import Login from '../login/SignIn';
+import { Link } from "react-router-dom";
+import SignUp from '../login/SignUp';
+import { connect } from 'react-redux';
+import { userActions } from '../../_actions';
+
 class FirstPage extends Component {
   openNav = ()=>{
     document.getElementById("myNav").style.width = "100%";
@@ -8,7 +14,13 @@ class FirstPage extends Component {
     document.getElementById("myNav").style.width = "0%";
   }
 
+  logOut = () => {
+    this.props.dispatch(userActions.logout());
+  }
+
   render() {
+    const { loggedIn } = this.props;
+
     return (
       <div>
       	<div className="nav navbar navbar-fixed-top bgc">
@@ -26,16 +38,53 @@ class FirstPage extends Component {
       					    <li className="head"><a href="#" className="nav">HOME</a></li>
         				    <li className="head"><a href="#" className="nav">PRODUCT</a></li>
         				    <li className="head"><a href="#" className="nav">TESTIMONIALS</a></li>
-        				    <li className="head"><a href="#" className="nav">MY PROFILE</a></li>
-                    {this.props.displayIcon && <li className="head"><a href="#" className="nav"><img src="./images/bag.png" style={{marginTop:'-5px'}}/></a></li>}
+        				    <li className="head"><Link to={`/profile`} className="nav">MY PROFILE</Link></li>
+                    {loggedIn && <li className="head" onClick={this.logOut}><a href="#" className="nav">Log Out</a></li>}
+                    {!loggedIn && <li className="head">
+                      <a href="#" className="nav" data-toggle="modal" data-target="#SignIn">Sign In</a>
+                        <div className="modal fade" id="SignIn" role="dialog">
+                          <div className="modal-dialog">
+                            <div className="modal-content">
+                              <div className="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 className="modal-title" style={{textAlign:'center'}}>Sign In</h4>
+                              </div>
+                              <div className="modal-body">
+                                <Login />
+                              </div>
+                              <div className="modal-footer">
+                                <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    </li>}
+                    {!loggedIn && <li className="head">
+                      <a href="#" className="nav" data-toggle="modal" data-target="#SignUp">Sign Up</a>
+                        <div className="modal fade" id="SignUp" role="dialog">
+                          <div className="modal-dialog">
+                            <div className="modal-content">
+                              <div className="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 className="modal-title" style={{textAlign:'center'}}>Sign Up</h4>
+                              </div>
+                              <div className="modal-body">
+                                  <SignUp />
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+                    </li>}
+                    <li className="head"><a href="#" className="nav"><img src="./images/bag.png" style={{marginTop:'-5px'}}/></a></li>
       				    </ul>
       			    </div>
       		    </div>
       		  </div>
       	  </div>
 
-        
-        
+
+
           <div id="myNav" className="overlay visible-xs" style={{background:'#c2073fcf'}}>
             <a href="javascript:void(0)" className="closebtn" onClick={this.closeNav}>&times;</a>
             <div className="overlay-content">
@@ -63,4 +112,12 @@ class FirstPage extends Component {
   }
 }
 
-export default FirstPage;
+function mapStateToProps(state) {
+    const { loggedIn } = state.authentication;
+    return {
+        loggedIn
+    };
+}
+
+const signUpLogin = connect(mapStateToProps)(FirstPage);
+export default signUpLogin;

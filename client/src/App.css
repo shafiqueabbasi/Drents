@@ -31,6 +31,12 @@
   }
 }*/
 
+
+
+
+
+
+
  .images-text{
   
 
@@ -58,6 +64,15 @@
 .head{
   margin-top: 25px;
 }
+
+/*<----javascript---->*/
+.modal-backdrop{
+  z-index: 0;
+}
+.modal-content{
+  background-color: #c2073f;
+}
+
 .Heading{
   line-height: 4px;
   text-align: center;

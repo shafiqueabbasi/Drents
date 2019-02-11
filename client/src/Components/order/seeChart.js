@@ -16,8 +16,7 @@ class SeeChart extends Component {
 							<a href="#" class="close" data-dismiss="alert" style={{fontSize: '160%'}}>-</a>
 						</div>
 					</div>
-					       
-						<table class="table table-striped">
+					    <table class="table table-striped">
 							<thead>
 							    <tr className="active">
 									<th>Size</th>
@@ -86,28 +85,26 @@ class SeeChart extends Component {
 				</div>
 			</span>
 			<span>
-
-
-					<div className="container visible-xs" style={{fontSize: '15px'}}>
-						<div className="row">
+				<div className="container visible-xs" style={{fontSize: '15px'}}>
+					<div className="row">
 						<div className="col-xs-12">
 							<h4>Measurements<a href="#" class="close" data-dismiss="alert">-</a></h4>
 						</div>
 					</div>
-						<div style={{overflowX:'auto'}}>
-                            		<table className="table table-striped-bordered">
-									    <thead>
-									      <tr className="active">
-									        <th>Size</th>
-									        <th>Bust</th>
-									        <th>Hip</th>
-									        <th>Waist</th>
-									        <th>Front length</th>
-									        <th>Back length</th>
-									      </tr>
-									    </thead>
-									    <tbody>
-									      <tr style={{backgroundColor: '#ffffff'}}>
+					<div style={{overflowX:'auto'}}>
+                        <table className="table table-striped-bordered">
+							<thead>
+								<tr className="active">
+									<th>Size</th>
+									<th>Bust</th>
+									<th>Hip</th>
+									<th>Waist</th>
+									<th>Front length</th>
+									<th>Back length</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr style={{backgroundColor: '#ffffff'}}>
 									<td>X Small</td>
 									<td>39"</td>
 									<td>33"</td>
@@ -155,17 +152,15 @@ class SeeChart extends Component {
 									<td>26"</td>
 									<td>25"</td>
 								</tr>
-									    </tbody>
-									  </table>
-									
-								</div>
-								<div className="col-md-12">
+							</tbody>
+						</table>
+					</div>
+					<div className="col-md-12">
   						<p style={{fontSize: '15px'}}>Our Model, Erin, is 5'8 and wears a size small. She has a 32" bust, 26" waist, and 32" hips. </p>
   					</div>
-					</div>	
+				</div>	
 			</span>	
-
-      	</div>
+		</div>
     );
 
   }
