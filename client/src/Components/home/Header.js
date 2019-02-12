@@ -35,9 +35,9 @@ class FirstPage extends Component {
       		    <div className="container-fluid">
       			    <div className="col-md-8 col-sm-9  container customhover">
       				    <ul className="nav navbar-nav navbar-right customhover">
-      					    <li className="head"><a href="#" className="nav">HOME</a></li>
-        				    <li className="head"><a href="#" className="nav">PRODUCT</a></li>
-        				    <li className="head"><a href="#" className="nav">TESTIMONIALS</a></li>
+      					    <li className="head"><Link to={`/`} className="nav">HOME</Link></li>
+        				    <li className="head"><Link to={`/product`} className="nav">PRODUCT</Link></li>
+        				    <li className="head"><Link to={`/detail`} className="nav">TESTIMONIALS</Link></li>
         				    <li className="head"><Link to={`/profile`} className="nav">MY PROFILE</Link></li>
                     {loggedIn && <li className="head" onClick={this.logOut}><a href="#" className="nav">Log Out</a></li>}
                     {!loggedIn && <li className="head">

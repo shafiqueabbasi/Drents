@@ -112,7 +112,7 @@ class Filterpanel extends Component {
 						<label className="col-md-12 col-xs-12 control-label" style={{textAlign: 'centers'}}></label>
 						<div class="col-md-5 col-xs-5"></div>
 						<div className="col-md-2">
-							<button className="btn btn-danger btn-lg col-md-12"><h2 style={{margin: '0'}}>More</h2></button>
+							<button className="btn btn-danger btn-lg col-md-12"><h2 style={{margin: '0',fontFamily: 'Qwigley'}}>More</h2></button>
 						</div>
 						<div class="col-md-5"></div>
 					</div>

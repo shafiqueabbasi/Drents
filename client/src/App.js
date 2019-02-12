@@ -20,6 +20,8 @@ import { Router, Route, BrowserRouter } from 'react-router-dom';
 import { history } from './_helpers';
 import Header from './Components/home/Header';
 import Footer from './Components/home/headingf8';
+import MainPage from './Components/filter/index';
+import Product from './Components/productdetail/productdetailfirstfold';
 
 
 class App extends Component {
@@ -61,19 +63,18 @@ class App extends Component {
 			<BrowserRouter>
 	          <div>
 						<Header/>
-
 	              {/*<PrivateRoute exact path="/" component={HomePage} />
 	              <PrivateRoute exact path="/about" component={AboutPage} />*/}
 	              <Route path="/" exact component={Home} />
 								<PrivateRoute path="/profile" exact component={Profile} />
 	              {/*<Route path="/register" component={RegisterPage} />*/}
+                <Route path="/product" component={MainPage} />
+                <Route path="/detail" component={Product} />
 								<Footer/>
-
 	          </div>
 			</BrowserRouter>
       </div>
     );
-
   }
 }
 
