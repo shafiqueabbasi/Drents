@@ -2,13 +2,32 @@ import React, { Component } from 'react';
 import {
   Form, Input, Checkbox, Button, Radio, Upload, Icon, Modal
 } from 'antd';
+import { Textarea, SelectInput, TextInput } from '../_components/myInput';
 import { HttpUtils } from  '../../Service/HttpUtils';
+import moment from 'moment';
+import { DateRangePicker } from 'react-bootstrap-daterangepicker';
+import { SwatchesPicker } from 'react-color';
+import Chips, { Chip } from 'react-chips'
+// import 'bootstrap/dist/css/bootstrap.css';
+// import 'bootstrap-daterangepicker/daterangepicker.css';
 import sha1 from "sha1";
 import superagent from "superagent";
-import './uploadDress.css';
+
+
+// const RangePicker = DatePicker.RangePicker;
 
 class UploadDress extends Component {
     state = {
+        productName: '',
+        detailName: '',
+        description: '',
+        priceDay: '',
+        bodyType: '',
+        background: '#fff',  
+        from: '',
+        to: '',   
+        tags: [{ name: "" }],   
+        weather: '',
         confirmDirty: false,
         name: "",
         shareholders: [{ name: "" }],
@@ -17,6 +36,14 @@ class UploadDress extends Component {
         loader: false,
         previewImage: '',
         fileList: [],
+        typeArr: [
+            'Wedding',
+            'Party',
+            'Corporate',
+            'Special Ocasion',
+            'Family Dinner',
+        ],            
+        chips: []
     };
 
     handleSubmit = (e) => {        
@@ -189,9 +216,30 @@ class UploadDress extends Component {
         this.setState({ fileList });
     } 
 
+    onChangeDate(dates, dateStrings) {
+        this.setState({
+            dateObj: {
+                from: dateStrings[0],
+                to: dateStrings[1]
+            }
+        })
+    }
+
+    handleChangeComplete = (color) => {
+        this.setState({ background: color.hex });
+    };
+
+    inputHandleChange = (e) => {
+        this.setState({ [e.target.id]: e.target.value })
+    }
+
+    onChangeChips = chips => {
+       this.setState({ chips });
+    }
+
 render() {
     const { getFieldDecorator,name, shareholders  } = this.props.form,
-    { previewVisible, previewImage, fileList } = this.state;
+    { previewVisible, previewImage, fileList, background } = this.state;
     
     const uploadedImages = (
         <div >
@@ -238,60 +286,134 @@ render() {
       					<h1 style={{fontFamily: 'Qwigley',fontSize: '200%'}}>Upload Dress</h1>
       				</div>
       				<div className="row">
-						<div className="col-md-2 "><span class="input"><h3 style={{fontSize: '23px'}}>Product Name</h3></span></div>
-							<div className="col-md-4">
-								<div className="inputBox">
-									<div className="inputText"></div>
-                    <Form.Item>
-                      {getFieldDecorator('productname', {
-                        rules: [{ required: true, message: 'Please input your productname!', whitespace: true }],
-                      })(
-                        <Input />
-                      )}
-                    </Form.Item>
-								</div>
-							</div>
-						<div className="col-md-2"><span className="input"><h3 style={{fontSize: '23px'}}>Detail Name</h3></span></div>
-						<div className="col-md-4">
-							<div className="inputBox">
-								<div className="inputText"></div>
-                  <Form.Item>
-                    {getFieldDecorator('detailname', {
-                      rules: [{ required: true, message: 'Please input your detailname!', whitespace: true }],
-                    })(
-                      <Input />
-                    )}
-                  </Form.Item>
-							</div>
-						</div>
+						<TextInput 
+                label="Product Name" 
+                id="productName" 
+                value={this.state.productName} 
+                className="input"
+                Change={this.inputHandleChange}
+              />
+						<TextInput 
+                label="Detail Name" 
+                id="detailName" 
+                value={this.state.detailname} 
+                className="input"
+                Change={this.inputHandleChange}
+              />
 					</div>
 
 					<div className="row">
-						<div className="col-md-2 "><span class="input"><h3 style={{fontSize: '23px'}}>Discription</h3></span></div>
-							<div className="col-md-4">
-								<div className="inputBox ">
-									<div className="inputText"></div>
-                    <Form.Item>
-                      {getFieldDecorator('description', {
-                        rules: [{ required: true, message: 'Please input your description!', whitespace: true }],
-                      })(
-                        <Input />
-                      )}
-                    </Form.Item>
-								</div>
-							</div>
-						<div className="col-md-2"><span className="input"><h3 style={{fontSize: '23px'}}>Price / Day</h3></span></div>
-						<div className="col-md-4">
-							<div className="inputBox">
-								<div className="inputText"></div>
-                <Input id="price" type='tel'
-                    value={this.state.price}
-                    onChange={this.updateNumber}
-                    pattern="^-?[0-9]\d*\.?\d*$"
-                />
-							</div>
-						</div>
+						<Textarea 
+                title="Description" 
+                id="description"
+                value={this.state.description}
+                rows="4"
+                maxLength="400" 
+                style={{paddingLeft: '0px'}}/>                    					
+            <TextInput 
+                label="Price / Day" 
+                id="priceDay" 
+                value={this.state.priceDay} 
+                className="input"
+                pattern="^-?[0-9]\d*\.?\d*$"
+                Change={this.inputHandleChange}
+              />
 					</div>
+
+          <div className="row" style={{marginTop: '20px'}}>
+            <SelectInput 
+                label="Body Type" 
+                id="bodyType" 
+                value={this.state.bodyType} 
+                className="input"
+                options={this.state.typeArr}
+                Change={this.inputHandleChange}
+              />
+            <div className="col-md-2"><span className="input"><h3 style={{fontSize: '23px'}}>Color Picker</h3></span></div>
+            <div className="col-md-4">
+              <div className="inputBox">
+                  <div className="inputText"></div>
+                  <SwatchesPicker 
+                      color={ background }
+                      onChangeComplete={ this.handleChangeComplete }
+                  />              
+              </div>
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="col-md-2"><span className="input">
+                <h3 style={{fontSize: '23px'}}>
+                    From
+                </h3></span>
+            </div>
+            <div className="col-md-4">
+              <div className="inputBox">
+                  <div className="inputText"></div>
+                  <input type="date" id="from" value={this.state.from} onChange={this.inputHandleChange}/>                
+              </div>
+            </div>
+            <div className="col-md-2"><span className="input">
+                <h3 style={{fontSize: '23px'}}>
+                    To
+                </h3></span>
+            </div>
+            <div className="col-md-4">
+              <div className="inputBox">
+                  <div className="inputText"></div>
+                  <input type="date" id="to" value={this.state.to} onChange={this.inputHandleChange}/>                
+              </div>
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="col-md-2"><span className="input">
+                <h3 style={{fontSize: '23px'}}>
+                    Tags
+                </h3></span>
+            </div>
+            <div className="col-md-4">
+              <div className="inputBox">
+                  <div className="inputText"></div>
+                   {this.state.tags.map((shareholder, idx) => (
+                      <div className="shareholder">
+                        <input
+                          type="text"
+                          placeholder={`Shareholder #${idx + 1} name`}
+                          value={shareholder.name}
+                          id="shareholder"
+                          onChange={this.handleShareholderNameChange(idx)}
+                        />
+                        <button
+                          type="button"
+                          onClick={this.handleRemoveShareholder(idx)}
+                          className="btn btn-sm"
+                        style={{margin:'11px'}}>
+                          X
+                        </button>
+                      </div>
+                ))}
+                <button
+                  type="button"
+                  onClick={this.handleAddShareholder}
+                  className="button_add"
+                >
+                Add
+              </button>
+              </div>
+            </div>
+            
+            
+                  <SelectInput 
+                label="Weather" 
+                id="weather" 
+                value={this.state.weather} 
+                className="input"
+                options={["Cold Weather", "Warm Weather"]}
+                Change={this.inputHandleChange}
+              />
+              
+          </div>
 
 					<div className="row">
 						<div className="col-md-2 "><span className="input"><h3 style={{fontSize: '23px'}}>Detail</h3></span></div>

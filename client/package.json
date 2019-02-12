@@ -5,9 +5,11 @@
   "dependencies": {
     "@callstack/async-storage": "^1.1.0",
     "AsyncStorage": "^0.1.5",
-    "antd": "^3.13.0",
+    "antd": "^3.7.0",
+    "antd-init": "^2.0.6",
     "react": "^16.6.3",
     "react-bootstrap": "^0.32.4",
+    "react-bootstrap-daterangepicker": "^4.1.0",
     "react-dom": "^16.6.3",
     "react-notifications": "^1.4.3",
     "react-redux": "^6.0.0",
@@ -17,7 +19,9 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
     "sha1": "^1.1.1",
-    "superagent": "^4.1.0"
+    "superagent": "^4.1.0",
+    "react-chips": "^0.8.0",
+    "react-color": "^2.17.0"
   },
   "scripts": {
     "start": "react-scripts start",

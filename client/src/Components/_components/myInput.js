@@ -49,7 +49,9 @@ export const SelectInput = props => {
     return(
         <div>
             <label htmlFor={props.name} className="col-md-2 col-sm-2">
-                {props.label}
+                <span className="input">
+                    {props.label}
+                </span>
             </label>
             <div className="col-sm-4 col-sm-4">
                 <select required 
@@ -85,23 +87,25 @@ export const SelectInput = props => {
 //     )
 // }
 
-// export const Textarea = props => {
-//     return(
-//         <div className="col-md-12">
-//             <label htmlFor={props.name}>{props.title}</label>
-//             <textarea 
-//                 required 
-//                 rows={props.rows}
-//                 maxLength={props.maxLength} 
-//                 className="form-control" 
-//                 placeholder={props.placeholder} 
-//                 name={props.name} id={props.name} 
-//                 value={props.value} 
-//                 onChange={props.onChange}>
-//             </textarea>
-//         </div>
-//     )
-// }
+export const Textarea = props => {
+    return(
+        <div className="col-md-6" style={props.style}>
+            <label htmlFor={props.name} className="col-md-2 col-sm-2">{props.title}</label>
+            <div className="col-sm-4 col-sm-4">
+                <textarea 
+                    required 
+                    rows={props.rows}
+                    maxLength={props.maxLength} 
+                    className="col-sm-12 col-sm-12" 
+                    placeholder={props.placeholder} 
+                    name={props.name} id={props.name} 
+                    value={props.value} 
+                    onChange={props.onChange}>
+                </textarea>
+            </div>
+        </div>
+    )
+}
 
 // export const Dropzone = props => {
 //     return(
