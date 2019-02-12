@@ -38,6 +38,7 @@ class Profile extends Component {
 	}
 
 	radioHandleChange = (e) => {
+		console.log(e.target, 'targettttttttttt')
 		this.setState({ [e.target.id]: e.target.value })
 	}
 
@@ -73,6 +74,8 @@ class Profile extends Component {
 								label="Email" 
 								id="email" 
 								className="input"
+								col="col-md-2 col-sm-2"
+								col2="col-md-4 col-sm-4"
 								value={this.state.email} 
 								Change={this.inputHandleChange}
 							/>							
@@ -88,6 +91,8 @@ class Profile extends Component {
 								id="firstName" 
 								value={this.state.firstName} 
 								className="input"
+								col="col-md-2 col-sm-2"
+								col2="col-md-4 col-sm-4"
 								Change={this.inputHandleChange}
 							/>
 							<TextInput 
@@ -95,6 +100,8 @@ class Profile extends Component {
 								id="lastName" 
 								value={this.state.lastName} 
 								className="input"
+								col="col-md-2 col-sm-2"
+								col2="col-md-4 col-sm-4"
 								Change={this.inputHandleChange}
 							/>							
 						</div>							
@@ -102,52 +109,80 @@ class Profile extends Component {
   							<h1 style={{fontFamily: 'Qwigley',fontSize: '200%'}}>Fil Details</h1>
   						</div>
   						<div className="row">
-  							<TextInput 
-								label="Height" 
-								id="inputHeight" 
-								value={this.state.inputHeight} 
-								className="input"
-								Change={this.inputHandleChange}
-							/>
-							<TextInput 
-								label="Weight" 
-								id="weight" 
-								value={this.state.weight} 
-								className="input"
-								Change={this.inputHandleChange}
-							/>						    
-							<TextInput 
-								label="Bust Size" 
-								id="bustSize" 
-								value={this.state.bustSize} 
-								className="input"
-								Change={this.inputHandleChange}
-							/>
-							<SelectInput 
-								label="Body Type" 
-								id="bodyType" 
-								value={this.state.bodyType} 
-								className="input"
-								options={[1,2,3,4,5]}
-								Change={this.inputHandleChange}
-							/>
-							<SelectInput 
-								label="Occasion Atend Most" 
-								id="ocassionAttendMost" 
-								value={this.state.ocassionAttendMost} 
-								className="input"
-								options={[1,2,3,4,5]}
-								Change={this.inputHandleChange}
-							/>
-							<SelectInput 
-								label="Typical Jean Size" 
-								id="typicalJeanSize" 
-								value={this.state.typicalJeanSize} 
-								className="input"
-								options={[1,2,3,4,5]}
-								Change={this.inputHandleChange}
-							/>	
-						</div>           						
+	  						<div className="col-md-6">
+	  							<TextInput 
+									label="Height" 
+									id="inputHeight" 
+									value={this.state.inputHeight} 
+									className="input"
+									col="col-md-4 col-sm-2"
+									col2="col-md-8 col-sm-4"
+									Change={this.inputHandleChange}
+								/>
+							</div>
+							<div className="col-md-6">
+								<TextInput 
+									label="Weight" 
+									id="weight" 
+									value={this.state.weight} 
+									className="input"
+									col="col-md-4 col-sm-2"
+									col2="col-md-8 col-sm-4"
+									Change={this.inputHandleChange}
+								/>	
+							</div>
+						</div>{/*row closed*/}
+						<div className="row">
+							<div className="col-md-6">					    
+								<TextInput 
+									label="Bust Size" 
+									id="bustSize" 
+									value={this.state.bustSize} 
+									col="col-md-4 col-sm-2"
+									col2="col-md-8 col-sm-4"
+									className="input"
+									Change={this.inputHandleChange}
+								/>
+							</div>
+							<div className="col-md-6">		
+								<SelectInput 
+									label="Body Type" 
+									id="bodyType" 
+									value={this.state.bodyType} 
+									className="input"
+									col="col-md-4 col-sm-2"
+									col2="col-md-8 col-sm-4"
+									options={[1,2,3,4,5]}
+									Change={this.inputHandleChange}
+								/>
+							</div>	
+						</div>{/*row closed*/}
+						<div className="row">
+							<div className="col-md-6">	
+								<SelectInput 
+									label="Occasion Atend Most" 
+									id="ocassionAttendMost" 
+									value={this.state.ocassionAttendMost} 
+									className="input"
+									col="col-md-4 col-sm-2"
+									col2="col-md-8 col-sm-4"
+									options={[1,2,3,4,5]}
+									Change={this.inputHandleChange}
+								/>
+							</div>
+							<div className="col-md-6">		
+								<SelectInput 
+									label="Typical Jean Size" 
+									id="typicalJeanSize" 
+									value={this.state.typicalJeanSize} 
+									className="input"
+									col="col-md-4 col-sm-2"
+									col2="col-md-8 col-sm-4"
+									options={[1,2,3,4,5]}
+									Change={this.inputHandleChange}
+								/>
+							</div>		
+						</div>{/*row closed*/}           						
 						<div className="row">
   							<h1 style={{fontFamily: 'Qwigley',fontSize: '200%'}}>Our All fit</h1>
   						</div>
