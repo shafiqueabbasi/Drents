@@ -93,7 +93,7 @@ export const Textarea = props => {
             <label htmlFor={props.name} className="col-md-2 col-sm-2">{props.title}</label>
             <div className="col-sm-4 col-sm-4">
                 <textarea 
-                    required 
+                    id={props.id}
                     rows={props.rows}
                     maxLength={props.maxLength} 
                     className="col-sm-12 col-sm-12" 

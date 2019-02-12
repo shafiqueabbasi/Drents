@@ -1,20 +1,11 @@
 import React, { Component } from 'react';
-import {
-  Form, Input, Checkbox, Button, Radio, Upload, Icon, Modal
-} from 'antd';
+import { Form } from 'antd';
 import { Textarea, SelectInput, TextInput } from '../_components/myInput';
 import { HttpUtils } from  '../../Service/HttpUtils';
-import moment from 'moment';
-import { DateRangePicker } from 'react-bootstrap-daterangepicker';
+import { Shareholder, UploadedImages } from '../productdetail/ColorPicker';
 import { SwatchesPicker } from 'react-color';
-import Chips, { Chip } from 'react-chips'
-// import 'bootstrap/dist/css/bootstrap.css';
-// import 'bootstrap-daterangepicker/daterangepicker.css';
 import sha1 from "sha1";
 import superagent from "superagent";
-
-
-// const RangePicker = DatePicker.RangePicker;
 
 class UploadDress extends Component {
     state = {
@@ -28,9 +19,7 @@ class UploadDress extends Component {
         to: '',   
         tags: [{ name: "" }],   
         weather: '',
-        confirmDirty: false,
-        name: "",
-        shareholders: [{ name: "" }],
+        details: [{ name: "" }],
         arr: [],
         previewVisible: false,
         loader: false,
@@ -43,17 +32,19 @@ class UploadDress extends Component {
             'Special Ocasion',
             'Family Dinner',
         ],            
-        chips: []
     };
 
     handleSubmit = (e) => {        
         e.preventDefault();
-        this.props.form.validateFieldsAndScroll((err, values) => {
-            if (!err) {
-                this.setState({loader: true})
-                this.funcForUpload(values);
-            }
-        });
+        const { productName, detailName, description, priceDay, bodyType, background,
+              from, to, tags, weather, details, arr, fileList} = this.state;
+        // let obj = {
+          if(!!productName && !!detailName && !!description && !!priceDay && !!bodyType && 
+              !!from && !!to && !!details && !!arr && !!fileList){
+            console.log('kkkkkkkkkkkkk')
+          }
+        // }   
+        console.log('objjjjjjjjjjjjj')   
     };
 
     async funcForUpload(values){
@@ -114,36 +105,6 @@ class UploadDress extends Component {
 
     //-----------------cloudnary function end ------------------
 
-    handleConfirmBlur = (e) => {
-        const value = e.target.value;
-        this.setState({ confirmDirty: this.state.confirmDirty || !!value });
-    };
-
-    handleNameChange = evt => {
-        this.setState({ name: evt.target.value });
-    };
-
-    handleAddShareholder = () => {
-        this.setState({
-          shareholders: this.state.shareholders.concat([{ name: "" }])
-        });
-    };
-
-    handleRemoveShareholder = idx => () => {
-        this.setState({
-          shareholders: this.state.shareholders.filter((s, sidx) => idx !== sidx)
-        });
-    };
-
-    handleShareholderNameChange = idx => evt => {
-        const newShareholders = this.state.shareholders.map((shareholder, sidx) => {
-            if (idx !== sidx) return shareholder;
-            return { ...shareholder, name: evt.target.value };
-        });
-
-        this.setState({ shareholders: newShareholders });
-    };
-
     handleSize = e => {
         let { arr } = this.state,
         target = e.target.id;
@@ -155,31 +116,21 @@ class UploadDress extends Component {
         this.setState({arr});
     }
 
-    updateNumber = (e) => {
-    const val = e.target.value;
-    // If the current value passes the validity test then apply that to state
-    if (e.target.validity.valid) this.setState({price: e.target.value});
-    // If the current val is just the negation sign, or it's been provided an empty string,
-    // then apply that value to state - we still have to validate this input before processing
-    // it to some other component or data structure, but it frees up our input the way a user
-    // would expect to interact with this component
-    else if (val === '' || val === '-') this.setState({price: val});
-    }
-
-    handleCancel = () => this.setState({ previewVisible: false })
-
     handlePreview = (file) => {
-      console.log(file, 'file 123456')
         this.setState({
             previewImage: file,
             previewVisible: true,
         });
     }
 
-    handleChange = ({ fileList }) => this.setState({ fileList })
+    deleteImage = (e) => {
+        let { fileList } = this.state;
+        fileList = fileList.filter((elem) => elem.src !== e.src);
+        this.setState({ fileList });
+    }
 
     handleImage = (elem) => {     
-        let { fileList } = this.state,
+        let { fileList } = this.state,        
         self = this,
         file = elem.target.files[0],
         reader = new FileReader();
@@ -208,22 +159,7 @@ class UploadDress extends Component {
                 return true;
             };
         }
-    }
-     
-    deleteImage = (e) => {
-        let { fileList } = this.state;
-        fileList = fileList.filter((elem) => elem.src !== e.src);
-        this.setState({ fileList });
     } 
-
-    onChangeDate(dates, dateStrings) {
-        this.setState({
-            dateObj: {
-                from: dateStrings[0],
-                to: dateStrings[1]
-            }
-        })
-    }
 
     handleChangeComplete = (color) => {
         this.setState({ background: color.hex });
@@ -233,49 +169,12 @@ class UploadDress extends Component {
         this.setState({ [e.target.id]: e.target.value })
     }
 
-    onChangeChips = chips => {
-       this.setState({ chips });
+    handleCard = (e, f) => {
+      this.setState({ [e]: f })
     }
 
 render() {
-    const { getFieldDecorator,name, shareholders  } = this.props.form,
-    { previewVisible, previewImage, fileList, background } = this.state;
-    
-    const uploadedImages = (
-        <div >
-            {this.state.fileList.map((elem) => {
-                return(
-                    <div className='insideDiv col-md-3'>
-                        <a className="imgContainer">
-                        <img alt='img1' 
-                            className="imgDiv"
-                            src={elem.src}                             
-                        />
-                        <span className="middle" style={{position: 'absolute', marginLeft: '-11%'}}>
-                            <a >
-                                <Icon 
-                                    title='Preview file' 
-                                    onClick={() => this.handlePreview(elem.src)}
-                                    type="eye" 
-                                    data-toggle="modal" 
-                                    data-target="#myModal"
-                                    theme="outlined"
-                                    className="inner" 
-                                />
-                            </a>
-                            <Icon 
-                                title='Remove file' 
-                                type='delete' 
-                                className="inner"
-                                onClick={() => this.deleteImage(elem)}
-                            />
-                        </span>
-                        </a>
-                    </div>
-                )
-            })}
-        </div>
-    )
+    const { previewVisible, previewImage, fileList, background, tags, details } = this.state;
 
     return (
       	<div>
@@ -286,49 +185,59 @@ render() {
       					<h1 style={{fontFamily: 'Qwigley',fontSize: '200%'}}>Upload Dress</h1>
       				</div>
       				<div className="row">
-						<TextInput 
-                label="Product Name" 
-                id="productName" 
-                value={this.state.productName} 
-                className="input"
-                Change={this.inputHandleChange}
-              />
-						<TextInput 
-                label="Detail Name" 
-                id="detailName" 
-                value={this.state.detailname} 
-                className="input"
-                Change={this.inputHandleChange}
-              />
-					</div>
-
+                <div className="col-md-6">
+      						<TextInput 
+                      label="Product Name" 
+                      id="productName" 
+                      value={this.state.productName} 
+                      className="input"
+                      Change={this.inputHandleChange}
+                    />
+                </div>
+                <div className="col-md-6">    
+      						<TextInput 
+                      label="Detail Name" 
+                      id="detailName" 
+                      value={this.state.detailname} 
+                      className="input"
+                      Change={this.inputHandleChange}
+                    />
+				        </div>
+            </div>
 					<div className="row">
-						<Textarea 
-                title="Description" 
-                id="description"
-                value={this.state.description}
-                rows="4"
-                maxLength="400" 
-                style={{paddingLeft: '0px'}}/>                    					
-            <TextInput 
-                label="Price / Day" 
-                id="priceDay" 
-                value={this.state.priceDay} 
-                className="input"
-                pattern="^-?[0-9]\d*\.?\d*$"
-                Change={this.inputHandleChange}
-              />
+            <div className="col-md-6">
+  						<Textarea 
+                  title="Description" 
+                  id="description"
+                  value={this.state.description}
+                  rows="4"
+                  maxLength="400" 
+                  onChange={e => this.setState({description: e.target.value})}
+                  style={{paddingLeft: '0px'}}/> 
+            </div>
+            <div className="col-md-6">                         					
+              <TextInput 
+                  label="Price / Day" 
+                  id="priceDay" 
+                  value={this.state.priceDay} 
+                  className="input"
+                  pattern="^-?[0-9]\d*\.?\d*$"
+                  Change={this.inputHandleChange}
+                />
+            </div>    
 					</div>
 
           <div className="row" style={{marginTop: '20px'}}>
-            <SelectInput 
-                label="Body Type" 
-                id="bodyType" 
-                value={this.state.bodyType} 
-                className="input"
-                options={this.state.typeArr}
-                Change={this.inputHandleChange}
-              />
+            <div className="col-md-6">
+              <SelectInput 
+                  label="Body Type" 
+                  id="bodyType" 
+                  value={this.state.bodyType} 
+                  className="input"
+                  options={this.state.typeArr}
+                  Change={this.inputHandleChange}
+                />
+            </div>    
             <div className="col-md-2"><span className="input"><h3 style={{fontSize: '23px'}}>Color Picker</h3></span></div>
             <div className="col-md-4">
               <div className="inputBox">
@@ -366,87 +275,30 @@ render() {
             </div>
           </div>
 
-          <div className="row">
-            <div className="col-md-2"><span className="input">
-                <h3 style={{fontSize: '23px'}}>
-                    Tags
-                </h3></span>
-            </div>
-            <div className="col-md-4">
-              <div className="inputBox">
-                  <div className="inputText"></div>
-                   {this.state.tags.map((shareholder, idx) => (
-                      <div className="shareholder">
-                        <input
-                          type="text"
-                          placeholder={`Shareholder #${idx + 1} name`}
-                          value={shareholder.name}
-                          id="shareholder"
-                          onChange={this.handleShareholderNameChange(idx)}
-                        />
-                        <button
-                          type="button"
-                          onClick={this.handleRemoveShareholder(idx)}
-                          className="btn btn-sm"
-                        style={{margin:'11px'}}>
-                          X
-                        </button>
-                      </div>
-                ))}
-                <button
-                  type="button"
-                  onClick={this.handleAddShareholder}
-                  className="button_add"
-                >
-                Add
-              </button>
-              </div>
-            </div>
-            
-            
-                  <SelectInput 
-                label="Weather" 
-                id="weather" 
-                value={this.state.weather} 
-                className="input"
-                options={["Cold Weather", "Warm Weather"]}
-                Change={this.inputHandleChange}
+          <div className="row">          
+            <Shareholder 
+                label="Tags" 
+                id="tags" 
+                onChange={this.handleCard}
               />
-              
+            <div className="col-md-6">
+                <SelectInput 
+                    label="Weather" 
+                    id="weather" 
+                    value={this.state.weather} 
+                    className="input"
+                    options={["Cold Weather", "Warm Weather"]}
+                    Change={this.inputHandleChange}
+                />
+            </div>
           </div>
 
-					<div className="row">
-						<div className="col-md-2 "><span className="input"><h3 style={{fontSize: '23px'}}>Detail</h3></span></div>
-							<div className="col-md-4">
-								<div className="inputBox ">
-									<div className="inputText"></div>
-                  {this.state.shareholders.map((shareholder, idx) => (
-                      <div className="shareholder">
-                        <input
-                          type="text"
-                          placeholder={`Shareholder #${idx + 1} name`}
-                          value={shareholder.name}
-                          id="shareholder"
-                          onChange={this.handleShareholderNameChange(idx)}
-                        />
-                        <button
-                          type="button"
-                          onClick={this.handleRemoveShareholder(idx)}
-                          className="btn btn-sm"
-                        style={{margin:'11px'}}>
-                          X
-                        </button>
-                      </div>
-                ))}
-                <button
-                  type="button"
-                  onClick={this.handleAddShareholder}
-                  className="button_add"
-                >
-                Add
-              </button>
-								</div>
-							</div>
+					<div className="row">					
+            <Shareholder 
+                label="Details" 
+                id="details" 
+                onChange={this.handleCard}
+            />
 						<div className="col-md-2 col-sm-4"><span className="input"><h3 style={{fontSize: '22px'}}>Sizes Available</h3></span></div>
 						<div className="col-md-4 col-sm-8">
 							<div className="col-md-6 col-sm-6" style={{marginTop: '5%'}}>
@@ -504,15 +356,23 @@ render() {
 						<div className="col-md-2 col-sm-2"><span class="input"><h3 style={{fontSize: '23px'}}>Pictures</h3><p style={{fontSize: '63%'}}>File size must not exceed to Mb</p></span></div>
 							<div className="col-md-4 col-sm-5" style={{marginTop: '1%'}}>
 								<label className="labelcustome" id="#bb"> Choose File
-    								<input type="file" id="File" size="60" onChange={e => this.handleImage(e)}/>
-    							</label><br/>		
-                  	                  					
+    								<input 
+                        type="file" 
+                        id="File" 
+                        size="60" 
+                        onChange={e => this.handleImage(e)}
+                      />
+    							</label><br/>		                  	                  					
 							</div>							
 						<div className="col-md-2"></div>
 					</div>
           <div className="row">
               <div className="col-md-12">
-                  {fileList.length > 0 && uploadedImages}
+                  {fileList.length > 0 && <UploadedImages 
+                      fileList={fileList}
+                      handlePreview={this.handlePreview}
+                      deleteImage={this.deleteImage}/>
+                  }
               </div>
           </div>
 
@@ -548,5 +408,4 @@ render() {
   }
 }
 
-const WrappedNormaluploadDressForm = Form.create()(UploadDress);
-export default WrappedNormaluploadDressForm;
+export default UploadDress;
