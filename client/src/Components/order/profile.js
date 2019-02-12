@@ -1,234 +1,302 @@
 import React, { Component } from 'react';
+import { Form, Input, Button, AutoComplete, Modal, Radio } from 'antd';
+import ChangePassword from './changePassword';
+import { TextInput, RadioInput, SelectInput } from '../_components/myInput';
+import { HttpUtils } from  '../../Service/HttpUtils';
+import { connect } from 'react-redux';
+import './profile.css';
+
+const AutoCompleteOption = AutoComplete.Option;
 
 class Profile extends Component {
+	state = {
+		email: '',
+		firstName: '',
+		lastName: '',
+		inputHeight:'',
+		weight:'',
+		bustSize:'',
+		bodyType:'',
+		ocassionAttendMost:'',
+		typicalJeanSize:'',
+		bust: '',
+		hips: '',
+		torso: '',
+		ribcage: '',
+		height: '',
+		userId: '',
+		profileId: ''
+	};
+
+	componentDidMount(){
+		const { _id, email } = this.props.user;
+		this.setState({userId: _id, email})
+	}
+
+	inputHandleChange = (e) => {
+		this.setState({ [e.target.id]: e.target.value })
+	}
+
+	radioHandleChange = (e) => {
+		this.setState({ [e.target.id]: e.target.value })
+	}
+
+	handleSubmit = (e) => {
+		e.preventDefault();
+		const {email, firstName, lastName, inputHeight, weight, bustSize, height, bodyType,
+			ocassionAttendMost, typicalJeanSize, bust, hips, torso, ribcage, userId} = this.state;
+		let obj = {
+			email, firstName, lastName, inputHeight, weight, bustSize, height, bodyType,
+			ocassionAttendMost, typicalJeanSize, bust, hips, torso, ribcage, userId
+		}	
+		this.submit(obj)
+	}
+
+	async submit(obj){
+		let res = await HttpUtils.post('uploadprofile', obj);
+		console.log(res, 'resssssssssss')
+	}
+
   render() {
+    const { getFieldDecorator } = this.props.form;
     
     return (
       	<div>
       		<div className="container-fluid">
       			<div className="col-md-12">
       				<div className="row">
-      					<h1 style={{fontFamily: 'Qwigley',fontSize: '200%'}}>Profile</h1>
+      					<h1 style={{fontFamily:'Qwigley',fontSize:'200%'}}>Profile</h1>
       				</div>
-      					<form>
-							<div class="row">
-						    	<div class="col-md-2 col-sm-2"><span class="input"><h3>Email</h3></span></div>
-								<div class="col-sm-4 col-sm-4">
-									<div class="inputBox ">
-										<div class="inputText"></div>
-										<input type="text" name="" class="input"/>
-									</div>
+  					<Form onSubmit={this.handleSubmit}>
+						<div className="row">
+							<TextInput 
+								label="Email" 
+								id="email" 
+								className="input"
+								value={this.state.email} 
+								Change={this.inputHandleChange}
+							/>							
+							<div className="col-md-2 col-sm-2"><span className="input"><h3>Change Password</h3></span></div>
+							<div className="col-md-4 col-sm-4">
+								<div className="inputBox">
+									<div className="inputText"></div>
+								    <ChangePassword user={this.props.user.email}/>
 								</div>
-								<div className="col-md-2 col-sm-2"><span class="input"><h3>Change Password</h3></span></div>
-								<div class="col-md-4 col-sm-4">
-									<div class="inputBox">
-										<div class="inputText"></div>
-										<input type="text" name="" class="input"/>
-									</div>
-								</div>
+							</div>							
+							<TextInput 
+								label="First Name" 
+								id="firstName" 
+								value={this.state.firstName} 
+								className="input"
+								Change={this.inputHandleChange}
+							/>
+							<TextInput 
+								label="Last Name" 
+								id="lastName" 
+								value={this.state.lastName} 
+								className="input"
+								Change={this.inputHandleChange}
+							/>							
+						</div>							
+						<div className="row">
+  							<h1 style={{fontFamily: 'Qwigley',fontSize: '200%'}}>Fil Details</h1>
+  						</div>
+  						<div className="row">
+  							<TextInput 
+								label="Height" 
+								id="inputHeight" 
+								value={this.state.inputHeight} 
+								className="input"
+								Change={this.inputHandleChange}
+							/>
+							<TextInput 
+								label="Weight" 
+								id="weight" 
+								value={this.state.weight} 
+								className="input"
+								Change={this.inputHandleChange}
+							/>						    
+							<TextInput 
+								label="Bust Size" 
+								id="bustSize" 
+								value={this.state.bustSize} 
+								className="input"
+								Change={this.inputHandleChange}
+							/>
+							<SelectInput 
+								label="Body Type" 
+								id="bodyType" 
+								value={this.state.bodyType} 
+								className="input"
+								options={[1,2,3,4,5]}
+								Change={this.inputHandleChange}
+							/>
+							<SelectInput 
+								label="Occasion Atend Most" 
+								id="ocassionAttendMost" 
+								value={this.state.ocassionAttendMost} 
+								className="input"
+								options={[1,2,3,4,5]}
+								Change={this.inputHandleChange}
+							/>
+							<SelectInput 
+								label="Typical Jean Size" 
+								id="typicalJeanSize" 
+								value={this.state.typicalJeanSize} 
+								className="input"
+								options={[1,2,3,4,5]}
+								Change={this.inputHandleChange}
+							/>	
+						</div>           						
+						<div className="row">
+  							<h1 style={{fontFamily: 'Qwigley',fontSize: '200%'}}>Our All fit</h1>
+  						</div>
+  						<div className="row">
+  							<div className="col-md-4 col-sm-4">      								
+  								<h2>Bust</h2>
+  								<RadioInput 
+  									label="Small Bust" 
+  									for="bust" 
+									name="bust-checkbox"
+									value="Small Bust"
+									onChange={this.radioHandleChange}
+								/>
+  								<RadioInput 
+	  								label="Large Bust" 
+	  								for="bust" 
+									name="bust-checkbox"
+									value="Large Bust"
+									onChange={this.radioHandleChange}
+								/>
+  								<RadioInput 
+  									label="Average" 
+  									for="bust" 
+									name="bust-checkbox"
+									value="Average"
+									onChange={this.radioHandleChange}
+								/>      								
 							</div>
-
-							<div class="row">
-						    	<div class="col-md-2 col-sm-2"><span class="input"><h3>First Name</h3></span></div>
-								<div class="col-sm-4 col-sm-4">
-									<div class="inputBox ">
-										<div class="inputText"></div>
-										<input type="text" name="" class="input"/>
-									</div>
-								</div>
-								<div className="col-md-2 col-sm-2"><span class="input"><h3>Last Name</h3></span></div>
-								<div class="col-md-4 col-sm-4">
-									<div class="inputBox">
-										<div class="inputText"></div>
-										<input type="text" name="" class="input"/>
-									</div>
-								</div>
+  							<div className="col-md-4 col-sm-4">
+  								<h2>Hips</h2>
+  								<RadioInput 
+  									label="Narrow Hips" 
+  									for="hips" 
+									name="hips-checkbox"
+									value="Narrow Hips"
+									onChange={this.radioHandleChange}
+								/>
+  								<RadioInput 
+  									label="Wide Hips" 
+  									for="hips" 
+									name="hips-checkbox"
+									value="Wide Hips"
+									onChange={this.radioHandleChange}
+								/>
+  								<RadioInput 
+	  								label="Average" 
+	  								for="hips" 
+  									name="hips-checkbox"
+  									value="Average"
+  									onChange={this.radioHandleChange}
+  								/>       								
 							</div>
-
-							<div class="row">
-								<div className="col-md-9 col-sm-8"></div>
-								<div class="col-md-3 col-sm-4">
-									<input type="submit" name="" class="button" value="Save Changes"/>
-								</div>
+  							<div className="col-md-4 col-sm-4">
+  								<h2>Torso</h2>
+  								<RadioInput 
+	  								label="Short Torso" 
+	  								for="torso" 
+  									name="torso-checkbox"
+  									value="Short Torso"
+  									onChange={this.radioHandleChange}
+  								/>
+  								<RadioInput 
+	  								label="Large Torso" 
+	  								for="torso" 
+  									name="torso-checkbox"
+  									value="Large Torso"
+  									onChange={this.radioHandleChange}
+  								/>
+  								<RadioInput 
+	  								label="Average" 
+	  								for="torso" 
+  									name="torso-checkbox"
+  									value="Average"
+  									onChange={this.radioHandleChange}
+  								/>     								
+  							</div>							
+							<div className="col-md-4 col-sm-4">
+  								<h2>Ribcage</h2>
+  								<RadioInput 
+	  								label="Narrow Ribcage" 
+	  								for="ribcage" 
+  									name="ribcage-checkbox"
+  									value="Narrow Ribcage"
+  									onChange={this.radioHandleChange}
+  								/>
+  								<RadioInput 
+	  								label="Wide Ribcage" 
+	  								for="ribcage" 
+  									name="ribcage-checkbox"
+  									value="Wide Ribcage"
+  									onChange={this.radioHandleChange}
+  								/>
+  								<RadioInput 
+	  								label="Average" 
+	  								for="ribcage" 
+  									name="ribcage-checkbox"
+  									value="Average"
+  									onChange={this.radioHandleChange}
+  								/>      								
 							</div>
-							<div className="row">
-      							<h1 style={{fontFamily: 'Qwigley',fontSize: '200%'}}>Fil Details</h1>
-      						</div>
-
-      						<div class="row">
-						    	<div class="col-md-2 col-sm-2"><span class="input"><h3>Height</h3></span></div>
-								<div class="col-sm-4 col-sm-4">
-									<div class="inputBox ">
-										<div class="inputText"></div>
-										<input type="text" name="" class="input"/>
-									</div>
-								</div>
-								<div className="col-md-2 col-sm-2"><span class="input"><h3>Weight</h3></span></div>
-								<div class="col-md-4 col-sm-4">
-									<div class="inputBox">
-										<div class="inputText"></div>
-										<input type="text" name="" class="input"/>
-									</div>
-								</div>
+							<div className="col-md-4 col-sm-4">
+  								<h2>Height</h2>
+  								<RadioInput 
+	  								label="Petite" 
+	  								for="height" 
+  									name="height-checkbox"
+  									value="Petite"
+  									onChange={this.radioHandleChange}
+  								/>
+  								<RadioInput 
+	  								label="Tall" 
+	  								for="height" 
+  									name="height-checkbox"
+  									value="Tall"
+  									onChange={this.radioHandleChange}
+  								/>
+  								<RadioInput 
+	  								label="Average" 
+	  								for="height" 
+  									name="height-checkbox"
+  									value="Average"
+  									onChange={this.radioHandleChange}
+  								/>      								
 							</div>
-
-							<div class="row">
-						    	<div class="col-md-2 col-sm-2"><span class="input"><h3>Bust Size</h3></span></div>
-								<div class="col-sm-4 col-sm-4">
-									<div class="inputBox ">
-										<div class="inputText"></div>
-										<input type="text" name="" class="input"/>
-									</div>
-								</div>
-								<div className="col-md-2 col-sm-2"><span class="input"><h3>Body Type</h3></span></div>
-								<div class="col-md-4 col-sm-4">
-									<div class="inputBox">
-										<div class="inputText"></div>
-										<input type="text" name="" class="input"/>
-									</div>
-								</div>
-								<div className="col-md-2 col-sm-2"><span class="input"><h3>Occasion Atend Most</h3></span></div>
-								<div class="col-md-4 col-sm-4">
-									<div class="inputBox">
-										<div class="inputText"></div>
-										<input type="text" name="" class="input"/>
-									</div>
-								</div>
-								<div className="col-md-2 col-sm-2"><span class="input"><h3>Typical Jean Size</h3></span></div>
-								<div class="col-md-4 col-sm-4">
-									<div class="inputBox">
-										<div class="inputText"></div>
-										<input type="text" name="" class="input"/>
-									</div>
-								</div>
+							<div className="col-md-4 col-sm-4"></div>
+						</div>
+						<div className="row">
+							<div className="col-md-9 col-sm-8"></div>
+							<div className="col-md-3 col-sm-4">
+								<input type="submit" name="" className="button" value="Save Changes" onClick={this.handleSubmit}/>
 							</div>
-
-							<div class="row">
-								<div className="col-md-9 col-sm-8"></div>
-								<div class="col-md-3 col-sm-4">
-									<input type="submit" name="" class="button" value="Save Changes"/>
-								</div>
-							</div>
-							<div className="row">
-      							<h1 style={{fontFamily: 'Qwigley',fontSize: '200%'}}>Our All fit</h1>
-      						</div>
-      						<div className="row">
-      							<div className="col-md-4 col-sm-4">
-      								<h2>Bust</h2>
-      								<label className="container">
-									  <input type="checkbox" id="checkbox" style={{position: 'absolute', opacity: '0', cursor: 'pointer', height: '0', width: '0'}}/>
-									  <span className="checkmark"></span>
-									  <h4>Small Bust</h4>
-									</label>
-									<label className="container">
-									  <input type="checkbox" style={{position: 'absolute', opacity: '0', cursor: 'pointer', height: '0', width: '0'}}/>
-									  <span className="checkmark"></span>
-									  <h4>Large Bust</h4>
-									</label>
-									<label className="container">
-									  <input type="checkbox" style={{position: 'absolute', opacity: '0', cursor: 'pointer', height: '0', width: '0'}}/>
-									  <span className="checkmark"></span>
-									  <h4>Average</h4>
-									</label>
-								</div>
-
-      							<div className="col-md-4 col-sm-4">
-      								<h2>Hips</h2>
-      								<label className="container">
-									  <input type="checkbox" id="checkbox" style={{position: 'absolute', opacity: '0', cursor: 'pointer', height: '0', width: '0'}}/>
-									  <span className="checkmark"></span>
-									  <h4>Narrow Hips</h4>
-									</label>
-									<label className="container">
-									  <input type="checkbox" style={{position: 'absolute', opacity: '0', cursor: 'pointer', height: '0', width: '0'}}/>
-									  <span className="checkmark"></span>
-									  <h4>Wide Hips</h4>
-									</label>
-									<label className="container">
-									  <input type="checkbox" style={{position: 'absolute', opacity: '0', cursor: 'pointer', height: '0', width: '0'}}/>
-									  <span className="checkmark"></span>
-									  <h4>Average</h4>
-									</label>
-								</div>
-
-      							<div className="col-md-4 col-sm-4">
-      								<h2>Torso</h2>
-      								<label className="container">
-									  <input type="checkbox" id="checkbox" style={{position: 'absolute', opacity: '0', cursor: 'pointer', height: '0', width: '0'}}/>
-									  <span className="checkmark"></span>
-									  <h4>Short Torso</h4>
-									</label>
-									<label className="container">
-									  <input type="checkbox" style={{position: 'absolute', opacity: '0', cursor: 'pointer', height: '0', width: '0'}}/>
-									  <span className="checkmark"></span>
-									  <h4>Large Torso</h4>
-									</label>
-									<label className="container">
-									  <input type="checkbox" style={{position: 'absolute', opacity: '0', cursor: 'pointer', height: '0', width: '0'}}/>
-									  <span className="checkmark"></span>
-									  <h4>Average</h4>
-									</label>
-									
-      							</div>
-    								
-							</div>
-							<div className="row">
-								<div className="col-md-4 col-sm-4">
-      								<h2>Ribcage</h2>
-      								<label className="container">
-									  <input type="checkbox" id="checkbox" style={{position: 'absolute', opacity: '0', cursor: 'pointer', height: '0', width: '0'}}/>
-									  <span className="checkmark"></span>
-									  <h4>Narrow Ribcage</h4>
-									</label>
-									<label className="container">
-									  <input type="checkbox" style={{position: 'absolute', opacity: '0', cursor: 'pointer', height: '0', width: '0'}}/>
-									  <span className="checkmark"></span>
-									  <h4>Wide Ribcage</h4>
-									</label>
-									<label className="container">
-									  <input type="checkbox" style={{position: 'absolute', opacity: '0', cursor: 'pointer', height: '0', width: '0'}}/>
-									  <span className="checkmark"></span>
-									  <h4>Average</h4>
-									</label>
-								</div>
-
-								<div className="col-md-4 col-sm-4">
-      								<h2>Height</h2>
-      								<label className="container">
-									  <input type="checkbox" id="checkbox" style={{position: 'absolute', opacity: '0', cursor: 'pointer', height: '0', width: '0'}}/>
-									  <span className="checkmark"></span>
-									  <h4>Petite</h4>
-									</label>
-									<label className="container">
-									  <input type="checkbox" style={{position: 'absolute', opacity: '0', cursor: 'pointer', height: '0', width: '0'}}/>
-									  <span className="checkmark"></span>
-									  <h4>Tall</h4>
-									</label>
-									<label className="container">
-									  <input type="checkbox" style={{position: 'absolute', opacity: '0', cursor: 'pointer', height: '0', width: '0'}}/>
-									  <span className="checkmark"></span>
-									  <h4>Average</h4>
-									</label>
-								</div>
-
-								<div className="col-md-4 col-sm-4"></div>
-							</div>
-
-							<div class="row">
-								<div className="col-md-9 col-sm-8"></div>
-								<div class="col-md-3 col-sm-4">
-									<input type="submit" name="" class="button" value="Save Changes"/>
-								</div>
-							</div>
-
-						</form>
+						</div>
+					</Form>
 				</div>
       		</div>
-
       	</div>
     );
-
   }
 }
 
-export default Profile;
+const WrappedNormalProfileForm = Form.create()(Profile);
+
+function mapStateToProps(state) {
+	// console.log(state, 'stateeeeeee')
+    const { user } = state.authentication;
+    return {
+        user
+    };
+}
+
+const connectedProfilePage = connect(mapStateToProps)(WrappedNormalProfileForm);
+export default connectedProfilePage;

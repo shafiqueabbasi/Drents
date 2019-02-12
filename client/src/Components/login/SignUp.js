@@ -7,7 +7,6 @@ import { connect } from 'react-redux';
 
 const AutoCompleteOption = AutoComplete.Option;
 
-
 class SignUp extends Component {
     constructor(props) {
         super(props);
@@ -19,16 +18,17 @@ class SignUp extends Component {
         // this.handleChange = this.handleChange.bind(this);
         // this.handleSubmit = this.handleSubmit.bind(this);
     }
-  
+
     handleSubmit = (e) => {
         e.preventDefault();
         this.props.form.validateFieldsAndScroll((err, values) => {
             if (!err) {
                 console.log('Received values of form: ', values);
-                this.props.dispatch(userActions.register(values, (token) => {                
+                  this.props.dispatch(userActions.register(values, (token) => {
+                    console.log(token,'ressssssppppponnsss')
                   localStorage.setItem('user', JSON.stringify(token));
                 }));
-                
+
             }
         });
     }
@@ -164,6 +164,7 @@ class SignUp extends Component {
 
   }
 }
+
 const WrappedNormalSignupForm = Form.create()(SignUp);
 // export default WrappedNormalSignupForm;
 
