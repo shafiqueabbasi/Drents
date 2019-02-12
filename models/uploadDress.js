@@ -10,8 +10,12 @@ const uploadDressSchema = new Schema({
   price:{ type:String },
   details:{type:Array},
   sizes:{ type:Array },
-  imgArray:{ type:Array },
+  fileList:{ type:Array },
   userId:{ type:String },
+  tags:{ type:Array },
+  from:{ type:String },
+  to:{ type:String },
+  weather:{ type:String }
 });
 
 //model class
