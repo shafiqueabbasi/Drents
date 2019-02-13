@@ -34,6 +34,7 @@ export const TextInput = props => {
                 <div className="inputBox ">
                     <div className="inputText"></div>                    
                     <input 
+                        required={props.required}
                         id={props.id} 
                         value={props.value} 
                         className={props.className}
@@ -92,7 +93,8 @@ export const Textarea = props => {
         <div className="col-md-6" style={props.style}>
             <label htmlFor={props.name} className="col-md-2 col-sm-2">{props.title}</label>
             <div className="col-sm-4 col-sm-4">
-                <textarea 
+                <textarea
+                    required={props.required}
                     id={props.id}
                     rows={props.rows}
                     maxLength={props.maxLength} 
