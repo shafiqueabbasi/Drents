@@ -13,7 +13,7 @@ exports.uploaddress = function(req,res,next){
     productName:dressupload.productName,
     detailName:dressupload.detailName,
     description:dressupload.description,
-    price:dressupload.price,
+    priceDay:dressupload.priceDay,
     details:dressupload.details,
     fileList:dressupload.fileList,
     sizes:dressupload.sizes,
@@ -21,6 +21,8 @@ exports.uploaddress = function(req,res,next){
     from:dressupload.from,
     to:dressupload.to,
     weather:dressupload.weather,
+    background:dressupload.background,
+    bodyType:dressupload.bodyType,
     userId:dressupload.userId
   });
 
@@ -29,6 +31,7 @@ exports.uploaddress = function(req,res,next){
   });
   //Respond to request indicating user was created
   res.json({
+    code:200,
     data:'data saved successfully'
   });
 }
