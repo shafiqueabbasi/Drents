@@ -6,6 +6,7 @@ import { Shareholder, UploadedImages } from '../productdetail/ColorPicker';
 import { SwatchesPicker } from 'react-color';
 import sha1 from "sha1";
 import superagent from "superagent";
+import { connect } from 'react-redux';
 
 class UploadDress extends Component {
     state = {
@@ -13,12 +14,12 @@ class UploadDress extends Component {
         detailName: '',
         description: '',
         priceDay: '',
-        bodyType: '',
+        bodyType: 'Wedding',
         background: '#fff',  
         from: '',
         to: '',   
         tags: [{ name: "" }],   
-        weather: '',
+        weather: 'Cold Weather',
         details: [{ name: "" }],
         arr: [],
         previewVisible: false,
@@ -35,19 +36,17 @@ class UploadDress extends Component {
     };
 
     handleSubmit = (e) => {        
-        e.preventDefault();
+        e.preventDefault();        
         const { productName, detailName, description, priceDay, bodyType, background,
-              from, to, tags, weather, details, arr, fileList} = this.state;
-        // let obj = {
-          if(!!productName && !!detailName && !!description && !!priceDay && !!bodyType && 
-              !!from && !!to && !!details && !!arr && !!fileList){
-            console.log('kkkkkkkkkkkkk')
-          }
-        // }   
-        console.log('objjjjjjjjjjjjj')   
+              from, to, tags, weather, details, arr, fileList} = this.state,
+        detail = details[0] === undefined ? 0 : details[0].name.length;
+        if(!!productName && !!detailName && !!description && !!priceDay && !!bodyType && 
+            !!from && !!to && !!detail && !!arr.length && !!fileList.length){
+            this.funcForUpload()      
+        }   
     };
 
-    async funcForUpload(values){
+    async funcForUpload(){
         const { fileList } = this.state;
 
         Promise.all(fileList.map((val) => {
@@ -55,23 +54,32 @@ class UploadDress extends Component {
                 return result.body.url
             })
         })).then((results) => {
-            this.postDressRecord(values, results)
+            this.postDressRecord(results)
         })
     }
 
-    async postDressRecord(values, imageList){
-        const { arr, shareholders, price } = this.state,
+    async postDressRecord(imageList){
+        const { productName, detailName, description, priceDay, bodyType, background,
+              from, to, tags, weather, details, arr, fileList} = this.state,
         obj = {
-            productName: values.productname,
-            detailName: values.detailname,
-            description: values.description,
-            price: price,
+            productName,
+            detailName,
+            description,
+            priceDay,
+            bodyType,
+            background,
+            from,
+            to,
+            tags,
+            weather,
+            details,
             sizes: arr,
-            details: shareholders,
-            img: imageList
+            fileList: imageList,
+            userId: this.props.user._id
         }
-        const resDressUpload = await HttpUtils.post('uploaddress',obj)
-        console.log(resDressUpload,'sadasdsadsad');
+        console.log(obj, 'objjjjjjjjjjjjj')
+        // const resDressUpload = await HttpUtils.post('uploaddress',obj);
+        // console.log(resDressUpload,'sadasdsadsad');
     };
 
     //--------------function for cloudnary url ---------------
@@ -175,7 +183,7 @@ class UploadDress extends Component {
 
 render() {
     const { previewVisible, previewImage, fileList, background, tags, details } = this.state;
-
+    
     return (
       	<div>
           <Form onSubmit={this.handleSubmit}>
@@ -408,4 +416,12 @@ render() {
   }
 }
 
-export default UploadDress;
+function mapStateToProps(state) {
+    const { user } = state.authentication;
+    return {
+        user
+    };
+}
+
+const connectedUploadDress = connect(mapStateToProps)(UploadDress);
+export default connectedUploadDress;
