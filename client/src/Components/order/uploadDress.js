@@ -3,6 +3,8 @@ import { Form } from 'antd';
 import { Textarea, SelectInput, TextInput } from '../_components/myInput';
 import { HttpUtils } from  '../../Service/HttpUtils';
 import { Shareholder, UploadedImages } from '../productdetail/ColorPicker';
+import SeeChart from './seeChart';
+
 import { SwatchesPicker } from 'react-color';
 import sha1 from "sha1";
 import superagent from "superagent";
@@ -406,7 +408,11 @@ render() {
 									<span className="checkmark"></span>
 									<h4>XX Large</h4>									
 								</label>
-                <span style={{fontSize:'12px'}}><u>See Chart</u></span>                  
+                <span style={{fontSize:'12px'}} 
+                    data-toggle="modal" 
+                    data-target="#chartModal">
+                    <u>See Chart</u>
+                </span>                  
 							</div>
               {this.state.sizeMsg.length > 0 && <span style={{fontSize:'16px'}}><u>{this.state.sizeMsg}</u></span>}
 						</div>
@@ -453,7 +459,24 @@ render() {
               </div>
             </div>
           </div>
-        {/* Modal End */}          
+        {/* Modal End */}     
+        {/* Chart Modal Start */}
+          <div id="chartModal" className="modal fade" role="dialog" style={{marginTop:'5%'}}>
+            <div className="modal-dialog">
+              <div className="modal-content">
+                <div className="modal-header">
+                  <span className="title" style={{color: 'white', textAlign: 'center'}}>
+                    Measurement
+                  </span>
+                  <button type="button" className="close" data-dismiss="modal" style={{color:'white'}}>&times;</button>
+                </div>
+                <div className="modal-body">
+                  <SeeChart />
+                </div>
+              </div>
+            </div>
+          </div>
+        {/* Chart Modal End */}     
 					<div className="row">
 						<div className="col-md-9 col-sm-8"></div>
 						<div className="col-md-3 col-sm-4">
@@ -467,7 +490,7 @@ render() {
               {this.state.loader && <div class="loading">Loading&#8230;</div>}
 						</div>
 					</div>
-      			</div>
+  			</div>
 			</div>
       </Form>
       	</div>

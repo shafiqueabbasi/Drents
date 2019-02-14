@@ -8,7 +8,10 @@ UploadDress.find(function(err,allDress){
     return res.status(422).send({error:'No dress data to show'})
   }
   if(allDress){
-    res.json(allDress);
+    res.send({
+	    code:200,
+	    allDress
+    });
   }
 })
 }

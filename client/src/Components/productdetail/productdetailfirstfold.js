@@ -5,6 +5,11 @@ import Secondfold from './productdetailsecondfold';
 import './productdetail.css'
 
 class Productdetailfirstfold extends Component {
+	componentDidMount(){
+		let data = this.props.location.state;
+		console.log(data, 'qqqqqqqqqqqqqqqqq')
+	}
+
 	render() { 
 		return( 
 			<div className="App">
