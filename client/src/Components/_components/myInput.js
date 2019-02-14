@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 // import "react-datepicker/dist/react-datepicker.css";
 // import DropZone from 'react-dropzone';
 import classNames from 'classnames';
+import Rating from 'react-rating';
 
 //text seperate component
 export const RadioInput = props => {
@@ -19,6 +20,43 @@ export const RadioInput = props => {
           <span className="checkmark"></span>
           <h4>{props.label}</h4>
         </label>
+    )
+}
+
+export const DetailInput = props => {
+    return(
+        <div className="form-group">
+            <label for="contain">
+                <span className="hell5">
+                    {props.label}
+                </span>
+            </label>
+            <input 
+                className="form-control" 
+                type="text"
+                id={props.id} 
+                value={props.value} 
+                onChange={props.onChange}
+            />
+        </div>    
+    )
+}
+
+export const Rate = props => {
+    return(
+        <div className="row"> 
+            <Rating className="col-md-7" 
+                emptySymbol="glyphicon glyphicon-star-empty"
+                fullSymbol="glyphicon glyphicon-star"
+                initialRating={props.initialRating} 
+                readonly={props.readonly}
+                style={{color: 'yellow'}}
+                onChange={props.onChange}
+            />
+            <div className="col-md-5 col-xs-6" style={{padding: '0'}}>
+                <h5>{props.rate}</h5>
+            </div>
+        </div>
     )
 }
 
