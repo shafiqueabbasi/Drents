@@ -18,6 +18,7 @@ class SecondFold extends Component {
   }
 
 class SecondFold extends Component {  
+
   render() {
     console.log(this.props.user, 'iddddddddddd')
     return (
