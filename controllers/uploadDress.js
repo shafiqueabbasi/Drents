@@ -8,22 +8,30 @@ exports.uploaddress = function(req,res,next){
     return res.status(422).send({error:'you must provide data to save'})
   }
   //if a user with email does not exit, create and save user
-  
+
   const postDressData = new UploadDress({
     productName:dressupload.productName,
     detailName:dressupload.detailName,
     description:dressupload.description,
-    price:dressupload.price,
+    priceDay:dressupload.priceDay,
     details:dressupload.details,
-    imgArray:dressupload.img,
-    sizes:dressupload.sizes
+    fileList:dressupload.fileList,
+    sizes:dressupload.sizes,
+    tags:dressupload.tags,
+    from:dressupload.from,
+    to:dressupload.to,
+    weather:dressupload.weather,
+    background:dressupload.background,
+    bodyType:dressupload.bodyType,
+    userId:dressupload.userId
   });
 
   postDressData.save(function(err){
     if(err){ return next(err); }
   });
   //Respond to request indicating user was created
-  res.json({
+  res.send({
+    code:200,
     data:'data saved successfully'
   });
 }

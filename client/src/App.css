@@ -421,11 +421,20 @@ textarea{
   height: 100px !important;
 }
 .button{
-  width: 100%;
+    width: 100%;
     height: 50px;
     border: none;
     outline: none;
     background: #c2073f;
+    color: #fff;
+}
+
+.disabledButton {
+    width: 100%;
+    height: 50px;
+    border: none;
+    outline: none;
+    background: gray;
     color: #fff;
 }
 

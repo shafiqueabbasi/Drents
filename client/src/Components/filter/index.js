@@ -7,12 +7,9 @@ class FilterPage extends Component {
   render() {
     
     return (
-      <div className="App">
-        <Header displayIcon={false}/>
-        <FilterPanel/>
-        <Footer/>
-        
-      </div>
+		<div className="App">
+			<FilterPanel/>        
+		</div>
     );
 
   }

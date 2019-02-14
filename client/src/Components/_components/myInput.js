@@ -12,7 +12,7 @@ export const RadioInput = props => {
                 type="radio" 
                 id={props.for} 
                 name={props.name}
-                /*style={{position: 'absolute', opacity: '0', cursor: 'pointer', height: '0', width: '0'}}*/
+                style={{position: 'absolute', opacity: '0', cursor: 'pointer', height: '0', width: '0'}}
                 value={props.value}
                 onChange={props.onChange}
             />
@@ -22,18 +22,46 @@ export const RadioInput = props => {
     )
 }
 
+export const ButtonComponent = props => {
+    return(
+        <div className="col-md-2">
+            <button className="btn btn-danger btn-lg col-md-12" onClick={props.onClick}>
+                <h2 style={{margin: '0',fontFamily: 'Qwigley'}}>
+                    {props.label}
+                </h2>
+            </button>
+        </div>
+    )
+}
+
+export const Filter = props => {
+    return(
+        <label className="container">
+            <input 
+                type="checkbox" 
+                id={props.id} 
+                style={{position: 'absolute', opacity: '0', cursor: 'pointer', height: '0', width: '0'}}
+                onChange={props.onChange}
+            />
+            <span className="checkmark"></span>
+            <h4>{props.heading}</h4>
+        </label>
+    )
+}
+
 export const TextInput = props => {
     return(
         <div>
-            <div className="col-md-2 col-sm-2">
+            <div className={props.col}>
                 <span className="input">
                     <h3>{props.label}</h3>
                 </span>
             </div>
-            <div className="col-sm-4 col-sm-4">
+            <div className={props.col2}>
                 <div className="inputBox ">
                     <div className="inputText"></div>                    
                     <input 
+                        required={props.required}
                         id={props.id} 
                         value={props.value} 
                         className={props.className}
@@ -48,17 +76,19 @@ export const TextInput = props => {
 export const SelectInput = props => {
     return(
         <div>
-            <label htmlFor={props.name} className="col-md-2 col-sm-2">
-                {props.label}
+            <label htmlFor={props.name} className={props.col}>
+                <span className="input">
+                    {props.label}
+                </span>
             </label>
-            <div className="col-sm-4 col-sm-4">
+            <div className={props.col2}>
                 <select required 
-                    className="col-sm-12 col-sm-12"
+                    className="col-md-12 col-sm-12"
                     placeholder={props.placeholder} 
                     name={props.name} 
                     id={props.id} 
                     value={props.value} 
-                    onChange={props.Change}>
+                    onChange={props.Change}  style={{width:'100%'}}>
                     {props.options && props.options.map((ob)=><option key={ob.id} value={ob}>{ob}</option>)}
                 </select>
             </div>
@@ -85,23 +115,26 @@ export const SelectInput = props => {
 //     )
 // }
 
-// export const Textarea = props => {
-//     return(
-//         <div className="col-md-12">
-//             <label htmlFor={props.name}>{props.title}</label>
-//             <textarea 
-//                 required 
-//                 rows={props.rows}
-//                 maxLength={props.maxLength} 
-//                 className="form-control" 
-//                 placeholder={props.placeholder} 
-//                 name={props.name} id={props.name} 
-//                 value={props.value} 
-//                 onChange={props.onChange}>
-//             </textarea>
-//         </div>
-//     )
-// }
+export const Textarea = props => {
+    return(
+        <div className="col-md-6" style={props.style}>
+            <label htmlFor={props.name} className="col-md-2 col-sm-2">{props.title}</label>
+            <div className="col-sm-4 col-sm-4">
+                <textarea
+                    required={props.required}
+                    id={props.id}
+                    rows={props.rows}
+                    maxLength={props.maxLength} 
+                    className="col-sm-12 col-sm-12" 
+                    placeholder={props.placeholder} 
+                    name={props.name} id={props.name} 
+                    value={props.value} 
+                    onChange={props.onChange}>
+                </textarea>
+            </div>
+        </div>
+    )
+}
 
 // export const Dropzone = props => {
 //     return(

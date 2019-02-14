@@ -7,11 +7,17 @@ const uploadDressSchema = new Schema({
   productName:{ type:String },
   detailName:{ type:String },
   description:{ type:String },
-  price:{ type:String },
+  priceDay:{ type:String },
   details:{type:Array},
   sizes:{ type:Array },
-  imgArray:{ type:Array },
+  fileList:{ type:Array },
   userId:{ type:String },
+  tags:{ type:Array },
+  from:{ type:String },
+  to:{ type:String },
+  weather:{ type:String },
+  background:{ type:String },
+  bodyType:{ type:String }
 });
 
 //model class
