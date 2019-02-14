@@ -12,7 +12,8 @@ const reviewSchema = new Schema({
   rate:{ type:String },
   msg:{ type:String },
   img:{ type:Array },
-  email:{ type:String}
+  email:{ type:String},
+  date:{ type:String }
 });
 
 

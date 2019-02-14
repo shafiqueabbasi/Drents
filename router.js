@@ -2,6 +2,7 @@ const Authentication = require('./controllers/authentication');
 const UploadDress = require('./controllers/uploadDress');
 const profileUpload = require('./controllers/profile');
 const getDresses = require('./controllers/getDresses');
+const getReview = require('./controllers/getreview');
 const passportService = require('./services/passport');
 const passport = require('passport');
 const reviewPost = require('./controllers/reviewModal');
@@ -23,4 +24,5 @@ module.exports = function(app){
 
   //get routes
   app.get('/getdresses',getDresses.getdress);
+  app.get('/getreview',getReview.getreview);
 }
