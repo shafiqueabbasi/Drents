@@ -9,8 +9,8 @@ class Headingf8 extends Component {
     		<div className="hidden-xs">
     			<div id="footer">
     				<div className="col-md-12 col-sm-12 bgc">
-    					<div className="col-md-1 col-sm-1"></div>
-    					<div className="col-md-3 col-sm-3">
+    					<div className="col-md-1 "></div>
+    					<div className="col-md-3 col-sm-4">
     						<ul class="ul_list">
                                 <h3 className="footer_h3">Quick links</h3>
                                 <li><a href="javascript:void();" className="li_list"><i class="fa fa-angle-double-right"></i>HOME</a></li>
@@ -30,7 +30,7 @@ class Headingf8 extends Component {
                             </ul>
     				    </div>
     					<div className="col-md-4 col-sm-4" style={{color: '#ffffff'}}>
-    						<a href="#"><img src="./images/Drent-logo-white.png" style={{width: '62%'}}/></a>
+    						<a href="#"><img src="./images/Drent-logo-white.png" style={{width: '100%'}}/></a>
     					</div>
     				</div>
     			</div>
