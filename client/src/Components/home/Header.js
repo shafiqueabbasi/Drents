@@ -36,16 +36,13 @@ class FirstPage extends Component {
       			    <div className="col-md-8 col-sm-10  container customhover">
       				    <ul className="nav navbar-nav navbar-right customhover">
 
-      					    <li className="head"><a href="#" className="nav" style={{fontSize:'12px'}}>HOME</a></li>
-        				    <li className="head"><a href="#" className="nav" style={{fontSize:'12px'}}>PRODUCT</a></li>
-        				    <li className="head"><a href="#" className="nav" style={{fontSize:'12px'}}>TESTIMONIALS</a></li>
+      					     
+                    {loggedIn && <li className="head" onClick={this.logOut}><a href="#" className="nav" style={{fontSize:'12px'}}>Log Out</a></li>}
+      					    <li className="head"><Link to={`/`} className="nav" style={{fontSize:'12px'}}>HOME</Link></li>
+        				    <li className="head"><Link to={`/product`} className="nav" style={{fontSize:'12px'}}>PRODUCT</Link></li>
+        				    <li className="head"><Link to={`/detail`} className="nav" style={{fontSize:'12px'}}>TESTIMONIALS</Link></li>
         				    <li className="head"><Link to={`/profile`} className="nav" style={{fontSize:'12px'}}>MY PROFILE</Link></li>
                     {loggedIn && <li className="head" onClick={this.logOut}><a href="#" className="nav" style={{fontSize:'12px'}}>Log Out</a></li>}
-      					    <li className="head"><Link to={`/`} className="nav">HOME</Link></li>
-        				    <li className="head"><Link to={`/product`} className="nav">PRODUCT</Link></li>
-        				    <li className="head"><Link to={`/detail`} className="nav">TESTIMONIALS</Link></li>
-        				    <li className="head"><Link to={`/profile`} className="nav">MY PROFILE</Link></li>
-                    {loggedIn && <li className="head" onClick={this.logOut}><a href="#" className="nav">Log Out</a></li>}
 
                     {!loggedIn && <li className="head">
                       <a href="#" className="nav" data-toggle="modal" data-target="#SignIn" style={{fontSize:'12px'}}>Sign In</a>
