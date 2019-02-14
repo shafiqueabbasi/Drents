@@ -15,21 +15,19 @@ class SecondFold extends Component {
       let { reviews } = this.state;
       reviews.push(e)
       this.setState({ reviews });
-  }
-
-class SecondFold extends Component {  
+  } 
 
   render() {
     console.log(this.props.user, 'iddddddddddd')
     return (
-      <div className="App">         
+      <div className="App">
           <div className="container">
               <div className="col-md-12"><hr/></div>
               <Gallery
                   label="You May Also Like"
                   data={this.props.location.state.data.slice(0, 3)}
-              />    
-              <div className="col-md-12"><hr/></div>              
+              />
+              <div className="col-md-12"><hr/></div>
               <Gallery
                   label="More Of Weddings" hrLine='true'
                   data={this.props.location.state.data.slice(2, 5)}
@@ -37,15 +35,15 @@ class SecondFold extends Component {
               <div className="col-md-12"><hr/></div>
               {this.state.reviews.length > 0 && <div className="row derr">
                 <h1 className="headings">Comment & Reviews</h1>
-                <img src="../images/bar.png"/>  
+                <img src="../images/bar.png"/>
               </div>}
               {this.state.reviews.map((elem) => {
                  return <ReviewsCard data={elem}/>
-              })}                                                     
+              })}
               <br/>
               {this.props.user !== undefined && this.props.user._id.length > 0 && <CommentCard addReview={this.addReview}/>}
               <br/>
-          </div>{/*Container Div Close*/}      
+          </div>{/*Container Div Close*/}
       </div>
     );
 
