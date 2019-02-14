@@ -90,15 +90,15 @@
 
 .img{
   border-radius: 50%;
-  height: 170px;
-  width: 170px;
+  height: 150px;
+  width: 150px;
   border: 5px solid #c2073f;
   float: right;
 }
 .imgs{
   border-radius: 50%;
-  height: 170px;
-  width: 170px;
+  height: 150px;
+  width: 150px;
   border: 5px solid #c2073f;
 }
 .pichead{
@@ -108,6 +108,7 @@
 }
 .paraghraph{
   line-height: 28px;
+  font-size: 16px;
 }
 .headings1{
   color: #ffffff;
@@ -143,11 +144,44 @@
 }
 .mark{
   margin-top: 30px;
+  height: 21px;
 }
 .p_mark{
   line-height: 1.5;
-  font-size: 18px;
+  font-size: 15px;
 }
+
+
+
+
+.mobi{
+  border-color: 2px solid red !important;
+
+}
+.scrollbar{
+  height: 275px;    
+  
+  overflow-x: scroll;
+}
+
+
+#style-1::-webkit-scrollbar {
+    width: 6px;
+    background-color: #F5F5F5;
+} 
+#style-1::-webkit-scrollbar-thumb {
+    background-color: #c2073f;
+}
+
+
+.border_custom{
+  border:1px solid gray !important;
+
+}
+
+
+
+
 .sp_h_1{
   text-align: center;
   font-family: Qwigley;
@@ -157,11 +191,15 @@
   display: inline-block;
 }
 .free{
-  line-height: 187%;
-  color: white;
+  line-height: 209%;
+  color: #ffffff !important;
+}
+.free1{
+  line-height: 209%;
+  color: #ffffff !important;
 }
 .benifits{
-  font-size: 170%;
+  font-size: 150%;
 }
 .fab{
   font-size: 250%;

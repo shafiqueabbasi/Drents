@@ -17,6 +17,7 @@ class SecondFold extends Component {
       this.setState({ reviews });
   }
 
+class SecondFold extends Component {  
   render() {
     console.log(this.props.user, 'iddddddddddd')
     return (
