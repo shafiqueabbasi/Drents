@@ -1,16 +1,16 @@
-const review = require('../models/uploadDress');
+const UploadDress = require('../models/uploadDress');
 
 
 //get dreses for user with all
-exports.getreview = function(req,res,next){
-review.find(function(err,allreview){
+exports.getdress = function(req,res,next){
+UploadDress.find(function(err,allDress){
   if(err){
     return res.status(422).send({error:'No dress data to show'})
   }
   if(allDress){
     res.send({
 	    code:200,
-	    allreview
+	    allDress
     });
   }
 })
