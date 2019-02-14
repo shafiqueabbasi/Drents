@@ -22,6 +22,33 @@ export const RadioInput = props => {
     )
 }
 
+export const ButtonComponent = props => {
+    return(
+        <div className="col-md-2">
+            <button className="btn btn-danger btn-lg col-md-12" onClick={props.onClick}>
+                <h2 style={{margin: '0',fontFamily: 'Qwigley'}}>
+                    {props.label}
+                </h2>
+            </button>
+        </div>
+    )
+}
+
+export const Filter = props => {
+    return(
+        <label className="container">
+            <input 
+                type="checkbox" 
+                id={props.id} 
+                style={{position: 'absolute', opacity: '0', cursor: 'pointer', height: '0', width: '0'}}
+                onChange={props.onChange}
+            />
+            <span className="checkmark"></span>
+            <h4>{props.heading}</h4>
+        </label>
+    )
+}
+
 export const TextInput = props => {
     return(
         <div>
@@ -34,6 +61,7 @@ export const TextInput = props => {
                 <div className="inputBox ">
                     <div className="inputText"></div>                    
                     <input 
+                        required={props.required}
                         id={props.id} 
                         value={props.value} 
                         className={props.className}
@@ -92,7 +120,8 @@ export const Textarea = props => {
         <div className="col-md-6" style={props.style}>
             <label htmlFor={props.name} className="col-md-2 col-sm-2">{props.title}</label>
             <div className="col-sm-4 col-sm-4">
-                <textarea 
+                <textarea
+                    required={props.required}
                     id={props.id}
                     rows={props.rows}
                     maxLength={props.maxLength} 

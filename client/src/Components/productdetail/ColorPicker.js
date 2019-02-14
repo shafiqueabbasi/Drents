@@ -9,6 +9,8 @@ export class Shareholder extends Component {
 	handleAddShareholder = () => {
         this.setState({
           shareholders: this.state.shareholders.concat([{ name: "" }])
+        }, () => {
+        	this.props.onChange(this.props.id, this.state.shareholders) 
         });
     };
 
@@ -41,9 +43,10 @@ export class Shareholder extends Component {
 	            <div className="col-md-4">
 	                <div className="inputBox">
 	                    <div className="inputText"></div>
-	                    {this.state.shareholders.map((shareholder, idx) => (
+	                    {this.props.value.map((shareholder, idx) => (
 	                        <div className="shareholder">
 		                        <input
+		                        	required={this.props.required}
 									type="text"
 									placeholder={`Shareholder #${idx + 1} name`}
 									value={shareholder.name}

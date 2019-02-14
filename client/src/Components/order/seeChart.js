@@ -6,17 +6,17 @@ class SeeChart extends Component {
     return (
       	<div>
 			<span>
-				<div className="container hidden-xs">
+				<div className="hidden-xs">
 					<div className="row">
 						<div className="col-md-4 col-sm-4">
-							<h3>Measurements</h3>
+							
 						</div>
 						<div className="col-md-7 col-sm-7"></div>
 						<div className="col-md-1 col-sm-1">
 							<a href="#" class="close" data-dismiss="alert" style={{fontSize: '160%'}}>-</a>
 						</div>
 					</div>
-					    <table class="table table-striped">
+					    <table class="table table-striped" style={{width:'0px'}}>
 							<thead>
 							    <tr className="active">
 									<th>Size</th>
@@ -79,8 +79,8 @@ class SeeChart extends Component {
 								</tr>
 	    					</tbody>
 	  					</table>
-  					<div className="col-md-12">
-  						<p>Our Model, Erin, is 5'8 and wears a size small. She has a 32" bust, 26" waist, and 32" hips. </p>
+  					<div>
+  						<p style={{color:'white'}}>Our Model, Erin, is 5'8 and wears a size small. She has a 32" bust, 26" waist, and 32" hips. </p>
   					</div>
 				</div>
 			</span>

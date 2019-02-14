@@ -30,7 +30,7 @@ exports.uploaddress = function(req,res,next){
     if(err){ return next(err); }
   });
   //Respond to request indicating user was created
-  res.json({
+  res.send({
     code:200,
     data:'data saved successfully'
   });

@@ -9,7 +9,7 @@ const headersFor = (token) => {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
     };
-    if (token) headers['Authorization'] = 'Bearer ' + token;
+    if (token) headers['authorization'] = token;
     return headers;
 }
 
@@ -31,7 +31,6 @@ const handleErrors = (response) => {
             }
         }
         return responseData
-
     });
 }
 

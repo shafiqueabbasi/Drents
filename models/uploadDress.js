@@ -16,7 +16,7 @@ const uploadDressSchema = new Schema({
   from:{ type:String },
   to:{ type:String },
   weather:{ type:String },
-  background:{ type:Sting },
+  background:{ type:String },
   bodyType:{ type:String }
 });
 
