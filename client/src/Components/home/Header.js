@@ -26,22 +26,29 @@ class FirstPage extends Component {
       	<div className="nav navbar navbar-fixed-top bgc">
       	  <div className="nav navbar navbar-fixed-top bgc hidden-xs">
       		  <div className="container-fluid">
-      	  	  <div className="col-md-4 col-sm-3">
+      	  	  <div className="col-md-4 col-sm-2">
       			 	  <div className="navbar-header">
-      					  <a href="#" className="hidden-sm"><img src="./images/Drent-logo-white.png" style={{width: '40%'}}/></a>
+      					  <a href="#" className="hidden-sm"><img src="./images/Drent-logo-white.png" style={{width: '35%'}}/></a>
                   <a href="#" className="visible-sm"><img src="./images/Drent-logo-white.png" style={{width: '110%'}}/></a>
       				  </div>
       			  </div>
       		    <div className="container-fluid">
-      			    <div className="col-md-8 col-sm-9  container customhover">
+      			    <div className="col-md-8 col-sm-10  container customhover">
       				    <ul className="nav navbar-nav navbar-right customhover">
+
+      					    <li className="head"><a href="#" className="nav" style={{fontSize:'12px'}}>HOME</a></li>
+        				    <li className="head"><a href="#" className="nav" style={{fontSize:'12px'}}>PRODUCT</a></li>
+        				    <li className="head"><a href="#" className="nav" style={{fontSize:'12px'}}>TESTIMONIALS</a></li>
+        				    <li className="head"><Link to={`/profile`} className="nav" style={{fontSize:'12px'}}>MY PROFILE</Link></li>
+                    {loggedIn && <li className="head" onClick={this.logOut}><a href="#" className="nav" style={{fontSize:'12px'}}>Log Out</a></li>}
       					    <li className="head"><Link to={`/`} className="nav">HOME</Link></li>
         				    <li className="head"><Link to={`/product`} className="nav">PRODUCT</Link></li>
         				    <li className="head"><Link to={`/detail`} className="nav">TESTIMONIALS</Link></li>
         				    <li className="head"><Link to={`/profile`} className="nav">MY PROFILE</Link></li>
                     {loggedIn && <li className="head" onClick={this.logOut}><a href="#" className="nav">Log Out</a></li>}
+
                     {!loggedIn && <li className="head">
-                      <a href="#" className="nav" data-toggle="modal" data-target="#SignIn">Sign In</a>
+                      <a href="#" className="nav" data-toggle="modal" data-target="#SignIn" style={{fontSize:'12px'}}>Sign In</a>
                         <div className="modal fade" id="SignIn" role="dialog">
                           <div className="modal-dialog">
                             <div className="modal-content">
@@ -60,7 +67,7 @@ class FirstPage extends Component {
                         </div>
                     </li>}
                     {!loggedIn && <li className="head">
-                      <a href="#" className="nav" data-toggle="modal" data-target="#SignUp">Sign Up</a>
+                      <a href="#" className="nav" data-toggle="modal" data-target="#SignUp" style={{fontSize:'12px'}}>Sign Up</a>
                         <div className="modal fade" id="SignUp" role="dialog">
                           <div className="modal-dialog">
                             <div className="modal-content">

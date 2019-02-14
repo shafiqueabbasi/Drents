@@ -14,8 +14,9 @@ class Heading4 extends Component {
       		</div>}
       		<div className="container-fluid">
 	    		<div className="container-fluid">
-	    			<div className="col-md-12">
+	    			<div className="col-md-12 col-sm-12">
 	    				<div className="row" style={{textAlign:'center'}}>
+	    					
 	    					{data && data.map((elem, key) => {
 	    						return(
 		    						<Link key={key} to={{pathname: `/detail`, state: {elem, data}}}>
@@ -51,8 +52,8 @@ export default Heading4;
 	    								<h3 className="h_dress">$ 400</h3>
 	    							</div>
 	    					</div>
-	    					<div className="col-md-4">
-	    						<img src="./images/productdetail/dress3.jpg" className="dress3" style={{width:'100%'}}/>
+	    					<div className="col-md-4 col-sm-4">
+	    						<img src="./images/productdetail/dress3.jpg" className="dress3" style={{width:'90%'}}/>
 	    						<div>
 		    						<div>
 		    							<h2 className="h_dress">Sheta</h2>
@@ -60,8 +61,7 @@ export default Heading4;
 		    							<h3 className="h_dress">$ 400</h3>
 		    						</div>
 		    					</div>
-	    					</div>*/}
+	    					</div>
 	    					
-	    					{/*{hrLine && <div className="col-md-12">
 	    						<hr/>
 	    					</div>}*/}
