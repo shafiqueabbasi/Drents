@@ -1,6 +1,6 @@
 const review = require('../models/reviewModal');
 
-exports.uploaddress = function(req,res,next){
+exports.uploadReview = function(req,res,next){
   const reviewPost = req.body;
   //console.log(reviewPost);
   if(!reviewPost){
