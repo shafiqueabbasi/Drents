@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './headingf8.css';
 
 class Headingf8 extends Component {
   render() {
@@ -6,50 +7,62 @@ class Headingf8 extends Component {
     return (
     	<div>
     		<div className="hidden-xs">
-    			<div className="nav navbar navbar-bottom bgc">
-    				<div className="col-md-12 col-sm-12">
-    					<div className="col-md-1 col-sm-1"></div>
-    					<div className="col-md-3 col-sm-3">
-    						<ul className="nav navbar navbar-left customhover">
-    							<li className="head"><a href="#" className="nav">HOME</a></li>
-        						<li className="head"><a href="#" className="nav">PRODUCT</a></li>
-        						<li className="head"><a href="#" className="nav">TESTIMONIALS</a></li>
-        						<li className="head"><a href="#" className="nav">MY PROFILE</a></li>
-    						</ul>
+    			<div id="footer">
+    				<div className="col-md-12 col-sm-12 bgc">
+    					<div className="col-md-1 "></div>
+    					<div className="col-md-3 col-sm-4">
+    						<ul class="ul_list">
+                                <h3 className="footer_h3">Quick links</h3>
+                                <li><a href="javascript:void();" className="li_list"><i class="fa fa-angle-double-right"></i>HOME</a></li>
+                                <li><a href="javascript:void();" className="li_list"><i class="fa fa-angle-double-right"></i>PRODUCT</a></li>
+                                <li><a href="javascript:void();" className="li_list"><i class="fa fa-angle-double-right"></i>TESTIMONIALS</a></li>
+                                <li><a href="javascript:void();" className="li_list"><i class="fa fa-angle-double-right"></i>MY PROFILE</a></li>
+                            </ul>
     					</div>
-    					<div className="col-md-4 col-sm-4">
-    						<h3>Social Media</h3>
-    						<i className="fab fa-facebook-square"></i>&emsp;
-    						<i className="fab fa-pinterest"></i>&emsp;
-    						<i className="fab fa-twitter-square"></i>
-    					</div>
-    					<div className="col-md-4 col-sm-4">
-    						<a href="#"><img src="./images/Drent-logo-white.png" style={{width: '80%'}}/></a>
+    					<div className="col-md-4 col-sm-4" style={{color: '#ffffff'}}>
+    						<h3 className="footer_h3">Social Media</h3>
+                            <ul class="list-unstyled list-inline social">
+                                <li class="list-inline-item"><a href="javascript:void();"><i class="fab fa-facebook-f"></i></a></li>
+                                <li class="list-inline-item"><a href="javascript:void();"><i class="fab fa-twitter"></i></a></li>
+                                <li class="list-inline-item"><a href="javascript:void();" target="_blank"><i class="fab fa-pinterest"></i></a></li>
+                                <li class="list-inline-item"><a href="javascript:void();"><i class="fab fa-instagram"></i></a></li>
+                                <li class="list-inline-item"><a href="javascript:void();"><i class="fab fa-google-plus-g"></i></a></li>
+                            </ul>
+    				    </div>
+    					<div className="col-md-4 col-sm-4" style={{color: '#ffffff'}}>
+    						<a href="#"><img src="./images/Drent-logo-white.png" style={{width: '100%'}}/></a>
     					</div>
     				</div>
     			</div>
     		</div>
 
             <div className="visible-xs">
-                <div className="nav navbar navbar-bottom bgc">
-                    <div className="col-xs-12">
-                        <div className="col-xs-3"></div>
+                <div className="footer">
+                    <div className="col-xs-12 bgc">
+                        <div className="col-xs-2"></div>
                             <div className="row">
-                                <ul className="nav navbar navbar-left customhover" style={{textAlign: 'center',fontSize:'12px'}}>
-                                    <li className="head"><a href="#" className="nav" style={{fontSize:'12px'}}>HOME</a></li>
-                                    <li className="head"><a href="#" className="nav" style={{fontSize:'12px'}}>PRODUCT</a></li>
-                                    <li className="head"><a href="#" className="nav" style={{fontSize:'12px'}}>TESTIMONIALS</a></li>
-                                    <li className="head"><a href="#" className="nav" style={{fontSize:'12px'}}>MY PROFILE</a></li>
+                                <div className="col-xs-7">
+                                <ul class="ul_list">
+                                    <h3 className="footer_h3">Quick links</h3>
+                                    <li><a href="javascript:void();" className="li_list"><i class="fa fa-angle-double-right"></i>HOME</a></li>
+                                    <li><a href="javascript:void();" className="li_list"><i class="fa fa-angle-double-right"></i>PRODUCT</a></li>
+                                    <li><a href="javascript:void();" className="li_list"><i class="fa fa-angle-double-right"></i>TESTIMONIALS</a></li>
+                                    <li><a href="javascript:void();" className="li_list"><i class="fa fa-angle-double-right"></i>MY PROFILE</a></li>
                                 </ul>
+                                </div>
                             </div>
-                        
+                                
                             <div className=" row" style={{fontSize:'10px'}}>
-                                <div className="col-xs-4"></div>
-                                <div className="col-xs-6">
-                                    <h3 style={{fontSize: '16px'}}>Social Media</h3>
-                                    <i className="fab fa-facebook-square"></i>&emsp;
-                                    <i className="fab fa-pinterest"></i>&emsp;
-                                    <i className="fab fa-twitter-square"></i>
+                                <div className="col-xs-2"></div>
+                                <div className="col-xs-9">
+                                    <h3 className="footer_h3">Social Media</h3>
+                                    <ul class="list-unstyled list-inline social">
+                                        <li class="list-inline-item"><a href="javascript:void();"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li class="list-inline-item"><a href="javascript:void();"><i class="fab fa-twitter"></i></a></li>
+                                        <li class="list-inline-item"><a href="javascript:void();" target="_blank"><i class="fab fa-pinterest"></i></a></li>
+                                        <li class="list-inline-item"><a href="javascript:void();"><i class="fab fa-instagram"></i></a></li>
+                                        <li class="list-inline-item"><a href="javascript:void();"><i class="fab fa-google-plus-g"></i></a></li>
+                                    </ul>
                                 </div>
                         </div>
                         <div className="col-xs-4"></div>

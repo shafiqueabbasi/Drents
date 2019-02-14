@@ -1,0 +1,7 @@
+					<ul class="list-unstyled list-inline social text-center">
+						<li class="list-inline-item"><a href="javascript:void();"><i class="fab fa-facebook-f"></i></a></li>
+						<li class="list-inline-item"><a href="javascript:void();"><i class="fab fa-twitter"></i></a></li>
+						<li class="list-inline-item"><a href="javascript:void();" target="_blank"><i class="fab fa-pinterest"></a></li>
+						<li class="list-inline-item"><a href="javascript:void();"><i class="fab fa-instagram"></i></a></li>
+						<li class="list-inline-item"><a href="javascript:void();"><i class="fab fa-google-plus-g"></i></a></li>
+					</ul>
