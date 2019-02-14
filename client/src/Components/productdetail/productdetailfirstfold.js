@@ -1,6 +1,8 @@
-import React, { Component } from 'react';
+ import React, { Component } from 'react';
 import Header from '../home/Header';
 import Headingf8 from '../home/headingf8';
+import Imagescard from './productdetailimagescard';
+import Table from './productdetailtable';
 import Secondfold from './productdetailsecondfold';
 import './productdetail.css'
 
@@ -18,78 +20,13 @@ class Productdetailfirstfold extends Component {
 				</div>
 				<div className="container" style={{marginTop:"130px"}} >
 					<div className="row">
-						{/*div 3 desktop images*/}
-                        {/*div single middle image desktop*/}
 						<div className="col-md-7 hidden-xs hidden-sm">
-							<div className="row">
-								<div  className="col-md-3 hidden-xs hidden-sm">							
-									<img src="../images/productdetail/eid.jpeg" style={{width:"100%", height:"230px"}}/><br/><br/>
-									<img src="../images/productdetail/bridal 22.jpeg" style={{width:"100%", height:"230px"}}/><br/><br/>
-									<img src="../images/productdetail/bridal2.jpeg" style={{width:"100%", height:"230px"}}/>
-								</div>
-								<div className="col-md-9">
-									<img src="../images/productdetail/bridal.jpeg" style={{width:"100%", height:"875px"}}/>
-								</div>
-							</div>
-                        	<br/><br/><br/>
-                    		<h4>Measurements</h4>
-                     	    <table className="table table-bordered">
-							    <thead>
-							      <tr>
-							        <th>Size</th>
-							        <th>Bust</th>
-							        <th>Hip</th>
-							        <th>Waist</th>
-							        <th>Front length</th>
-							        <th>Back length</th>
-							      </tr>
-							    </thead>
-							    <tbody>
-							      <tr>
-							        <td>Small</td>
-							        <td>34<sup>o</sup></td>
-							        <td>40<sup>o</sup></td>
-							        <td>26<sup>o</sup></td>
-							        <td>57<sup>o</sup></td>
-							        <td>57<sup>o</sup></td>
-							      </tr>
-							      <tr>
-							        <td>Medium</td>
-							        <td>36<sup>o</sup></td>
-							        <td>42<sup>o</sup></td>
-							        <td>28<sup>o</sup></td>
-							        <td>57<sup>o</sup></td>
-							        <td>57<sup>o</sup></td>
-							      </tr>
-							      <tr>
-							        <td>Large</td>
-							        <td>38<sup>o</sup></td>
-							        <td>46<sup>o</sup></td>
-							        <td>30<sup>o</sup></td>
-							        <td>59<sup>o</sup></td>
-							        <td>59<sup>o</sup></td>
-							      </tr>
-							    </tbody>
-							</table>
-							<p className="glass">Our Model,lolly is 5'9" and wear a size small.She Has a 32<sup>o</sup> bust
-							,24<sup>o</sup> Waist and 33<sup>o</sup> hips</p>    
-						</div> 
-						<div className="row visible-sm visible-xs">
-							<div className="visible-sm visible-xs col-sm-12 col-xs-12">
-								<img src="../images/productdetail/bridal.jpeg" style={{width:"100%", height:"100%"}}/>
-							</div>
-						</div><br/>{/*mobile & tab div close*/}
-						<div className="row visible-sm visible-xs">
-							<div className="col-sm-4 col-xs-4">
-								<img src="../images/productdetail/eid.jpeg" style={{width:"100%", height:"230px"}}/>
-							</div>
-							<div className="col-sm-4 col-xs-4">
-								<img src="../images/productdetail/bridal 22.jpeg" style={{width:"100%", height:"230px"}}/>
-							</div>
-							<div className="col-sm-4 col-xs-4">
-								<img src="../images/productdetail/bridal2.jpeg" style={{width:"100%", height:"230px"}}/>
-							</div>
-						</div>{/*mobile & tab 3 images div close*/}
+							<Imagescard />
+                    		<Table /> 
+                    	</div>
+                    	<div className="visible-xs visible-sm">
+                    		<Imagescard />
+                    	</div>	
 						<div className="col-md-5">{/*/*main col-md-5 right possion div deskstop*/}
 						    <div>
 								 <font color="#c2073f"><h1 style={{fontFamily:"Qwigley",fontSize: "70px"}}>Pink Sharara</h1></font>
@@ -99,17 +36,17 @@ class Productdetailfirstfold extends Component {
 							<div className="row">
 								<div className="col-md-12">
 									    <div className="col-md-4">
-									      <font color="#c2073f"><h1 style={{fontFamily :"Qwigley"}}>wedding</h1></font> 
+									     	 <font color="#c2073f"><h1 style={{fontFamily :"Qwigley"}}>wedding</h1></font> 
 									    </div>{/*div close*/}
 									    <div className="col-md-2"></div>
 									    <div className="col-md-6" style={{marginTop: "18px"}}>
 									    	<div className="row">
 									    		<div className="col-md-8">
-				                         			<i class="fas fa-star" style={{fontSize :"20px" , "color":'#FFC400'}}></i>
-				                        			<i class="fas fa-star" style={{fontSize : "20px" , "color":'#FFC400'}}></i>
-				                        			<i class="fas fa-star" style={{fontSize : "20px" , "color":'#FFC400'}}></i>
-				                        			<i class="fas fa-star" style={{fontSize : "20px" , "color":'#FFC400'}}></i>
-				                        			<i class="fas fa-star-half-alt" style={{fontSize : "20px" , "color":'#FFC400'}}></i>
+				                         			<i className="fas fa-star" style={{fontSize :"20px" , "color":'#FFC400'}}></i>
+				                        			<i className="fas fa-star" style={{fontSize : "20px" , "color":'#FFC400'}}></i>
+				                        			<i className="fas fa-star" style={{fontSize : "20px" , "color":'#FFC400'}}></i>
+				                        			<i className="fas fa-star" style={{fontSize : "20px" , "color":'#FFC400'}}></i>
+				                        			<i className="fas fa-star-half-alt" style={{fontSize : "20px" , "color":'#FFC400'}}></i>
 				                        		</div>
 				                        		<div className="col-md-4">
 				                        			<h4 style={{marginLeft:"0%"}}>4.5</h4>
@@ -201,14 +138,14 @@ class Productdetailfirstfold extends Component {
                             </div>{/*detail Row Closed*/}
                             <div className="row">
                             	<div className="col-md-5">
-                            	 <ul>
-                            	 <li>Party Wear</li>
-                            	 </ul>
+	                            	 <ul>
+	                            	 <li>Party Wear</li>
+	                            	 </ul>
                             	</div>
                             	<div className="col-md-6">
-                                <ul>
-                                <li>Comfort Fabric</li>
-                                </ul>
+	                                <ul>
+	                                <li>Comfort Fabric</li>
+	                                </ul>
                             	</div>
                             </div>{/*Div List Row Closed*/}                            
                             <div className="row">
@@ -230,7 +167,7 @@ class Productdetailfirstfold extends Component {
                             	<div className="col-md-4">
                             		<label className="container">
                                       	<input type="checkbox"/>
-                                  		<span className="checkmark"></span>
+                                  			<span className="checkmark"></span>
                                       	<h4>3 Days</h4>
                                     </label>
                             	</div>{/*Col-md-6 div close*/}
@@ -267,54 +204,13 @@ class Productdetailfirstfold extends Component {
                             <button type="button" className="btn bravoo"><h1>Rent Now</h1></button>
                             </div>
                             <div className="visible-sm visible-xs">
-                            	<div style={{overflowX:'auto'}}>
-                            		<table className="table table-bordered">
-									    <thead>
-									    <tr>
-									        <th>Size</th>
-									        <th>Bust</th>
-									        <th>Hip</th>
-									        <th>Waist</th>
-									        <th>Front length</th>
-									        <th>Back length</th>
-									    </tr>
-									    </thead>
-									    <tbody>
-										    <tr>
-										        <td>Small</td>
-										        <td>34<sup>o</sup></td>
-										        <td>40<sup>o</sup></td>
-										        <td>26<sup>o</sup></td>
-										        <td>57<sup>o</sup></td>
-										        <td>57<sup>o</sup></td>
-										    </tr>
-										    <tr>
-										        <td>Medium</td>
-										        <td>36<sup>o</sup></td>
-										        <td>42<sup>o</sup></td>
-										        <td>28<sup>o</sup></td>
-										        <td>57<sup>o</sup></td>
-										        <td>57<sup>o</sup></td>
-										    </tr>
-										    <tr>
-										        <td>Large</td>
-										        <td>38<sup>o</sup></td>
-										        <td>46<sup>o</sup></td>
-										        <td>30<sup>o</sup></td>
-										        <td>59<sup>o</sup></td>
-										        <td>59<sup>o</sup></td>
-										    </tr>
-									    </tbody>
-									</table>
-								</div>
-								<p className="glass">Our Model,lolly is 5'9" and wear a size small.She Has a 32<sup>o</sup> bust
-									,24<sup>o</sup> Waist and 33<sup>o</sup> hips</p>									
+                            	<Table />									
                             </div>{/*div close of visible-sm visible-xs*/}
 					    </div>{/*main col-md-5 right possion div deskstop*/}
 					</div>{/*main row*/}
 				</div>{/*main container div*/}
-			<Secondfold/>
-	    </div>
+				<Secondfold/>
+	    	</div>
     );
 
   }
