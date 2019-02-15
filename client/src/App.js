@@ -38,7 +38,15 @@ class App extends Component {
 			<BrowserRouter>
 	          <div>
     	          <Header/>
-               	<Checkout/>
+             {/*<PrivateRoute exact path="/" component={HomePage} />
+             <PrivateRoute exact path="/about" component={AboutPage} />*/}
+             <Route path="/" exact component={Home} />
+             <PrivateRoute path="/profile" exact component={Profile} />
+             {/*<Route path="/register" component={RegisterPage} />*/}
+                   <Route path="/product" component={MainPage} />
+                   <Route path="/detail" component={Product} />
+                 {/*<Userprofile/>*/}
+            <Footer />
 	          </div>
 			</BrowserRouter>
       </div>
