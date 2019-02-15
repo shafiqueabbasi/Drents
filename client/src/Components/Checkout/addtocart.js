@@ -4,49 +4,75 @@ import './addtocart.css'
 class Addtocart extends Component {
 	render() { 
 		return( 
-			<div style={{marginTop:'7%'}}>
-				<div className="container" style={{width:'55%' , marginLeft: '19%'}}>
-					<div className="row">
-						<div className="col-md-12 chainbelt1"><span className="chainbelt">Your Cart</span></div>
-					</div>	
-					<div className="row">
-						<div className="col-md-6 chainbelt3">
-							<p><span className="chainbelt2">Arrival:Thu 12/40</span></p>
-						</div>
-						<div className="col-md-6 chainbelt3">
-							<p><span className="chainbelt2">Return:Sun 12/23</span></p>
-						</div>
-					</div><br/>
-					<div className="row">
-						<div className="col-md-5">
-							<img src="../images/pinksharara.jpg" style={{width:"100%", height:"300px"}}/>
-						</div>
-						<div className="col-md-7">
-							<div className="row">
-								<h2><span className="chainbelt4">Pink Sharara</span></h2>
-							</div>
-							<div>
-								<h2><span>Size : M</span></h2>
-							</div><br/>
-							<div className="row">
-								<div className="col-md-8">
-									<p><span>$5999.99 X 3 Days=</span></p>
-								</div>
-								<div className="col-md-4">
-									<p><span>9999.99</span></p>
-								</div>
-							</div>
-							<div className="row">
-								<div className="col-md-5">
-									<button className="btn" type="button"><span className="">Confirm Order</span></button>
-								</div>
-								<div className="col-md-2">s</div>
-								<div className="col-md-5">s</div>
-							</div>
-						</div>
-					</div>	
-				</div>
+		<div>
+			<nav>
+				<div class="container">
+    				<ul class="navbar-right">
+      					<li style={{listStyle: 'none'}}><a id="cart"><i class="fa fa-shopping-cart"></i> Cart <span class="badge"></span></a></li>
+    				</ul> 
+  				</div> 
+			</nav>
+
+
+			<div className="container">
+				<div class="shopping-cart">
+    				<div class="shopping-cart-header">
+    					<i class="fa fa-shopping-cart cart-icon"></i><span class="badge"></span>
+    					<div class="shopping-cart-total">
+        					<h5><span class="lighter-text">Total:</span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        					<span class="main-color-text">$2,229.97</span></h5>
+        					<hr/>
+      					</div>
+    				</div> 
+
+    				<ul class="shopping-cart-items">
+    					<li class="clearfix">
+
+
+        					{/*<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item1.jpg" alt="item1" />*/}
+
+        					<h2 style={{fontFamily: 'Qwigley'}}><span class="item-name">Pink Sharara</span></h2>
+        					<h5><span class="item-price">Size : M</span></h5>
+				        	<h5><span class="item-quantity">$5999.99 X 3 Days = 9999.99</span></h5>
+				    	</li>
+
+				    		<hr/>
+
+				    	<li class="clearfix">
+
+				        	{/*<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item2.jpg" alt="item1" />*/}
+
+				        	<h2 style={{fontFamily: 'Qwigley'}}><span class="item-name">Pink Sharara</span></h2>
+        					<h5><span class="item-price">Size : M</span></h5>
+				        	<h5><span class="item-quantity">$5999.99 X 3 Days = 9999.99</span></h5>
+				      	</li>
+
+				      		<hr/>
+
+				      	<li class="clearfix">
+
+				        	{/*<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item3.jpg" alt="item1" />*/}
+
+				        	<h2 style={{fontFamily: 'Qwigley'}}><span class="item-name">Pink Sharara</span></h2>
+        					<h5><span class="item-price">Size : M</span></h5>
+				        	<h5><span class="item-quantity">$5999.99 X 3 Days = 9999.99</span></h5>
+				      	</li>
+				      		
+				      	<hr/>
+				    </ul>
+
+				    <a href="#" class="button">Checkout</a>
+				 </div> 
 			</div>
+			</div>
+
+
+
+
+
+
+
+
     );
 
   }
