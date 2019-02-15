@@ -15,7 +15,7 @@ class Addtocart extends Component {
 
 
 			<div className="container">
-				<div class="shopping-cart">
+				<div class="shopping-cart col-xs-12">
     				<div class="shopping-cart-header">
     					<i class="fa fa-shopping-cart cart-icon"></i><span class="badge"></span>
     					<div class="shopping-cart-total">
@@ -57,7 +57,7 @@ class Addtocart extends Component {
         					<h5><span class="item-price">Size : M</span></h5>
 				        	<h5><span class="item-quantity">$5999.99 X 3 Days = 9999.99</span></h5>
 				      	</li>
-				      		
+
 				      	<hr/>
 				    </ul>
 
