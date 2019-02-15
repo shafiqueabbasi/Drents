@@ -51,7 +51,7 @@ class Heading6 extends Component {
 					      		</div>
 				      		</div>
 			      	</div>
-		      		<div className="container-fluid" style={{textAlign: 'center'}}>
+		      		
 		      		<div className="col-md-2 col-sm-1"></div>
 		      		<div className="col-md-2 col-sm-5 col-xs-12" style={{ border:'2px solid #c2073f'}}>
 		      			<div className="row">
@@ -91,11 +91,7 @@ class Heading6 extends Component {
 					      			<h3 className="free">Free</h3>
 					      		</div>
 				      		</div>
-			      	</div>
-			      	
-		      		
-		      		
-    			</div>
+			    	</div>
 		      		<div className="col-md-12"><hr/></div>
     			</div>
     		</div>
