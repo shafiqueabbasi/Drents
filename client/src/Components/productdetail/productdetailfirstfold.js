@@ -209,8 +209,8 @@ class Productdetailfirstfold extends Component {
 					    </div>{/*main col-md-5 right possion div deskstop*/}
 					</div>{/*main row*/}
 				</div>{/*main container div*/}
-				<Secondfold/>
-	    	</div>
+			<Secondfold {...this.props}/>
+	    </div>
     );
 
   }
