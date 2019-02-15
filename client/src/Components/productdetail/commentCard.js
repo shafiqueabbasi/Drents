@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Rate, DetailInput } from '../_components/myInput';
+import { HttpUtils } from  '../../Service/HttpUtils';
 
 import sha1 from "sha1";
 import superagent from "superagent";
@@ -99,15 +100,26 @@ class CommentCard extends Component {
 
     //-----------------cloudnary function end ------------------
 
-    postReview = (img) => {
+    postReview = async (img) => {
     	const { name, email, size, wear, msg, rate } = this.state,
     	obj = {
     		name, email, size, wear, msg, rate, img,
     		userId: this.props.user._id,
     		written: moment().format('LL')
     	}
-    	console.log(obj.written, 'objjjjjjjjjj')
-    	this.props.addReview(obj)
+    	let res = await HttpUtils.post('postreview',obj, this.props.user.token);
+    	if(res && res.code && res.code === 200){
+    		this.props.addReview(obj);
+    		this.setState = {
+				rate: 0,
+				name: '',
+				email: '',
+				size: '',
+				wear: '',
+				msg: '',
+				fileList: []
+			}
+    	}    	
     }
 
 	render(){

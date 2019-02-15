@@ -71,7 +71,7 @@ class App extends Component {
 	              {/*<Route path="/register" component={RegisterPage} />*/}
                 <Route path="/product" component={MainPage} />
                 <Route path="/detail" component={Product} />		
-            <Userprofile/>
+            {/*<Userprofile/>*/}
 	           <Footer /> 
 							
 	          </div>
