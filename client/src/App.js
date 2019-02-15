@@ -23,7 +23,7 @@ import Footer from './Components/home/headingf8';
 import MainPage from './Components/filter/index';
 import Product from './Components/productdetail/productdetailfirstfold';
 import Userprofile from './Components/Userprofile/userprofile';
-
+import Checkout from './Components/Checkout/addtocart';
 
 class App extends Component {
 	state = {
@@ -37,17 +37,8 @@ class App extends Component {
       <div className="App">
 			<BrowserRouter>
 	          <div>
-	          <Header/>
-				{/*<PrivateRoute exact path="/" component={HomePage} />
-	              <PrivateRoute exact path="/about" component={AboutPage} />*/}
-	              <Route path="/" exact component={Home} />
-								<PrivateRoute path="/profile" exact component={Profile} />
-	              {/*<Route path="/register" component={RegisterPage} />*/}
-                <Route path="/product" component={MainPage} />
-                <Route path="/detail" component={Product} />
-            {/*<Userprofile/>*/}
-	           <Footer />
-
+    	          <Header/>
+               	<Checkout/>
 	          </div>
 			</BrowserRouter>
       </div>
