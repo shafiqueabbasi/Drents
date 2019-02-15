@@ -191,13 +191,9 @@
   display: inline-block;
 }
 .free{
-  line-height: 209%;
   color: #ffffff !important;
 }
-.free1{
-  line-height: 209%;
-  color: #ffffff !important;
-}
+
 .benifits{
   font-size: 150%;
 }

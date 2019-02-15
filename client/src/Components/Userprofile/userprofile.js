@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Heading4 from '../home/heading4';
 import './userprofile.css'
 
 class Userprofile extends Component {
@@ -7,7 +6,7 @@ class Userprofile extends Component {
 		return( 
 			<div  style={{backgroundImage: "url('./images/swrils.png')"}}>
 					<div>
-						<div className="container">
+						<div className="container" style={{marginTop:'6%'}}>
 							<div className="row">
 								<div className="col-md-6">
 									<div className="rovil1">
@@ -57,7 +56,9 @@ class Userprofile extends Component {
 								</div>
 							</div>
 						</div>
-						<Heading4 />
+						<div className="row" style={{margin:'0px'}}>
+							<div className="col-md-6"><h2>GALLERY</h2></div>
+						</div>
 					</div>
 			</div>
     );
