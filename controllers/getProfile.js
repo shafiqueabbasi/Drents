@@ -13,5 +13,9 @@ profile.find({"userId":req.body.userId},function(err,specificProfile){
 	    specificProfile
     });
   }
+  else{
+    code:400,
+    msg:'profile not found'
+  }
 })
 }
