@@ -260,10 +260,11 @@ render() {
                   title="Description" 
                   id="description"
                   value={this.state.description}
-                  rows="4"
+                  rows="6"
+                  className="col-md-12 col-sm-10"
                   maxLength="400" 
                   onChange={e => this.setState({description: e.target.value})}
-                  style={{paddingLeft: '0px'}}/> 
+                  style={{paddingLeft: '0px'}}/>
             </div>
             <div className="col-md-6">                         					
               <TextInput 
@@ -297,6 +298,7 @@ render() {
                       required
                       color={ background }
                       onChangeComplete={ this.handleChangeComplete }
+                      style = {{height: '20px'}}
                   />              
               </div>
             </div>
