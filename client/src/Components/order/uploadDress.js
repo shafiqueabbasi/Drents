@@ -36,8 +36,16 @@ class UploadDress extends Component {
             'Family Dinner',
         ],        
         sizeMsg: '',
-        imgMsg: ''    
+        imgMsg: '' ,
+        _id:''   
     };
+
+    componentDidMount(){      
+      const { elem } = this.props.location.state;
+      for(var el in elem){
+          this.setState({ [el]: elem[el] })
+      }
+    }
 
     handleSubmit = (e) => {        
         e.preventDefault();        
@@ -69,7 +77,7 @@ class UploadDress extends Component {
 
     async postDressRecord(imageList){
         const { productName, detailName, description, priceDay, bodyType, background,
-              from, to, tags, weather, details, arr, fileList} = this.state,
+              from, to, tags, weather, details, arr, fileList, _id} = this.state,
         obj = {
             productName,
             detailName,
@@ -84,7 +92,8 @@ class UploadDress extends Component {
             details,
             sizes: arr,
             fileList: imageList,
-            userId: this.props.user._id
+            userId: this.props.user._id,
+            _id
         }
         let resDressUpload = await HttpUtils.post('uploaddress',obj, this.props.user.token);
         console.log(resDressUpload, 'lllllllllllllll')
@@ -163,7 +172,7 @@ class UploadDress extends Component {
 
     deleteImage = (e) => {
         let { fileList } = this.state;
-        fileList = fileList.filter((elem) => elem.src !== e.src);
+        fileList = fileList.filter((elem) => (elem.src !== e.src) || (elem !== e));
         this.setState({ fileList });
     }
 
@@ -213,7 +222,7 @@ class UploadDress extends Component {
 
 render() {
     const { previewVisible, previewImage, fileList, background, tags, details } = this.state;
-    console.log(this.state.from, this.state.to, '000000000000')
+    console.log(fileList, '000000000000')
     return (
       	<div>
           <Form onSubmit={this.handleSubmit}>
