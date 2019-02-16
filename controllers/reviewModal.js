@@ -18,7 +18,8 @@ exports.uploadReview = function(req,res,next){
       msg:reviewPost.msg,
       img:reviewPost.img,
       email:reviewPost.email,
-      date:reviewPost.date
+      date:reviewPost.date,
+      productId:reviewPost.productId
     });
 
     postReviewData.save(function(err){

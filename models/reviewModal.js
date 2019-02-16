@@ -13,7 +13,8 @@ const reviewSchema = new Schema({
   msg:{ type:String },
   img:{ type:Array },
   email:{ type:String},
-  date:{ type:String }
+  date:{ type:String },
+  productId:{ type:String }
 });
 
 
