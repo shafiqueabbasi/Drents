@@ -82,18 +82,20 @@ export class UploadedImages extends Component {
 	  	return(
 	  		<div >
             {this.props.fileList.map((elem, key) => {
+                let src = elem.src || elem;
                 return(
                     <div key={key} className='insideDiv col-md-3'>
                         <a className="imgContainer">
                         <img alt='img1' 
                             className="imgDiv"
-                            src={elem.src}                             
+                            src={src}   
+                            style={{height: '100%', width: '100%'}}                          
                         />
                         <span className="middle" style={{position: 'absolute', marginLeft: '-11%'}}>
                             
                                 <Icon 
                                     title='Preview file' 
-                                    onClick={() => this.props.handlePreview(elem.src)}
+                                    onClick={() => this.props.handlePreview(src)}
                                     type="eye" 
                                     data-toggle="modal" 
                                     data-target="#myModal"

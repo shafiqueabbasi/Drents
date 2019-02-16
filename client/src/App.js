@@ -22,7 +22,7 @@ import Header from './Components/home/Header';
 import Footer from './Components/home/headingf8';
 import MainPage from './Components/filter/index';
 import Product from './Components/productdetail/productdetailfirstfold';
-import Userprofile from './Components/Userprofile/userprofile';
+import UserProfile from './Components/Userprofile/userprofile';
 import Checkout from './Components/Checkout/cartData';
 
 
@@ -71,12 +71,13 @@ class App extends Component {
 				{/*<PrivateRoute exact path="/" component={HomePage} />
 	              <PrivateRoute exact path="/about" component={AboutPage} />*/}
 	              <Route path="/" exact component={Home} />
-								<PrivateRoute path="/profile" exact component={Profile} />
+								<PrivateRoute path="/profile" exact component={UserProfile} />
 	              {/*<Route path="/register" component={RegisterPage} />*/}
                 <Route path="/product" component={MainPage} />
+                <Route path="/userdetail" component={Profile} />
                 {/*<Route path="/detail" component={Product} />*/		}
                 <Route path="/detail" render={props => { return <Product {...props} updateCart={this.updateCart}/>}} />
-                <Route path="checkout" component={Checkout} />
+                <Route path="/checkout" component={Checkout} />
             {/*<Userprofile/>*/} 
 	           <Footer /> 
 							
