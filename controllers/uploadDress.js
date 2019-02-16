@@ -8,7 +8,7 @@ exports.uploaddress = function(req,res,next){
     return res.status(422).send({error:'you must provide data to save'})
   }
   //if a user with email does not exit, create and save user
-  if(dressupload.id == ''){
+  if(dressupload._id == ''){
   const postDressData = new UploadDress({
     productName:dressupload.productName,
     detailName:dressupload.detailName,
@@ -36,8 +36,8 @@ exports.uploaddress = function(req,res,next){
   });
 
 }
-else if(dressupload != ''){
-  dressupload.find({"_id":dressupload.id},function(err,data){
+else if(dressupload._id != ''){
+  dressupload.find({"_id":dressupload._id},function(err,data){
     data.productName=dressupload.productName,
     data.detailName=dressupload.detailName,
     data.description=dressupload.description,
