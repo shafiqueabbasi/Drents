@@ -5,13 +5,13 @@ class Addtocart extends Component {
 	render() { 
 		return( 
 		<div>
-			<nav>
+			{/*<nav>
 				<div class="container">
     				<ul class="navbar-right">
       					<li style={{listStyle: 'none'}}><a id="cart"><i class="fa fa-shopping-cart"></i> Cart <span class="badge"></span></a></li>
     				</ul> 
   				</div> 
-			</nav>
+			</nav>*/}
 
 
 			<div className="container">
@@ -36,7 +36,7 @@ class Addtocart extends Component {
 				        	<h5><span class="item-quantity">$5999.99 X 3 Days = 9999.99</span></h5>
 				    	</li>
 
-				    		<hr/>
+				    	<hr/>
 
 				    	<li class="clearfix">
 
@@ -47,7 +47,7 @@ class Addtocart extends Component {
 				        	<h5><span class="item-quantity">$5999.99 X 3 Days = 9999.99</span></h5>
 				      	</li>
 
-				      		<hr/>
+				      	<hr/>
 
 				      	<li class="clearfix">
 

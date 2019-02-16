@@ -23,6 +23,7 @@ import Footer from './Components/home/headingf8';
 import MainPage from './Components/filter/index';
 import Product from './Components/productdetail/productdetailfirstfold';
 import Userprofile from './Components/Userprofile/userprofile';
+import Checkout from './Components/Checkout/cartData';
 
 
 class App extends Component {
@@ -30,6 +31,7 @@ class App extends Component {
     response: '',
     post: '',
     responseToPost: '',
+    obj: {}
   };
 
   componentDidMount() {
@@ -56,22 +58,26 @@ class App extends Component {
     this.setState({ responseToPost: body });
   };
 
-
+  updateCart = obj => {
+    this.setState({ obj })
+  }
 
   render() {
     return (
       <div className="App">
 			<BrowserRouter>
 	          <div>
-	          <Header/>
+	          <Header obj={this.state.obj}/>
 				{/*<PrivateRoute exact path="/" component={HomePage} />
 	              <PrivateRoute exact path="/about" component={AboutPage} />*/}
 	              <Route path="/" exact component={Home} />
 								<PrivateRoute path="/profile" exact component={Profile} />
 	              {/*<Route path="/register" component={RegisterPage} />*/}
                 <Route path="/product" component={MainPage} />
-                <Route path="/detail" component={Product} />		
-            {/*<Userprofile/>*/}
+                {/*<Route path="/detail" component={Product} />*/		}
+                <Route path="/detail" render={props => { return <Product {...props} updateCart={this.updateCart}/>}} />
+                <Route path="checkout" component={Checkout} />
+            {/*<Userprofile/>*/} 
 	           <Footer /> 
 							
 	          </div>

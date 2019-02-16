@@ -4,7 +4,7 @@ import Rating from 'react-rating';
 class ReviewsCard extends Component {
   render() {
     const { data } = this.props;
-    console.log(this.props.data, 'dataaaaaaaa')
+    
     return(
           <div>
             <div className="row dell hidden-xs hidden-sm">
