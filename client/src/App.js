@@ -79,7 +79,7 @@ class App extends Component {
                 <Route path="/detail" render={props => { return <Product {...props} updateCart={this.updateCart}/>}} />
                 <Route path="/checkout" component={Checkout} />
             {/*<Userprofile/>*/} 
-	           <Footer /> 
+	         <Footer />   
 							
 	          </div>
 			</BrowserRouter>
