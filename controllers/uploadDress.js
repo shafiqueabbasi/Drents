@@ -38,20 +38,20 @@ exports.uploaddress = function(req,res,next){
 }
 else if(dressupload != ''){
   dressupload.find({"_id":dressupload.id},function(err,data){
-    productName:dressupload.productName,
-    detailName:dressupload.detailName,
-    description:dressupload.description,
-    priceDay:dressupload.priceDay,
-    details:dressupload.details,
-    fileList:dressupload.fileList,
-    sizes:dressupload.sizes,
-    tags:dressupload.tags,
-    from:dressupload.from,
-    to:dressupload.to,
-    weather:dressupload.weather,
-    background:dressupload.background,
-    bodyType:dressupload.bodyType,
-    userId:dressupload.userId
+    data.productName=dressupload.productName,
+    data.detailName=dressupload.detailName,
+    data.description=dressupload.description,
+    data.priceDay=dressupload.priceDay,
+    data.details=dressupload.details,
+    data.fileList=dressupload.fileList,
+    data.sizes=dressupload.sizes,
+    data.tags=ressupload.tags,
+    data.from=dressupload.from,
+    data.to=dressupload.to,
+    data.weather=dressupload.weather,
+    data.background=dressupload.background,
+    data.bodyType=dressupload.bodyType,
+    data.userId=dressupload.userId
   })
   dressupload.save(function(err,savingdata){
     if(err){
