@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 class Heading4 extends Component {
   render() {
   	const { label, hrLine, data } = this.props;
-  	console.log(data, 'data portion')
     
     return (
     	<div className="App" style={{backgroundImage: "url('./images/swrils.png')"}}>

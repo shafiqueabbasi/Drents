@@ -26,7 +26,7 @@ export const RadioInput = props => {
 export const DetailInput = props => {
     return(
         <div className="form-group">
-            <label for="contain">
+            <label htmlFor="contain">
                 <span className="hell5">
                     {props.label}
                 </span>

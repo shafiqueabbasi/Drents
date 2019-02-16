@@ -160,7 +160,7 @@ class CommentCard extends Component {
 		                        </div>
 	                      	</div>
 	                      	<div className="form-group">
-	                        	<label for="msg"><span className="hell5">Message</span></label>
+	                        	<label htmlFor="msg"><span className="hell5">Message</span></label>
 	                            <textarea className="form-control position3" 
 	                              	id="msg" 
 	                              	style={{width:'96%'}}

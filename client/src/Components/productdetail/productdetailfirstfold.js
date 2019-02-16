@@ -32,7 +32,6 @@ class Productdetailfirstfold extends Component {
 	bookedFunc(arr, elem){
 		arr.map((el) => {
 			if(el._id === elem._id){
-				console.log('ye to hai bhai cart main')
 				this.setState({ booked : true })
 			}
 		})
@@ -114,11 +113,11 @@ class Productdetailfirstfold extends Component {
 		let obj = {...elem, ...{rentDay: diffDays}}
 		arr.push(obj)
 		this.bookedFunc(arr, elem);
+		this.props.updateCart(obj);
 		localStorage.setItem('Cart', JSON.stringify(arr));
 	}
 
 	render() { 
-		console.log(this.props, 'propsssssssss')
 		const { elem, data } = this.props.location.state;
 
 		return( 
@@ -196,9 +195,9 @@ class Productdetailfirstfold extends Component {
 							<div className="row">
   								<div className="col-md-12 hidden-xs hidden-sm round">
   									<div className="col-md-2"></div>
-  									{elem.sizes && elem.sizes.map((el) => {
+  									{elem.sizes && elem.sizes.map((el, key) => {
   										return(
-  											<span>
+  											<span key={key}>
   												<div className="col-md-2 flu"><h3>{el}</h3></div>
                             					<div className="col-md-1"></div>
   											</span>
@@ -223,9 +222,9 @@ class Productdetailfirstfold extends Component {
                             <div className="row">
   								<div className="visible-xs">
   									<div className="col-xs-1"></div>
-  									{elem.sizes && elem.sizes.map((el) => {
+  									{elem.sizes && elem.sizes.map((el, key) => {
   										return(
-  											<span>
+  											<span key={key}>
 			                            		<div className="col-xs-2 flu"><h3>{el}</h3></div>
 			                            		<div className="col-xs-1"></div>
 			                            	</span>
@@ -249,9 +248,9 @@ class Productdetailfirstfold extends Component {
                             <div className="row">
   								<div className="visible-sm">
   									<div className="col-sm-2"></div>
-  									{elem.sizes && elem.sizes.map((el) => {
+  									{elem.sizes && elem.sizes.map((el, key) => {
   										return(
-  											<span>
+  											<span key={key}>
 			                            		<div className="col-sm-2 fluu"><h3>{el}</h3></div>
 			                            		<div className="col-sm-2"></div>
 		                            		</span>
@@ -269,9 +268,9 @@ class Productdetailfirstfold extends Component {
                         		<div className="col-md-5"></div>
                             </div>}
                             <div className="row">
-                            	{elem.tags && elem.tags.map((el) => {
+                            	{elem.tags && elem.tags.map((el, key) => {
 									return(
-		                            	<div className="col-md-5">
+		                            	<div className="col-md-5" key={key}>
 			                            	 <ul>
 			                            	 <li>{el.name}</li>
 			                            	 </ul>
@@ -378,7 +377,6 @@ class Productdetailfirstfold extends Component {
                             {this.state.booked && <div className="row">
                             	<button type="button" 
                             		className="btn booked"
-                            		onClick={this.addToCart}
                         		>
                             		<h1>Booked</h1>
                         		</button>
