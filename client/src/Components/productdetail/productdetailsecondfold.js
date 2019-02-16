@@ -3,6 +3,8 @@ import ReviewsCard from './reviewsCard';
 import Gallery from '../home/heading4';
 import CommentCard from './commentCard';
 import { Rate, DetailInput } from '../_components/myInput';
+import { HttpUtils } from  '../../Service/HttpUtils';
+
 import { connect } from 'react-redux';
 
 class SecondFold extends Component {
@@ -10,15 +12,21 @@ class SecondFold extends Component {
       reviews: []
   }
 
+  async componentDidMount(){
+      let data = await HttpUtils.get('getreview');
+      if(data.code && data.code == 200){
+          this.setState({ reviews: data.allreview })
+      }
+  }
+
   addReview = e => {
-      // console.log(e, 'eeeeeeeeeeeeeeee')
       let { reviews } = this.state;
       reviews.push(e)
       this.setState({ reviews });
-  } 
+  }
 
   render() {
-    console.log(this.props.user, 'iddddddddddd')
+    
     return (
       <div className="App">
           <div className="container">

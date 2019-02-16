@@ -12,7 +12,7 @@ class Headingf8 extends Component {
     					<div className="col-md-1 "></div>
     					<div className="col-md-3 col-sm-4">
     						<ul class="ul_list">
-                                <h3 className="footer_h3">Quick links</h3>
+                                <h4 className="footer_h3">Quick links</h4>
                                 <li><a href="javascript:void();" className="li_list"><i class="fa fa-angle-double-right"></i>HOME</a></li>
                                 <li><a href="javascript:void();" className="li_list"><i class="fa fa-angle-double-right"></i>PRODUCT</a></li>
                                 <li><a href="javascript:void();" className="li_list"><i class="fa fa-angle-double-right"></i>TESTIMONIALS</a></li>
@@ -20,7 +20,7 @@ class Headingf8 extends Component {
                             </ul>
     					</div>
     					<div className="col-md-4 col-sm-4" style={{color: '#ffffff'}}>
-    						<h3 className="footer_h3">Social Media</h3>
+    						<h4 className="footer_h3">Social Media</h4>
                             <ul class="list-unstyled list-inline social">
                                 <li class="list-inline-item"><a href="javascript:void();"><i class="fab fa-facebook-f"></i></a></li>
                                 <li class="list-inline-item"><a href="javascript:void();"><i class="fab fa-twitter"></i></a></li>
@@ -30,11 +30,20 @@ class Headingf8 extends Component {
                             </ul>
     				    </div>
     					<div className="col-md-4 col-sm-4" style={{color: '#ffffff'}}>
-    						<a href="#"><img src="./images/Drent-logo-white.png" style={{width: '100%'}}/></a>
+    						<a href="#"><img src="./images/Drent-logo-white.png" style={{width: '62%'}}/></a>
     					</div>
+                        <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center"style={{color: '#ffffff'}}>
+                    <p class="h6 text-white">© Copy All right Reversed.<a class="text-green ml-2" href="https://www.krlcreatives.com" target="_blank">Drent</a></p>
+                </div>
+                
+            </div>
     				</div>
+
     			</div>
+
     		</div>
+            
 
             <div className="visible-xs">
                 <div className="footer">

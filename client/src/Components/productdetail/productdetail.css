@@ -74,6 +74,10 @@
       width: 100%;
       background-color: #c2073f; 
 }
+.booked{
+      width: 100%;
+      background-color: yellow; 
+}
 .dell{
 	text-align: right;
 }

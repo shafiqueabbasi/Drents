@@ -20,7 +20,7 @@ module.exports = function(app){
   app.post('/uploadprofile',requireAuth, profileUpload.profileUpload);
   app.post('/comparepassword',Authentication.comparePassword);
   app.post('/changepassword',Authentication.changePassword);
-  app.post('/postreview',reviewPost.uploadReview);
+  app.post('/postreview', requireAuth, reviewPost.uploadReview);
 
   //get routes
   app.get('/getdresses',getDresses.getdress);

@@ -42,10 +42,26 @@ export const DetailInput = props => {
     )
 }
 
+export const CircleSizes = props => {
+    return(
+        <div className="row">
+            <div className={props.classOne}>
+                <div className={props.classTwo}></div>
+                <div className={props.classThree}><h3>{props.elementOne}</h3></div>
+                <div className={props.classFour}></div>
+                <div className={props.classFive}><h3>{props.elementTwo}</h3></div>
+                <div className={props.classSix}></div>
+                <div className={props.classSeven}><h3>{props.elementThree}</h3></div>
+                <div className={props.classEight}></div>
+            </div>
+        </div>
+    )
+}
+
 export const Rate = props => {
     return(
         <div className="row"> 
-            <Rating className="col-md-7" 
+            <Rating className={props.classMd ? props.classMd : "col-md-7"}
                 emptySymbol="glyphicon glyphicon-star-empty"
                 fullSymbol="glyphicon glyphicon-star"
                 initialRating={props.initialRating} 
@@ -53,7 +69,8 @@ export const Rate = props => {
                 style={{color: 'yellow'}}
                 onChange={props.onChange}
             />
-            <div className="col-md-5 col-xs-6" style={{padding: '0'}}>
+            <div className={props.classXS ? props.classXS : "col-md-5 col-xs-6"}
+                style={{padding: '0'}}>
                 <h5>{props.rate}</h5>
             </div>
         </div>

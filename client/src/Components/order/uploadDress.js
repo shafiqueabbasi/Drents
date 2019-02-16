@@ -86,14 +86,11 @@ class UploadDress extends Component {
             fileList: imageList,
             userId: this.props.user._id
         }
-        console.log(obj, 'objjjjjjjjjjjjj')
         let resDressUpload = await HttpUtils.post('uploaddress',obj, this.props.user.token);
         console.log(resDressUpload, 'lllllllllllllll')
         if(resDressUpload.code && resDressUpload.code == 200){
             this.resetFields()
-            console.log('resssssssssssssssssssss')
         }
-        // console.log(resDressUpload,'sadasdsadsad');
     };
 
     resetFields(){
@@ -216,7 +213,7 @@ class UploadDress extends Component {
 
 render() {
     const { previewVisible, previewImage, fileList, background, tags, details } = this.state;
-    
+    console.log(this.state.from, this.state.to, '000000000000')
     return (
       	<div>
           <Form onSubmit={this.handleSubmit}>

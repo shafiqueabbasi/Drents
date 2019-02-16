@@ -7,6 +7,20 @@ import { connect } from 'react-redux';
 import { userActions } from '../../_actions';
 
 class FirstPage extends Component {
+  state = {
+    arr: []
+  }
+  
+  async componentDidMount(){
+      let cart = await localStorage.getItem('Cart');
+      if(cart == null){
+        this.setState({ arr : [] })
+      }else {
+        let arr = JSON.parse(cart);
+        this.setState({ arr });
+      }
+  }
+
   openNav = ()=>{
     document.getElementById("myNav").style.width = "100%";
   }
@@ -34,10 +48,7 @@ class FirstPage extends Component {
       			  </div>
       		    <div className="container-fluid">
       			    <div className="col-md-8 col-sm-10  container customhover">
-      				    <ul className="nav navbar-nav navbar-right customhover">
-
-      					     
-                    {loggedIn && <li className="head" onClick={this.logOut}><a href="#" className="nav" style={{fontSize:'12px'}}>Log Out</a></li>}
+      				    <ul className="nav navbar-nav navbar-right customhover">      					     
       					    <li className="head"><Link to={`/`} className="nav" style={{fontSize:'12px'}}>HOME</Link></li>
         				    <li className="head"><Link to={`/product`} className="nav" style={{fontSize:'12px'}}>PRODUCT</Link></li>
         				    <li className="head"><Link to={`/detail`} className="nav" style={{fontSize:'12px'}}>TESTIMONIALS</Link></li>
@@ -80,15 +91,12 @@ class FirstPage extends Component {
                           </div>
                         </div>
                     </li>}
-                    <li className="head"><a href="#" className="nav"><img src="./images/bag.png" style={{marginTop:'-5px'}}/></a></li>
+                    <li className="head"><a href="#" className="nav badge"><img src="./images/bag.png" style={{marginTop:'-5px'}}/><span className="badge">{this.state.arr.length}</span></a></li>
       				    </ul>
       			    </div>
       		    </div>
       		  </div>
       	  </div>
-
-
-
           <div id="myNav" className="overlay visible-xs" style={{background:'#c2073fcf'}}>
             <a href="javascript:void(0)" className="closebtn" onClick={this.closeNav}>&times;</a>
             <div className="overlay-content">
