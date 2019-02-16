@@ -8,7 +8,7 @@ exports.uploaddress = function(req,res,next){
     return res.status(422).send({error:'you must provide data to save'})
   }
   //if a user with email does not exit, create and save user
-
+  if(dressupload.id == ''){
   const postDressData = new UploadDress({
     productName:dressupload.productName,
     detailName:dressupload.detailName,
@@ -34,4 +34,34 @@ exports.uploaddress = function(req,res,next){
     code:200,
     data:'data saved successfully'
   });
+
+}
+else if(dressupload != ''){
+  dressupload.find({"_id":dressupload.id},function(err,data){
+    productName:dressupload.productName,
+    detailName:dressupload.detailName,
+    description:dressupload.description,
+    priceDay:dressupload.priceDay,
+    details:dressupload.details,
+    fileList:dressupload.fileList,
+    sizes:dressupload.sizes,
+    tags:dressupload.tags,
+    from:dressupload.from,
+    to:dressupload.to,
+    weather:dressupload.weather,
+    background:dressupload.background,
+    bodyType:dressupload.bodyType,
+    userId:dressupload.userId
+  })
+  dressupload.save(function(err,savingdata){
+    if(err){
+      return res.status(422).send({error:'Not updated'})
+    }
+    //Respond to request indicating user was created
+    res.send({
+      code:200,
+      data:'data updated successfully'
+    });
+  })
+}
 }
