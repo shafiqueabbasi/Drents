@@ -92,7 +92,7 @@ class FirstPage extends Component {
                           <div className="modal-dialog">
                             <div className="modal-content">
                               <div className="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <button type="button" className="close" data-dismiss="modal">&times;</button>
                                 <h4 className="modal-title" style={{textAlign:'center'}}>Sign Up</h4>
                               </div>
                               <div className="modal-body">
@@ -103,7 +103,7 @@ class FirstPage extends Component {
                           </div>
                         </div>
                     </li>}
-                    <li className="head"><a id="cart" className="nav badge"><img src="./images/bag.png" style={{marginTop:'-5px'}}/><span className="badge">{this.state.arr.length}</span></a></li>
+                    <li className="head"><Link to={`/checkout`} className="nav badge"><img src="./images/bag.png" style={{marginTop:'-5px'}}/><span className="badge">{this.state.arr.length}</span></Link></li>
       				    </ul>
       			    </div>
       		    </div>
