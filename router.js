@@ -5,6 +5,7 @@ const getDresses = require('./controllers/getDresses');
 const getReview = require('./controllers/getreview');
 const passportService = require('./services/passport');
 const passport = require('passport');
+const getprofileanddress = require('./controllers/getprofiledress');
 const reviewPost = require('./controllers/reviewModal');
 const requireAuth = passport.authenticate('jwt', { session:false });
 const requireSignin = passport.authenticate('local', {session:false});
@@ -25,4 +26,6 @@ module.exports = function(app){
   //get routes
   app.get('/getdresses',getDresses.getdress);
   app.get('/getreview',getReview.getreview);
+  app.get('/getprofiledress', requireAuth, getprofileanddress.getdressProfile)
+  //app.get('/getprofile',requireAuth, getprofile.getProfile)
 }
