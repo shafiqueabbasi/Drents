@@ -14,6 +14,7 @@ app.use(bodyParser.json({type:'*/*'}));
 app.use(bodyParser.urlencoded({ extended: true }));
 router(app);
 
+
 // //database Development
 var configDB = require('./config/database.js');
 mongoose.connect(configDB.EvenNodeDB,{ useNewUrlParser: true },function(err,db){

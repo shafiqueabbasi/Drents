@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import StripeData from '../form/mainpayment';
 import './cartData.css'
 
 class CartData extends Component {
 	state = {
-		finalArr: []
+		finalArr: [],
+		showStripe: false
 	}
 
 	componentDidMount(){
@@ -22,7 +24,7 @@ class CartData extends Component {
 	render() {
 		const { finalArr } = this.state;
 		var price = 0;
-		console.log(price, 'priceeeeeeeeeee')
+		console.log(price, 'priceeeeeeeee')
 
 		return (
 			<div style={{marginTop:'10%'}}>
@@ -95,13 +97,28 @@ class CartData extends Component {
 						</div>
 						<div className="row">										
 							<div className="col-md-12 col-sm-12 chainbelt1">
-								<button className="btn apex2">
+								<button className="btn apex2" data-toggle="modal" data-target="#stripeCard">
 									<span className="apex3">
 										CHECKOUT
 									</span>
 								</button>
 							</div>
-						</div>							
+						</div>
+						<div id="stripeCard" className="modal fade" role="dialog" style={{marginTop:'5%'}}>	
+							<div className="modal-dialog">
+								<div className="modal-content">
+					                <div className="modal-header">
+					                  <button type="button" className="close" data-dismiss="modal" style={{color:'white'}}>&times;</button>
+					                  <h4 className="modal-title" style={{color:'white',textAlign:'center'}}>Stripe</h4>
+					                </div>
+					                <div className="modal-body">
+					                <div className="row">
+										<StripeData />
+									</div>
+					                </div>
+								</div>
+							</div>
+						</div>				
 					</div>
 				</div>
 				<div className="visible-xs">
