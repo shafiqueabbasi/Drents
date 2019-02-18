@@ -31,7 +31,7 @@ class App extends Component {
     response: '',
     post: '',
     responseToPost: '',
-    obj: {}
+    arr: []
   };
 
   componentDidMount() {
@@ -58,8 +58,8 @@ class App extends Component {
     this.setState({ responseToPost: body });
   };
 
-  updateCart = obj => {
-    this.setState({ obj })
+  updateCart = arr => {
+    this.setState({ arr })
   }
 
   render() {
@@ -67,7 +67,7 @@ class App extends Component {
       <div className="App">
 			<BrowserRouter>
 	          <div>
-	          <Header obj={this.state.obj}/>
+	          <Header arr={this.state.arr}/>
 				{/*<PrivateRoute exact path="/" component={HomePage} />
 	              <PrivateRoute exact path="/about" component={AboutPage} />*/}
 	              <Route path="/" exact component={Home} />
@@ -77,7 +77,8 @@ class App extends Component {
                 <Route path="/userdetail" component={Profile} />
                 {/*<Route path="/detail" component={Product} />*/		}
                 <Route path="/detail" render={props => { return <Product {...props} updateCart={this.updateCart}/>}} />
-                <Route path="/checkout" component={Checkout} />
+                {/*<Route path="/checkout" component={Checkout} />*/}
+                <Route path="/checkout" render={props => { return <Checkout {...props} updateCart={this.updateCart}/>}} />
             {/*<Userprofile/>*/} 
 	         <Footer />   
 							

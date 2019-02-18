@@ -26,6 +26,6 @@ module.exports = function(app){
   //get routes
   app.get('/getdresses',getDresses.getdress);
   app.get('/getreview',getReview.getreview);
-  app.get('/getprofiledress', requireAuth, getprofileanddress.getdressProfile)
+  app.post('/getprofiledress', requireAuth, getprofileanddress.getdressProfile)
   //app.get('/getprofile',requireAuth, getprofile.getProfile)
 }

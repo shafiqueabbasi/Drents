@@ -38,9 +38,9 @@ class ReviewsCard extends Component {
                           <i className="fas fa-star" style={{fontSize : "20px" , "color":'#FFC400'}}></i>
                           <i className="fas fa-star" style={{fontSize : "20px" , "color":'#FFC400'}}></i>
                           <i className="fas fa-star" style={{fontSize : "20px" , "color":'#FFC400'}}></i>*/}
-                          <span style={{marginLeft:"10px"}}><sub className="dar">5.0</sub></span>
+                          <span style={{marginLeft:"10px"}}><sub className="dar"></sub></span>
                         </div>
-                        <div className="col-md-6 sung"><span>{data.written}</span></div>
+                        <div className="col-md-6 sung"><span>{data.date}</span></div>
                       </div><br/><br/>{/*Inner Row Closed*/}
 
                       <div className="row">
@@ -78,19 +78,20 @@ class ReviewsCard extends Component {
                     <div className="row">
                       <div className="col-sm-6 col-xs-6">
                         <div className="derr">
-                          <i className="fas fa-star" style={{fontSize :"20px" , "color":'#FFC400'}}></i>
-                          <i className="fas fa-star" style={{fontSize : "20px" , "color":'#FFC400'}}></i>
-                          <i className="fas fa-star" style={{fontSize : "20px" , "color":'#FFC400'}}></i>
-                          <i className="fas fa-star" style={{fontSize : "20px" , "color":'#FFC400'}}></i>
-                          <i className="fas fa-star" style={{fontSize : "20px" , "color":'#FFC400'}}></i>
-                          <span style={{marginLeft:"10px"}}><sub className="dar">5.0</sub></span>
+                          <Rating className="col-md-7" 
+                              emptySymbol="glyphicon glyphicon-star-empty"
+                              fullSymbol="glyphicon glyphicon-star"
+                              initialRating={data.rate} 
+                              readonly
+                              style={{color: 'yellow'}}
+                          />
+                          <span style={{marginLeft:"10px"}}><sub className="dar"></sub></span>
                         </div><br/>     
                         <div className="sungg">
-                          <h4>Stunning I enjoyed</h4>
                         </div> 
                       </div>
                       <div className="col-sm-6 col-xs-6">
-                        <div className="col-md-6 sung"><span>{data.written}</span></div>
+                        <div className="col-md-6 sung"><span>{data.date}</span></div>
                       </div><br/><br/><br/>
                       <div className="row"><br/><br/>
                         <div className= "container-fluid point">

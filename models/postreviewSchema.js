@@ -19,7 +19,7 @@ const reviewSchema = new Schema({
 
 
 //model class
-const ModelClass = mongoose.model('review',reviewSchema);
+const ModelClass = mongoose.model('reviewdata',reviewSchema);
 
 //export model
 module.exports = ModelClass;

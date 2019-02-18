@@ -15,20 +15,14 @@ class UserProfile extends Component {
     }
 
 	async componentDidMount(){
-		let data = await HttpUtils.get('getdresses');
+		let data = await HttpUtils.post('getprofiledress', {userId: this.props.user._id}, this.props.user.token);
 		if(data.code && data.code == 200){
-			console.log(data, '')
-			let arr = data.allDress.filter((elem) => elem.userId == this.props.user._id);
-			this.setState({ arr })
+			this.setState({ arr: data.dress, profile: data.profile });
 		}
 	}
 
 	onDelete = e => {
 		console.log(e, 'editttttt')
-	}
-
-	onEdit = e => {
-		console.log(e, 'deleteeee')
 	}
  
 	render() { 
@@ -97,9 +91,8 @@ class UserProfile extends Component {
 						</div>
 					</div>
 			</div>
-    );
-
-  }
+    	);
+    }
 }
 
 function mapStateToProps(state) {

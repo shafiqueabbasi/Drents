@@ -9,27 +9,16 @@ import { userActions } from '../../_actions';
 
 class FirstPage extends Component {
   state = {
-    arr: []
+    arrCart: []
   }
   
   async componentDidMount(){
       let cart = await localStorage.getItem('Cart');
       if(cart == null){
-        this.setState({ arr : [] })
+        this.setState({ arrCart : [] })
       }else {
-        let arr = JSON.parse(cart);
-        this.setState({ arr });
-      }
-  }
-
-  componentDidUpdate(prevProps, prevState){
-      let { arr } = this.state,
-      res = prevState.arr.some(r => r._id == this.props.obj._id);
-      if(!res){
-        if(Object.keys(this.props.obj).length > 0){
-          arr.push(this.props.obj)
-          this.setState({ arr })
-        }
+        let arrCart = JSON.parse(cart);
+        this.setState({ arrCart });
       }
   }
 
@@ -45,7 +34,9 @@ class FirstPage extends Component {
   }
 
   render() {
-    const { loggedIn } = this.props;
+    const { loggedIn, arr } = this.props,
+    { arrCart } = this.state;
+    let finalArr = arr.length > 0 ? arr : arrCart;
 
     return (
       <div>
@@ -103,7 +94,14 @@ class FirstPage extends Component {
                           </div>
                         </div>
                     </li>}
-                    <li className="head"><Link to={`/checkout`} className="nav badge"><img src="./images/bag.png" style={{marginTop:'-5px'}}/><span className="badge">{this.state.arr.length}</span></Link></li>
+                    <li className="head">
+                      <Link to={{pathname: `/checkout`, state: {finalArr}}} className="nav badge">
+                        <img src="./images/bag.png" style={{marginTop:'-5px'}}/>
+                        <span className="badge">
+                          {finalArr.length > 0 ? finalArr.length : ''}
+                        </span>
+                      </Link>
+                    </li>
       				    </ul>
       			    </div>
       		    </div>

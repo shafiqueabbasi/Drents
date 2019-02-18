@@ -15,7 +15,9 @@ class CommentCard extends Component {
 		size: '',
 		wear: '',
 		msg: '',
-		fileList: []
+		fileList: [],
+		loading: false,
+		showMsg: ''
 	} 
 
 	handleChange = e => {
@@ -59,6 +61,7 @@ class CommentCard extends Component {
     }
 
     handleSubmit = e => {
+    	this.setState({ loading :true })
     	const { fileList } = this.state;
     	Promise.all(fileList.map((val) => {
             return this.uploadFile(val).then((result) => {
@@ -105,25 +108,31 @@ class CommentCard extends Component {
     	obj = {
     		name, email, size, wear, msg, rate, img,
     		userId: this.props.user._id,
-    		written: moment().format('LL')
+    		date: moment().format('LL'),
+    		productId: this.props.obj._id
     	}
     	let res = await HttpUtils.post('postreview',obj, this.props.user.token);
-    	if(res && res.code && res.code === 200){
-    		this.props.addReview(obj);
-    		this.setState = {
+    	if(res && res.code && res.code == 200){    		
+    		this.setState({
+    			loading: false,
 				rate: 0,
 				name: '',
 				email: '',
 				size: '',
 				wear: '',
 				msg: '',
-				fileList: []
-			}
+				fileList: [],
+				showMsg: res.data
+			})
+			this.props.addReview(obj);
+			setTimeout(() => {
+				this.setState({ showMsg : '' })
+			}, 3000);
     	}    	
     }
 
 	render(){
-		
+		console.log(this.state.fileList, 'listttttttt')
 		return(
 			<div className="row mouse">
                 <div className="container" style={{padding:"22px"}}>
@@ -174,8 +183,9 @@ class CommentCard extends Component {
 	                        	<button 
 	                        		type="button" 
 	                        		className="btn buttonpost absolute3"
+	                        		onClick={this.handleSubmit}
                         		>
-                        			<span className="poststyle" onClick={this.handleSubmit}>Post</span>
+                        			<span className="poststyle">Post</span>
                         		</button>                       
 	                        </div>
 	                    </div>{/*Col md  closed*/}
@@ -206,7 +216,8 @@ class CommentCard extends Component {
 								<div className="col-md-12" style={{backgroundColor: '#ffffff'}}>
 									<div className="col-md-7" style={{paddingRight:'0'}}>
 									  	<h6 style={{color: 'black', fontSize: '49%', marginTop: '10%',}}>
-									    	File size not exceed from 1 MB
+									    	File size not exceed from 1 MB <br/>
+									    	{this.state.fileList.length > 0 ? this.state.fileList[0].name : ''}
 									  	</h6>
 									</div>
 									<label className="labelcustome" id="#bb" >
@@ -214,6 +225,8 @@ class CommentCard extends Component {
 								        <input type="file" id="File" size="60" onChange={e => this.handleImage(e)} />
 									</label>
 								</div>
+								<div>{this.state.showMsg}</div>
+								{this.state.loading && <div class="loading">Loading&#8230;</div>}
 							</div>
 	                    </div> {/* Col md 2 Star Session*/}                        
                     </div>
