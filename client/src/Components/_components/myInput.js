@@ -172,15 +172,15 @@ export const SelectInput = props => {
 
 export const Textarea = props => {
     return(
-        <div className="col-md-6" style={props.style}>
+        <div className="col-md-12" style={props.style}>
             <label htmlFor={props.name} className="col-md-2 col-sm-2">{props.title}</label>
-            <div className="col-sm-4 col-sm-4">
+            <div className="col-md-12 col-sm-4">
                 <textarea
                     required={props.required}
                     id={props.id}
                     rows={props.rows}
                     maxLength={props.maxLength} 
-                    className="col-sm-12 col-sm-12" 
+                    className={props.className} 
                     placeholder={props.placeholder} 
                     name={props.name} id={props.name} 
                     value={props.value} 
