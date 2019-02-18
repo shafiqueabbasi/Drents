@@ -1,6 +1,7 @@
-const review = require('../models/reviewModal');
+const review = require('../models/postreviewSchema');
 
 exports.uploadReview = function(req,res,next){
+  console.log(req.body)
   const reviewPost = req.body;
   //console.log(reviewPost);
   if(!reviewPost){

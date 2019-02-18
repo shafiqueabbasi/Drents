@@ -14,7 +14,8 @@ class Productdetailfirstfold extends Component {
 		to: '',
 		from: '',
 		arr: [], 
-		booked: false
+		booked: false,
+		averageRate: ''
 	}
 
 	async componentDidMount(){
@@ -113,8 +114,20 @@ class Productdetailfirstfold extends Component {
 		let obj = {...elem, ...{rentDay: diffDays}}
 		arr.push(obj)
 		this.bookedFunc(arr, elem);
-		this.props.updateCart(obj);
+		this.props.updateCart(arr);
 		localStorage.setItem('Cart', JSON.stringify(arr));
+	}
+
+	ratingReview = e => {
+		let rateCount = 0;
+		e.map((elem) => {
+			rateCount += +elem.rate
+		})
+		console.log(rateCount, 'rateCount')
+		let averageRate = rateCount / e.length;
+		averageRate = e.length > 0 ? averageRate : ''
+		console.log(averageRate, 'rateeeeeeeeeee')
+		this.setState({ averageRate })
 	}
 
 	render() { 
@@ -147,7 +160,7 @@ class Productdetailfirstfold extends Component {
 									    </div>{/*div close*/}
 									    <div className="col-md-2"></div>
 									    <div className="col-md-6" style={{marginTop: "18px"}}>
-									    	<Rate rate="4.5" initialRating={5} readonly classMd="col-md-8" classXS="col-md-4" />									    	
+									    	<Rate rate={this.state.averageRate} initialRating={this.state.averageRate} readonly classMd="col-md-8" classXS="col-md-4" />									    	
 		                       	 		</div>{/*Div close*/}	
 			                    </div>{/*Div Close Col-md-12*/}	
 							</div>{/*Row Close*/}                                  
@@ -198,8 +211,7 @@ class Productdetailfirstfold extends Component {
   									{elem.sizes && elem.sizes.map((el, key) => {
   										return(
   											<span key={key}>
-  												<div className="col-md-2 flu"><h3>{el}</h3></div>
-                            					<div className="col-md-1"></div>
+  												<div className="col-md-3 flu"><h3>{el}</h3></div>
   											</span>
   										)
   									})}
@@ -387,7 +399,7 @@ class Productdetailfirstfold extends Component {
 					    </div>{/*main col-md-5 right possion div deskstop*/}
 					</div>{/*main row*/}
 				</div>{/*main container div*/}
-			<Secondfold {...this.props}/>
+			<Secondfold {...this.props} ratingReview={this.ratingReview}/>
 	    </div>
     );
 

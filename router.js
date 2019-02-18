@@ -24,10 +24,10 @@ module.exports = function(app){
   app.post('/changepassword',Authentication.changePassword);
   app.post('/postreview', requireAuth, reviewPost.uploadReview);
   app.post('/charge',checkout.charge);
+  app.post('/getprofiledress', requireAuth, getprofileanddress.getdressProfile);
   //get routes
   app.get('/getdresses',getDresses.getdress);
   app.get('/getreview',getReview.getreview);
-  app.get('/getprofiledress', requireAuth, getprofileanddress.getdressProfile);
-  app.get('/keys',checkout.getApiKey);
+  app.get('/key',checkout.getApiKey);
   //app.get('/getprofile',requireAuth, getprofile.getProfile)
 }

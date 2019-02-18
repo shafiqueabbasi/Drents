@@ -1,4 +1,4 @@
-const review = require('../models/reviewModal');
+const review = require('../models/postreviewSchema');
 
 
 //get dreses for user with all

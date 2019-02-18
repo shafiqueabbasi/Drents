@@ -13,9 +13,13 @@ class SecondFold extends Component {
   }
 
   async componentDidMount(){
-      let data = await HttpUtils.get('getreview');
+      let data = await HttpUtils.get('getreview'),
+      obj = this.props.location.state.elem;
+      console.log(data, 'dataaaaaaaaaaaa')
       if(data.code && data.code == 200){
-          this.setState({ reviews: data.allreview })
+          let reviews = data.allreview.filter((elem) => elem.productId == obj._id);
+          this.setState({ reviews });
+          this.props.ratingReview(reviews);
       }
   }
 
@@ -23,10 +27,11 @@ class SecondFold extends Component {
       let { reviews } = this.state;
       reviews.push(e)
       this.setState({ reviews });
+      this.props.ratingReview(reviews);
   }
 
   render() {
-    
+    let obj = this.props.location.state.elem;
     return (
       <div className="App">
           <div className="container">
@@ -49,7 +54,7 @@ class SecondFold extends Component {
                  return <ReviewsCard data={elem}/>
               })}
               <br/>
-              {this.props.user !== undefined && this.props.user._id.length > 0 && <CommentCard addReview={this.addReview}/>}
+              {this.props.user !== undefined && this.props.user._id.length > 0 && <CommentCard addReview={this.addReview} obj={obj}/>}
               <br/>
           </div>{/*Container Div Close*/}
       </div>
