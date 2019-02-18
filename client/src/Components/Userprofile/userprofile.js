@@ -10,7 +10,8 @@ class UserProfile extends Component {
 	constructor(props) {
         super(props);
         this.state = {
-        	arr : []
+        	arr : [],
+        	profile: []
         }
     }
 
@@ -26,6 +27,7 @@ class UserProfile extends Component {
 	}
  
 	render() { 
+		const { profile, arr } = this.state;
 		return( 
 			<div style={{backgroundImage: "url('./images/swrils.png')"}}>
 					<div>
@@ -50,7 +52,7 @@ class UserProfile extends Component {
 										</div>
 										<div className="col-md-2 rovil6">
 											<h4>
-												<Link to={{pathname: `/userdetail`, state: {goTo: 'profile'}}}><i className="glyphicon glyphicon-pencil"></i></Link>
+												<Link to={{pathname: `/userdetail`, state: {goTo: 'profile', profile, arr }}}><i className="glyphicon glyphicon-pencil"></i></Link>
 											</h4>	
 										</div>
 									</div>
@@ -87,7 +89,9 @@ class UserProfile extends Component {
 								label='Gallery' 
 								showEditDelete={true} 
 								onDelete={this.onDelete}
-								data={this.state.arr}/>
+								data={arr}
+								profile={profile}
+							/>
 						</div>
 					</div>
 			</div>

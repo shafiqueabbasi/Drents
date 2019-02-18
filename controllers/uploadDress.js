@@ -37,23 +37,26 @@ exports.uploaddress = function(req,res,next){
 
 }
 else if(dressupload._id != ''){
-  dressupload.find({"_id":dressupload._id},function(err,data){
-    data.productName=dressupload.productName,
-    data.detailName=dressupload.detailName,
-    data.description=dressupload.description,
-    data.priceDay=dressupload.priceDay,
-    data.details=dressupload.details,
-    data.fileList=dressupload.fileList,
-    data.sizes=dressupload.sizes,
-    data.tags=ressupload.tags,
-    data.from=dressupload.from,
-    data.to=dressupload.to,
-    data.weather=dressupload.weather,
-    data.background=dressupload.background,
-    data.bodyType=dressupload.bodyType,
-    data.userId=dressupload.userId
-  })
-  dressupload.save(function(err,savingdata){
+  console.log(dressupload._id);
+  UploadDress.find({"_id":dressupload._id},function(err,existingDress){
+    console.log(existingDress)
+    existingDress.productName=dressupload.productName;
+    existingDress.detailName=dressupload.detailName;
+    existingDress.description=dressupload.description;
+    existingDress.priceDay=dressupload.priceDay;
+    existingDress.details=dressupload.details;
+    existingDress.fileList=dressupload.fileList;
+    existingDress.sizes=dressupload.sizes;
+    existingDress.tags=dressupload.tags;
+    existingDress.from=dressupload.from;
+    existingDress.to=dressupload.to;
+    existingDress.weather=dressupload.weather;
+    existingDress.background=dressupload.background;
+    existingDress.bodyType=dressupload.bodyType;
+    existingDress.userId=dressupload.userId;
+
+
+    existingDress.save(function(err,savingdata){
     if(err){
       return res.status(422).send({error:'Not updated'})
     }
@@ -63,5 +66,7 @@ else if(dressupload._id != ''){
       data:'data updated successfully'
     });
   })
+  })
+  
 }
 }

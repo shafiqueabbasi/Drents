@@ -13,11 +13,12 @@ export const RadioInput = props => {
                 type="radio" 
                 id={props.for} 
                 name={props.name}
-                style={{position: 'absolute', opacity: '0', cursor: 'pointer', height: '0', width: '0'}}
+                //style={{position: 'absolute', opacity: '0', cursor: 'pointer', height: '0', width: '0'}}
+                //style={{display:'none'}}
                 value={props.value}
                 onChange={props.onChange}
             />
-          <span className="checkmark"></span>
+          <span className=""></span>
           <h4>{props.label}</h4>
         </label>
     )

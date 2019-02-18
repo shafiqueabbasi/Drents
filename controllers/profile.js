@@ -35,7 +35,7 @@ exports.profileUpload = function(req, res, next){
     //Respond to request indicating user was created
     res.json({
       code: 200,
-      data:'Profile saved successfully'
+      msg:'Profile saved successfully'
     });
 
   }//end if condition
@@ -61,7 +61,7 @@ exports.profileUpload = function(req, res, next){
       existingProfile.userId = profileData.userId;
 
 
-      profile.save(function(err,doc){
+      existingProfile.save(function(err,doc){
      if(err){
        //console.log("profile update error::" :err);
        return res.status(400).json({"Unexpected Error::" :err});

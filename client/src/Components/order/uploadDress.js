@@ -37,7 +37,8 @@ class UploadDress extends Component {
         ],        
         sizeMsg: '',
         imgMsg: '' ,
-        _id:''   
+        _id:''  ,
+        showMsg: '' 
     };
 
     componentDidMount(){      
@@ -48,10 +49,10 @@ class UploadDress extends Component {
     }
 
     handleSubmit = (e) => {        
-        e.preventDefault();        
+        e.preventDefault();             
         const { productName, detailName, description, priceDay, bodyType, background,
               from, to, tags, weather, details, arr, fileList} = this.state,
-        detail = details[0] === undefined ? 0 : details[0].name.length;        
+        detail = details[0] === undefined ? 0 : details[0].name.length;  
         if(!!productName && !!detailName && !!description && !!priceDay && !!bodyType && 
             !!from && !!to && !!detail && !!arr.length && !!fileList.length){
             this.setState({loader: true})
@@ -67,9 +68,11 @@ class UploadDress extends Component {
         const { fileList } = this.state;
 
         Promise.all(fileList.map((val) => {
-            return this.uploadFile(val).then((result) => {
-                return result.body.url
-            })
+            if(typeof(val) === "object"){
+                return this.uploadFile(val).then((result) => {
+                    return result.body.url
+                })
+            }
         })).then((results) => {
             this.postDressRecord(results)
         })
@@ -77,7 +80,9 @@ class UploadDress extends Component {
 
     async postDressRecord(imageList){
         const { productName, detailName, description, priceDay, bodyType, background,
-              from, to, tags, weather, details, arr, fileList, _id} = this.state,
+              from, to, tags, weather, details, arr, fileList, _id} = this.state;
+        let imagesOne = fileList.filter((elem) => typeof(elem) === 'string'),
+        imagesTwo = imageList.filter((elem) => typeof(elem) === 'string'), 
         obj = {
             productName,
             detailName,
@@ -91,18 +96,18 @@ class UploadDress extends Component {
             weather,
             details,
             sizes: arr,
-            fileList: imageList,
+            fileList: [...imagesOne, ...imagesTwo],
             userId: this.props.user._id,
             _id
         }
+        console.log(obj,'sdasadsad')
         let resDressUpload = await HttpUtils.post('uploaddress',obj, this.props.user.token);
-        console.log(resDressUpload, 'lllllllllllllll')
         if(resDressUpload.code && resDressUpload.code == 200){
-            this.resetFields()
+            this.resetFields(resDressUpload)
         }
     };
 
-    resetFields(){
+    resetFields(resDressUpload){
         this.setState({
             productName: '',
             detailName: '',
@@ -117,8 +122,12 @@ class UploadDress extends Component {
             details: [{ name: "" }],
             arr: [],
             fileList: [],
-            loader: false
+            loader: false,
+            showMsg: resDressUpload.data
         })
+        setTimeout(() => {
+            this.setState({ showMsg: '' })
+        }, 3000)
     }
 
     //--------------function for cloudnary url ---------------
@@ -222,7 +231,6 @@ class UploadDress extends Component {
 
 render() {
     const { previewVisible, previewImage, fileList, background, tags, details } = this.state;
-    console.log(fileList, '000000000000')
     return (
       	<div>
           <Form onSubmit={this.handleSubmit}>
@@ -486,7 +494,7 @@ render() {
           </div>
         {/* Chart Modal End */}     
 					<div className="row">
-						<div className="col-md-9 col-sm-8"></div>
+						<div className="col-md-9 col-sm-8" style={{textAlign: 'right'}}>{this.state.showMsg}</div>
 						<div className="col-md-3 col-sm-4">
 							<button type="submit" 
                      name="" className="button"

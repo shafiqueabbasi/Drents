@@ -21,6 +21,8 @@ class CartData extends Component {
 
 	render() {
 		const { finalArr } = this.state;
+		var price = 0;
+		console.log(price, 'priceeeeeeeeeee')
 
 		return (
 			<div style={{marginTop:'10%'}}>
@@ -30,6 +32,7 @@ class CartData extends Component {
 							<div className="col-md-12 col-sm-12 chainbelt1"><span className="chainbelt">Your Cart</span></div>
 						</div>	
 						{finalArr.map((elem, key) => {
+							price += elem.priceDay;
 							return (
 								<div>
 									<div className="row">

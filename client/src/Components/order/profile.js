@@ -25,12 +25,19 @@ class Profile extends Component {
 		ribcage: '',
 		height: '',
 		userId: '',
-		profileId: ''
+		_id: '',
+		loading: false,
+		showMsg: ''
 	};
 
 	componentDidMount(){
 		const { _id, email } = this.props.user;
-		this.setState({userId: _id, email})
+		const { profile } = this.props.location.state;
+		console.log(profile, 'profileeeeeeeeeee')
+	      for(var el in profile[0]){
+	          this.setState({ [el]: profile[0][el] })
+	      }
+		this.setState({ userId: _id })
 	}
 
 	inputHandleChange = (e) => {
@@ -44,18 +51,26 @@ class Profile extends Component {
 
 	handleSubmit = (e) => {
 		e.preventDefault();
+		this.setState({ loading: true });
 		const {email, firstName, lastName, inputHeight, weight, bustSize, height, bodyType,
-			ocassionAttendMost, typicalJeanSize, bust, hips, torso, ribcage, userId} = this.state;
+			ocassionAttendMost, typicalJeanSize, bust, hips, torso, ribcage, userId, _id} = this.state;
 		let obj = {
 			email, firstName, lastName, inputHeight, weight, bustSize, height, bodyType,
-			ocassionAttendMost, typicalJeanSize, bust, hips, torso, ribcage, userId
+			ocassionAttendMost, typicalJeanSize, bust, hips, torso, ribcage, userId, 
+			profileId: _id
 		}	
 		this.submit(obj)
 	}
 
 	async submit(obj){
-		let res = await HttpUtils.post('uploadprofile', obj);
+		let res = await HttpUtils.post('uploadprofile', obj, this.props.user.token);
 		console.log(res, 'resssssssssss')
+		if(res && res.code && res.code == 200){
+			this.setState({ loading : false, showMsg : res.msg })
+		}
+		setTimeout(() => {
+			this.setState({ showMsg: '' })
+		}, 3000)
 	}
 
   render() {
@@ -314,6 +329,12 @@ class Profile extends Component {
 							<div className="col-md-3 col-sm-4">
 								<input type="submit" name="" className="button" value="Save Changes" onClick={this.handleSubmit}/>
 							</div>
+						</div>
+						{this.state.loading && <div class="loading">Loading&#8230;</div>}
+						<div className="row">
+							<div className="col-md-4 col-sm-4"></div>
+							<div className="col-md-4 col-sm-4">{this.state.showMsg}</div>
+							<div className="col-md-4 col-sm-4"></div>
 						</div>
 					</Form>
 				</div>

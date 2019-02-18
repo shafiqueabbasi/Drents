@@ -31,7 +31,6 @@ class Order extends Component {
             let { arr } = this.state;
             arr = arr.map((elem) => {
                   let key = Object.keys(elem)[0];
-                  console.log(key, 'kia hai bhai')
                   if(key == goTo){
                         return {[key]: true}                    
                   }else {
@@ -118,7 +117,7 @@ class Order extends Component {
 					</div>
 					{arr[0].upComing && <UpCommingOrder/>}
 					{arr[1].orderHis && <OrderHistory/>}
-					{arr[2].profile && <Profile/>}
+					{arr[2].profile && <Profile {...this.props}/>}
 					{arr[3].uploadDress && <UploadDress {...this.props}/>}
 				</div>
       		</div>      	
