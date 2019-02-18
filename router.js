@@ -3,6 +3,7 @@ const UploadDress = require('./controllers/uploadDress');
 const profileUpload = require('./controllers/profile');
 const getDresses = require('./controllers/getDresses');
 const getReview = require('./controllers/getreview');
+const checkout = require('./controllers/stripecheckout');
 const passportService = require('./services/passport');
 const passport = require('passport');
 const getprofileanddress = require('./controllers/getprofiledress');
@@ -22,10 +23,11 @@ module.exports = function(app){
   app.post('/comparepassword',Authentication.comparePassword);
   app.post('/changepassword',Authentication.changePassword);
   app.post('/postreview', requireAuth, reviewPost.uploadReview);
-
+  app.post('/charge',checkout.charge);
   //get routes
   app.get('/getdresses',getDresses.getdress);
   app.get('/getreview',getReview.getreview);
-  app.get('/getprofiledress', requireAuth, getprofileanddress.getdressProfile)
+  app.get('/getprofiledress', requireAuth, getprofileanddress.getdressProfile);
+  app.get('/keys',checkout.getApiKey);
   //app.get('/getprofile',requireAuth, getprofile.getProfile)
 }
