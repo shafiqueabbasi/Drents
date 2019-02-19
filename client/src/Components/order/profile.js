@@ -169,6 +169,7 @@ class Profile extends Component {
 									col2="col-md-8 col-sm-4"
 									options={[1,2,3,4,5]}
 									Change={this.inputHandleChange}
+
 								/>
 							</div>	
 						</div>{/*row closed*/}

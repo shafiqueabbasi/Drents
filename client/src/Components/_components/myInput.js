@@ -17,8 +17,10 @@ export const RadioInput = props => {
                 //style={{display:'none'}}
                 value={props.value}
                 onChange={props.onChange}
+                className="checkmark"
+                style={{marginTop:'0px'}}
             />
-          <span className=""></span>
+          <span className="checkmark"></span>
           <h4>{props.label}</h4>
         </label>
     )
@@ -144,7 +146,7 @@ export const SelectInput = props => {
                     name={props.name} 
                     id={props.id} 
                     value={props.value} 
-                    onChange={props.Change}  style={{width:'100%'}}>
+                    onChange={props.Change} style={{width:'100%',border:'none',borderBottom:'1px solid black', marginTop:'10px'}}>
                     {props.options && props.options.map((ob)=><option key={ob.id} value={ob}>{ob}</option>)}
                 </select>
             </div>
