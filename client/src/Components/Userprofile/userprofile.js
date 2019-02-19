@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Gallery from '../home/heading4';
 import { HttpUtils } from  '../../Service/HttpUtils';
+import { Rate } from '../_components/myInput';
 import './userprofile.css'
 
 import { Link } from "react-router-dom";
@@ -16,10 +17,16 @@ class UserProfile extends Component {
     }
 
 	async componentDidMount(){
-		let data = await HttpUtils.post('getprofiledress', {userId: this.props.user._id}, this.props.user.token);
+		let id = this.props.match.params.value,
+		data = await HttpUtils.post('getprofiledress', {userId: id}),
+		rate = 0;
 		console.log(data);
 		if(data.code && data.code == 200){
-			this.setState({ arr: data.dress, profile: data.profile });
+			data.review.map((elem) => rate += +elem.rate)
+			console.log(rate, 'ratee')
+			rate = rate / data.review.length;
+			console.log(rate, 'your rate')
+			this.setState({ arr: data.dress, profile: data.profile, review: rate });
 		}
 	}
 
@@ -28,7 +35,14 @@ class UserProfile extends Component {
 	}
 
 	render() {
-		const { profile, arr } = this.state;
+		const { profile, arr, review } = this.state,
+		{ user } = this.props,
+		id = this.props.match.params.value;
+		let userAvailable = false;
+		console.log(review, 'rateeeeeeee')
+		if(user && user._id && user._id === id){
+			userAvailable = true;
+		}
 		return(
 			<div style={{backgroundImage: "url('./images/swrils.png')"}}>
 					<div>
@@ -45,22 +59,18 @@ class UserProfile extends Component {
 											<h2><span className="rovil2">Alicia Diamond</span></h2>
 										</div>
 										<div className="col-md-5 col-xs-5 rovil4">
-											<i className="fas fa-star" style={{fontSize :"20px" , "color":'#FFC400'}}></i>
-											<i className="fas fa-star" style={{fontSize :"20px" , "color":'#FFC400'}}></i>
-											<i className="fas fa-star" style={{fontSize :"20px" , "color":'#FFC400'}}></i>
-											<i className="fas fa-star" style={{fontSize :"20px" , "color":'#FFC400'}}></i>
-											<i className="fas fa-star" style={{fontSize :"20px" , "color":'#FFC400'}}></i>
+											<Rate initialRating={this.state.review} readonly classMd="col-md-8" classXS="col-md-4" />
 										</div>
 										<div className="col-md-2 rovil6">
-											<h4>
+											{userAvailable && <h4>
 												<Link to={{pathname: `/userdetail`, state: {goTo: 'profile', profile, arr }}}><i className="glyphicon glyphicon-pencil"></i></Link>
-											</h4>
+											</h4>}
 										</div>
 									</div>
 									<div className="row rovil1">
 										<h5>London</h5>
 									</div>
-									<div className="row rovil1">
+									{/*<div className="row rovil1">
 										<h4><span className="rovil7">Bio</span></h4>
 									</div>
 									<div className="row">
@@ -80,7 +90,7 @@ class UserProfile extends Component {
 										<div>
 										<h4>Rent Till 5 Date</h4>
 										</div>
-									</div>
+									</div>*/}
 								</div>
 							</div>
 						</div>
@@ -92,6 +102,7 @@ class UserProfile extends Component {
 								onDelete={this.onDelete}
 								data={arr}
 								profile={profile}
+								userAvailable={userAvailable}
 							/>
 						</div>
 					</div>
