@@ -14,7 +14,7 @@ exports.getdressProfile = function(req,res,next){
       if(err){
         return res.status(422).send({error:'No Profile Found!'})
       }
-    review.find({"userId":userId},function(err,specificProfileReview){
+    review.find(function(err,specificProfileReview){
       console.log(specificProfileReview)
       if(err){
         return res.status(422).send({error:'No Review Found!'})

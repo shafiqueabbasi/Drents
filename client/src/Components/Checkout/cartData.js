@@ -112,9 +112,14 @@ class CartData extends Component {
 					                  <h4 className="modal-title" style={{color:'white',textAlign:'center'}}>Stripe</h4>
 					                </div>
 					                <div className="modal-body">
-					                <div className="row" style={{border:'1px solid gray',width:'87%',textAlign:'center',marginLeft:'35px',padding:'15px'}}>
-														<div className="col-md-12">
-															<StripeData />
+					                {/*// <div className="row" style={{border:'1px solid gray',width:'87%',textAlign:'center',marginLeft:'35px',padding:'15px'}}>
+													// 	<div className="col-md-12">
+													// 		<StripeData />
+													// 	</div>
+													// </div>*/}
+													<div className="row">
+														<div className="col-md-12" style={{textAlign:'center'}}>
+																<img src="../images/paid.gif" style={{width:'20%'}} />
 														</div>
 													</div>
 					                </div>
