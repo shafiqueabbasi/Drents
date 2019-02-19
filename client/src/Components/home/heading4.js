@@ -16,10 +16,10 @@ class Heading4 extends Component {
 	    			<div className="col-md-12 col-sm-12">
 	    				<div className="row" style={{textAlign:'center'}}>	    					
 	    					{data && data.map((elem, key) => {
-	    						return(		    						
-	    							<div className="col-md-4">
+	    						return(	    						
+	    							<div className="col-md-3">
 			    						<Link key={key} to={{pathname: `/detail`, state: {elem, data}}}>
-			    							<img src={elem.fileList[0]} className="dress1" style={{width:'100%'}} />				    					
+			    							<img src={elem.fileList[0]} className="zoom" />				    					
 		    							</Link>				    							
 		    							<div>
 		    								{showEditDelete && userAvailable && <div className="row">
@@ -32,7 +32,7 @@ class Heading4 extends Component {
 		    										<h2 className="h_dress" onClick={() => onDelete(elem)}>Delete</h2>
 		    									</div>
 		    								</div>}
-		    								<h2 className="h_dress">{elem.productName}</h2>
+		    								<h2 className="h_dress" style={{color:'#c2073f'}}>{elem.productName}</h2>
 		    								<h3 className="h_dress">{elem.detailName}</h3>
 		    								<h3 className="h_dress">$ {" " + elem.priceDay}</h3>
 		    							</div>

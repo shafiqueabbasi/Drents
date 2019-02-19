@@ -63,11 +63,11 @@ class Filterpanel extends Component {
 	    					<div className="panel" style={{backgroundImage: "url('./images/swrils.png')"}}>
 	    						<div className="row">	    					
 	    							<h3>Filters</h3><br/>
-	    							<h4 id="Wedding" onClick={this.handleClick}>Wedding</h4><br/>
-	    							<h4 id="Party" onClick={this.handleClick}>Party</h4><br/>
-	    							<h4 id="Corporate" onClick={this.handleClick}>Corporate</h4><br/>
-	    							<h4 id="Special Ocasion" onClick={this.handleClick}>Special Ocasion</h4><br/>
-	    							<h4 id="Family Dinner" onClick={this.handleClick}>Family Dinner</h4>
+	    							<h5 id="Wedding" onClick={this.handleClick} className="lH_filter">Wedding</h5><br/>
+	    							<h5 id="Party" onClick={this.handleClick} className="lH_filter">Party</h5><br/>
+	    							<h5 id="Corporate" onClick={this.handleClick} className="lH_filter">Corporate</h5><br/>
+	    							<h5 id="Special Ocasion" onClick={this.handleClick} className="lH_filter">Special Ocasion</h5><br/>
+	    							<h5 id="Family Dinner" onClick={this.handleClick} className="lH_filter">Family Dinner</h5>
 	    							<div className="col-md-7" style={{paddingBottom: '15px', margin: '40px 0 20px',borderBottom: '1px solid black'}}></div>
 	    							<div className="row col-md-12">
 	    								<h3>Sort By&emsp;&emsp;-</h3><br/>
