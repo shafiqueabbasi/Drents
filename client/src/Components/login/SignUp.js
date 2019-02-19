@@ -6,6 +6,7 @@ import { userActions } from '../../_actions';
 import { connect } from 'react-redux';
 
 const AutoCompleteOption = AutoComplete.Option;
+const { Option } = Select;
 
 class SignUp extends Component {
     constructor(props) {
@@ -58,6 +59,7 @@ class SignUp extends Component {
   render() {
     console.log(this.props, 'propsssssssss')
     const { getFieldDecorator } = this.props.form;
+
     return (
     	     <div style={{backgroundColor: '#c2073f'}}>
       		<div className="container-fluid">
@@ -114,6 +116,15 @@ class SignUp extends Component {
                                  )}
                             </Form.Item>
                       <span className="highlight"></span>
+                      </div>
+                      <div className="group">
+                          <Form.Item>
+                            {getFieldDecorator('phone', {
+                              rules: [{ required: true, message: 'Please input your phone number!' }],
+                            })(
+                              <Input  style={{ width: '100%' }} />
+                            )}
+                          </Form.Item>
                       </div>
                       <div className="group">
                           <Form.Item>

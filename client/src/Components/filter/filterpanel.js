@@ -11,14 +11,15 @@ class Filterpanel extends Component {
         this.state = {
         	data : [],
         	arr: [],
-        	filtered: []
+        	filtered: [],
+        	loading: true
         }
     }
 
 	async componentDidMount(){
 		let data = await HttpUtils.get('getdresses');
 		if(data.code && data.code == 200){
-			this.setState({ data: data.allDress, arr: data.allDress })
+			this.setState({ data: data.allDress, arr: data.allDress, loading: false })
 		}
 	}
 
@@ -54,6 +55,7 @@ class Filterpanel extends Component {
   	render() {      		
 	    return (
 	    	<div className="App" style={{marginTop: '110px'}}>
+	    		{this.state.loading && <div class="loading">Loading&#8230;</div>}
 	    		<div  className="container-fluid">
 	    			<div className="col-md-12" style={{backgroundImage: "url('./images/swrils.png')"}}>
 	    				<div className="col-md-1"></div>

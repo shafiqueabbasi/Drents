@@ -1,17 +1,20 @@
 import React, { Component } from 'react';
 import Rating from 'react-rating';
+import { Link } from "react-router-dom";
 
 class ReviewsCard extends Component {
   render() {
     const { data } = this.props;
-    
+    console.log(data, 'dataaaaaaaaaaaaaa')
     return(
           <div>
             <div className="row dell hidden-xs hidden-sm">
                 <div className="container" style={{padding:"22px"}}>
                   <div className="col-md-12">
                     <div className="col-md-3">
-                      <h4 className="tissue">{data.name}</h4><br/>
+                      <Link to={`/profile/${data.userId}`}>
+                          <h4 className="tissue">{data.name}</h4><br/>
+                      </Link>
                       <div className="row">
                           <div className="col-md-7">
                             <p className="tissue">Size worn:<br/>Rented For:</p>

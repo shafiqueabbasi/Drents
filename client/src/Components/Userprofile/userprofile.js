@@ -12,7 +12,8 @@ class UserProfile extends Component {
         super(props);
         this.state = {
         	arr : [],
-        	profile: []
+        	profile: [],
+        	loading: true
         }
     }
 
@@ -20,13 +21,19 @@ class UserProfile extends Component {
 		let id = this.props.match.params.value,
 		data = await HttpUtils.post('getprofiledress', {userId: id}),
 		rate = 0;
-		console.log(data);
 		if(data.code && data.code == 200){
-			data.review.map((elem) => rate += +elem.rate)
-			console.log(rate, 'ratee')
-			rate = rate / data.review.length;
-			console.log(rate, 'your rate')
-			this.setState({ arr: data.dress, profile: data.profile, review: rate });
+			let dressData = data.dress.length > 0 && data.dress.map((elem) => {
+				return elem._id;
+			}) 
+			if(dressData){
+				data.review.map((elem) => {
+					if(dressData.includes(elem.productId)){
+						rate += +elem.rate
+					}
+				})
+				rate = rate / data.review.length;
+			}			
+			this.setState({ arr: data.dress, profile: data.profile, review: rate, loading: false, dressData });
 		}
 	}
 
@@ -35,17 +42,19 @@ class UserProfile extends Component {
 	}
 
 	render() {
-		const { profile, arr, review } = this.state,
+		const { profile, arr, review, dressData } = this.state,
 		{ user } = this.props,
-		id = this.props.match.params.value;
+		id = this.props.match.params.value,
+		userName = profile.length > 0 ? profile[0].firstName : "User Name";
 		let userAvailable = false;
-		console.log(review, 'rateeeeeeee')
+		console.log(profile, 'rateeeeeeee')
 		if(user && user._id && user._id === id){
 			userAvailable = true;
 		}
 		return(
 			<div style={{backgroundImage: "url('./images/swrils.png')"}}>
 					<div>
+						{this.state.loading && <div class="loading">Loading&#8230;</div>}
 						<div className="container" style={{marginTop:'6%'}}>
 							<div className="row" style={{marginTop:'21px'}}>
 								<div className="col-md-3">
@@ -65,7 +74,7 @@ class UserProfile extends Component {
 								<div className="col-md-9 rovil3">
 									<div className="row">
 										<div className="col-md-5 col-xs-7">
-											<h2><span className="rovil2">Alicia Diamond</span></h2>
+											<h2><span className="rovil2">{userName}</span></h2>
 										</div>
 										<div className="col-md-5 col-xs-5 rovil4">
 											<Rate initialRating={this.state.review} readonly classMd="col-md-8" classXS="col-md-4" />
@@ -103,19 +112,18 @@ class UserProfile extends Component {
 								</div>
 							</div>
 						</div>
-						<div className="container">
-							<div className="row" style={{margin:'0px'}}>
-								{/*<div className="col-md-6"><h2>GALLERY</h2></div>*/}
-								<Gallery
-									label='Gallery'
-									showEditDelete={true}
-									onDelete={this.onDelete}
-									data={arr}
-									profile={profile}
-									userAvailable={userAvailable}									
-								/>
-							</div>
-						</div>		
+						<div className="row" style={{margin:'0px'}}>
+							{/*<div className="col-md-6"><h2>GALLERY</h2></div>*/}
+							{dressData && <Gallery
+								label='Gallery'
+								showEditDelete={true}
+								onDelete={this.onDelete}
+								data={arr}
+								profile={profile}
+								userAvailable={userAvailable}
+							/>}
+							{!dressData && <div style={{textAlign: 'center'}}>not uploaded any dress</div>}
+						</div>
 					</div>
 			</div>
     	);

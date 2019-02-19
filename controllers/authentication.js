@@ -1,6 +1,6 @@
 const jwt  = require('jwt-simple');
 const User = require('../models/user')
-const config = require('../config');
+const config = require('../config/config');
 const bcrypt = require('bcrypt-nodejs');
 
 //creting token for user or through user.id
@@ -14,7 +14,9 @@ exports.signin = function(req, res, next){
   res.send({
     token: tokenForUser(req.user),
     _id:req.user.id,
-    email:req.user.email
+    email:req.user.email,
+    firstName:req.user.firstname,
+    lastName:req.user.lastname
   });
 }
 
