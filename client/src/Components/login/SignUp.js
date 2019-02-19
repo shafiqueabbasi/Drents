@@ -117,6 +117,15 @@ class SignUp extends Component {
                       </div>
                       <div className="group">
                           <Form.Item>
+                            {getFieldDecorator('phone', {
+                              rules: [{ required: true, message: 'Please input your phone number!' }],
+                            })(
+                              <Input addonBefore={prefixSelector} style={{ width: '100%' }} />
+                            )}
+                          </Form.Item>
+                      </div>
+                      <div className="group">
+                          <Form.Item>
                               {getFieldDecorator('password', {
                                 rules: [{
                                   required: true, message: 'Please input your password!',
