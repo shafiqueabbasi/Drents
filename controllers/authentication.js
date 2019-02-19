@@ -15,7 +15,8 @@ exports.signin = function(req, res, next){
     token: tokenForUser(req.user),
     _id:req.user.id,
     email:req.user.email,
-    name:user.firstname +''+ user.lastname
+    firstName:user.firstname,
+    lastName:user.lastname
   });
 }
 
