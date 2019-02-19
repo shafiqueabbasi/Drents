@@ -47,12 +47,12 @@ class MainPayment extends Component {
   } 
 
   changeHandler(data){
-      // this.props.onChange(data);
-      console.log(data, 'dataaaaaaa')
+      this.props.onChange(data);
+      console.log(data, 'dataaaaaaa success')
   }
 
   handleError = (msg) => {
-      // this.props.onError(msg);
+      this.props.onError(msg);
       console.log(msg, 'msgggggggg')
   }
 

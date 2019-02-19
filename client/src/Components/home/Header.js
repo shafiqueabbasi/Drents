@@ -11,7 +11,8 @@ import { Redirect } from 'react-router';
 
 class FirstPage extends Component {
   state = {
-    arrCart: []
+    arrCart: [],
+    goTo: false
   }
   
   async componentDidMount(){
@@ -32,9 +33,14 @@ class FirstPage extends Component {
   }
 
   logOut = () => {
-    this.props.dispatch(userActions.logout(), () => {
-      this.setState({ goTo : true })
-    });
+    // this.props.dispatch(userActions.logout(() => {
+    //   this.setState({ goTo: true })
+    // }));
+    // localStorage.removeItem('user').then (() => {
+      console.log(this.props, 'propsssssssss')
+    // });
+    // this.setState({ goTo: true })
+    // this.props.history.push('/')
   }
 
   render() {
@@ -43,9 +49,9 @@ class FirstPage extends Component {
     let finalArr = arr.length > 0 ? arr : arrCart,
     userId = user && user._id ? user._id : ''
 
-    if(goTo){
-        return <Redirect to='/' />
-    }
+    // if(goTo){
+    //     return <Redirect to='/' />
+    // }
 
     return (
       <div>

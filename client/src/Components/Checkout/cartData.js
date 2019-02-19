@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import StripeData from '../form/mainpayment';
+import { connect } from 'react-redux';
 import './cartData.css'
 
 class CartData extends Component {
 	state = {
 		finalArr: [],
-		showStripe: false
+		showStripe: false,
+		paymentSuccess: false,
+		msg: ''
 	}
 
 	componentDidMount(){
@@ -21,10 +24,26 @@ class CartData extends Component {
 		localStorage.setItem('Cart', JSON.stringify(finalArr));
 	}
 
+	onSuccessCard = (data) => {
+		if(data.status == 'succeeded'){
+			this.setState({ paymentSuccess: true })
+		}
+	}
+
+	onErrorCard = msg => {
+		console.log(msg)
+		this.setState({ msg })
+		setTimeout(()=> {
+			this.setState({ msg: '' })
+		}, 4000)
+	}
+
 	render() {
-		const { finalArr } = this.state;
+		const { finalArr, paymentSuccess, msg } = this.state,
+		{ loggedIn } = this.props;
 		var price = 0;
 		console.log(price, 'priceeeeeeeee')
+		console.log(loggedIn , 'ppppppppppppp')
 
 		return (
 			<div style={{marginTop:'10%'}}>
@@ -97,13 +116,18 @@ class CartData extends Component {
 						</div>
 						<div className="row">
 							<div className="col-md-12 col-sm-12 chainbelt1">
-								<button className="btn apex2" data-toggle="modal" data-target="#stripeCard">
+								<button className="btn apex2" 
+									disabled={!loggedIn}
+									data-toggle="modal" data-target="#stripeCard">
 									<span className="apex3">
 										CHECKOUT
 									</span>
 								</button>
 							</div>
 						</div>
+						{!loggedIn && <div className="row">
+							<h3 style={{textAlign: 'center'}}>Login First for CHECKOUT!!</h3>
+						</div>}
 						<div id="stripeCard" className="modal fade" role="dialog" style={{marginTop:'5%'}}>
 							<div className="modal-dialog">
 								<div className="modal-content" style={{backgroundColor:'white'}}>
@@ -112,16 +136,22 @@ class CartData extends Component {
 					                  <h4 className="modal-title" style={{color:'white',textAlign:'center'}}>Stripe</h4>
 					                </div>
 					                <div className="modal-body">
-					                {/*// <div className="row" style={{border:'1px solid gray',width:'87%',textAlign:'center',marginLeft:'35px',padding:'15px'}}>
-													// 	<div className="col-md-12">
-													// 		<StripeData />
-													// 	</div>
-													// </div>*/}
-													<div className="row">
-														<div className="col-md-12" style={{textAlign:'center'}}>
-																<img src="../images/paid.gif" style={{width:'20%'}} />
-														</div>
-													</div>
+					                {!paymentSuccess && <div className="row" style={{border:'1px solid gray',width:'87%',textAlign:'center',marginLeft:'35px',padding:'15px'}}>
+										<div className="col-md-12">
+											<StripeData 
+												onError={this.onErrorCard}
+												onChange={this.onSuccessCard}
+											/>
+										</div>
+										{msg.length > 0 && <div>
+											{msg}
+										</div>}
+									</div>}
+									{paymentSuccess && <div className="row">
+										<div className="col-md-12" style={{textAlign:'center'}}>
+												<img src="../images/paid.gif" style={{width:'20%'}} />
+										</div>
+									</div>}
 					                </div>
 								</div>
 							</div>
@@ -201,4 +231,12 @@ class CartData extends Component {
 	}
 }
 
-export default CartData;
+function mapStateToProps(state) {
+    const { loggedIn, user } = state.authentication;
+    return {
+        loggedIn, user
+    };
+}
+
+const connectCartData = connect(mapStateToProps)(CartData);
+export default connectCartData;

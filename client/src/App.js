@@ -27,12 +27,15 @@ import Checkout from './Components/Checkout/cartData';
 
 
 class App extends Component {
-	state = {
-    response: '',
-    post: '',
-    responseToPost: '',
-    arr: []
-  };
+  constructor(props){
+    super(props);
+  	this.state = {
+      response: '',
+      post: '',
+      responseToPost: '',
+      arr: []
+    };
+  }
 
   componentDidMount() {
     this.callApi()
@@ -63,11 +66,12 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.props, 'llllllllll')
     return (
       <div className="App">
 			<BrowserRouter>
 	          <div>
-	          <Header arr={this.state.arr}/>
+	          <Header arr={this.state.arr} {...this.props}/>
 				{/*<PrivateRoute exact path="/" component={HomePage} />
 	              <PrivateRoute exact path="/about" component={AboutPage} />*/}
 	              <Route path="/" exact component={Home} />
