@@ -356,6 +356,7 @@ class Productdetailfirstfold extends Component {
 						                      id="from" 
 						                      value={this.state.from} 
 						                      onChange={this.inputHandleChange}
+					                       style={{border:'none',marginTop:'4px'}}
 						                  />                
 						            </div>
 						            {/*<div className="col-md-2">
@@ -370,6 +371,7 @@ class Productdetailfirstfold extends Component {
 						                      id="to" 
 						                      value={this.state.to}
 						                      onChange={this.inputHandleChange}
+						                       style={{border:'none',marginTop:'4px'}}
 						                  />                
 						            </div>
                             	</div>
