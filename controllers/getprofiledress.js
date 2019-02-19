@@ -1,5 +1,5 @@
 const profile = require('../models/profile');
-const review = require('../models/reviewModal');
+const review = require('../models/postreviewSchema');
 const UploadDress = require('../models/uploadDress');
 
 exports.getdressProfile = function(req,res,next){
@@ -15,6 +15,7 @@ exports.getdressProfile = function(req,res,next){
         return res.status(422).send({error:'No Profile Found!'})
       }
     review.find({"userId":userId},function(err,specificProfileReview){
+      console.log(specificProfileReview)
       if(err){
         return res.status(422).send({error:'No Review Found!'})
       }

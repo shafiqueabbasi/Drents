@@ -449,9 +449,6 @@ input[type="file"] {
     color: #fff;
     background: #3ecf8e;
     text-shadow: 0 1px 3px rgba(36,180,126,.4);
-
-
-
     white-space: nowrap;
     display: inline-block;
     height: 40px;
@@ -469,5 +466,9 @@ input[type="file"] {
     text-decoration: none;
     -webkit-transition: all .15s ease;
     transition: all .15s ease;
-    text:Pay
+    content:''
+}
+.checkout>button:after{
+  content:'Pay';
+  visibility: visible;
 }
