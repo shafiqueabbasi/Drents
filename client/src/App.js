@@ -71,7 +71,7 @@ class App extends Component {
 				{/*<PrivateRoute exact path="/" component={HomePage} />
 	              <PrivateRoute exact path="/about" component={AboutPage} />*/}
 	              <Route path="/" exact component={Home} />
-								<PrivateRoute path="/profile" exact component={UserProfile} />
+								<Route path="/profile/:value" exact component={UserProfile} />
 	              {/*<Route path="/register" component={RegisterPage} />*/}
                 <Route path="/product" component={MainPage} />
                 <Route path="/userdetail" component={Profile} />

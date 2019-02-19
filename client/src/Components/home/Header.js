@@ -7,6 +7,8 @@ import SignUp from '../login/SignUp';
 import { connect } from 'react-redux';
 import { userActions } from '../../_actions';
 
+import { Redirect } from 'react-router';
+
 class FirstPage extends Component {
   state = {
     arrCart: []
@@ -30,13 +32,20 @@ class FirstPage extends Component {
   }
 
   logOut = () => {
-    this.props.dispatch(userActions.logout());
+    this.props.dispatch(userActions.logout(), () => {
+      this.setState({ goTo : true })
+    });
   }
 
   render() {
-    const { loggedIn, arr } = this.props,
-    { arrCart } = this.state;
-    let finalArr = arr.length > 0 ? arr : arrCart;
+    const { loggedIn, arr, user } = this.props,
+    { arrCart, goTo } = this.state;
+    let finalArr = arr.length > 0 ? arr : arrCart,
+    userId = user && user._id ? user._id : ''
+
+    if(goTo){
+        return <Redirect to='/' />
+    }
 
     return (
       <div>
@@ -45,8 +54,8 @@ class FirstPage extends Component {
       		  <div className="container-fluid">
       	  	  <div className="col-md-4 col-sm-2">
       			 	  <div className="navbar-header">
-      					  <a href="#" className="hidden-sm"><img src="./images/Drent-logo-white.png" style={{width: '35%'}}/></a>
-                  <a href="#" className="visible-sm"><img src="./images/Drent-logo-white.png" style={{width: '110%'}}/></a>
+      					  <a href="#" className="hidden-sm"><img src="../images/Drent-logo-white.png" style={{width: '35%'}}/></a>
+                  <a href="#" className="visible-sm"><img src="../images/Drent-logo-white.png" style={{width: '110%'}}/></a>
       				  </div>
       			  </div>
       		    <div className="container-fluid">
@@ -55,8 +64,8 @@ class FirstPage extends Component {
       					    <li className="head"><Link to={`/`} className="nav" style={{fontSize:'12px'}}>HOME</Link></li>
         				    <li className="head"><Link to={`/product`} className="nav" style={{fontSize:'12px'}}>PRODUCT</Link></li>
         				    <li className="head"><Link to={`/detail`} className="nav" style={{fontSize:'12px'}}>TESTIMONIALS</Link></li>
-        				    <li className="head"><Link to={`/profile`} className="nav" style={{fontSize:'12px'}}>MY PROFILE</Link></li>
-                    {loggedIn && <li className="head" onClick={this.logOut}><a href="#" className="nav" style={{fontSize:'12px'}}>Log Out</a></li>}
+        				    <li className="head"><Link to={`/profile/${userId}`} className="nav" style={{fontSize:'12px'}}>MY PROFILE</Link></li>
+                    {loggedIn && <li className="head" onClick={this.logOut}><a className="nav" style={{fontSize:'12px'}}>Log Out</a></li>}
 
                     {!loggedIn && <li className="head">
                       <a href="#" className="nav" data-toggle="modal" data-target="#SignIn" style={{fontSize:'12px'}}>Sign In</a>
@@ -96,7 +105,7 @@ class FirstPage extends Component {
                     </li>}
                     <li className="head">
                       <Link to={{pathname: `/checkout`, state: {finalArr}}} className="nav badge">
-                        <img src="./images/bag.png" style={{marginTop:'-5px'}}/>
+                        <img src="../images/bag.png" style={{marginTop:'-5px'}}/>
                         <span className="badge">
                           {finalArr.length > 0 ? finalArr.length : ''}
                         </span>
@@ -135,9 +144,9 @@ class FirstPage extends Component {
 }
 
 function mapStateToProps(state) {
-    const { loggedIn } = state.authentication;
+    const { loggedIn, user } = state.authentication;
     return {
-        loggedIn
+        loggedIn, user
     };
 }
 

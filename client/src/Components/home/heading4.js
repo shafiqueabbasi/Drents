@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 
 class Heading4 extends Component {
   render() {
-  	const { label, hrLine, data, showEditDelete, onDelete, profile } = this.props;
+  	const { label, hrLine, data, showEditDelete, onDelete, profile, userAvailable } = this.props;
     
     return (
     	<div className="App" style={{backgroundImage: "url('./images/swrils.png')"}}>
     		{label && label.length > 0 && <div className="Heading">
       			<h1 className="headings">{label}</h1>
-      			<img src='./images/bar.png'/>
+      			<img src='../images/bar.png'/>
       		</div>}
       		<div className="container-fluid">
 	    		<div className="container-fluid">
@@ -22,7 +22,7 @@ class Heading4 extends Component {
 			    							<img src={elem.fileList[0]} className="dress1" style={{width:'100%'}} />				    					
 		    							</Link>				    							
 		    							<div>
-		    								{showEditDelete && <div className="row">
+		    								{showEditDelete && userAvailable && <div className="row">
 		    									<div className="col-md-6">
 		    										<Link to={{pathname: `/userdetail`, state: {goTo: 'uploadDress', elem, profile}}}>
 		    											<h2 className="h_dress">Edit</h2>

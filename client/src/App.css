@@ -38,7 +38,7 @@
 
 
  .images-text{
-  
+
 
  }
 
@@ -49,12 +49,12 @@
 
 .bgc {
   background-color: #c2073f;
-  
+
 }
 .nav{
   color: #ffffff;
   font-size: 15px;
- 
+
 }
 .customhover a:hover{
   background: none !important;
@@ -159,8 +159,8 @@
 
 }
 .scrollbar{
-  height: 275px;    
-  
+  height: 275px;
+
   overflow-x: scroll;
 }
 
@@ -168,7 +168,7 @@
 #style-1::-webkit-scrollbar {
     width: 6px;
     background-color: #F5F5F5;
-} 
+}
 #style-1::-webkit-scrollbar-thumb {
     background-color: #c2073f;
 }
@@ -223,7 +223,7 @@
   left: 0;
   height: 28px;
   width: 28px;
-  
+
   border-radius: 50%;
   border:1px solid #ccc;
 }
@@ -444,6 +444,31 @@ textarea{
 input[type="file"] {
     display: none;
 }
-
-
-
+.checkout>button{
+  margin-right: 23px;
+    color: #fff;
+    background: #3ecf8e;
+    text-shadow: 0 1px 3px rgba(36,180,126,.4);
+    white-space: nowrap;
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 14px;
+    -webkit-box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+    box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+    background: #fff;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .025em;
+    color: #6772e5;
+    text-decoration: none;
+    -webkit-transition: all .15s ease;
+    transition: all .15s ease;
+    content:''
+}
+.checkout>button:after{
+  content:'Pay';
+  visibility: visible;
+}

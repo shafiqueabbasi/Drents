@@ -39,7 +39,7 @@ exports.uploaddress = function(req,res,next){
 else if(dressupload._id != ''){
   console.log(dressupload._id);
   UploadDress.find({"_id":dressupload._id},function(err,existingDress){
-    console.log(existingDress)
+    console.log(existingDress);
     existingDress.productName=dressupload.productName;
     existingDress.detailName=dressupload.detailName;
     existingDress.description=dressupload.description;
@@ -56,7 +56,7 @@ else if(dressupload._id != ''){
     existingDress.userId=dressupload.userId;
 
 
-    existingDress.save(function(err,savingdata){
+    existingDress.save(function(err){
     if(err){
       return res.status(422).send({error:'Not updated'})
     }
@@ -67,6 +67,6 @@ else if(dressupload._id != ''){
     });
   })
   })
-  
+
 }
 }
