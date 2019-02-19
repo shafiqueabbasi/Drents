@@ -28,6 +28,7 @@ class CheckoutForm extends Component {
   }
 
   async submit(ev) {
+    this.setState({ loader: true })
       const { receivedData } = this.props;
       let { token, error } = await this.props.stripe.createToken({name: receivedData.firstName});
       if(error === undefined || token){
@@ -42,8 +43,10 @@ class CheckoutForm extends Component {
               }
           });
           this.props.onChange(response);
+          this.setState({ loader: false })
       }else {
           this.props.onError(error.message);
+          this.setState({ loader: false })
       }  
   }
 
@@ -52,6 +55,7 @@ class CheckoutForm extends Component {
           <div className="checkout">
               <CardElement />
               <button onClick={this.submit}>Send</button>
+              {this.state.loader && <div class="loading">Loading&#8230;</div>}
           </div>
       );
   }

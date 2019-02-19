@@ -30,7 +30,7 @@ class Headingf8 extends Component {
                             </ul>
     				    </div>
     					<div className="col-md-4 col-sm-4" style={{color: '#ffffff'}}>
-    						<a href="#"><img src="./images/Drent-logo-white.png" style={{width: '62%'}}/></a>
+    						<a href="#"><img src="../images/Drent-logo-white.png" style={{width: '62%'}}/></a>
     					</div>
                         <div className="row">
                 <div className="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center"style={{color: '#ffffff'}}>
