@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 import './addtocart.css'
 
 class Addtocart extends Component {
-	render() { 
-		return( 
+	render() {
+		return(
 		<div>
 			{/*<nav>
 				<div class="container">
     				<ul class="navbar-right">
       					<li style={{listStyle: 'none'}}><a id="cart"><i class="fa fa-shopping-cart"></i> Cart <span class="badge"></span></a></li>
-    				</ul> 
-  				</div> 
+    				</ul>
+  				</div>
 			</nav>*/}
 
 
@@ -23,7 +23,7 @@ class Addtocart extends Component {
         					<span class="main-color-text">$2,229.97</span></h5>
         					<hr/>
       					</div>
-    				</div> 
+    				</div>
 
     				<ul class="shopping-cart-items">
     					<li class="clearfix">
@@ -62,16 +62,9 @@ class Addtocart extends Component {
 				    </ul>
 
 				    <a href="#" class="button">Checkout</a>
-				 </div> 
+				 </div>
 			</div>
 			</div>
-
-
-
-
-
-
-
 
     );
 

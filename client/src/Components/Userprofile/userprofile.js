@@ -17,6 +17,7 @@ class UserProfile extends Component {
 
 	async componentDidMount(){
 		let data = await HttpUtils.post('getprofiledress', {userId: this.props.user._id}, this.props.user.token);
+		console.log(data);
 		if(data.code && data.code == 200){
 			this.setState({ arr: data.dress, profile: data.profile });
 		}
@@ -25,10 +26,10 @@ class UserProfile extends Component {
 	onDelete = e => {
 		console.log(e, 'editttttt')
 	}
- 
-	render() { 
+
+	render() {
 		const { profile, arr } = this.state;
-		return( 
+		return(
 			<div style={{backgroundImage: "url('./images/swrils.png')"}}>
 					<div>
 						<div className="container" style={{marginTop:'6%'}}>
@@ -53,7 +54,7 @@ class UserProfile extends Component {
 										<div className="col-md-2 rovil6">
 											<h4>
 												<Link to={{pathname: `/userdetail`, state: {goTo: 'profile', profile, arr }}}><i className="glyphicon glyphicon-pencil"></i></Link>
-											</h4>	
+											</h4>
 										</div>
 									</div>
 									<div className="row rovil1">
@@ -85,9 +86,9 @@ class UserProfile extends Component {
 						</div>
 						<div className="row" style={{margin:'0px'}}>
 							{/*<div className="col-md-6"><h2>GALLERY</h2></div>*/}
-							<Gallery 
-								label='Gallery' 
-								showEditDelete={true} 
+							<Gallery
+								label='Gallery'
+								showEditDelete={true}
 								onDelete={this.onDelete}
 								data={arr}
 								profile={profile}
