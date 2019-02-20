@@ -77,7 +77,7 @@ class SignIn extends Component {
         googleId = googleUser.getId();
 
         this.setState({
-            id: googleUser.w3.Eea,
+            userID: googleUser.w3.Eea,
             name: googleUser.w3.ig,
             email: googleUser.w3.U3
         })
