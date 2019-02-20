@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
+const path = require('path');
 const http = require('http');
 const app = express();
 const mongoose = require('mongoose');
@@ -42,9 +43,16 @@ app.post('/api/world', (req, res) => {
   );
 });
 
-
 //Server setup
 const port = process.env.PORT || 5000;
 const server = http.createServer(app);
 //server.listen(port);
+if (process.env.NODE_ENV === 'production') {
+  // Serve any static files
+  app.use(express.static(path.join(__dirname, 'client/build')));
+  // Handle React routing, return all requests to React app
+  app.get('*', function(req, res) {
+    res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+  });
+}
 app.listen(port, () => console.log(`Listening on port ${port}`));

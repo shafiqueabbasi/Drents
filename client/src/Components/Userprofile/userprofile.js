@@ -58,8 +58,17 @@ class UserProfile extends Component {
 						<div className="container" style={{marginTop:'6%'}}>
 							<div className="row" style={{marginTop:'21px'}}>
 								<div className="col-md-3">
-									<div className="rovil1">
-										<img src="../images/admin1.jpg" className="rovilimg img-circle" style={{width:'60%',height:'133px'}}/>
+									<div className="rovil1 shah2">
+										<img src="../images/admin1.jpg" className="rovilimg img-circle streetb2" style={{width:'60%',height:'133px'}}/>
+									</div>
+									<div id="shah1">
+										<div className="streetb1">	
+											<label className="custom-file-upload">
+											    <input type="file"/>
+											    <i class="fas fa-camera" style={{fontSize:'20px'}}></i><br/>
+											    <h5>Add Photo</h5>
+											</label>
+										</div>
 									</div>
 								</div>
 								<div className="col-md-9 rovil3">
