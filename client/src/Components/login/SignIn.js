@@ -6,13 +6,18 @@ import { userActions } from '../../_actions';
 import { connect } from 'react-redux';
 import FacebookLogin from 'react-facebook-login';
 import { GoogleLogin } from 'react-google-login-component';
+// import $ from 'jquery';
 import './SignIn.css'
 
 class SignIn extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          clicked: false
+          clicked: false,
+          setEmail: '',
+          showEmailButton: false,
+          name: '',
+          userID: ''          
         }
         // reset login status
         this.props.dispatch(userActions.logout());
@@ -30,6 +35,11 @@ class SignIn extends Component {
      });
    }
 
+   handleEmail = e => {
+      const { setEmail, name, userID } = this.state;
+      console.log(name, userID, setEmail, 'user detaillllllll')
+   }
+
    handleConfirmBlur = (e) => {
      const value = e.target.value;
      this.setState({ confirmDirty: this.state.confirmDirty || !!value });
@@ -39,6 +49,21 @@ class SignIn extends Component {
       const { clicked } = this.state;
       if(clicked){
         console.log(response, 'responseeeeeeeee')
+        if(response && response.id && response.id.length){
+          if(!response.email || response.email == undefined){
+            this.setState({ 
+              showEmailButton: true, 
+              name: response.name, 
+              userID: response.userID 
+            })
+          }else {
+              this.setState({
+                name: response.name,
+                userID: response.userID,
+                setEmail: response.email
+              })
+          }
+        }
       }
    }
 
@@ -51,15 +76,21 @@ class SignIn extends Component {
         let id_token = googleUser.getAuthResponse(),
         googleId = googleUser.getId();
 
-        let data = {
+        this.setState({
             id: googleUser.w3.Eea,
             name: googleUser.w3.ig,
             email: googleUser.w3.U3
-        }
+        })
+        // console.log(data, 'dataaaa')
     }
 
+    pickEmail = e => {
+        this.setState({ [e.target.id]: e.target.value })
+    }
 
   render() {
+    const { showEmailButton } = this.state;
+    console.log(this.state.setEmail, 'emaillllllll')
     const { getFieldDecorator } = this.props.form;
     return (
       	<div style={{backgroundColor: '#c2073f'}}>
@@ -74,13 +105,13 @@ class SignIn extends Component {
       			<div className="row">
       				<div className="col-md-4 col-sm-4 col-xs-2"></div>
       				<div className="col-md-4 col-sm-4 col-xs-8">
-      					<h3 style={{color: '#ffffff',textAlign: 'center'}}>Sign In</h3>
+      					<h3 style={{color: '#ffffff',textAlign: 'center'}}>{!showEmailButton ? 'Sign In' : 'Email'}</h3>
       				</div>
       				<div className="col-md-4 col-sm-4 col-xs-2"></div>
       			</div>
 
 
-				<div className="row">
+				{!showEmailButton && <div className="row">
 					<div className="col-md-2 col-sm-3 col-xs-2"></div>
 					<div className="col-md-8 col-sm-6 col-xs-8 get_form_inner">
 		    			<Form onSubmit={this.handleSubmit}>
@@ -116,17 +147,57 @@ class SignIn extends Component {
 		                </Form>
 					</div>
 					<div className="col-md-2 col-sm-3 col-xs-2"></div>
-				</div>
+				</div>}
 
-				<div className="row">
+        {showEmailButton && <div className="row">
+          <div className="col-md-2 col-sm-3 col-xs-2"></div>
+          <div className="col-md-8 col-sm-6 col-xs-8 get_form_inner">
+              <Form onSubmit={this.handleEmail}>
+                  <div className="group">
+                      {/*<Form.Item>
+                           {getFieldDecorator('email', {
+                             rules: [{
+                               type: 'email', message: 'The input is not valid E-mail!',
+                             }, {
+                               required: true, message: 'Please input your E-mail!',
+                             }],
+                           })(
+                             <Input placeholder="Email" />
+                           )}
+                      </Form.Item>*/}
+                      <input type="email" id="setEmail" placeholder="Email" value={this.state.setEmail} onChange={this.pickEmail}/>
+                      <span className="highlight"></span>
+                  </div>
+              </Form>
+          </div>
+          <div className="col-md-2 col-sm-3 col-xs-2"></div>
+        </div>}
+
+				{!showEmailButton && <div className="row">
 					<div className="col-md-4 col-sm-4 col-xs-3"></div>
 					<div className="col-md-4 col-sm-4 col-xs-6" style={{textAlign: 'center'}}>
 						<button type="submit" className="login" onClick={this.handleSubmit}>Login</button>
 					</div>
 					<div className="col-md-4 col-sm-4 col-xs-3"></div>
-				</div><br/><br/><br/>
+				</div>}<br/><br/><br/>
 
-				<div className="row">
+        {showEmailButton && <div className="row">
+          <div className="col-md-3 col-sm-3 col-xs-3"></div>
+          <div className="col-md-6 col-sm-6 col-xs-6" style={{textAlign: 'center'}}>
+            We need your Email for further login
+          </div>
+          <div className="col-md-3 col-sm-3 col-xs-3"></div>
+        </div>}<br/><br/><br/>
+
+        {showEmailButton && <div className="row">
+          <div className="col-md-3 col-sm-3 col-xs-3"></div>
+          <div className="col-md-6 col-sm-6 col-xs-6" style={{textAlign: 'center'}}>
+            <button type="submit" className="login" onClick={this.handleEmail}>Confirm Email</button>
+          </div>
+          <div className="col-md-3 col-sm-3 col-xs-3"></div>
+        </div>}<br/><br/><br/>
+
+				{!showEmailButton && <div className="row">
 					<div className="col-md-2 col-sm-2 col-xs-1"></div>
 					<div className="col-md-8 col-sm-8 col-xs-10" style={{textAlign: 'center'}}>
 						{/*<button className="loginBtn loginBtn--facebook">
@@ -154,16 +225,34 @@ class SignIn extends Component {
             />
 					</div>
 					<div className="col-md-2 col-sm-2 col-xs-1"></div>
-				</div>
+				</div>}
 
-				<div className="row">
+				{!showEmailButton && <div className="row">
 					<div className="col-md-3"></div>
 					<div className="col-md-6">
 						<h3 style={{color: '#ffffff', textAlign: 'center'}}>Create an Account</h3>
 					</div>
 					<div className="col-md-3"></div>
-				</div>
+				</div>}
 			</div>
+      <div className="modal fade" id="emailFor" role="dialog">
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 className="modal-title" style={{textAlign:'center'}}>Sign In</h4>
+            </div>
+            <div className="modal-body">
+              <div>
+                <input type="email" id="setEmail" value={this.state.setEmail} onChange={this.pickEmail}/>
+              </div>
+            </div>
+            <div className="modal-footer">
+              <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
       	</div>
     );
 

@@ -7,6 +7,7 @@
     "AsyncStorage": "^0.1.5",
     "antd": "^3.7.0",
     "antd-init": "^2.0.6",
+    "jquery": "^3.3.1",
     "react": "^16.6.3",
     "react-bootstrap": "^0.32.4",
     "react-bootstrap-daterangepicker": "^4.1.0",
