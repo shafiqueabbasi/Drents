@@ -7,7 +7,7 @@ import SignUp from '../login/SignUp';
 import { connect } from 'react-redux';
 import { userActions } from '../../_actions';
 
-import { Redirect } from 'react-router';
+// import { Redirect } from 'react-router';
 
 class FirstPage extends Component {
   state = {

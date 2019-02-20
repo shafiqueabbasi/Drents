@@ -18,7 +18,8 @@ class SignIn extends Component {
           showEmailButton: false,
           name: '',
           userId: '',
-          err: ''          
+          err: '',
+          loader: false          
         }
         // reset login status
         this.props.dispatch(userActions.logout());
@@ -26,14 +27,15 @@ class SignIn extends Component {
 
   handleSubmit = (e) => {
      e.preventDefault();
+     this.setState({ loader: true })
      this.props.form.validateFieldsAndScroll((err, values) => {
        if (!err) {
          this.props.dispatch(userActions.login(values, 'signin', (token) => {
           console.log(token, 'tokennnnnnnn')
           if(typeof(token) == 'string'){
-            this.setState({ err: token })
+            this.setState({ err: token, loader: false })
             setTimeout(() => {
-              this.setState({ err: '' })
+              this.setState({ err: '', loader: false })
             }, 4000)
           }else {
             localStorage.setItem('user', JSON.stringify(token));
@@ -44,6 +46,7 @@ class SignIn extends Component {
    }
 
    handleEmail = e => {
+    this.setState({ loader: true })
       const { setEmail, name, userId } = this.state,
       obj = {
         userId, name,
@@ -51,9 +54,9 @@ class SignIn extends Component {
       }
       this.props.dispatch(userActions.login(obj, 'socialauth', (token) => {
         if(typeof(token) == 'string'){
-          this.setState({ err: token })
+          this.setState({ err: token, loader: false })
           setTimeout(() => {
-            this.setState({ err: '' })
+            this.setState({ err: '', loader: false })
           }, 4000)
         }else {
           localStorage.setItem('user', JSON.stringify(token));
@@ -261,25 +264,8 @@ class SignIn extends Component {
 					</div>
 					<div className="col-md-3"></div>
 				</div>}
-			</div>
-      <div className="modal fade" id="emailFor" role="dialog">
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <div className="modal-header">
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h4 className="modal-title" style={{textAlign:'center'}}>Sign In</h4>
-            </div>
-            <div className="modal-body">
-              <div>
-                <input type="email" id="setEmail" value={this.state.setEmail} onChange={this.pickEmail}/>
-              </div>
-            </div>
-            <div className="modal-footer">
-              <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-      </div>
+        {this.state.loader && <div class="loading">Loading&#8230;</div>}
+			</div>      
       	</div>
     );
 

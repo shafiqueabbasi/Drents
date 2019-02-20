@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import StripeData from '../form/mainpayment';
 import { connect } from 'react-redux';
+import { HttpUtils } from  '../../Service/HttpUtils';
+import moment from 'moment';
+import { Redirect } from 'react-router';
 import './cartData.css'
 
 class CartData extends Component {
@@ -8,42 +11,89 @@ class CartData extends Component {
 		finalArr: [],
 		showStripe: false,
 		paymentSuccess: false,
-		msg: ''
+		msg: '',
+		goTo: false
 	}
 
 	componentDidMount(){
 		const { finalArr } = this.props.location.state;
-		this.setState({ finalArr })
+		this.setState({ finalArr }, () => {
+			this.getData();
+		})
 	}
 
 	cancelOrder(e){
 		let { finalArr } = this.state;
 		finalArr = finalArr.filter((elem) => elem._id !== e._id)
-		this.setState({ finalArr });
+		this.setState({ finalArr }, () => {
+			this.getData();
+		});
 		this.props.updateCart(finalArr);
 		localStorage.setItem('Cart', JSON.stringify(finalArr));
 	}
 
-	onSuccessCard = (data) => {
+	onSuccessCard = async(data) => {
+		const { user } = this.props,
+		{ finalPrice, finalArr } = this.state;
 		if(data.status == 'succeeded'){
-			this.setState({ paymentSuccess: true })
+			let obj = {
+				userId: user._id,
+		        products: finalArr,
+		        email: user.email,
+		        name: user.name,
+		        date: moment().format('LL'),
+		        amount: finalPrice
+			},
+			stripeRes = await HttpUtils.post('orderdetail',obj, user.token);
+	        if(stripeRes.code && stripeRes.code == 200){
+	        	console.log(stripeRes, 'ressssssssss')
+	            this.setState({ paymentSuccess: true })
+	            setTimeout(() => {
+	            	this.props.updateCart(finalArr);
+	            	localStorage.removeItem('Cart');
+	            	document.getElementById("stripeCard").click();
+	            	this.setState({ goTo: true })
+	            }, 4000)	            
+	        }
+			
 		}
 	}
 
 	onErrorCard = msg => {
-		console.log(msg)
 		this.setState({ msg })
 		setTimeout(()=> {
 			this.setState({ msg: '' })
 		}, 4000)
 	}
 
-	render() {
-		const { finalArr, paymentSuccess, msg } = this.state,
-		{ loggedIn } = this.props;
+	getData = e => {
+		const { finalArr } = this.state,
+		{ loggedIn, user } = this.props;
 		var price = 0;
-		console.log(price, 'priceeeeeeeee')
-		console.log(loggedIn , 'ppppppppppppp')
+		finalArr.map((elem) => {
+			price += (+elem.priceDay) * (+elem.rentDay + 1)
+		})		
+		let tax = price * 1.48 / 100,
+		drentFee = price * 2 / 100,
+		stripeFee = price * 2.9 / 100,
+		finalPrice = (price + drentFee + tax).toFixed(2)		
+		if(user){
+			var data = {
+				email: user.email,
+				name: user.username,
+				amount: finalPrice
+			}
+		}
+		this.setState({ finalPrice, price, data })
+	}
+ 
+	render() {
+		const { finalArr, paymentSuccess, msg, finalPrice, price, data, goTo } = this.state,
+		{ loggedIn, user } = this.props;
+
+		if(goTo){
+			return <Redirect to='/' />
+		}
 
 		return (
 			<div style={{marginTop:'10%'}}>
@@ -53,7 +103,6 @@ class CartData extends Component {
 							<div className="col-md-12 col-sm-12 chainbelt1"><span className="chainbelt">Your Cart</span></div>
 						</div>
 						{finalArr.map((elem, key) => {
-							price += elem.priceDay;
 							return (
 								<div>
 									<div className="row">
@@ -105,13 +154,51 @@ class CartData extends Component {
 								</div>
 							)
 						})}
-						<div className="row apex1">
+						{/*<div className="row apex1">
 							<div className="col-md-2 col-sm-2"></div>
 							<div className="col-md-4 col-sm-4">
 								<p><span>Subtotal</span></p>
 							</div>
 							<div className="col-md-4 col-sm-4 chainbelt7">
-								<p><span>9999.99</span></p>
+								<p><span>{price}</span></p>
+							</div>
+							<div className="col-md-2 col-sm-2"></div>
+						</div>*/}
+						<div className="row apex1">
+							<div className="col-md-6 col-sm-6"></div>
+							<div className="col-md-6 col-sm-6 chainbelt7">
+								<div className="row">
+									<div className="col-md-6 col-sm-6">
+										Net Amount:
+									</div>
+									<div className="col-md-6 col-sm-6">
+										{price}
+									</div>
+									<div className="col-md-6 col-sm-6">
+										Tax:
+									</div>
+									<div className="col-md-6 col-sm-6">
+										1.48%
+									</div>
+									<div className="col-md-6 col-sm-6">
+										Drent fee:
+									</div>
+									<div className="col-md-6 col-sm-6">
+										2%
+									</div>
+									<div className="col-md-6 col-sm-6">
+										Stripe fee:
+									</div>
+									<div className="col-md-6 col-sm-6">
+										2.9%
+									</div>
+									<div className="col-md-6 col-sm-6">
+										Total:
+									</div>
+									<div className="col-md-6 col-sm-6">
+										{finalPrice}
+									</div>
+								</div>
 							</div>
 						</div>
 						<div className="row">
@@ -141,6 +228,7 @@ class CartData extends Component {
 											<StripeData 
 												onError={this.onErrorCard}
 												onChange={this.onSuccessCard}
+												data={data}
 											/>
 										</div>
 										{msg.length > 0 && <div>
@@ -164,7 +252,6 @@ class CartData extends Component {
 							<div className="col-xs-12 chainbelt1"><span className="chainbelt">Your Cart</span></div>
 						</div>
 						{finalArr.map((elem, key) => {
-							price += elem.priceDay;
 							return (
 								<div>
 									<div className="row">
@@ -222,7 +309,7 @@ class CartData extends Component {
 								<p><span>Subtotal</span></p>
 							</div>
 							<div className="col-xs-4 chainbelt7">
-								<p><span>9999.99</span></p>
+								<p><span>{price}</span></p>
 							</div>
 						</div>
 						<div className="row">
@@ -243,10 +330,13 @@ class CartData extends Component {
 					                </div>
 					                <div className="modal-body">
 					                <div className="row" style={{border:'1px solid gray',width:'87%',textAlign:'center',marginLeft:'35px',padding:'15px'}}>
-														<div className="col-md-12">
-															<StripeData />
-														</div>
-													</div>
+										<div className="col-md-12">
+											<StripeData
+												onError={this.onErrorCard}
+												onChange={this.onSuccessCard}
+											 />
+										</div>
+									</div>
 					                </div>
 								</div>
 							</div>
