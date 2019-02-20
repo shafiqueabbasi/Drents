@@ -3,19 +3,19 @@ const Schema = mongoose.Schema;
 
 
 //Define Model
-const uploadDressSchema = new Schema({
+const orderDetailSchema = new Schema({
   products:{type:Array},
-  name:{ type:Stirng },
-  email:{ type:Stirng },
-  userId:{ type:Stirng },
-  date:{ type:Stirng },
-  amount:{ type:Stirng },
+  name:{ type:String },
+  email:{ type:String },
+  userId:{ type:String },
+  date:{ type:String },
+  amount:{ type:String },
 });
 
 
 
 //model class
-const ModelDressClass = mongoose.model('checkout',check);
+const ModelDressClass = mongoose.model('checkout',orderDetailSchema);
 
 //export model
 module.exports = ModelDressClass;
