@@ -15,14 +15,6 @@ class CheckoutForm extends Component {
       this.props.onRef(this);
   }
 
-  componentDidUpdate(prevProps, prevState){
-    console.log('1111111111')
-      if(prevProps.data !== this.props.data){
-        console.log('2222222222222')
-          this.setState({receivedData: this.props.data});
-      }
-  }
-
   componentWillUnmount() {
      this.props.onRef(undefined);
   }
@@ -38,8 +30,8 @@ class CheckoutForm extends Component {
               body: {
                   token: token.id,
                   email: receivedData.email,
-                  amount: receivedData.total,
-                  name: receivedData.firstName
+                  amount: receivedData.amount,
+                  name: receivedData.name
               }
           });
           this.props.onChange(response);

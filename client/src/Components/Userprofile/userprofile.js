@@ -21,6 +21,7 @@ class UserProfile extends Component {
 		let id = this.props.match.params.value,
 		data = await HttpUtils.post('getprofiledress', {userId: id}),
 		rate = 0;
+		console.log(data, 'dataaaaaa')
 		if(data.code && data.code == 200){
 			let dressData = data.dress.length > 0 && data.dress.map((elem) => {
 				return elem._id;
