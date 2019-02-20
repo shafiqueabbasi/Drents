@@ -3,11 +3,11 @@ import './headingf8.css';
 
 class Headingf8 extends Component {
   render() {
-    
+
     return (
     	<div>
     		<div className="hidden-xs">
-    			<div id="footer">
+    			<div id="footer" style={{position:'fixed'}}>
     				<div className="col-md-12 col-sm-12 bgc">
     					<div className="col-md-1 "></div>
     					<div className="col-md-3 col-sm-4">
@@ -36,14 +36,14 @@ class Headingf8 extends Component {
                 <div className="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center"style={{color: '#ffffff'}}>
                     <p className="h6 text-white">© Copy All right Reversed.<a className="text-green ml-2" href="https://www.krlcreatives.com" target="_blank">Drent</a></p>
                 </div>
-                
+
             </div>
     				</div>
 
     			</div>
 
     		</div>
-            
+
 
             <div className="visible-xs">
                 <div className="footer">
@@ -60,7 +60,7 @@ class Headingf8 extends Component {
                                 </ul>
                                 </div>
                             </div>
-                                
+
                             <div className=" row" style={{fontSize:'10px'}}>
                                 <div className="col-xs-2"></div>
                                 <div className="col-xs-9">
@@ -81,7 +81,7 @@ class Headingf8 extends Component {
                     </div>
                 </div>
             </div>
-            
+
 
     	</div>
     );
