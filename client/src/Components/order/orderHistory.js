@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 class OrderHistory extends Component {
   render() {
+    const { orderhistory } = this.props.location.state;
+    console.log(orderhistory, 'eeeeeeeeeeeeeeee')
     
     return (
       	<div>
