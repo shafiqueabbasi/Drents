@@ -79,7 +79,7 @@ class SignIn extends Component {
         this.setState({
             userID: googleUser.w3.Eea,
             name: googleUser.w3.ig,
-            email: googleUser.w3.U3
+            setEmail: googleUser.w3.U3
         })
         // console.log(data, 'dataaaa')
     }
