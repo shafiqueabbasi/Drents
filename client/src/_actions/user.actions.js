@@ -35,9 +35,8 @@ function login(user, callback) {
     function failure(error) { return { type: userConstants.LOGIN_FAILURE, error } }
 }
 
-function logout(callback) {
+function logout() {
     localStorage.removeItem('user');
-    callback();
     return { type: userConstants.LOGOUT };
 }
 
