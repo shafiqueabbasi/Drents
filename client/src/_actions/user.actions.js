@@ -19,9 +19,13 @@ function login(user, callback) {
         HttpUtils.post('signin', user)
             .then(
                 user => { 
-                    document.getElementById("SignIn").click();
-                    dispatch(success(user));
-                    callback(user);
+                    if(user !== undefined){
+                        document.getElementById("SignIn").click();
+                        dispatch(success(user));
+                        callback(user);
+                    }else {
+                        callback("User email or passwaord not matched");
+                    }
                 },
                 error => {
                     dispatch(failure(error.toString()));
