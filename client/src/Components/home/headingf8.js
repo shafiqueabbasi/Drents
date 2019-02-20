@@ -10,7 +10,8 @@ class Headingf8 extends Component {
     			<div id="footer">
     				<div className="col-md-12 col-sm-12 bgc">
     					<div className="col-md-1 "></div>
-    					<div className="col-md-3 col-sm-4">
+    					
+                        <div className="col-md-3 col-sm-4">
     						<ul className="ul_list">
                                 <h4 className="footer_h3">Quick links</h4>
                                 <li><a href="javascript:void();" className="li_list"><i className="fa fa-angle-double-right"></i>HOME</a></li>
@@ -19,7 +20,8 @@ class Headingf8 extends Component {
                                 <li><a href="javascript:void();" className="li_list"><i className="fa fa-angle-double-right"></i>MY PROFILE</a></li>
                             </ul>
     					</div>
-    					<div className="col-md-4 col-sm-4" style={{color: '#ffffff'}}>
+    					
+                        <div className="col-md-4 col-sm-4" style={{color: '#ffffff'}}>
     						<h4 className="footer_h3">Social Media</h4>
                             <ul className="list-unstyled list-inline social">
                                 <li className="list-inline-item"><a href="javascript:void();"><i className="fab fa-facebook-f"></i></a></li>
@@ -29,7 +31,8 @@ class Headingf8 extends Component {
                                 <li className="list-inline-item"><a href="javascript:void();"><i className="fab fa-google-plus-g"></i></a></li>
                             </ul>
     				    </div>
-    					<div className="col-md-4 col-sm-4" style={{color: '#ffffff'}}>
+    					
+                        <div className="col-md-4 col-sm-4" style={{color: '#ffffff'}}>
     						<a href="#"><img src="../images/Drent-logo-white.png" style={{width: '62%'}}/></a>
     					</div>
                         <div className="row">
@@ -76,7 +79,10 @@ class Headingf8 extends Component {
                         </div>
                         <div className="col-xs-4"></div>
                         <div className="col-xs-4">
-                            <a href="#"><img src="./images/Drent-logo-white.png" style={{width: '120%'}}/></a>
+                            <a href="#"><img src="../images/Drent-logo-white.png" style={{width: '120%'}}/></a>
+                        </div>
+                        <div className="col-xs-12 text-center"style={{color: '#ffffff'}}>
+                            <p className="h6 text-white">© Copy All right Reversed.<a className="text-green ml-2" href="https://www.krlcreatives.com" target="_blank">Drent</a></p>
                         </div>
                     </div>
                 </div>

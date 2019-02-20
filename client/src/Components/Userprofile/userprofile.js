@@ -59,7 +59,7 @@ class UserProfile extends Component {
 							<div className="row" style={{marginTop:'21px'}}>
 								<div className="col-md-3">
 									<div className="rovil1 shah2">
-										<img src="../images/admin1.jpg" className="rovilimg img-circle streetb2" style={{width:'60%',height:'133px'}}/>
+										<img src="../images/admin1.jpg" className="rovilimg img-circle streetb2"/>
 									</div>
 									<div id="shah1">
 										<div className="streetb1">	
