@@ -1,5 +1,6 @@
 const profile = require('../models/profile');
 const review = require('../models/postreviewSchema');
+const checkoutBooking = require('../models/checkout');
 const UploadDress = require('../models/uploadDress');
 
 exports.getdressProfile = function(req,res,next){
@@ -19,14 +20,19 @@ exports.getdressProfile = function(req,res,next){
       if(err){
         return res.status(422).send({error:'No Review Found!'})
       }
+      checkoutBooking.find(function(err,specificdressbooking){
+        if(err){
+          return res.status(422).send({error:'No Review Found!'})
+        }
 
-      if(specificProfile && allDress && specificProfileReview){
+      if(specificProfile && allDress && specificProfileReview && specificdressbooking){
       res.send({
         code:200,
         msg:'show profile and dress',
         profile:specificProfile,
         dress:allDress,
-        review:specificProfileReview
+        review:specificProfileReview,
+        orderhistory:specificdressbooking
       })
     }
     if(!allDress && specificProfile){
@@ -38,6 +44,7 @@ exports.getdressProfile = function(req,res,next){
         dress:[]
       })
     }
+  });
       });
     });
   });

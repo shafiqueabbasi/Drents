@@ -4,6 +4,7 @@ const BASE_URL = 'http://localhost:5000';
 // const BASE_URL = 'https://drent1.herokuapp.com';
 
 
+
 const headersFor = (token) => {
     let headers = {
         'Accept': 'application/json',
