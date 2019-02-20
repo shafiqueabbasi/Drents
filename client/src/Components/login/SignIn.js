@@ -80,6 +80,8 @@ class SignIn extends Component {
             userID: googleUser.w3.Eea,
             name: googleUser.w3.ig,
             setEmail: googleUser.w3.U3
+        }, () => {
+          this.handleEmail()
         })
         // console.log(data, 'dataaaa')
     }
