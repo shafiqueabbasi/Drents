@@ -65,17 +65,19 @@ exports.signin = function(req, res, next){
   //user has already had their email and password auth'd
   //we just need to give them a token
   var user = req.body.email;
-  User.find({email:user.email},function(err,user){
+  User.findOne({email:user},function(err,user){
+    console.log(user);
     if(user){
-      const username = user.firstName +''+ user.lastname;
+      var username = user.firstname +''+ user.lastname;
+      res.send({
+        token: tokenForUser(req.user),
+        _id:req.user.id,
+        email:req.user.email,
+        username:username
+      });
     }
   })
-  res.send({
-    token: tokenForUser(req.user),
-    _id:req.user.id,
-    email:req.user.email,
-    username:username
-  });
+
 }
 
 
