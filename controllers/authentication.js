@@ -64,12 +64,17 @@ exports.socialAuthentication = function(req,res,next){
 exports.signin = function(req, res, next){
   //user has already had their email and password auth'd
   //we just need to give them a token
+  var user = req.body.email;
+  User.find({email:user.email},function(err,user){
+    if(user){
+      const username = user.firstName +''+ user.lastname;
+    }
+  })
   res.send({
     token: tokenForUser(req.user),
     _id:req.user.id,
     email:req.user.email,
-    firstName:req.user.firstname,
-    lastName:req.user.lastname
+    username:username
   });
 }
 

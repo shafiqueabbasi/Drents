@@ -7,8 +7,9 @@ const bcrypt = require('bcrypt-nodejs');
 //Define model
 const userSocialSchema = new Schema({
   email:{type:String, unique:true, lowercase:true},
-  //password:{type:String},
-  name:{type:String}
+  userId:{type:String},
+  name:{type:String},
+
 });
 
 
