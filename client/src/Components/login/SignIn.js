@@ -4,16 +4,18 @@ import {
 } from 'antd';
 import { userActions } from '../../_actions';
 import { connect } from 'react-redux';
+import FacebookLogin from 'react-facebook-login';
+import { GoogleLogin } from 'react-google-login-component';
 import './SignIn.css'
 
 class SignIn extends Component {
     constructor(props) {
         super(props);
-
+        this.state = {
+          clicked: false
+        }
         // reset login status
-        // this.props.dispatch(userActions.logout(() => {
-        //   this.setState({ })
-        // }));
+        this.props.dispatch(userActions.logout());
     }
 
   handleSubmit = (e) => {
@@ -32,6 +34,29 @@ class SignIn extends Component {
      const value = e.target.value;
      this.setState({ confirmDirty: this.state.confirmDirty || !!value });
    }
+
+   responseFacebook = response =>{
+      const { clicked } = this.state;
+      if(clicked){
+        console.log(response, 'responseeeeeeeee')
+      }
+   }
+
+   componentClicked = () =>{
+    this.setState({ clicked: true })
+      console.log('clickedddddddddd')
+   }
+
+    responseGoogle = (googleUser) =>{
+        let id_token = googleUser.getAuthResponse(),
+        googleId = googleUser.getId();
+
+        let data = {
+            id: googleUser.w3.Eea,
+            name: googleUser.w3.ig,
+            email: googleUser.w3.U3
+        }
+    }
 
 
   render() {
@@ -104,13 +129,29 @@ class SignIn extends Component {
 				<div className="row">
 					<div className="col-md-2 col-sm-2 col-xs-1"></div>
 					<div className="col-md-8 col-sm-8 col-xs-10" style={{textAlign: 'center'}}>
-						<button className="loginBtn loginBtn--facebook">
+						{/*<button className="loginBtn loginBtn--facebook">
   							Login with Facebook
-						</button>
+						</button>*/}
+            <FacebookLogin 
+                appId="644559659253564"
+                autoLoad={true}
+                cssClass="loginBtn loginBtn--facebook"
+                fields="name,email,picture"
+                onClick={this.componentClicked}
+                callback={this.responseFacebook}
+            />
 
-						<button class="loginBtn loginBtn--google">
+						{/*<button class="loginBtn loginBtn--google">
 						  Login with Google
-						</button>
+						</button>*/}
+            <GoogleLogin 
+                socialId="873832275515-3oclgfb5n1ie7inhfa16a6uu7crbab2a.apps.googleusercontent.com"                            
+                scope="profile"
+                fetchBasicProfile={true}
+                responseHandler={this.responseGoogle}
+                className = "loginBtn loginBtn--google"
+                buttonText="Login With Google"
+            />
 					</div>
 					<div className="col-md-2 col-sm-2 col-xs-1"></div>
 				</div>

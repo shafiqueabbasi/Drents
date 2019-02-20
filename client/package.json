@@ -13,6 +13,8 @@
     "react-chips": "^0.8.0",
     "react-color": "^2.17.0",
     "react-dom": "^16.6.3",
+    "react-facebook-login": "^4.1.1",
+    "react-google-login-component": "^0.9.3",
     "react-rating": "^1.6.2",
     "react-redux": "^6.0.0",
     "react-router-dom": "^4.3.1",
