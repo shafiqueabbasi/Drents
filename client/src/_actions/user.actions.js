@@ -12,16 +12,20 @@ export const userActions = {
     // delete: _delete
 };
 
-function login(user, callback) {
+function login(user, to, callback) {
     return dispatch => {
         dispatch(request({ user }));
 
-        HttpUtils.post('signin', user)
+        HttpUtils.post(to, user)
             .then(
                 user => { 
-                    document.getElementById("SignIn").click();
-                    dispatch(success(user));
-                    callback(user);
+                    if(user !== undefined){
+                        document.getElementById("SignIn").click();
+                        dispatch(success(user));
+                        callback(user);
+                    }else {
+                        callback("User email or passwaord not matched");
+                    }
                 },
                 error => {
                     dispatch(failure(error.toString()));

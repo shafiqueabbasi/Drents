@@ -17,7 +17,8 @@ class SignIn extends Component {
           setEmail: '',
           showEmailButton: false,
           name: '',
-          userID: ''          
+          userId: '',
+          err: ''          
         }
         // reset login status
         this.props.dispatch(userActions.logout());
@@ -27,17 +28,37 @@ class SignIn extends Component {
      e.preventDefault();
      this.props.form.validateFieldsAndScroll((err, values) => {
        if (!err) {
-         console.log('Received values of form: ', values);
-         this.props.dispatch(userActions.login(values, (token) => {
-          localStorage.setItem('user', JSON.stringify(token));
+         this.props.dispatch(userActions.login(values, 'signin', (token) => {
+          console.log(token, 'tokennnnnnnn')
+          if(typeof(token) == 'string'){
+            this.setState({ err: token })
+            setTimeout(() => {
+              this.setState({ err: '' })
+            }, 4000)
+          }else {
+            localStorage.setItem('user', JSON.stringify(token));
+          }
         }));
        }
      });
    }
 
    handleEmail = e => {
-      const { setEmail, name, userID } = this.state;
-      console.log(name, userID, setEmail, 'user detaillllllll')
+      const { setEmail, name, userId } = this.state,
+      obj = {
+        userId, name,
+        email: setEmail 
+      }
+      this.props.dispatch(userActions.login(obj, 'socialauth', (token) => {
+        if(typeof(token) == 'string'){
+          this.setState({ err: token })
+          setTimeout(() => {
+            this.setState({ err: '' })
+          }, 4000)
+        }else {
+          localStorage.setItem('user', JSON.stringify(token));
+        }
+      }));
    }
 
    handleConfirmBlur = (e) => {
@@ -48,18 +69,17 @@ class SignIn extends Component {
    responseFacebook = response =>{
       const { clicked } = this.state;
       if(clicked){
-        console.log(response, 'responseeeeeeeee')
         if(response && response.id && response.id.length){
           if(!response.email || response.email == undefined){
             this.setState({ 
               showEmailButton: true, 
               name: response.name, 
-              userID: response.userID 
+              userId: response.userID 
             })
           }else {
               this.setState({
                 name: response.name,
-                userID: response.userID,
+                userId: response.userID,
                 setEmail: response.email
               })
           }
@@ -69,7 +89,6 @@ class SignIn extends Component {
 
    componentClicked = () =>{
     this.setState({ clicked: true })
-      console.log('clickedddddddddd')
    }
 
     responseGoogle = (googleUser) =>{
@@ -77,13 +96,12 @@ class SignIn extends Component {
         googleId = googleUser.getId();
 
         this.setState({
-            userID: googleUser.w3.Eea,
+            userId: googleUser.w3.Eea,
             name: googleUser.w3.ig,
             setEmail: googleUser.w3.U3
         }, () => {
           this.handleEmail()
         })
-        // console.log(data, 'dataaaa')
     }
 
     pickEmail = e => {
@@ -91,9 +109,8 @@ class SignIn extends Component {
     }
 
   render() {
-    const { showEmailButton } = this.state;
-    console.log(this.state.setEmail, 'emaillllllll')
-    const { getFieldDecorator } = this.props.form;
+    const { showEmailButton } = this.state,
+    { getFieldDecorator } = this.props.form;
     return (
       	<div style={{backgroundColor: '#c2073f'}}>
       		<div className="container-fluid">
@@ -175,13 +192,21 @@ class SignIn extends Component {
           <div className="col-md-2 col-sm-3 col-xs-2"></div>
         </div>}
 
+        <div className="row">
+          <div className="col-md-3 col-sm-3 col-xs-3"></div>
+          <div className="col-md-6 col-sm-6 col-xs-6" style={{textAlign: 'center'}}>
+            {this.state.err}
+          </div>
+          <div className="col-md-3 col-sm-3 col-xs-3"></div>
+        </div>
+
 				{!showEmailButton && <div className="row">
 					<div className="col-md-4 col-sm-4 col-xs-3"></div>
 					<div className="col-md-4 col-sm-4 col-xs-6" style={{textAlign: 'center'}}>
 						<button type="submit" className="login" onClick={this.handleSubmit}>Login</button>
 					</div>
 					<div className="col-md-4 col-sm-4 col-xs-3"></div>
-				</div>}<br/><br/><br/>
+				</div>}
 
         {showEmailButton && <div className="row">
           <div className="col-md-3 col-sm-3 col-xs-3"></div>
@@ -189,7 +214,7 @@ class SignIn extends Component {
             We need your Email for further login
           </div>
           <div className="col-md-3 col-sm-3 col-xs-3"></div>
-        </div>}<br/><br/><br/>
+        </div>}
 
         {showEmailButton && <div className="row">
           <div className="col-md-3 col-sm-3 col-xs-3"></div>
