@@ -12,11 +12,11 @@ export const userActions = {
     // delete: _delete
 };
 
-function login(user, callback) {
+function login(user, to, callback) {
     return dispatch => {
         dispatch(request({ user }));
 
-        HttpUtils.post('signin', user)
+        HttpUtils.post(to, user)
             .then(
                 user => { 
                     if(user !== undefined){

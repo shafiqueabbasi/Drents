@@ -28,7 +28,7 @@ class SignIn extends Component {
      e.preventDefault();
      this.props.form.validateFieldsAndScroll((err, values) => {
        if (!err) {
-         this.props.dispatch(userActions.login(values, (token) => {
+         this.props.dispatch(userActions.login(values, 'signin', (token) => {
           console.log(token, 'tokennnnnnnn')
           if(typeof(token) == 'string'){
             this.setState({ err: token })
@@ -49,7 +49,7 @@ class SignIn extends Component {
         userId, name,
         email: setEmail 
       }
-      this.props.dispatch(userActions.login(obj, (token) => {
+      this.props.dispatch(userActions.login(obj, 'socialauth', (token) => {
         if(typeof(token) == 'string'){
           this.setState({ err: token })
           setTimeout(() => {
