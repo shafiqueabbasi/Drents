@@ -4,6 +4,7 @@ const profileUpload = require('./controllers/profile');
 const getDresses = require('./controllers/getDresses');
 const getReview = require('./controllers/getreview');
 const checkout = require('./controllers/stripecheckout');
+//const socialAuthenticationUser = require('./controller/')
 const passportService = require('./services/passport');
 const passport = require('passport');
 const getprofileanddress = require('./controllers/getprofiledress');
@@ -12,10 +13,11 @@ const requireAuth = passport.authenticate('jwt', { session:false });
 const requireSignin = passport.authenticate('local', {session:false});
 
 module.exports = function(app){
-  
+
   //post routes
   app.post('/signin',requireSignin, Authentication.signin);
   app.post('/signup',Authentication.signup);
+  app.post('/socialauth',Authentication.socialAuthentication);
   app.post('/uploaddress', requireAuth, UploadDress.uploaddress);
   app.post('/uploadprofile',requireAuth, profileUpload.profileUpload);
   app.post('/comparepassword',Authentication.comparePassword);
