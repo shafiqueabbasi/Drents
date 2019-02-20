@@ -1,5 +1,6 @@
 const jwt  = require('jwt-simple');
-const User = require('../models/user')
+const User = require('../models/user');
+const socialAuthentication = require('../models/socialauthentication');
 const config = require('../config/config');
 const bcrypt = require('bcrypt-nodejs');
 
@@ -8,15 +9,72 @@ function tokenForUser(user){
   const timestamp = new Date().getTime();
   return jwt.encode({ sub: user.id, iat: timestamp }, config.secret);
 }
+
+function tokenForSocialUser(usersocial){
+  const timestamp = new Date().getTime();
+  return jwt.encode({ sub: usersocial.userId, iat: timestamp }, config.secret);
+}
+
+
+exports.socialAuthentication = function(req,res,next){
+  //var socialObject = req.body;
+  var userauthsocial = req.body;
+  const email = req.body.email;
+  const name = req.body.name;
+  const userId = req.body.userId;
+
+  if(!email || !userId){
+    return res.status(422).send({error:'you must provide email and userId'})
+  }
+
+  //see if a user given email exist show error
+    socialAuthentication.findOne({userId:userId},function(err,existingUser){
+      if(err){ return next(err); }
+      //if a user with email does exit, return a error
+      if(existingUser){
+      return res.status(200).send({
+          token: tokenForSocialUser(req.body),
+          _id:req.body.userId,
+          email:req.body.email,
+          name:req.body.name
+        });
+      }
+      //if a user with email does not exit, create and save user
+      const usersocialauth = new socialAuthentication({
+        email:email,
+        name:name,
+        userId:userId
+      });
+
+      usersocialauth.save(function(err){
+        if(err){ return next(err); }
+      });
+      //Respond to request indicating user was created
+      res.json({
+        token:tokenForSocialUser(userauthsocial),
+        username:userauthsocial.name,
+        userId:userauthsocial.userId
+      });
+    });
+
+
+}
+
+
 exports.signin = function(req, res, next){
   //user has already had their email and password auth'd
   //we just need to give them a token
+  var user = req.body.email;
+  User.find({email:user.email},function(err,user){
+    if(user){
+      const username = user.firstName +''+ user.lastname;
+    }
+  })
   res.send({
     token: tokenForUser(req.user),
     _id:req.user.id,
     email:req.user.email,
-    firstName:req.user.firstname,
-    lastName:req.user.lastname
+    username:username
   });
 }
 

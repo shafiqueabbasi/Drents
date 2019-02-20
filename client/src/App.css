@@ -93,7 +93,6 @@
   height: 150px;
   width: 150px;
   border: 5px solid #c2073f;
-  float: right;
 }
 .imgs{
   border-radius: 50%;
@@ -124,19 +123,33 @@
 .p_lapi{
   color: white;
 }
+.zoom {
+ 
+  
+  transition: transform .2s; /* Animation */
+  
+  margin: 0 auto;
+}
 
-.dress1{
+.zoom:hover {
+  transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+.lH_filter{
+  line-height: 0px;
+}
+
+/*.dress1{
   height: 550px;
   width: 330px;
-}
-.dress2{
+}*/
+/*.dress2{
   height: 550px;
   width: 330px;
 }
 .dress3{
   height: 550px;
   width: 330px;
-}
+}*/
 
 .h_dress{
   font-family: Qwigley;
@@ -150,8 +163,27 @@
   line-height: 1.5;
   font-size: 15px;
 }
-
-
+.streetb1{
+    background-color: rgba(0, 0, 0, .4);
+    text-align: center;
+    color: white;
+    position: relative;
+    width: 64%;
+    margin-left: 17px;
+    margin-top: 51px;
+    border-bottom-left-radius: 74px;
+    border-bottom-right-radius: 74px;
+    height: 68px;
+}
+.streetb2{
+  position: absolute;
+}
+{/*#shah1{
+  display: none;
+}
+.shah2:hover+ #shah1 {
+  display: block;
+}*/}
 
 
 .mobi{

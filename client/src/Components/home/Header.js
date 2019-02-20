@@ -33,11 +33,11 @@ class FirstPage extends Component {
   }
 
   logOut = () => {
-    // this.props.dispatch(userActions.logout(() => {
+    this.props.dispatch(userActions.logout())
     //   this.setState({ goTo: true })
     // }));
-    // localStorage.removeItem('user').then (() => {
-      console.log(this.props, 'propsssssssss')
+    // localStorage.removeItem('user')
+      // console.log(this.props, 'propsssssssss')
     // });
     // this.setState({ goTo: true })
     // this.props.history.push('/')
