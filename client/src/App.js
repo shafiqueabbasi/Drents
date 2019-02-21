@@ -67,7 +67,6 @@ class App extends Component {
   }
 
   updateFooter = e => {
-    console.log(e, 'eeeeeeeeee')
     this.setState({ footer: e })
   }
 

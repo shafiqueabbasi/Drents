@@ -41,7 +41,7 @@ class FirstPage extends Component {
     { arrCart } = this.state;
     let finalArr = arr.length > 0 ? arr : arrCart,
     userId = user && user._id ? user._id : ''
-    console.log(this.props, 'headerrrrrrrr')
+    
     return (
       <div>
       	<div className="nav navbar navbar-fixed-top bgc">

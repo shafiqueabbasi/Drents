@@ -84,6 +84,8 @@ class SignIn extends Component {
                 name: response.name,
                 userId: response.userID,
                 setEmail: response.email
+              }, () => {
+                this.handleEmail()
               })
           }
         }

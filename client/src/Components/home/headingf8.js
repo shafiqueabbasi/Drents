@@ -8,16 +8,12 @@ class Headingf8 extends Component {
     }
 
     componentDidUpdate(prevProps, prevState){
-        // console.log()
         if(this.props.showFooter !== prevProps.showFooter){
-            console.log(this.props.showFooter, 'this.props.showFooter')
-            console.log(prevProps.showFooter, 'prevProps.showFooter')
             this.setState({ showFooter: this.props.showFooter})
         }
     }
 
   render() {
-    console.log(this.state.showFooter, 'propsssssssss')
 
     return (
     	<div>
