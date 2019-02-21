@@ -25,7 +25,7 @@ class Headingf8 extends Component {
     			<div id="footer" style={this.state.showFooter ? {position: "fixed"} : {}}>
     				<div className="col-md-12 col-sm-12 bgc">
     					<div className="col-md-1 "></div>
-    					
+
                         <div className="col-md-3 col-sm-4">
     						<ul className="ul_list">
                                 <h4 className="footer_h3">Quick links</h4>
@@ -35,7 +35,7 @@ class Headingf8 extends Component {
                                 <li><a href="javascript:void();" className="li_list"><i className="fa fa-angle-double-right"></i>MY PROFILE</a></li>
                             </ul>
     					</div>
-    					
+
                         <div className="col-md-4 col-sm-4" style={{color: '#ffffff'}}>
     						<h4 className="footer_h3">Social Media</h4>
                             <ul className="list-unstyled list-inline social">
@@ -46,7 +46,7 @@ class Headingf8 extends Component {
                                 <li className="list-inline-item"><a href="javascript:void();"><i className="fab fa-google-plus-g"></i></a></li>
                             </ul>
     				    </div>
-    					
+
                         <div className="col-md-4 col-sm-4" style={{color: '#ffffff'}}>
     						<a href="#"><img src="../images/Drent-logo-white.png" style={{width: '62%'}}/></a>
     					</div>
@@ -64,7 +64,7 @@ class Headingf8 extends Component {
 
 
             <div className="visible-xs">
-                <div className="footer">
+                <div className="footer" style={{width:'100%'}}>
                     <div className="col-xs-12 bgc">
                         <div className="col-xs-2"></div>
                             <div className="row">
