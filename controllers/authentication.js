@@ -53,7 +53,7 @@ exports.socialAuthentication = function(req,res,next){
       res.json({
         token:tokenForSocialUser(userauthsocial),
         username:userauthsocial.name,
-        userId:userauthsocial.userId
+        _id:userauthsocial.userId
       });
     });
 
@@ -113,7 +113,7 @@ exports.signup = function(req, res, next){
       res.json({
         token:tokenForUser(user),
         username:user.firstname+''+user.lastname,
-        userId:user._id
+        _id:user._id
       });
     });
 }
