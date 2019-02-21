@@ -2,20 +2,20 @@ import React, { Component } from 'react';
 
 class SecondPage extends Component {
   render() {
-    
+
     return (
-    <div>	
+    <div>
       <div className="App hidden-xs" style={{marginTop: '88px'}}>
       	<div className="Banner">
       		<img src="./images/Banner.png" style={{width: '100%'}}/>
-      	</div>	
+      	</div>
       </div>
-      <div className="App visible-xs">
+      <div className="App visible-xs" style={{marginTop:'14%'}}>
       	<div className="Banner">
       		<img src="./images/mobile-banner.png" style={{width: '105%'}}/>
-      	</div>	
+      	</div>
       </div>
-    </div>  
+    </div>
     );
 
   }
