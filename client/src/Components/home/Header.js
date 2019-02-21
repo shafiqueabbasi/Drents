@@ -7,12 +7,9 @@ import SignUp from '../login/SignUp';
 import { connect } from 'react-redux';
 import { userActions } from '../../_actions';
 
-// import { Redirect } from 'react-router';
-
 class FirstPage extends Component {
   state = {
     arrCart: [],
-    goTo: false
   }
   
   async componentDidMount(){
@@ -25,6 +22,8 @@ class FirstPage extends Component {
       }
   }
 
+  
+
   openNav = ()=>{
     document.getElementById("myNav").style.width = "100%";
   }
@@ -33,25 +32,14 @@ class FirstPage extends Component {
   }
 
   logOut = () => {
-    this.props.dispatch(userActions.logout())
-    //   this.setState({ goTo: true })
-    // }));
-    // localStorage.removeItem('user')
-      // console.log(this.props, 'propsssssssss')
-    // });
-    // this.setState({ goTo: true })
-    // this.props.history.push('/')
+    this.props.dispatch(userActions.logout())    
   }
 
   render() {
     const { loggedIn, arr, user } = this.props,
-    { arrCart, goTo } = this.state;
+    { arrCart } = this.state;
     let finalArr = arr.length > 0 ? arr : arrCart,
     userId = user && user._id ? user._id : ''
-
-    // if(goTo){
-    //     return <Redirect to='/' />
-    // }
 
     return (
       <div>
@@ -69,8 +57,8 @@ class FirstPage extends Component {
       				    <ul className="nav navbar-nav navbar-right customhover">      					     
       					    <li className="head"><Link to={`/`} className="nav" style={{fontSize:'12px'}}>HOME</Link></li>
         				    <li className="head"><Link to={`/product`} className="nav" style={{fontSize:'12px'}}>PRODUCT</Link></li>
-        				    <li className="head"><Link to={`/detail`} className="nav" style={{fontSize:'12px'}}>TESTIMONIALS</Link></li>
-        				    <li className="head"><Link to={`/profile/${userId}`} className="nav" style={{fontSize:'12px'}}>MY PROFILE</Link></li>
+        				    {/*<li className="head"><Link to={`/detail`} className="nav" style={{fontSize:'12px'}}>TESTIMONIALS</Link></li>*/}
+        				    {loggedIn && <li className="head"><Link to={`/profile/${userId}`} className="nav" style={{fontSize:'12px'}}>MY PROFILE</Link></li>}
                     {loggedIn && <li className="head" onClick={this.logOut}><a className="nav" style={{fontSize:'12px'}}>Log Out</a></li>}
 
                     {!loggedIn && <li className="head">
