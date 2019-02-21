@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Gallery from '../home/heading4';
 import { HttpUtils } from  '../../Service/HttpUtils';
 import { Rate } from '../_components/myInput';
+import _ from 'underscore';
 import './userprofile.css'
 
 import { Link } from "react-router-dom";
@@ -21,10 +22,16 @@ class UserProfile extends Component {
 		let id = this.props.match.params.value,
 		data = await HttpUtils.post('getprofiledress', {userId: id}),
 		rate = 0;
+		console.log(data, 'dataaaaaa')
 		if(data.code && data.code == 200){
 			let dressData = data.dress.length > 0 && data.dress.map((elem) => {
 				return elem._id;
 			}) 
+			let historyData = data.orderhistory.length > 0 && data.orderhistory.map((elem) => {
+				return elem.products;
+			})
+			let orderhistory = _.flatten(historyData)
+			// console.log(orderhistory, 'historyData')
 			if(dressData){
 				data.review.map((elem) => {
 					if(dressData.includes(elem.productId)){
@@ -33,7 +40,14 @@ class UserProfile extends Component {
 				})
 				rate = rate / data.review.length;
 			}			
-			this.setState({ arr: data.dress, profile: data.profile, review: rate, loading: false, dressData });
+			this.setState({ 
+				arr: data.dress, 
+				profile: data.profile, 
+				review: rate, 
+				loading: false, 
+				dressData,
+				orderhistory
+			});
 		}
 	}
 
@@ -42,7 +56,7 @@ class UserProfile extends Component {
 	}
 
 	render() {
-		const { profile, arr, review, dressData } = this.state,
+		const { profile, arr, review, dressData, orderhistory } = this.state,
 		{ user } = this.props,
 		id = this.props.match.params.value,
 		userName = profile.length > 0 ? profile[0].firstName : "User Name";
@@ -59,7 +73,7 @@ class UserProfile extends Component {
 							<div className="row" style={{marginTop:'21px'}}>
 								<div className="col-md-3">
 									<div className="rovil1 shah2">
-										<img src="../images/admin1.jpg" className="rovilimg img-circle streetb2" style={{width:'60%',height:'133px'}}/>
+										<img src="../images/admin1.jpg" className="rovilimg img-circle streetb2"/>
 									</div>
 									<div id="shah1">
 										<div className="streetb1">	
@@ -81,7 +95,7 @@ class UserProfile extends Component {
 										</div>
 										<div className="col-md-2 rovil6">
 											{userAvailable && <h4>
-												<Link to={{pathname: `/userdetail`, state: {goTo: 'profile', profile, arr }}}><i className="glyphicon glyphicon-pencil"></i></Link>
+												<Link to={{pathname: `/userdetail`, state: {goTo: 'profile', profile, arr, orderhistory }}}><i className="glyphicon glyphicon-pencil"></i></Link>
 											</h4>}
 										</div>
 									</div>

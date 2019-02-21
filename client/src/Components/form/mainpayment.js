@@ -7,33 +7,19 @@ class MainPayment extends Component {
   constructor(props){
       super(props)
       this.state = {
-          stripe :null,
-          receivedData: {
-            email: 'email@gmail.com',
-            total: 250,
-            firstName: 'brother'
-          }
+          stripe :null,          
       }
   }
 
   componentDidMount(){
       this.capturedKeys();
-      // this.props.onRef(this);
   }
 
-  // componentDidUpdate(prevProps, prevState){
-  //     if(prevProps.data !== this.props.data){
-  //         this.setState({receivedData: this.props.data});
-  //     }
-  // }
-
-  // componentWillUnmount() {
-  //     this.props.onRef(undefined);
-  // }
-
-  // mainPayment = (e) => {
-  //     this.child.submit();
-  // }
+  componentDidUpdate(prevProps, prevState){
+      if(prevProps.data !== this.props.data){
+          this.setState({receivedData: this.props.data});
+      }
+  }
   
   async capturedKeys (){
       let res = await HttpUtils.get('key');
@@ -48,12 +34,10 @@ class MainPayment extends Component {
 
   changeHandler(data){
       this.props.onChange(data);
-      console.log(data, 'dataaaaaaa success')
   }
 
   handleError = (msg) => {
       this.props.onError(msg);
-      console.log(msg, 'msgggggggg')
   }
 
   render() {

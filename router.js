@@ -26,7 +26,7 @@ module.exports = function(app){
   app.post('/postreview', requireAuth, reviewPost.uploadReview);
   app.post('/charge',checkout.charge);
   app.post('/getprofiledress', getprofileanddress.getdressProfile);
-  app.post('/orderdetail',orderBooking.checkoutorder);
+  app.post('/orderdetail', requireAuth, orderBooking.checkoutorder);
   //get routes
   app.get('/getdresses',getDresses.getdress);
   app.get('/getreview',getReview.getreview);

@@ -68,12 +68,12 @@ exports.signin = function(req, res, next){
   User.findOne({email:user},function(err,user){
     console.log(user);
     if(user){
-      var username = user.firstname +''+ user.lastname;
+      //var username = user.firstname +''+ user.lastname;
       res.send({
         token: tokenForUser(req.user),
         _id:req.user.id,
         email:req.user.email,
-        username:username
+        username:user.firstname +''+ user.lastname
       });
     }
   })

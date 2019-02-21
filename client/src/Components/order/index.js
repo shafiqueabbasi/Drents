@@ -116,7 +116,7 @@ class Order extends Component {
 						</div>
 					</div>
 					{arr[0].upComing && <UpCommingOrder/>}
-					{arr[1].orderHis && <OrderHistory/>}
+					{arr[1].orderHis && <OrderHistory {...this.props}/>}
 					{arr[2].profile && <Profile {...this.props}/>}
 					{arr[3].uploadDress && <UploadDress {...this.props}/>}
 				</div>
