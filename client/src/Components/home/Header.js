@@ -22,7 +22,7 @@ class FirstPage extends Component {
       }
   }
 
-  
+
 
   openNav = ()=>{
     document.getElementById("myNav").style.width = "100%";
@@ -32,7 +32,7 @@ class FirstPage extends Component {
   }
 
   logOut = () => {
-    this.props.dispatch(userActions.logout())  
+    this.props.dispatch(userActions.logout())
     this.props.history.push('/')  
   }
 
@@ -117,13 +117,12 @@ class FirstPage extends Component {
               <ul className="nav navbar-nav navbar-right customhover">
                     <li className="head"><Link to={`/`} className="nav" onClick={this.closeNav}>HOME</Link></li>
                     <li className="head"><Link to={`/product`} className="nav" onClick={this.closeNav}>PRODUCT</Link></li>
-                    <li className="head"><Link to={`/detail`} className="nav" onClick={this.closeNav}>TESTIMONIALS</Link></li>
-                    <li className="head"><Link to={`/profile/${userId}`} className="nav" onClick={this.closeNav}>MY PROFILE</Link></li>
+                    {loggedIn &&<li className="head"><Link to={`/profile/${userId}`} className="nav" onClick={this.closeNav}>MY PROFILE</Link></li>}
                     {loggedIn && <li className="head" onClick={this.logOut}><a className="nav" onClick={this.closeNav}>Log Out</a></li>}
 
                     {!loggedIn && <li className="head">
-                      <a href="#" className="nav" data-toggle="modal" data-target="#SignIn" onClick={this.closeNav}>Sign In</a>
-                        <div className="modal fade" id="SignIn" role="dialog">
+                      <a href="#" className="nav" data-toggle="modal" data-target="#SignIn1" onClick={this.closeNav}>Sign In</a>
+                        <div className="modal fade" id="SignIn1" role="dialog">
                           <div className="modal-dialog">
                             <div className="modal-content">
                               <div className="modal-header">
@@ -141,8 +140,8 @@ class FirstPage extends Component {
                         </div>
                     </li>}
                     {!loggedIn && <li className="head">
-                      <a href="#" className="nav" data-toggle="modal" data-target="#SignUp">Sign Up</a>
-                        <div className="modal fade" id="SignUp" role="dialog">
+                      <a href="#" className="nav" data-toggle="modal" data-target="#SignUp1">Sign Up</a>
+                        <div className="modal fade" id="SignUp1" role="dialog">
                           <div className="modal-dialog">
                             <div className="modal-content">
                               <div className="modal-header">
