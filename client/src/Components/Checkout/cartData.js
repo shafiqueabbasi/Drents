@@ -46,14 +46,13 @@ class CartData extends Component {
 			},
 			stripeRes = await HttpUtils.post('orderdetail',obj, user.token);
 	        if(stripeRes.code && stripeRes.code == 200){
-	        	console.log(stripeRes, 'ressssssssss')
 	            this.setState({ paymentSuccess: true })
 	            setTimeout(() => {
-	            	this.props.updateCart(finalArr);
+	            	this.props.updateCart([]);
 	            	localStorage.removeItem('Cart');
 	            	document.getElementById("stripeCard").click();
 	            	this.setState({ goTo: true })
-	            }, 4000)	            
+	            }, 3000)	            
 	        }
 			
 		}

@@ -1,13 +1,28 @@
 import React, { Component } from 'react';
+import {withRouter} from 'react-router-dom';
 import './headingf8.css';
 
 class Headingf8 extends Component {
+    state = {
+        showFooter: false
+    }
+
+    componentDidUpdate(prevProps, prevState){
+        // console.log()
+        if(this.props.showFooter !== prevProps.showFooter){
+            console.log(this.props.showFooter, 'this.props.showFooter')
+            console.log(prevProps.showFooter, 'prevProps.showFooter')
+            this.setState({ showFooter: this.props.showFooter})
+        }
+    }
+
   render() {
+    console.log(this.state.showFooter, 'propsssssssss')
 
     return (
     	<div>
     		<div className="hidden-xs">
-    			<div id="footer" style={{position:'fixed'}}>
+    			<div id="footer" style={this.state.showFooter ? {position: "fixed"} : {}}>
     				<div className="col-md-12 col-sm-12 bgc">
     					<div className="col-md-1 "></div>
 
@@ -95,4 +110,4 @@ class Headingf8 extends Component {
   }
 }
 
-export default Headingf8;
+export default withRouter(Headingf8);

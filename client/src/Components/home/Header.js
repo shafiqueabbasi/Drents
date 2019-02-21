@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import  './mobileheader.css';
 import Login from '../login/SignIn';
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import SignUp from '../login/SignUp';
 
 import { connect } from 'react-redux';
@@ -33,6 +33,7 @@ class FirstPage extends Component {
 
   logOut = () => {
     this.props.dispatch(userActions.logout())
+    this.props.history.push('/')  
   }
 
   render() {
@@ -40,7 +41,7 @@ class FirstPage extends Component {
     { arrCart } = this.state;
     let finalArr = arr.length > 0 ? arr : arrCart,
     userId = user && user._id ? user._id : ''
-
+    console.log(this.props, 'headerrrrrrrr')
     return (
       <div>
       	<div className="nav navbar navbar-fixed-top bgc">
@@ -192,4 +193,4 @@ function mapStateToProps(state) {
 }
 
 const signUpLogin = connect(mapStateToProps)(FirstPage);
-export default signUpLogin;
+export default withRouter(signUpLogin);

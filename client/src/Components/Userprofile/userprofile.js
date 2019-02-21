@@ -22,7 +22,6 @@ class UserProfile extends Component {
 		let id = this.props.match.params.value,
 		data = await HttpUtils.post('getprofiledress', {userId: id}),
 		rate = 0;
-		console.log(data, 'dataaaaaa')
 		if(data.code && data.code == 200){
 			let dressData = data.dress.length > 0 && data.dress.map((elem) => {
 				return elem._id;
@@ -31,7 +30,6 @@ class UserProfile extends Component {
 				return elem.products;
 			})
 			let orderhistory = _.flatten(historyData)
-			// console.log(orderhistory, 'historyData')
 			if(dressData){
 				data.review.map((elem) => {
 					if(dressData.includes(elem.productId)){
@@ -39,7 +37,10 @@ class UserProfile extends Component {
 					}
 				})
 				rate = rate / data.review.length;
-			}			
+			}		
+			if(!dressData){
+				this.props.updateFooter(true)
+			}	
 			this.setState({ 
 				arr: data.dress, 
 				profile: data.profile, 
@@ -48,7 +49,12 @@ class UserProfile extends Component {
 				dressData,
 				orderhistory
 			});
+			console.log(this.props, 'matchhhhhhhhh')
 		}
+	}
+
+	componentWillUnmount(){
+		this.props.updateFooter(false)
 	}
 
 	onDelete = e => {
@@ -59,9 +65,8 @@ class UserProfile extends Component {
 		const { profile, arr, review, dressData, orderhistory } = this.state,
 		{ user } = this.props,
 		id = this.props.match.params.value,
-		userName = profile.length > 0 ? profile[0].firstName : "User Name";
+		userName = profile.length > 0 ? profile[0].firstName : user && user.username;
 		let userAvailable = false;
-		console.log(profile, 'rateeeeeeee')
 		if(user && user._id && user._id === id){
 			userAvailable = true;
 		}
@@ -134,6 +139,7 @@ class UserProfile extends Component {
 								onDelete={this.onDelete}
 								data={arr}
 								profile={profile}
+								orderhistory={orderhistory}
 								userAvailable={userAvailable}
 							/>}
 							{!dressData && <div style={{textAlign: 'center'}}>not uploaded any dress</div>}
