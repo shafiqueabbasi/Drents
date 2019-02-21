@@ -19,7 +19,7 @@ class Heading4 extends Component {
 	    						return(	    						
 	    							<div className="col-md-3">
 			    						<Link key={key} to={{pathname: `/detail`, state: {elem, data}}}>
-			    							<img src={elem.fileList[0]} className="zoom" />				    					
+			    							<img src={elem.fileList[0]} className="zoom" style={{height: '307px'}} />				    					
 		    							</Link>				    							
 		    							<div>
 		    								{showEditDelete && userAvailable && <div className="row">
