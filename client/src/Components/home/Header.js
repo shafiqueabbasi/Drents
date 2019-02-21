@@ -125,15 +125,15 @@ class FirstPage extends Component {
           <div id="myNav" className="overlay visible-xs" style={{background:'#c2073fcf'}}>
             <a href="javascript:void(0)" className="closebtn" onClick={this.closeNav}>&times;</a>
             <div className="overlay-content">
-              <ul className="nav navbar-nav navbar-right customhover">                     
-                    <li className="head"><Link to={`/`} className="nav">HOME</Link></li>
-                    <li className="head"><Link to={`/product`} className="nav">PRODUCT</Link></li>
-                    <li className="head"><Link to={`/detail`} className="nav">TESTIMONIALS</Link></li>
-                    <li className="head"><Link to={`/profile/${userId}`} className="nav">MY PROFILE</Link></li>
-                    {loggedIn && <li className="head" onClick={this.logOut}><a className="nav">Log Out</a></li>}
+              <ul className="nav navbar-nav navbar-right customhover">
+                    <li className="head"><Link to={`/`} className="nav" onClick={this.closeNav}>HOME</Link></li>
+                    <li className="head"><Link to={`/product`} className="nav" onClick={this.closeNav}>PRODUCT</Link></li>
+                    <li className="head"><Link to={`/detail`} className="nav" onClick={this.closeNav}>TESTIMONIALS</Link></li>
+                    <li className="head"><Link to={`/profile/${userId}`} className="nav" onClick={this.closeNav}>MY PROFILE</Link></li>
+                    {loggedIn && <li className="head" onClick={this.logOut}><a className="nav" onClick={this.closeNav}>Log Out</a></li>}
 
                     {!loggedIn && <li className="head">
-                      <a href="#" className="nav" data-toggle="modal" data-target="#SignIn">Sign In</a>
+                      <a href="#" className="nav" data-toggle="modal" data-target="#SignIn" onClick={this.closeNav}>Sign In</a>
                         <div className="modal fade" id="SignIn" role="dialog">
                           <div className="modal-dialog">
                             <div className="modal-content">
