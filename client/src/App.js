@@ -33,7 +33,8 @@ class App extends Component {
       response: '',
       post: '',
       responseToPost: '',
-      arr: []
+      arr: [],
+      footer: false
     };
   }
 
@@ -65,17 +66,22 @@ class App extends Component {
     this.setState({ arr })
   }
 
+  updateFooter = e => {
+    console.log(e, 'eeeeeeeeee')
+    this.setState({ footer: e })
+  }
+
   render() {
-    console.log(this.props, 'llllllllll')
     return (
       <div className="App">
 			<BrowserRouter>
 	          <div>
-	          <Header arr={this.state.arr} {...this.props}/>
+	          <Header arr={this.state.arr}/>
 				{/*<PrivateRoute exact path="/" component={HomePage} />
 	              <PrivateRoute exact path="/about" component={AboutPage} />*/}
 	              <Route path="/" exact component={Home} />
-								<Route path="/profile/:value" exact component={UserProfile} />
+								{/*<Route path="/profile/:value" exact component={UserProfile} />*/}
+                <Route path="/profile/:value" render={props => <UserProfile {...props} updateFooter={this.updateFooter}/>} />
 	              {/*<Route path="/register" component={RegisterPage} />*/}
                 <Route path="/product" component={MainPage} />
                 <Route path="/userdetail" component={Profile} />
@@ -85,7 +91,7 @@ class App extends Component {
                 <Route path="/checkout" render={props => { return <Checkout {...props} updateCart={this.updateCart}/>}} />
             {/*<Userprofile/>*/} 
             
-	         <Footer />   
+	         <Footer showFooter={this.state.footer}/>   
 
 	          </div>
 			</BrowserRouter>

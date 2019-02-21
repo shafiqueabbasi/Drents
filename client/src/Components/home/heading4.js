@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 class Heading4 extends Component {
   render() {
-  	const { label, hrLine, data, showEditDelete, onDelete, profile, userAvailable } = this.props;
+  	const { label, hrLine, data, showEditDelete, onDelete, profile, userAvailable, orderhistory } = this.props;
     
     return (
     	<div className="App" style={{backgroundImage: "url('./images/swrils.png')"}}>
@@ -24,7 +24,7 @@ class Heading4 extends Component {
 		    							<div>
 		    								{showEditDelete && userAvailable && <div className="row">
 		    									<div className="col-md-6">
-		    										<Link to={{pathname: `/userdetail`, state: {goTo: 'uploadDress', elem, profile}}}>
+		    										<Link to={{pathname: `/userdetail`, state: {goTo: 'uploadDress', elem, profile, orderhistory}}}>
 		    											<h2 className="h_dress">Edit</h2>
 		    										</Link>
 		    									</div>
