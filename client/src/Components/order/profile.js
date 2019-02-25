@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import { Form, Input, Button, AutoComplete, Modal, Radio } from 'antd';
+import { Form } from 'antd';
 import ChangePassword from './changePassword';
 import { TextInput, RadioInput, SelectInput } from '../_components/myInput';
 import { HttpUtils } from  '../../Service/HttpUtils';
 import { connect } from 'react-redux';
 import './profile.css';
 
-const AutoCompleteOption = AutoComplete.Option;
 
 class Profile extends Component {
 	state = {

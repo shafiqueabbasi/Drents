@@ -8,7 +8,7 @@ class Heading6 extends Component {
     		<div className="container-fluid">
 	    		<div className="Heading">
 	      			<h1 className="headings">Subscription Plan</h1>
-	      			<img src='./images/bar.png'/>
+	      			<img alt="" src='./images/bar.png'/>
 	      		</div>
 	      		<div className="container-fluid" style={{textAlign: 'center'}}>
 		      		<div className="col-md-3 col-sm-1"></div>
@@ -20,7 +20,7 @@ class Heading6 extends Component {
 			      		</div>{/*row*/}
 			      		<div className="row">
 			      			<div className="col-md-2 col-sm-2 col-xs-2">
-			      				<img src="./images/dot.png" style={{height:'65%',width:'150%'}}/>
+			      				<img alt="" src="./images/dot.png" style={{height:'65%',width:'150%'}}/>
       						</div>
       						<div className="col-md-10 col-sm-10 col-xs-10" style={{marginTop:'-10px'}}>
       							<h5 style={{textAlign:'left'}}>Rent 2 cloth per month</h5>
@@ -28,7 +28,7 @@ class Heading6 extends Component {
 			      		</div>{/*row*/}<br/>
 			      		<div className="row">
 			      			<div className="col-md-2 col-sm-2 col-xs-2" style={{paddingTop:'10px'}}>
-			      				<img src="./images/dot.png" style={{height:'65%',width:'150%'}}/>
+			      				<img alt="" src="./images/dot.png" style={{height:'65%',width:'150%'}}/>
       						</div>
       						<div className="col-md-10 col-sm-10 col-xs-10">
       							<h5 style={{textAlign:'left'}}>Ordinary cloths</h5>
@@ -36,7 +36,7 @@ class Heading6 extends Component {
 			      		</div>{/*row*/}<br/>
 			      		<div className="row">
 			      			<div className="col-md-2 col-sm-2 col-xs-2" style={{paddingTop:'10px'}}>
-			      				<img src="./images/dot.png" style={{height:'65%',width:'150%'}}/>
+			      				<img alt="" src="./images/dot.png" style={{height:'65%',width:'150%'}}/>
       						</div>
       						<div className="col-md-10 col-sm-10 col-xs-10">
       							<h5 style={{textAlign:'left'}}>5 brands</h5>
@@ -61,7 +61,7 @@ class Heading6 extends Component {
 			      		</div>{/*row*/}
 			      		<div className="row">
 			      			<div className="col-md-2 col-sm-2 col-xs-2">
-			      				<img src="./images/dot.png" style={{height:'65%',width:'150%'}}/>
+			      				<img alt="" src="./images/dot.png" style={{height:'65%',width:'150%'}}/>
       						</div>
       						<div className="col-md-10 col-sm-10 col-xs-10" style={{marginTop:'-10px'}}>
       							<h5 style={{textAlign:'left'}}>Rent 2 cloth per month</h5>
@@ -69,7 +69,7 @@ class Heading6 extends Component {
 			      		</div>{/*row*/}<br/>
 			      		<div className="row">
 			      			<div className="col-md-2 col-sm-2 col-xs-2" style={{paddingTop:'10px'}}>
-			      				<img src="./images/dot.png" style={{height:'65%',width:'150%'}}/>
+			      				<img alt="" src="./images/dot.png" style={{height:'65%',width:'150%'}}/>
       						</div>
       						<div className="col-md-10 col-sm-10 col-xs-10">
       							<h5 style={{textAlign:'left'}}>Ordinary cloths</h5>
@@ -77,7 +77,7 @@ class Heading6 extends Component {
 			      		</div>{/*row*/}<br/>
 			      		<div className="row">
 			      			<div className="col-md-2 col-sm-2 col-xs-2" style={{paddingTop:'10px'}}>
-			      				<img src="./images/dot.png" style={{height:'65%',width:'150%'}}/>
+			      				<img alt="" src="./images/dot.png" style={{height:'65%',width:'150%'}}/>
       						</div>
       						<div className="col-md-10 col-sm-10 col-xs-10">
       							<h5 style={{textAlign:'left'}}>5 brands</h5>

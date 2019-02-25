@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 class OrderHistory extends Component {
   render() {
     const { orderhistory } = this.props.location.state;
-    console.log(orderhistory, 'eeeeeeeeeeeeeeee')
     
     return (
       	<div>      		      	
@@ -11,7 +10,7 @@ class OrderHistory extends Component {
                 return (
                   <div className="row hidden-sm hidden-xs">
                     <div className="col-md-2">
-                      <img src={elem.fileList[0]} style={{width: '165px'}}/>
+                      <img alt="" src={elem.fileList[0]} style={{width: '165px'}}/>
                     </div>
                     <div className="col-md-10">
                       <div className="row">
@@ -63,7 +62,7 @@ class OrderHistory extends Component {
             <div className="row visible-sm">
               <div className="row">
                 <div className="col-sm-3">
-                   <img src="./images/pinksharara.jpg" style={{width: '165px'}}/>
+                   <img alt="" src="./images/pinksharara.jpg" style={{width: '165px'}}/>
                 </div>
                   <div className="col-sm-9">
                     <div className="row">
@@ -118,7 +117,7 @@ class OrderHistory extends Component {
                 <div className="visible-xs ">
                   <div className="col-xs-2"></div>
                     <div className="col-xs-6">
-                      <img src="./images/pinksharara.jpg" style={{height: '240px'}}/>
+                      <img alt="" src="./images/pinksharara.jpg" style={{height: '240px'}}/>
                     </div>
                   </div>
 

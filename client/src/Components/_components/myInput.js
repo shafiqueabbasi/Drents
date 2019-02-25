@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 // import Picker from 'react-datepicker';
 // import "react-datepicker/dist/react-datepicker.css";
 // import DropZone from 'react-dropzone';
-import classNames from 'classnames';
 import Rating from 'react-rating';
 
 //text seperate component

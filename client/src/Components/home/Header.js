@@ -40,7 +40,7 @@ class FirstPage extends Component {
     const { loggedIn, arr, user } = this.props,
     { arrCart } = this.state;
     let finalArr = arr.length > 0 ? arr : arrCart,
-    userId = user && user._id ? user._id : ''
+    userId = user && user._id ? user._id : '';
     
     return (
       <div>

@@ -18,7 +18,7 @@ class Filterpanel extends Component {
 
 	async componentDidMount(){
 		let data = await HttpUtils.get('getdresses');
-		if(data.code && data.code == 200){
+		if(data.code && data.code === 200){
 			this.setState({ data: data.allDress, arr: data.allDress, loading: false })
 		}
 	}
@@ -41,7 +41,7 @@ class Filterpanel extends Component {
 
 	filteringData(){
 		const { filtered, arr } = this.state;
-		if(filtered.length == 0){
+		if(filtered.length === 0){
 			this.setState({ data: arr });
 		}else {
 			let data = arr.filter((elem) => {
@@ -55,7 +55,7 @@ class Filterpanel extends Component {
   	render() {      		
 	    return (
 	    	<div className="App" style={{marginTop: '110px'}}>
-	    		{this.state.loading && <div class="loading">Loading&#8230;</div>}
+	    		{this.state.loading && <div className="loading">Loading&#8230;</div>}
 	    		<div  className="container-fluid">
 	    			<div className="col-md-12 col-sm-12 hidden-xs" style={{backgroundImage: "url('./images/swrils.png')"}}>
 	    				<div className="col-md-1 col-sm-1"></div>
@@ -121,7 +121,7 @@ class Filterpanel extends Component {
 							<label className="col-md-12 col-sm-12 col-xs-12 control-label" style={{textAlign: 'centers'}}></label>
 							<div className="col-md-5 col-sm-5 col-xs-5 row"></div>
 							{this.state.arr.length > 8 && <ButtonComponent label="More"/>}
-							{this.state.data.length == 0 && <span>No record found
+							{this.state.data.length === 0 && <span>No record found
 								<ButtonComponent 
 									className="col-md-12" 
 									label="Find More" 
@@ -154,7 +154,7 @@ class Filterpanel extends Component {
 												</h3>
 											</div>
 											<div id="collapseOne" className="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-												<div class="panel-body">
+												<div className="panel-body">
 												    <h4 id="Wedding" onClick={this.handleClick}>Wedding</h4><br/>
 		    										<h4 id="Party" onClick={this.handleClick}>Party</h4><br/>
 		    										<h4 id="Corporate" onClick={this.handleClick}>Corporate</h4><br/>
@@ -180,7 +180,7 @@ class Filterpanel extends Component {
 											    </h3>
 											</div>
 											<div id="collapseTwo" className="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-											    <div class="panel-body">
+											    <div className="panel-body">
 											        {/*<Filter id="newest" heading="Newest" onChange={this.handleClick}/>
 	    											<Filter id="high and low" heading="High and Low" onChange={this.handleClick}/>
 	    											<Filter id="low and high" heading="Low and High" onChange={this.handleClick}/>*/}	
@@ -209,11 +209,7 @@ class Filterpanel extends Component {
 	    							<div className="col-xs-12" style={{paddingBottom: '15px', margin: '40px 0 20px',borderBottom: '1px solid black'}}></div>
 								</div>*/}
 								<div className="row">
-									<div className="row col-xs-12">
-	    								
-
-
-
+									<div className="row col-xs-12">	    								
 									<div className="panel panel-default">
 										<div className="panel-heading" role="tab" id="headingTwo">
 											<h3 className="panel-title">
@@ -223,23 +219,17 @@ class Filterpanel extends Component {
 											</h3>
 										</div>
 										<div id="collapseThree" className="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-											<div class="panel-body">
+											<div className="panel-body">
 											    <Filter id="Cold Weather" heading="Cold Weather" onChange={this.handleClick}/>
 	    										<Filter id="Warm Weather" heading="Warm Weather" onChange={this.handleClick}/>  
 											</div>
 										</div>
 									</div>
-
-
-
-										<div className="col-xs-12" style={{paddingBottom: '15px', margin: '40px 0 20px',borderBottom: '1px solid black'}}></div>
+									<div className="col-xs-12" style={{paddingBottom: '15px', margin: '40px 0 20px',borderBottom: '1px solid black'}}></div>
 									</div>
 								</div>
 								<div className="row">
-									<div className="row col-xs-12">
-	    								
-
-
+									<div className="row col-xs-12">	    							
 										<div className="panel panel-default">
 											<div className="panel-heading" role="tab" id="headingTwo">
 											    <h3 className="panel-title">
@@ -249,7 +239,7 @@ class Filterpanel extends Component {
 											    </h3>
 											</div>
 											<div id="collapseFour" className="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-											    <div class="panel-body">
+											    <div className="panel-body">
 											    	<Filter id="XS" heading="X Small" onChange={this.handleClick}/>
 	    											<Filter id="S" heading="Small" onChange={this.handleClick}/>
 	    											<Filter id="M" heading="Medium" onChange={this.handleClick}/>
@@ -259,9 +249,6 @@ class Filterpanel extends Component {
 											    </div>
 											</div>
 										</div>
-
-
-
 										<div className="col-xs-12" style={{paddingBottom: '15px', margin: '40px 0 20px',borderBottom: '1px solid black'}}></div>
 									</div>
 								</div>							
@@ -273,7 +260,7 @@ class Filterpanel extends Component {
 							<label className="col-xs-12 control-label" style={{textAlign: 'centers'}}></label>
 							<div className="col-xs-12 row"></div>
 							{this.state.arr.length > 8 && <ButtonComponent label="More"/>}
-							{this.state.data.length == 0 && <span>No record found
+							{this.state.data.length === 0 && <span>No record found
 								<ButtonComponent 
 									className="col-xs-12" 
 									label="Find More" 
@@ -284,66 +271,9 @@ class Filterpanel extends Component {
 						</div>
 	    				</div>
 	    			</div>
-
-
-
-
-
-	    	</div>
-
+			</div>
 	    );
   	}
 }
 
 export default Filterpanel;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// <div className="Heading">
-//   							<h1 className="headings">About Drent</h1>
-//   							<img src='./images/bar.png'/>
-//   						</div>
-
-{/*<div className="row">
-	<h3>More Filter</h3><br/>
-	<h4>Filter&emsp;&emsp;&emsp;&emsp;<i className="fas fa-plus"></i></h4><br/>
-	<h4>Filter&emsp;&emsp;&emsp;&emsp;<i className="fas fa-plus"></i></h4><br/>
-	<h4>Filter&emsp;&emsp;&emsp;&emsp;<i className="fas fa-plus"></i></h4><br/>
-	<h4>Filter&emsp;&emsp;&emsp;&emsp;<i className="fas fa-plus"></i></h4>
-</div>*/}
-
-
-{/*<div className="row" style={{height: '100%',padding:'3%', backgroundColor: '#c2073f'}}>
-	<div className="form-group row">
-		<label className="col-md-1 control-label"></label>
-		<div className="col-md-4">
-			<select className="form-control">
-				<option>Rental Period</option>
-				<option></option>
-				<option></option>
-				<option></option>
-				<option></option>
-			</select>
-		</div>
-			<label className="col-md-1 control-label"></label>
-		<div className="col-md-2">
-			<select className="form-control">
-				<option>Sizes</option>
-				<option></option>
-				<option></option>
-			</select>
-		</div>
-	</div>
-</div>*/}
