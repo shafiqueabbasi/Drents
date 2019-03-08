@@ -17,6 +17,7 @@ const profileSchema = new Schema({
   bust:{ type:String },
   hips:{ type:String },
   torso:{ type:String },
+  updatedImage:{ type:String},
   ribcage:{ type:String },
   height:{ type:String },
   userId:{ type:String },

@@ -5,11 +5,67 @@ class Heading extends Component {
 
     return (
       <div className="App" style={{backgroundImage: "url('./images/swrils.png')"}}>
-      	<div className="container-fluid">
+      	
+      		<div className="container">
+	            <div className="Heading22">
+	                <h1 className="headings22">Choose Your Occasion</h1>
+	                <img src='./images/bar.png' style={{marginTop:'-1%'}}/>
+	            </div>
+            </div>
+            <div className="container googleapp">
+                <div className="row">                  
+                    <div className="col-md-2 col-sm-6 col-xs-12 google2">
+                          <img src="https://res.cloudinary.com/dxk0bmtei/image/upload/v1550646990/admin1_w8m7wf.jpg" className="img22"/>
+                          <div style={{textAlign: 'center'}}>
+                            <h3 className="pichead22">Causal</h3>
+                          </div>
+                    </div>
+                    <div className="col-md-2 col-sm-6 col-xs-12 google2">
+                          <img src="https://res.cloudinary.com/dxk0bmtei/image/upload/v1550646990/admin1_w8m7wf.jpg" className="img22"/>
+                          <div style={{textAlign: 'center'}}>
+                            <h3 className="pichead22">Bridal</h3>
+                          </div>
+                    </div>
+                    <div className="col-md-2 col-sm-6 col-xs-12 google2">
+                          <img src="https://res.cloudinary.com/dxk0bmtei/image/upload/v1550646990/admin1_w8m7wf.jpg" className="img22"/>
+                          <div style={{textAlign: 'center'}}>
+                            <h3 className="pichead22">Semi Formal</h3>
+                          </div>
+                    </div>
+                    <div className="col-md-2 col-sm-6 col-xs-12 google2">
+                          <img src="https://res.cloudinary.com/dxk0bmtei/image/upload/v1550646990/admin1_w8m7wf.jpg" className="img22"/>
+                          <div style={{textAlign: 'center'}}>
+                            <h3 className="pichead22">Formal</h3>
+                          </div>
+                    </div>
+                    <div className="col-md-2 col-sm-12 col-xs-12 google2">
+                          <img src="https://res.cloudinary.com/dxk0bmtei/image/upload/v1550646990/admin1_w8m7wf.jpg" className="img22"/>
+                          <div style={{textAlign: 'center'}}>
+                            <h3 className="pichead22">Heavy Formal</h3>
+                          </div>
+                    </div>
+                </div>
+            </div>
+
+
+      </div>
+    );
+
+  }
+}
+
+export default Heading;
+
+
+
+
+
+
+      	{/*<div className="container-fluid">
 		    <div className="container-fluid">
 		      	<div className="Heading">
 		      		<h1 className="headings">Choose Your Occasion</h1>
-		      		<img src='./images/bar.png'/>
+		      		<img alt="" src='./images/bar.png'/>
 		      	</div>
 
 		      	<div className="container-fluid">
@@ -18,7 +74,7 @@ class Heading extends Component {
 		      				<div className="col-md-6">
 		      					<div className="row" style={{margin: '0'}}>
 		  							<div className="col-md-12 col-xs-12">
-		  								<img src="https://res.cloudinary.com/dxk0bmtei/image/upload/v1550646990/admin1_w8m7wf.jpg" className="img"/>
+		  								<img alt="" src="https://res.cloudinary.com/dxk0bmtei/image/upload/v1550646990/admin1_w8m7wf.jpg" className="img"/>
 		  							</div>
 		  							<div className="col-md-12 col-xs-12">
 		  								<div style={{textAlign: 'center'}}>
@@ -30,7 +86,7 @@ class Heading extends Component {
 		      				<div className="col-md-6">
 		      					<div className="row" style={{margin: '0'}}>
 		      						<div className="col-md-12 col-sm-12">
-		      							<img src="https://res.cloudinary.com/dxk0bmtei/image/upload/v1550646990/admin1_w8m7wf.jpg" className="imgs"/>
+		      							<img alt="" src="https://res.cloudinary.com/dxk0bmtei/image/upload/v1550646990/admin1_w8m7wf.jpg" className="imgs"/>
 		      						</div>
 		      						<div className="col-md-12">
 		      							<div style={{width: '160px', textAlign: 'center'}}>
@@ -46,7 +102,7 @@ class Heading extends Component {
 		      				<div className="col-md-6">
 		      					<div className="row" style={{margin: '0'}}>
 		  							<div className="col-md-12 col-xs-12">
-		  								<img src="https://res.cloudinary.com/dxk0bmtei/image/upload/v1550646990/admin1_w8m7wf.jpg" className="img"/>
+		  								<img alt="" src="https://res.cloudinary.com/dxk0bmtei/image/upload/v1550646990/admin1_w8m7wf.jpg" className="img"/>
 		  							</div>
 		  							<div className="col-md-12 col-xs-12">
 		  								<div style={{width: '165px',textAlign: 'center'}}>
@@ -58,7 +114,7 @@ class Heading extends Component {
 		      				<div className="col-md-6">
 		      					<div className="row" style={{margin: '0'}}>
 		      						<div className="col-md-12">
-		      							<img src="https://res.cloudinary.com/dxk0bmtei/image/upload/v1550646990/admin1_w8m7wf.jpg" className="imgs"/>
+		      							<img alt="" src="https://res.cloudinary.com/dxk0bmtei/image/upload/v1550646990/admin1_w8m7wf.jpg" className="imgs"/>
 		      						</div>
 		      						<div className="col-md-12">
 		      							<div style={{width: '200px', textAlign: 'center'}}>
@@ -76,7 +132,7 @@ class Heading extends Component {
 		      					<div className="row">
 			      					<div className="col-sm-6">
 			      						<div className="col-sm-12">
-		  									<img src="https://res.cloudinary.com/dxk0bmtei/image/upload/v1550646990/admin1_w8m7wf.jpg" className="img"/>
+		  									<img alt="" src="https://res.cloudinary.com/dxk0bmtei/image/upload/v1550646990/admin1_w8m7wf.jpg" className="img"/>
 		  								</div>
 		  								<div className="col-sm-12">
 			  								<div style={{width: '165px',textAlign: 'center'}}>
@@ -86,7 +142,7 @@ class Heading extends Component {
 			      					</div>
 			      					<div className="col-sm-6">
 			      						<div className="col-sm-12">
-		      								<img src="https://res.cloudinary.com/dxk0bmtei/image/upload/v1550646990/admin1_w8m7wf.jpg" className="imgs"/>
+		      								<img alt="" src="https://res.cloudinary.com/dxk0bmtei/image/upload/v1550646990/admin1_w8m7wf.jpg" className="imgs"/>
 		      							</div>
 		      							<div className="col-sm-12">
 			      							<div style={{width: '160px', textAlign: 'center'}}>
@@ -100,7 +156,7 @@ class Heading extends Component {
 		      					<div className="row">
 		      						<div className="col-sm-6">
 		      							<div className="col-sm-12">
-		  									<img src="https://res.cloudinary.com/dxk0bmtei/image/upload/v1550646990/admin1_w8m7wf.jpg" className="img"/>
+		  									<img alt="" src="https://res.cloudinary.com/dxk0bmtei/image/upload/v1550646990/admin1_w8m7wf.jpg" className="img"/>
 		  								</div>
 		  								<div className="col-sm-12">
 			  								<div style={{width: '165px',textAlign: 'center'}}>
@@ -110,7 +166,7 @@ class Heading extends Component {
 		      						</div>
 		      						<div className="col-sm-6">
 		      							<div className="col-sm-12">
-		      								<img src="https://res.cloudinary.com/dxk0bmtei/image/upload/v1550646990/admin1_w8m7wf.jpg" className="imgs"/>
+		      								<img alt="" src="https://res.cloudinary.com/dxk0bmtei/image/upload/v1550646990/admin1_w8m7wf.jpg" className="imgs"/>
 		      							</div>
 			      						<div className="col-sm-12">
 			      							<div style={{width: '200px', textAlign: 'center'}}>
@@ -126,10 +182,5 @@ class Heading extends Component {
 		      		<div className="col-md-12"><hr/></div>
 				</div>
 			</div>
-      </div>
-    );
-
-  }
-}
-
-export default Heading;
+      
+*/}

@@ -7,7 +7,7 @@ class UpCommingOrder extends Component {
     	<div>
 			<div className="row hidden-sm hidden-xs">
 				<div className="col-md-2 col-sm-4">
-					<img src="./images/pinksharara.jpg" style={{width: '165px'}}/>
+					<img alt="" src="./images/pinksharara.jpg" style={{width: '165px'}}/>
 				</div>
 			
 				<div className="col-md-10 col-sm-5">
@@ -41,7 +41,7 @@ class UpCommingOrder extends Component {
 			<div className="visible-sm ">
 				<div className="row">
 				<div className=" col-sm-4">
-					<img src="./images/pinksharara.jpg" style={{height: '240px'}}/>
+					<img alt="" src="./images/pinksharara.jpg" style={{height: '240px'}}/>
 				</div>
 			
 				<div className="col-sm-5">
@@ -77,7 +77,7 @@ class UpCommingOrder extends Component {
 				<div className="visible-xs">
 					<div className="col-xs-2"></div>
 						<div className="col-xs-6">
-							<img src="./images/pinksharara.jpg" style={{height: '240px'}}/>
+							<img alt="" src="./images/pinksharara.jpg" style={{height: '240px'}}/>
 						</div>
 				</div>
 				<div className="visible-xs col-xs-12">

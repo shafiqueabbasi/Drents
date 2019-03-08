@@ -12,12 +12,14 @@
 
 #footer{
 	width: 100%;
-	position: fixed;
+	
     bottom: 0;
 }
 
 .footer_h3{
-	
+
+	padding-left: 10px;
+    border-left: 3px solid #ffffff;
     padding-bottom: 6px;
     margin-bottom: 20px;
     color:#ffffff;

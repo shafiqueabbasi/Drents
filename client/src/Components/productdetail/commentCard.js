@@ -112,7 +112,7 @@ class CommentCard extends Component {
     		productId: this.props.obj._id
     	}
     	let res = await HttpUtils.post('postreview',obj, this.props.user.token);
-    	if(res && res.code && res.code == 200){    		
+    	if(res && res.code && res.code === 200){    		
     		this.setState({
     			loading: false,
 				rate: 0,

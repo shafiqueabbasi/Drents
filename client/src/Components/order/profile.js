@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import { Form, Input, Button, AutoComplete, Modal, Radio } from 'antd';
+import { Form } from 'antd';
 import ChangePassword from './changePassword';
 import { TextInput, RadioInput, SelectInput } from '../_components/myInput';
 import { HttpUtils } from  '../../Service/HttpUtils';
 import { connect } from 'react-redux';
 import './profile.css';
 
-const AutoCompleteOption = AutoComplete.Option;
 
 class Profile extends Component {
 	state = {
@@ -26,6 +25,7 @@ class Profile extends Component {
 		height: '',
 		userId: '',
 		_id: '',
+		updatedImage: '',
 		loading: false,
 		showMsg: ''
 	};
@@ -33,7 +33,6 @@ class Profile extends Component {
 	componentDidMount(){
 		const { _id, email } = this.props.user;
 		const { profile } = this.props.location.state;
-		console.log(profile, 'profileeeeeeeeeee')
 	      for(var el in profile[0]){
 	          this.setState({ [el]: profile[0][el] })
 	      }
@@ -45,7 +44,6 @@ class Profile extends Component {
 	}
 
 	radioHandleChange = (e) => {
-		console.log(e.target, 'targettttttttttt')
 		this.setState({ [e.target.id]: e.target.value })
 	}
 
@@ -64,7 +62,6 @@ class Profile extends Component {
 
 	async submit(obj){
 		let res = await HttpUtils.post('uploadprofile', obj, this.props.user.token);
-		console.log(res, 'resssssssssss')
 		if(res && res.code && res.code == 200){
 			this.setState({ loading : false, showMsg : res.msg })
 		}
@@ -348,7 +345,6 @@ class Profile extends Component {
 const WrappedNormalProfileForm = Form.create()(Profile);
 
 function mapStateToProps(state) {
-	// console.log(state, 'stateeeeeee')
     const { user } = state.authentication;
     return {
         user

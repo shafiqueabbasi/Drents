@@ -7,6 +7,8 @@ import './userprofile.css'
 
 import { Link } from "react-router-dom";
 import { connect } from 'react-redux';
+import sha1 from "sha1";
+import superagent from "superagent";
 
 class UserProfile extends Component {
 	constructor(props) {
@@ -14,15 +16,35 @@ class UserProfile extends Component {
         this.state = {
         	arr : [],
         	profile: [],
-        	loading: true
+        	loading: true,
+        	updatedImage: '',
+        	email: '',
+			firstName: '',
+			lastName: '',
+			inputHeight:'',
+			weight:'',
+			bustSize:'',
+			bodyType:'',
+			ocassionAttendMost:'',
+			typicalJeanSize:'',
+			bust: '',
+			hips: '',
+			torso: '',
+			ribcage: '',
+			height: '',
+			userId: '',
+			_id: '',
         }
     }
 
-	async componentDidMount(){
+    componentDidMount(){
+    	this.fetchUserData();
+    }
+
+	async fetchUserData(){
 		let id = this.props.match.params.value,
 		data = await HttpUtils.post('getprofiledress', {userId: id}),
 		rate = 0;
-		console.log(data, 'dataaaaaa')
 		if(data.code && data.code == 200){
 			let dressData = data.dress.length > 0 && data.dress.map((elem) => {
 				return elem._id;
@@ -30,8 +52,10 @@ class UserProfile extends Component {
 			let historyData = data.orderhistory.length > 0 && data.orderhistory.map((elem) => {
 				return elem.products;
 			})
+			for(var el in data.profile[0]){
+		        this.setState({ [el]: data.profile[0][el] })
+	        }
 			let orderhistory = _.flatten(historyData)
-			// console.log(orderhistory, 'historyData')
 			if(dressData){
 				data.review.map((elem) => {
 					if(dressData.includes(elem.productId)){
@@ -39,29 +63,100 @@ class UserProfile extends Component {
 					}
 				})
 				rate = rate / data.review.length;
-			}			
+			}		
+			if(!dressData){
+				this.props.updateFooter(true)
+			}	
 			this.setState({ 
 				arr: data.dress, 
 				profile: data.profile, 
 				review: rate, 
 				loading: false, 
 				dressData,
-				orderhistory
+				orderhistory,
+				userId: this.props.user._id 
 			});
 		}
+	}
+
+	componentWillUnmount(){
+		this.props.updateFooter(false)
 	}
 
 	onDelete = e => {
 		console.log(e, 'editttttt')
 	}
 
+	handleImage = elem => {
+		let { fileList } = this.state,        
+        self = this,
+        file = elem.target.files[0],
+        reader = new FileReader();
+
+        //Read the contents of Image File.
+        reader.readAsDataURL(file);
+        reader.onload = function (e) {
+        	var image = new Image();
+        	file.src = e.target.result;
+        	self.forUpload(file);
+        }
+	}
+
+	forUpload = async e => {
+		let updatedImage = await this.uploadFile(e).then((result) => {
+            return result.body.url
+        });
+        const {email, firstName, lastName, inputHeight, weight, bustSize, height, bodyType,
+			ocassionAttendMost, typicalJeanSize, bust, hips, torso, ribcage, userId, _id} = this.state;
+		let obj = {
+			email, firstName, lastName, inputHeight, weight, bustSize, height, bodyType,
+			ocassionAttendMost, typicalJeanSize, bust, hips, torso, ribcage, userId, updatedImage,
+			profileId: _id
+		}
+        let res = await HttpUtils.post('uploadprofile', obj, this.props.user.token);
+		if(res && res.code && res.code == 200){
+			this.setState({ updatedImage });
+			this.fetchUserData();
+		}        
+	}
+
+	//--------------function for cloudnary url ---------------
+    uploadFile = (files) =>{        
+        const image = files,
+        cloudName = 'dxk0bmtei',
+        url = 'https://api.cloudinary.com/v1_1/'+cloudName+'/image/upload',
+        timestamp = Date.now()/1000,
+        uploadPreset = 'toh6r3p2',
+        paramsStr = 'timestamp='+timestamp+'&upload_preset='+uploadPreset+'U8W4mHcSxhKNRJ2_nT5Oz36T6BI',
+        signature = sha1(paramsStr),
+        params = {
+            'api_key':'878178936665133',
+            'timestamp':timestamp,
+            'upload_preset':uploadPreset,
+            'signature':signature
+        };
+
+        return new Promise((res, rej) => {
+            let uploadRequest = superagent.post(url)
+            uploadRequest.attach('file', image)
+            Object.keys(params).forEach((key) =>{
+                uploadRequest.field(key, params[key])
+            })
+
+            uploadRequest.end((err, resp) =>{
+                err ? rej(err) : res(resp);
+            })
+        })
+    }
+
+    //-----------------cloudnary function end ------------------
+
 	render() {
-		const { profile, arr, review, dressData, orderhistory } = this.state,
+		const { profile, arr, review, dressData, orderhistory, updatedImage } = this.state,
 		{ user } = this.props,
 		id = this.props.match.params.value,
-		userName = profile.length > 0 ? profile[0].firstName : "User Name";
+		userName = profile.length > 0 && profile[0].firstName.length > 0 ? profile[0].firstName : user && user.username;
 		let userAvailable = false;
-		console.log(profile, 'rateeeeeeee')
 		if(user && user._id && user._id === id){
 			userAvailable = true;
 		}
@@ -73,13 +168,13 @@ class UserProfile extends Component {
 							<div className="row" style={{marginTop:'21px'}}>
 								<div className="col-md-3">
 									<div className="rovil1 shah2">
-										<img src="../images/admin1.jpg" className="rovilimg img-circle streetb2"/>
+										<img src={updatedImage.length > 0 ? updatedImage : "../images/admin1.jpg"} className="rovilimg img-circle streetb2"/>
 									</div>
 									<div id="shah1">
 										<div className="streetb1">	
-											<label className="custom-file-upload">
-											    <input type="file"/>
-											    <i class="fas fa-camera" style={{fontSize:'20px'}}></i><br/>
+											<label className="custom-file-upload inner">
+											    <input type="file" onChange={e => this.handleImage(e)}/>
+											    <i class="fas fa-camera" style={{fontSize:'20px', cursor: 'pointer'}}></i><br/>
 											    <h5>Add Photo</h5>
 											</label>
 										</div>
@@ -134,6 +229,7 @@ class UserProfile extends Component {
 								onDelete={this.onDelete}
 								data={arr}
 								profile={profile}
+								orderhistory={orderhistory}
 								userAvailable={userAvailable}
 							/>}
 							{!dressData && <div style={{textAlign: 'center'}}>not uploaded any dress</div>}
