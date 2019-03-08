@@ -4,6 +4,7 @@ const profileUpload = require('./controllers/profile');
 const getDresses = require('./controllers/getDresses');
 const getReview = require('./controllers/getreview');
 const checkout = require('./controllers/stripecheckout');
+const orderBooking = require('./controllers/orderbooking');
 //const socialAuthenticationUser = require('./controller/')
 const passportService = require('./services/passport');
 const passport = require('passport');
@@ -25,6 +26,7 @@ module.exports = function(app){
   app.post('/postreview', requireAuth, reviewPost.uploadReview);
   app.post('/charge',checkout.charge);
   app.post('/getprofiledress', getprofileanddress.getdressProfile);
+  app.post('/orderdetail', requireAuth, orderBooking.checkoutorder);
   //get routes
   app.get('/getdresses',getDresses.getdress);
   app.get('/getreview',getReview.getreview);

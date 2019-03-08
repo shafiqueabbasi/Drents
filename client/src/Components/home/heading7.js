@@ -9,7 +9,11 @@ class Heading7 extends Component {
     			<div className="Heading">
     				<div className="container-fluid"></div>
 	      			<h1 className="headings">Benifits</h1>
+
 	      			<img src='./images/bar.png' style={{marginTop:'-1%'}}/>
+
+	      			<img alt="" src='./images/bar.png'/>
+
 	      		</div>
 	      		<div className="col-md-12 col-sm-12">
 	      			<div className="col-md-2 col-sm-2"></div>

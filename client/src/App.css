@@ -167,6 +167,7 @@ paraghraph/*.App {
   font-size: 15px;
 }
 .streetb1{
+    height: 100px!important;
     background-color: rgba(0, 0, 0, .4);
     text-align: center;
     color: white;

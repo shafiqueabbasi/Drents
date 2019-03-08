@@ -53,7 +53,7 @@ exports.socialAuthentication = function(req,res,next){
       res.json({
         token:tokenForSocialUser(userauthsocial),
         username:userauthsocial.name,
-        userId:userauthsocial.userId
+        _id:userauthsocial.userId
       });
     });
 
@@ -64,13 +64,20 @@ exports.socialAuthentication = function(req,res,next){
 exports.signin = function(req, res, next){
   //user has already had their email and password auth'd
   //we just need to give them a token
-  res.send({
-    token: tokenForUser(req.user),
-    _id:req.user.id,
-    email:req.user.email,
-    firstName:req.user.firstname,
-    lastName:req.user.lastname
-  });
+  var user = req.body.email;
+  User.findOne({email:user},function(err,user){
+    console.log(user);
+    if(user){
+      //var username = user.firstname +''+ user.lastname;
+      res.send({
+        token: tokenForUser(req.user),
+        _id:req.user.id,
+        email:req.user.email,
+        username:user.firstname +''+ user.lastname
+      });
+    }
+  })
+
 }
 
 
@@ -106,7 +113,7 @@ exports.signup = function(req, res, next){
       res.json({
         token:tokenForUser(user),
         username:user.firstname+''+user.lastname,
-        userId:user._id
+        _id:user._id
       });
     });
 }

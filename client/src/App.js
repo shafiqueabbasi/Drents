@@ -32,7 +32,8 @@ class App extends Component {
       response: '',
       post: '',
       responseToPost: '',
-      arr: []
+      arr: [],
+      footer: false
     };
   }
 
@@ -64,29 +65,34 @@ class App extends Component {
     this.setState({ arr })
   }
 
+  updateFooter = e => {
+    this.setState({ footer: e })
+  }
+
   render() {
-    console.log(this.props, 'llllllllll')
     return (
       <div className="App">
-       		<BrowserRouter>
-              <div>
-                    <Header arr={this.state.arr} {...this.props}/>
-                      {/*<PrivateRoute exact path="/" component={HomePage} />
-                        <PrivateRoute exact path="/about" component={AboutPage} />*/}
-                        <Route path="/" exact component={Home} />
-                        <Route path="/profile/:value" exact component={UserProfile} />
-                         {/*<Route path="/register" component={RegisterPage} />*/}
-                         <Route path="/product" component={MainPage} />
-                         <Route path="/userdetail" component={Profile} />
-                         {/*<Route path="/detail" component={Product} />*/    }
-                        <Route path="/detail" render={props => { return <Product {...props} updateCart={this.updateCart}/>}} />
-                         {/*<Route path="/checkout" component={Checkout} />*/}
-                         <Route path="/checkout" render={props => { return <Checkout {...props} updateCart={this.updateCart}/>}} />
-                      {/*<Userprofile/>*/}  
-                    <Footer />   
-                    
-              </div>
-          </BrowserRouter>
+			<BrowserRouter>
+	          <div>
+	          <Header arr={this.state.arr}/>
+				{/*<PrivateRoute exact path="/" component={HomePage} />
+	              <PrivateRoute exact path="/about" component={AboutPage} />*/}
+	              <Route path="/" exact component={Home} />
+								{/*<Route path="/profile/:value" exact component={UserProfile} />*/}
+                <Route path="/profile/:value" render={props => <UserProfile {...props} updateFooter={this.updateFooter}/>} />
+	              {/*<Route path="/register" component={RegisterPage} />*/}
+                <Route path="/product" component={MainPage} />
+                <Route path="/userdetail" component={Profile} />
+                {/*<Route path="/detail" component={Product} />*/		}
+                <Route path="/detail" render={props => { return <Product {...props} updateCart={this.updateCart}/>}} />
+                {/*<Route path="/checkout" component={Checkout} />*/}
+                <Route path="/checkout" render={props => { return <Checkout {...props} updateCart={this.updateCart}/>}} />
+            {/*<Userprofile/>*/} 
+            
+	         <Footer showFooter={this.state.footer}/>   
+
+	          </div>
+			</BrowserRouter>
       </div>
     );
   }   

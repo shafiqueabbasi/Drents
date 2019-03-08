@@ -14,6 +14,7 @@ exports.profileUpload = function(req, res, next){
       lastName:profileData.lastName,
       email:profileData.email,
       inputHeight:profileData.inputHeight,
+      updatedImage:profileData.updatedImage,
       weight:profileData.weight,
       bustSize:profileData.bustSize,
       bodyType:profileData.bodyType,
@@ -51,6 +52,7 @@ exports.profileUpload = function(req, res, next){
       existingProfile.weight =profileData.weight;
       existingProfile.bustSize = profileData.bustSize;
       existingProfile.bodyType = profileData.bodyType;
+      existingProfile.updatedImage = profileData.updatedImage;
       existingProfile.occassionAttendMost = profileData.occassionAttendMost;
       existingProfile.typicalJeanSize = profileData.typicalJeanSize;
       existingProfile.bust = profileData.bust;

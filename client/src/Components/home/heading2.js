@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 
 class Heading2 extends Component {
-  render() {
+  	render() {
     
+
     return (
     	<div className="App" style={{backgroundImage: "url('./images/swrils.png')"}}>
 	    		<div className="Heading">

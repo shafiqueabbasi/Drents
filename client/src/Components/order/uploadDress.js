@@ -100,7 +100,6 @@ class UploadDress extends Component {
             userId: this.props.user._id,
             _id
         }
-        console.log(obj,'sdasadsad')
         let resDressUpload = await HttpUtils.post('uploaddress',obj, this.props.user.token);
         if(resDressUpload.code && resDressUpload.code == 200){
             this.resetFields(resDressUpload)

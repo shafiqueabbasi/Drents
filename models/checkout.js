@@ -3,29 +3,19 @@ const Schema = mongoose.Schema;
 
 
 //Define Model
-const uploadDressSchema = new Schema({
-  productName:{ type:String },
-  detailName:{ type:String },
-  description:{ type:String },
-  priceDay:{ type:String },
-  details:{type:Array},
-  sizes:{ type:Array },
-  fileList:{ type:Array },
+const orderDetailSchema = new Schema({
+  products:{type:Array},
+  name:{ type:String },
+  email:{ type:String },
   userId:{ type:String },
-  tags:{ type:Array },
-  from:{ type:String },
-  to:{ type:String },
-  weather:{ type:String },
-  background:{ type:String },
-  bodyType:{ type:String },
-  userName:{ type:String },
-  productId:{ type:String }
+  date:{ type:String },
+  amount:{ type:String },
 });
 
 
 
 //model class
-const ModelDressClass = mongoose.model('checkout',check);
+const ModelDressClass = mongoose.model('checkout',orderDetailSchema);
 
 //export model
 module.exports = ModelDressClass;

@@ -7,8 +7,6 @@ import Secondfold from './productdetailsecondfold';
 import { CircleSizes, Rate } from '../_components/myInput';
 import './productdetail.css'
 
-// import { AsyncStorage } from '@callstack/async-storage';
-
 class Productdetailfirstfold extends Component {
 	state = {
 		to: '',

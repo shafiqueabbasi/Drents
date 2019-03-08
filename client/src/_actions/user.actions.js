@@ -12,16 +12,20 @@ export const userActions = {
     // delete: _delete
 };
 
-function login(user, callback) {
+function login(user, to, callback) {
     return dispatch => {
         dispatch(request({ user }));
 
-        HttpUtils.post('signin', user)
+        HttpUtils.post(to, user)
             .then(
                 user => { 
-                    document.getElementById("SignIn").click();
-                    dispatch(success(user));
-                    callback(user);
+                    if(user !== undefined){
+                        document.getElementById("SignIn").click();
+                        dispatch(success(user));
+                        callback(user);
+                    }else {
+                        callback("User email or passwaord not matched");
+                    }
                 },
                 error => {
                     dispatch(failure(error.toString()));
@@ -47,8 +51,9 @@ function register(user, callback) {
         HttpUtils.post('signup', user)
             .then(
                 user => { 
+                    console.log(user, 'kia aay user main bhaiiiiiii ')
                     document.getElementById("SignUp").click();
-                    dispatch(success());
+                    dispatch(success(user));
                     callback(user);
                     dispatch(alertActions.success('Registration successful'));
                 },
@@ -59,9 +64,9 @@ function register(user, callback) {
             );
     };
 
-    function request(user) { return { type: userConstants.REGISTER_REQUEST, user } }
-    function success(user) { return { type: userConstants.REGISTER_SUCCESS, user } }
-    function failure(error) { return { type: userConstants.REGISTER_FAILURE, error } }
+    function request(user) { return { type: userConstants.LOGIN_REQUEST, user } }
+    function success(user) { return { type: userConstants.LOGIN_SUCCESS, user } }
+    function failure(error) { return { type: userConstants.LOGIN_FAILURE, error } }
 }
 
 // function getAll() {
