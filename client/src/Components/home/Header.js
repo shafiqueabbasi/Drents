@@ -58,9 +58,9 @@ class FirstPage extends Component {
       	<div className="nav navbar navbar-fixed-top bgc">
       	  <div className="nav navbar navbar-fixed-top bgc hidden-xs">
       		  <div className="container-fluid">
-      	  	  <div className="col-md-4 col-sm-2">
+      	  	  <div className="col-md-4 col-sm-2"> 
       			 	  <div className="navbar-header">
-      					  <a href="#" className="hidden-sm"><img src="../images/Drent-logo-white.png" style={{width: '35%'}}/></a>
+      					  <a href="#" className="hidden-sm"><img src="../images/Drent-logo-white.png" style={{width:'43%'}}/></a>
                   <a href="#" className="visible-sm"><img src="../images/Drent-logo-white.png" style={{width: '110%'}}/></a>
       				  </div>
       			  </div>
@@ -69,8 +69,8 @@ class FirstPage extends Component {
       				    <ul className="nav navbar-nav navbar-right customhover">      					     
       					    <li className="head"><Link to={`/`} className="nav" style={{fontSize:'12px'}}>HOME</Link></li>
         				    <li className="head"><Link to={`/product`} className="nav" style={{fontSize:'12px'}}>PRODUCT</Link></li>
-        				    <li className="head"><Link to={`/detail`} className="nav" style={{fontSize:'12px'}}>TESTIMONIALS</Link></li>
-        				    <li className="head"><Link to={`/profile/${userId}`} className="nav" style={{fontSize:'12px'}}>MY PROFILE</Link></li>
+                    <li className="head" style={{marginRight: '-28px'}}><Link to={`/profile/${userId}`} className="nav" style={{fontSize:'12px'}}>MY PROFILE</Link></li>
+        				    <li className="head"><Link to={`/detail`} className="nav" style={{fontSize:'12px'}}></Link></li>
                     {loggedIn && <li className="head" onClick={this.logOut}><a className="nav" style={{fontSize:'12px'}}>Log Out</a></li>}
 
                     {!loggedIn && <li className="head">
@@ -79,7 +79,7 @@ class FirstPage extends Component {
                           <div className="modal-dialog">
                             <div className="modal-content">
                               <div className="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <button type="button" className="close" data-dismiss="modal">&times;</button>
                                 <h4 className="modal-title" style={{textAlign:'center'}}>Sign In</h4>
                               </div>
                               <div className="modal-body">

@@ -25,7 +25,6 @@ import Product from './Components/productdetail/productdetailfirstfold';
 import UserProfile from './Components/Userprofile/userprofile';
 import Checkout from './Components/Checkout/cartData';
 
-
 class App extends Component {
   constructor(props){
     super(props);
@@ -69,28 +68,30 @@ class App extends Component {
     console.log(this.props, 'llllllllll')
     return (
       <div className="App">
-			<BrowserRouter>
-	          <div>
-	          <Header arr={this.state.arr} {...this.props}/>
-				{/*<PrivateRoute exact path="/" component={HomePage} />
-	              <PrivateRoute exact path="/about" component={AboutPage} />*/}
-	              <Route path="/" exact component={Home} />
-								<Route path="/profile/:value" exact component={UserProfile} />
-	              {/*<Route path="/register" component={RegisterPage} />*/}
-                <Route path="/product" component={MainPage} />
-                <Route path="/userdetail" component={Profile} />
-                {/*<Route path="/detail" component={Product} />*/		}
-                <Route path="/detail" render={props => { return <Product {...props} updateCart={this.updateCart}/>}} />
-                {/*<Route path="/checkout" component={Checkout} />*/}
-                <Route path="/checkout" render={props => { return <Checkout {...props} updateCart={this.updateCart}/>}} />
-            {/*<Userprofile/>*/} 
-	         <Footer />   
-							
-	          </div>
-			</BrowserRouter>
+       		<BrowserRouter>
+              <div>
+                    <Header arr={this.state.arr} {...this.props}/>
+                      {/*<PrivateRoute exact path="/" component={HomePage} />
+                        <PrivateRoute exact path="/about" component={AboutPage} />*/}
+                        <Route path="/" exact component={Home} />
+                        <Route path="/profile/:value" exact component={UserProfile} />
+                         {/*<Route path="/register" component={RegisterPage} />*/}
+                         <Route path="/product" component={MainPage} />
+                         <Route path="/userdetail" component={Profile} />
+                         {/*<Route path="/detail" component={Product} />*/    }
+                        <Route path="/detail" render={props => { return <Product {...props} updateCart={this.updateCart}/>}} />
+                         {/*<Route path="/checkout" component={Checkout} />*/}
+                         <Route path="/checkout" render={props => { return <Checkout {...props} updateCart={this.updateCart}/>}} />
+                      {/*<Userprofile/>*/}  
+                    <Footer />   
+                    
+              </div>
+          </BrowserRouter>
       </div>
     );
-  }
+  }   
 }
 
 export default App;
+
+		

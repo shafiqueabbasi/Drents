@@ -1,0 +1,11 @@
+
+@font-face {
+   font-family: 'CRIMSONTEXT-BOLD,CRIMSONTEXT-REGULAR,CRIMSONTEXT-SEMIBOLD,MOUNTAINSCRIPTOPTI,QUILL';
+   font-style: normal;
+   font-weight: 400;
+   src: url('../public/fonts/CRIMSONTEXT-BOLD.TTF');
+   src: url('../public/fonts/CRIMSONTEXT-REGULAR.TTF);
+   src: url('../public/fonts/CRIMSONTEXT-SEMIBOLD.TTF);
+   src: url('../public/fonts/MOUNTAINSCRIPTOPTI.OTF);
+   src: url('../public/fonts/QUILL.TTF);
+}

@@ -9,7 +9,7 @@ class Heading4 extends Component {
     	<div className="App" style={{backgroundImage: "url('./images/swrils.png')"}}>
     		{label && label.length > 0 && <div className="Heading">
       			<h1 className="headings">{label}</h1>
-      			<img src='../images/bar.png'/>
+      			<img src='../images/bar.png' style={{marginTop:'-1%'}}/>
       		</div>}
       		<div className="container-fluid">
 	    		<div className="container-fluid">
