@@ -4,7 +4,7 @@ class Heading extends Component {
   render() {
 
     return (
-      <div className="App" style={{backgroundImage: "url('./images/swrils.png')"}}>
+      <div className="App">
       	
       		<div className="container">
 	            <div className="Heading22">

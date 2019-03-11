@@ -5,14 +5,9 @@ class Heading3 extends Component {
     
     return (
     	<div className="App" style={{backgroundColor:'#c2073f'}}>
-    		<div className="Heading">
-
-      			<h1 className="headings1" style={{marginBottom:'-1%'}}>How It Works</h1>
-      			<img src='./images/bar-white.png' style={{marginTop:'-1%'}}/>
-
-      			<h1 className="headings1">How It Works</h1>
-      			<img alt="" src='./images/bar.png'/>
-
+      		<div className="Heading">
+        			<h1 className="headings1" style={{marginBottom:'-1%'}}>How It Works</h1>
+        			<img src='./images/bar-white.png' style={{marginTop:'-1%'}}/>
       		</div>
 
       		<div className="container-fluid">
