@@ -101,7 +101,7 @@ export const Filter = props => {
                 onChange={props.onChange}
             />
             <span className="checkmark"></span>
-            <h4>{props.heading}</h4>
+            <h5>{props.heading}</h5>
         </label>
     )
 }

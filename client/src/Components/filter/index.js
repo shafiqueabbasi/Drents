@@ -3,11 +3,12 @@ import Header from '../home/Header';
 import FilterPanel from './filterpanel';
 import Footer from '../home/headingf8';
 
+
 class FilterPage extends Component {
   render() {
     
     return (
-		<div className="App">
+		<div className="App" style={{backgroundImage: "url('./images/swrils.png')"}}>
 			<FilterPanel/>        
 		</div>
     );
