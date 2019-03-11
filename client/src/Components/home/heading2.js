@@ -5,7 +5,7 @@ class Heading2 extends Component {
     
 
     return (
-    	<div className="App" style={{backgroundImage: "url('./images/swrils.png')"}}>
+    	<div className="App">
 	    		<div className="Heading">
 	      			<h1 className="headings">About Drent</h1>
 	      			<img src='./images/bar.png' style={{marginTop:'-1%'}}/>

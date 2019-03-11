@@ -4,7 +4,7 @@ class Heading6 extends Component {
   render() {
     
     return (
-    	<div className="App" style={{backgroundImage: "url('./images/swrils.png')"}}>
+    	<div className="App" >
     		<div className="container-fluid">
 	    		<div className="Heading">
 	      			<h1 className="headings">Subscription Plan</h1>

@@ -16,7 +16,7 @@ class Home extends Component {
   render() {
     
     return (
-      <div className="App">
+      <div className="App" style={{backgroundImage: "url('./images/swrils.png')"}}>
         {/*<Header/>*/}
         <Banner/>
         <Heading/>
