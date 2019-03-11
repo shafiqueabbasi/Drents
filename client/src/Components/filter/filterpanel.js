@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import Gallery from '../home/heading4';
 import { Filter, ButtonComponent } from '../_components/myInput';
 import { HttpUtils } from  '../../Service/HttpUtils';
-import './filterpanel.css'
+import './filterpanel.css';
 import { Slider } from 'antd';
+
+
 
 class Filterpanel extends Component {
 	constructor(props) {
@@ -54,7 +56,7 @@ class Filterpanel extends Component {
  
   	render() {      		
 	    return (
-	    	<div className="App" style={{marginTop: '110px'}}>
+	    	<div className="App" style={{marginTop: '90px'}}>
 	    		{this.state.loading && <div className="loading">Loading&#8230;</div>}
 	    		<div  className="container-fluid">
 	    			<div className="col-md-12 col-sm-12 hidden-xs">
@@ -83,40 +85,6 @@ class Filterpanel extends Component {
 										<div className="col-md-10 col-sm-10" style={{paddingBottom: '15px', margin: '40px 0 20px',borderBottom: '1px solid black'}}></div>
 									</div>
 								</div>
-
-
-
-								<div className="row">
-									<h3>Colors&emsp;&emsp;-</h3>
-									<div className="col-md-8 col-sm-8">
-										<div className="row">
-											<a href="#"><div className="col-md-1 col-sm-1" style={{borderRadius: '50px', backgroundColor: 'red', height: '30px',width: '30px', marginRight: '2%'}}></div></a>
-											<a href="#"><div className="col-md-1 col-sm-1"  style={{borderRadius: '50px', backgroundColor: 'yellow', height: '30px',width: '30px', marginRight: '2%'}}></div></a>
-											<a href="#"><div className="col-md-1 col-sm-1"  style={{borderRadius: '50px', backgroundColor: 'green', height: '30px',width: '30px', marginRight: '2%'}}></div></a>
-											<div className="col-md-9 col-sm-9"></div>
-										</div>
-										<div className="row">
-											<a href="#"><div className="col-md-1 col-sm-1"  style={{borderRadius: '50px', backgroundColor: 'blue', height: '30px',width: '30px', marginRight: '2%'}}></div></a>
-											<a href="#"><div className="col-md-1 col-sm-1"  style={{borderRadius: '50px', backgroundColor: 'pink', height: '30px',width: '30px', marginRight: '2%'}}></div></a>
-											<a href="#"><div className="col-md-1 col-sm-1"  style={{borderRadius: '50px', backgroundColor: 'brown', height: '30px',width: '30px', marginRight: '2%'}}></div></a>
-											<div className="col-md-6 col-sm-6"></div>
-										</div>
-									</div>
-
-								</div><br/><br/>
-								<div className="row">
-									<div className="col-md-9 col-sm-9" style={{paddingBottom: '15px', margin: '40px 0 20px',borderBottom: '1px solid black'}}></div>
-								</div>
-								
-
-
-
-
-
-
-
-
-
 
 
 
@@ -183,7 +151,7 @@ class Filterpanel extends Component {
 	    		<div className="col-xs-12 visible-xs">
 	    				<div className="col-xs-1"></div>
 	    				<div className="col-xs-11">
-	    					<div className="panel">
+	    					<div className="more">
 	    						<div className="row">	    					
 	    							
 	    							<div className=" row col-xs-12">
