@@ -63,20 +63,20 @@ class Headingf8 extends Component {
                     <div className="col-xs-12 bgc">
                         <div className="col-xs-2"></div>
                             <div className="row">
-                                <div className="col-xs-7">
-                                <ul className="ul_list">
-                                    <h3 className="footer_h3">Quick links</h3>
-                                    <li><a href="javascript:void();" className="li_list"><i className="fa fa-angle-double-right"></i>HOME</a></li>
-                                    <li><a href="javascript:void();" className="li_list"><i className="fa fa-angle-double-right"></i>PRODUCT</a></li>
-                                    <li><a href="javascript:void();" className="li_list"><i className="fa fa-angle-double-right"></i>TESTIMONIALS</a></li>
-                                    <li><a href="javascript:void();" className="li_list"><i className="fa fa-angle-double-right"></i>MY PROFILE</a></li>
-                                </ul>
+                                <div className="col-xs-3"></div>
+                                <div className="col-xs-9" style={{marginLeft: '5%'}}>
+                                    <ul className="ul_list">
+                                        <h3 className="footer_h3">Quick links</h3>
+                                        <li><a href="javascript:void();" className="li_list"><i className="fa fa-angle-double-right"></i>HOME</a></li>
+                                        <li><a href="javascript:void();" className="li_list"><i className="fa fa-angle-double-right"></i>PRODUCT</a></li>
+                                        <li><a href="javascript:void();" className="li_list"><i className="fa fa-angle-double-right"></i>MY PROFILE</a></li>
+                                    </ul>
                                 </div>
                             </div>
 
-                            <div className=" row" style={{fontSize:'10px'}}>
+                            <div className="row" style={{fontSize:'10px'}}>
                                 <div className="col-xs-2"></div>
-                                <div className="col-xs-9">
+                                <div className="col-xs-10">
                                     <h3 className="footer_h3">Social Media</h3>
                                     <ul className="list-unstyled list-inline social">
                                         <li className="list-inline-item"><a href="javascript:void();"><i className="fab fa-facebook-f"></i></a></li>
