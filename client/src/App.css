@@ -37,11 +37,6 @@ paraghraph/*.App {
 
 
 
- .images-text{
-
-
- }
-
  .images-text img{
   width: 100%;
   height: 610px;
@@ -79,7 +74,7 @@ paraghraph/*.App {
 }
 .headings{
  color: #c2073f;
-    font-family: mountainscriptopti;
+    font-family: QUILL;
     font-size: 50px;
     margin-bottom: -9px;
 }
