@@ -56,7 +56,7 @@ class Filterpanel extends Component {
  
   	render() {      		
 	    return (
-	    	<div className="App" style={{marginTop: '90px'}}>
+	    	<div className="App" style={{marginTop: '90px',backgroundImage: "url('./images/swrils.png')"}}>
 	    		{this.state.loading && <div className="loading">Loading&#8230;</div>}
 	    		<div  className="container-fluid">
 	    			<div className="col-md-12 col-sm-12 hidden-xs">
