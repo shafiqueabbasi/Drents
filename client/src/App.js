@@ -89,7 +89,7 @@ class App extends Component {
                 <Route path="/checkout" render={props => { return <Checkout {...props} updateCart={this.updateCart}/>}} />
             {/*<Userprofile/>*/} 
             
-	         <Footer showFooter={this.state.footer}/>   
+	         {/*<Footer showFooter={this.state.footer}/>   */}
 
 	          </div>
 			</BrowserRouter>

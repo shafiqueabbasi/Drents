@@ -63,7 +63,7 @@ export const CircleSizes = props => {
 export const Rate = props => {
     return(
         <div className="row"> 
-            <Rating className={props.classMd ? props.classMd : "col-md-7"}
+            <Rating className={props.classMd ? props.classMd : "col-md-7" + "col-xs-8"}
                 emptySymbol="glyphicon glyphicon-star-empty"
                 fullSymbol="glyphicon glyphicon-star"
                 initialRating={props.initialRating} 
@@ -71,7 +71,7 @@ export const Rate = props => {
                 style={{color: 'yellow'}}
                 onChange={props.onChange}
             />
-            <div className={props.classXS ? props.classXS : "col-md-5 col-xs-6"}
+            <div className={props.classXS ? props.classXS : "col-md-5" + "col-xs-4"}
                 style={{padding: '0'}}>
                 <h5>{props.rate}</h5>
             </div>
