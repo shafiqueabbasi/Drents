@@ -34,6 +34,11 @@ class UploadDress extends Component {
             'Corporate',
             'Special Ocasion',
             'Family Dinner',
+            'Causal',
+            'Bridal',
+            'Sami Formal',
+            'Formal',
+            'Heavy Formal',
         ],        
         sizeMsg: '',
         imgMsg: '' ,
@@ -236,7 +241,7 @@ render() {
       		<div className="container-fluid">
       			<div className="col-md-12">
       				<div className="row">
-      					<h1 style={{fontFamily: 'Qwigley',fontSize: '200%'}}>Upload Dress</h1>
+      					<h1 style={{fontFamily: 'Qwigley',fontSize: '200%',color: '#c2073f'}}>Upload Dress</h1>
       				</div>
       				<div className="row">
                 <div className="col-md-6">
@@ -354,7 +359,7 @@ render() {
                 id="tags" 
                 value={this.state.tags}
                 onChange={this.handleCard}
-              />
+              />            
             <div className="col-md-6">
                 <SelectInput 
                     label="Weather" 

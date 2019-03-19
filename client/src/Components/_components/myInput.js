@@ -111,7 +111,7 @@ export const TextInput = props => {
         <div>
             <div className={props.col}>
                 <span className="input">
-                    <h3>{props.label}</h3>
+                    <h3 style={{color: '#c2073f'}}>{props.label}</h3>
                 </span>
             </div>
             <div className={props.col2}>
