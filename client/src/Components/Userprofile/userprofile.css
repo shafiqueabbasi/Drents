@@ -99,7 +99,71 @@
 	margin: 0 141px 0;
 }
 
+/*sm*/
 
+.sami_1 {
+  position: relative;
+  width: 100%;
+  max-width: 290px;
+  
+}
+
+.image_1 {
+  display: block;
+  width: 100%;
+  height: 265px;
+  border-radius: 100%; 
+}
+
+.overlay_1 {
+  position: absolute;
+  /*top: 0;*/
+  bottom: 0;
+  left: 14%;
+ /* right: 0;*/
+  height: 100%;
+  width: 90%!important;
+  opacity: 0;
+  transition: .3s ease;
+  
+  border-radius: 100%;
+  
+}
+
+.sami_1:hover .overlay_1 {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, .4);
+  margin-top: -290px;
+}
+
+
+
+.icon_1 {
+  /*color: white;*/
+  font-size: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  
+}
+
+.fa-user_1:hover {
+  color: #eee;
+  
+}
+.samiLabel_1{
+	color: black;
+	font-size: 16px;
+	/*margin: 0 141px 0;*/
+	text-align: center;
+}
+
+
+
+/*xs*/
 .sami_2 {
   position: relative;
   width: 100%;

@@ -50,19 +50,19 @@ class Order extends Component {
       				<div className="row  hidden-xs hidden-sm">
       					<div className="col-md-1 col-md-1"></div>
       					<div className="col-md-2 col-sm-4">
-      						<h4 className="order" onClick={this.renderWithState.bind(this, "upComing")} style={{color: '#c2o72f'}}><u>Upcomming Order</u></h4>
+      						<h4 className="order" onClick={this.renderWithState.bind(this, "upComing")} style={{color: '#c2073f'}}><u>Upcomming Order</u></h4>
       					</div>
       					<div className="col-md-1"></div>
       					<div className="col-md-2 col-sm-3">
-      						<h4 className="order" onClick={this.renderWithState.bind(this, "orderHis")} style={{color: '#c2o72f'}}>Order History</h4>
+      						<h4 className="order" onClick={this.renderWithState.bind(this, "orderHis")} style={{color: '##c2073f'}}>Order History</h4>
       					</div>
       					<div className="col-md-1"></div>
       					<div className="col-md-2 col-sm-1">
-      						<h4 className="order" onClick={this.renderWithState.bind(this, "profile")} style={{color: '#c2o72f'}}>Profile</h4>
+      						<h4 className="order" onClick={this.renderWithState.bind(this, "profile")} style={{color: '#c2073f'}}>Profile</h4>
       					</div>
       					<div className="col-md-2 col-sm-1"></div>
       					<div className="col-md-2 col-sm-3">
-      						<h4 className="order" onClick={this.renderWithState.bind(this, "uploadDress")} style={{color: '#c2o72f'}}>Upload Dress</h4>
+      						<h4 className="order" onClick={this.renderWithState.bind(this, "uploadDress")} style={{color: '##c2073f'}}>Upload Dress</h4>
       					</div>
       					<div className="col-md-2"></div>
       				</div>
@@ -71,19 +71,19 @@ class Order extends Component {
       				<div className="row  visible-sm">
       					<div className="col-sm-1"></div>
       					<div className="col-sm-3">
-      						<h5 className="order" onClick={this.renderWithState.bind(this, "upComing")} style={{color: '#c2o72f'}}><u>Upcomming Order</u></h5>
+      						<h5 className="order" onClick={this.renderWithState.bind(this, "upComing")} style={{color: '#c2073f'}}><u>Upcomming Order</u></h5>
       					</div>
       					<div className=""></div>
       					<div className="col-sm-2">
-      						<h5 className="order" onClick={this.renderWithState.bind(this, "orderHis")} style={{color: '#c2o72f'}}>Order History</h5>
+      						<h5 className="order" onClick={this.renderWithState.bind(this, "orderHis")} style={{color: '#c2073f'}}>Order History</h5>
       					</div>
       					<div className="col-sm-1"></div>
       					<div className="col-sm-1">
-      						<h5 className="order" onClick={this.renderWithState.bind(this, "profile")} style={{color: '#c2o72f'}}>Profile</h5>
+      						<h5 className="order" onClick={this.renderWithState.bind(this, "profile")} style={{color: '#c2073f'}}>Profile</h5>
       					</div>
       					<div className="col-sm-1"></div>
       					<div className="col-sm-3">
-      						<h5 className="order" onClick={this.renderWithState.bind(this, "uploadDress")} style={{color: '#c2o72f'}}>Upload Dress</h5>
+      						<h5 className="order" onClick={this.renderWithState.bind(this, "uploadDress")} style={{color: '#c2073f'}}>Upload Dress</h5>
       					</div>
       					<div className="col-sm-1"></div>
       				</div>
@@ -94,7 +94,7 @@ class Order extends Component {
 				        	<div className="menu-list">
 				           		<ul>
       				                	<li onClick={this.renderWithState.bind(this, "upComing")}>
-      				                  	<a ><i className="fa fa-dashboard fa-lg"></i> Upcomming Order</a>
+      				                  	<a><i className="fa fa-dashboard fa-lg"></i> Upcomming Order</a>
       				                	</li>
 				           		</ul>
 				            	<ul>

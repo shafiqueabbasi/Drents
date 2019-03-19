@@ -12,7 +12,23 @@ class UpCommingOrder extends Component {
 			
 				<div className="col-md-10 col-sm-5">
 					<div className="row">
+						<div className="col-md-4">
 						<h1 style={{fontFamily: 'Qwigley',fontSize: '42px',color: '#c2o72f'}}>Pink Sharara</h1>
+						</div>
+						<div className="col-md-6">
+						<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked" style={{color: 'yellow'}}></span>
+<span class="fa fa-star checked" style={{color: 'yellow'}}></span>
+<span class="fa fa-star checked" style={{color: 'yellow'}}></span>
+<span class="fa fa-star checked" style={{color: 'yellow'}}></span>
+<span>4.5</span>
+						</div>
+						<div className="col-md-2">
+							<select style={{border: '1px solid #c2073f'}}>
+									  <option value="volvo">SORT BY</option>
+									  
+									</select>
+						</div>
 						<div className="col-md-5 col-sm-5">
 							<div className="row">
 								<h4>Size: M</h4>
