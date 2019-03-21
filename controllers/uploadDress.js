@@ -55,7 +55,6 @@ else if(dressupload._id != ''){
     existingDress.bodyType=dressupload.bodyType;
     existingDress.userId=dressupload.userId;
 
-
     existingDress.save(function(err){
     if(err){
       return res.status(422).send({error:'Not updated'})

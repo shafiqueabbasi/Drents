@@ -9,6 +9,7 @@ import { SwatchesPicker } from 'react-color';
 import sha1 from "sha1";
 import superagent from "superagent";
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router';
 
 class UploadDress extends Component {
     state = {
@@ -43,14 +44,19 @@ class UploadDress extends Component {
         sizeMsg: '',
         imgMsg: '' ,
         _id:''  ,
-        showMsg: '' 
+        showMsg: '' ,
+        goDetail: false
     };
 
-    componentDidMount(){      
-      const { elem } = this.props.location.state;
-      for(var el in elem){
-          this.setState({ [el]: elem[el] })
-      }
+    async componentDidMount(){      
+        const { elem } = this.props.location.state;
+        for(var el in elem){
+            this.setState({ [el]: elem[el] })
+        }
+        let data = await HttpUtils.get('getdresses');
+        if(data.code && data.code === 200){
+            this.setState({ data: data.allDress })
+        }
     }
 
     handleSubmit = (e) => {        
@@ -107,11 +113,11 @@ class UploadDress extends Component {
         }
         let resDressUpload = await HttpUtils.post('uploaddress',obj, this.props.user.token);
         if(resDressUpload.code && resDressUpload.code == 200){
-            this.resetFields(resDressUpload)
+            this.resetFields(resDressUpload, obj)
         }
     };
 
-    resetFields(resDressUpload){
+    resetFields(resDressUpload, elem){
         this.setState({
             productName: '',
             detailName: '',
@@ -130,7 +136,7 @@ class UploadDress extends Component {
             showMsg: resDressUpload.data
         })
         setTimeout(() => {
-            this.setState({ showMsg: '' })
+            this.setState({ showMsg: '', goDetail: true, elem });
         }, 3000)
     }
 
@@ -234,7 +240,11 @@ class UploadDress extends Component {
     }
 
 render() {
-    const { previewVisible, previewImage, fileList, background, tags, details } = this.state;
+    const { previewVisible, previewImage, fileList, background, tags, details, goDetail, elem, data } = this.state;
+    if(goDetail){
+        return <Redirect to={{pathname: '/detail', state: {elem, data}}}/>
+    }
+
     return (
       	<div>
           <Form onSubmit={this.handleSubmit}>
