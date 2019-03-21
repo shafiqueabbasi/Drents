@@ -84,7 +84,7 @@ class App extends Component {
                 <Route path="/reset/:token" component={ResetPassword} />
                 <Route path="/detail" render={props => { return <Product {...props} updateCart={this.updateCart}/>}} />
                 <Route path="/checkout" render={props => { return <Checkout {...props} updateCart={this.updateCart}/>}} />
-	              <Footer showFooter={this.state.footer}/>
+	              {/*<Footer showFooter={this.state.footer}/>*/}
 	          </div>
 			</BrowserRouter>
       </div>

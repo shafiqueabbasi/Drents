@@ -96,7 +96,6 @@
 .samiLabel{
 	color: black;
 	font-size: 16px;
-	margin: 0 141px 0;
 }
 
 /*sm*/
@@ -225,5 +224,5 @@
 }
 
 .pencilss{
-	color: #c2073f !important;
+	color: gray !important;
 }
