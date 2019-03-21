@@ -205,7 +205,7 @@ class UserProfile extends Component {
 
 								<div className="col-md-7 col-sm-7 col-xs-12 rovil3">
 									<div className="row" style={{marginRight:'0px',marginLeft: '0px'}}>
-										<div className="row col-md-5 col-sm-5 col-xs-12">
+										<div className="col-md-5 col-sm-5 col-xs-12" style={{paddingLeft: '0px'}}>
 											<h2><span className="rovil2">{userName}</span></h2>
 										</div>
 										<div className="col-md-5 col-sm-5 hidden-sm hidden-xs rovil4">
@@ -220,8 +220,8 @@ class UserProfile extends Component {
 										<div className="col-md-2 col-sm-2 hidden-sm hidden-xs rovil6">
 											{userAvailable && <h4>
 												<Link to={{pathname: `/userdetail`, state: {goTo: 'profile', profile, arr, orderhistory }}}>
-													<i className="glyphicon glyphicon-pencil">
-														<p style={{fontSize: '15px'}}>Edit</p>
+													<i className="glyphicon glyphicon-pencil pencilss">
+														<p style={{fontSize: '15px', color: '#c2073f'}}>Edit</p>
 													</i>
 												</Link>
 											</h4>}
@@ -229,8 +229,8 @@ class UserProfile extends Component {
 										<div className="col-md-2 col-sm-2 visible-sm hidden-xs rovil6">
 											{userAvailable && <h4>
 												<Link to={{pathname: `/userdetail`, state: {goTo: 'profile', profile, arr, orderhistory }}}>
-													<i className="glyphicon glyphicon-pencil">
-														<p style={{fontSize: '15px'}}>Edit</p>
+													<i className="glyphicon glyphicon-pencil pencilss">
+														<p style={{fontSize: '15px', color: '#c2073f'}}>Edit</p>
 													</i>
 												</Link>
 											</h4>}
@@ -239,8 +239,8 @@ class UserProfile extends Component {
 										<div className="visible-xs rovil6">
 											{userAvailable && <h4>
 												<Link to={{pathname: `/userdetail`, state: {goTo: 'profile', profile, arr, orderhistory }}}>
-													<i className="glyphicon glyphicon-pencil">
-														<p style={{fontSize: '15px'}}>Edit</p>
+													<i className="glyphicon glyphicon-pencil pencilss">
+														<p style={{fontSize: '15px', color: '#c2073f'}}>Edit</p>
 													</i>
 												</Link>
 											</h4>}
@@ -296,21 +296,21 @@ class UserProfile extends Component {
 								<div className="col-md-10 col-sm-9 col-xs-6"></div>
 								
 								<div className="col-md-2 hidden-sm hidden-xs">&emsp;&emsp;&nbsp;
-									<select style={{border: '1px solid #c2073f'}}>
+									<select style={{border: '1px solid #c2073f',width: '80%'}}>
 									  <option value="volvo">SORT BY</option>
 									  
 									</select>
 								</div>
 
 								<div className="visible-sm col-sm-3">&emsp;&emsp;
-									<select style={{border: '1px solid #c2073f'}}>
+									<select style={{border: '1px solid #c2073f',width: '80%'}}>
 									  <option value="volvo">SORT BY</option>
 									  
 									</select>
 								</div>
 
 								<div className="col-xs-6 visible-xs">
-									<select style={{border: '1px solid #c2073f'}}>
+									<select style={{border: '1px solid #c2073f',width: '80%'}}>
 									  <option value="volvo">SORT BY</option>
 									  
 									</select>
