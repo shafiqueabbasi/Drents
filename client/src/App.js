@@ -74,18 +74,7 @@ class App extends Component {
     console.log(this.props,'asdsadsadsad')
     return (
       <div className="App">
-        <BrowserRouter>
-          <div>
-            <Header arr={this.state.arr}/>
-                {/*<PrivateRoute exact path="/" component={HomePage} />
-                <PrivateRoute exact path="/about" component={AboutPage} />*/}
-                <Route path="/" exact component={Home} />
-                {/*<Route path="/profile/:value" exact component={UserProfile} />*/}
-                <Route path="/profile/:value" render={props => <UserProfile {...props} updateFooter={this.updateFooter}/>} />
-                {/*<Route path="/register" component={RegisterPage} />*/}
-                <Route path="/product" component={MainPage} />
-                <Route path="/userdetail" component={Profile} />
-                {/*<Route path="/detail" component={Product} />*/   }
+       
 			<BrowserRouter>
 	          <div>
 	              <Header arr={this.state.arr}/>
@@ -96,25 +85,15 @@ class App extends Component {
                 <Route path="/reset/:token" component={ResetPassword} />
                 <Route path="/detail" render={props => { return <Product {...props} updateCart={this.updateCart}/>}} />
                 <Route path="/checkout" render={props => { return <Checkout {...props} updateCart={this.updateCart}/>}} />
+	              <Footer showFooter={this.state.footer}/>
                {/*<Userprofile/>*/} 
             
-              <Footer showFooter={this.state.footer}/>   
           </div>
         </BrowserRouter>
-	              <Footer showFooter={this.state.footer}/>
-	          </div>
-			</BrowserRouter>
       </div>
     );
   }
 }
 
 export default App;
-        {/*<PrivateRoute exact path="/" component={HomePage} />
-        <PrivateRoute exact path="/about" component={AboutPage} />*/}
-        {/*<Route path="/profile/:value" exact component={UserProfile} />*/}
-        {/*<Route path="/register" component={RegisterPage} />*/}
-        {/*<Route path="/detail" component={Product} />*/		}
-        {/*<Route path="/checkout" component={Checkout} />*/}
-        {/*<Userprofile/>*/}
 

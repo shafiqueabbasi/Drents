@@ -24,7 +24,7 @@ class UpCommingOrder extends Component {
 							<span>4.5</span>
 						</div>
 						<div className="col-md-2" style={{paddingTop: '3%'}}>
-							<select style={{border: '1px solid #c2073f',width: '100%'}}>
+							<select style={{border: '1px solid #c2073f',width: '100%',background: 'none'}}>
 								<option value="volvo">Status</option>
 							</select>
 						</div>
@@ -164,7 +164,11 @@ class UpCommingOrder extends Component {
 						</div>
 					</div>
 					<div className="col-md-12 hidden-xs">
-						<hr style={{borderTop:'2px solid #c2073f'}}/>
+						<div className="col-md-2"></div>
+						<div className="col-md-8">
+							<hr style={{borderTop:'2px solid #c2073f'}}/>
+						</div>
+						<div className="col-md-2"></div>
 					</div>
 			</div>
 		
