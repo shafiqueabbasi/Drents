@@ -17,3 +17,7 @@ class FilterPage extends Component {
 }
 
 export default FilterPage;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 07e16d52c8f94a6e84e765edd82716cf26e2ad63

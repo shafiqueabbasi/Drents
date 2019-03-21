@@ -34,6 +34,11 @@ class UploadDress extends Component {
             'Corporate',
             'Special Ocasion',
             'Family Dinner',
+            'Causal',
+            'Bridal',
+            'Sami Formal',
+            'Formal',
+            'Heavy Formal',
         ],        
         sizeMsg: '',
         imgMsg: '' ,
@@ -236,7 +241,7 @@ render() {
       		<div className="container-fluid">
       			<div className="col-md-12">
       				<div className="row">
-      					<h1 style={{fontFamily: 'Qwigley',fontSize: '200%'}}>Upload Dress</h1>
+      					<h1 style={{fontFamily: 'Qwigley',fontSize: '200%',color: '#c2073f'}}>Upload Dress</h1>
       				</div>
       				<div className="row">
                 <div className="col-md-6">
@@ -297,7 +302,7 @@ render() {
                   Change={this.inputHandleChange}
                 />
             </div>    
-            <div className="col-md-2"><span className="input"><h3 style={{fontSize: '23px'}}>Color Picker</h3></span></div>
+            <div className="col-md-2"><span className="input"><h3 style={{fontSize: '23px', color: '#c2073f'}}>Color Picker</h3></span></div>
             <div className="col-md-4">
               <div className="inputBox">
                   <div className="inputText"></div>
@@ -313,7 +318,7 @@ render() {
 
           <div className="row">
             <div className="col-md-2"><span className="input">
-                <h3 style={{fontSize: '23px'}}>
+                <h3 style={{fontSize: '23px',color: '#c2073f'}}>
                     From
                 </h3></span>
             </div>
@@ -330,7 +335,7 @@ render() {
               </div>
             </div>
             <div className="col-md-2"><span className="input">
-                <h3 style={{fontSize: '23px'}}>
+                <h3 style={{fontSize: '23px',color: '#c2073f'}}>
                     To
                 </h3></span>
             </div>
@@ -354,7 +359,7 @@ render() {
                 id="tags" 
                 value={this.state.tags}
                 onChange={this.handleCard}
-              />
+              />            
             <div className="col-md-6">
                 <SelectInput 
                     label="Weather" 
@@ -375,7 +380,7 @@ render() {
                 value={this.state.details}
                 onChange={this.handleCard}
             />
-						<div className="col-md-2 col-sm-4"><span className="input"><h3 style={{fontSize: '22px'}}>Sizes Available</h3></span></div>
+						<div className="col-md-2 col-sm-4"><span className="input"><h3 style={{fontSize: '22px',color: '#c2073f' }}>Sizes Available</h3></span></div>
 						<div className="col-md-4 col-sm-8">
 							<div className="col-md-6 col-sm-6" style={{marginTop: '5%'}}>
 								<label className="container">
@@ -384,21 +389,21 @@ render() {
                     onChange={this.handleSize}
                   />
 									<span className="checkmark"></span>
-									<h4>X Small</h4>
+									<h4 style={{color: '#c2073f'}}>X Small</h4>
 								</label>
 								<label className="container">
 									<input value='small' type="checkbox" id="S"
                     onChange={this.handleSize}
                    style={{position: 'absolute', opacity: '0', cursor: 'pointer', height: '0', width: '0'}}/>
 									<span className="checkmark"></span>
-									<h4>Small</h4>
+									<h4 style={{color: '#c2073f'}}>Small</h4>
 								</label>
 								<label className="container">
 									<input value='Medium' type="checkbox" id="M" required
                   onChange={this.handleSize}
                    style={{position: 'absolute', opacity: '0', cursor: 'pointer', height: '0', width: '0'}}/>
 									<span className="checkmark"></span>
-									<h4>Medium</h4>
+									<h4 style={{color: '#c2073f'}}>Medium</h4>
 								</label>
 							</div>
 							<div className="col-md-6 col-sm-6" style={{marginTop: '5%'}}>
@@ -407,21 +412,21 @@ render() {
                   onChange={this.handleSize}
                   style={{position: 'absolute', opacity: '0', cursor: 'pointer', height: '0', width: '0'}}/>
 									<span className="checkmark"></span>
-									<h4>X Large</h4>
+									<h4 style={{color: '#c2073f'}}>X Large</h4>
 								</label>
 								<label className="container">
 									<input type="checkbox" id="L"
                   onChange={this.handleSize}
                   style={{position: 'absolute', opacity: '0', cursor: 'pointer', height: '0', width: '0'}}/>
 									<span className="checkmark"></span>
-									<h4>Large</h4>
+									<h4 style={{color: '#c2073f'}}>Large</h4>
 								</label>
 								<label className="container">
 									<input type="checkbox" id="XXL"
                   onChange={this.handleSize}
                   style={{position: 'absolute', opacity: '0', cursor: 'pointer', height: '0', width: '0'}}/>
 									<span className="checkmark"></span>
-									<h4>XX Large</h4>									
+									<h4 style={{color: '#c2073f'}}>XX Large</h4>									
 								</label>
                 <span style={{fontSize:'12px'}} 
                     data-toggle="modal" 
@@ -434,7 +439,7 @@ render() {
 					</div>
 
 					<div className="row">
-						<div className="col-md-2 col-sm-2"><span class="input"><h3 style={{fontSize: '23px'}}>Pictures</h3><p style={{fontSize: '63%'}}>File size must not exceed to Mb</p></span></div>
+						<div className="col-md-2 col-sm-2"><span class="input"><h3 style={{fontSize: '23px', color : '#c2073f'}}>Pictures</h3><p style={{fontSize: '63%'}}>File size must not exceed to Mb</p></span></div>
 							<div className="col-md-4 col-sm-5" style={{marginTop: '1%'}}>
 								<label className="labelcustome" id="#bb"> Choose File
     								<input 
