@@ -19,7 +19,8 @@ class SignIn extends Component {
           name: '',
           userId: '',
           err: '',
-          loader: false          
+          loader: false,
+          forgotPassword:false
         }
         // reset login status
         this.props.dispatch(userActions.logout());
@@ -50,7 +51,7 @@ class SignIn extends Component {
       const { setEmail, name, userId } = this.state,
       obj = {
         userId, name,
-        email: setEmail 
+        email: setEmail
       }
       this.props.dispatch(userActions.login(obj, 'socialauth', (token) => {
         if(typeof(token) == 'string'){
@@ -74,10 +75,10 @@ class SignIn extends Component {
       if(clicked){
         if(response && response.id && response.id.length){
           if(!response.email || response.email == undefined){
-            this.setState({ 
-              showEmailButton: true, 
-              name: response.name, 
-              userId: response.userID 
+            this.setState({
+              showEmailButton: true,
+              name: response.name,
+              userId: response.userID
             })
           }else {
               this.setState({
@@ -91,7 +92,16 @@ class SignIn extends Component {
         }
       }
    }
-
+   forgotpassword = () => {
+     this.setState({
+       forgotPassword:true
+     })
+   }
+   backSignIn = () => {
+     this.setState({
+       forgotPassword:false
+     })
+   }
    componentClicked = () =>{
     this.setState({ clicked: true })
    }
@@ -114,7 +124,7 @@ class SignIn extends Component {
     }
 
   render() {
-    const { showEmailButton } = this.state,
+    const { showEmailButton,forgotPassword } = this.state,
     { getFieldDecorator } = this.props.form;
     return (
       	<div style={{backgroundColor: '#c2073f'}}>
@@ -129,7 +139,7 @@ class SignIn extends Component {
       			<div className="row">
       				<div className="col-md-4 col-sm-4 col-xs-2"></div>
       				<div className="col-md-4 col-sm-4 col-xs-8">
-      					<h3 style={{color: '#ffffff',textAlign: 'center'}}>{!showEmailButton ? 'Sign In' : 'Email'}</h3>
+      					<h3 style={{color: '#ffffff',textAlign: 'center'}}>{!showEmailButton || forgotPassword ? 'Email' : 'Sign In'}</h3>
       				</div>
       				<div className="col-md-4 col-sm-4 col-xs-2"></div>
       			</div>
@@ -138,7 +148,7 @@ class SignIn extends Component {
 				{!showEmailButton && <div className="row">
 					<div className="col-md-2 col-sm-3 col-xs-2"></div>
 					<div className="col-md-8 col-sm-6 col-xs-8 get_form_inner">
-		    			<Form onSubmit={this.handleSubmit}>
+		    			{!forgotPassword && <Form onSubmit={this.handleSubmit}>
                 			<div className="group">
                           <Form.Item>
                                {getFieldDecorator('email', {
@@ -167,8 +177,34 @@ class SignIn extends Component {
                              )}
                          </Form.Item>
 		                <span className="highlight"></span>
+                    <span onClick={this.forgotpassword}><a style={{color:'white'}}>Forgot Password</a></span>
 		                </div>
-		                </Form>
+		                </Form>}
+                    {forgotPassword && <Form onSubmit={this.handleforgotpassword}>
+                        <div>
+                          <div className="group">
+                          <Form.Item>
+                               {getFieldDecorator('forgotemail', {
+                                 rules: [{
+                                   type: 'email', message: 'The input is not valid E-mail!',
+                                 }, {
+                                   required: true, message: 'Please input your E-mail!',
+                                 }],
+                               })(
+                                 <Input placeholder="Email" />
+                               )}
+                          </Form.Item>
+                          {forgotPassword && <div>
+                            <h5 onClick={this.backSignIn}>Back to Sign In</h5>
+                          </div>}
+                          </div>
+                        </div>
+                        <div className="row">
+                          <div className="col-md-12" style={{textAlign:'center'}}>
+                              <button type="submit" className="btn btn-sm" style={{color:'black',backgroundColor:'white'}}>Send Email</button>
+                          </div>
+                        </div>
+                    </Form>}
 					</div>
 					<div className="col-md-2 col-sm-3 col-xs-2"></div>
 				</div>}
@@ -207,9 +243,9 @@ class SignIn extends Component {
 
 				{!showEmailButton && <div className="row">
 					<div className="col-md-4 col-sm-4 col-xs-3"></div>
-					<div className="col-md-4 col-sm-4 col-xs-6" style={{textAlign: 'center'}}>
+					{!forgotPassword && <div className="col-md-4 col-sm-4 col-xs-6" style={{textAlign: 'center'}}>
 						<button type="submit" className="login" onClick={this.handleSubmit}>Login</button>
-					</div>
+					</div>}
 					<div className="col-md-4 col-sm-4 col-xs-3"></div>
 				</div>}
 
@@ -235,39 +271,40 @@ class SignIn extends Component {
 						{/*<button className="loginBtn loginBtn--facebook">
   							Login with Facebook
 						</button>*/}
-            <FacebookLogin 
+            {!forgotPassword && <FacebookLogin
                 appId="644559659253564"
                 autoLoad={true}
                 cssClass="loginBtn loginBtn--facebook"
                 fields="name,email,picture"
                 onClick={this.componentClicked}
                 callback={this.responseFacebook}
-            />
+            />}
 
 						{/*<button class="loginBtn loginBtn--google">
 						  Login with Google
 						</button>*/}
-            <GoogleLogin 
-                socialId="873832275515-3oclgfb5n1ie7inhfa16a6uu7crbab2a.apps.googleusercontent.com"                            
+            {!forgotPassword && <GoogleLogin
+                socialId="873832275515-3oclgfb5n1ie7inhfa16a6uu7crbab2a.apps.googleusercontent.com"
                 scope="profile"
                 fetchBasicProfile={true}
                 responseHandler={this.responseGoogle}
                 className = "loginBtn loginBtn--google"
                 buttonText="Login With Google"
-            />
+            />}
 					</div>
 					<div className="col-md-2 col-sm-2 col-xs-1"></div>
 				</div>}
 
 				{!showEmailButton && <div className="row">
 					<div className="col-md-3"></div>
-					<div className="col-md-6">
+					{!forgotPassword && <div className="col-md-6">
 						<h3 style={{color: '#ffffff', textAlign: 'center'}}>Create an Account</h3>
-					</div>
+					</div>}
+
 					<div className="col-md-3"></div>
 				</div>}
         {this.state.loader && <div class="loading">Loading&#8230;</div>}
-			</div>      
+			</div>
       	</div>
     );
 

@@ -12,6 +12,7 @@ import Filterpanel from './Components/filter/filterpanel';
 import { PrivateRoute } from './_components';
 //import Profile from './Components/order/'
 import LogIn from './Components/login/SignIn';
+import ResetPassword from './Components/login/resetPassword';
 import SignUp from './Components/login/SignUp';
 import HttpUtils from './Service/HttpUtils';
 
@@ -70,34 +71,32 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.props,'asdsadsadsad')
     return (
       <div className="App">
 			<BrowserRouter>
 	          <div>
-	          <Header arr={this.state.arr}/>
-				{/*<PrivateRoute exact path="/" component={HomePage} />
-	              <PrivateRoute exact path="/about" component={AboutPage} />*/}
+	              <Header arr={this.state.arr}/>
 	              <Route path="/" exact component={Home} />
-								{/*<Route path="/profile/:value" exact component={UserProfile} />*/}
                 <Route path="/profile/:value" render={props => <UserProfile {...props} updateFooter={this.updateFooter}/>} />
-	              {/*<Route path="/register" component={RegisterPage} />*/}
                 <Route path="/product" component={MainPage} />
                 <Route path="/userdetail" component={Profile} />
-                {/*<Route path="/detail" component={Product} />*/		}
+                <Route path="/reset/:token" component={ResetPassword} />
                 <Route path="/detail" render={props => { return <Product {...props} updateCart={this.updateCart}/>}} />
-                {/*<Route path="/checkout" component={Checkout} />*/}
                 <Route path="/checkout" render={props => { return <Checkout {...props} updateCart={this.updateCart}/>}} />
-            {/*<Userprofile/>*/} 
-            
-	         <Footer showFooter={this.state.footer}/>   
-
+	              <Footer showFooter={this.state.footer}/>
 	          </div>
 			</BrowserRouter>
       </div>
     );
-  }   
+  }
 }
 
 export default App;
-
-		
+        {/*<PrivateRoute exact path="/" component={HomePage} />
+        <PrivateRoute exact path="/about" component={AboutPage} />*/}
+        {/*<Route path="/profile/:value" exact component={UserProfile} />*/}
+        {/*<Route path="/register" component={RegisterPage} />*/}
+        {/*<Route path="/detail" component={Product} />*/		}
+        {/*<Route path="/checkout" component={Checkout} />*/}
+        {/*<Userprofile/>*/}

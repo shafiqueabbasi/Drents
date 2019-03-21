@@ -79,7 +79,7 @@ paraghraph/*.App {
 }
 .headings{
  color: #c2073f;
-    font-family: mountainscriptopti;
+    font-family: 'Sacramento', cursive !important;
     font-size: 50px;
     margin-bottom: -9px;
 }
@@ -126,10 +126,10 @@ paraghraph/*.App {
   color: white;
 }
 .zoom {
- 
-  
+
+
   transition: transform .2s; /* Animation */
-  
+
   margin: 0 auto;
 }
 
@@ -546,16 +546,16 @@ input[type="file"] {
       }
     .google2{
             margin-right: 0%;
-      }  
+      }
     }
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
   .googleapp{
-            width : 85%; 
+            width : 85%;
             margin-left :  15%;
       }
   .google2{
             margin-right: 0%;
-    }    
+    }
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
   .googleapp{
@@ -568,10 +568,10 @@ input[type="file"] {
 }
 @media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
   .googleapp{
-            width : 85%; 
+            width : 85%;
             margin-left :  11%;
       }
   .google2{
             margin-right: 2%;
-    }    
+    }
 }

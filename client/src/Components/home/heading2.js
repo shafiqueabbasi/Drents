@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 
 class Heading2 extends Component {
   	render() {
-    
+
 
     return (
     	<div className="App">
 	    		<div className="Heading">
-	      			<h1 className="headings">About Drent</h1>
+	      			<h1 className="headings" style={{fontFamily:'Stalemate cursive'}}>About Drent</h1>
 	      			<img src='./images/bar.png' style={{marginTop:'-1%'}}/>
 	      		</div>
 	    		<div className="container">

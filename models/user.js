@@ -8,6 +8,9 @@ const userSchema = new Schema({
   password:{type:String},
   firstname:{type:String},
   lastname:{type:String},
+  randomno: {type: String},
+  resetPasswordToken:{type:String},
+  resetPasswordExpires:{type:String},
 });
 
 //on Save Hook, encrypt password
