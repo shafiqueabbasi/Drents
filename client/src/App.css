@@ -505,6 +505,7 @@ input[type="file"] {
 .Heading22{
   line-height: 4px;
   text-align: center;
+  margin-right: 3%;
 }
 .headings22{
   color: #c2073f;
@@ -564,7 +565,7 @@ input[type="file"] {
 @media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
   .googleapp{
             width : 85%; 
-            margin-left :  11%;
+            margin-left :  10%;
       }
   .google2{
             margin-right: 2%;
