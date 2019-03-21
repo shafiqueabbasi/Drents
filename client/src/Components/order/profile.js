@@ -78,7 +78,7 @@ class Profile extends Component {
       		<div className="container-fluid">
       			<div className="col-md-12">
       				<div className="row">
-      					<h1 style={{fontFamily:'Qwigley',fontSize:'200%'}}>Profile</h1>
+      					<h1 style={{fontFamily:'Qwigley',fontSize:'200%', color: '#c2073f'}}>Profile</h1>
       				</div>
   					<Form onSubmit={this.handleSubmit}>
 						<div className="row">
@@ -91,7 +91,7 @@ class Profile extends Component {
 								value={this.state.email} 
 								Change={this.inputHandleChange}
 							/>							
-							<div className="col-md-2 col-sm-2"><span className="input"><h3>Change Password</h3></span></div>
+							<div className="col-md-2 col-sm-2"><span className="input"><h3 style={{color: '#c2073f'}}>Change Password</h3></span></div>
 							<div className="col-md-4 col-sm-4">
 								<div className="inputBox">
 									<div className="inputText"></div>
@@ -118,7 +118,7 @@ class Profile extends Component {
 							/>							
 						</div>							
 						<div className="row">
-  							<h1 style={{fontFamily: 'Qwigley',fontSize: '200%'}}>Fil Details</h1>
+  							<h1 style={{fontFamily: 'Qwigley',fontSize: '200%', color: '#c2073f'}}>Fil Details</h1>
   						</div>
   						<div className="row">
 	  						<div className="col-md-6">
@@ -184,7 +184,7 @@ class Profile extends Component {
 								/>
 							</div>
 							<div className="col-md-6">		
-								<SelectInput 
+								<b 
 									label="Typical Jean Size" 
 									id="typicalJeanSize" 
 									value={this.state.typicalJeanSize} 
@@ -197,11 +197,11 @@ class Profile extends Component {
 							</div>		
 						</div>{/*row closed*/}           						
 						<div className="row">
-  							<h1 style={{fontFamily: 'Qwigley',fontSize: '200%'}}>Our All fit</h1>
+  							<h1 style={{fontFamily: 'Qwigley',fontSize: '200%',color: '#c2073f'}}>Our All fit</h1>
   						</div>
   						<div className="row">
   							<div className="col-md-4 col-sm-4">      								
-  								<h2>Bust</h2>
+  								<h2 style={{color: '#c2073f'}}>Bust</h2>
   								<RadioInput 
   									label="Small Bust" 
   									for="bust" 
@@ -225,7 +225,7 @@ class Profile extends Component {
 								/>      								
 							</div>
   							<div className="col-md-4 col-sm-4">
-  								<h2>Hips</h2>
+  								<h2 style={{color: '#c2073f'}}>Hips</h2>
   								<RadioInput 
   									label="Narrow Hips" 
   									for="hips" 
@@ -249,7 +249,7 @@ class Profile extends Component {
   								/>       								
 							</div>
   							<div className="col-md-4 col-sm-4">
-  								<h2>Torso</h2>
+  								<h2 style={{color: '#c2073f'}}>Torso</h2>
   								<RadioInput 
 	  								label="Short Torso" 
 	  								for="torso" 
@@ -273,7 +273,7 @@ class Profile extends Component {
   								/>     								
   							</div>							
 							<div className="col-md-4 col-sm-4">
-  								<h2>Ribcage</h2>
+  								<h2 style={{color: '#c2073f'}}>Ribcage</h2>
   								<RadioInput 
 	  								label="Narrow Ribcage" 
 	  								for="ribcage" 
@@ -297,7 +297,7 @@ class Profile extends Component {
   								/>      								
 							</div>
 							<div className="col-md-4 col-sm-4">
-  								<h2>Height</h2>
+  								<h2 style={{color: '#c2073f'}}>Height</h2>
   								<RadioInput 
 	  								label="Petite" 
 	  								for="height" 

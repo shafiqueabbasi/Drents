@@ -6,10 +6,10 @@ import Footer from '../home/headingf8';
 
 class FilterPage extends Component {
   render() {
-    
+
     return (
 		<div className="App" style={{backgroundImage: "url('./images/swrils.png')"}}>
-			<FilterPanel/>        
+			<FilterPanel {...this.props}/>        
 		</div>
     );
 
@@ -17,4 +17,3 @@ class FilterPage extends Component {
 }
 
 export default FilterPage;
-

@@ -27,9 +27,13 @@ module.exports = function(app){
   app.post('/charge',checkout.charge);
   app.post('/getprofiledress', getprofileanddress.getdressProfile);
   app.post('/orderdetail', requireAuth, orderBooking.checkoutorder);
+  app.post('/forgotpassword',Authentication.forgotPassword);
   //get routes
   app.get('/getdresses',getDresses.getdress);
   app.get('/getreview',getReview.getreview);
   app.get('/key',checkout.getApiKey);
+  app.get('/verify',Authentication.verifyAccount);
+  app.get('/reset',Authentication.reset);
+
   //app.get('/getprofile',requireAuth, getprofile.getProfile)
 }

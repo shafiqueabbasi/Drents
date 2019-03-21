@@ -36,7 +36,7 @@ exports.getdressProfile = function(req,res,next){
       })
     }
     if(!allDress && specificProfile){
-      console.log(helloo)
+      //console.log(helloo)
       res.send({
         code:200,
         msg:'show profile and dress',

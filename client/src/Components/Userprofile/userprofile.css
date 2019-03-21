@@ -1,7 +1,8 @@
 .rovilimg{
- width: 60%;
-    height: 166px;
+ width: 75%;
+    height: 97%;
     border: 4px solid #c2073f;
+
 }
 .rovil1{
 	padding: 13px;
@@ -27,7 +28,7 @@
 	 color:  black;
 }
 .rovil6{
-	    margin-left: -20%;
+	margin-left: -10%;
     margin-top: 18px;
 }
 .rovil7{
@@ -35,4 +36,194 @@
 	 font-weight: 500;
 	  font-size: 45px;
 	 color:  #c2073f;
+}
+
+
+
+
+.sami {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: 350px;
+  border-radius: 100%; 
+}
+
+.overlay {
+  position: absolute;
+  /*top: 0;
+  bottom: 0;*/
+  left: 4%;
+ /* right: 0;*/
+  height: 100%;
+  width: 92%;
+  opacity: 0;
+  transition: .3s ease;
+  background-color: rgba(0, 0, 0, .4);
+  border-radius: 100%;
+  
+}
+
+.sami:hover .overlay {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, .4);
+}
+
+
+
+.icon {
+  color: white;
+  font-size: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  
+}
+
+.fa-user:hover {
+  color: #eee;
+  
+}
+.samiLabel{
+	color: black;
+	font-size: 16px;
+	margin: 0 141px 0;
+}
+
+/*sm*/
+
+.sami_1 {
+  position: relative;
+  width: 100%;
+  max-width: 290px;
+  
+}
+
+.image_1 {
+  display: block;
+  width: 100%;
+  height: 265px;
+  border-radius: 100%; 
+}
+
+.overlay_1 {
+  position: absolute;
+  /*top: 0;*/
+  bottom: 0;
+  left: 14%;
+ /* right: 0;*/
+  height: 100%;
+  width: 90%!important;
+  opacity: 0;
+  transition: .3s ease;
+  
+  border-radius: 100%;
+  
+}
+
+.sami_1:hover .overlay_1 {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, .4);
+  margin-top: -290px;
+}
+
+
+
+.icon_1 {
+  /*color: white;*/
+  font-size: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  
+}
+
+.fa-user_1:hover {
+  color: #eee;
+  
+}
+.samiLabel_1{
+	color: black;
+	font-size: 16px;
+	/*margin: 0 141px 0;*/
+	text-align: center;
+}
+
+
+
+/*xs*/
+.sami_2 {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  
+}
+
+.image_2 {
+  display: block;
+  width: 100%;
+  height: 290px;
+  border-radius: 100%; 
+}
+
+.overlay_2 {
+  position: absolute;
+  /*top: 0;
+  bottom: 0;*/
+  left: 0%;
+ /* right: 0;*/
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .3s ease;
+  
+  border-radius: 100%;
+  
+}
+
+.sami_2:hover .overlay_2 {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, .4);
+  margin-top: -290px;
+}
+
+
+
+.icon_2 {
+  /*color: white;*/
+  font-size: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  
+}
+
+.fa-user_2:hover {
+  color: #eee;
+  
+}
+.samiLabel_2{
+	color: black;
+	font-size: 16px;
+	/*margin: 0 141px 0;*/
+	text-align: center;
+}
+
+.pencilss{
+	color: #c2073f !important;
 }

@@ -22,8 +22,6 @@ class FirstPage extends Component {
       }
   }
 
-
-
   openNav = ()=>{
     document.getElementById("myNav").style.width = "100%";
   }
@@ -33,7 +31,7 @@ class FirstPage extends Component {
 
   logOut = () => {
     this.props.dispatch(userActions.logout())
-    this.props.history.push('/')  
+    this.props.history.push('/')
   }
 
   render() {
@@ -41,13 +39,13 @@ class FirstPage extends Component {
     { arrCart } = this.state;
     let finalArr = arr.length > 0 ? arr : arrCart,
     userId = user && user._id ? user._id : '';
-    
+    console.log(this.props,'HHHHHeeeeeeaaadrrrrr')
     return (
       <div>
       	<div className="nav navbar navbar-fixed-top bgc">
       	  <div className="nav navbar navbar-fixed-top bgc hidden-xs">
       		  <div className="container-fluid">
-      	  	  <div className="col-md-4 col-sm-2"> 
+      	  	  <div className="col-md-4 col-sm-2">
       			 	  <div className="navbar-header" style={{marginBottom:'-3%'}}>
       					  <a href="#" className="hidden-sm"><img src="../images/Drent-logo-white.png" style={{width: '46%', height : '103px'}}/></a>
                   <a href="#" className="visible-sm"><img src="../images/Drent-logo-white.png" style={{width: '110%'}}/></a>
@@ -57,8 +55,8 @@ class FirstPage extends Component {
       			    <div className="col-md-8 col-sm-10  container customhover">
       				    <ul className="nav navbar-nav navbar-right customhover">
       					    <li className="head"><Link to={`/`} className="nav" style={{fontSize:'12px'}}>HOME</Link></li>
-        				    <li className="head"><Link to={`/product`} className="nav" style={{fontSize:'12px'}}>PRODUCT</Link></li>
-                    <li className="head" style={{marginRight: '-28px'}}><Link to={`/profile/${userId}`} className="nav" style={{fontSize:'12px'}}>MY PROFILE</Link></li>
+        				    <li className="head"><Link to={`/product`} className="nav" style={{fontSize:'12px',marginRight:'-9px'}}>PRODUCT</Link></li>
+                    {loggedIn && <li className="head" style={{marginRight: '-28px'}}><Link to={`/profile/${userId}`} className="nav" style={{fontSize:'12px'}}>MY PROFILE</Link></li>}
         				    <li className="head"><Link to={`/detail`} className="nav" style={{fontSize:'12px'}}></Link></li>
         				    {/*<li className="head"><Link to={`/detail`} className="nav" style={{fontSize:'12px'}}>TESTIMONIALS</Link></li>*/}
                     {loggedIn && <li className="head" onClick={this.logOut}><a className="nav" style={{fontSize:'12px'}}>Log Out</a></li>}

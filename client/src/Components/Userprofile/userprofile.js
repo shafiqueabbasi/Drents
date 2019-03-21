@@ -161,65 +161,180 @@ class UserProfile extends Component {
 			userAvailable = true;
 		}
 		return(
-			<div style={{backgroundImage: "url('./images/swrils.png')"}}>
+			<div>
 					<div>
 						{this.state.loading && <div class="loading">Loading&#8230;</div>}
-						<div className="container" style={{marginTop:'6%'}}>
-							<div className="row" style={{marginTop:'21px'}}>
-								<div className="col-md-3">
-									<div className="rovil1 shah2">
-										<img src={updatedImage.length > 0 ? updatedImage : "../images/admin1.jpg"} className="rovilimg img-circle streetb2"/>
-									</div>
-									<div id="shah1">
-										<div className="streetb1">	
-											<label className="custom-file-upload inner">
-											    <input type="file" onChange={e => this.handleImage(e)}/>
-											    <i class="fas fa-camera" style={{fontSize:'20px', cursor: 'pointer'}}></i><br/>
-											    <h5>Add Photo</h5>
-											</label>
-										</div>
+						<div className="container" style={{marginTop:'9%'}}>
+							<div className="row" style={{marginTop:'21px', marginLeft: '0px', marginRight:'0px'}}>
+
+
+
+								<div className="col-md-5 hidden-sm hidden-xs sami">
+									<img src="../images/admin1.jpg" alt="Avatar" className="image"/>
+									<div className="overlay">
+										<label className="custom-file-upload samiLabel" style={{margin: '141px'}}>
+											<input type="file" onChange={e => this.handleImage(e)}/>
+											<i class="fas fa-camera" style={{fontSize:'20px',padding: '0 22px 0', cursor: 'pointer'}}></i><br/>
+										    <h5>Add Photo</h5>
+										</label>
 									</div>
 								</div>
-								<div className="col-md-9 rovil3">
-									<div className="row">
-										<div className="col-md-5 col-xs-7">
+
+								<div className="visible-sm col-sm-5 hidden-xs sami_1" style={{marginTop: '6%'}}>
+									<img src="../images/admin1.jpg" alt="Avatar" className="image_1"/>
+									<div className="overlay_1" style={{left: '15px', width: '100%'}}>
+										<label className="custom-file-upload samiLabel_1" style={{padding: '0 36%',marginTop:'40%'}}>
+											<input type="file" onChange={e => this.handleImage(e)}/>
+											<i class="fas fa-camera" style={{fontSize:'20px',padding: '0 22px 0', cursor: 'pointer'}}></i><br/>
+										    <h5>Add Photo</h5>
+										</label>
+									</div>
+								</div>
+
+								<div className="visible-xs sami_2">
+									<img src="../images/admin1.jpg" alt="Avatar" className="image_2"/>
+									<div className="overlay_2">
+										<label className="custom-file-upload samiLabel_2" style={{margin: '10px 0',padding: '37%'}}>
+											<input type="file" onChange={e => this.handleImage(e)}/>
+											<i class="fas fa-camera" style={{fontSize:'20px', cursor: 'pointer'}}></i><br/>
+										    <h5>Add Photo</h5>
+										</label>
+									</div>
+								</div>
+
+
+								<div className="col-md-7 col-sm-7 col-xs-12 rovil3">
+									<div className="row" style={{marginRight:'0px',marginLeft: '0px'}}>
+										<div className="col-md-5 col-sm-5 col-xs-12" style={{paddingLeft: '0px'}}>
 											<h2><span className="rovil2">{userName}</span></h2>
 										</div>
-										<div className="col-md-5 col-xs-5 rovil4">
-											<Rate initialRating={this.state.review} readonly classMd="col-md-8" classXS="col-md-4" />
+										<div className="col-md-5 col-sm-5 hidden-sm hidden-xs rovil4">
+											<Rate initialRating={this.state.review} readonly classMd="col-md-8" rate="4.5" classXS="col-md-4" />
 										</div>
-										<div className="col-md-2 rovil6">
+										<div className="col-xs-9 visible-sm rovil4">
+											<Rate initialRating={this.state.review} readonly classMd="col-sm-6" rate="4.5" classXS="col-sm-1" />
+										</div>
+										<div className="col-xs-9 visible-xs rovil4">
+											<Rate initialRating={this.state.review} readonly classMd="col-xs-10" rate="4.5" classXS="col-xs-2" />
+										</div>
+										<div className="col-md-2 col-sm-2 hidden-sm hidden-xs rovil6">
 											{userAvailable && <h4>
-												<Link to={{pathname: `/userdetail`, state: {goTo: 'profile', profile, arr, orderhistory }}}><i className="glyphicon glyphicon-pencil"></i></Link>
+												<Link to={{pathname: `/userdetail`, state: {goTo: 'profile', profile, arr, orderhistory }}}>
+													<i className="glyphicon glyphicon-pencil pencilss">
+														<p style={{fontSize: '15px', color: '#c2073f'}}>Edit</p>
+													</i>
+												</Link>
 											</h4>}
 										</div>
+										<div className="col-md-2 col-sm-2 visible-sm hidden-xs rovil6">
+											{userAvailable && <h4>
+												<Link to={{pathname: `/userdetail`, state: {goTo: 'profile', profile, arr, orderhistory }}}>
+													<i className="glyphicon glyphicon-pencil pencilss">
+														<p style={{fontSize: '15px', color: '#c2073f'}}>Edit</p>
+													</i>
+												</Link>
+											</h4>}
+										</div>
+
+										<div className="visible-xs rovil6">
+											{userAvailable && <h4>
+												<Link to={{pathname: `/userdetail`, state: {goTo: 'profile', profile, arr, orderhistory }}}>
+													<i className="glyphicon glyphicon-pencil pencilss">
+														<p style={{fontSize: '15px', color: '#c2073f'}}>Edit</p>
+													</i>
+												</Link>
+											</h4>}
+										</div>
+
 									</div>
-									<div className="row rovil1">
+									<div className=" row rovil1">
 										<h5>London</h5>
 									</div>
-									{/*<div className="row rovil1">
+									<div className="row rovil1">
 										<h4><span className="rovil7">Bio</span></h4>
 									</div>
-									<div className="row">
-										<div>
-										<h4>Working as a brand name as Alicia Diamond very good rent</h4>
-										</div>
+									<div>
+										
+										<h4>Working as a Designer want to rent every thing which is in my wardrobe.</h4>
+										
 									</div>
-									<div className="row">
-										<div className="col-md-5" style={{marginLeft:'-15px'}}>
+									<div>
+										<div className="row col-md-5">
 											<h4>member since 2019-04-18</h4>
 										</div>
-										<div className="col-md-5">
+										<div className="row col-md-5">
 											<h4>Size Wear :M</h4>
 										</div>
 									</div>
-									<div className="row">
+									{/*<div className="row">
 										<div>
 										<h4>Rent Till 5 Date</h4>
 										</div>
 									</div>*/}
 								</div>
 							</div>
+
+
+
+							<div className="row" style={{marginLeft: '0px', marginRight: '0px'}}>
+								<div className="col-md-3 col-sm-3"></div>
+								<div className="col-md-2 col-sm-2">
+									<h3 style={{color: '#c2073f'}}>Rentals</h3>
+								</div>
+								<div className="col-md-2 col-sm-2">
+									<h3 style={{color: '#c2073f'}}>Rented</h3>
+								</div>
+								<div className="col-md-2 col-sm-2">
+									<h3 style={{color: '#c2073f'}}>Orders</h3>
+								</div>
+								<div className="col-md-3 col-sm-3"></div>
+							</div>
+
+							<hr style={{border: '1px solid #c2073f'}}/>
+
+							<div className="row">
+								<div className="col-md-10 col-sm-9 col-xs-6"></div>
+								
+								<div className="col-md-2 hidden-sm hidden-xs">&emsp;&emsp;&nbsp;
+									<select style={{border: '1px solid #c2073f',width: '80%'}}>
+									  <option value="volvo">SORT BY</option>
+									  
+									</select>
+								</div>
+
+								<div className="visible-sm col-sm-3">&emsp;&emsp;
+									<select style={{border: '1px solid #c2073f',width: '80%'}}>
+									  <option value="volvo">SORT BY</option>
+									  
+									</select>
+								</div>
+
+								<div className="col-xs-6 visible-xs">
+									<select style={{border: '1px solid #c2073f',width: '80%'}}>
+									  <option value="volvo">SORT BY</option>
+									  
+									</select>
+								</div>
+
+								
+
+							</div>
+
+							<div className="row">
+								<div className="col-md-4"></div>
+								<div className="col-md-4">
+									<h3 style={{textAlign: 'center',color: '#c2073f'}}>Comments & Views</h3>
+								</div>
+								<div className="col-md-4"></div>
+							</div>
+							<hr style={{border: '1px solid #c2073f'}}/>
+
+
+
+
+
+
+
 						</div>
 						<div className="row" style={{margin:'0px'}}>
 							{/*<div className="col-md-6"><h2>GALLERY</h2></div>*/}

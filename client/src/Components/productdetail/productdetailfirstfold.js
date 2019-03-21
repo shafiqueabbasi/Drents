@@ -11,7 +11,7 @@ class Productdetailfirstfold extends Component {
 	state = {
 		to: '',
 		from: '',
-		arr: [], 
+		arr: [],
 		booked: false,
 		averageRate: ''
 	}
@@ -45,24 +45,24 @@ class Productdetailfirstfold extends Component {
 				this.getDifference(from, self.value, (msg) => {
 					if(msg === 'show msg'){
 						this.setState({ msg: "start date must be less than end date" });
-					}else {						
+					}else {
 						this.getDifference(elem.from, from, (msg1) => {
 							if(msg1 === 'show msg'){
 								let msg = "Dress is not available before " + elem.from;
 								this.setState({ msg });
 							}
 							else {
-								this.getDifference(self.value, elem.to, (msg2) => {									
+								this.getDifference(self.value, elem.to, (msg2) => {
 									if(msg2 === 'show msg'){
 										msg = "Dress is not available after " + elem.to
 										this.setState({ msg });
 									}else {
-										this.setState({ msg: '' });										
+										this.setState({ msg: '' });
 									}
 								})
-							}							
-						})	
-					}	
+							}
+						})
+					}
 				});
 			}else if((to.length > 0 && self.value.length > 0 && self.id == 'from')){
 				this.getDifference(self.value, to, (msg) => {
@@ -75,31 +75,31 @@ class Productdetailfirstfold extends Component {
 								this.setState({ msg });
 							}
 							else {
-								this.getDifference(self.value, elem.to, (msg2) => {									
+								this.getDifference(self.value, elem.to, (msg2) => {
 									if(msg2 === 'show msg'){
 										msg = "Dress is not available after " + elem.to
 										this.setState({ msg });
 									}else {
-										this.setState({ msg: '' });										
+										this.setState({ msg: '' });
 									}
 								})
-							}							
-						})	
+							}
+						})
 					}
 				});
 			}
-		});		
+		});
 	}
 
-	getDifference = (a, b, callBack) => {		
+	getDifference = (a, b, callBack) => {
 		let date1 = new Date(a),
 		date2 = new Date(b),
-		diffDays = parseInt((date2 - date1) / (1000 * 60 * 60 * 24)); 
+		diffDays = parseInt((date2 - date1) / (1000 * 60 * 60 * 24));
 		if(diffDays >= 0){
 			callBack();
 		}else {
 			callBack('show msg')
-		}	
+		}
 	}
 
 	addToCart = e => {
@@ -128,10 +128,10 @@ class Productdetailfirstfold extends Component {
 		this.setState({ averageRate })
 	}
 
-	render() { 
+	render() {
 		const { elem, data } = this.props.location.state;
-
-		return( 
+    console.log(this.props.filter,'ffiiillltter');  
+		return(
 			<div className="App">
 				<div className="">
 					{/*<Header/>*/}
@@ -140,11 +140,11 @@ class Productdetailfirstfold extends Component {
 					<div className="row">
 						<div className="col-md-7 hidden-xs hidden-sm">
 							<Imagescard data={elem.fileList}/>
-                    		<Table /> 
+                    		<Table />
                     	</div>
                     	<div className="visible-xs visible-sm">
                     		<Imagescard data={elem.fileList}/>
-                    	</div>	
+                    	</div>
 						<div className="col-md-5">{/*/*main col-md-5 right possion div deskstop*/}
 						    <div>
 								 <font color="#c2073f"><h1 style={{fontFamily:"Qwigley",fontSize: "70px"}}>{elem.productName}</h1></font>
@@ -154,14 +154,14 @@ class Productdetailfirstfold extends Component {
 							<div className="row">
 								<div className="col-md-12">
 									    <div className="col-md-4">
-									     	 <font color="#c2073f"><h1 style={{fontFamily :"Qwigley"}}>{elem.bodyType}</h1></font> 
+									     	 <font color="#c2073f"><h1 style={{fontFamily :"Qwigley"}}>{elem.bodyType}</h1></font>
 									    </div>{/*div close*/}
 									    <div className="col-md-2"></div>
 									    <div className="col-md-6" style={{marginTop: "18px"}}>
-									    	<Rate rate={this.state.averageRate} initialRating={this.state.averageRate} readonly classMd="col-md-8" classXS="col-md-4" />									    	
-		                       	 		</div>{/*Div close*/}	
-			                    </div>{/*Div Close Col-md-12*/}	
-							</div>{/*Row Close*/}                                  
+									    	<Rate rate={this.state.averageRate} initialRating={this.state.averageRate} readonly classMd="col-md-8" classXS="col-md-4" />
+		                       	 		</div>{/*Div close*/}
+			                    </div>{/*Div Close Col-md-12*/}
+							</div>{/*Row Close*/}
                             <div className="row">
                           		<div className="col-md-12">
                           			<div className="col-md-3">
@@ -185,12 +185,12 @@ class Productdetailfirstfold extends Component {
                                 	 	</div>
                                 	 	<div className="col-md-6"></div>
                                 	</div>{/*Row Col-md-12 Close*/}
-                            </div>{/*Row Close*/}			                    
+                            </div>{/*Row Close*/}
                     		<div className="row">
 			                    	<div className="col-md-12 drn">
 			                    		<p className="trend">{elem.description}</p>
 		                   			</div>{/*Div col-md-12 Close*/}
-				        	</div>{/*Row Close*/}                            
+				        	</div>{/*Row Close*/}
 				        	<div className="row">
 				        		<div className="fly"><h1>Size Available</h1></div>
 				        	</div>{/*Div Row Close*/}
@@ -239,7 +239,7 @@ class Productdetailfirstfold extends Component {
 			                            		<div className="col-xs-1"></div>
 			                            	</span>
   										)
-  									})}	
+  									})}
                             		{/*<div className="col-xs-2 flu"><h3>M</h3></div>
                             		<div className="col-xs-1"></div>
                             		<div className="col-xs-2 flu"><h3>L</h3></div>
@@ -272,7 +272,7 @@ class Productdetailfirstfold extends Component {
                             		<div className="col-sm-0"></div>*/}
                             	</div>
                             </div>
-                            {elem.tags.length > 0 && <div className="row">                            	
+                            {elem.tags.length > 0 && <div className="row">
                         		<div className="col-md-2 detail1"><h1>Detail</h1></div>
                         		<div className="col-md-5"></div>
                         		<div className="col-md-5"></div>
@@ -286,7 +286,7 @@ class Productdetailfirstfold extends Component {
 			                            	 </ul>
 		                            	</div>
 		                            )
-								})}	                            
+								})}
                             </div>
                             {/*<div className="row">
                             	<div className="col-md-5">
@@ -348,14 +348,14 @@ class Productdetailfirstfold extends Component {
 						                </h3>
 						            </div>*/}
 						            <div className="col-md-6">
-						                  <input 
+						                  <input
 						                      required
-						                      type="date" 
-						                      id="from" 
-						                      value={this.state.from} 
+						                      type="date"
+						                      id="from"
+						                      value={this.state.from}
 						                      onChange={this.inputHandleChange}
 					                       style={{border:'none',marginTop:'4px'}}
-						                  />                
+						                  />
 						            </div>
 						            {/*<div className="col-md-2">
 						                <h3 style={{fontSize: '12px'}}>
@@ -363,14 +363,14 @@ class Productdetailfirstfold extends Component {
 						                </h3>
 						            </div>*/}
 						            <div className="col-md-6">
-						                  <input 
+						                  <input
 						                      required
-						                      type="date" 
-						                      id="to" 
+						                      type="date"
+						                      id="to"
 						                      value={this.state.to}
 						                      onChange={this.inputHandleChange}
 						                       style={{border:'none',marginTop:'4px'}}
-						                  />                
+						                  />
 						            </div>
                             	</div>
                             </div>
@@ -379,7 +379,7 @@ class Productdetailfirstfold extends Component {
                             </div>
                             <br/>
                             {!this.state.booked && <div className="row">
-                            	<button type="button" 
+                            	<button type="button"
                             		className="btn bravoo"
                             		onClick={this.addToCart}
                         		>
@@ -387,14 +387,14 @@ class Productdetailfirstfold extends Component {
                         		</button>
                             </div>}
                             {this.state.booked && <div className="row">
-                            	<button type="button" 
+                            	<button type="button"
                             		className="btn booked"
                         		>
                             		<h1>Booked</h1>
                         		</button>
                             </div>}
                             <div className="visible-sm visible-xs">
-                            	<Table />									
+                            	<Table />
                             </div>{/*div close of visible-sm visible-xs*/}
 					    </div>{/*main col-md-5 right possion div deskstop*/}
 					</div>{/*main row*/}

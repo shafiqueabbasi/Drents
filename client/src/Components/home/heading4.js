@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 class Heading4 extends Component {
   render() {
   	const { label, hrLine, data, showEditDelete, onDelete, profile, userAvailable, orderhistory } = this.props;
-    
+    console.log(this.props,'proppsssss')
     return (
     	<div className="App">
     		{label && label.length > 0 && <div className="Heading">
@@ -14,13 +14,13 @@ class Heading4 extends Component {
       		<div className="container-fluid">
 	    		<div className="container-fluid">
 	    			<div className="col-md-12 col-sm-12">
-	    				<div className="row" style={{textAlign:'center'}}>	    					
+	    				<div className="row" style={{textAlign:'center'}}>
 	    					{data && data.map((elem, key) => {
-	    						return(	    						
+	    						return(
 	    							<div className="col-md-3">
 			    						<Link key={key} to={{pathname: `/detail`, state: {elem, data}}}>
-			    							<img src={elem.fileList[0]} className="zoom" style={{height: '307px'}} />				    					
-		    							</Link>				    							
+			    							<img src={elem.fileList[0]} className="zoom" style={{height: '307px'}} />
+		    							</Link>
 		    							<div>
 		    								{showEditDelete && userAvailable && <div className="row">
 		    									<div className="col-md-6">
@@ -38,7 +38,7 @@ class Heading4 extends Component {
 		    							</div>
 			    					</div>
 	    						)
-	    					})}	    						    					
+	    					})}
 	    				</div>
 	    			</div>
 	    		</div>

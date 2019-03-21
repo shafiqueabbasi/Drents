@@ -20,7 +20,7 @@ export const RadioInput = props => {
                 style={{marginTop:'0px'}}
             />
           <span className="checkmark"></span>
-          <h4>{props.label}</h4>
+          <h4 style={{color: '#c2073f'}}>{props.label}</h4>
         </label>
     )
 }
@@ -63,7 +63,7 @@ export const CircleSizes = props => {
 export const Rate = props => {
     return(
         <div className="row"> 
-            <Rating className={props.classMd ? props.classMd : "col-md-7"}
+            <Rating className={props.classMd ? props.classMd : "col-md-7" + "col-xs-8"}
                 emptySymbol="glyphicon glyphicon-star-empty"
                 fullSymbol="glyphicon glyphicon-star"
                 initialRating={props.initialRating} 
@@ -71,7 +71,7 @@ export const Rate = props => {
                 style={{color: 'yellow'}}
                 onChange={props.onChange}
             />
-            <div className={props.classXS ? props.classXS : "col-md-5 col-xs-6"}
+            <div className={props.classXS ? props.classXS : "col-md-5" + "col-xs-4"}
                 style={{padding: '0'}}>
                 <h5>{props.rate}</h5>
             </div>
@@ -111,7 +111,7 @@ export const TextInput = props => {
         <div>
             <div className={props.col}>
                 <span className="input">
-                    <h3>{props.label}</h3>
+                    <h3 style={{color: '#c2073f'}}>{props.label}</h3>
                 </span>
             </div>
             <div className={props.col2}>
@@ -123,6 +123,7 @@ export const TextInput = props => {
                         value={props.value} 
                         className={props.className}
                         onChange={props.Change}
+                        style={{borderBottom: '1px solid #c2073f'}}
                     />
                 </div>
             </div>
@@ -134,7 +135,7 @@ export const SelectInput = props => {
     return(
         <div>
             <label htmlFor={props.name} className={props.col}>
-                <span className="input">
+                <span className="input" style={{color: '#c2073f', fontWeight: '500'}}>
                     {props.label}
                 </span>
             </label>
@@ -145,7 +146,7 @@ export const SelectInput = props => {
                     name={props.name} 
                     id={props.id} 
                     value={props.value} 
-                    onChange={props.Change} style={{width:'100%',border:'none',borderBottom:'1px solid black', marginTop:'10px'}}>
+                    onChange={props.Change} style={{width:'100%',border:'none',borderBottom:'1px solid #c2073f', marginTop:'10px'}}>
                     {props.options && props.options.map((ob)=><option key={ob.id} value={ob}>{ob}</option>)}
                 </select>
             </div>
@@ -175,7 +176,7 @@ export const SelectInput = props => {
 export const Textarea = props => {
     return(
         <div className="col-md-12" style={props.style}>
-            <label htmlFor={props.name} className="col-md-2 col-sm-2">{props.title}</label>
+            <label htmlFor={props.name} className="col-md-2 col-sm-2" style={{color: '#c2073f'}}>{props.title}</label>
             <div className="col-md-12 col-sm-4">
                 <textarea
                     required={props.required}
