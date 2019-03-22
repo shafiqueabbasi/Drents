@@ -397,7 +397,7 @@ class Productdetailfirstfold extends Component {
 						                      id="to"
 						                      value={to}
 						                      onChange={this.inputHandleChange}
-						                       style={{border:'none',marginTop:'4px'}}
+						                       style={{border:'none',marginTop:'4px', marginLeft:'-3%'}}
 						                  />
 						            </div>
                             	</div>
