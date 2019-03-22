@@ -65,7 +65,7 @@
 									<img 
 										alt="" 
 										src={elem} 
-										style={{width:"100%", height:"230px"}} 
+										style={{height:"230px" , marginLeft:'-3%'}} 
 										onClick={
 											() => this.setState({ showImg: elem })
 										}
