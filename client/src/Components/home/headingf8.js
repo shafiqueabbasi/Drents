@@ -18,7 +18,7 @@ class Headingf8 extends Component {
     return (
     	<div>
     		<div className="hidden-xs">
-    			<div id="footer" style={this.state.showFooter ? {position: "fixed"} : {}}>
+    			<div id="footer">
     				<div className="col-md-12 col-sm-12 bgc">
     					<div className="col-md-1"></div>
 
