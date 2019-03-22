@@ -130,7 +130,7 @@ class Productdetailfirstfold extends Component {
 
 	render() {
 		const { elem, data } = this.props.location.state;
-    console.log(this.props.filter,'ffiiillltter');  
+    	console.log(this.state.from, this.state.to, 'ffiiillltter');  
 		return(
 			<div className="App">
 				<div className="">
@@ -146,9 +146,10 @@ class Productdetailfirstfold extends Component {
                     		<Imagescard data={elem.fileList}/>
                     	</div>
 						<div className="col-md-5">{/*/*main col-md-5 right possion div deskstop*/}
-						    <div>
-								 <font color="#c2073f"><h1 style={{fontFamily:"Qwigley",fontSize: "70px"}}>{elem.productName}</h1></font>
-								 <p style={{marginTop:"-20px"}}>{elem.detailName}
+						    <div className="row">
+								 <font className="col-md-8" color="#c2073f"><h1 style={{fontFamily:"Qwigley",fontSize: "70px"}}>{elem.productName}</h1></font>								 
+								 <span className="col-md-4" style={{marginTop: "40px", fontFamily: "Qwigley", fontSize: "40px"}}>{elem.userName}</span>
+								 <p className="col-md-12">{elem.detailName}
                                  </p>
                             </div>{/* div close*/}
 							<div className="row">
@@ -380,6 +381,7 @@ class Productdetailfirstfold extends Component {
                             <br/>
                             {!this.state.booked && <div className="row">
                             	<button type="button"
+                            		disabled={this.state.from && this.state.to && !this.state.msg ? false : true}
                             		className="btn bravoo"
                             		onClick={this.addToCart}
                         		>

@@ -9,6 +9,8 @@ import { SwatchesPicker } from 'react-color';
 import sha1 from "sha1";
 import superagent from "superagent";
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router';
+import moment from 'moment';
 
 class UploadDress extends Component {
     state = {
@@ -43,14 +45,19 @@ class UploadDress extends Component {
         sizeMsg: '',
         imgMsg: '' ,
         _id:''  ,
-        showMsg: '' 
+        showMsg: '' ,
+        goDetail: false
     };
 
-    componentDidMount(){      
-      const { elem } = this.props.location.state;
-      for(var el in elem){
-          this.setState({ [el]: elem[el] })
-      }
+    async componentDidMount(){      
+        const { elem } = this.props.location.state;
+        for(var el in elem){
+            this.setState({ [el]: elem[el] })
+        }
+        let data = await HttpUtils.get('getdresses');
+        if(data.code && data.code === 200){
+            this.setState({ data: data.allDress })
+        }
     }
 
     handleSubmit = (e) => {        
@@ -58,14 +65,16 @@ class UploadDress extends Component {
         const { productName, detailName, description, priceDay, bodyType, background,
               from, to, tags, weather, details, arr, fileList} = this.state,
         detail = details[0] === undefined ? 0 : details[0].name.length;  
+        console.log(fileList, 'fileListttttt')
         if(!!productName && !!detailName && !!description && !!priceDay && !!bodyType && 
-            !!from && !!to && !!detail && !!arr.length && !!fileList.length){
+            !!from && !!to && !!detail && !!arr.length && !!fileList.length && fileList.length === 3){
             this.setState({loader: true})
-            this.funcForUpload()      
+            this.funcForUpload()  
+            console.log('haan bhai ab set hai')    
         }else if(arr.length == 0){
             this.setState({sizeMsg: "Select atleast one", imgMsg: ''})
-        }else if(fileList.length == 0){
-            this.setState({imgMsg: "Upload atleast one", sizeMsg: ''})
+        }else if(fileList.length < 3){
+            this.setState({imgMsg: "Upload atleast three", sizeMsg: ''})
         }     
     };
 
@@ -103,15 +112,17 @@ class UploadDress extends Component {
             sizes: arr,
             fileList: [...imagesOne, ...imagesTwo],
             userId: this.props.user._id,
+            userName: this.props.user.username,
+            postedOn: moment().format('LL'),
             _id
         }
         let resDressUpload = await HttpUtils.post('uploaddress',obj, this.props.user.token);
         if(resDressUpload.code && resDressUpload.code == 200){
-            this.resetFields(resDressUpload)
+            this.resetFields(resDressUpload, obj)
         }
     };
 
-    resetFields(resDressUpload){
+    resetFields(resDressUpload, elem){
         this.setState({
             productName: '',
             detailName: '',
@@ -130,7 +141,7 @@ class UploadDress extends Component {
             showMsg: resDressUpload.data
         })
         setTimeout(() => {
-            this.setState({ showMsg: '' })
+            this.setState({ showMsg: '', goDetail: true, elem });
         }, 3000)
     }
 
@@ -234,7 +245,12 @@ class UploadDress extends Component {
     }
 
 render() {
-    const { previewVisible, previewImage, fileList, background, tags, details } = this.state;
+    const { previewVisible, previewImage, fileList, background, tags, details, goDetail, elem, data } = this.state;
+    if(goDetail){
+        return <Redirect to={{pathname: '/detail', state: {elem, data}}}/>
+    }
+    console.log(this.props.user, 'userrrrrr')
+
     return (
       	<div>
           <Form onSubmit={this.handleSubmit}>
@@ -452,7 +468,6 @@ render() {
 							</div>							
 						<div className="col-md-2"></div>
 					</div>
-          {this.state.imgMsg.length > 0 && <span style={{fontSize:'16px'}}><u>{this.state.imgMsg}</u></span>}
           <div className="row">
               <div className="col-md-12">
                   {fileList.length > 0 && <UploadedImages 
@@ -462,6 +477,7 @@ render() {
                   }
               </div>
           </div>
+          {this.state.imgMsg.length > 0 && <span style={{fontSize:'16px'}}><u>{this.state.imgMsg}</u></span>}          
 
           {/* Modal Start */}
           <div id="myModal" className="modal fade" role="dialog" style={{marginTop:'5%'}}>

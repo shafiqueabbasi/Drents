@@ -17,7 +17,13 @@ const uploadDressSchema = new Schema({
   to:{ type:String },
   weather:{ type:String },
   background:{ type:String },
-  bodyType:{ type:String }
+  bodyType:{ type:String },
+  status: { type: String, default: 'Available'},
+  bookedFrom:{ type:String },
+  bookedTo:{ type:String },
+  stage: {type: String},
+  userName: { type: String },  
+  postedOn: { type: String }
 });
 
 //model class

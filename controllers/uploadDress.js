@@ -1,4 +1,5 @@
 const UploadDress = require('../models/uploadDress');
+const _ = require("underscore");
 
 
 exports.uploaddress = function(req,res,next){
@@ -23,7 +24,9 @@ exports.uploaddress = function(req,res,next){
     weather:dressupload.weather,
     background:dressupload.background,
     bodyType:dressupload.bodyType,
-    userId:dressupload.userId
+    userId:dressupload.userId,  
+    userName: dressupload.userName,
+    postedOn: dressupload.postedOn  
   });
 
   postDressData.save(function(err){
@@ -35,38 +38,51 @@ exports.uploaddress = function(req,res,next){
     data:'data saved successfully'
   });
 
+  }
+  else if(dressupload._id != ''){
+    UploadDress.updateMany(
+        {"_id":dressupload._id},
+        {$set: _.omit(dressupload, '_id')},
+        {multi:true}
+    ).then(() => {
+        res.send({
+            code:200,
+            data:'data updated successfully'
+        });
+    }).catch(() => res.status(422).send({msg:'okay'}));
+  }
 }
-else if(dressupload._id != ''){
-  console.log(dressupload._id);
-  UploadDress.find({"_id":dressupload._id},function(err,existingDress){
-    console.log(existingDress);
-    existingDress.productName=dressupload.productName;
-    existingDress.detailName=dressupload.detailName;
-    existingDress.description=dressupload.description;
-    existingDress.priceDay=dressupload.priceDay;
-    existingDress.details=dressupload.details;
-    existingDress.fileList=dressupload.fileList;
-    existingDress.sizes=dressupload.sizes;
-    existingDress.tags=dressupload.tags;
-    existingDress.from=dressupload.from;
-    existingDress.to=dressupload.to;
-    existingDress.weather=dressupload.weather;
-    existingDress.background=dressupload.background;
-    existingDress.bodyType=dressupload.bodyType;
-    existingDress.userId=dressupload.userId;
+
+  // UploadDress.findOne({"_id":dressupload._id},function(err,existingDress){
+    // console.log(existingDress);
+    // existingDress.productName=dressupload.productName;
+    // existingDress.detailName=dressupload.detailName;
+    // existingDress.description=dressupload.description;
+    // existingDress.priceDay=dressupload.priceDay;
+    // existingDress.details=dressupload.details;
+    // existingDress.fileList=dressupload.fileList;
+    // existingDress.sizes=dressupload.sizes;
+    // existingDress.tags=dressupload.tags;
+    // existingDress.from=dressupload.from;
+    // existingDress.to=dressupload.to;
+    // existingDress.weather=dressupload.weather;
+    // existingDress.background=dressupload.background;
+    // existingDress.bodyType=dressupload.bodyType;
+    // existingDress.userId=dressupload.userId;
+
+  //   existingDress.save(function(err){
+  //   if(err){
+  //     return res.status(422).send({error:'Not updated'})
+  //   }
+  //   //Respond to request indicating user was created
+    // return res.send({
+    //   code:200,
+    //   data:'data updated successfully'
+    // });
+  // })
+  // })
+  
 
 
-    existingDress.save(function(err){
-    if(err){
-      return res.status(422).send({error:'Not updated'})
-    }
-    //Respond to request indicating user was created
-    res.send({
-      code:200,
-      data:'data updated successfully'
-    });
-  })
-  })
 
-}
-}
+
