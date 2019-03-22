@@ -3,6 +3,7 @@ import {
   Form,Icon, Input, Select, Button, AutoComplete,
 } from 'antd';
 import { userActions } from '../../_actions';
+import { HttpUtils } from "../../Service/HttpUtils";
 import { connect } from 'react-redux';
 import FacebookLogin from 'react-facebook-login';
 import { GoogleLogin } from 'react-google-login-component';
@@ -20,7 +21,10 @@ class SignIn extends Component {
           userId: '',
           err: '',
           loader: false,
-          forgotPassword:false
+          forgotPassword:false,
+          errMessage:'',
+          emailSent:false
+
         }
         // reset login status
         this.props.dispatch(userActions.logout());
@@ -69,7 +73,42 @@ class SignIn extends Component {
      const value = e.target.value;
      this.setState({ confirmDirty: this.state.confirmDirty || !!value });
    }
+    handleforgotpassword = (e) => {
+     e.preventDefault();
+     this.setState({
+       loader:true
+     })
 
+     this.props.form.validateFieldsAndScroll( async (err, values) => {
+        if(!err){
+          console.log(values,'emaiiiiiiillllllllllll');
+          let obj = {
+            email:values.email
+          }
+          let res = await HttpUtils.post('forgotpassword',obj);
+          if(res.code == 403){
+            this.setState({
+              loader:false,
+              errMessage:res.message
+            })
+            setTimeout(() => {
+              this.setState({
+              loader:false,
+              errMessage:''
+            })
+           }, 3000);
+         }//end if code 403
+         else if(res.code == 200){
+           this.setState({
+             loader:false,
+             emailSent:true,
+             errMessage:res.message
+           })
+         }
+
+        }
+     });
+   }
    responseFacebook = response =>{
       const { clicked } = this.state;
       if(clicked){
@@ -124,7 +163,7 @@ class SignIn extends Component {
     }
 
   render() {
-    const { showEmailButton,forgotPassword } = this.state,
+    const { showEmailButton,forgotPassword,errMessage,emailSent } = this.state,
     { getFieldDecorator } = this.props.form;
     return (
       	<div style={{backgroundColor: '#c2073f'}}>
@@ -184,7 +223,7 @@ class SignIn extends Component {
                         <div>
                           <div className="group">
                           <Form.Item>
-                               {getFieldDecorator('forgotemail', {
+                               {getFieldDecorator('email', {
                                  rules: [{
                                    type: 'email', message: 'The input is not valid E-mail!',
                                  }, {
@@ -194,6 +233,7 @@ class SignIn extends Component {
                                  <Input placeholder="Email" />
                                )}
                           </Form.Item>
+
                           {forgotPassword && <div>
                             <h5 onClick={this.backSignIn}>Back to Sign In</h5>
                           </div>}
@@ -201,10 +241,16 @@ class SignIn extends Component {
                         </div>
                         <div className="row">
                           <div className="col-md-12" style={{textAlign:'center'}}>
-                              <button type="submit" className="btn btn-sm" style={{color:'black',backgroundColor:'white'}}>Send Email</button>
+                              <button className="btn btn-sm" style={{color:'black',backgroundColor:'white'}}>Send Email</button>
+                          </div>
+                        </div>
+                        <div className="row">
+                          <div className="col-md-12">
+                            <span style={{textAlign:'center',fontWeight:'bold'}}>{errMessage}</span>
                           </div>
                         </div>
                     </Form>}
+
 					</div>
 					<div className="col-md-2 col-sm-3 col-xs-2"></div>
 				</div>}

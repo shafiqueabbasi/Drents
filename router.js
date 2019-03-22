@@ -19,7 +19,8 @@ module.exports = function(app){
   app.post('/signin',requireSignin, Authentication.signin);
   app.post('/signup',Authentication.signup);
   app.post('/socialauth',Authentication.socialAuthentication);
-  app.post('/uploaddress', requireAuth, UploadDress.uploaddress);
+  // app.post('/uploaddress', requireAuth, UploadDress.uploaddress);
+  app.post('/uploaddress', UploadDress.uploaddress);
   app.post('/uploadprofile',requireAuth, profileUpload.profileUpload);
   app.post('/comparepassword',Authentication.comparePassword);
   app.post('/changepassword',Authentication.changePassword);

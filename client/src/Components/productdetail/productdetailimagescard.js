@@ -12,6 +12,14 @@
  		this.setState({ showImg: data[0] });
  	}
 
+ 	componentDidUpdate(prevProps, prevState){
+ 		const { data } = this.props;
+ 		if(data[0] !== prevProps.data[0]){
+ 			window.scrollTo(0, 0);
+ 			this.setState({ showImg: data[0] });
+ 		}
+ 	}
+
 	render() { 
  		const { data } = this.props;
  			console.log(isTablet, 'ye tablet hai')
