@@ -328,7 +328,7 @@ class UserProfile extends Component {
 								</div>
 
 								<div className="visible-sm col-sm-3">&emsp;&emsp;
-									<div class="dropdown">
+									<div className="dropdown">
 									    <button class="btn dropdown-toggle" type="button" data-toggle="dropdown"
 									      style={{background: '#ffffff', color: '#c2073f', borderRadius: '0', border: '1px solid #c2073f'}}>SORT BY &emsp;
 									      <span class="caret"></span></button>
