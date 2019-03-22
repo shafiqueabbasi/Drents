@@ -22,8 +22,7 @@
 
 	render() { 
  		const { data } = this.props;
- 			console.log(isTablet, 'ye tablet hai')
- 			console.log(isMobileOnly, 'ye mobile hai')
+
 		return( 
 			<div>
 				<div className="hidden-xs hidden-sm">

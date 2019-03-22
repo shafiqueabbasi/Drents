@@ -32,6 +32,7 @@ class SecondFold extends Component {
 
   render() {
     let obj = this.props.location.state.elem;
+    console.log(this.props.user, 'userrrrrr')
     return (
       <div className="App">
           <div className="container">
@@ -54,7 +55,7 @@ class SecondFold extends Component {
                  return <ReviewsCard data={elem}/>
               })}
               <br/>
-              {this.props.user !== undefined && this.props.user._id.length > 0 && <CommentCard addReview={this.addReview} obj={obj}/>}
+              {this.props.user !== undefined && <CommentCard addReview={this.addReview} obj={obj}/>}
               <br/>
           </div>{/*Container Div Close*/}
       </div>

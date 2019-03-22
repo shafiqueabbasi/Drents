@@ -65,12 +65,10 @@ class UploadDress extends Component {
         const { productName, detailName, description, priceDay, bodyType, background,
               from, to, tags, weather, details, arr, fileList} = this.state,
         detail = details[0] === undefined ? 0 : details[0].name.length;  
-        console.log(fileList, 'fileListttttt')
         if(!!productName && !!detailName && !!description && !!priceDay && !!bodyType && 
             !!from && !!to && !!detail && !!arr.length && !!fileList.length && fileList.length === 3){
             this.setState({loader: true})
             this.funcForUpload()  
-            console.log('haan bhai ab set hai')    
         }else if(arr.length == 0){
             this.setState({sizeMsg: "Select atleast one", imgMsg: ''})
         }else if(fileList.length < 3){
@@ -249,7 +247,6 @@ render() {
     if(goDetail){
         return <Redirect to={{pathname: '/detail', state: {elem, data}}}/>
     }
-    console.log(this.props.user, 'userrrrrr')
 
     return (
       	<div>
