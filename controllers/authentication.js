@@ -315,7 +315,7 @@ exports.forgotPassword = function(req, res, next){
         if (user === null) {
             res.send({
                 code: 403,
-                message: 'email not in db'
+                message: 'email is not exist'
             })
         } else {
             const token = crypto.randomBytes(20).toString('hex');
@@ -345,7 +345,7 @@ exports.forgotPassword = function(req, res, next){
                       } else {
                         res.send({
                             code: 200,
-                            message: 'recovery email sent'
+                            message: 'check your email we have sent you a reset password link'
                         })
                       }
                     });

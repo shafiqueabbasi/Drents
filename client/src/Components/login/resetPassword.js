@@ -32,7 +32,8 @@ class ResetPassword extends Component {
 
     async componentDidMount() {
         let response = await HttpUtils.get('reset?resetPasswordToken=' + this.props.match.params.token);
-        if(response.code == 403 || response.code == 404){
+        console.log(response,'responssssssseeeeeeeeee');
+        if(response.code == 403){
             this.setState({
                 isLoading: false,
                 error: true,

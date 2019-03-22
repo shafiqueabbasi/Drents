@@ -9,7 +9,7 @@ class FilterPage extends Component {
 
     return (
 		<div className="App" style={{backgroundImage: "url('./images/swrils.png')"}}>
-			<FilterPanel {...this.props}/>        
+			<FilterPanel {...this.props}/>
 		</div>
     );
 
@@ -17,7 +17,3 @@ class FilterPage extends Component {
 }
 
 export default FilterPage;
-<<<<<<< HEAD
-=======
-
->>>>>>> 07e16d52c8f94a6e84e765edd82716cf26e2ad63
