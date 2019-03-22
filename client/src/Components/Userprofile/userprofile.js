@@ -311,21 +311,48 @@ class UserProfile extends Component {
 								<div className="col-md-10 col-sm-9 col-xs-6"></div>
 								
 								<div className="col-md-2 hidden-sm hidden-xs">&emsp;&emsp;&nbsp;
-									<select style={{border: '1px solid #c2073f',width: '80%',background: 'none'}}>
-									  <option value="volvo">SORT BY</option>
-									  </select>
+									
+									<div class="dropdown">
+									    <button class="btn dropdown-toggle" type="button" data-toggle="dropdown"
+									      style={{background: '#ffffff', color: '#c2073f', borderRadius: '0', border: '1px solid #c2073f'}}>SORT BY &emsp;
+									      <span class="caret"></span></button>
+
+									    <ul class="dropdown-menu">
+									    	<li><a href="#">HTML</a></li>
+									    	<li><a href="#">CSS</a></li>
+									    	<li><a href="#">JavaScript</a></li>
+									    </ul>
+									</div>
+
+									
 								</div>
 
 								<div className="visible-sm col-sm-3">&emsp;&emsp;
-									<select style={{border: '1px solid #c2073f',width: '80%',backgroundColor: 'none'}}>
-									  <option value="volvo">SORT BY</option>
-									</select>
+									<div className="dropdown">
+									    <button class="btn dropdown-toggle" type="button" data-toggle="dropdown"
+									      style={{background: '#ffffff', color: '#c2073f', borderRadius: '0', border: '1px solid #c2073f'}}>SORT BY &emsp;
+									      <span class="caret"></span></button>
+
+									    <ul class="dropdown-menu">
+									    	<li><a href="#">HTML</a></li>
+									    	<li><a href="#">CSS</a></li>
+									    	<li><a href="#">JavaScript</a></li>
+									    </ul>
+									</div>
 								</div>
 
 								<div className="col-xs-6 visible-xs">
-									<select style={{border: '1px solid #c2073f',width: '80%',backgroundColor: 'none'}}>
-									  <option value="volvo">SORT BY</option>
-									</select>
+									<div class="dropdown">
+									    <button class="btn dropdown-toggle" type="button" data-toggle="dropdown"
+									      style={{background: '#ffffff', color: '#c2073f', borderRadius: '0', border: '1px solid #c2073f'}}>SORT BY &emsp;
+									      <span class="caret"></span></button>
+
+									    <ul class="dropdown-menu">
+									    	<li><a href="#">HTML</a></li>
+									    	<li><a href="#">CSS</a></li>
+									    	<li><a href="#">JavaScript</a></li>
+									    </ul>
+									</div>
 								</div>
 
 								
