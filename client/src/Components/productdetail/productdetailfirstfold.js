@@ -373,7 +373,7 @@ class Productdetailfirstfold extends Component {
 						                    From
 						                </h3>
 						            </div>*/}
-						            <div className="col-md-6">
+						            <div className="col-md-6 col-sm-6">
 						                  <input
 						                      required
 						                      readOnly={booked}
@@ -389,7 +389,7 @@ class Productdetailfirstfold extends Component {
 						                    To
 						                </h3>
 						            </div>*/}
-						            <div className="col-md-6">
+						            <div className="col-md-6 col-sm-6">
 						                  <input
 						                      required
 						                      readOnly={booked}
