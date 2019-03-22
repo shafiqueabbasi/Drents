@@ -257,7 +257,7 @@ class UserProfile extends Component {
 									</div>
 
 									<div className="rovil1" style={{paddingLeft: '0px'}}>
-										<h5>London</h5>
+										<h4>London</h4>
 									</div>
 
 									<div className="rovil1" style={{paddingLeft: '0px'}}>
