@@ -15,8 +15,8 @@ class CartData extends Component {
 		goTo: false
 	}
 
-	componentDidMount(){
-		const { finalArr } = this.props.location.state;
+	async componentDidMount(){
+		const finalArr  = JSON.parse(await localStorage.getItem('Cart'));
 		this.setState({ finalArr }, () => {
 			this.getData();
 		})
@@ -24,12 +24,18 @@ class CartData extends Component {
 
 	cancelOrder(e){
 		let { finalArr } = this.state;
-		finalArr = finalArr.filter((elem) => elem._id !== e._id)
+		finalArr = finalArr.filter((elem) => elem._id !== e._id);
 		this.setState({ finalArr }, () => {
 			this.getData();
 		});
 		this.props.updateCart(finalArr);
 		localStorage.setItem('Cart', JSON.stringify(finalArr));
+		this.updateStatus(e._id);		
+	}
+
+	async updateStatus(_id){
+		let obj = {_id, bookedFrom: '', bookedTo: '', status: 'Available'},
+		res = await HttpUtils.post('uploaddress', obj, this.props.user.token);
 	}
 
 	onSuccessCard = async(data) => {
@@ -88,8 +94,9 @@ class CartData extends Component {
  
 	render() {
 		const { finalArr, paymentSuccess, msg, finalPrice, price, data, goTo } = this.state,
-		{ loggedIn, user } = this.props;
-
+		{ loggedIn, user } = this.props,
+		showButton = finalArr.length < 1 ? true : loggedIn ? false  : true;
+		console.log(showButton, 'ifff')
 		if(goTo){
 			return <Redirect to='/' />
 		}
@@ -203,7 +210,7 @@ class CartData extends Component {
 						<div className="row">
 							<div className="col-md-12 col-sm-12 chainbelt1">
 								<button className="btn apex2" 
-									disabled={!loggedIn}
+									disabled={showButton}
 									data-toggle="modal" data-target="#stripeCard">
 									<span className="apex3">
 										CHECKOUT

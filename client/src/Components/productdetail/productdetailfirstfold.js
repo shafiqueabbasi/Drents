@@ -5,7 +5,10 @@ import Imagescard from './productdetailimagescard';
 import Table from './productdetailtable';
 import Secondfold from './productdetailsecondfold';
 import { CircleSizes, Rate } from '../_components/myInput';
-import './productdetail.css'
+import './productdetail.css';
+
+import { connect } from 'react-redux';
+import { HttpUtils } from  '../../Service/HttpUtils';
 
 class Productdetailfirstfold extends Component {
 	state = {
@@ -18,7 +21,7 @@ class Productdetailfirstfold extends Component {
 
 	async componentDidMount(){
 		let cart = await localStorage.getItem('Cart'),
-		{ elem } = this.props.location.state;
+		{ elem } = this.props.location.state;		
 		if(cart == null){
 			localStorage.setItem('Cart', JSON.stringify([]))
 		}else {
@@ -26,6 +29,11 @@ class Productdetailfirstfold extends Component {
 			this.bookedFunc(arr, elem);
 			this.setState({ arr });
 		}
+		this.setState({ 
+			to: elem.bookedTo,
+			from: elem.bookedFrom,
+			booked: elem.bookedFrom && elem.bookedTo ? true : false
+		});
 	}
 
 	bookedFunc(arr, elem){
@@ -104,33 +112,50 @@ class Productdetailfirstfold extends Component {
 
 	addToCart = e => {
 		const { elem } = this.props.location.state,
-		{ from, to, arr } = this.state,
-		date1 = new Date("12/14/2010"),
-		date2 = new Date("12/17/2010"),
-		timeDiff = Math.abs(date2.getTime() - date1.getTime()),
-		diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
-		let obj = {...elem, ...{rentDay: diffDays}}
-		arr.push(obj)
-		this.bookedFunc(arr, elem);
-		this.props.updateCart(arr);
-		localStorage.setItem('Cart', JSON.stringify(arr));
+		{ from, to, arr } = this.state;
+		if(this.props.user){
+			let diffDays = this.getTotalDays(from, to),
+			obj = {...elem, ...{rentDay: diffDays}};
+			arr.push(obj);
+			this.bookedFunc(arr, elem);
+			this.props.updateCart(arr);
+			localStorage.setItem('Cart', JSON.stringify(arr));
+			this.updateStatus(elem._id);
+		}else{
+			this.setState({ msg: 'You have to login first' });
+			setTimeout(() => {
+				this.setState({ msg: '' });
+			}, 3000)
+		}		
+	}
+
+	getTotalDays(from, to){
+		let date1 = new Date(from),
+		date2 = new Date(to),
+		timeDiff = Math.abs(date2.getTime() - date1.getTime());
+		return Math.ceil(timeDiff / (1000 * 3600 * 24));
+	}
+
+	async updateStatus(_id){
+		const { from, to, arr } = this.state;
+		let obj = {_id, bookedFrom: from, bookedTo: to, status: 'Booked'},
+		res = await HttpUtils.post('uploaddress', obj, this.props.user.token);
 	}
 
 	ratingReview = e => {
 		let rateCount = 0;
 		e.map((elem) => {
 			rateCount += +elem.rate
-		})
-		console.log(rateCount, 'rateCount')
+		});
 		let averageRate = rateCount / e.length;
-		averageRate = e.length > 0 ? averageRate : ''
-		console.log(averageRate, 'rateeeeeeeeeee')
-		this.setState({ averageRate })
+		averageRate = e.length > 0 ? averageRate : '';
+		this.setState({ averageRate });
 	}
 
 	render() {
-		const { elem, data } = this.props.location.state;
-    	console.log(this.state.from, this.state.to, 'ffiiillltter');  
+		const { elem, data } = this.props.location.state,
+		{ from, to, msg, booked } = this.state;
+    	
 		return(
 			<div className="App">
 				<div className="">
@@ -351,9 +376,10 @@ class Productdetailfirstfold extends Component {
 						            <div className="col-md-6">
 						                  <input
 						                      required
+						                      readOnly={booked}
 						                      type="date"
 						                      id="from"
-						                      value={this.state.from}
+						                      value={from}
 						                      onChange={this.inputHandleChange}
 					                       style={{border:'none',marginTop:'4px'}}
 						                  />
@@ -366,9 +392,10 @@ class Productdetailfirstfold extends Component {
 						            <div className="col-md-6">
 						                  <input
 						                      required
+						                      readOnly={booked}
 						                      type="date"
 						                      id="to"
-						                      value={this.state.to}
+						                      value={to}
 						                      onChange={this.inputHandleChange}
 						                       style={{border:'none',marginTop:'4px'}}
 						                  />
@@ -376,19 +403,19 @@ class Productdetailfirstfold extends Component {
                             	</div>
                             </div>
                             <div className="row">
-                            	<span>{this.state.msg}</span>
+                            	<span>{msg}</span>
                             </div>
                             <br/>
-                            {!this.state.booked && <div className="row">
+                            {!booked && <div className="row">
                             	<button type="button"
-                            		disabled={this.state.from && this.state.to && !this.state.msg ? false : true}
+                            		disabled={from && to && !msg ? false : true}
                             		className="btn bravoo"
                             		onClick={this.addToCart}
                         		>
                             		<h1>Rent Now</h1>
                         		</button>
                             </div>}
-                            {this.state.booked && <div className="row">
+                            {booked && <div className="row">
                             	<button type="button"
                             		className="btn booked"
                         		>
@@ -408,4 +435,12 @@ class Productdetailfirstfold extends Component {
   }
 }
 
-export default Productdetailfirstfold;
+function mapStateToProps(state) {
+    const { user } = state.authentication;
+    return {
+        user
+    };
+}
+
+const connectedProductdetailfirstfold = connect(mapStateToProps)(Productdetailfirstfold);
+export default connectedProductdetailfirstfold;
