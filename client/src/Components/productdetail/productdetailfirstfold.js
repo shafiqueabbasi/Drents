@@ -374,7 +374,7 @@ class Productdetailfirstfold extends Component {
 						                    From
 						                </h3>
 						            </div>*/}
-						            <div className="col-md-6">
+						            <div className="col-md-6 col-sm-6">
 						                  <input
 						                      required
 						                      readOnly={booked}
@@ -390,7 +390,7 @@ class Productdetailfirstfold extends Component {
 						                    To
 						                </h3>
 						            </div>*/}
-						            <div className="col-md-6">
+						            <div className="col-md-6 col-sm-6">
 						                  <input
 						                      required
 						                      readOnly={booked}
@@ -398,7 +398,7 @@ class Productdetailfirstfold extends Component {
 						                      id="to"
 						                      value={to}
 						                      onChange={this.inputHandleChange}
-						                       style={{border:'none',marginTop:'4px'}}
+						                       style={{border:'none',marginTop:'4px', marginLeft:'-3%'}}
 						                  />
 						            </div>
                             	</div>

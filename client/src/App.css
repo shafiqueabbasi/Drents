@@ -508,7 +508,6 @@ input[type="file"] {
 .Heading22{
   line-height: 4px;
   text-align: center;
-  margin-right: 3%;
 }
 .headings22{
   color: #c2073f;
@@ -571,6 +570,7 @@ input[type="file"] {
             margin-left :  10%;
             width : 85%;
             margin-left :  11%;
+            text-align: center;
       }
   .google2{
             margin-right: 2%;
