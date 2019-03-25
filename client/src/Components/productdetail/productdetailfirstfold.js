@@ -155,6 +155,7 @@ class Productdetailfirstfold extends Component {
 	render() {
 		const { elem, data } = this.props.location.state,
 		{ from, to, msg, booked } = this.state;
+		console.log(this.props, 'propssssssss')
     	
 		return(
 			<div className="App">

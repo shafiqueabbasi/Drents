@@ -45,6 +45,7 @@ class UserProfile extends Component {
 		let id = this.props.match.params.value,
 		data = await HttpUtils.post('getprofiledress', {userId: id}),
 		rate = 0;
+		console.log(data.orderhistory, 'orderhistoryyyyyyyyyyyyy')
 		if(data.code && data.code == 200){
 			let dressData = data.dress.length > 0 && data.dress.map((elem) => {
 				return elem._id;
@@ -160,6 +161,7 @@ class UserProfile extends Component {
 		if(user && user._id && user._id === id){
 			userAvailable = true;
 		}
+		console.log(profile, arr, orderhistory, 'sab khuchhhhhh')
 		return(
 			<div>
 					<div>
@@ -299,7 +301,9 @@ class UserProfile extends Component {
 								</div>
 
 								<div className="col-md-2 col-sm-2">
-									<h3 style={{color: '#c2073f'}}>Orders</h3>
+									<Link to={{pathname: `/userdetail`, state: {goTo: 'currentRentals', arr, orderhistory }}}>
+										<h3 style={{color: '#c2073f'}}>Orders</h3>
+									</Link>
 								</div>
 
 								<div className="col-md-3 col-sm-3"></div>
