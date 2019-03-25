@@ -49,7 +49,7 @@ class FirstPage extends Component {
         	  	  <div className="col-md-4 col-sm-2">
         			 	  <div className="navbar-header" style={{marginBottom:'-3%'}}>
         					  <a href="#" className="hidden-sm"><img src="../images/Drent-logo-white.png" style={{width: '46%', height : '103px'}}/></a>
-                    <a href="#" className="visible-sm"><img src="../images/Drent-logo-white.png" style={{width: '110%'}}/></a>
+                    <a href="#" className="visible-sm"><img src="../images/Drent-logo-white.png" style={{width: '187%'}}/></a>
         				  </div>
         			  </div>
         		    <div className="container-fluid">

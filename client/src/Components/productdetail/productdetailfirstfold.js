@@ -366,14 +366,14 @@ class Productdetailfirstfold extends Component {
                             		<div className="col-sm-1 sum"><i className="fa fa-calendar sam"></i></div>
                             	</div>
                             </div>*/}
-                            <div className="row">
+                            <div className="row" style={{margin:'0px'}}>
                             	<div className="sams col-md-12 col-xs-12 col-sm-12" style={{padding: '0px'}}>
                             		{/*<div className="col-md-2">
 						                <h3 style={{fontSize: '12px'}}>
 						                    From
 						                </h3>
 						            </div>*/}
-						            <div className="col-md-6 col-sm-6">
+						            <div className="col-md-5 col-sm-5">
 						                  <input
 						                      required
 						                      readOnly={booked}
@@ -389,7 +389,7 @@ class Productdetailfirstfold extends Component {
 						                    To
 						                </h3>
 						            </div>*/}
-						            <div className="col-md-6 col-sm-6">
+						            <div className="col-md-5 col-sm-5">
 						                  <input
 						                      required
 						                      readOnly={booked}
@@ -397,9 +397,10 @@ class Productdetailfirstfold extends Component {
 						                      id="to"
 						                      value={to}
 						                      onChange={this.inputHandleChange}
-						                       style={{border:'none',marginTop:'4px', marginLeft:'-3%'}}
+						                       style={{border:'none',marginTop:'4px', marginLeft:'11%'}}
 						                  />
 						            </div>
+						            <div className="col-md-1 col-sm-1"></div>
                             	</div>
                             </div>
                             <div className="row">

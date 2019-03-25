@@ -41,6 +41,7 @@
 	color: #c2073f; 
 	font-size: 25px;
 	text-align: left;
+    margin-left: 3%;
 }
 .round{
 	display: inline-block;
@@ -49,10 +50,24 @@
 	font-family: Qwigley;
 	color: #c2073f; 
 	font-size: 45px;
+    margin-left: 5%;
 }
 .sams{
 	border: 1px solid #c2073f;
 	height: 47px;
+	    margin-left: 15px;
+}
+@media only screen and (min-device-width : 360px) and (max-device-width : 660px){
+
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
+	
+}
+@media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
+	
+}
+@media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
+	
 }
 .sam{
 	fontSize: 20px;

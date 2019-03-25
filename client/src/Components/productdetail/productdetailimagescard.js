@@ -51,29 +51,29 @@
 				</div> 	
             	<br/><br/><br/>
             	<div className="visible-sm visible-xs">
-	            	<div className="container">
+
 	            		<div className="row">
 	            			<div className="col-xs-12 col-sm-12">
-	            				<img alt="" src={this.state.showImg} style={isTablet ? {width:"92%", height:"840px" , marginTop:"-13%"} : {width:"103%", height:"400px", marginTop:'-48%'}}/>
+	            				<img alt="" src={this.state.showImg} style={isTablet ? {width:"94%", height:"840px" , marginTop:"-13%"} : {width:"85%", height:"400px", marginTop:'-48%', marginLeft:'4%'}}/>
 	            			</div>
-	            		</div><br />
-	            		<div className="row" style={{margin:'0px'}}>	
-	            			{data.map((elem) => {
-								return (
-								<div className="col-sm-4 col-xs-4">
-									<img 
-										alt="" 
-										src={elem} 
-										style={isTablet ? {height:"230px" , marginLeft:'-3%'} : {height:"70px" , width:'100%'}} 
-										onClick={
-											() => this.setState({ showImg: elem })
-										}
-									/>
-								</div>
-								)
-							})}						
-						</div>
-					</div>	
+	            		</div>
+				<br />
+            		<div className="row" style={{margin:'0px'}}>	
+            			{data.map((elem) => {
+							return (
+							<div className="col-sm-4 col-xs-4">
+								<img 
+									alt="" 
+									src={elem} 
+									style={isTablet ? {height:"230px" , marginLeft:'-3%', width:'86%'} : {height:"70px" , width:'73%'}} 
+									onClick={
+										() => this.setState({ showImg: elem })
+									}
+								/>
+							</div>
+							)
+						})}						
+					</div>
 				</div>
 			</div>
     	);
