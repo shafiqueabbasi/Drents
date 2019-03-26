@@ -141,7 +141,7 @@ export const SelectInput = props => {
             </label>
             <div className={props.col2}>
                 <select required 
-                    className="col-md-12 col-sm-12 row"
+                    className="col-md-12 col-sm-12"
                     placeholder={props.placeholder} 
                     name={props.name} 
                     id={props.id} 
@@ -188,7 +188,8 @@ export const Textarea = props => {
                     name={props.name} id={props.name} 
                     value={props.value} 
                     onChange={props.onChange}
-                    style={{border: 'none',borderBottom: '1px solid #c2073f'}}>
+                    style={{border: '1px solid #c2073f'}}
+                    >
                 </textarea>
             </div>
         </div>

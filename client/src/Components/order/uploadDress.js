@@ -340,7 +340,7 @@ render() {
                   className="input"
                   col="col-md-4 col-sm-4"
                   col2="col-md-8 col-sm-8"
-                    
+
                   options={this.state.typeArr}
                   Change={this.inputHandleChange}
                 />
@@ -360,7 +360,7 @@ render() {
           </div>
 
           <div className="row">
-            <div className="col-md-2 col-sm-2"><span className="input">
+            <div className="col-md-1 col-sm-2"><span className="input">
                 <h3 style={{fontSize: '23px',color: '#c2073f'}}>
                     From
                 </h3></span>
@@ -374,10 +374,11 @@ render() {
                       id="from" 
                       value={this.state.from} 
                       onChange={this.inputHandleChange}
+                      style={{border: 'none',borderBottom: '1px solid #c2073f'}}
                   />                
               </div>
             </div>
-            <div className="col-md-2 col-sm-2"><span className="input">
+            <div className="col-md-1 col-sm-2"><span className="input">
                 <h3 style={{fontSize: '23px',color: '#c2073f'}}>
                     To
                 </h3></span>
@@ -391,6 +392,7 @@ render() {
                       id="to" 
                       value={this.state.to} 
                       onChange={this.inputHandleChange}
+                      style={{border: 'none',borderBottom: '1px solid #c2073f'}}
                   />                
               </div>
             </div>
@@ -403,7 +405,7 @@ render() {
                 value={this.state.tags}
                 onChange={this.handleCard}
               />            
-            <div className="col-md-6">
+            <div className="col-md-6 row">
                 <SelectInput 
                     label="Weather" 
                     id="weather" 
@@ -486,12 +488,13 @@ render() {
 					<div className="row">
 						<div className="col-md-2 col-sm-2"><span class="input"><h3 style={{fontSize: '23px', color : '#c2073f'}}>Pictures</h3><p style={{fontSize: '63%'}}>File size must not exceed to Mb</p></span></div>
 							<div className="col-md-4 col-sm-5" style={{marginTop: '1%'}}>
-								<label className="labelcustome" id="#bb"> Choose File
+								<label className="labelcustome" id="#bb" style={{background: 'none',color: '#c2073f',fontWeight: '500'}}> Choose File
     								<input 
                         type="file" 
                         id="File" 
                         size="60" 
                         onChange={e => this.handleImage(e)}
+
                       />
     							</label><br/>		                  	                  					
 							</div>							
