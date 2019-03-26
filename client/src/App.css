@@ -30,7 +30,10 @@ paraghraph/*.App {
     transform: rotate(360deg);
   }
 }*/
-
+.row{
+  margin-right: 0px;
+  margin-left: 0px;
+}
 
 
 

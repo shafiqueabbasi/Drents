@@ -5,7 +5,7 @@ class Heading2 extends Component {
 
 
     return (
-    	<div className="App">
+    	<div className="row App">
 	    		<div className="Heading">
 	      			<h1 className="headings" style={{fontFamily:'Stalemate cursive'}}>About Drent</h1>
 	      			<img src='./images/bar.png' style={{marginTop:'-1%'}}/>
