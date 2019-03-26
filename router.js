@@ -5,6 +5,7 @@ const getDresses = require('./controllers/getDresses');
 const getReview = require('./controllers/getreview');
 const checkout = require('./controllers/stripecheckout');
 const orderBooking = require('./controllers/orderbooking');
+const twiliMobileSms = require('./controllers/twilioSms');
 //const socialAuthenticationUser = require('./controller/')
 const passportService = require('./services/passport');
 const passport = require('passport');
@@ -29,6 +30,8 @@ module.exports = function(app){
   app.post('/getprofiledress', getprofileanddress.getdressProfile);
   app.post('/orderdetail', requireAuth, orderBooking.checkoutorder);
   app.post('/forgotpassword',Authentication.forgotPassword);
+  app.post('/changePassword',Authentication.changePassword);
+  app.post('/twiliosms',twiliMobileSms.twilioSms);
   //get routes
   app.get('/getdresses',getDresses.getdress);
   app.get('/getreview',getReview.getreview);

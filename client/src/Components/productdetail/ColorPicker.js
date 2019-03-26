@@ -35,12 +35,12 @@ export class Shareholder extends Component {
     render(){
 	  	return(
 	  		<div>
-	  			<div className="col-md-2 col-sm-4"><span className="input">
+	  			<div className="col-md-1 col-sm-4"><span className="input">
 	                <h3 style={{fontSize: '23px', color: '#c2073f'}}>
 	                    {this.props.label}
 	                </h3></span>
 	            </div>
-	            <div className="col-md-4 col-sm-8">
+	            <div className="col-md-5 col-sm-8">
 	                <div className="inputBox">
 	                    <div className="inputText"></div>
 	                    {this.props.value.map((shareholder, idx) => (
@@ -52,6 +52,7 @@ export class Shareholder extends Component {
 									value={shareholder.name}
 									id={this.props.id}
 									onChange={this.handleShareholderNameChange(idx)}
+                                    style={{border: 'none',borderBottom: '1px solid #c2073f'}}
 		                        />
 		                        <button
 			                        type="button"

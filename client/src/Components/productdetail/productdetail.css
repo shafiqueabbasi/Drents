@@ -19,7 +19,8 @@
 }
 .trello4{
 	font-family : Qwigley;
-	    margin-left: -7%;
+    margin-left: -7%;
+    margin-top: 10%;
 }
 .fly{
 	margin-left: 6%;
@@ -31,8 +32,8 @@
      text-align: center;
      border: 2px solid black;
      border-radius: 50%;
-     height: 75px;
-     width: 75px;
+     height: 70px;
+     width: 70px;
      display: inline-block;
      margin-left: 3%;
 }
@@ -56,6 +57,19 @@
 }
 .round{
 	display: inline-block;
+}
+.roundnround{
+    font-size: 12px;
+    color: black;
+}
+.roundnround2{
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: -2%;
+    margin-left: -3%;
+}
+.roundnround3{
+	margin-top: -12%;
 }
 .rental1{
 	font-family: Qwigley;
@@ -84,6 +98,38 @@
 	.trello2{
 		margin-left: 9%;
 	}
+	.bookedboo{
+		margin-top: -8%;
+		font-size: 16px;
+	}
+	.bookedbook{
+		width: 63%;
+	    border-radius: 50%;
+	    height: 75px;
+	        border: 3px solid #c2073f;
+	}
+	.run1{
+		border: none;
+		margin-top: 4px;
+	}
+	.run2{
+		border: none;
+		margin-top: 4px;
+	}
+	.bravoo{
+      	 width: 87%;
+	    background-color: #c2073f;
+	    padding: 0px;
+	    margin-left: 29px;
+	    margin-top: -3%;
+	}
+	.booked{
+      	width: 90%;
+	     background-color: yellow;
+	    padding: 0px;
+	    margin-left: 22px;
+	  	margin-top: -3%;
+	}
 }
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
 	.sams{
@@ -105,14 +151,46 @@
 	.trello2{
 		margin-left: 9%;
 	}
+	.bookedboo{
+		margin-top: -8%;
+		font-size: 16px;
+	}
+	.bookedbook{
+		width: 63%;
+	    border-radius: 50%;
+	    height: 75px;
+	        border: 3px solid #c2073f;
+	}
+	.run1{
+		border: none;
+		margin-top: 4px;
+	}
+	.run2{
+		border: none;
+		margin-top: 4px;
+	}
+	.bravoo{
+      	 width: 87%;
+	    background-color: #c2073f;
+	    padding: 0px;
+	    margin-left: 29px;
+	    margin-top: -3%;
+	}
+	.booked{
+      	width: 90%;
+	     background-color: yellow;
+	    padding: 0px;
+	    margin-left: 22px;
+	  	margin-top: -3%;
+	}
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
 	.sams{
 		border: 1px solid #c2073f;
-		height: 47px;
-	    margin-left: 15px;
-		padding: 0px;
-	    width: 105%;    
+	    height: 47px;
+	    margin-left: 8px;
+	    padding: 0px;
+	    width: 97%;  
 	}
 	.name{
 	    margin-top: 22px;
@@ -126,6 +204,40 @@
 	.trello2{
 		margin-left: 9%;
 	}
+		.bookedboo{
+		margin-top: -8%;
+		font-size: 16px;
+	}
+	.bookedbook{
+	    width: 76%;
+	    border-radius: 50%;
+	    height: 75px;
+	        border: 3px solid #c2073f;
+	}
+	.run1{
+		border: none;
+		margin-top: 4px;
+		width: 142%;
+	}
+	.run2{
+		border: none;
+		margin-top: 4px;
+		width: 142%;
+	}
+	.bravoo{
+      	width: 90%;
+	      background-color: #c2073f;
+	    padding: 0px;
+	    margin-left: 22px;
+	  margin-top: -3%;
+	}
+	.booked{
+      	width: 90%;
+	      background-color: yellow;
+	    padding: 0px;
+	    margin-left: 22px;
+	  margin-top: -3%;
+	}
 }
 @media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
 	.sams{
@@ -133,7 +245,7 @@
 		height: 47px;
 	    margin-left: 15px;
 		padding: 0px;
-	    width: 105%;    
+	    width: 92%;    
 	}
 	.name{
 	   margin-top: 24px;
@@ -145,12 +257,47 @@
 		margin-left: -14px;
 	}
 	.trello2{
-		margin-left: 9%;
+		margin-left: 8%;
+	}
+	.bookedboo{
+		margin-top: -8%;
+		font-size: 16px;
+	}
+	.bookedbook{
+		width: 63%;
+	    border-radius: 50%;
+	    height: 75px;
+	        border: 3px solid #c2073f;
+	}
+	.run1{
+		border: none;
+		margin-top: 4px;
+		width: 142%;
+	}
+	.run2{
+		border: none;
+		margin-top: 4px;
+		width: 142%;
+	}
+	.bravoo{
+  	    width: 87%;
+	    background-color: #c2073f;
+	    padding: 0px;
+	    margin-left: 29px;
+	    margin-top: -3%;
+	}
+	.booked{
+      	width: 87%;
+	    background-color: yellow;
+	    padding: 0px;
+	    margin-left: 29px;
+	    margin-top: -3%;
 	}
 }
 
 .sam{
-	fontSize: 20px;
+
+	font-size: 20px;
 	color: #c2073f; 
 	
 }
@@ -165,14 +312,12 @@
 	margin-top: 3px;
 	margin-left: 10px;
 }
-.bravoo{
-      width: 100%;
-      background-color: #c2073f; 
+.buttonsizeup{
+    margin-top: 3%;
+    font-size: 21px;
 }
-.booked{
-      width: 100%;
-      background-color: yellow; 
-}
+
+
 .dell{
 	text-align: right;
 }
