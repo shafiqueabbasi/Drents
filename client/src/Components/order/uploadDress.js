@@ -65,12 +65,10 @@ class UploadDress extends Component {
         const { productName, detailName, description, priceDay, bodyType, background,
               from, to, tags, weather, details, arr, fileList} = this.state,
         detail = details[0] === undefined ? 0 : details[0].name.length;  
-        console.log(fileList, 'fileListttttt')
         if(!!productName && !!detailName && !!description && !!priceDay && !!bodyType && 
             !!from && !!to && !!detail && !!arr.length && !!fileList.length && fileList.length === 3){
             this.setState({loader: true})
             this.funcForUpload()  
-            console.log('haan bhai ab set hai')    
         }else if(arr.length == 0){
             this.setState({sizeMsg: "Select atleast one", imgMsg: ''})
         }else if(fileList.length < 3){
@@ -249,7 +247,6 @@ render() {
     if(goDetail){
         return <Redirect to={{pathname: '/detail', state: {elem, data}}}/>
     }
-    console.log(this.props.user, 'userrrrrr')
 
     return (
       	<div>
@@ -257,11 +254,15 @@ render() {
       		<div className="container-fluid">
       			<div className="col-md-12">
       				<div className="row">
-      					<h1 style={{fontFamily: 'Qwigley',fontSize: '200%',color: '#c2073f'}}>Upload Dress</h1>
+                <div className="col-md-1"></div>
+                <div className="col-md-11">
+                  <h1 style={{fontFamily: 'Qwigley',fontSize: '200%',color: '#c2073f'}}>Upload Dress</h1>
+                </div>
+      					
       				</div>
       				<div className="row">
-                <div className="col-md-6">
-      						<TextInput 
+                <div className="col-md-6 row">
+      						{/*<TextInput2 
                       required
                       label="Product Name" 
                       id="productName" 
@@ -269,38 +270,60 @@ render() {
                       className="input"
                       Change={this.inputHandleChange}
                     />
+*/     }
+               <TextInput 
+                      label="Product Name" 
+                      id="productName" 
+                      className="input"
+                      col="col-md-4 col-sm-4"
+                      col2="col-md-8 col-sm-8"
+                      value={this.state.productName} 
+                      Change={this.inputHandleChange}
+                    />
                 </div>
-                <div className="col-md-6">    
+                <div className="col-md-6 row">    
       						<TextInput 
                       required
+                      
+
                       label="Detail Name" 
                       id="detailName" 
-                      value={this.state.detailName} 
                       className="input"
+                      col="col-md-4 col-sm-4"
+                      col2="col-md-8 col-sm-8"
+                      value={this.state.detailName} 
+
                       Change={this.inputHandleChange}
                     />
 				        </div>
             </div>
 					<div className="row">
-            <div className="col-md-6">
+            <div className="col-md-6 col-sm-12 row">
   						<Textarea 
                   required
                   title="Description" 
                   id="description"
                   value={this.state.description}
-                  rows="6"
-                  className="col-md-12 col-sm-10"
+                  rows="6" style={{border: 'none'}}
+                  className="col-md-12 col-sm-12"
                   maxLength="400" 
                   onChange={e => this.setState({description: e.target.value})}
                   style={{paddingLeft: '0px'}}/>
             </div>
-            <div className="col-md-6">                         					
+            <div className="col-md-6 row">                         					
               <TextInput 
                   required
+                  
+
+
                   label="Price / Day" 
-                  id="priceDay" 
-                  value={this.state.priceDay} 
-                  className="input"
+                      id="priceDay" 
+                      className="input"
+                      col="col-md-4 col-sm-4" 
+                      col2="col-md-8 col-sm-8"
+                      value={this.state.priceDay} 
+
+
                   pattern="^-?[0-9]\d*\.?\d*$"
                   Change={this.inputHandleChange}
                 />
@@ -308,18 +331,20 @@ render() {
 					</div>
 
           <div className="row" style={{marginTop: '20px'}}>
-            <div className="col-md-6">
+            <div className="col-md-6 col-sm-12 row">
               <SelectInput                   
                   label="Body Type" 
                   id="bodyType" 
                   value={this.state.bodyType} 
                   className="input"
+                  col="col-md-4 col-sm-4"
+                  col2="col-md-8 col-sm-8"  
                   options={this.state.typeArr}
                   Change={this.inputHandleChange}
                 />
             </div>    
-            <div className="col-md-2"><span className="input"><h3 style={{fontSize: '23px', color: '#c2073f'}}>Color Picker</h3></span></div>
-            <div className="col-md-4">
+            <div className="col-md-2 col-sm-3"><span className="input"><h3 style={{fontSize: '23px', color: '#c2073f'}}>Color Picker</h3></span></div>
+            <div className="col-md-4 col-sm-9">
               <div className="inputBox">
                   <div className="inputText"></div>
                   <SwatchesPicker 
@@ -333,12 +358,12 @@ render() {
           </div>
 
           <div className="row">
-            <div className="col-md-2"><span className="input">
+            <div className="col-md-2 col-sm-2"><span className="input">
                 <h3 style={{fontSize: '23px',color: '#c2073f'}}>
                     From
                 </h3></span>
             </div>
-            <div className="col-md-4">
+            <div className="col-md-4 col-sm-4" style={{marginTop: '1%'}}>
               <div className="inputBox">
                   <div className="inputText"></div>
                   <input 
@@ -350,12 +375,12 @@ render() {
                   />                
               </div>
             </div>
-            <div className="col-md-2"><span className="input">
+            <div className="col-md-2 col-sm-2"><span className="input">
                 <h3 style={{fontSize: '23px',color: '#c2073f'}}>
                     To
                 </h3></span>
             </div>
-            <div className="col-md-4">
+            <div className="col-md-4 col-sm-4" style={{marginTop: '1%'}}>
               <div className="inputBox">
                   <div className="inputText"></div>
                   <input 
@@ -382,6 +407,8 @@ render() {
                     id="weather" 
                     value={this.state.weather} 
                     className="input"
+                    col="col-md-4 col-sm-4"
+                    col2="col-md-8 col-sm-8"
                     options={["Cold Weather", "Warm Weather"]}
                     Change={this.inputHandleChange}
                 />

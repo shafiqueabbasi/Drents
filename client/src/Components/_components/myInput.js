@@ -109,12 +109,12 @@ export const Filter = props => {
 export const TextInput = props => {
     return(
         <div>
-            <div className={props.col}>
+            <div className={props.col}  style={{paddingRight: '0px'}}>
                 <span className="input">
-                    <h3 style={{color: '#c2073f'}}>{props.label}</h3>
+                    <h4 style={{color: '#c2073f', fontSize: '23px',marginTop: '17%'}}>{props.label}</h4>
                 </span>
             </div>
-            <div className={props.col2}>
+            <div className={props.col2} style={{padding: '0px'}}>
                 <div className="inputBox ">
                     <div className="inputText"></div>                    
                     <input 
@@ -134,7 +134,7 @@ export const TextInput = props => {
 export const SelectInput = props => {
     return(
         <div>
-            <label htmlFor={props.name} className={props.col}>
+            <label htmlFor={props.name} className={props.col}  style={{marginTop: '3%'}}>
                 <span className="input" style={{color: '#c2073f', fontWeight: '500'}}>
                     {props.label}
                 </span>
@@ -176,8 +176,8 @@ export const SelectInput = props => {
 export const Textarea = props => {
     return(
         <div className="col-md-12" style={props.style}>
-            <label htmlFor={props.name} className="col-md-2 col-sm-2" style={{color: '#c2073f'}}>{props.title}</label>
-            <div className="col-md-12 col-sm-4">
+            <label htmlFor={props.name} className="col-md-4 col-sm-3" style={{color: '#c2073f',fontWeight: '600'}}>{props.title}</label>
+            <div className="col-md-8 col-sm-9">
                 <textarea
                     required={props.required}
                     id={props.id}
@@ -187,7 +187,8 @@ export const Textarea = props => {
                     placeholder={props.placeholder} 
                     name={props.name} id={props.name} 
                     value={props.value} 
-                    onChange={props.onChange}>
+                    onChange={props.onChange}
+                    style={{border: 'none',borderBottom: '1px solid #c2073f'}}>
                 </textarea>
             </div>
         </div>

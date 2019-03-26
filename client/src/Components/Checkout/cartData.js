@@ -15,8 +15,8 @@ class CartData extends Component {
 		goTo: false
 	}
 
-	componentDidMount(){
-		const { finalArr } = this.props.location.state;
+	async componentDidMount(){
+		const finalArr  = JSON.parse(await localStorage.getItem('Cart'));
 		this.setState({ finalArr }, () => {
 			this.getData();
 		})
@@ -24,12 +24,18 @@ class CartData extends Component {
 
 	cancelOrder(e){
 		let { finalArr } = this.state;
-		finalArr = finalArr.filter((elem) => elem._id !== e._id)
+		finalArr = finalArr.filter((elem) => elem._id !== e._id);
 		this.setState({ finalArr }, () => {
 			this.getData();
 		});
 		this.props.updateCart(finalArr);
 		localStorage.setItem('Cart', JSON.stringify(finalArr));
+		this.updateStatus(e._id);		
+	}
+
+	async updateStatus(_id){
+		let obj = {_id, bookedFrom: '', bookedTo: '', status: 'Available'},
+		res = await HttpUtils.post('uploaddress', obj, this.props.user.token);
 	}
 
 	onSuccessCard = async(data) => {
@@ -40,7 +46,7 @@ class CartData extends Component {
 				userId: user._id,
 		        products: finalArr,
 		        email: user.email,
-		        name: user.name,
+		        name: user.username,
 		        date: moment().format('LL'),
 		        amount: finalPrice
 			},
@@ -69,7 +75,7 @@ class CartData extends Component {
 		const { finalArr } = this.state,
 		{ loggedIn, user } = this.props;
 		var price = 0;
-		finalArr.map((elem) => {
+		finalArr && finalArr.map((elem) => {
 			price += (+elem.priceDay) * (+elem.rentDay + 1)
 		})		
 		let tax = price * 1.48 / 100,
@@ -88,8 +94,9 @@ class CartData extends Component {
  
 	render() {
 		const { finalArr, paymentSuccess, msg, finalPrice, price, data, goTo } = this.state,
-		{ loggedIn, user } = this.props;
-
+		{ loggedIn, user } = this.props,
+		showButton = finalArr && finalArr.length < 1 ? true : loggedIn ? false : true;
+		console.log(showButton, 'ifff')
 		if(goTo){
 			return <Redirect to='/' />
 		}
@@ -101,7 +108,7 @@ class CartData extends Component {
 						<div className="row">
 							<div className="col-md-12 col-sm-12 chainbelt1"><span className="chainbelt">Your Cart</span></div>
 						</div>
-						{finalArr.map((elem, key) => {
+						{finalArr && finalArr.map((elem, key) => {
 							return (
 								<div>
 									<div className="row">
@@ -203,7 +210,7 @@ class CartData extends Component {
 						<div className="row">
 							<div className="col-md-12 col-sm-12 chainbelt1">
 								<button className="btn apex2" 
-									disabled={!loggedIn}
+									disabled={showButton}
 									data-toggle="modal" data-target="#stripeCard">
 									<span className="apex3">
 										CHECKOUT
@@ -250,7 +257,7 @@ class CartData extends Component {
 						<div className="row">
 							<div className="col-xs-12 chainbelt1"><span className="chainbelt">Your Cart</span></div>
 						</div>
-						{finalArr.map((elem, key) => {
+						{finalArr && finalArr.map((elem, key) => {
 							return (
 								<div>
 									<div className="row">

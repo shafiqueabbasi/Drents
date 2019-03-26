@@ -34,6 +34,7 @@ class UserProfile extends Component {
 			height: '',
 			userId: '',
 			_id: '',
+			rentals: []
         }
     }
 
@@ -45,13 +46,27 @@ class UserProfile extends Component {
 		let id = this.props.match.params.value,
 		data = await HttpUtils.post('getprofiledress', {userId: id}),
 		rate = 0;
+		console.log(data.orderhistory, 'orderhistoryyyyyyyyyyyyy')
 		if(data.code && data.code == 200){
 			let dressData = data.dress.length > 0 && data.dress.map((elem) => {
 				return elem._id;
 			}) 
-			let historyData = data.orderhistory.length > 0 && data.orderhistory.map((elem) => {
-				return elem.products;
+			let historyData = [],
+			rentals = data.dress.length > 0 && data.dress.filter((elem) => elem.status === 'Booked');
+			data.orderhistory.length > 0 && data.orderhistory.map((elem) => {
+				elem.products.map((el) => {
+					if(el.userId === this.props.user._id && el.stage === 'Completed'){
+						historyData.push({...el, ...{
+							amount: elem.amount,
+							date: elem.date,
+							buyerEmail: elem.email,
+							buyerName: elem.name,
+							buyerId: elem.userId
+						}})
+					}
+				});
 			})
+			console.log(data.dress, 'llllllllll')
 			for(var el in data.profile[0]){
 		        this.setState({ [el]: data.profile[0][el] })
 	        }
@@ -74,7 +89,8 @@ class UserProfile extends Component {
 				loading: false, 
 				dressData,
 				orderhistory,
-				userId: this.props.user._id 
+				userId: this.props.user._id,
+				rentals
 			});
 		}
 	}
@@ -152,7 +168,7 @@ class UserProfile extends Component {
     //-----------------cloudnary function end ------------------
 
 	render() {
-		const { profile, arr, review, dressData, orderhistory, updatedImage } = this.state,
+		const { profile, arr, review, dressData, orderhistory, updatedImage, rentals } = this.state,
 		{ user } = this.props,
 		id = this.props.match.params.value,
 		userName = profile.length > 0 && profile[0].firstName.length > 0 ? profile[0].firstName : user && user.username;
@@ -160,6 +176,7 @@ class UserProfile extends Component {
 		if(user && user._id && user._id === id){
 			userAvailable = true;
 		}
+		console.log(profile, arr, orderhistory, 'sab khuchhhhhh')
 		return(
 			<div>
 					<div>
@@ -299,7 +316,9 @@ class UserProfile extends Component {
 								</div>
 
 								<div className="col-md-2 col-sm-2">
-									<h3 style={{color: '#c2073f'}}>Orders</h3>
+									<Link to={{pathname: `/userdetail`, state: {goTo: 'currentRentals', rentals, orderhistory }}}>
+										<h3 style={{color: '#c2073f'}}>Orders</h3>
+									</Link>
 								</div>
 
 								<div className="col-md-3 col-sm-3"></div>
@@ -311,21 +330,48 @@ class UserProfile extends Component {
 								<div className="col-md-10 col-sm-9 col-xs-6"></div>
 								
 								<div className="col-md-2 hidden-sm hidden-xs">&emsp;&emsp;&nbsp;
-									<select style={{border: '1px solid #c2073f',width: '80%',background: 'none'}}>
-									  <option value="volvo">SORT BY</option>
-									  </select>
+									
+									<div class="dropdown">
+									    <button class="btn dropdown-toggle" type="button" data-toggle="dropdown"
+									      style={{background: '#ffffff', color: '#c2073f', borderRadius: '0', border: '1px solid #c2073f'}}>SORT BY &emsp;
+									      <span class="caret"></span></button>
+
+									    <ul class="dropdown-menu">
+									    	<li><a href="#">HTML</a></li>
+									    	<li><a href="#">CSS</a></li>
+									    	<li><a href="#">JavaScript</a></li>
+									    </ul>
+									</div>
+
+									
 								</div>
 
 								<div className="visible-sm col-sm-3">&emsp;&emsp;
-									<select style={{border: '1px solid #c2073f',width: '80%',backgroundColor: 'none'}}>
-									  <option value="volvo">SORT BY</option>
-									</select>
+									<div className="dropdown">
+									    <button class="btn dropdown-toggle" type="button" data-toggle="dropdown"
+									      style={{background: '#ffffff', color: '#c2073f', borderRadius: '0', border: '1px solid #c2073f'}}>SORT BY &emsp;
+									      <span class="caret"></span></button>
+
+									    <ul class="dropdown-menu">
+									    	<li><a href="#">HTML</a></li>
+									    	<li><a href="#">CSS</a></li>
+									    	<li><a href="#">JavaScript</a></li>
+									    </ul>
+									</div>
 								</div>
 
 								<div className="col-xs-6 visible-xs">
-									<select style={{border: '1px solid #c2073f',width: '80%',backgroundColor: 'none'}}>
-									  <option value="volvo">SORT BY</option>
-									</select>
+									<div class="dropdown">
+									    <button class="btn dropdown-toggle" type="button" data-toggle="dropdown"
+									      style={{background: '#ffffff', color: '#c2073f', borderRadius: '0', border: '1px solid #c2073f'}}>SORT BY &emsp;
+									      <span class="caret"></span></button>
+
+									    <ul class="dropdown-menu">
+									    	<li><a href="#">HTML</a></li>
+									    	<li><a href="#">CSS</a></li>
+									    	<li><a href="#">JavaScript</a></li>
+									    </ul>
+									</div>
 								</div>
 
 								

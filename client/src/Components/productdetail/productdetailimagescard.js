@@ -22,8 +22,7 @@
 
 	render() { 
  		const { data } = this.props;
- 			console.log(isTablet, 'ye tablet hai')
- 			console.log(isMobileOnly, 'ye mobile hai')
+
 		return( 
 			<div>
 				<div className="hidden-xs hidden-sm">
@@ -52,29 +51,29 @@
 				</div> 	
             	<br/><br/><br/>
             	<div className="visible-sm visible-xs">
-	            	<div className="container">
+
 	            		<div className="row">
 	            			<div className="col-xs-12 col-sm-12">
-	            				<img alt="" src={this.state.showImg} style={isTablet ? {width:"92%", height:"840px" , marginTop:"-13%"} : {width:"70%", height:"400px"}}/>
+	            				<img alt="" src={this.state.showImg} style={isTablet ? {width:"94%", height:"840px" , marginTop:"-13%"} : {width:"85%", height:"400px", marginTop:'-48%', marginLeft:'4%'}}/>
 	            			</div>
-	            		</div><br />
-	            		<div className="row" style={{margin:'0px'}}>	
-	            			{data.map((elem) => {
-								return (
-								<div className="col-sm-4 col-xs-4">
-									<img 
-										alt="" 
-										src={elem} 
-										style={{width:"100%", height:"230px"}} 
-										onClick={
-											() => this.setState({ showImg: elem })
-										}
-									/>
-								</div>
-								)
-							})}						
-						</div>
-					</div>	
+	            		</div>
+				<br />
+            		<div className="row" style={{margin:'0px'}}>	
+            			{data.map((elem) => {
+							return (
+							<div className="col-sm-4 col-xs-4">
+								<img 
+									alt="" 
+									src={elem} 
+									style={isTablet ? {height:"230px" , marginLeft:'-3%', width:'86%'} : {height:"70px" , width:'73%'}} 
+									onClick={
+										() => this.setState({ showImg: elem })
+									}
+								/>
+							</div>
+							)
+						})}						
+					</div>
 				</div>
 			</div>
     	);
