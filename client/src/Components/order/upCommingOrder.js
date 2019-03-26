@@ -12,9 +12,9 @@ class UpCommingOrder extends Component {
 						<div className="col-md-2">
 							<img alt="" src={elem.fileList[0]} style={{width: '117%'}}/>
 						</div>
-					
+
 						<div className="col-md-10">
-							
+
 								<div className="col-md-4">
 								<h1 style={{fontFamily: 'Qwigley',fontSize: '42px',color: '#c2o72f'}}>{elem.productName}</h1>
 								</div>
@@ -39,7 +39,7 @@ class UpCommingOrder extends Component {
 										</ul>
 									</div>
 								</div>
-							
+
 							<div className="col-md-12">
 								<h4>Size: {elem.sizes.join(", ")}</h4>
 								<h4>${elem.priceDay}</h4>
@@ -48,8 +48,8 @@ class UpCommingOrder extends Component {
 							<div className="col-md-12">
 								<br/><br/>
 							</div>
-								
-							
+
+
 							<div className="col-md-6">
 								<h4>${elem.priceDay} X {elem.rentDay} Days = ${elem.amount}</h4>
 								{/*<div className="row">
@@ -67,16 +67,16 @@ class UpCommingOrder extends Component {
 					</div>
 				)
     		})}
-			
+
 							{/*<---hidden-sm--->*/}
 			{rentals.map((elem) => {
-    			return (							
+    			return (
 					<div className="visible-sm ">
 						<div className="row">
 							<div className=" col-sm-4">
 								<img alt="" src={elem.fileList[0]} style={{width: '100%'}}/>
 							</div>
-					
+
 							<div className="col-sm-8">
 								<div className="row">
 									<div className="row col-sm-5">
@@ -135,7 +135,7 @@ class UpCommingOrder extends Component {
     		})}
 				{/*<---hidden-xs--->*/}
 			{rentals.map((elem) => {
-    			return (	
+    			return (
 					<div className="row">
 						<div className="visible-xs">
 							<div className="col-xs-2"></div>
@@ -210,7 +210,7 @@ class UpCommingOrder extends Component {
 				)
     		})}
 
-		
+
 		</div>
 
 

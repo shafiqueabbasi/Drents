@@ -36,6 +36,7 @@
     "react-color": "^2.17.0",
     "react-rating": "^1.6.2",
     "stripe": "^6.15.2",
+    "twilio": "^3.29.2",
     "underscore": "^1.9.1"
   },
   "devDependencies": {

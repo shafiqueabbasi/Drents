@@ -382,5 +382,9 @@ exports.reset = function(req, res, next){
           message: 'password reset link is invalid or has expired'
       })
     })
+}
 
+exports.changePassword = function(req, res, next){
+  console.log(req.params,'changing in logs');
+  //let token = req.params
 }
