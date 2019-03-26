@@ -114,7 +114,7 @@ export const TextInput = props => {
                     <h4 style={{color: '#c2073f', fontSize: '23px',marginTop: '17%'}}>{props.label}</h4>
                 </span>
             </div>
-            <div className={props.col2} style={{padding: '0px'}}>
+            <div className={props.col2} style={props.padding}>
                 <div className="inputBox ">
                     <div className="inputText"></div>                    
                     <input 
@@ -141,7 +141,7 @@ export const SelectInput = props => {
             </label>
             <div className={props.col2}>
                 <select required 
-                    className="col-md-12 col-sm-12"
+                    className="col-md-12 col-sm-12 row"
                     placeholder={props.placeholder} 
                     name={props.name} 
                     id={props.id} 
