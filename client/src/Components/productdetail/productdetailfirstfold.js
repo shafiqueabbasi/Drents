@@ -172,32 +172,35 @@ class Productdetailfirstfold extends Component {
                     		<Imagescard data={elem.fileList}/>
                     	</div>
 						<div className="col-md-5">{/*/*main col-md-5 right possion div deskstop*/}
-						    <div className="row">
-								 <font className="col-md-8" color="#c2073f"><h1 style={{fontFamily:"Qwigley",fontSize: "70px"}}>{elem.productName}</h1></font>								 
-								 <span className="col-md-4" style={{marginTop: "40px", fontFamily: "Qwigley", fontSize: "40px"}}>{elem.userName}</span>
-								 <p className="col-md-12">{elem.detailName}
-                                 </p>
+						    <div className="row" style={{marginLeft:'-5%'}}>
+								<div className="col-md-8">
+									 <font className="col-md-12" color="#c2073f"><h1 style={{fontFamily:"Qwigley",fontSize: "70px"}}>{elem.productName}</h1></font>
+									 <p className="col-md-12">{elem.detailName}</p>
+								</div>
+								<div className="col-md-4">
+									<span className="col-md-4" style={{marginTop: "40px", fontFamily: "Qwigley", fontSize: "40px"}}>{elem.userName}</span>
+								</div>									 
                             </div>{/* div close*/}
 							<div className="row">
 								<div className="col-md-12">
 									    <div className="col-md-4">
-									     	 <font color="#c2073f"><h1 style={{fontFamily :"Qwigley"}}>{elem.bodyType}</h1></font>
+									     	 <font color="#c2073f"><h1 className="trello4">{elem.bodyType}</h1></font>
 									    </div>{/*div close*/}
 									    <div className="col-md-2"></div>
 									    <div className="col-md-6" style={{marginTop: "18px"}}>
-									    	<Rate rate={this.state.averageRate} initialRating={this.state.averageRate} readonly classMd="col-md-8" classXS="col-md-4" />
+									    	<Rate rate={this.state.averageRate} initialRating={this.state.averageRate} readonly classMd="col-md-10" classXS="col-md-2" />
 		                       	 		</div>{/*Div close*/}
 			                    </div>{/*Div Close Col-md-12*/}
 							</div>{/*Row Close*/}
                             <div className="row">
                           		<div className="col-md-12">
-                          			<div className="col-md-3">
-                                    	<h3>${" " + elem.priceDay}</h3>
+                          			<div className="col-md-5">
+                                    	<p className="trello3">${" " + elem.priceDay}</p>
                           			</div>
-                          			<div className="col-md-3 name">
+                          			<div className="col-md-4 name">
                                     	<p><span className="hello">Rental Price</span></p>
                           			</div>
-                           			<div className="col-md-3">
+                           			<div className="col-md-2">
                                     	{/*empty div*/}
             						</div>
                           			<div className="col-md-3">
@@ -232,11 +235,10 @@ class Productdetailfirstfold extends Component {
 			        		/>*/}
 							<div className="row">
   								<div className="col-md-12 hidden-xs hidden-sm round">
-  									<div className="col-md-2"></div>
   									{elem.sizes && elem.sizes.map((el, key) => {
   										return(
   											<span key={key}>
-  												<div className="col-md-3 flu"><h3>{el}</h3></div>
+  												<div className="col-md-3 flu"><h5 className="aroundsize">{el}</h5></div>
   											</span>
   										)
   									})}
@@ -368,13 +370,13 @@ class Productdetailfirstfold extends Component {
                             	</div>
                             </div>*/}
                             <div className="row" style={{margin:'0px'}}>
-                            	<div className="sams col-md-12 col-xs-12 col-sm-12" style={{padding: '0px'}}>
+                            	<div className="sams col-md-12 col-xs-12 col-sm-12">
                             		{/*<div className="col-md-2">
 						                <h3 style={{fontSize: '12px'}}>
 						                    From
 						                </h3>
 						            </div>*/}
-						            <div className="col-md-5 col-sm-5">
+						            <div className="col-md-5 col-sm-5 trello1">
 						                  <input
 						                      required
 						                      readOnly={booked}
@@ -390,7 +392,7 @@ class Productdetailfirstfold extends Component {
 						                    To
 						                </h3>
 						            </div>*/}
-						            <div className="col-md-5 col-sm-5">
+						            <div className="col-md-5 col-sm-5 trello2">
 						                  <input
 						                      required
 						                      readOnly={booked}
@@ -398,7 +400,7 @@ class Productdetailfirstfold extends Component {
 						                      id="to"
 						                      value={to}
 						                      onChange={this.inputHandleChange}
-						                       style={{border:'none',marginTop:'4px', marginLeft:'11%'}}
+						                       style={{border:'none',marginTop:'4px'}}
 						                  />
 						            </div>
 						            <div className="col-md-1 col-sm-1"></div>
