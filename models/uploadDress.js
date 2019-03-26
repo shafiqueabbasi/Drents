@@ -21,7 +21,8 @@ const uploadDressSchema = new Schema({
   status: { type: String, default: 'Available'},
   bookedFrom:{ type:String },
   bookedTo:{ type:String },
-  stage: {type: String},
+  rentalStage: { type: String },
+  rentedStage: { type: String },
   userName: { type: String },  
   postedOn: { type: String }
 });

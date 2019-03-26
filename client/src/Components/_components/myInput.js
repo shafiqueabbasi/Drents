@@ -63,16 +63,16 @@ export const CircleSizes = props => {
 export const Rate = props => {
     return(
         <div className="row"> 
-            <Rating className={props.classMd ? props.classMd : "col-md-7" + "col-xs-8"}
+            <Rating className={props.classMd ? props.classMd : "col-md-7" + " col-xs-8"}
                 emptySymbol="glyphicon glyphicon-star-empty"
                 fullSymbol="glyphicon glyphicon-star"
                 initialRating={props.initialRating} 
                 readonly={props.readonly}
-                style={{color: 'yellow'}}
+                style={{color: 'yellow', fontSize:'17px' , marginLeft:'4%'}}
                 onChange={props.onChange}
             />
-            <div className={props.classXS ? props.classXS : "col-md-5" + "col-xs-4"}
-                style={{padding: '0'}}>
+            <div className={props.classXS ? props.classXS : "col-md-5" + " col-xs-4"}
+                style={{padding: '0' , marginTop:'-2%' , marginLeft:'-5%'}}>
                 <h5>{props.rate}</h5>
             </div>
         </div>
@@ -114,7 +114,7 @@ export const TextInput = props => {
                     <h4 style={{color: '#c2073f', fontSize: '23px',marginTop: '17%'}}>{props.label}</h4>
                 </span>
             </div>
-            <div className={props.col2} style={{padding: '0px'}}>
+            <div className={props.col2} style={props.padding}>
                 <div className="inputBox ">
                     <div className="inputText"></div>                    
                     <input 
@@ -188,7 +188,8 @@ export const Textarea = props => {
                     name={props.name} id={props.name} 
                     value={props.value} 
                     onChange={props.onChange}
-                    style={{border: 'none',borderBottom: '1px solid #c2073f'}}>
+                    style={{border: '1px solid #c2073f'}}
+                    >
                 </textarea>
             </div>
         </div>

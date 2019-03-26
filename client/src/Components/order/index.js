@@ -131,8 +131,8 @@ class Order extends Component {
 				     		</div>
 						</div>
 					</div>
-					{orderTabs[0].currentRentals && <UpCommingOrder {...this.props}/>}
-					{orderTabs[1].currentRented && <OrderHistory {...this.props}/>}
+					{orderTabs[0].currentRentals && <UpCommingOrder {...this.props} take={true}/>}
+					{orderTabs[1].currentRented && <UpCommingOrder {...this.props} take={false}/>}
                               {orderTabs[2].orderHis && <OrderHistory {...this.props}/>}
 					{arr[0].profile && <Profile {...this.props}/>}
 					{arr[1].uploadDress && <UploadDress {...this.props}/>}

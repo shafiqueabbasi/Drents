@@ -116,7 +116,13 @@ class Productdetailfirstfold extends Component {
 		{ from, to, arr } = this.state;
 		if(this.props.user){
 			let diffDays = this.getTotalDays(from, to),
-			obj = {...elem, ...{rentDay: diffDays}};
+			currentObj = {
+				rentDay: diffDays, 
+				bookedFrom: from, 
+				bookedTo: to, 
+				status: 'Booked'
+			},
+			obj = {...elem, ...currentObj};
 			arr.push(obj);
 			this.bookedFunc(arr, elem);
 			this.props.updateCart(arr);
@@ -175,11 +181,15 @@ class Productdetailfirstfold extends Component {
 						<div className="col-md-5">{/*/*main col-md-5 right possion div deskstop*/}
 						    <div className="row" style={{marginLeft:'-5%'}}>
 								<div className="col-md-8">
-									 <font className="col-md-12" color="#c2073f"><h1 style={{fontFamily:"Qwigley",fontSize: "70px"}}>{elem.productName}</h1></font>
-									 <p className="col-md-12">{elem.detailName}</p>
+									<font className="col-md-12" color="#c2073f"><h1 style={{fontFamily:"Qwigley",fontSize: "70px"}}>{elem.productName}</h1></font>
+									<p className="col-md-12 bookedboo">{elem.detailName}</p>
 								</div>
-								<div className="col-md-4">
-									<span className="col-md-4" style={{marginTop: "40px", fontFamily: "Qwigley", fontSize: "40px"}}>{elem.userName}</span>
+								<div className="col-md-4 roundnround2">
+									<img src="../images/admin1.jpg" className="bookedbook"/>
+									<span className="" style={{fontFamily: "Qwigley", fontSize: "32px"}}>{elem.userName}</span><br/>
+									<div className="roundnround3">	
+										<a href="#"><span className="roundnround">View Profile</span></a>										
+									</div>
 								</div>									 
                             </div>{/* div close*/}
 							<div className="row">
@@ -385,7 +395,7 @@ class Productdetailfirstfold extends Component {
 						                      id="from"
 						                      value={from}
 						                      onChange={this.inputHandleChange}
-					                       style={{border:'none',marginTop:'4px'}}
+					                       	 className="run1"
 						                  />
 						            </div>
 						            {/*<div className="col-md-2">
@@ -401,7 +411,7 @@ class Productdetailfirstfold extends Component {
 						                      id="to"
 						                      value={to}
 						                      onChange={this.inputHandleChange}
-						                       style={{border:'none',marginTop:'4px'}}
+						                      className="run2"
 						                  />
 						            </div>
 						            <div className="col-md-1 col-sm-1"></div>
@@ -417,14 +427,14 @@ class Productdetailfirstfold extends Component {
                             		className="btn bravoo"
                             		onClick={this.addToCart}
                         		>
-                            		<h1>Rent Now</h1>
+                            		<h3 className="buttonsizeup"><span style={{color:'white'}}>RENT NOW</span></h3>
                         		</button>
                             </div>}
                             {booked && <div className="row">
                             	<button type="button"
                             		className="btn booked"
                         		>
-                            		<h1>Booked</h1>
+                            		<h3 className="buttonsizeup">BOOKED</h3>
                         		</button>
                             </div>}
                             <div className="visible-sm visible-xs">

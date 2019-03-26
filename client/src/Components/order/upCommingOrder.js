@@ -1,12 +1,53 @@
 import React, { Component } from 'react';
 
 class UpCommingOrder extends Component {
-  render() {
-    const { rentals } = this.props.location.state;
-    console.log(rentals, 'rentalssssssssss')
-    return (
+	constructor(props){
+		super(props);
+		this.state = {
+			rentals: this.props.location.state.rentals,
+			rented: this.props.location.state.rented,
+			take: this.props.take,
+			buyer: ['Received', 'Returned'],
+	    	seller: ['Dispatched', 'Completed', 'Available'],
+		}
+	}
+
+	changeStatus(e, elem){
+		let { take, rentals, rented } = this.state;
+		if(take){
+			rentals = rentals.map((el) => {
+				console.log(el, 'elllllllll')
+				console.log(elem, 'elemmmmmmmmmmm')
+				if(elem._id === el._id){					
+					el.stage = e.target.innerText;	
+					return el;
+				}				
+				return el;						
+			})
+			console.log(rentals, 'rentalsssssss')
+			this.setState({ rentals });
+		}else {
+			rented = rented.map((el) => {
+				if(elem._id === el._id){
+					el.stage = e.target.innerText;	
+					return el;					
+				}				
+				return el;
+			})
+			this.setState({ rented });
+		}		
+	}
+
+	render() {
+	    const { rentals, rented, take } = this.state;
+	    console.log(rentals, 'rentalssssssssss')
+	    let arr = take ? rentals : rented,
+	    buyer = ['Received', 'Returned'],
+	    seller = ['Dispatched', 'Completed', 'Available'],
+	    status = take ? seller : buyer;   
+	    return (
     	<div>
-    		{rentals.map((elem) => {
+    		{arr.map((elem) => {
     			return (
     				<div className="row hidden-sm hidden-xs">
 						<div className="col-md-2">
@@ -29,13 +70,20 @@ class UpCommingOrder extends Component {
 								<div className="col-md-2" style={{paddingTop: '3%'}}>
 									<div className="dropdown" style={{textAlign: 'right'}}>
 										<button className="btn dropdown-toggle" type="button" data-toggle="dropdown"
-										  style={{background: '#ffffff', color: '#c2073f', borderRadius: '0', border: '1px solid #c2073f'}}>Status &emsp;&emsp;
+										  style={{background: '#ffffff', color: '#c2073f', borderRadius: '0', border: '1px solid #c2073f'}}>{elem.stage && elem.stage.length > 0 ? elem.stage : 'Status'} &emsp;&emsp;
 										  <span className="caret"></span></button>
 
 										<ul className="dropdown-menu">
-											<li><a href="#">HTML</a></li>
+											{status.map((el) => {
+												return (
+													<li onClick={(e) => this.changeStatus(e, elem)}>
+														<a>{el}</a>
+													</li>
+												)												
+											})}
+											{/*<li><a href="#">HTML</a></li>
 											<li><a href="#">CSS</a></li>
-											<li><a href="#">JavaScript</a></li>
+											<li><a href="#">JavaScript</a></li>*/}
 										</ul>
 									</div>
 								</div>
@@ -63,6 +111,13 @@ class UpCommingOrder extends Component {
 									</div>
 								</div>*/}
 							</div>
+						</div>
+						<div className="col-md-12 hidden-xs">
+							<div className="col-md-2"></div>
+							<div className="col-md-8">
+								<hr style={{borderTop:'2px solid #c2073f'}}/>
+							</div>
+							<div className="col-md-2"></div>
 						</div>
 					</div>
 				)
@@ -199,13 +254,13 @@ class UpCommingOrder extends Component {
 									</div>
 								</div>*/}
 							</div>
-							<div className="col-md-12 hidden-xs">
+							{/*<div className="col-md-12 hidden-xs">
 								<div className="col-md-2"></div>
 								<div className="col-md-8">
 									<hr style={{borderTop:'2px solid #c2073f'}}/>
 								</div>
 								<div className="col-md-2"></div>
-							</div>
+							</div>*/}
 					</div>
 				)
     		})}
@@ -216,7 +271,7 @@ class UpCommingOrder extends Component {
 
     );
 
-  }
+    }
 }
 
 export default UpCommingOrder;
