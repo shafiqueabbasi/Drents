@@ -29,6 +29,7 @@ module.exports = function(app){
   app.post('/getprofiledress', getprofileanddress.getdressProfile);
   app.post('/orderdetail', requireAuth, orderBooking.checkoutorder);
   app.post('/forgotpassword',Authentication.forgotPassword);
+  app.post('/changePassword',Authentication.changePassword);
   //get routes
   app.get('/getdresses',getDresses.getdress);
   app.get('/getreview',getReview.getreview);
