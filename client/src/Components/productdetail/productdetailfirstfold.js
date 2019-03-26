@@ -116,7 +116,13 @@ class Productdetailfirstfold extends Component {
 		{ from, to, arr } = this.state;
 		if(this.props.user){
 			let diffDays = this.getTotalDays(from, to),
-			obj = {...elem, ...{rentDay: diffDays}};
+			currentObj = {
+				rentDay: diffDays, 
+				bookedFrom: from, 
+				bookedTo: to, 
+				status: 'Booked'
+			},
+			obj = {...elem, ...currentObj};
 			arr.push(obj);
 			this.bookedFunc(arr, elem);
 			this.props.updateCart(arr);

@@ -34,7 +34,8 @@ class UserProfile extends Component {
 			height: '',
 			userId: '',
 			_id: '',
-			rentals: []
+			rentals: [],
+			rented: []
         }
     }
 
@@ -52,6 +53,7 @@ class UserProfile extends Component {
 				return elem._id;
 			}) 
 			let historyData = [],
+			rentedData = [],
 			rentals = data.dress.length > 0 && data.dress.filter((elem) => elem.status === 'Booked');
 			data.orderhistory.length > 0 && data.orderhistory.map((elem) => {
 				elem.products.map((el) => {
@@ -63,14 +65,19 @@ class UserProfile extends Component {
 							buyerName: elem.name,
 							buyerId: elem.userId
 						}})
-					}
+					}					
 				});
+				if(elem.userId === this.props.user._id){
+					rentedData.push(elem.products);
+				}
 			})
-			console.log(data.dress, 'llllllllll')
+			
 			for(var el in data.profile[0]){
 		        this.setState({ [el]: data.profile[0][el] })
 	        }
-			let orderhistory = _.flatten(historyData)
+			let orderhistory = _.flatten(historyData),
+			rented = _.flatten(rentedData);
+			console.log(rented, 'llllllllll')
 			if(dressData){
 				data.review.map((elem) => {
 					if(dressData.includes(elem.productId)){
@@ -90,7 +97,8 @@ class UserProfile extends Component {
 				dressData,
 				orderhistory,
 				userId: this.props.user._id,
-				rentals
+				rentals,
+				rented
 			});
 		}
 	}
@@ -168,7 +176,7 @@ class UserProfile extends Component {
     //-----------------cloudnary function end ------------------
 
 	render() {
-		const { profile, arr, review, dressData, orderhistory, updatedImage, rentals } = this.state,
+		const { profile, arr, review, dressData, orderhistory, updatedImage, rentals, rented } = this.state,
 		{ user } = this.props,
 		id = this.props.match.params.value,
 		userName = profile.length > 0 && profile[0].firstName.length > 0 ? profile[0].firstName : user && user.username;
@@ -316,7 +324,7 @@ class UserProfile extends Component {
 								</div>
 
 								<div className="col-md-2 col-sm-2">
-									<Link to={{pathname: `/userdetail`, state: {goTo: 'currentRentals', rentals, orderhistory }}}>
+									<Link to={{pathname: `/userdetail`, state: {goTo: 'currentRentals', rentals, rented, orderhistory }}}>
 										<h3 style={{color: '#c2073f'}}>Orders</h3>
 									</Link>
 								</div>
