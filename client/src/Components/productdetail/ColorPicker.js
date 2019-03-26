@@ -35,16 +35,16 @@ export class Shareholder extends Component {
     render(){
 	  	return(
 	  		<div>
-	  			<div className="col-md-2"><span className="input">
+	  			<div className="col-md-2 col-sm-4"><span className="input">
 	                <h3 style={{fontSize: '23px', color: '#c2073f'}}>
 	                    {this.props.label}
 	                </h3></span>
 	            </div>
-	            <div className="col-md-4">
+	            <div className="col-md-4 col-sm-8">
 	                <div className="inputBox">
 	                    <div className="inputText"></div>
 	                    {this.props.value.map((shareholder, idx) => (
-	                        <div className="shareholder">
+	                        <div className="shareholder" style={{marginTop: '1%'}}>
 		                        <input
 		                        	required={this.props.required}
 									type="text"
