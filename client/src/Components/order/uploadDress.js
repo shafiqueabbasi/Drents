@@ -277,6 +277,7 @@ render() {
                       className="input"
                       col="col-md-4 col-sm-4"
                       col2="col-md-8 col-sm-8"
+                     
                       value={this.state.productName} 
                       Change={this.inputHandleChange}
                     />
@@ -291,6 +292,7 @@ render() {
                       className="input"
                       col="col-md-4 col-sm-4"
                       col2="col-md-8 col-sm-8"
+                      padding={{padding: '0px'}}
                       value={this.state.detailName} 
 
                       Change={this.inputHandleChange}
@@ -306,6 +308,7 @@ render() {
                   value={this.state.description}
                   rows="6" style={{border: 'none'}}
                   className="col-md-12 col-sm-12"
+                  padding={{padding: '0px'}}
                   maxLength="400" 
                   onChange={e => this.setState({description: e.target.value})}
                   style={{paddingLeft: '0px'}}/>
@@ -313,15 +316,13 @@ render() {
             <div className="col-md-6 row">                         					
               <TextInput 
                   required
-                  
-
-
-                  label="Price / Day" 
-                      id="priceDay" 
-                      className="input"
-                      col="col-md-4 col-sm-4" 
-                      col2="col-md-8 col-sm-8"
-                      value={this.state.priceDay} 
+                    label="Price / Day" 
+                    id="priceDay" 
+                    className="input"
+                    col="col-md-4 col-sm-4" 
+                    col2="col-md-8 col-sm-8"
+                    padding={{padding: '0px'}}
+                    value={this.state.priceDay} 
 
 
                   pattern="^-?[0-9]\d*\.?\d*$"
@@ -338,7 +339,8 @@ render() {
                   value={this.state.bodyType} 
                   className="input"
                   col="col-md-4 col-sm-4"
-                  col2="col-md-8 col-sm-8"  
+                  col2="col-md-8 col-sm-8"
+                    
                   options={this.state.typeArr}
                   Change={this.inputHandleChange}
                 />
