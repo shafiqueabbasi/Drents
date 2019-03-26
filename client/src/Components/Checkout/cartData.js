@@ -46,7 +46,7 @@ class CartData extends Component {
 				userId: user._id,
 		        products: finalArr,
 		        email: user.email,
-		        name: user.name,
+		        name: user.username,
 		        date: moment().format('LL'),
 		        amount: finalPrice
 			},
@@ -75,7 +75,7 @@ class CartData extends Component {
 		const { finalArr } = this.state,
 		{ loggedIn, user } = this.props;
 		var price = 0;
-		finalArr.map((elem) => {
+		finalArr && finalArr.map((elem) => {
 			price += (+elem.priceDay) * (+elem.rentDay + 1)
 		})		
 		let tax = price * 1.48 / 100,
@@ -95,7 +95,7 @@ class CartData extends Component {
 	render() {
 		const { finalArr, paymentSuccess, msg, finalPrice, price, data, goTo } = this.state,
 		{ loggedIn, user } = this.props,
-		showButton = finalArr.length < 1 ? true : loggedIn ? false  : true;
+		showButton = finalArr && finalArr.length < 1 ? true : loggedIn ? false : true;
 		console.log(showButton, 'ifff')
 		if(goTo){
 			return <Redirect to='/' />
@@ -108,7 +108,7 @@ class CartData extends Component {
 						<div className="row">
 							<div className="col-md-12 col-sm-12 chainbelt1"><span className="chainbelt">Your Cart</span></div>
 						</div>
-						{finalArr.map((elem, key) => {
+						{finalArr && finalArr.map((elem, key) => {
 							return (
 								<div>
 									<div className="row">
@@ -257,7 +257,7 @@ class CartData extends Component {
 						<div className="row">
 							<div className="col-xs-12 chainbelt1"><span className="chainbelt">Your Cart</span></div>
 						</div>
-						{finalArr.map((elem, key) => {
+						{finalArr && finalArr.map((elem, key) => {
 							return (
 								<div>
 									<div className="row">

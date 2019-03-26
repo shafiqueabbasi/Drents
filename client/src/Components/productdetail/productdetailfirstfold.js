@@ -30,8 +30,8 @@ class Productdetailfirstfold extends Component {
 			this.setState({ arr });
 		}
 		this.setState({ 
-			to: elem.bookedTo,
-			from: elem.bookedFrom,
+			to: elem.bookedTo ? elem.bookedTo : '',
+			from: elem.bookedFrom ? elem.bookedFrom : '',
 			booked: elem.bookedFrom && elem.bookedTo ? true : false
 		});
 	}
@@ -48,6 +48,7 @@ class Productdetailfirstfold extends Component {
 		const { from, to } = this.state,
 		{ elem } = this.props.location.state,
 		self = e.target;
+		console.log(from, 'frommmmmmm')
 		this.setState({ [e.target.id]: e.target.value }, ()=> {
 			if((from.length > 0 && self.value.length > 0 && self.id == 'to')){
 				this.getDifference(from, self.value, (msg) => {

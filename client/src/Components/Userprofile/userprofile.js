@@ -34,6 +34,7 @@ class UserProfile extends Component {
 			height: '',
 			userId: '',
 			_id: '',
+			rentals: []
         }
     }
 
@@ -50,9 +51,22 @@ class UserProfile extends Component {
 			let dressData = data.dress.length > 0 && data.dress.map((elem) => {
 				return elem._id;
 			}) 
-			let historyData = data.orderhistory.length > 0 && data.orderhistory.map((elem) => {
-				return elem.products;
+			let historyData = [],
+			rentals = data.dress.length > 0 && data.dress.filter((elem) => elem.status === 'Booked');
+			data.orderhistory.length > 0 && data.orderhistory.map((elem) => {
+				elem.products.map((el) => {
+					if(el.userId === this.props.user._id && el.stage === 'Completed'){
+						historyData.push({...el, ...{
+							amount: elem.amount,
+							date: elem.date,
+							buyerEmail: elem.email,
+							buyerName: elem.name,
+							buyerId: elem.userId
+						}})
+					}
+				});
 			})
+			console.log(data.dress, 'llllllllll')
 			for(var el in data.profile[0]){
 		        this.setState({ [el]: data.profile[0][el] })
 	        }
@@ -75,7 +89,8 @@ class UserProfile extends Component {
 				loading: false, 
 				dressData,
 				orderhistory,
-				userId: this.props.user._id 
+				userId: this.props.user._id,
+				rentals
 			});
 		}
 	}
@@ -153,7 +168,7 @@ class UserProfile extends Component {
     //-----------------cloudnary function end ------------------
 
 	render() {
-		const { profile, arr, review, dressData, orderhistory, updatedImage } = this.state,
+		const { profile, arr, review, dressData, orderhistory, updatedImage, rentals } = this.state,
 		{ user } = this.props,
 		id = this.props.match.params.value,
 		userName = profile.length > 0 && profile[0].firstName.length > 0 ? profile[0].firstName : user && user.username;
@@ -301,7 +316,7 @@ class UserProfile extends Component {
 								</div>
 
 								<div className="col-md-2 col-sm-2">
-									<Link to={{pathname: `/userdetail`, state: {goTo: 'currentRentals', arr, orderhistory }}}>
+									<Link to={{pathname: `/userdetail`, state: {goTo: 'currentRentals', rentals, orderhistory }}}>
 										<h3 style={{color: '#c2073f'}}>Orders</h3>
 									</Link>
 								</div>
