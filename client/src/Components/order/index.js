@@ -28,7 +28,7 @@ class Order extends Component {
       componentDidMount(){
             const { goTo } = this.props.location.state,
             { arr, orderTabs } = this.state;
-            if(goTo == 'profile'){
+            if(goTo == 'profile' || goTo == 'uploadDress'){
                   this.renderWithState(goTo, arr);
             }else{
                   this.renderWithState(goTo, orderTabs);

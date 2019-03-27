@@ -19,7 +19,7 @@ class UpCommingOrder extends Component {
 				console.log(el, 'elllllllll')
 				console.log(elem, 'elemmmmmmmmmmm')
 				if(elem._id === el._id){					
-					el.stage = e.target.innerText;	
+					el.rentalStage = e.target.innerText;	
 					return el;
 				}				
 				return el;						
@@ -29,7 +29,7 @@ class UpCommingOrder extends Component {
 		}else {
 			rented = rented.map((el) => {
 				if(elem._id === el._id){
-					el.stage = e.target.innerText;	
+					el.rentedStage = e.target.innerText;	
 					return el;					
 				}				
 				return el;
@@ -39,15 +39,16 @@ class UpCommingOrder extends Component {
 	}
 
 	render() {
-	    const { rentals, rented, take } = this.state;
-	    console.log(rentals, 'rentalssssssssss')
+	    const { rentals, rented, take } = this.state;	    
 	    let arr = take ? rentals : rented,
 	    buyer = ['Received', 'Returned'],
 	    seller = ['Dispatched', 'Completed', 'Available'],
-	    status = take ? seller : buyer;   
+	    status = take ? seller : buyer;
+	    console.log(arr, 'rentalssssssssss')
 	    return (
     	<div>
     		{arr.map((elem) => {
+    			let stage = take ? elem.rentalStage : elem.rentedStage
     			return (
     				<div className="row hidden-sm hidden-xs">
 						<div className="col-md-2">
@@ -70,7 +71,7 @@ class UpCommingOrder extends Component {
 								<div className="col-md-2" style={{paddingTop: '3%'}}>
 									<div className="dropdown" style={{textAlign: 'right'}}>
 										<button className="btn dropdown-toggle" type="button" data-toggle="dropdown"
-										  style={{background: '#ffffff', color: '#c2073f', borderRadius: '0', border: '1px solid #c2073f'}}>{elem.stage && elem.stage.length > 0 ? elem.stage : 'Status'} &emsp;&emsp;
+										  style={{background: '#ffffff', color: '#c2073f', borderRadius: '0', border: '1px solid #c2073f'}}>{stage && stage.length > 0 ? stage : 'Status'} &emsp;&emsp;
 										  <span className="caret"></span></button>
 
 										<ul className="dropdown-menu">
@@ -99,7 +100,7 @@ class UpCommingOrder extends Component {
 
 
 							<div className="col-md-6">
-								<h4>${elem.priceDay} X {elem.rentDay} Days = ${elem.amount}</h4>
+								<h4>${elem.priceDay} X {+elem.rentDay +1} Days = ${elem.amount}</h4>
 								{/*<div className="row">
 									<div className="col-md-2">
 										<h4>Order</h4>
