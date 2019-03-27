@@ -65,6 +65,7 @@ class UserProfile extends Component {
 		rate = 0;
 		
 		if(data.code && data.code == 200){
+			console.log(data, 'profileeeeeee')
 			let dressData = data.dress.length > 0 && data.dress.map((elem) => {
 				return elem._id;
 			}), 
@@ -73,7 +74,8 @@ class UserProfile extends Component {
 			rentals = [];
 			data.orderhistory.length > 0 && data.orderhistory.map((elem) => {
 				elem.products.map((el) => {
-					let isUser = el.userId === this.props.user._id;
+					let isUser = el.userId === id;
+					console.log(isUser, 'isUserrrrrrrrrr')
 					if(isUser && ['Completed', 'Available'].includes(el.rentalStage)){
 						historyData.push({...el, ...{
 							amount: elem.amount,
@@ -87,7 +89,7 @@ class UserProfile extends Component {
 						rentals.push(el);
 					}					
 				});
-				if(elem.userId === this.props.user._id){
+				if(elem.userId === id){
 					rentedData.push(elem.products.filter((elem) => !['Completed', 'Available'].includes(elem.rentalStage)));
 					elem.products.map((el) => {
 						if(['Completed', 'Available'].includes(el.rentalStage)){
@@ -126,7 +128,7 @@ class UserProfile extends Component {
 				loading: false, 
 				dressData,
 				orderhistory,
-				userId: this.props.user._id,
+				userId: id,
 				rentals,
 				rented
 			});
