@@ -3,7 +3,7 @@ import  './mobileheader.css';
 import Login from '../login/SignIn';
 import { Link, withRouter } from "react-router-dom";
 import SignUp from '../login/SignUp';
-
+import './home.css';
 import { connect } from 'react-redux';
 import { userActions } from '../../_actions';
 
