@@ -9,6 +9,7 @@ import './productdetail.css';
 
 import { connect } from 'react-redux';
 import { HttpUtils } from  '../../Service/HttpUtils';
+import { Link } from "react-router-dom";
 
 class Productdetailfirstfold extends Component {
 	state = {
@@ -16,7 +17,8 @@ class Productdetailfirstfold extends Component {
 		from: '',
 		arr: [],
 		booked: false,
-		averageRate: ''
+		averageRate: '',
+		userImage: ''
 	}
 
 	async componentDidMount(){
@@ -34,7 +36,19 @@ class Productdetailfirstfold extends Component {
 			from: elem.bookedFrom ? elem.bookedFrom : '',
 			booked: elem.bookedFrom && elem.bookedTo ? true : false
 		});
-	}
+		this.getprofiledress(elem.userId);
+	}	
+
+	async getprofiledress(id){
+       let data = await HttpUtils.post('getprofiledress', {userId: id});
+       if(data.code && data.code == 200){
+           console.log(data.profile, 'profileeeeeeeeeeeeeeeee')
+           this.setState({
+               userImage: data.profile && data.profile[0] && data.profile[0].updatedImage.length > 0 ? data.profile[0].updatedImage : '',
+               userId: id
+           });
+       }
+    }
 
 	bookedFunc(arr, elem){
 		arr.map((el) => {
@@ -161,7 +175,7 @@ class Productdetailfirstfold extends Component {
 
 	render() {
 		const { elem, data } = this.props.location.state,
-		{ from, to, msg, booked } = this.state;
+		{ from, to, msg, booked, userImage, userId } = this.state;
 		console.log(this.props, 'propssssssss')
     	
 		return(
@@ -180,35 +194,38 @@ class Productdetailfirstfold extends Component {
                     	</div>
 						<div className="col-md-5">{/*/*main col-md-5 right possion div deskstop*/}
 						    <div className="row" style={{marginLeft:'-5%'}}>
-								<div className="col-md-8">
+						    	<div className="col-sm-1 visible-sm"></div>
+								<div className="col-md-8 col-sm-7">
 									<font className="col-md-12" color="#c2073f"><h1 style={{fontFamily:"Qwigley",fontSize: "70px"}}>{elem.productName}</h1></font>
 									<p className="col-md-12 bookedboo">{elem.detailName}</p>
 								</div>
-								<div className="col-md-4 roundnround2">
-									<img src="../images/admin1.jpg" className="bookedbook"/>
-									<span className="" style={{fontFamily: "Qwigley", fontSize: "32px"}}>{elem.userName}</span><br/>
-									<div className="roundnround3">	
-										<a href="#"><span className="roundnround">View Profile</span></a>										
-									</div>
+								<div className="col-md-4 col-sm-4 roundnround2">
+									<img src={userImage.length > 0 ? userImage : "../images/admin1.jpg"} className="bookedbook"/>
+                                   <span className="" style={{fontFamily: "Qwigley", fontSize: "32px"}}>{elem.userName}</span><br/>
+                                   <div className="roundnround3">
+                                       <Link to={`/profile/${userId}`}><span className="roundnround">View Profile</span></Link>
+                                   </div>
 								</div>									 
                             </div>{/* div close*/}
 							<div className="row">
 								<div className="col-md-12">
-									    <div className="col-md-4">
+										<div className="visible-sm col-sm-1"></div>
+									    <div className="col-md-4 col-sm-4">
 									     	 <font color="#c2073f"><h1 className="trello4">{elem.bodyType}</h1></font>
 									    </div>{/*div close*/}
-									    <div className="col-md-2"></div>
-									    <div className="col-md-6" style={{marginTop: "18px"}}>
+									    <div className="col-md-2 col-sm-2"></div>
+									    <div className="col-md-6 col-sm-5" style={{marginTop: "18px"}}>
 									    	<Rate rate={this.state.averageRate} initialRating={this.state.averageRate} readonly classMd="col-md-10" classXS="col-md-2" />
 		                       	 		</div>{/*Div close*/}
 			                    </div>{/*Div Close Col-md-12*/}
 							</div>{/*Row Close*/}
                             <div className="row">
                           		<div className="col-md-12">
-                          			<div className="col-md-5">
+                          			<div className="visible-sm col-sm-1"></div>
+                          			<div className="col-md-5 col-sm-5">
                                     	<p className="trello3">${" " + elem.priceDay}</p>
                           			</div>
-                          			<div className="col-md-4 name">
+                          			<div className="col-md-4 col-sm-4 name">
                                     	<p><span className="hello">Rental Price</span></p>
                           			</div>
                            			<div className="col-md-2">
@@ -301,8 +318,8 @@ class Productdetailfirstfold extends Component {
   									{elem.sizes && elem.sizes.map((el, key) => {
   										return(
   											<span key={key}>
-			                            		<div className="col-sm-2 fluu"><h3>{el}</h3></div>
-			                            		<div className="col-sm-2"></div>
+			                            		<div className="col-sm-2 fluu"><h4 style={{marginTop:'20px'}}>{el}</h4></div>
+			                            		<div className="col-sm-1"></div>
 		                            		</span>
   										)
   									})}
