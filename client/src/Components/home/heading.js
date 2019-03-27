@@ -18,7 +18,7 @@ class Heading extends Component {
       return <Redirect to={{pathname:'/product', state:this.state.filter}} />
     }
     return (
-      <div className="row App">
+      <div className="App">
       		<div className="container">
 	            <div className="Heading22">
 	                <h1 className="headings22">Choose Your Occasion</h1>

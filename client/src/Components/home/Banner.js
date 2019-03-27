@@ -10,7 +10,7 @@ class SecondPage extends Component {
       		<img alt="" src="./images/Banner.png" style={{width: '100%'}}/>
       	</div>
       </div>
-      <div className="App visible-xs" style={{marginTop:'14%'}}>
+      <div className="App visible-xs" style={{marginTop:'13%'}}>
       	<div className="Banner">
       		<img alt="" src="./images/mobile-banner.png" style={{width: '100%'}}/>
       	</div>
