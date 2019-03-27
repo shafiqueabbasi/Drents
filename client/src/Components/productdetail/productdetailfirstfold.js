@@ -42,9 +42,9 @@ class Productdetailfirstfold extends Component {
 	async getprofiledress(id){
        let data = await HttpUtils.post('getprofiledress', {userId: id});
        if(data.code && data.code == 200){
-           console.log(data.profile, 'profileeeeeeeeeeeeeeeee')
+           let profile = data.profile && data.profile[0] && data.profile[0].updatedImage && data.profile[0].updatedImage.length > 0;
            this.setState({
-               userImage: data.profile && data.profile[0] && data.profile[0].updatedImage.length > 0 ? data.profile[0].updatedImage : '',
+               userImage: profile ? data.profile[0].updatedImage : '',
                userId: id
            });
        }
@@ -62,7 +62,6 @@ class Productdetailfirstfold extends Component {
 		const { from, to } = this.state,
 		{ elem } = this.props.location.state,
 		self = e.target;
-		console.log(from, 'frommmmmmm')
 		this.setState({ [e.target.id]: e.target.value }, ()=> {
 			if((from.length > 0 && self.value.length > 0 && self.id == 'to')){
 				this.getDifference(from, self.value, (msg) => {
@@ -178,7 +177,6 @@ class Productdetailfirstfold extends Component {
 	render() {
 		const { elem, data } = this.props.location.state,
 		{ from, to, msg, booked, userImage, userId } = this.state;
-		console.log(this.props, 'propssssssss')
     	
 		return(
 			<div className="App">
