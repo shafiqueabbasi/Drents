@@ -42,7 +42,7 @@ class OrderHistory extends Component {
                       </div>
                       <div className="row">
                         <div className="col-md-6">
-                          <h4 style={{color: '#070707'}}>${elem.priceDay} X {elem.rentDay} Days = ${elem.amount}</h4>
+                          <h4 style={{color: '#070707'}}>${elem.priceDay} X {+elem.rentDay +1} Days = ${elem.amount}</h4>
                         </div>
                         <div className="col-md-6"></div>
                       </div>

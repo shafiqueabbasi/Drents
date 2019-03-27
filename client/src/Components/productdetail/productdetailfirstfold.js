@@ -120,7 +120,9 @@ class Productdetailfirstfold extends Component {
 				rentDay: diffDays, 
 				bookedFrom: from, 
 				bookedTo: to, 
-				status: 'Booked'
+				status: 'Booked',
+				rentalStage: '',
+				rentedStage: ''
 			},
 			obj = {...elem, ...currentObj};
 			arr.push(obj);

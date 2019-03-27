@@ -3,6 +3,7 @@ const User = require('../models/user');
 const moment = require('moment');
 const crypto = require('crypto');
 const socialAuthentication = require('../models/socialauthentication');
+const profile = require('../models/profile');
 const config = require('../config/config');
 const bcrypt = require('bcrypt-nodejs');
 const nodemailer = require('nodemailer');
@@ -199,6 +200,19 @@ exports.signup = function(req, res, next){
         username:user.firstname+''+user.lastname,
         _id:user._id
       });
+
+      const postProfileData = new profile({
+        firstName: firstname,
+        lastName: lastname,
+        email: email,
+        userId: user._id
+      });
+
+      postProfileData.save(function(err, doc){
+        // if(err){ return next(err); }
+        console.log(err, doc, 'docccccccccc')
+      });
+
     });
 }
 
