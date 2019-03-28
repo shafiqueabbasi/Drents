@@ -371,6 +371,7 @@ exports.reset = function(req, res, next){
   User.findOne({
       resetPasswordToken: req.query.resetPasswordToken
   }).then((user) => {
+    console.log(user);
       if(user == null){
           res.send({
               code: 403,
@@ -378,6 +379,7 @@ exports.reset = function(req, res, next){
           });
       }
       var time = moment(user.resetPasswordExpires).fromNow();
+      console.log(time,'timeeeeeeee')
       if (time == 'an hour ago' || time == "a few seconds ago" || (time.slice(time.indexOf(" ")+1, time.length)) == "minutes ago") {
           res.send({
               code: 200,
@@ -391,6 +393,7 @@ exports.reset = function(req, res, next){
           });
       }
   }).catch((err) => {
+    console.log(err,'catcherr')
       res.send({
           code: 404,
           message: 'password reset link is invalid or has expired'
@@ -398,7 +401,27 @@ exports.reset = function(req, res, next){
     })
 }
 
-exports.changePassword = function(req, res, next){
-  console.log(req.params,'changing in logs');
+exports.changePasswordLink = function(req, res, next){
+
+  User.findOne({"email":req.body.email},function(err,userData){
+    if(err){
+      res.send({
+        code:404,
+        msg:'user is not find with this email address'
+      })
+    }
+    if(userData){
+        userData.password = req.body.password;
+        userData.save(function(err,doc){
+            if(err){}
+            res.send({
+                code:200,
+                msg:'Password Changed'
+            })
+        })
+    }
+  })
+
+
   //let token = req.params
 }
