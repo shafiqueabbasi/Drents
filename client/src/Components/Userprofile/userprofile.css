@@ -226,3 +226,7 @@
 .pencilss{
 	color: gray !important;
 }
+
+.nothing {
+  display: none;
+}
