@@ -26,14 +26,15 @@ class ResetPassword extends Component {
             isLoading: true,
             error: false,
             msg: '',
-            goHome: false
+            goHome: false,
+            email:''
         };
     }
 
     async componentDidMount() {
         let response = await HttpUtils.get('reset?resetPasswordToken=' + this.props.match.params.token);
         console.log(response,'responssssssseeeeeeeeee');
-        if(response.code == 403){
+        if(response.code == 403 || response.code == 404){
             this.setState({
                 isLoading: false,
                 error: true,
@@ -71,11 +72,13 @@ class ResetPassword extends Component {
         const { email } = this.state;
         this.props.form.validateFieldsAndScroll(async (err, values) => {
             if(!err){
+
                 let obj = {
                     email,
                     password: values.confirm
                 },
-                response = await HttpUtils.post('resetpassword', obj);
+                response = await HttpUtils.post('passwordLink', obj);
+                console.log(response);
                 if(response.code == 200){
                     this.setState({ updated: true });
                 }
