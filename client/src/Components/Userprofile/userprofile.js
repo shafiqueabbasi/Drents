@@ -35,7 +35,23 @@ class UserProfile extends Component {
 			userId: '',
 			_id: '',
 			rentals: [],
-			rented: []
+			rented: [],
+			rentalTab: true,
+			rentedTab: false,
+			filterDresses: [
+				'SORT BY',
+				'Wedding',
+	            'Party',
+	            'Corporate',
+	            'Special Ocasion',
+	            'Family Dinner',
+	            'Causal',
+	            'Bridal',
+	            'Sami Formal',
+	            'Formal',
+	            'Heavy Formal',
+			],
+			filterKey: 'SORT BY'
         }
     }
 
@@ -47,28 +63,45 @@ class UserProfile extends Component {
 		let id = this.props.match.params.value,
 		data = await HttpUtils.post('getprofiledress', {userId: id}),
 		rate = 0;
-		console.log(data.orderhistory, 'orderhistoryyyyyyyyyyyyy')
+		
 		if(data.code && data.code == 200){
+			console.log(data, 'profileeeeeee')
 			let dressData = data.dress.length > 0 && data.dress.map((elem) => {
 				return elem._id;
-			}) 
-			let historyData = [],
+			}), 
+			historyData = [],
 			rentedData = [],
-			rentals = data.dress.length > 0 && data.dress.filter((elem) => elem.status === 'Booked');
+			rentals = [];
 			data.orderhistory.length > 0 && data.orderhistory.map((elem) => {
 				elem.products.map((el) => {
-					if(el.userId === this.props.user._id && el.stage === 'Completed'){
+					let isUser = el.userId === id;
+					console.log(isUser, 'isUserrrrrrrrrr')
+					if(isUser && ['Completed', 'Available'].includes(el.rentalStage)){
 						historyData.push({...el, ...{
 							amount: elem.amount,
 							date: elem.date,
 							buyerEmail: elem.email,
 							buyerName: elem.name,
 							buyerId: elem.userId
-						}})
+						}});
+					}
+					if(isUser && ['Completed', 'Dispatched', ''].includes(el.rentalStage)){
+						rentals.push(el);
 					}					
 				});
-				if(elem.userId === this.props.user._id){
-					rentedData.push(elem.products);
+				if(elem.userId === id){
+					rentedData.push(elem.products.filter((elem) => !['Completed', 'Available'].includes(elem.rentalStage)));
+					elem.products.map((el) => {
+						if(['Completed', 'Available'].includes(el.rentalStage)){
+							historyData.push({...el, ...{
+								amount: elem.amount,
+								date: elem.date,
+								buyerEmail: elem.email,
+								buyerName: elem.name,
+								buyerId: elem.userId
+							}});
+						}						
+					})					
 				}
 			})
 			
@@ -77,7 +110,6 @@ class UserProfile extends Component {
 	        }
 			let orderhistory = _.flatten(historyData),
 			rented = _.flatten(rentedData);
-			console.log(rented, 'llllllllll')
 			if(dressData){
 				data.review.map((elem) => {
 					if(dressData.includes(elem.productId)){
@@ -96,7 +128,7 @@ class UserProfile extends Component {
 				loading: false, 
 				dressData,
 				orderhistory,
-				userId: this.props.user._id,
+				userId: id,
 				rentals,
 				rented
 			});
@@ -173,18 +205,26 @@ class UserProfile extends Component {
         })
     }
 
+    filterFunc(arr, key){
+    	if(key === 'SORT BY') return arr;
+    	return arr.filter((elem) => elem.bodyType == key);
+    }
+
     //-----------------cloudnary function end ------------------
 
 	render() {
-		const { profile, arr, review, dressData, orderhistory, updatedImage, rentals, rented } = this.state,
+		const { profile, review, dressData, orderhistory, updatedImage, rentals, rented, rentalTab, rentedTab, filterDresses, filterKey } = this.state,
 		{ user } = this.props,
 		id = this.props.match.params.value,
 		userName = profile.length > 0 && profile[0].firstName.length > 0 ? profile[0].firstName : user && user.username;
-		let userAvailable = false;
+		let userAvailable = false,
+		arr = rentalTab ? rentals : rented,
+		boo = rentalTab ? true : false;
+		arr = this.filterFunc(arr, filterKey);
 		if(user && user._id && user._id === id){
 			userAvailable = true;
-		}
-		console.log(profile, arr, orderhistory, 'sab khuchhhhhh')
+		}		
+		
 		return(
 			<div>
 					<div>
@@ -192,7 +232,7 @@ class UserProfile extends Component {
 						<div className="container" style={{marginTop:'9%'}}>
 							<div className="row" style={{marginTop:'21px', marginLeft: '0px', marginRight:'0px'}}>
 								<div className="col-md-5 hidden-sm hidden-xs sami">
-									<img src="../images/admin1.jpg" alt="Avatar" className="image"/>
+									<img src={updatedImage .length > 0 ? updatedImage : "../images/admin1.jpg"} alt="Avatar" className="image"/>
 									<div className="overlay">
 										<label className="custom-file-upload samiLabel" style={{margin: '150px 0px 0px 150px'}}>
 											<input type="file" onChange={e => this.handleImage(e)}/>
@@ -316,17 +356,23 @@ class UserProfile extends Component {
 								<div className="col-md-3 col-sm-3"></div>
 
 								<div className="col-md-2 col-sm-2">
-									<h3 style={{color: '#c2073f'}}>Rentals</h3>
+									<h3 style={rentalTab ? {color: '#c2073f', textDecorationLine: 'underline'} : {color: '#c2073f'}} 
+										onClick={() => this.setState({ rentalTab: true, rentedTab: false, filterKey: 'SORT BY'})}>
+										Rentals
+									</h3>
+								</div>
+
+								<div className="col-md-2 col-sm-2" 
+									onClick={() => this.setState({ rentalTab: false, rentedTab: true, filterKey: 'SORT BY'})}>
+									<h3 style={rentedTab ? {color: '#c2073f', textDecorationLine: 'underline'} : {color: '#c2073f'}}>
+										Rented
+									</h3>
 								</div>
 
 								<div className="col-md-2 col-sm-2">
-									<h3 style={{color: '#c2073f'}}>Rented</h3>
-								</div>
-
-								<div className="col-md-2 col-sm-2">
-									<Link to={{pathname: `/userdetail`, state: {goTo: 'currentRentals', rentals, rented, orderhistory }}}>
+									{userAvailable && <Link to={{pathname: `/userdetail`, state: {goTo: 'currentRentals', rentals, rented, orderhistory }}}>
 										<h3 style={{color: '#c2073f'}}>Orders</h3>
-									</Link>
+									</Link>}
 								</div>
 
 								<div className="col-md-3 col-sm-3"></div>
@@ -335,26 +381,46 @@ class UserProfile extends Component {
 							<hr style={{border: '1px solid #c2073f'}}/>
 
 							<div className="row">
-								<div className="col-md-10 col-sm-9 col-xs-6"></div>
+								<div className="col-md-10 col-sm-9 col-xs-6">
+									<div className="row" style={{margin:'0px'}}>
+										{/*<div className="col-md-6"><h2>GALLERY</h2></div>*/}
+										{dressData && <Gallery
+											// label='Gallery'
+											showEditDelete={boo}
+											onDelete={this.onDelete}
+											data={arr}
+											profile={profile}
+											orderhistory={orderhistory}
+											userAvailable={userAvailable}
+										/>}
+										{!dressData && <div style={{textAlign: 'center'}}>not uploaded any dress</div>}
+									</div>
+								</div>
 								
-								<div className="col-md-2 hidden-sm hidden-xs">&emsp;&emsp;&nbsp;
+								{userAvailable && <div className="col-md-2 hidden-sm hidden-xs">&emsp;&emsp;&nbsp;
 									
-									<div class="dropdown">
+									<div class="dropdown" style={{marginTop: '-35px'}}>
 									    <button class="btn dropdown-toggle" type="button" data-toggle="dropdown"
-									      style={{background: '#ffffff', color: '#c2073f', borderRadius: '0', border: '1px solid #c2073f'}}>SORT BY &emsp;
+									      style={{background: '#ffffff', color: '#c2073f', borderRadius: '0', border: '1px solid #c2073f'}}>{filterKey} &emsp;
 									      <span class="caret"></span></button>
 
 									    <ul class="dropdown-menu">
-									    	<li><a href="#">HTML</a></li>
-									    	<li><a href="#">CSS</a></li>
-									    	<li><a href="#">JavaScript</a></li>
+									    	{filterDresses.map((el) => {
+									    		return (
+									    			<li onClick={() => this.setState({ filterKey: el})}>
+								    					<a>{el}</a>
+									    			</li>
+									    		)
+									    	})}
+									    	{/*<li><a href="#">CSS</a></li>
+									    	<li><a href="#">JavaScript</a></li>*/}
 									    </ul>
 									</div>
 
 									
-								</div>
+								</div>}
 
-								<div className="visible-sm col-sm-3">&emsp;&emsp;
+								{userAvailable && <div className="visible-sm col-sm-3">&emsp;&emsp;
 									<div className="dropdown">
 									    <button class="btn dropdown-toggle" type="button" data-toggle="dropdown"
 									      style={{background: '#ffffff', color: '#c2073f', borderRadius: '0', border: '1px solid #c2073f'}}>SORT BY &emsp;
@@ -366,9 +432,9 @@ class UserProfile extends Component {
 									    	<li><a href="#">JavaScript</a></li>
 									    </ul>
 									</div>
-								</div>
+								</div>}
 
-								<div className="col-xs-6 visible-xs">
+								{userAvailable && <div className="col-xs-6 visible-xs">
 									<div class="dropdown">
 									    <button class="btn dropdown-toggle" type="button" data-toggle="dropdown"
 									      style={{background: '#ffffff', color: '#c2073f', borderRadius: '0', border: '1px solid #c2073f'}}>SORT BY &emsp;
@@ -380,11 +446,13 @@ class UserProfile extends Component {
 									    	<li><a href="#">JavaScript</a></li>
 									    </ul>
 									</div>
-								</div>
+								</div>}
 
 								
 
 							</div>
+
+
 
 							<div className="row">
 								<div className="col-md-4"></div>
@@ -398,19 +466,7 @@ class UserProfile extends Component {
 							<hr style={{border: '1px solid #c2073f'}}/>
 						</div>
 
-						<div className="row" style={{margin:'0px'}}>
-							{/*<div className="col-md-6"><h2>GALLERY</h2></div>*/}
-							{dressData && <Gallery
-								label='Gallery'
-								showEditDelete={true}
-								onDelete={this.onDelete}
-								data={arr}
-								profile={profile}
-								orderhistory={orderhistory}
-								userAvailable={userAvailable}
-							/>}
-							{!dressData && <div style={{textAlign: 'center'}}>not uploaded any dress</div>}
-						</div>
+						
 					</div>
 			</div>
     	);

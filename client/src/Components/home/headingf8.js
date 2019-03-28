@@ -46,7 +46,7 @@ class Headingf8 extends Component {
     						<a href="#"><img src="../images/Drent-logo-white.png" style={{width: '75%'}}/></a>
     					</div>
                         <div className="row">
-                <div className="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center"style={{color: '#ffffff',marginTop:'-22px'}}>
+                <div className="col-xs-12 col-sm-12 col-md-12 mt-2 "style={{textAlign:'center',color: '#ffffff',marginTop:'-22px'}}>
                     <p className="h6 text-white">© Copy All right Reversed.<a className="text-green ml-2" href="https://www.krlcreatives.com" target="_blank">Drent</a></p>
                 </div>
 
