@@ -38,6 +38,7 @@ module.exports = function(app){
   app.get('/key',checkout.getApiKey);
   app.get('/verify',Authentication.verifyAccount);
   app.get('/reset',Authentication.reset);
+  app.post('/passwordLink',Authentication.changePasswordLink);
 
   //app.get('/getprofile',requireAuth, getprofile.getProfile)
 }
