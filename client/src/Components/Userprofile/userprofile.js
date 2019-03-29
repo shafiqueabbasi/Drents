@@ -253,7 +253,7 @@ class UserProfile extends Component {
 						{this.state.loading && <div class="loading">Loading&#8230;</div>}
 						<div className="container" style={{marginTop:'9%'}}>
 							<div className="row" style={{marginTop:'21px', marginLeft: '0px', marginRight:'0px'}}>
-								<div className="col-md-5 hidden-sm hidden-xs sami">
+								<div className="col-md-5 col-lg-5 hidden-sm hidden-xs sami">
 									<img src={updatedImage .length > 0 ? updatedImage : "../images/admin1.jpg"} alt="Avatar" className="image"/>
 									<div className={userAvailable ? "overlay" : 'nothing'}>
 										<label className="custom-file-upload samiLabel" style={{margin: '150px 0px 0px 150px'}}>
@@ -263,7 +263,7 @@ class UserProfile extends Component {
 										</label>
 									</div>
 								</div>
-
+								<div className="col-md-1 col-lg-1 hidden-sm hidden-xs"></div>	
 								<div className="visible-sm col-sm-5 hidden-xs sami_1" style={{marginTop: '6%'}}>
 									<img src="../images/admin1.jpg" alt="Avatar" className="image_1"/>
 									<div className={userAvailable ? "overlay_1" : 'nothing'} style={{left: '15px', width: '100%'}}>
@@ -286,7 +286,7 @@ class UserProfile extends Component {
 									</div>
 								</div>
 
-								<div className="col-md-7 col-sm-7 col-xs-12 rovil3">
+								<div className="col-md-6 col-lg-7 col-sm-7 col-xs-12 rovil3">
 									<div className="row" style={{marginRight:'0px',marginLeft: '0px'}}>
 										<div className="col-md-5 hidden-sm hidden-xs" style={{paddingLeft: '0px'}}>
 											<h2><span className="rovil2">{userName}</span></h2>
