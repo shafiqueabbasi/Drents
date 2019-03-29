@@ -14,7 +14,12 @@ class Headingf8 extends Component {
     }
 
   render() {
-
+    const { location } = this.props;
+    let str = location.pathname;
+    if(str.slice(str.indexOf("/") + 1, str.indexOf("/", 1)) == 'reset'){
+        return null;
+    }
+    
     return (
     	<div>
     		<div className="hidden-xs">

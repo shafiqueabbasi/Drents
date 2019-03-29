@@ -111,6 +111,7 @@ class UploadDress extends Component {
             fileList: [...imagesOne, ...imagesTwo],
             userId: this.props.user._id,
             userName: this.props.user.username,
+            userEmail: this.props.user.email,
             postedOn: moment().format('LL'),
             _id
         }
@@ -247,6 +248,7 @@ render() {
     if(goDetail){
         return <Redirect to={{pathname: '/detail', state: {elem, data}}}/>
     }
+    console.log(this.props.user, 'userrrrrrrrrrrrr')
 
     return (
       	<div>

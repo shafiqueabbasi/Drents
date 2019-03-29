@@ -14,7 +14,6 @@ class UserProfile extends Component {
 	constructor(props) {
         super(props);
         this.state = {
-        	arr : [],
         	profile: [],
         	loading: true,
         	updatedImage: '',
@@ -144,12 +143,11 @@ class UserProfile extends Component {
 				this.props.updateFooter(true)
 			}	
 			this.setState({ 
-				arr: data.dress, 
 				profile: data.profile, 
 				review: rate, 
 				loading: false, 
 				dressData,
-				orderhistory,
+				orderhistory: data.orderhistory,
 				userId: id,
 				rentals,
 				rented
@@ -314,7 +312,7 @@ class UserProfile extends Component {
 
 										<div className="col-md-2 hidden-sm hidden-xs rovil6">
 											{userAvailable && <h4>
-												<Link to={{pathname: `/userdetail`, state: {goTo: 'profile', profile, arr, orderhistory }}}>
+												<Link to={{pathname: `/userdetail`, state: { goTo: 'profile', profile }}}>
 													<i className="glyphicon glyphicon-pencil pencilss">
 														<p style={{fontSize: '15px', color: 'gray'}}>Edit</p>
 													</i>
@@ -324,7 +322,7 @@ class UserProfile extends Component {
 
 										<div className="col-sm-2 visible-sm" style={{margin: '0px 0px 0px -135px'}}>
 											{userAvailable && <h4>
-												<Link to={{pathname: `/userdetail`, state: {goTo: 'profile', profile, arr, orderhistory }}}>
+												<Link to={{pathname: `/userdetail`, state: { goTo: 'profile', profile }}}>
 													<i className="glyphicon glyphicon-pencil pencilss">
 														<p style={{fontSize: '15px', color: 'gray'}}>Edit</p>
 													</i>
@@ -334,7 +332,7 @@ class UserProfile extends Component {
 
 										<div className="visible-xs rovil6" style={{paddingLeft: '0px'}}>
 											{userAvailable && <h4>
-												<Link to={{pathname: `/userdetail`, state: {goTo: 'profile', profile, arr, orderhistory }}}>
+												<Link to={{pathname: `/userdetail`, state: { goTo: 'profile', profile }}}>
 													<i className="glyphicon glyphicon-pencil pencilss">
 														<p style={{fontSize: '15px', color: 'gray'}}>Edit</p>
 													</i>
@@ -392,7 +390,7 @@ class UserProfile extends Component {
 								</div>
 
 								<div className="col-md-2 col-sm-2">
-									{userAvailable && <Link to={{pathname: `/userdetail`, state: {goTo: 'currentRentals', rentals, rented, orderhistory }}}>
+									{userAvailable && <Link to={{pathname: `/userdetail`, state: {goTo: 'currentRentals', orderhistory, id }}}>
 										<h3 style={{color: '#c2073f'}}>Orders</h3>
 									</Link>}
 								</div>
@@ -412,7 +410,6 @@ class UserProfile extends Component {
 											onDelete={this.onDelete}
 											data={arr}
 											profile={profile}
-											orderhistory={orderhistory}
 											userAvailable={userAvailable}
 										/>}
 										{!dressData && <div style={{textAlign: 'center'}}>not uploaded any dress</div>}

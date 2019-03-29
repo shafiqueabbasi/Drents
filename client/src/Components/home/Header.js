@@ -36,11 +36,16 @@ class FirstPage extends Component {
   }
 
   render() {
-      const { loggedIn, arr, user } = this.props,
+      const { loggedIn, arr, user, location } = this.props,
       { arrCart } = this.state;
       let finalArr = arr.length > 0 ? arr : arrCart,
       userId = user && user._id ? user._id : '';
-      
+      console.log(this.props, 'bhai jaaannnn bhai jaannn')
+      let str = location.pathname;
+      if(str.slice(str.indexOf("/") + 1, str.indexOf("/", 1)) == 'reset'){
+        return null;
+      }
+
       return (
         <div>
         	<div className="nav navbar navbar-fixed-top bgc">
