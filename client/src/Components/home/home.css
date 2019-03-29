@@ -1,1 +1,24 @@
 
+@media only screen and (min-device-width : 360px) and (max-device-width : 660px){
+	.panel2how{
+		    width: 100%;
+    		margin-top: 3%;
+	}
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
+	.panel2how{
+		     width: 100%;
+    		margin-top: -10%;	}
+}
+@media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
+	.panel2how{
+		     width: 100%;
+    		margin-top: -10%;
+	}
+}
+@media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
+	.panel2how{
+		    width: 100%;
+    		margin-top: -10%;
+	}
+}

@@ -81,9 +81,9 @@ export const Rate = props => {
 
 export const ButtonComponent = props => {
     return(
-        <div className="col-md-2">
-            <button className="btn btn-danger btn-lg col-md-12" onClick={props.onClick}>
-                <h2 style={{margin: '0',fontFamily: 'Qwigley'}}>
+        <div className="col-md-2" style={{textAlign: 'center'}}>
+            <button className="btn btn-danger btn-lg col-md-12 morebtn" onClick={props.onClick}>
+                <h2 style={{margin: '5px',fontFamily: 'Qwigley'}}>
                     {props.label}
                 </h2>
             </button>

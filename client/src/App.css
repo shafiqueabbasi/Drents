@@ -78,7 +78,6 @@ paraghraph/*.App {
 .headings{
  color: #c2073f;
     font-family: 'Sacramento', cursive !important;
-    font-size: 50px;
     margin-bottom: -9px;
 }
 .img-circle{
@@ -213,6 +212,40 @@ paraghraph/*.App {
 .border_custom{
   border:1px solid gray !important;
 
+}
+
+
+@media only screen and (min-device-width : 360px) and (max-device-width : 660px){
+  .morebtn{
+          padding: 0px;
+          border-radius: 15px;
+          width: 90%;
+          float: right;
+  }
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
+  .morebtn{
+         padding: 0px;
+    border-radius: 15px;
+    width: 22%;
+    float: left;
+    margin-left: 5%;
+  }
+}
+@media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
+  .morebtn{
+             padding: 0px;
+          border-radius: 15px;
+          width: 90%;
+          margin-left: 45%;
+  }
+}
+@media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
+  .morebtn{
+         border-radius: 15px;
+         width: 90%;
+          margin-left: 31%;
+  } 
 }
 
 
