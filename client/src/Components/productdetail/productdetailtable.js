@@ -49,7 +49,7 @@ import React, { Component } from 'react';
 								,24<sup>o</sup> Waist and 33<sup>o</sup> hips</p>    
 					</div>
 					<div className="visible-sm visible-xs">
-						<div className="container">
+						<div className="container tablemargin">
 						<h4>Measurements</h4>
                     	<div style={{overflowX:'auto'}}>
                     		<table className="table table-bordered" style={{width:'84%'}}>
