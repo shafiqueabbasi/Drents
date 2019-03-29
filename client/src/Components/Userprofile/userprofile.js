@@ -59,13 +59,18 @@ class UserProfile extends Component {
     	this.fetchUserData();
     }
 
+    componentDidUpdate(prevProps, prevState){
+    	if(this.props.match.params.value !== prevProps.match.params.value){
+    		this.fetchUserData();
+    	}
+    }
+
 	async fetchUserData(){
 		let id = this.props.match.params.value,
 		data = await HttpUtils.post('getprofiledress', {userId: id}),
 		rate = 0;
 		
 		if(data.code && data.code == 200){
-			console.log(data, 'profileeeeeee')
 			let dressData = data.dress.length > 0 && data.dress.map((elem) => {
 				return elem._id;
 			}), 
@@ -75,22 +80,29 @@ class UserProfile extends Component {
 			data.orderhistory.length > 0 && data.orderhistory.map((elem) => {
 				elem.products.map((el) => {
 					let isUser = el.userId === id;
-					console.log(isUser, 'isUserrrrrrrrrr')
 					if(isUser && ['Completed', 'Available'].includes(el.rentalStage)){
 						historyData.push({...el, ...{
 							amount: elem.amount,
 							date: elem.date,
 							buyerEmail: elem.email,
 							buyerName: elem.name,
-							buyerId: elem.userId
+							buyerId: elem.userId,
+							dataId: elem._id
 						}});
 					}
 					if(isUser && ['Completed', 'Dispatched', ''].includes(el.rentalStage)){
-						rentals.push(el);
+						rentals.push({...el, ...{
+							amount: elem.amount,
+							date: elem.date,
+							buyerEmail: elem.email,
+							buyerName: elem.name,
+							buyerId: elem.userId,
+							dataId: elem._id
+						}});
 					}					
 				});
 				if(elem.userId === id){
-					rentedData.push(elem.products.filter((elem) => !['Completed', 'Available'].includes(elem.rentalStage)));
+					// rentedData.push(elem.products.filter((elem) => !['Completed', 'Available'].includes(elem.rentalStage)));
 					elem.products.map((el) => {
 						if(['Completed', 'Available'].includes(el.rentalStage)){
 							historyData.push({...el, ...{
@@ -98,7 +110,17 @@ class UserProfile extends Component {
 								date: elem.date,
 								buyerEmail: elem.email,
 								buyerName: elem.name,
-								buyerId: elem.userId
+								buyerId: elem.userId,
+								dataId: elem._id
+							}});
+						}else if(!['Completed', 'Available'].includes(el.rentalStage)){
+							rentedData.push({...el, ...{
+								amount: elem.amount,
+								date: elem.date,
+								buyerEmail: elem.email,
+								buyerName: elem.name,
+								buyerId: elem.userId,
+								dataId: elem._id
 							}});
 						}						
 					})					
@@ -233,7 +255,7 @@ class UserProfile extends Component {
 							<div className="row" style={{marginTop:'21px', marginLeft: '0px', marginRight:'0px'}}>
 								<div className="col-md-5 hidden-sm hidden-xs sami">
 									<img src={updatedImage .length > 0 ? updatedImage : "../images/admin1.jpg"} alt="Avatar" className="image"/>
-									<div className="overlay">
+									<div className={userAvailable ? "overlay" : 'nothing'}>
 										<label className="custom-file-upload samiLabel" style={{margin: '150px 0px 0px 150px'}}>
 											<input type="file" onChange={e => this.handleImage(e)}/>
 											<i class="fas fa-camera" style={{fontSize:'20px',padding: '0 22px 0', cursor: 'pointer'}}></i><br/>
@@ -244,7 +266,7 @@ class UserProfile extends Component {
 
 								<div className="visible-sm col-sm-5 hidden-xs sami_1" style={{marginTop: '6%'}}>
 									<img src="../images/admin1.jpg" alt="Avatar" className="image_1"/>
-									<div className="overlay_1" style={{left: '15px', width: '100%'}}>
+									<div className={userAvailable ? "overlay_1" : 'nothing'} style={{left: '15px', width: '100%'}}>
 										<label className="custom-file-upload samiLabel_1" style={{padding: '0 36%',marginTop:'40%'}}>
 											<input type="file" onChange={e => this.handleImage(e)}/>
 											<i class="fas fa-camera" style={{fontSize:'20px',padding: '0 22px 0', cursor: 'pointer'}}></i><br/>
@@ -255,7 +277,7 @@ class UserProfile extends Component {
 
 								<div className="visible-xs sami_2">
 									<img src="../images/admin1.jpg" alt="Avatar" className="image_2"/>
-									<div className="overlay_2">
+									<div className={userAvailable ? "overlay_2" : 'nothing'}>
 										<label className="custom-file-upload samiLabel_2" style={{margin: '10px 0',padding: '37%'}}>
 											<input type="file" onChange={e => this.handleImage(e)}/>
 											<i class="fas fa-camera" style={{fontSize:'20px', cursor: 'pointer'}}></i><br/>

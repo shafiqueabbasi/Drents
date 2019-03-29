@@ -54,7 +54,6 @@ class Order extends Component {
   	render() {
             const { arr, orderTabs } = this.state,
             { goTo } = this.props.location.state;
-            console.log(arr, orderTabs, 'hello brotherrrr')
 
           return (
               <div>
