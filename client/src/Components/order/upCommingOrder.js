@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { HttpUtils } from  '../../Service/HttpUtils';
 
 class UpCommingOrder extends Component {
 	constructor(props){
@@ -12,28 +13,42 @@ class UpCommingOrder extends Component {
 		}
 	}
 
-	changeStatus(e, elem){
+	async changeStatus(e, elem){
 		let { take, rentals, rented } = this.state;
 		if(take){
+			let obj = {}
 			rentals = rentals.map((el) => {
-				console.log(el, 'elllllllll')
-				console.log(elem, 'elemmmmmmmmmmm')
 				if(elem._id === el._id){					
-					el.rentalStage = e.target.innerText;	
+					el.rentalStage = e.target.innerText;
+					obj = {
+						dataId: el.dataId,
+						productId: el._id,
+						rentalStage: el.rentalStage,
+						rentedStage: el.rentedStage
+					};	
 					return el;
 				}				
 				return el;						
-			})
-			console.log(rentals, 'rentalsssssss')
+			})			
+
+			let statusRental = await HttpUtils.post('twiliosms', obj);
 			this.setState({ rentals });
 		}else {
+			let obj = {}
 			rented = rented.map((el) => {
 				if(elem._id === el._id){
 					el.rentedStage = e.target.innerText;	
+					obj = {
+						dataId: el.dataId,
+						productId: el._id,
+						rentalStage: el.rentalStage,
+						rentedStage: el.rentedStage
+					};
 					return el;					
 				}				
 				return el;
 			})
+			let statusRental = await HttpUtils.post('twiliosms', obj);
 			this.setState({ rented });
 		}		
 	}
@@ -44,7 +59,7 @@ class UpCommingOrder extends Component {
 	    buyer = ['Received', 'Returned'],
 	    seller = ['Dispatched', 'Completed', 'Available'],
 	    status = take ? seller : buyer;
-	    console.log(arr, 'rentalssssssssss')
+	    
 	    return (
     	<div>
     		{arr.map((elem) => {

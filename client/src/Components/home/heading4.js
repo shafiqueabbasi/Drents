@@ -17,7 +17,7 @@ class Heading4 extends Component {
 	    				<div className="row" style={{textAlign:'center'}}>
 	    					{data && data.map((elem, key) => {
 	    						return(
-	    							<div className="col-md-3">
+	    							<div className="col-md-4">
 			    						<Link key={key} to={{pathname: `/detail`, state: {elem, data}}}>
 			    							<img src={elem.fileList[0]} className="zoom" style={{height: '307px'}} />
 		    							</Link>

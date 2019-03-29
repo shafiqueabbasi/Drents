@@ -269,9 +269,8 @@ render() {
                       value={this.state.productName} 
                       className="input"
                       Change={this.inputHandleChange}
-                    />
-*/     }
-               <TextInput 
+                    />*/}
+                  <TextInput 
                       label="Product Name" 
                       id="productName" 
                       className="input"
@@ -441,7 +440,7 @@ render() {
 								<label className="container">
 									<input value='small' type="checkbox" id="S"
                     onChange={this.handleSize}
-                   style={{position: 'absolute', opacity: '0', cursor: 'pointer', height: '0', width: '0'}}/>
+                    style={{position: 'absolute', opacity: '0', cursor: 'pointer', height: '0', width: '0'}}/>
 									<span className="checkmark"></span>
 									<h4 style={{color: '#c2073f'}}>Small</h4>
 								</label>
