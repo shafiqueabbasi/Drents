@@ -204,21 +204,21 @@ class Profile extends Component {
   								<h2 style={{color: '#c2073f'}}>Bust</h2>
   								<RadioInput 
   									label="Small Bust" 
-  									for="bust" 
+  									for="bust1" 
 									name="bust-checkbox"
 									value="Small Bust"
 									onChange={this.radioHandleChange}
 								/>
   								<RadioInput 
 	  								label="Large Bust" 
-	  								for="bust" 
+	  								for="bust2" 
 									name="bust-checkbox"
 									value="Large Bust"
 									onChange={this.radioHandleChange}
 								/>
   								<RadioInput 
   									label="Average" 
-  									for="bust" 
+  									for="bust3" 
 									name="bust-checkbox"
 									value="Average"
 									onChange={this.radioHandleChange}
@@ -228,21 +228,21 @@ class Profile extends Component {
   								<h2 style={{color: '#c2073f'}}>Hips</h2>
   								<RadioInput 
   									label="Narrow Hips" 
-  									for="hips" 
+  									for="hips1" 
 									name="hips-checkbox"
 									value="Narrow Hips"
 									onChange={this.radioHandleChange}
 								/>
   								<RadioInput 
   									label="Wide Hips" 
-  									for="hips" 
+  									for="hips2" 
 									name="hips-checkbox"
 									value="Wide Hips"
 									onChange={this.radioHandleChange}
 								/>
   								<RadioInput 
 	  								label="Average" 
-	  								for="hips" 
+	  								for="hips3" 
   									name="hips-checkbox"
   									value="Average"
   									onChange={this.radioHandleChange}
@@ -252,21 +252,21 @@ class Profile extends Component {
   								<h2 style={{color: '#c2073f'}}>Torso</h2>
   								<RadioInput 
 	  								label="Short Torso" 
-	  								for="torso" 
+	  								for="torso1" 
   									name="torso-checkbox"
   									value="Short Torso"
   									onChange={this.radioHandleChange}
   								/>
   								<RadioInput 
 	  								label="Large Torso" 
-	  								for="torso" 
+	  								for="torso2" 
   									name="torso-checkbox"
   									value="Large Torso"
   									onChange={this.radioHandleChange}
   								/>
   								<RadioInput 
 	  								label="Average" 
-	  								for="torso" 
+	  								for="torso3" 
   									name="torso-checkbox"
   									value="Average"
   									onChange={this.radioHandleChange}
@@ -276,21 +276,21 @@ class Profile extends Component {
   								<h2 style={{color: '#c2073f'}}>Ribcage</h2>
   								<RadioInput 
 	  								label="Narrow Ribcage" 
-	  								for="ribcage" 
+	  								for="ribcage1" 
   									name="ribcage-checkbox"
   									value="Narrow Ribcage"
   									onChange={this.radioHandleChange}
   								/>
   								<RadioInput 
 	  								label="Wide Ribcage" 
-	  								for="ribcage" 
+	  								for="ribcage2" 
   									name="ribcage-checkbox"
   									value="Wide Ribcage"
   									onChange={this.radioHandleChange}
   								/>
   								<RadioInput 
 	  								label="Average" 
-	  								for="ribcage" 
+	  								for="ribcage3" 
   									name="ribcage-checkbox"
   									value="Average"
   									onChange={this.radioHandleChange}
@@ -300,21 +300,21 @@ class Profile extends Component {
   								<h2 style={{color: '#c2073f'}}>Height</h2>
   								<RadioInput 
 	  								label="Petite" 
-	  								for="height" 
+	  								for="height1" 
   									name="height-checkbox"
   									value="Petite"
   									onChange={this.radioHandleChange}
   								/>
   								<RadioInput 
 	  								label="Tall" 
-	  								for="height" 
+	  								for="height2" 
   									name="height-checkbox"
   									value="Tall"
   									onChange={this.radioHandleChange}
   								/>
   								<RadioInput 
 	  								label="Average" 
-	  								for="height" 
+	  								for="height3" 
   									name="height-checkbox"
   									value="Average"
   									onChange={this.radioHandleChange}
