@@ -40,8 +40,8 @@ class UpCommingOrder extends Component {
 						rentalStage: el.rentalStage,
 						rentedStage: el.rentedStage,
 						forEmail: [
-							{ email: el.buyerEmail, msg, name: el.buyerName },
-							{ email: el.userEmail, msg, name: el.userName }
+							{ email: el.buyerEmail, msg, name: el.userName, emailTo: el.userEmail },
+							{ email: el.userEmail, msg, name: el.buyerName, emailTo: el.buyerEmail  }
 						]
 					};	
 					return el;
@@ -62,8 +62,8 @@ class UpCommingOrder extends Component {
 						rentalStage: el.rentalStage,
 						rentedStage: el.rentedStage,
 						forEmail: [
-							{ email: el.buyerEmail, msg, name: el.buyerName },
-							{ email: el.userEmail, msg, name: el.userName }
+							{ email: el.buyerEmail, msg, name: el.userName, emailTo: el.userEmail },
+							{ email: el.userEmail, msg, name: el.buyerName, emailTo: el.buyerEmail  }
 						]
 					};
 					return el;					
@@ -81,7 +81,7 @@ class UpCommingOrder extends Component {
 	    buyer = ['Received', 'Returned'],
 	    seller = ['Dispatched', 'Completed', 'Available'],
 	    status = take ? seller : buyer;
-	    console.log(arr, 'arrrrrrrrrrrrrrrrrrr')
+	    
 	    return (
     	<div>
     		{arr.map((elem) => {

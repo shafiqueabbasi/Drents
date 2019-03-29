@@ -76,7 +76,7 @@ checkoutBooking.findOne({
                                 </tr>
                                 <tr>
                                     <td>${elem.name}</td>
-                                    <td>${elem.email}</td>
+                                    <td>${elem.emailTo}</td>
                                     <td>${elem.msg}</td>
                                 </tr>
                             </table>
