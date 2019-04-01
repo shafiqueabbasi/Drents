@@ -334,7 +334,7 @@ class UserProfile extends Component {
 										</div>
 
 										<div className="col-sm-2 visible-sm" style={{margin: '0px 0px 0px -135px'}}>
-											{userAvailable && <h4>
+											{userAvailable && <h4 style={{marginLeft:'100%'}}>
 												<Link to={{pathname: `/userdetail`, state: { goTo: 'profile', profile }}}>
 													<i className="glyphicon glyphicon-pencil pencilss">
 														<p style={{fontSize: '15px', color: 'gray'}}>Edit</p>
@@ -427,6 +427,7 @@ class UserProfile extends Component {
 											onDelete={this.onDelete}
 											data={arr}
 											profile={profile}
+											widthProps = '265%'
 											userAvailable={userAvailable}
 										/>}
 

@@ -118,6 +118,7 @@ class FirstPage extends Component {
         		    </div>
         		  </div>
         	  </div>
+            
             <div id="myNav" className="overlay visible-xs" style={{background:'#c2073fcf'}}>
               <a href="javascript:void(0)" className="closebtn" onClick={this.closeNav}>&times;</a>
               <div className="overlay-content">

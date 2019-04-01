@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+ import { isMobileOnly, isTablet } from "react-device-detect";
 
 class Heading4 extends Component {
   render() {
@@ -16,7 +17,7 @@ class Heading4 extends Component {
 	    				<div className="row" style={{textAlign:'center'}}>
 	    					{data && data.map((elem, key) => {
 	    						return(
-	    							<div className="col-md-4 col-xs-12">
+	    							<div className="col-md-4 col-xs-12 topmargin">
 			    						<Link key={key} to={{pathname: `/detail`, state: {elem, data}}}>
 			    							<img src={elem.fileList[0]} className="zoom" style={{height: '307px'}} />
 		    							</Link>
@@ -24,16 +25,16 @@ class Heading4 extends Component {
 		    								{showEditDelete && userAvailable && <div className="row">
 		    									<div className="col-md-6 col-xs-6">
 		    										<Link to={{pathname: `/userdetail`, state: {goTo: 'uploadDress', elem, profile}}}>
-		    											<h2 className="h_dress">Edit</h2>
+		    											<h2 className="h_btn">Edit</h2>
 		    										</Link>
 		    									</div>
 		    									<div className="col-md-6 col-xs-6">
-		    										<h2 className="h_dress" onClick={() => onDelete(elem)}>Delete</h2>
+		    										<h2 className="h_delet" onClick={() => onDelete(elem)}>Delete</h2>
 		    									</div>
 		    								</div>}
-		    								<h2 className="h_dress" style={{color:'#c2073f'}}>{elem.productName}</h2>
-		    								<h3 className="h_dress">{elem.detailName}</h3>
-		    								<h3 className="h_dress">$ {" " + elem.priceDay}</h3>
+		    								<h2 className="h_dress" style={isMobileOnly ? {color:'#c2073f',width:this.props.widthProps} : {color:'#c2073f',width:''}}>{elem.productName}</h2>
+		    								<h3 className="h_dress" style={isMobileOnly ? {width:this.props.widthProps} : {width:''}}>{elem.detailName}</h3>
+		    								<h3 className="h_dress" style={isMobileOnly ? {width:this.props.widthProps} : {width:''}} >$ {" " + elem.priceDay}</h3>
 		    							</div>
 			    					</div>
 	    						)

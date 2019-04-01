@@ -220,7 +220,19 @@
   .h_dress{
       font-family: Qwigley;
       font-size: 30px;
-      width: 280%;
+      
+  }
+  .h_btn{
+      font-family: Qwigley;
+      font-size: 30px;
+  }
+  .h_delet{
+      font-family: Qwigley;
+      font-size: 30px;
+      margin-left: 445%;
+  }
+  .topmargin{
+      margin-top: 50%;
   }
 }
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
@@ -235,6 +247,17 @@
       font-family: Qwigley;
       font-size: 30px;
   }
+  .h_btn{
+      font-family: Qwigley;
+      font-size: 30px;
+  }
+  .h_delet{
+      font-family: Qwigley;
+      font-size: 30px;
+  }
+  .topmargin{
+     
+  }
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
   .morebtn{
@@ -247,6 +270,17 @@
       font-family: Qwigley;
       font-size: 30px;
   }
+  .h_btn{
+      font-family: Qwigley;
+      font-size: 30px;
+  }
+  .h_delet{
+      font-family: Qwigley;
+      font-size: 30px;
+  }
+  .topmargin{
+     
+  }
 }
 @media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
   .morebtn{
@@ -257,6 +291,17 @@
   .h_dress{
       font-family: Qwigley;
       font-size: 30px;
+  }
+  .h_btn{
+      font-family: Qwigley;
+      font-size: 30px;
+  }
+  .h_delet{
+      font-family: Qwigley;
+      font-size: 30px;
+  }
+  .topmargin{
+      
   }
 }
 
