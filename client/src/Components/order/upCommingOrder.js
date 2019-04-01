@@ -118,10 +118,7 @@ class UpCommingOrder extends Component {
 														<a>{el}</a>
 													</li>
 												)												
-											})}
-											{/*<li><a href="#">HTML</a></li>
-											<li><a href="#">CSS</a></li>
-											<li><a href="#">JavaScript</a></li>*/}
+											})}											
 										</ul>
 									</div>
 								</div>
@@ -221,9 +218,13 @@ class UpCommingOrder extends Component {
 												 <span class="caret"></span></button>
 
 											<ul class="dropdown-menu">
-												<li><a href="#">HTML</a></li>
-												<li><a href="#">CSS</a></li>
-												<li><a href="#">JavaScript</a></li>
+												{status.map((el) => {
+												return (
+													<li data-toggle="modal" data-target="#confirmStatus" onClick={(e) => this.changeDropdown(e, elem)}>
+														<a>{el}</a>
+													</li>
+												)												
+											})}	
 											</ul>
 										</div>
 									</div>
@@ -291,9 +292,13 @@ class UpCommingOrder extends Component {
 										  <span class="caret"></span></button>
 
 										<ul class="dropdown-menu">
-											<li><a href="#">HTML</a></li>
-											<li><a href="#">CSS</a></li>
-											<li><a href="#">JavaScript</a></li>
+											{status.map((el) => {
+												return (
+													<li data-toggle="modal" data-target="#confirmStatus" onClick={(e) => this.changeDropdown(e, elem)}>
+														<a>{el}</a>
+													</li>
+												)												
+											})}	
 										</ul>
 									</div>
 								</div>
