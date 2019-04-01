@@ -23,7 +23,9 @@ class FirstPage extends Component {
   }
 
   openNav = ()=>{
-      document.getElementById("myNav").style.width = "100%";
+      console.log(document.getElementById("myNav"))
+     document.getElementById("myNav").style.width = "100%";
+
   }
 
   closeNav = () =>{
@@ -183,6 +185,7 @@ class FirstPage extends Component {
                 {/*<i className="fas fa-search"></i>*/}
               </div>
             </div>
+
           </div>
         </div>
       );

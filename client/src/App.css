@@ -1,4 +1,4 @@
-paraghraph/*.App {
+/*.App {
   text-align: center;
 }
 
@@ -195,7 +195,7 @@ paraghraph/*.App {
 }
 
 
-#style-1::-webkit-scrollbar {
+ #style-1::-webkit-scrollbar {
     width: 6px;
     background-color: #F5F5F5;
 }
@@ -253,7 +253,7 @@ paraghraph/*.App {
          border-radius: 15px;
          width: 90%;
           margin-left: 31%;
-  } 
+  }
   .h_dress{
       font-family: Qwigley;
       font-size: 30px;
@@ -614,7 +614,7 @@ input[type="file"] {
 }
 @media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
   .googleapp{
-            width : 85%; 
+            width : 85%;
             margin-left :  10%;
             width : 85%;
             margin-left :  11%;
