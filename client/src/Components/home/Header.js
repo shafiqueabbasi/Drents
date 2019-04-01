@@ -23,7 +23,9 @@ class FirstPage extends Component {
   }
 
   openNav = ()=>{
+    console.log(document.getElementById("myNav"))
       document.getElementById("myNav").style.width = "100%";
+
   }
 
   closeNav = () =>{
