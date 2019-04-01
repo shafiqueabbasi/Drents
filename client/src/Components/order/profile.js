@@ -77,7 +77,7 @@ class Profile extends Component {
       	<div>
       		<div className="container-fluid">
       			<div className="col-md-12">
-      				<div className="row">
+      				<div className="">
       					<h1 style={{fontFamily:'Qwigley',fontSize:'200%', color: '#c2073f'}}>Profile</h1>
       				</div>
   					<Form onSubmit={this.handleSubmit}>
@@ -117,11 +117,24 @@ class Profile extends Component {
 								Change={this.inputHandleChange}
 							/>							
 						</div>							
-						<div className="row">
+						<div className="">
   							<h1 style={{fontFamily: 'Qwigley',fontSize: '200%', color: '#c2073f'}}>Fil Details</h1>
   						</div>
-  						<div className="row">
-	  						<div className="col-md-6">
+
+						<div className="row">
+							<div className="col-md-2 col-sm-2">
+								<h3 style={{fontSize: '23px',color:'#c2073f'}}>Bio</h3>
+							</div>
+							<div className="col-md-10 col-sm-10">
+								<div className="form-group">
+				 					<textarea class="form-control" style={{border: '1px solid #c2073f'}}></textarea>
+				 				</div>
+							</div>
+						</div>
+				        
+
+						<div className="row">
+	  						<div className="col-md-6" style={{padding: '0px'}}>
 	  							<TextInput 
 									label="Height" 
 									id="inputHeight" 
@@ -132,7 +145,7 @@ class Profile extends Component {
 									Change={this.inputHandleChange}
 								/>
 							</div>
-							<div className="col-md-6">
+							<div className="col-md-6" style={{padding: '0px'}}>
 								<TextInput 
 									label="Weight" 
 									id="weight" 
@@ -145,7 +158,7 @@ class Profile extends Component {
 							</div>
 						</div>{/*row closed*/}
 						<div className="row">
-							<div className="col-md-6">					    
+							<div className="col-md-6" style={{padding: '0px'}}>					    
 								<TextInput 
 									label="Bust Size" 
 									id="bustSize" 
@@ -156,7 +169,7 @@ class Profile extends Component {
 									Change={this.inputHandleChange}
 								/>
 							</div>
-							<div className="col-md-6">		
+							<div className="col-md-6" style={{padding: '0px'}}>		
 								<SelectInput 
 									label="Body Type" 
 									id="bodyType" 
@@ -171,7 +184,7 @@ class Profile extends Component {
 							</div>	
 						</div>{/*row closed*/}
 						<div className="row">
-							<div className="col-md-6">	
+							<div className="col-md-6" style={{padding: '0px'}}>	
 								<SelectInput 
 									label="Occasion Atend Most" 
 									id="ocassionAttendMost" 
@@ -196,7 +209,7 @@ class Profile extends Component {
 								/>
 							</div>		
 						</div>{/*row closed*/}           						
-						<div className="row">
+						<div className="">
   							<h1 style={{fontFamily: 'Qwigley',fontSize: '200%',color: '#c2073f'}}>Our All fit</h1>
   						</div>
   						<div className="row">
