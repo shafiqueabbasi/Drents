@@ -1,4 +1,4 @@
-.overlay {
+ .overlay {
   background:#c2073fcf;
   height: 100%;
   width: 0;
@@ -67,4 +67,3 @@
   min-width: 1em;
   //font-weight:bold;
 }
-
