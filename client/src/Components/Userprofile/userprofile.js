@@ -37,6 +37,7 @@ class UserProfile extends Component {
 			rented: [],
 			rentalTab: true,
 			rentedTab: false,
+			archivestatus:false,
 			filterDresses: [
 				'SORT BY',
 				'Wedding',
@@ -68,11 +69,11 @@ class UserProfile extends Component {
 		let id = this.props.match.params.value,
 		data = await HttpUtils.post('getprofiledress', {userId: id}),
 		rate = 0;
-		
+
 		if(data.code && data.code == 200){
 			let dressData = data.dress.length > 0 && data.dress.map((elem) => {
 				return elem._id;
-			}), 
+			}),
 			historyData = [],
 			rentedData = [],
 			rentals = [];
@@ -98,7 +99,7 @@ class UserProfile extends Component {
 							buyerId: elem.userId,
 							dataId: elem._id
 						}});
-					}					
+					}
 				});
 				if(elem.userId === id){
 					// rentedData.push(elem.products.filter((elem) => !['Completed', 'Available'].includes(elem.rentalStage)));
@@ -121,11 +122,11 @@ class UserProfile extends Component {
 								buyerId: elem.userId,
 								dataId: elem._id
 							}});
-						}						
-					})					
+						}
+					})
 				}
 			})
-			
+
 			for(var el in data.profile[0]){
 		        this.setState({ [el]: data.profile[0][el] })
 	        }
@@ -138,14 +139,14 @@ class UserProfile extends Component {
 					}
 				})
 				rate = rate / data.review.length;
-			}		
+			}
 			if(!dressData){
 				this.props.updateFooter(true)
-			}	
-			this.setState({ 
-				profile: data.profile, 
-				review: rate, 
-				loading: false, 
+			}
+			this.setState({
+				profile: data.profile,
+				review: rate,
+				loading: false,
 				dressData,
 				orderhistory: data.orderhistory,
 				userId: id,
@@ -159,16 +160,27 @@ class UserProfile extends Component {
 		this.props.updateFooter(false)
 	}
 
-	onDelete = e => {
-		console.log(e, 'editttttt')
+	onDelete = async (e) => {
+		console.log(e, 'editttttt');
+		 let obj = {
+			 _id:e._id,
+			 archiveStatus:'Achived'
+		 }
+		let res = await HttpUtils.post('uploaddress',obj);
+		console.log(res,'deleteAPI');
+		if(res.code == 200){
+			alert('Dress is deleted from Drent');
+			this.setState({
+				archivestatus:true
+			})
+		}
 	}
 
 	handleImage = elem => {
-		let { fileList } = this.state,        
+		let { fileList } = this.state,
         self = this,
         file = elem.target.files[0],
         reader = new FileReader();
-
         //Read the contents of Image File.
         reader.readAsDataURL(file);
         reader.onload = function (e) {
@@ -193,11 +205,11 @@ class UserProfile extends Component {
 		if(res && res.code && res.code == 200){
 			this.setState({ updatedImage });
 			this.fetchUserData();
-		}        
+		}
 	}
 
 	//--------------function for cloudnary url ---------------
-    uploadFile = (files) =>{        
+    uploadFile = (files) =>{
         const image = files,
         cloudName = 'dxk0bmtei',
         url = 'https://api.cloudinary.com/v1_1/'+cloudName+'/image/upload',
@@ -233,7 +245,7 @@ class UserProfile extends Component {
     //-----------------cloudnary function end ------------------
 
 	render() {
-		const { profile, review, dressData, orderhistory, updatedImage, rentals, rented, rentalTab, rentedTab, filterDresses, filterKey } = this.state,
+		const { profile, review, dressData, orderhistory, updatedImage, rentals, rented, rentalTab, rentedTab, filterDresses, filterKey,archivestatus } = this.state,
 		{ user } = this.props,
 		id = this.props.match.params.value,
 		userName = profile.length > 0 && profile[0].firstName.length > 0 ? profile[0].firstName : user && user.username;
@@ -243,17 +255,18 @@ class UserProfile extends Component {
 		arr = this.filterFunc(arr, filterKey);
 		if(user && user._id && user._id === id){
 			userAvailable = true;
-		}		
-		
+		}
+
 		return(
 			<div>
 					<div>
 						{this.state.loading && <div class="loading">Loading&#8230;</div>}
 						<div className="container" style={{marginTop:'9%'}}>
+
 							<div className="row" style={{marginTop:'21px', marginLeft: '0px', marginRight:'0px'}}>
 								<div className="col-md-5 col-lg-5 hidden-sm hidden-xs sami">
 									<img src={updatedImage .length > 0 ? updatedImage : "../images/admin1.jpg"} alt="Avatar" className="image"/>
-									<div className={userAvailable ? "overlay" : 'nothing'}>
+									<div className={userAvailable ? "overlayChange" : 'nothing'}>
 										<label className="custom-file-upload samiLabel" style={{margin: '150px 0px 0px 150px'}}>
 											<input type="file" onChange={e => this.handleImage(e)}/>
 											<i class="fas fa-camera" style={{fontSize:'20px',padding: '0 22px 0', cursor: 'pointer'}}></i><br/>
@@ -261,9 +274,9 @@ class UserProfile extends Component {
 										</label>
 									</div>
 								</div>
-								<div className="col-md-1 col-lg-1 hidden-sm hidden-xs"></div>	
+								<div className="col-md-1 col-lg-1 hidden-sm hidden-xs"></div>
 								<div className="visible-sm col-sm-5 hidden-xs sami_1" style={{marginTop: '6%'}}>
-									<img src={updatedImage .length > 0 ? updatedImage : "../images/admin1.jpg"} alt="Avatar" className="image_1"/>
+									<img src="../images/admin1.jpg" alt="Avatar" className="image_1"/>
 									<div className={userAvailable ? "overlay_1" : 'nothing'} style={{left: '15px', width: '100%'}}>
 										<label className="custom-file-upload samiLabel_1" style={{padding: '0 36%',marginTop:'40%'}}>
 											<input type="file" onChange={e => this.handleImage(e)}/>
@@ -274,7 +287,7 @@ class UserProfile extends Component {
 								</div>
 
 								<div className="visible-xs sami_2">
-									<img src={updatedImage .length > 0 ? updatedImage : "../images/admin1.jpg"} alt="Avatar" className="image_2"/>
+									<img src="../images/admin1.jpg" alt="Avatar" className="image_2"/>
 									<div className={userAvailable ? "overlay_2" : 'nothing'}>
 										<label className="custom-file-upload samiLabel_2" style={{margin: '10px 0',padding: '37%'}}>
 											<input type="file" onChange={e => this.handleImage(e)}/>
@@ -284,7 +297,7 @@ class UserProfile extends Component {
 									</div>
 								</div>
 
-								<div className="col-md-6 col-lg-7 col-sm-6 col-xs-12 rovil3">
+								<div className="col-md-6 col-lg-7 col-sm-7 col-xs-12 rovil3">
 									<div className="row" style={{marginRight:'0px',marginLeft: '0px'}}>
 										<div className="col-md-5 hidden-sm hidden-xs" style={{paddingLeft: '0px'}}>
 											<h2><span className="rovil2">{userName}</span></h2>
@@ -341,15 +354,15 @@ class UserProfile extends Component {
 										</div>
 									</div>
 
-									<div className="rovil1" style={{paddingLeft: '0px' , marginTop:'-2%'}}>
+									<div className="rovil1" style={{paddingLeft: '0px'}}>
 										<h4>London</h4>
 									</div>
 
-									<div className="rovil1" style={{paddingLeft: '0px' , marginTop:'-5%'}}>
+									<div className="rovil1" style={{paddingLeft: '0px'}}>
 										<h4><span className="rovil7">Bio</span></h4>
 									</div>
 
-									<div className="col-md-12" style={{paddingLeft: '0px' , marginTop:'-4%'}}>
+									<div className="col-md-12" style={{paddingLeft: '0px'}}>
 										<h4>Working as a Designer want to rent every thing which is in my wardrobe.</h4>
 									</div>
 
@@ -376,13 +389,13 @@ class UserProfile extends Component {
 								<div className="col-md-3 col-sm-3"></div>
 
 								<div className="col-md-2 col-sm-2">
-									<h3 style={rentalTab ? {color: '#c2073f', textDecorationLine: 'underline'} : {color: '#c2073f'}} 
+									<h3 style={rentalTab ? {color: '#c2073f', textDecorationLine: 'underline'} : {color: '#c2073f'}}
 										onClick={() => this.setState({ rentalTab: true, rentedTab: false, filterKey: 'SORT BY'})}>
 										Rentals
 									</h3>
 								</div>
 
-								<div className="col-md-2 col-sm-2" 
+								<div className="col-md-2 col-sm-2"
 									onClick={() => this.setState({ rentalTab: false, rentedTab: true, filterKey: 'SORT BY'})}>
 									<h3 style={rentedTab ? {color: '#c2073f', textDecorationLine: 'underline'} : {color: '#c2073f'}}>
 										Rented
@@ -403,6 +416,11 @@ class UserProfile extends Component {
 							<div className="row">
 								<div className="col-md-10 col-sm-9 col-xs-6">
 									<div className="row" style={{margin:'0px'}}>
+										{/*<div className="col-md-6"><h2>GALLERY</h2></div>*/}
+										{archivestatus && <div className="alert alert-success alert-dismissible">
+											<a href="#" className="close" data-dismiss="alert" aria-label="close">&times;</a>
+				  						<strong>Success!</strong>Dress Deleted
+										</div>}
 										{dressData && <Gallery
 											// label='Gallery'
 											showEditDelete={boo}
@@ -412,12 +430,13 @@ class UserProfile extends Component {
 											widthProps = '265%'
 											userAvailable={userAvailable}
 										/>}
+
 										{!dressData && <div style={{textAlign: 'center'}}>not uploaded any dress</div>}
 									</div>
 								</div>
-								
+
 								{userAvailable && <div className="col-md-2 hidden-sm hidden-xs">&emsp;&emsp;&nbsp;
-									
+
 									<div class="dropdown" style={{marginTop: '-35px'}}>
 									    <button class="btn dropdown-toggle" type="button" data-toggle="dropdown"
 									      style={{background: '#ffffff', color: '#c2073f', borderRadius: '0', border: '1px solid #c2073f'}}>{filterKey} &emsp;
@@ -430,11 +449,13 @@ class UserProfile extends Component {
 								    					<a>{el}</a>
 									    			</li>
 									    		)
-									    	})}									    	
+									    	})}
+									    	{/*<li><a href="#">CSS</a></li>
+									    	<li><a href="#">JavaScript</a></li>*/}
 									    </ul>
 									</div>
 
-									
+
 								</div>}
 
 								{userAvailable && <div className="visible-sm col-sm-3">&emsp;&emsp;
@@ -444,13 +465,9 @@ class UserProfile extends Component {
 									      <span class="caret"></span></button>
 
 									    <ul class="dropdown-menu">
-									    	{filterDresses.map((el) => {
-									    		return (
-									    			<li onClick={() => this.setState({ filterKey: el})}>
-								    					<a>{el}</a>
-									    			</li>
-									    		)
-									    	})}
+									    	<li><a href="#">HTML</a></li>
+									    	<li><a href="#">CSS</a></li>
+									    	<li><a href="#">JavaScript</a></li>
 									    </ul>
 									</div>
 								</div>}
@@ -462,18 +479,14 @@ class UserProfile extends Component {
 									      <span class="caret"></span></button>
 
 									    <ul class="dropdown-menu">
-									    	{filterDresses.map((el) => {
-									    		return (
-									    			<li onClick={() => this.setState({ filterKey: el})}>
-								    					<a>{el}</a>
-									    			</li>
-									    		)
-									    	})}
+									    	<li><a href="#">HTML</a></li>
+									    	<li><a href="#">CSS</a></li>
+									    	<li><a href="#">JavaScript</a></li>
 									    </ul>
 									</div>
 								</div>}
 
-								
+
 
 							</div>
 
@@ -491,7 +504,7 @@ class UserProfile extends Component {
 							<hr style={{border: '1px solid #c2073f'}}/>
 						</div>
 
-						
+
 					</div>
 			</div>
     	);

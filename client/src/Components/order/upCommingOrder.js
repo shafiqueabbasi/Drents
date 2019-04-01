@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { HttpUtils } from  '../../Service/HttpUtils';
+import CommentCard from '../productdetail/commentCard';
 
 class UpCommingOrder extends Component {
 	constructor(props){
@@ -7,6 +8,7 @@ class UpCommingOrder extends Component {
 		this.state = {
 			// rentals: this.props.rentals,
 			// rented: this.props.rented,
+			showReviewBox: false,
 			e: '',
 			elem: '',
 			take: this.props.take,
@@ -16,7 +18,13 @@ class UpCommingOrder extends Component {
 	}
 
 	changeDropdown(e, elem){
-		this.setState({ e: e.target.innerText, elem });		
+		let text = e.target.innerText;
+		if(['Completed', 'Returned'].includes(text)){
+			this.setState({ e: text, elem, showReviewBox: true });	
+		}else {
+			this.setState({ e: text, elem });
+		}
+			
 	}
 
 	cancelStatus(){
@@ -24,55 +32,93 @@ class UpCommingOrder extends Component {
 		document.getElementById("confirmStatus").click();
 	}
 
+	// async changeStatus(){
+	// 	let { take, rentals, rented } = this.props,
+	// 	{ e, elem } = this.state;
+	// 	document.getElementById("confirmStatus").click();
+	// 	if(take){
+	// 		let obj = {},
+	// 		msg = `Dress status has changed to ${e}`;
+	// 		rentals = rentals.map((el) => {
+	// 			if(elem._id === el._id){					
+	// 				el.rentalStage = e;
+	// 				obj = {
+	// 					dataId: el.dataId,
+	// 					productId: el._id,
+	// 					rentalStage: el.rentalStage,
+	// 					rentedStage: el.rentedStage,
+	// 					forEmail: [
+	// 						{ email: el.buyerEmail, msg, name: el.userName, emailTo: el.userEmail },
+	// 						{ email: el.userEmail, msg, name: el.buyerName, emailTo: el.buyerEmail  }
+	// 					]
+	// 				};	
+	// 				return el;
+	// 			}				
+	// 			return el;						
+	// 		})			
+	// 		let statusRental = await HttpUtils.post('twiliosms', obj);
+	// 		this.props.filterData();
+	// 	}else {
+	// 		let obj = {},
+	// 		msg = `Dress status has changed to ${e}`;
+	// 		rented = rented.map((el) => {
+	// 			if(elem._id === el._id){
+	// 				el.rentedStage = e;	
+	// 				obj = {
+	// 					dataId: el.dataId,
+	// 					productId: el._id,
+	// 					rentalStage: el.rentalStage,
+	// 					rentedStage: el.rentedStage,
+	// 					forEmail: [
+	// 						{ email: el.buyerEmail, msg, name: el.userName, emailTo: el.userEmail },
+	// 						{ email: el.userEmail, msg, name: el.buyerName, emailTo: el.buyerEmail  }
+	// 					]
+	// 				};
+	// 				return el;					
+	// 			}				
+	// 			return el;
+	// 		})
+	// 		let statusRental = await HttpUtils.post('twiliosms', obj);
+	// 		this.props.filterData();
+	// 	}		
+	// }
+
 	async changeStatus(){
-		let { take, rentals, rented } = this.props,
-		{ e, elem } = this.state;
 		document.getElementById("confirmStatus").click();
-		if(take){
-			let obj = {},
-			msg = `Dress status has changed to ${e}`;
-			rentals = rentals.map((el) => {
-				if(elem._id === el._id){					
-					el.rentalStage = e;
-					obj = {
-						dataId: el.dataId,
-						productId: el._id,
-						rentalStage: el.rentalStage,
-						rentedStage: el.rentedStage,
-						forEmail: [
-							{ email: el.buyerEmail, msg, name: el.userName, emailTo: el.userEmail },
-							{ email: el.userEmail, msg, name: el.buyerName, emailTo: el.buyerEmail  }
-						]
-					};	
-					return el;
-				}				
-				return el;						
-			})			
-			let statusRental = await HttpUtils.post('twiliosms', obj);
-			this.props.filterData();
-		}else {
-			let obj = {},
-			msg = `Dress status has changed to ${e}`;
-			rented = rented.map((el) => {
-				if(elem._id === el._id){
-					el.rentedStage = e;	
-					obj = {
-						dataId: el.dataId,
-						productId: el._id,
-						rentalStage: el.rentalStage,
-						rentedStage: el.rentedStage,
-						forEmail: [
-							{ email: el.buyerEmail, msg, name: el.userName, emailTo: el.userEmail },
-							{ email: el.userEmail, msg, name: el.buyerName, emailTo: el.buyerEmail  }
-						]
-					};
-					return el;					
-				}				
+		let { take, rentals, rented } = this.props,	
+		arr = take ? rentals : rented,
+		obj = this.makeCodeShort(arr, take);			
+		console.log(obj, 'objjjjjjjjjj')
+		let statusRental = await HttpUtils.post('twiliosms', obj);
+		this.props.filterData();			
+	}
+
+	makeCodeShort(arr, take){
+		const { e, elem} = this.state;
+		let obj = {},
+		msg = `Dress status has changed to ${e}`;		
+		arr = arr.map((el) => {
+			if(elem._id === el._id){
+				if(take){
+					el.rentalStage = e;					
+				}else {
+					el.rentedStage = e;
+				}
+				obj = {
+					dataId: el.dataId,
+					productId: el._id,
+					rentalStage: el.rentalStage,
+					rentedStage: el.rentedStage,
+					forEmail: [
+						{ email: el.buyerEmail, msg, name: el.userName, emailTo: el.userEmail },
+						{ email: el.userEmail, msg, name: el.buyerName, emailTo: el.buyerEmail  }
+					]
+				};	
 				return el;
-			})
-			let statusRental = await HttpUtils.post('twiliosms', obj);
-			this.props.filterData();
-		}		
+			}				
+			return el;						
+		})
+		return obj;
 	}
 
 	render() {
@@ -81,7 +127,7 @@ class UpCommingOrder extends Component {
 	    buyer = ['Received', 'Returned'],
 	    seller = ['Dispatched', 'Completed', 'Available'],
 	    status = take ? seller : buyer;
-	    
+	    console.log(this.state.showReviewBox, 'kia koi changes hwiiiii')
 	    return (
     	<div>
     		{arr.map((elem) => {
@@ -114,7 +160,10 @@ class UpCommingOrder extends Component {
 										<ul className="dropdown-menu">
 											{status.map((el) => {
 												return (
-													<li data-toggle="modal" data-target="#confirmStatus" onClick={(e) => this.changeDropdown(e, elem)}>
+													<li data-toggle="modal" 
+														data-target="#confirmStatus" 
+														onClick={(e) => this.changeDropdown(e, elem)}
+													>
 														<a>{el}</a>
 													</li>
 												)												
@@ -159,11 +208,11 @@ class UpCommingOrder extends Component {
                               <div className="modal-content">
                                 <div className="modal-header">
                                   <button type="button" className="close" data-dismiss="modal">&times;</button>
-                                  <h4 className="modal-title" style={{textAlign:'center', color: 'white'}}>Sign Up</h4>
+                                  <h4 className="modal-title" style={{textAlign:'center', color: 'white'}}>Confirmation</h4>
                                 </div>
                                 <div className="modal-body" style={{textAlign:'center', color: 'white'}}>
-                                    This will change your status
-                                    <div className="row" style={{marginTop: '10px'}}>
+                                    {/*showReviewBox && This will change your status*/}
+                                    {!this.state.showReviewBox && <div className="row" style={{marginTop: '10px'}}>
                                     	<div className="col-md-6"></div>
                                     	<div className="col-md-3">
                                     		<button className="btn btn-sm" 
@@ -177,7 +226,8 @@ class UpCommingOrder extends Component {
                                     			onClick={(e) => this.cancelStatus()}
                                 			>Cancel</button>
                                     	</div>
-                                    </div>
+                                    </div>}
+                                    {this.state.showReviewBox && <CommentCard />}
                                 </div>
 
                               </div>
@@ -253,6 +303,42 @@ class UpCommingOrder extends Component {
 								</div>*/}
 							</div>
 						</div>
+						<div className="col-md-12 visible-sm">
+							<div className="col-md-2"></div>
+							<div className="col-md-8">
+								<hr style={{borderTop:'2px solid #c2073f'}}/>
+							</div>
+							<div className="col-md-2"></div>
+						</div>
+						<div className="modal fade" id="confirmStatus" role="dialog">
+                            <div className="modal-dialog">
+                              <div className="modal-content">
+                                <div className="modal-header">
+                                  <button type="button" className="close" data-dismiss="modal">&times;</button>
+                                  <h4 className="modal-title" style={{textAlign:'center', color: 'white'}}>Confirmation</h4>
+                                </div>
+                                <div className="modal-body" style={{textAlign:'center', color: 'white'}}>
+                                    This will change your status
+                                    <div className="row" style={{marginTop: '10px'}}>
+                                    	<div className="col-md-6"></div>
+                                    	<div className="col-md-3">
+                                    		<button className="btn btn-sm" 
+                                    			style={{color:'black', backgroundColor:'white', width: '100%'}}
+                                    			onClick={(e) => this.changeStatus()}
+                                			>Confirm</button>                                    		
+                                    	</div>
+                                    	<div className="col-md-3">
+                                    		<button className="btn btn-sm" 
+                                    			style={{color:'black', backgroundColor:'white', width: '100%'}}
+                                    			onClick={(e) => this.cancelStatus()}
+                                			>Cancel</button>
+                                    	</div>
+                                    </div>
+                                </div>
+
+                              </div>
+                            </div>
+                        </div>
 					</div>
 				</div>
 				)
@@ -335,6 +421,42 @@ class UpCommingOrder extends Component {
 								</div>
 								<div className="col-md-2"></div>
 							</div>*/}
+						<div className="col-md-12 visible-xs">
+							<div className="col-md-2"></div>
+							<div className="col-md-8">
+								<hr style={{borderTop:'2px solid #c2073f'}}/>
+							</div>
+							<div className="col-md-2"></div>
+						</div>
+						<div className="modal fade" id="confirmStatus" role="dialog">
+                            <div className="modal-dialog">
+                              <div className="modal-content">
+                                <div className="modal-header">
+                                  <button type="button" className="close" data-dismiss="modal">&times;</button>
+                                  <h4 className="modal-title" style={{textAlign:'center', color: 'white'}}>Confirmation</h4>
+                                </div>
+                                <div className="modal-body" style={{textAlign:'center', color: 'white'}}>
+                                    This will change your status
+                                    <div className="row" style={{marginTop: '10px'}}>
+                                    	<div className="col-md-6"></div>
+                                    	<div className="col-md-3">
+                                    		<button className="btn btn-sm" 
+                                    			style={{color:'black', backgroundColor:'white', width: '100%'}}
+                                    			onClick={(e) => this.changeStatus()}
+                                			>Confirm</button>                                    		
+                                    	</div>
+                                    	<div className="col-md-3">
+                                    		<button className="btn btn-sm" 
+                                    			style={{color:'black', backgroundColor:'white', width: '100%'}}
+                                    			onClick={(e) => this.cancelStatus()}
+                                			>Cancel</button>
+                                    	</div>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+
 					</div>
 				)
     		})}
