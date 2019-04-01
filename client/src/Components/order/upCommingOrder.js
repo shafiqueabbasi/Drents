@@ -40,8 +40,8 @@ class UpCommingOrder extends Component {
 						rentalStage: el.rentalStage,
 						rentedStage: el.rentedStage,
 						forEmail: [
-							{ email: el.buyerEmail, msg, name: el.buyerName },
-							{ email: el.userEmail, msg, name: el.userName }
+							{ email: el.buyerEmail, msg, name: el.userName, emailTo: el.userEmail },
+							{ email: el.userEmail, msg, name: el.buyerName, emailTo: el.buyerEmail  }
 						]
 					};	
 					return el;
@@ -62,8 +62,8 @@ class UpCommingOrder extends Component {
 						rentalStage: el.rentalStage,
 						rentedStage: el.rentedStage,
 						forEmail: [
-							{ email: el.buyerEmail, msg, name: el.buyerName },
-							{ email: el.userEmail, msg, name: el.userName }
+							{ email: el.buyerEmail, msg, name: el.userName, emailTo: el.userEmail },
+							{ email: el.userEmail, msg, name: el.buyerName, emailTo: el.buyerEmail  }
 						]
 					};
 					return el;					
@@ -81,7 +81,7 @@ class UpCommingOrder extends Component {
 	    buyer = ['Received', 'Returned'],
 	    seller = ['Dispatched', 'Completed', 'Available'],
 	    status = take ? seller : buyer;
-	    console.log(arr, 'arrrrrrrrrrrrrrrrrrr')
+	    
 	    return (
     	<div>
     		{arr.map((elem) => {
@@ -118,10 +118,7 @@ class UpCommingOrder extends Component {
 														<a>{el}</a>
 													</li>
 												)												
-											})}
-											{/*<li><a href="#">HTML</a></li>
-											<li><a href="#">CSS</a></li>
-											<li><a href="#">JavaScript</a></li>*/}
+											})}											
 										</ul>
 									</div>
 								</div>
@@ -221,9 +218,13 @@ class UpCommingOrder extends Component {
 												 <span class="caret"></span></button>
 
 											<ul class="dropdown-menu">
-												<li><a href="#">HTML</a></li>
-												<li><a href="#">CSS</a></li>
-												<li><a href="#">JavaScript</a></li>
+												{status.map((el) => {
+												return (
+													<li data-toggle="modal" data-target="#confirmStatus" onClick={(e) => this.changeDropdown(e, elem)}>
+														<a>{el}</a>
+													</li>
+												)												
+											})}	
 											</ul>
 										</div>
 									</div>
@@ -291,9 +292,13 @@ class UpCommingOrder extends Component {
 										  <span class="caret"></span></button>
 
 										<ul class="dropdown-menu">
-											<li><a href="#">HTML</a></li>
-											<li><a href="#">CSS</a></li>
-											<li><a href="#">JavaScript</a></li>
+											{status.map((el) => {
+												return (
+													<li data-toggle="modal" data-target="#confirmStatus" onClick={(e) => this.changeDropdown(e, elem)}>
+														<a>{el}</a>
+													</li>
+												)												
+											})}	
 										</ul>
 									</div>
 								</div>
