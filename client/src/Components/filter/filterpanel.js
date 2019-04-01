@@ -18,19 +18,25 @@ class Filterpanel extends Component {
         }
     }
 
-	async componentDidMount(){
+	async componentDidMount(){		
+		let filter = this.props.location.state;
+		console.log(filter, 'propsssssssssssss')		
 		let data = await HttpUtils.get('getdresses');
 		if(data.code && data.code === 200){
-			this.setState({ data: data.allDress, arr: data.allDress, loading: false })
+			this.setState({ data: data.allDress, arr: data.allDress, loading: false });
+			if(filter && filter !== undefined){
+				this.handleClick(filter);
+			}
 		}
 	}
 
 	handleClick = e => {
-		let { filtered } = this.state;
-		if(filtered.includes(e.target.id)){
-			filtered = filtered.filter((elem) => elem !== e.target.id);
+		let { filtered } = this.state,
+		target = e.target !== undefined ? e.target.id : e;
+		if(filtered.includes(target)){
+			filtered = filtered.filter((elem) => elem !== target);
 		}else{
-			filtered.push(e.target.id);
+			filtered.push(target);
 		}
 		this.setState({ filtered }, () => {
 			this.filteringData();
@@ -130,7 +136,7 @@ class Filterpanel extends Component {
 	  						<div className="form-group row">
 							<label className="col-md-12 col-sm-12 col-xs-12 control-label" style={{textAlign: 'center'}}></label>
 							<div className="col-md-5 col-sm-5 col-xs-5 row"></div>
-							{this.state.arr.length > 8 && <ButtonComponent label="More"/>}
+							{/*{this.state.arr.length > 8 && <ButtonComponent label="More"/>}*/}
 							{this.state.data.length === 0 && <span>No record found
 								<ButtonComponent
 									className="col-md-12"
@@ -269,7 +275,7 @@ class Filterpanel extends Component {
 	  						<div className="form-group row">
 							<label className="col-xs-12 control-label" style={{textAlign: 'center'}}></label>
 							<div className="col-xs-12 row"></div>
-							{this.state.arr.length > 8 && <ButtonComponent label="More"/>}
+							{/*{this.state.arr.length > 8 && <ButtonComponent label="More"/>}*/}
 							{this.state.data.length === 0 && <span>No record found
 								<ButtonComponent
 									className="col-xs-12"
