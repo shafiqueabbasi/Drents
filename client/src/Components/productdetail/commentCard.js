@@ -124,7 +124,12 @@ class CommentCard extends Component {
 				fileList: [],
 				showMsg: res.data
 			})
-			this.props.addReview(obj);
+			console.log(this.props.popUp, 'yahan kia aayaaa')
+			if(this.props.popUp !== undefined){
+				this.props.changeStatus(this.props.popUp);
+			}else {
+				this.props.addReview(obj);
+			}			
 			setTimeout(() => {
 				this.setState({ showMsg : '' })
 			}, 3000);

@@ -22,9 +22,8 @@ class UpCommingOrder extends Component {
 		if(['Completed', 'Returned'].includes(text)){
 			this.setState({ e: text, elem, showReviewBox: true });	
 		}else {
-			this.setState({ e: text, elem });
-		}
-			
+			this.setState({ e: text, elem, showReviewBox: false });
+		}			
 	}
 
 	cancelStatus(){
@@ -32,64 +31,13 @@ class UpCommingOrder extends Component {
 		document.getElementById("confirmStatus").click();
 	}
 
-	// async changeStatus(){
-	// 	let { take, rentals, rented } = this.props,
-	// 	{ e, elem } = this.state;
-	// 	document.getElementById("confirmStatus").click();
-	// 	if(take){
-	// 		let obj = {},
-	// 		msg = `Dress status has changed to ${e}`;
-	// 		rentals = rentals.map((el) => {
-	// 			if(elem._id === el._id){					
-	// 				el.rentalStage = e;
-	// 				obj = {
-	// 					dataId: el.dataId,
-	// 					productId: el._id,
-	// 					rentalStage: el.rentalStage,
-	// 					rentedStage: el.rentedStage,
-	// 					forEmail: [
-	// 						{ email: el.buyerEmail, msg, name: el.userName, emailTo: el.userEmail },
-	// 						{ email: el.userEmail, msg, name: el.buyerName, emailTo: el.buyerEmail  }
-	// 					]
-	// 				};	
-	// 				return el;
-	// 			}				
-	// 			return el;						
-	// 		})			
-	// 		let statusRental = await HttpUtils.post('twiliosms', obj);
-	// 		this.props.filterData();
-	// 	}else {
-	// 		let obj = {},
-	// 		msg = `Dress status has changed to ${e}`;
-	// 		rented = rented.map((el) => {
-	// 			if(elem._id === el._id){
-	// 				el.rentedStage = e;	
-	// 				obj = {
-	// 					dataId: el.dataId,
-	// 					productId: el._id,
-	// 					rentalStage: el.rentalStage,
-	// 					rentedStage: el.rentedStage,
-	// 					forEmail: [
-	// 						{ email: el.buyerEmail, msg, name: el.userName, emailTo: el.userEmail },
-	// 						{ email: el.userEmail, msg, name: el.buyerName, emailTo: el.buyerEmail  }
-	// 					]
-	// 				};
-	// 				return el;					
-	// 			}				
-	// 			return el;
-	// 		})
-	// 		let statusRental = await HttpUtils.post('twiliosms', obj);
-	// 		this.props.filterData();
-	// 	}		
-	// }
-
-	async changeStatus(){
-		document.getElementById("confirmStatus").click();
+	changeStatus = async (popUp) => {
+		document.getElementById(popUp).click();
 		let { take, rentals, rented } = this.props,	
 		arr = take ? rentals : rented,
 		obj = this.makeCodeShort(arr, take);			
-		console.log(obj, 'objjjjjjjjjj')
 		let statusRental = await HttpUtils.post('twiliosms', obj);
+		alert('Your status updated successfully');
 		this.props.filterData();			
 	}
 
@@ -121,17 +69,20 @@ class UpCommingOrder extends Component {
 		return obj;
 	}
 
-	render() {
-	    const { rentals, rented, take } = this.props;	 
+	render() {		
+	    const { rentals, rented, take } = this.props,
+	    { showReviewBox } = this.state;	 
 	    let arr = take ? rentals : rented,
 	    buyer = ['Received', 'Returned'],
 	    seller = ['Dispatched', 'Completed', 'Available'],
 	    status = take ? seller : buyer;
-	    console.log(this.state.showReviewBox, 'kia koi changes hwiiiii')
+	    
 	    return (
     	<div>
     		{arr.map((elem) => {
-    			let stage = take ? elem.rentalStage : elem.rentedStage;
+    			let stage = take ? elem.rentalStage : elem.rentedStage,    			
+    			obj = { _id: elem._id};
+    			
     			return (
     				<div className="row hidden-sm hidden-xs">
 						<div className="col-md-2">
@@ -204,20 +155,20 @@ class UpCommingOrder extends Component {
 							<div className="col-md-2"></div>
 						</div>
 						<div className="modal fade" id="confirmStatus" role="dialog">
-                            <div className="modal-dialog">
+                            <div className="modal-dialog" style={showReviewBox ? {width: '96%'} : {}}>
                               <div className="modal-content">
                                 <div className="modal-header">
                                   <button type="button" className="close" data-dismiss="modal">&times;</button>
-                                  <h4 className="modal-title" style={{textAlign:'center', color: 'white'}}>Confirmation</h4>
+                                  <h4 className="modal-title" style={{textAlign:'center', color: 'white'}}>{!showReviewBox ? 'Confirmation' : 'Add Review'}</h4>
                                 </div>
                                 <div className="modal-body" style={{textAlign:'center', color: 'white'}}>
-                                    {/*showReviewBox && This will change your status*/}
-                                    {!this.state.showReviewBox && <div className="row" style={{marginTop: '10px'}}>
+                                    {!showReviewBox && <span>This will change your status</span>}
+                                    {!showReviewBox && <div className="row" style={{marginTop: '10px'}}>
                                     	<div className="col-md-6"></div>
                                     	<div className="col-md-3">
                                     		<button className="btn btn-sm" 
                                     			style={{color:'black', backgroundColor:'white', width: '100%'}}
-                                    			onClick={(e) => this.changeStatus()}
+                                    			onClick={(e) => this.changeStatus("confirmStatus")}
                                 			>Confirm</button>                                    		
                                     	</div>
                                     	<div className="col-md-3">
@@ -227,7 +178,7 @@ class UpCommingOrder extends Component {
                                 			>Cancel</button>
                                     	</div>
                                     </div>}
-                                    {this.state.showReviewBox && <CommentCard />}
+                                    {showReviewBox && <CommentCard obj={obj} popUp={'confirmStatus'} changeStatus={this.changeStatus}/>}
                                 </div>
 
                               </div>
@@ -239,7 +190,8 @@ class UpCommingOrder extends Component {
 
 							{/*<---hidden-sm--->*/}
 			{arr.map((elem) => {
-				let stage = take ? elem.rentalStage : elem.rentedStage;
+				let stage = take ? elem.rentalStage : elem.rentedStage,    			
+    			obj = { _id: elem._id};
     			return (
 					<div className="visible-sm ">
 						<div className="row">
@@ -271,7 +223,7 @@ class UpCommingOrder extends Component {
 											<ul class="dropdown-menu">
 												{status.map((el) => {
 												return (
-													<li data-toggle="modal" data-target="#confirmStatus" onClick={(e) => this.changeDropdown(e, elem)}>
+													<li data-toggle="modal" data-target="#confirmStatusTab" onClick={(e) => this.changeDropdown(e, elem)}>
 														<a>{el}</a>
 													</li>
 												)												
@@ -310,21 +262,21 @@ class UpCommingOrder extends Component {
 							</div>
 							<div className="col-md-2"></div>
 						</div>
-						<div className="modal fade" id="confirmStatus" role="dialog">
-                            <div className="modal-dialog">
+						<div className="modal fade" id="confirmStatusTab" role="dialog">
+                            <div className="modal-dialog" style={showReviewBox ? {width: '86%'} : {}}>
                               <div className="modal-content">
                                 <div className="modal-header">
                                   <button type="button" className="close" data-dismiss="modal">&times;</button>
-                                  <h4 className="modal-title" style={{textAlign:'center', color: 'white'}}>Confirmation</h4>
+                                  <h4 className="modal-title" style={{textAlign:'center', color: 'white'}}>{!showReviewBox ? 'Confirmation' : 'Add Review'}</h4>
                                 </div>
                                 <div className="modal-body" style={{textAlign:'center', color: 'white'}}>
-                                    This will change your status
-                                    <div className="row" style={{marginTop: '10px'}}>
+                                    {showReviewBox && <span>This will change your status</span>}
+                                    {!showReviewBox && <div className="row" style={{marginTop: '10px'}}>}
                                     	<div className="col-md-6"></div>
                                     	<div className="col-md-3">
                                     		<button className="btn btn-sm" 
                                     			style={{color:'black', backgroundColor:'white', width: '100%'}}
-                                    			onClick={(e) => this.changeStatus()}
+                                    			onClick={(e) => this.changeStatus("confirmStatusTab")}
                                 			>Confirm</button>                                    		
                                     	</div>
                                     	<div className="col-md-3">
@@ -333,7 +285,8 @@ class UpCommingOrder extends Component {
                                     			onClick={(e) => this.cancelStatus()}
                                 			>Cancel</button>
                                     	</div>
-                                    </div>
+                                    </div>}
+                                    {showReviewBox && <CommentCard obj={obj} popUp={'confirmStatusTab'} changeStatus={this.changeStatus} />}
                                 </div>
 
                               </div>
@@ -345,7 +298,8 @@ class UpCommingOrder extends Component {
     		})}
 				{/*<---hidden-xs--->*/}
 			{arr.map((elem) => {
-				let stage = take ? elem.rentalStage : elem.rentedStage;
+				let stage = take ? elem.rentalStage : elem.rentedStage,    			
+    			obj = { _id: elem._id};
     			return (
 					<div className="row">
 						<div className="visible-xs">
@@ -382,7 +336,7 @@ class UpCommingOrder extends Component {
 										<ul class="dropdown-menu">
 											{status.map((el) => {
 												return (
-													<li data-toggle="modal" data-target="#confirmStatus" onClick={(e) => this.changeDropdown(e, elem)}>
+													<li data-toggle="modal" data-target="#confirmStatusMobile" onClick={(e) => this.changeDropdown(e, elem)}>
 														<a>{el}</a>
 													</li>
 												)												
@@ -428,21 +382,21 @@ class UpCommingOrder extends Component {
 							</div>
 							<div className="col-md-2"></div>
 						</div>
-						<div className="modal fade" id="confirmStatus" role="dialog">
+						<div className="modal fade" id="confirmStatusMobile" role="dialog">
                             <div className="modal-dialog">
                               <div className="modal-content">
                                 <div className="modal-header">
                                   <button type="button" className="close" data-dismiss="modal">&times;</button>
-                                  <h4 className="modal-title" style={{textAlign:'center', color: 'white'}}>Confirmation</h4>
+                                  <h4 className="modal-title" style={{textAlign:'center', color: 'white'}}>{!showReviewBox ? 'Confirmation' : 'Add Review'}</h4>
                                 </div>
                                 <div className="modal-body" style={{textAlign:'center', color: 'white'}}>
-                                    This will change your status
-                                    <div className="row" style={{marginTop: '10px'}}>
+                                    {showReviewBox && <span>This will change your status</span>}
+                                    {!showReviewBox && <div className="row" style={{marginTop: '10px'}}>
                                     	<div className="col-md-6"></div>
                                     	<div className="col-md-3">
                                     		<button className="btn btn-sm" 
                                     			style={{color:'black', backgroundColor:'white', width: '100%'}}
-                                    			onClick={(e) => this.changeStatus()}
+                                    			onClick={(e) => this.changeStatus("confirmStatusMobile")}
                                 			>Confirm</button>                                    		
                                     	</div>
                                     	<div className="col-md-3">
@@ -451,7 +405,8 @@ class UpCommingOrder extends Component {
                                     			onClick={(e) => this.cancelStatus()}
                                 			>Cancel</button>
                                     	</div>
-                                    </div>
+                                    </div>}
+                                    {showReviewBox && <CommentCard obj={obj} popUp={'confirmStatusMobile'} changeStatus={this.changeStatus} />}
                                 </div>
                               </div>
                             </div>
@@ -473,36 +428,53 @@ class UpCommingOrder extends Component {
 export default UpCommingOrder;
 
 
-// async changeStatus(e, elem){
-// 		let { take, rentals, rented } = this.state;
-// 		console.log()
-// 		if(take){
-// 			let anotherObj = this.dontRepeatCode(rentals, e, elem),		
-// 			statusRental = await HttpUtils.post('twiliosms', anotherObj.obj);
-// 			this.setState({ rentals: anotherObj.arr2 });
-// 		}else {
-// 			let anotherObj = this.dontRepeatCode(rented, e, elem),			
-// 			statusRental = await HttpUtils.post('twiliosms', anotherObj.obj);
-// 			this.setState({ rented: anotherObj.arr2 });
-// 		}		
-// 	}
-
-// 	dontRepeatCode(arr, e, elem){
-// 		let obj = {},
-// 		arr2 = arr.map((el) => {
-// 			if(elem._id === el._id){					
-// 				el.rentalStage = e.target.innerText;
-// 				obj = {
-// 					dataId: el.dataId,
-// 					productId: el._id,
-// 					rentalStage: el.rentalStage,
-// 					rentedStage: el.rentedStage
-// 				};	
-// 				return el;
-// 			}				
-// 			return el;						
-// 		})			
-
-// 		console.log(arr2, 'arrrrrrrrrrrrrrrrrrr')
-// 		return { arr2, obj };
-// 	}
+	// async changeStatus(){
+	// 	let { take, rentals, rented } = this.props,
+	// 	{ e, elem } = this.state;
+	// 	document.getElementById("confirmStatus").click();
+	// 	if(take){
+	// 		let obj = {},
+	// 		msg = `Dress status has changed to ${e}`;
+	// 		rentals = rentals.map((el) => {
+	// 			if(elem._id === el._id){					
+	// 				el.rentalStage = e;
+	// 				obj = {
+	// 					dataId: el.dataId,
+	// 					productId: el._id,
+	// 					rentalStage: el.rentalStage,
+	// 					rentedStage: el.rentedStage,
+	// 					forEmail: [
+	// 						{ email: el.buyerEmail, msg, name: el.userName, emailTo: el.userEmail },
+	// 						{ email: el.userEmail, msg, name: el.buyerName, emailTo: el.buyerEmail  }
+	// 					]
+	// 				};	
+	// 				return el;
+	// 			}				
+	// 			return el;						
+	// 		})			
+	// 		let statusRental = await HttpUtils.post('twiliosms', obj);
+	// 		this.props.filterData();
+	// 	}else {
+	// 		let obj = {},
+	// 		msg = `Dress status has changed to ${e}`;
+	// 		rented = rented.map((el) => {
+	// 			if(elem._id === el._id){
+	// 				el.rentedStage = e;	
+	// 				obj = {
+	// 					dataId: el.dataId,
+	// 					productId: el._id,
+	// 					rentalStage: el.rentalStage,
+	// 					rentedStage: el.rentedStage,
+	// 					forEmail: [
+	// 						{ email: el.buyerEmail, msg, name: el.userName, emailTo: el.userEmail },
+	// 						{ email: el.userEmail, msg, name: el.buyerName, emailTo: el.buyerEmail  }
+	// 					]
+	// 				};
+	// 				return el;					
+	// 			}				
+	// 			return el;
+	// 		})
+	// 		let statusRental = await HttpUtils.post('twiliosms', obj);
+	// 		this.props.filterData();
+	// 	}		
+	// }
