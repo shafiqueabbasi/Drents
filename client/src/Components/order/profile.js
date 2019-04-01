@@ -77,7 +77,7 @@ class Profile extends Component {
       	<div>
       		<div className="container-fluid">
       			<div className="col-md-12">
-      				<div className="row">
+      				<div className="">
       					<h1 style={{fontFamily:'Qwigley',fontSize:'200%', color: '#c2073f'}}>Profile</h1>
       				</div>
   					<Form onSubmit={this.handleSubmit}>
@@ -132,12 +132,20 @@ class Profile extends Component {
 									Change={this.inputHandleChange}
 								/>
 							</div>
-							
+<<<<<<< HEAD
+
 							<div className="col-md-6">
 								<TextInput
 									label="Weight"
 									id="weight"
 									value={this.state.weight}
+=======
+							<div className="col-md-6" style={{padding: '0px'}}>
+								<TextInput
+									label="Weight"
+									id="weight"
+									value={this.state.weight}
+>>>>>>> 5cb4da56f9a622518696359be751cd8f617971d1
 									className="input"
 									col="col-md-4 col-sm-2"
 									col2="col-md-8 col-sm-4"
@@ -146,22 +154,38 @@ class Profile extends Component {
 							</div>
 						</div>{/*row closed*/}
 						<div className="row">
+<<<<<<< HEAD
 							<div className="col-md-6">
 								<TextInput
 									label="Bust Size"
 									id="bustSize"
 									value={this.state.bustSize}
+=======
+							<div className="col-md-6" style={{padding: '0px'}}>
+								<TextInput
+									label="Bust Size"
+									id="bustSize"
+									value={this.state.bustSize}
+>>>>>>> 5cb4da56f9a622518696359be751cd8f617971d1
 									col="col-md-4 col-sm-2"
 									col2="col-md-8 col-sm-4"
 									className="input"
 									Change={this.inputHandleChange}
 								/>
 							</div>
+<<<<<<< HEAD
 							<div className="col-md-6">
 								<SelectInput
 									label="Body Type"
 									id="bodyType"
 									value={this.state.bodyType}
+=======
+							<div className="col-md-6" style={{padding: '0px'}}>
+								<SelectInput
+									label="Body Type"
+									id="bodyType"
+									value={this.state.bodyType}
+>>>>>>> 5cb4da56f9a622518696359be751cd8f617971d1
 									className="input"
 									col="col-md-4 col-sm-2"
 									col2="col-md-8 col-sm-4"
@@ -172,11 +196,19 @@ class Profile extends Component {
 							</div>
 						</div>{/*row closed*/}
 						<div className="row">
+<<<<<<< HEAD
 							<div className="col-md-6">
 								<SelectInput
 									label="Occasion Atend Most"
 									id="ocassionAttendMost"
 									value={this.state.ocassionAttendMost}
+=======
+							<div className="col-md-6" style={{padding: '0px'}}>
+								<SelectInput
+									label="Occasion Atend Most"
+									id="ocassionAttendMost"
+									value={this.state.ocassionAttendMost}
+>>>>>>> 5cb4da56f9a622518696359be751cd8f617971d1
 									className="input"
 									col="col-md-4 col-sm-2"
 									col2="col-md-8 col-sm-4"
@@ -195,9 +227,15 @@ class Profile extends Component {
 									options={[1,2,3,4,5]}
 									Change={this.inputHandleChange}
 								/>
+<<<<<<< HEAD
 							</div>
 						</div>{/*row closed*/}
 						<div className="row">
+=======
+							</div>
+						</div>{/*row closed*/}
+						<div className="">
+>>>>>>> 5cb4da56f9a622518696359be751cd8f617971d1
   							<h1 style={{fontFamily: 'Qwigley',fontSize: '200%',color: '#c2073f'}}>Our All fit</h1>
   						</div>
   						<div className="row">

@@ -149,11 +149,6 @@ paraghraph/*.App {
   height: 550px;
   width: 330px;
 }*/
-
-.h_dress{
-  font-family: Qwigley;
-  font-size: 30px;
-}
 .mark{
   margin-top: 30px;
   height: 21px;
@@ -222,6 +217,11 @@ paraghraph/*.App {
           width: 90%;
           float: right;
   }
+  .h_dress{
+      font-family: Qwigley;
+      font-size: 30px;
+      width: 280%;
+  }
 }
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
   .morebtn{
@@ -231,6 +231,10 @@ paraghraph/*.App {
     float: left;
     margin-left: 5%;
   }
+  .h_dress{
+      font-family: Qwigley;
+      font-size: 30px;
+  }
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
   .morebtn{
@@ -239,6 +243,10 @@ paraghraph/*.App {
           width: 90%;
           margin-left: 45%;
   }
+  .h_dress{
+      font-family: Qwigley;
+      font-size: 30px;
+  }
 }
 @media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
   .morebtn{
@@ -246,6 +254,10 @@ paraghraph/*.App {
          width: 90%;
           margin-left: 31%;
   } 
+  .h_dress{
+      font-family: Qwigley;
+      font-size: 30px;
+  }
 }
 
 
