@@ -85,7 +85,7 @@ class UpCommingOrder extends Component {
 	    return (
     	<div>
     		{arr.map((elem) => {
-    			let stage = take ? elem.rentalStage : elem.rentedStage
+    			let stage = take ? elem.rentalStage : elem.rentedStage;
     			return (
     				<div className="row hidden-sm hidden-xs">
 						<div className="col-md-2">
@@ -189,6 +189,7 @@ class UpCommingOrder extends Component {
 
 							{/*<---hidden-sm--->*/}
 			{arr.map((elem) => {
+				let stage = take ? elem.rentalStage : elem.rentedStage;
     			return (
 					<div className="visible-sm ">
 						<div className="row">
@@ -214,7 +215,7 @@ class UpCommingOrder extends Component {
 										<div className="col-sm-2" style={{paddingTop: '4%'}}>
 											<div className="dropdown">
 											<button class="btn dropdown-toggle" type="button" data-toggle="dropdown"
-												 style={{background: '#ffffff', color: '#c2073f', borderRadius: '0', border: '1px solid #c2073f'}}>Status &emsp;&emsp;
+												 style={{background: '#ffffff', color: '#c2073f', borderRadius: '0', border: '1px solid #c2073f'}}>{stage && stage.length > 0 ? stage : 'Status'} &emsp;&emsp;
 												 <span class="caret"></span></button>
 
 											<ul class="dropdown-menu">
@@ -258,6 +259,7 @@ class UpCommingOrder extends Component {
     		})}
 				{/*<---hidden-xs--->*/}
 			{arr.map((elem) => {
+				let stage = take ? elem.rentalStage : elem.rentedStage;
     			return (
 					<div className="row">
 						<div className="visible-xs">
@@ -288,7 +290,7 @@ class UpCommingOrder extends Component {
 								<div className="col-xs-10" style={{paddingTop: '3%'}}>
 									<div className="dropdown">
 										<button class="btn dropdown-toggle" type="button" data-toggle="dropdown"
-										  style={{background: '#ffffff', color: '#c2073f', borderRadius: '0', border: '1px solid #c2073f', textAlign: 'right'}}>Status &emsp;&emsp;
+										  style={{background: '#ffffff', color: '#c2073f', borderRadius: '0', border: '1px solid #c2073f', textAlign: 'right'}}>{stage && stage.length > 0 ? stage : 'Status'} &emsp;&emsp;
 										  <span class="caret"></span></button>
 
 										<ul class="dropdown-menu">
