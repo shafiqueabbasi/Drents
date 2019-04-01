@@ -40,11 +40,13 @@ class SecondFold extends Component {
               <Gallery
                   label="You May Also Like"
                   data={this.props.location.state.data.slice(0, 3)}
+                  widthProps=''
               />
               <div className="col-md-12"><hr/></div>
               <Gallery
                   label="More Of Weddings" hrLine='true'
                   data={this.props.location.state.data.slice(2, 5)}
+                   widthProps=''
               />
               <div className="col-md-12"><hr/></div>
               {this.state.reviews.length > 0 && <div className="row derr">
