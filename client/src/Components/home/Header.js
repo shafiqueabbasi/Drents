@@ -177,7 +177,7 @@ class FirstPage extends Component {
                 <i onClick={this.openNav} className="fas fa-bars" style={{color:'white',marginLeft:'8px',fontSize:'24px',marginTop:'10px'}}></i>
               </div>
               <div className="col-md-4 col-xs-4">
-                <img src="./images/Drent-logo-white.png" style={{width:'80%'}} />
+                <img src="../images/Drent-logo-white.png" style={{width:'80%'}} />
               </div>
               <div className="col-md-4 col-xs-4">
                 {/*<i className="fas fa-search"></i>*/}
