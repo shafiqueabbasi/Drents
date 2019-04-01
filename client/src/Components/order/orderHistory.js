@@ -62,7 +62,7 @@ class OrderHistory extends Component {
             <div className="row visible-sm">
               <div className="row">
                 <div className="col-sm-3">
-                   <img alt="" src="./images/pinksharara.jpg" style={{width: '165px'}}/>
+                   <img alt="" src={elem.fileList[0]} style={{width: '165px'}}/>
                 </div>
                   <div className="col-sm-9">
                     <div className="row">
@@ -94,7 +94,7 @@ class OrderHistory extends Component {
                       </div>
                       <div className="row">
                         <div className="col-sm-6">
-                          <h5 style={{color: '#070707'}}>${elem.priceDay} X {elem.rentDay} Days = ${(+elem.priceDay) * (+elem.rentDay + 1)}</h5>
+                          <h5 style={{color: '#070707'}}>${elem.priceDay} X {elem.rentDay +1} Days = ${(+elem.priceDay) * (+elem.rentDay + 1)}</h5>
                         </div>
                         <div className="col-sm-6"></div>
                       </div>
@@ -117,7 +117,7 @@ class OrderHistory extends Component {
                 <div className="visible-xs ">
                   <div className="col-xs-2"></div>
                     <div className="col-xs-6">
-                      <img alt="" src="./images/pinksharara.jpg" style={{height: '240px'}}/>
+                      <img alt="" src={elem.fileList[0]} style={{height: '240px'}}/>
                     </div>
                   </div>
 
@@ -157,7 +157,7 @@ class OrderHistory extends Component {
                 <div className="row">
                   <div className="col-xs-2"></div>
                   <div className="col-xs-8">
-                    <h5 style={{color: '#070707'}}>${elem.priceDay} X {elem.rentDay} Days = ${(+elem.priceDay) * (+elem.rentDay + 1)}</h5>
+                    <h5 style={{color: '#070707'}}>${elem.priceDay} X {elem.rentDay +1} Days = ${(+elem.priceDay) * (+elem.rentDay + 1)}</h5>
                   </div>
                   <div className="col-xs-2"></div>
                 </div>
