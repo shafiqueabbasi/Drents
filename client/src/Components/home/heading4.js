@@ -11,24 +11,23 @@ class Heading4 extends Component {
       			<h1 className="headings">{label}</h1>
       			<img src='../images/bar.png' style={{marginTop:'-1%'}}/>
       		</div>}
-      		<div className="container-fluid">
 	    		<div className="container-fluid">
-	    			<div className="col-md-12 col-sm-12">
+	    			<div className="col-md-12 col-sm-12 col-xs-12">
 	    				<div className="row" style={{textAlign:'center'}}>
 	    					{data && data.map((elem, key) => {
 	    						return(
-	    							<div className="col-md-4">
+	    							<div className="col-md-4 col-xs-12">
 			    						<Link key={key} to={{pathname: `/detail`, state: {elem, data}}}>
 			    							<img src={elem.fileList[0]} className="zoom" style={{height: '307px'}} />
 		    							</Link>
 		    							<div>
 		    								{showEditDelete && userAvailable && <div className="row">
-		    									<div className="col-md-6">
+		    									<div className="col-md-6 col-xs-6">
 		    										<Link to={{pathname: `/userdetail`, state: {goTo: 'uploadDress', elem, profile}}}>
 		    											<h2 className="h_dress">Edit</h2>
 		    										</Link>
 		    									</div>
-		    									<div className="col-md-6">
+		    									<div className="col-md-6 col-xs-6">
 		    										<h2 className="h_dress" onClick={() => onDelete(elem)}>Delete</h2>
 		    									</div>
 		    								</div>}
@@ -42,7 +41,6 @@ class Heading4 extends Component {
 	    				</div>
 	    			</div>
 	    		</div>
-	    	</div>
     	</div>
     );
 

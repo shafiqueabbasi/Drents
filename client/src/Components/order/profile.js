@@ -54,9 +54,9 @@ class Profile extends Component {
 			ocassionAttendMost, typicalJeanSize, bust, hips, torso, ribcage, userId, _id} = this.state;
 		let obj = {
 			email, firstName, lastName, inputHeight, weight, bustSize, height, bodyType,
-			ocassionAttendMost, typicalJeanSize, bust, hips, torso, ribcage, userId, 
+			ocassionAttendMost, typicalJeanSize, bust, hips, torso, ribcage, userId,
 			profileId: _id
-		}	
+		}
 		this.submit(obj)
 	}
 
@@ -72,7 +72,7 @@ class Profile extends Component {
 
   render() {
     const { getFieldDecorator } = this.props.form;
-    
+
     return (
       	<div>
       		<div className="container-fluid">
@@ -82,41 +82,41 @@ class Profile extends Component {
       				</div>
   					<Form onSubmit={this.handleSubmit}>
 						<div className="row">
-							<TextInput 
-								label="Email" 
-								id="email" 
+							<TextInput
+								label="Email"
+								id="email"
 								className="input"
 								col="col-md-2 col-sm-2"
 								col2="col-md-4 col-sm-4"
-								value={this.state.email} 
+								value={this.state.email}
 								Change={this.inputHandleChange}
-							/>							
+							/>
 							<div className="col-md-2 col-sm-2"><span className="input"><h3 style={{color: '#c2073f'}}>Change Password</h3></span></div>
 							<div className="col-md-4 col-sm-4">
 								<div className="inputBox">
 									<div className="inputText"></div>
 								    <ChangePassword user={this.props.user.email}/>
 								</div>
-							</div>							
-							<TextInput 
-								label="First Name" 
-								id="firstName" 
-								value={this.state.firstName} 
+							</div>
+							<TextInput
+								label="First Name"
+								id="firstName"
+								value={this.state.firstName}
 								className="input"
 								col="col-md-2 col-sm-2"
 								col2="col-md-4 col-sm-4"
 								Change={this.inputHandleChange}
 							/>
-							<TextInput 
-								label="Last Name" 
-								id="lastName" 
-								value={this.state.lastName} 
+							<TextInput
+								label="Last Name"
+								id="lastName"
+								value={this.state.lastName}
 								className="input"
 								col="col-md-2 col-sm-2"
 								col2="col-md-4 col-sm-4"
 								Change={this.inputHandleChange}
-							/>							
-						</div>							
+							/>
+						</div>
 						<div className="">
   							<h1 style={{fontFamily: 'Qwigley',fontSize: '200%', color: '#c2073f'}}>Fil Details</h1>
   						</div>
@@ -131,14 +131,14 @@ class Profile extends Component {
 				 				</div>
 							</div>
 						</div>
-				        
+
 
 						<div className="row">
 	  						<div className="col-md-6" style={{padding: '0px'}}>
-	  							<TextInput 
-									label="Height" 
-									id="inputHeight" 
-									value={this.state.inputHeight} 
+	  							<TextInput
+									label="Height"
+									id="inputHeight"
+									value={this.state.inputHeight}
 									className="input"
 									col="col-md-4 col-sm-2"
 									col2="col-md-8 col-sm-4"
@@ -146,34 +146,34 @@ class Profile extends Component {
 								/>
 							</div>
 							<div className="col-md-6" style={{padding: '0px'}}>
-								<TextInput 
-									label="Weight" 
+								<TextInput
+									label="Weight"
 									id="weight" 
-									value={this.state.weight} 
+									value={this.state.weight}
 									className="input"
 									col="col-md-4 col-sm-2"
 									col2="col-md-8 col-sm-4"
 									Change={this.inputHandleChange}
-								/>	
+								/>
 							</div>
 						</div>{/*row closed*/}
 						<div className="row">
-							<div className="col-md-6" style={{padding: '0px'}}>					    
-								<TextInput 
-									label="Bust Size" 
-									id="bustSize" 
-									value={this.state.bustSize} 
+							<div className="col-md-6" style={{padding: '0px'}}>
+								<TextInput
+									label="Bust Size"
+									id="bustSize"
+									value={this.state.bustSize}
 									col="col-md-4 col-sm-2"
 									col2="col-md-8 col-sm-4"
 									className="input"
 									Change={this.inputHandleChange}
 								/>
 							</div>
-							<div className="col-md-6" style={{padding: '0px'}}>		
-								<SelectInput 
-									label="Body Type" 
-									id="bodyType" 
-									value={this.state.bodyType} 
+							<div className="col-md-6" style={{padding: '0px'}}>
+								<SelectInput
+									label="Body Type"
+									id="bodyType"
+									value={this.state.bodyType}
 									className="input"
 									col="col-md-4 col-sm-2"
 									col2="col-md-8 col-sm-4"
@@ -181,14 +181,14 @@ class Profile extends Component {
 									Change={this.inputHandleChange}
 
 								/>
-							</div>	
+							</div>
 						</div>{/*row closed*/}
 						<div className="row">
-							<div className="col-md-6" style={{padding: '0px'}}>	
-								<SelectInput 
-									label="Occasion Atend Most" 
-									id="ocassionAttendMost" 
-									value={this.state.ocassionAttendMost} 
+							<div className="col-md-6" style={{padding: '0px'}}>
+								<SelectInput
+									label="Occasion Atend Most"
+									id="ocassionAttendMost"
+									value={this.state.ocassionAttendMost}
 									className="input"
 									col="col-md-4 col-sm-2"
 									col2="col-md-8 col-sm-4"
@@ -196,142 +196,142 @@ class Profile extends Component {
 									Change={this.inputHandleChange}
 								/>
 							</div>
-							<div className="col-md-6">		
-								<b 
-									label="Typical Jean Size" 
-									id="typicalJeanSize" 
-									value={this.state.typicalJeanSize} 
+							<div className="col-md-6">
+								<b
+									label="Typical Jean Size"
+									id="typicalJeanSize"
+									value={this.state.typicalJeanSize}
 									className="input"
 									col="col-md-4 col-sm-2"
 									col2="col-md-8 col-sm-4"
 									options={[1,2,3,4,5]}
 									Change={this.inputHandleChange}
 								/>
-							</div>		
-						</div>{/*row closed*/}           						
+							</div>
+						</div>{/*row closed*/}
 						<div className="">
   							<h1 style={{fontFamily: 'Qwigley',fontSize: '200%',color: '#c2073f'}}>Our All fit</h1>
   						</div>
   						<div className="row">
-  							<div className="col-md-4 col-sm-4">      								
+  							<div className="col-md-4 col-sm-4">
   								<h2 style={{color: '#c2073f'}}>Bust</h2>
-  								<RadioInput 
-  									label="Small Bust" 
-  									for="bust1" 
+  								<RadioInput
+  									label="Small Bust"
+  									for="bust1"
 									name="bust-checkbox"
 									value="Small Bust"
 									onChange={this.radioHandleChange}
 								/>
-  								<RadioInput 
-	  								label="Large Bust" 
-	  								for="bust2" 
+  								<RadioInput
+	  								label="Large Bust"
+	  								for="bust2"
 									name="bust-checkbox"
 									value="Large Bust"
 									onChange={this.radioHandleChange}
 								/>
-  								<RadioInput 
-  									label="Average" 
-  									for="bust3" 
+  								<RadioInput
+  									label="Average"
+  									for="bust3"
 									name="bust-checkbox"
 									value="Average"
 									onChange={this.radioHandleChange}
-								/>      								
+								/>
 							</div>
   							<div className="col-md-4 col-sm-4">
   								<h2 style={{color: '#c2073f'}}>Hips</h2>
-  								<RadioInput 
-  									label="Narrow Hips" 
-  									for="hips1" 
+  								<RadioInput
+  									label="Narrow Hips"
+  									for="hips1"
 									name="hips-checkbox"
 									value="Narrow Hips"
 									onChange={this.radioHandleChange}
 								/>
-  								<RadioInput 
-  									label="Wide Hips" 
-  									for="hips2" 
+  								<RadioInput
+  									label="Wide Hips"
+  									for="hips2"
 									name="hips-checkbox"
 									value="Wide Hips"
 									onChange={this.radioHandleChange}
 								/>
-  								<RadioInput 
-	  								label="Average" 
-	  								for="hips3" 
+  								<RadioInput
+	  								label="Average"
+	  								for="hips3"
   									name="hips-checkbox"
   									value="Average"
   									onChange={this.radioHandleChange}
-  								/>       								
+  								/>
 							</div>
   							<div className="col-md-4 col-sm-4">
   								<h2 style={{color: '#c2073f'}}>Torso</h2>
-  								<RadioInput 
-	  								label="Short Torso" 
-	  								for="torso1" 
+  								<RadioInput
+	  								label="Short Torso"
+	  								for="torso1"
   									name="torso-checkbox"
   									value="Short Torso"
   									onChange={this.radioHandleChange}
   								/>
-  								<RadioInput 
-	  								label="Large Torso" 
-	  								for="torso2" 
+  								<RadioInput
+	  								label="Large Torso"
+	  								for="torso2"
   									name="torso-checkbox"
   									value="Large Torso"
   									onChange={this.radioHandleChange}
   								/>
-  								<RadioInput 
-	  								label="Average" 
-	  								for="torso3" 
+  								<RadioInput
+	  								label="Average"
+	  								for="torso3"
   									name="torso-checkbox"
   									value="Average"
   									onChange={this.radioHandleChange}
-  								/>     								
-  							</div>							
+  								/>
+  							</div>
 							<div className="col-md-4 col-sm-4">
   								<h2 style={{color: '#c2073f'}}>Ribcage</h2>
-  								<RadioInput 
-	  								label="Narrow Ribcage" 
-	  								for="ribcage1" 
+  								<RadioInput
+	  								label="Narrow Ribcage"
+	  								for="ribcage1"
   									name="ribcage-checkbox"
   									value="Narrow Ribcage"
   									onChange={this.radioHandleChange}
   								/>
-  								<RadioInput 
-	  								label="Wide Ribcage" 
-	  								for="ribcage2" 
+  								<RadioInput
+	  								label="Wide Ribcage"
+	  								for="ribcage2"
   									name="ribcage-checkbox"
   									value="Wide Ribcage"
   									onChange={this.radioHandleChange}
   								/>
-  								<RadioInput 
-	  								label="Average" 
-	  								for="ribcage3" 
+  								<RadioInput
+	  								label="Average"
+	  								for="ribcage3"
   									name="ribcage-checkbox"
   									value="Average"
   									onChange={this.radioHandleChange}
-  								/>      								
+  								/>
 							</div>
 							<div className="col-md-4 col-sm-4">
   								<h2 style={{color: '#c2073f'}}>Height</h2>
-  								<RadioInput 
-	  								label="Petite" 
-	  								for="height1" 
+  								<RadioInput
+	  								label="Petite"
+	  								for="height1"
   									name="height-checkbox"
   									value="Petite"
   									onChange={this.radioHandleChange}
   								/>
-  								<RadioInput 
-	  								label="Tall" 
-	  								for="height2" 
+  								<RadioInput
+	  								label="Tall"
+	  								for="height2"
   									name="height-checkbox"
   									value="Tall"
   									onChange={this.radioHandleChange}
   								/>
-  								<RadioInput 
-	  								label="Average" 
-	  								for="height3" 
+  								<RadioInput
+	  								label="Average"
+	  								for="height3"
   									name="height-checkbox"
   									value="Average"
   									onChange={this.radioHandleChange}
-  								/>      								
+  								/>
 							</div>
 							<div className="col-md-4 col-sm-4"></div>
 						</div>
