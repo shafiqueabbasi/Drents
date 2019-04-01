@@ -14,53 +14,36 @@ class Heading7 extends Component {
 	      		</div>
 	      		<div className="col-md-12 col-lg-12 col-sm-12">
 	      			<div className="col-md-2 col-lg-2 col-sm-2"></div>
-	      			<div className="col-md-4 col-lg-4 col-sm-4">
-	      				<div className="col-md-2 col-lg-2 col-sm-2 col-xs-2">
-	      					<i class="fa fa-circle" style={{fontSize:'15px'}}></i>
-						</div>
-						<div className="col-md-10 col-lg-10 col-sm-10 col-xs-10">
-							<p>Lorum Ipsum Dolor Sit amet</p>
-						</div>
-						<div className="col-md-2 col-lg-2 col-sm-2 col-xs-2">
-	      					<i class="fa fa-circle" style={{fontSize:'15px'}}></i>
-						</div>
-						<div className="col-md-10 col-lg-10 col-sm-10 col-xs-10">
-							<p>Lorum Ipsum Dolor Sit amet</p>
-						</div>
-						<div className="col-md-2 col-lg-2 col-sm-2 col-xs-2">
-	      					<i class="fa fa-circle" style={{fontSize:'15px'}}></i>
-						</div>
-						<div className="col-md-10 col-lg-10 col-sm-10 col-xs-10">
-							<p>Lorum Ipsum Dolor Sit amet</p>
+	      			<div className="col-md-5 col-lg-5 col-sm-5">
+	      				<div className="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+	      					<i class="fa fa-circle" style={{fontSize:'15px'}}>&emsp; Lorum Ipsum Dolor Sit amet</i>
+						</div><br/><br/>
+						<div className="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+	      					<i class="fa fa-circle" style={{fontSize:'15px'}}>&emsp; Lorum Ipsum Dolor Sit amet</i>
+						</div><br/><br/>
+						<div className="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+	      					<i class="fa fa-circle" style={{fontSize:'15px'}}>&emsp; Lorum Ipsum Dolor Sit amet</i>
 						</div>
 					</div>
 
 					<div className="col-md-1 col-lg-1 col-sm-1"></div>
 
-					<div className="col-md-4 col-lg-4 col-sm-4">
-	      				<div className="col-md-2 col-lg-2 col-sm-2 col-xs-2">
-	      					<i class="fa fa-circle" style={{fontSize:'15px'}}></i>
-						</div>
-						<div className="col-md-10 col-lg-10 col-sm-10 col-xs-10">
-							<p>Lorum Ipsum Dolor Sit amet</p>
-						</div>
-						<div className="col-md-2 col-lg-2 col-sm-2 col-xs-2">
-	      					<i class="fa fa-circle" style={{fontSize:'15px'}}></i>
-						</div>
-						<div className="col-md-10 col-lg-10 col-sm-10 col-xs-10">
-							<p>Lorum Ipsum Dolor Sit amet</p>
-						</div>
-						<div className="col-md-2 col-lg-2 col-sm-2 col-xs-2">
-	      					<i class="fa fa-circle" style={{fontSize:'15px'}}></i>
-						</div>
-						<div className="col-md-10 col-lg-10 col-sm-10 col-xs-10">
-							<p>Lorum Ipsum Dolor Sit amet</p>
+					<div className="col-md-5 col-lg-5 col-sm-5">
+
+						<div className="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+	      					<i class="fa fa-circle" style={{fontSize:'15px'}}>&emsp; Lorum Ipsum Dolor Sit amet</i>
+						</div><br/><br/>
+						<div className="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+	      					<i class="fa fa-circle" style={{fontSize:'15px'}}>&emsp; Lorum Ipsum Dolor Sit amet</i>
+						</div><br/><br/>
+						<div className="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+	      					<i class="fa fa-circle" style={{fontSize:'15px'}}>&emsp; Lorum Ipsum Dolor Sit amet</i>
 						</div>
 					</div>
 
 	      			<div className="col-md-1 col-lg-1 col-sm-1"></div>
 	      		</div>
-	      	</div>
+	      	</div><br/><br/><br/><br/>
 	      	
     	</div>
      );

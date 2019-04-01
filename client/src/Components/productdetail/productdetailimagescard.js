@@ -54,7 +54,7 @@
 
 	            		<div className="row">
 	            			<div className="col-xs-12 col-sm-12">
-	            				<img alt="" src={this.state.showImg} style={isTablet ? {width:"94%", height:"840px" , marginTop:"-13%"} : {width:"85%", height:"400px", marginTop:'-48%', marginLeft:'4%'}}/>
+	            				<img alt="" src={this.state.showImg} style={isTablet ? {width:"94%", height:"840px" , marginTop:"-13%"} : {width:"85%", height:"400px", marginTop:'-11%', marginLeft:'4%'}}/>
 	            			</div>
 	            		</div>
 				<br />
