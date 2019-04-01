@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { HttpUtils } from  '../../Service/HttpUtils';
+import CommentCard from '../productdetail/commentCard';
 
 class UpCommingOrder extends Component {
 	constructor(props){
@@ -7,6 +8,7 @@ class UpCommingOrder extends Component {
 		this.state = {
 			// rentals: this.props.rentals,
 			// rented: this.props.rented,
+			showReviewBox: false,
 			e: '',
 			elem: '',
 			take: this.props.take,
@@ -16,7 +18,13 @@ class UpCommingOrder extends Component {
 	}
 
 	changeDropdown(e, elem){
-		this.setState({ e: e.target.innerText, elem });		
+		let text = e.target.innerText;
+		if(['Completed', 'Returned'].includes(text)){
+			this.setState({ e: text, elem, showReviewBox: true });	
+		}else {
+			this.setState({ e: text, elem });
+		}
+			
 	}
 
 	cancelStatus(){
@@ -119,7 +127,7 @@ class UpCommingOrder extends Component {
 	    buyer = ['Received', 'Returned'],
 	    seller = ['Dispatched', 'Completed', 'Available'],
 	    status = take ? seller : buyer;
-	    console.log(arr, 'kia koi changes hwiiiii')
+	    console.log(this.state.showReviewBox, 'kia koi changes hwiiiii')
 	    return (
     	<div>
     		{arr.map((elem) => {
@@ -152,7 +160,10 @@ class UpCommingOrder extends Component {
 										<ul className="dropdown-menu">
 											{status.map((el) => {
 												return (
-													<li data-toggle="modal" data-target="#confirmStatus" onClick={(e) => this.changeDropdown(e, elem)}>
+													<li data-toggle="modal" 
+														data-target="#confirmStatus" 
+														onClick={(e) => this.changeDropdown(e, elem)}
+													>
 														<a>{el}</a>
 													</li>
 												)												
@@ -200,8 +211,8 @@ class UpCommingOrder extends Component {
                                   <h4 className="modal-title" style={{textAlign:'center', color: 'white'}}>Confirmation</h4>
                                 </div>
                                 <div className="modal-body" style={{textAlign:'center', color: 'white'}}>
-                                    This will change your status
-                                    <div className="row" style={{marginTop: '10px'}}>
+                                    {/*showReviewBox && This will change your status*/}
+                                    {!this.state.showReviewBox && <div className="row" style={{marginTop: '10px'}}>
                                     	<div className="col-md-6"></div>
                                     	<div className="col-md-3">
                                     		<button className="btn btn-sm" 
@@ -215,7 +226,8 @@ class UpCommingOrder extends Component {
                                     			onClick={(e) => this.cancelStatus()}
                                 			>Cancel</button>
                                     	</div>
-                                    </div>
+                                    </div>}
+                                    {this.state.showReviewBox && <CommentCard />}
                                 </div>
 
                               </div>
