@@ -24,10 +24,10 @@ exports.uploaddress = function(req,res,next){
     weather:dressupload.weather,
     background:dressupload.background,
     bodyType:dressupload.bodyType,
-    userId:dressupload.userId,  
+    userId:dressupload.userId,
     userName: dressupload.userName,
     userEmail: dressupload.userEmail,
-    postedOn: dressupload.postedOn  
+    postedOn: dressupload.postedOn
   });
 
   postDressData.save(function(err){
@@ -41,6 +41,9 @@ exports.uploaddress = function(req,res,next){
 
   }
   else if(dressupload._id != ''){
+    console.log(Object.keys(dressupload).length,'LLLeeeennngggttthhhfirst');
+    if(Object.keys(dressupload).length > 2){
+
     UploadDress.updateMany(
         {"_id":dressupload._id},
         {$set: _.omit(dressupload, '_id')},
@@ -51,6 +54,19 @@ exports.uploaddress = function(req,res,next){
             data:'data updated successfully'
         });
     }).catch(() => res.status(422).send({msg:'okay'}));
+  }
+  else if(Object.keys(dressupload).length == 2){
+    console.log(dressupload.length,'LLLeeeennngggttthhhsecond');
+    UploadDress.updateOne(
+        {"_id":dressupload._id},
+        {$set: _.omit(dressupload, '_id')}
+    ).then(() => {
+        res.send({
+            code:200,
+            data:'data updated successfully'
+        });
+    }).catch(() => res.status(422).send({msg:'okay'}));
+  }
   }
 }
 
@@ -82,8 +98,3 @@ exports.uploaddress = function(req,res,next){
     // });
   // })
   // })
-  
-
-
-
-

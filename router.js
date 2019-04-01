@@ -32,6 +32,7 @@ module.exports = function(app){
   app.post('/forgotpassword',Authentication.forgotPassword);
   app.post('/changePassword',Authentication.changePassword);
   app.post('/twiliosms',twiliMobileSms.twilioSms);
+  //app.post('/changestatus',profileUpload.changeStatus);
   //get routes
   app.get('/getdresses',getDresses.getdress);
   app.get('/getreview',getReview.getreview);
