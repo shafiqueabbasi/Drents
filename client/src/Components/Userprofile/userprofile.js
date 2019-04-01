@@ -266,7 +266,7 @@ class UserProfile extends Component {
 							<div className="row" style={{marginTop:'21px', marginLeft: '0px', marginRight:'0px'}}>
 								<div className="col-md-5 col-lg-5 hidden-sm hidden-xs sami">
 									<img src={updatedImage .length > 0 ? updatedImage : "../images/admin1.jpg"} alt="Avatar" className="image"/>
-									<div className={userAvailable ? "overlay" : 'nothing'}>
+									<div className={userAvailable ? "overlayChange" : 'nothing'}>
 										<label className="custom-file-upload samiLabel" style={{margin: '150px 0px 0px 150px'}}>
 											<input type="file" onChange={e => this.handleImage(e)}/>
 											<i class="fas fa-camera" style={{fontSize:'20px',padding: '0 22px 0', cursor: 'pointer'}}></i><br/>
@@ -276,7 +276,7 @@ class UserProfile extends Component {
 								</div>
 								<div className="col-md-1 col-lg-1 hidden-sm hidden-xs"></div>
 								<div className="visible-sm col-sm-5 hidden-xs sami_1" style={{marginTop: '6%'}}>
-									<img src={updatedImage .length > 0 ? updatedImage : "../images/admin1.jpg"} alt="Avatar" className="image_1"/>
+									<img src="../images/admin1.jpg" alt="Avatar" className="image_1"/>
 									<div className={userAvailable ? "overlay_1" : 'nothing'} style={{left: '15px', width: '100%'}}>
 										<label className="custom-file-upload samiLabel_1" style={{padding: '0 36%',marginTop:'40%'}}>
 											<input type="file" onChange={e => this.handleImage(e)}/>
@@ -287,7 +287,7 @@ class UserProfile extends Component {
 								</div>
 
 								<div className="visible-xs sami_2">
-									<img src={updatedImage .length > 0 ? updatedImage : "../images/admin1.jpg"} alt="Avatar" className="image_2"/>
+									<img src="../images/admin1.jpg" alt="Avatar" className="image_2"/>
 									<div className={userAvailable ? "overlay_2" : 'nothing'}>
 										<label className="custom-file-upload samiLabel_2" style={{margin: '10px 0',padding: '37%'}}>
 											<input type="file" onChange={e => this.handleImage(e)}/>
@@ -297,7 +297,7 @@ class UserProfile extends Component {
 									</div>
 								</div>
 
-								<div className="col-md-6 col-lg-7 col-sm-6 col-xs-12 rovil3">
+								<div className="col-md-6 col-lg-7 col-sm-7 col-xs-12 rovil3">
 									<div className="row" style={{marginRight:'0px',marginLeft: '0px'}}>
 										<div className="col-md-5 hidden-sm hidden-xs" style={{paddingLeft: '0px'}}>
 											<h2><span className="rovil2">{userName}</span></h2>
@@ -354,15 +354,15 @@ class UserProfile extends Component {
 										</div>
 									</div>
 
-									<div className="rovil1" style={{paddingLeft: '0px' , marginTop:'-2%'}}>
+									<div className="rovil1" style={{paddingLeft: '0px'}}>
 										<h4>London</h4>
 									</div>
 
-									<div className="rovil1" style={{paddingLeft: '0px' , marginTop:'-5%'}}>
+									<div className="rovil1" style={{paddingLeft: '0px'}}>
 										<h4><span className="rovil7">Bio</span></h4>
 									</div>
 
-									<div className="col-md-12" style={{paddingLeft: '0px' , marginTop:'-4%'}}>
+									<div className="col-md-12" style={{paddingLeft: '0px'}}>
 										<h4>Working as a Designer want to rent every thing which is in my wardrobe.</h4>
 									</div>
 
@@ -449,6 +449,8 @@ class UserProfile extends Component {
 									    			</li>
 									    		)
 									    	})}
+									    	{/*<li><a href="#">CSS</a></li>
+									    	<li><a href="#">JavaScript</a></li>*/}
 									    </ul>
 									</div>
 
@@ -462,13 +464,9 @@ class UserProfile extends Component {
 									      <span class="caret"></span></button>
 
 									    <ul class="dropdown-menu">
-									    	{filterDresses.map((el) => {
-									    		return (
-									    			<li onClick={() => this.setState({ filterKey: el})}>
-								    					<a>{el}</a>
-									    			</li>
-									    		)
-									    	})}
+									    	<li><a href="#">HTML</a></li>
+									    	<li><a href="#">CSS</a></li>
+									    	<li><a href="#">JavaScript</a></li>
 									    </ul>
 									</div>
 								</div>}
@@ -480,13 +478,9 @@ class UserProfile extends Component {
 									      <span class="caret"></span></button>
 
 									    <ul class="dropdown-menu">
-									    	{filterDresses.map((el) => {
-									    		return (
-									    			<li onClick={() => this.setState({ filterKey: el})}>
-								    					<a>{el}</a>
-									    			</li>
-									    		)
-									    	})}
+									    	<li><a href="#">HTML</a></li>
+									    	<li><a href="#">CSS</a></li>
+									    	<li><a href="#">JavaScript</a></li>
 									    </ul>
 									</div>
 								</div>}
