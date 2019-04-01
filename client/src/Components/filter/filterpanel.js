@@ -128,7 +128,7 @@ class Filterpanel extends Component {
 	    				<div className="col-md-8 col-sm-8">
 	  						<Gallery label='Wedding' hrLine='false' data={this.state.data}/>
 	  						<div className="form-group row">
-							<label className="col-md-12 col-sm-12 col-xs-12 control-label" style={{textAlign: 'centers'}}></label>
+							<label className="col-md-12 col-sm-12 col-xs-12 control-label" style={{textAlign: 'center'}}></label>
 							<div className="col-md-5 col-sm-5 col-xs-5 row"></div>
 							{this.state.arr.length > 8 && <ButtonComponent label="More"/>}
 							{this.state.data.length === 0 && <span>No record found
@@ -267,7 +267,7 @@ class Filterpanel extends Component {
 	    				<div className="col-xs-12">
 	  						<Gallery label='Wedding' hrLine='false' data={this.state.data}/>
 	  						<div className="form-group row">
-							<label className="col-xs-12 control-label" style={{textAlign: 'centers'}}></label>
+							<label className="col-xs-12 control-label" style={{textAlign: 'center'}}></label>
 							<div className="col-xs-12 row"></div>
 							{this.state.arr.length > 8 && <ButtonComponent label="More"/>}
 							{this.state.data.length === 0 && <span>No record found

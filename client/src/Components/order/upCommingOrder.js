@@ -5,56 +5,78 @@ class UpCommingOrder extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			rentals: this.props.location.state.rentals,
-			rented: this.props.location.state.rented,
+			// rentals: this.props.rentals,
+			// rented: this.props.rented,
+			e: '',
+			elem: '',
 			take: this.props.take,
 			buyer: ['Received', 'Returned'],
 	    	seller: ['Dispatched', 'Completed', 'Available'],
 		}
 	}
 
-	async changeStatus(e, elem){
-		let { take, rentals, rented } = this.state;
+	changeDropdown(e, elem){
+		this.setState({ e: e.target.innerText, elem });		
+	}
+
+	cancelStatus(){
+		this.setState({ e: '', elem: '' });
+		document.getElementById("confirmStatus").click();
+	}
+
+	async changeStatus(){
+		let { take, rentals, rented } = this.props,
+		{ e, elem } = this.state;
+		document.getElementById("confirmStatus").click();
 		if(take){
-			let obj = {}
+			let obj = {},
+			msg = `Dress status has changed to ${e}`;
 			rentals = rentals.map((el) => {
 				if(elem._id === el._id){					
-					el.rentalStage = e.target.innerText;
+					el.rentalStage = e;
 					obj = {
 						dataId: el.dataId,
 						productId: el._id,
 						rentalStage: el.rentalStage,
-						rentedStage: el.rentedStage
+						rentedStage: el.rentedStage,
+						forEmail: [
+							{ email: el.buyerEmail, msg, name: el.userName, emailTo: el.userEmail },
+							{ email: el.userEmail, msg, name: el.buyerName, emailTo: el.buyerEmail  }
+						]
 					};	
 					return el;
 				}				
 				return el;						
 			})			
-
 			let statusRental = await HttpUtils.post('twiliosms', obj);
-			this.setState({ rentals });
+			this.props.filterData();
 		}else {
-			let obj = {}
+			let obj = {},
+			msg = `Dress status has changed to ${e}`;
 			rented = rented.map((el) => {
 				if(elem._id === el._id){
-					el.rentedStage = e.target.innerText;	
+					el.rentedStage = e;	
 					obj = {
 						dataId: el.dataId,
 						productId: el._id,
 						rentalStage: el.rentalStage,
-						rentedStage: el.rentedStage
+						rentedStage: el.rentedStage,
+						forEmail: [
+							{ email: el.buyerEmail, msg, name: el.userName, emailTo: el.userEmail },
+							{ email: el.userEmail, msg, name: el.buyerName, emailTo: el.buyerEmail  }
+						]
 					};
 					return el;					
 				}				
 				return el;
 			})
 			let statusRental = await HttpUtils.post('twiliosms', obj);
-			this.setState({ rented });
+			this.props.filterData();
 		}		
 	}
 
 	render() {
-	    const { rentals, rented, take } = this.state;	    
+	    const { rentals, rented, take } = this.props;	 
 	    let arr = take ? rentals : rented,
 	    buyer = ['Received', 'Returned'],
 	    seller = ['Dispatched', 'Completed', 'Available'],
@@ -92,7 +114,7 @@ class UpCommingOrder extends Component {
 										<ul className="dropdown-menu">
 											{status.map((el) => {
 												return (
-													<li onClick={(e) => this.changeStatus(e, elem)}>
+													<li data-toggle="modal" data-target="#confirmStatus" onClick={(e) => this.changeDropdown(e, elem)}>
 														<a>{el}</a>
 													</li>
 												)												
@@ -135,12 +157,41 @@ class UpCommingOrder extends Component {
 							</div>
 							<div className="col-md-2"></div>
 						</div>
+						<div className="modal fade" id="confirmStatus" role="dialog">
+                            <div className="modal-dialog">
+                              <div className="modal-content">
+                                <div className="modal-header">
+                                  <button type="button" className="close" data-dismiss="modal">&times;</button>
+                                  <h4 className="modal-title" style={{textAlign:'center', color: 'white'}}>Sign Up</h4>
+                                </div>
+                                <div className="modal-body" style={{textAlign:'center', color: 'white'}}>
+                                    This will change your status
+                                    <div className="row" style={{marginTop: '10px'}}>
+                                    	<div className="col-md-6"></div>
+                                    	<div className="col-md-3">
+                                    		<button className="btn btn-sm" 
+                                    			style={{color:'black', backgroundColor:'white', width: '100%'}}
+                                    			onClick={(e) => this.changeStatus()}
+                                			>Confirm</button>                                    		
+                                    	</div>
+                                    	<div className="col-md-3">
+                                    		<button className="btn btn-sm" 
+                                    			style={{color:'black', backgroundColor:'white', width: '100%'}}
+                                    			onClick={(e) => this.cancelStatus()}
+                                			>Cancel</button>
+                                    	</div>
+                                    </div>
+                                </div>
+
+                              </div>
+                            </div>
+                        </div>
 					</div>
 				)
     		})}
 
 							{/*<---hidden-sm--->*/}
-			{rentals.map((elem) => {
+			{arr.map((elem) => {
     			return (
 					<div className="visible-sm ">
 						<div className="row">
@@ -205,7 +256,7 @@ class UpCommingOrder extends Component {
 				)
     		})}
 				{/*<---hidden-xs--->*/}
-			{rentals.map((elem) => {
+			{arr.map((elem) => {
     			return (
 					<div className="row">
 						<div className="visible-xs">
@@ -291,3 +342,38 @@ class UpCommingOrder extends Component {
 }
 
 export default UpCommingOrder;
+
+
+// async changeStatus(e, elem){
+// 		let { take, rentals, rented } = this.state;
+// 		console.log()
+// 		if(take){
+// 			let anotherObj = this.dontRepeatCode(rentals, e, elem),		
+// 			statusRental = await HttpUtils.post('twiliosms', anotherObj.obj);
+// 			this.setState({ rentals: anotherObj.arr2 });
+// 		}else {
+// 			let anotherObj = this.dontRepeatCode(rented, e, elem),			
+// 			statusRental = await HttpUtils.post('twiliosms', anotherObj.obj);
+// 			this.setState({ rented: anotherObj.arr2 });
+// 		}		
+// 	}
+
+// 	dontRepeatCode(arr, e, elem){
+// 		let obj = {},
+// 		arr2 = arr.map((el) => {
+// 			if(elem._id === el._id){					
+// 				el.rentalStage = e.target.innerText;
+// 				obj = {
+// 					dataId: el.dataId,
+// 					productId: el._id,
+// 					rentalStage: el.rentalStage,
+// 					rentedStage: el.rentedStage
+// 				};	
+// 				return el;
+// 			}				
+// 			return el;						
+// 		})			
+
+// 		console.log(arr2, 'arrrrrrrrrrrrrrrrrrr')
+// 		return { arr2, obj };
+// 	}

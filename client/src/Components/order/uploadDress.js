@@ -111,6 +111,7 @@ class UploadDress extends Component {
             fileList: [...imagesOne, ...imagesTwo],
             userId: this.props.user._id,
             userName: this.props.user.username,
+            userEmail: this.props.user.email,
             postedOn: moment().format('LL'),
             _id
         }
@@ -247,6 +248,7 @@ render() {
     if(goDetail){
         return <Redirect to={{pathname: '/detail', state: {elem, data}}}/>
     }
+    console.log(this.props.user, 'userrrrrrrrrrrrr')
 
     return (
       	<div>
@@ -269,9 +271,8 @@ render() {
                       value={this.state.productName} 
                       className="input"
                       Change={this.inputHandleChange}
-                    />
-*/     }
-               <TextInput 
+                    />*/}
+                  <TextInput 
                       label="Product Name" 
                       id="productName" 
                       className="input"
@@ -441,7 +442,7 @@ render() {
 								<label className="container">
 									<input value='small' type="checkbox" id="S"
                     onChange={this.handleSize}
-                   style={{position: 'absolute', opacity: '0', cursor: 'pointer', height: '0', width: '0'}}/>
+                    style={{position: 'absolute', opacity: '0', cursor: 'pointer', height: '0', width: '0'}}/>
 									<span className="checkmark"></span>
 									<h4 style={{color: '#c2073f'}}>Small</h4>
 								</label>

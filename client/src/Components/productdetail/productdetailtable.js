@@ -49,9 +49,10 @@ import React, { Component } from 'react';
 								,24<sup>o</sup> Waist and 33<sup>o</sup> hips</p>    
 					</div>
 					<div className="visible-sm visible-xs">
+						<div className="container tablemargin">
 						<h4>Measurements</h4>
                     	<div style={{overflowX:'auto'}}>
-                    		<table className="table table-bordered">
+                    		<table className="table table-bordered" style={{width:'84%'}}>
 							    <thead>
 							    <tr>
 							        <th>Size</th>
@@ -91,7 +92,8 @@ import React, { Component } from 'react';
 							</table>
 						</div>
 						<p className="glass">Our Model,lolly is 5'9" and wear a size small.She Has a 32<sup>o</sup> bust
-								,24<sup>o</sup> Waist and 33<sup>o</sup> hips</p>									
+								,24<sup>o</sup> Waist and 33<sup>o</sup> hips</p>
+						</div>											
                     </div>{/*div close of visible-sm visible-xs*/}
 
 

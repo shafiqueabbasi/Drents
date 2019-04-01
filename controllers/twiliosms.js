@@ -1,6 +1,18 @@
 const twilio = require('twilio');
 const checkoutBooking = require('../models/checkout');
+const nodemailer = require('nodemailer');
 
+var smtpTransport = nodemailer.createTransport({
+    service: "Gmail",
+    auth: {
+        user: "drens224@gmail.com",
+        pass: "drent1234"
+    },
+    tls: {
+        rejectUnauthorized: false
+    }
+
+});
 
 exports.twilioSms = function(req, res, next){
   var accountSid = 'ACc61df5933ded243c57059f573b13fa4b'; // Your Account SID from www.twilio.com/console
@@ -22,16 +34,73 @@ checkoutBooking.findOne({
                 rentalStage: data.rentalStage,
                 rentedStage: data.rentedStage
             }
-            return {...elem, ...{rentalStage: data.rentalStage}}
+            return {...elem, ...obj}
         }
         return elem
     })
     response.save((err, resp) => {
         console.log(response, 'kia aay bhaiiiiii')
-        res.send({
-            code:200,
-            data:'data updated successfully'
-        });
+        if(resp){       
+            res.send({
+                code:200,
+                data:'data updated successfully'
+            });
+            data.forEmail.map((elem) => {
+                const mailOptions = {
+                    to : elem.email,
+                    subject : "Drent ",
+                    html : `<html>
+                        <head>
+                            <style>
+                                table {
+                                    font-family: arial, 
+                                    sans-serif;
+                                    border-collapse: collapse;
+                                    width: 100%;
+                                }td, th {
+                                    border: 1px solid #dddddd;
+                                    text-align: left;
+                                    padding: 8px;
+                                }tr:nth-child(even) {
+                                    background-color: #dddddd;
+                                }
+                            </style>
+                        </head>
+                        <body>
+                            <h2>Dress Details</h2>
+                            <table> 
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Message</th>
+                                </tr>
+                                <tr>
+                                    <td>${elem.name}</td>
+                                    <td>${elem.emailTo}</td>
+                                    <td>${elem.msg}</td>
+                                </tr>
+                            </table>
+                        </body>
+                    </html>`
+                };
+
+                smtpTransport.sendMail(mailOptions, (err, response) => {
+                    if (err) {
+                      console.log(err, 'errrrrrrr')
+                        res.send({
+                            code: 404,
+                            message: 'error'
+                        })
+                    } else {
+                      console.log('ho gai email send')
+                        res.send({
+                            code: 200,
+                            message: 'check your email we have sent you a reset password link'
+                        })
+                    }
+                });
+            })            
+        }
     })
 }).catch((err) => {
     console.log(err, 'errrrrrrrr')

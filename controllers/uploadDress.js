@@ -26,6 +26,7 @@ exports.uploaddress = function(req,res,next){
     bodyType:dressupload.bodyType,
     userId:dressupload.userId,  
     userName: dressupload.userName,
+    userEmail: dressupload.userEmail,
     postedOn: dressupload.postedOn  
   });
 

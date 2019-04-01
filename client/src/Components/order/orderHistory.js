@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 
 class OrderHistory extends Component {
   render() {
-    const { orderhistory } = this.props.location.state;
+    const { historyData } = this.props;
     
     return (
       	<div>      		      	
-              {orderhistory.map((elem) => {
+              {historyData.map((elem) => {
                 return (
                   <div className="row hidden-sm hidden-xs">
                     <div className="col-md-2">
@@ -57,7 +57,7 @@ class OrderHistory extends Component {
                   </div>
                 )
               })}    				
-          {orderhistory.map((elem) => {
+          {historyData.map((elem) => {
             return(
             <div className="row visible-sm">
               <div className="row">
@@ -111,7 +111,7 @@ class OrderHistory extends Component {
             )
           })}
 
-        {orderhistory.map((elem) => {
+        {historyData.map((elem) => {
           return(
               <div className="row visible-xs">
                 <div className="visible-xs ">

@@ -8,6 +8,8 @@ import OrderHistory from './orderHistory';
 import Profile from './profile';
 import UploadDress from './uploadDress';
 import SeeChart from './seeChart';
+import _ from 'underscore';
+import { HttpUtils } from  '../../Service/HttpUtils';
 
 class Order extends Component {
 	constructor(props) {
@@ -21,18 +23,83 @@ class Order extends Component {
                         {currentRentals: false},
                         {currentRented: false},
                         {orderHis: false},
-                  ]
+                  ],
+                  rented: [],
+                  rentals: [],
+                  historyData: [],
+                  loading: true
 		}
 	}
 
       componentDidMount(){
-            const { goTo } = this.props.location.state,
+            const { goTo, orderhistory, id } = this.props.location.state,
             { arr, orderTabs } = this.state;
             if(goTo == 'profile' || goTo == 'uploadDress'){
                   this.renderWithState(goTo, arr);
             }else{
                   this.renderWithState(goTo, orderTabs);
-            }            
+            }
+            this.filterDataWithStatus();            
+      }
+
+      async filterDataWithStatus(){
+            const { id } = this.props.location.state;
+            let data = await HttpUtils.post('getprofiledress', {userId: id}),
+            historyData = [],
+            rented = [],
+            rentals = [];
+            data.orderhistory.length > 0 && data.orderhistory.map((elem) => {
+                  elem.products.map((el) => {
+                        let isUser = el.userId === id;
+                        if(isUser && ['Completed', 'Available'].includes(el.rentalStage)){
+                              historyData.push({...el, ...{
+                                    amount: elem.amount,
+                                    date: elem.date,
+                                    buyerEmail: elem.email,
+                                    buyerName: elem.name,
+                                    buyerId: elem.userId,
+                                    dataId: elem._id
+                              }});
+                        }
+                        if(isUser && ['Completed', 'Dispatched', ''].includes(el.rentalStage)){
+                              rentals.push({...el, ...{
+                                    amount: elem.amount,
+                                    date: elem.date,
+                                    buyerEmail: elem.email,
+                                    buyerName: elem.name,
+                                    buyerId: elem.userId,
+                                    dataId: elem._id
+                              }});
+                        }                             
+                  });
+                  if(elem.userId === id){
+                        elem.products.map((el) => {
+                              if(['Completed', 'Available'].includes(el.rentalStage)){
+                                    historyData.push({...el, ...{
+                                          amount: elem.amount,
+                                          date: elem.date,
+                                          buyerEmail: elem.email,
+                                          buyerName: elem.name,
+                                          buyerId: elem.userId,
+                                          dataId: elem._id
+                                    }});
+                              }else if(!['Completed', 'Available'].includes(el.rentalStage)){
+                                    rented.push({...el, ...{
+                                          amount: elem.amount,
+                                          date: elem.date,
+                                          buyerEmail: elem.email,
+                                          buyerName: elem.name,
+                                          buyerId: elem.userId,
+                                          dataId: elem._id
+                                    }});
+                              }                                   
+                        })                            
+                  }
+            })
+            rented = _.flatten(rented);
+            historyData = _.flatten(historyData);
+            rentals = _.flatten(rentals);
+            this.setState({ rented, historyData, rentals, loading: false });
       }
 
       renderWithState(goTo, arr){            
@@ -52,11 +119,12 @@ class Order extends Component {
       }
 
   	render() {
-            const { arr, orderTabs } = this.state,
+            const { arr, orderTabs, rented, historyData, rentals } = this.state,
             { goTo } = this.props.location.state;
 
           return (
               <div>
+                  {this.state.loading && <div className="loading">Loading&#8230;</div>}
       		<div className="App" style={{marginTop: '110px'}}>
       			<div className="container">
       				<div className="row  hidden-xs hidden-sm">
@@ -130,9 +198,9 @@ class Order extends Component {
 				     		</div>
 						</div>
 					</div>
-					{orderTabs[0].currentRentals && <UpCommingOrder {...this.props} take={true}/>}
-					{orderTabs[1].currentRented && <UpCommingOrder {...this.props} take={false}/>}
-                              {orderTabs[2].orderHis && <OrderHistory {...this.props}/>}
+					{orderTabs[0].currentRentals && <UpCommingOrder filterData={() => this.filterDataWithStatus()} rentals={rentals} take={true}/>}
+					{orderTabs[1].currentRented && <UpCommingOrder filterData={() => this.filterDataWithStatus()} rented={rented} take={false}/>}
+                              {orderTabs[2].orderHis && <OrderHistory historyData={historyData}/>}
 					{arr[0].profile && <Profile {...this.props}/>}
 					{arr[1].uploadDress && <UploadDress {...this.props}/>}
 				</div>

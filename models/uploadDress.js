@@ -23,7 +23,8 @@ const uploadDressSchema = new Schema({
   bookedTo:{ type:String },
   rentalStage: { type: String },
   rentedStage: { type: String },
-  userName: { type: String },  
+  userName: { type: String }, 
+  userEmail: { type: String },  
   postedOn: { type: String }
 });
 

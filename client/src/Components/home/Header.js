@@ -36,11 +36,16 @@ class FirstPage extends Component {
   }
 
   render() {
-      const { loggedIn, arr, user } = this.props,
+      const { loggedIn, arr, user, location } = this.props,
       { arrCart } = this.state;
       let finalArr = arr.length > 0 ? arr : arrCart,
       userId = user && user._id ? user._id : '';
-      
+      console.log(this.props, 'bhai jaaannnn bhai jaannn')
+      let str = location.pathname;
+      if(str.slice(str.indexOf("/") + 1, str.indexOf("/", 1)) == 'reset'){
+        return null;
+      }
+
       return (
         <div>
         	<div className="nav navbar navbar-fixed-top bgc">
@@ -48,7 +53,7 @@ class FirstPage extends Component {
         		  <div className="container-fluid">
         	  	  <div className="col-md-4 col-sm-2">
         			 	  <div className="navbar-header" style={{marginBottom:'-3%'}}>
-        					  <a href="#" className="hidden-sm"><img src="../images/Drent-logo-white.png" style={{marginTop: '0px 0px 0px -40px', height : '100px'}}/></a>
+        					  <a href="#" className="hidden-sm"><img src="../images/Drent-logo-white.png" style={{margin: '0px 0px 0px -40px', height : '100px'}}/></a>
                     <a href="#" className="visible-sm"><img src="../images/Drent-logo-white.png" style={{width: '187%'}}/></a>
         				  </div>
         			  </div>
