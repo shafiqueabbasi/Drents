@@ -320,6 +320,7 @@
 .tissue{
 	text-align: left;
 	color: white;
+	margin: 0px;
 }
 .tissue2{
 
@@ -338,9 +339,9 @@
 	text-align: center;/**/
 	color: white;
 }
-.shift{
+/*.shift{
 	margin-top: 10px;
-}
+}*/
 .rest2{
     color: white;
     text-align: left;
@@ -359,7 +360,7 @@
 }
 
 .action{
-	height: 900px;
+	
 	background-color: #c2073f;
 }
 .reaction{
