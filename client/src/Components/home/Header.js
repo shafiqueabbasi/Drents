@@ -62,15 +62,15 @@ class FirstPage extends Component {
         		    <div className="container-fluid">
         			    <div className="col-md-8 col-sm-10  container customhover">
         				    <ul className="nav navbar-nav navbar-right customhover">
-        					    <li className="head"><Link to={`/`} className="nav" style={{fontSize:'12px'}}>HOME</Link></li>
-          				    <li className="head"><Link to={`/product`} className="nav" style={{fontSize:'12px',marginRight:'-9px'}}>PRODUCT</Link></li>
-                      {loggedIn && <li className="head" style={{marginRight: '-28px'}}><Link to={`/profile/${userId}`} className="nav" style={{fontSize:'12px'}}>MY PROFILE</Link></li>}
+        					    <li className="head"><Link to={`/`} className="nav" style={{fontSize:'12px',fontFamily: 'crimsontext'}}>HOME</Link></li>
+          				    <li className="head"><Link to={`/product`} className="nav" style={{fontSize:'12px',marginRight:'-9px',fontFamily: 'crimsontext'}}>PRODUCT</Link></li>
+                      {loggedIn && <li className="head" style={{marginRight: '-28px',fontFamily: 'crimsontext'}}><Link to={`/profile/${userId}`} className="nav" style={{fontSize:'12px'}}>MY PROFILE</Link></li>}
           				    <li className="head"><Link to={`/detail`} className="nav" style={{fontSize:'12px'}}></Link></li>
           				    {/*<li className="head"><Link to={`/detail`} className="nav" style={{fontSize:'12px'}}>TESTIMONIALS</Link></li>*/}
-                      {loggedIn && <li className="head" onClick={this.logOut}><a className="nav" style={{fontSize:'12px'}}>Log Out</a></li>}
+                      {loggedIn && <li className="head" onClick={this.logOut}><a className="nav" style={{fontSize:'12px',fontFamily: 'crimsontext'}}>Log Out</a></li>}
 
                       {!loggedIn && <li className="head">
-                        <a href="#" className="nav" data-toggle="modal" data-target="#SignIn" style={{fontSize:'12px'}}>Sign In</a>
+                        <a href="#" className="nav" data-toggle="modal" data-target="#SignIn" style={{fontSize:'12px',fontFamily: 'crimsontext'}}>Sign In</a>
                           <div className="modal fade" id="SignIn" role="dialog">
                             <div className="modal-dialog">
                               <div className="modal-content">
@@ -89,7 +89,7 @@ class FirstPage extends Component {
                           </div>
                       </li>}
                       {!loggedIn && <li className="head">
-                        <a href="#" className="nav" data-toggle="modal" data-target="#SignUp" style={{fontSize:'12px'}}>Sign Up</a>
+                        <a href="#" className="nav" data-toggle="modal" data-target="#SignUp" style={{fontSize:'12px',fontFamily: 'crimsontext'}}>Sign Up</a>
                           <div className="modal fade" id="SignUp" role="dialog">
                             <div className="modal-dialog">
                               <div className="modal-content">
