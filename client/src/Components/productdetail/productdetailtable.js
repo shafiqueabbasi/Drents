@@ -73,7 +73,7 @@ import { isMobileOnly, isTablet } from "react-device-detect";
 								        <td>57<sup>o</sup></td>
 								        <td>57<sup>o</sup></td>
 								    </tr>
-								    <tr>
+								      <tr>
 								        <td>Medium</td>
 								        <td>36<sup>o</sup></td>
 								        <td>42<sup>o</sup></td>

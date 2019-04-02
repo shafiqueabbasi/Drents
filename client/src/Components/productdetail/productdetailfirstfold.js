@@ -293,7 +293,7 @@ class Productdetailfirstfold extends Component {
   										return(
   											<span key={key}>
 			                            		<div className="col-xs-2 flu"><h3>{el}</h3></div>
-			                            		<div className="col-xs-1"></div>
+			                            		<div className="col-xs-0"></div>
 			                            	</span>
   										)
   									})}

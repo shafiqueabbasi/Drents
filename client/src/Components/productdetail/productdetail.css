@@ -48,10 +48,10 @@
 @media only screen and (min-device-width : 360px) and (max-device-width : 660px){
 	.sams{
 		border: 1px solid #c2073f;
-    	height: 47px;
-    	margin-left: 7px;
-    	padding: 0px;
-   		 width: 97%;  
+	    height: 47px;
+	    margin-left: 0px;
+	    padding: 0px;
+	    width: 97%;
 	}
 	.name{
 	    margin-top: 22px;
@@ -87,11 +87,11 @@
 		width: 117%;
 	}
 	.bravoo{
-      	 width: 87%;
-	    background-color: #c2073f;
-	    padding: 0px;
-	    margin-left: 29px;
-	    margin-top: -3%;
+      	width: 98%;
+    	background-color: #c2073f;
+    	padding: 0px;
+    	margin-left: -1px;
+    	margin-top: -11%;
 	}
 	.booked{
       	width: 90%;
@@ -536,7 +536,7 @@
 		font-family: Qwigley;
 		color: #c2073f; 
 		font-size: 45px;
-	    margin-left: 6%;
+
 	}
 	.shelterr5{
 		font-family: Qwigley;
