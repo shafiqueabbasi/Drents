@@ -110,7 +110,7 @@
 }
 .headings1{
   color: #ffffff;
-  font-family: Qwigley;
+  font-family: Sacramento;
   padding-top: 10px;
 
 }
@@ -121,6 +121,8 @@
 }
 .p_lapi{
   color: white;
+  font-family: crimsontext;
+letter-spacing: 1px;
 }
 .zoom {
 
@@ -604,7 +606,7 @@ input[type="file"] {
 }
 .headings22{
   color: #c2073f;
-  font-family: Qwigley;
+  font-family: Sacramento;
   font-size: 40px;
   margin-bottom: 0px;
 }
@@ -626,9 +628,10 @@ input[type="file"] {
   border: 5px solid #c2073f;
 }
 .pichead22{
-  font-family: Qwigley;
+  font-family: Sacramento;
   font-size: 30px;
   width: 165px;
+  color: black;
 }
 @media only screen and (min-device-width : 360px) and (max-device-width : 660px){
     .googleapp{

@@ -16,13 +16,13 @@ class Heading7 extends Component {
 	      			<div className="col-md-2 col-lg-2 col-sm-2"></div>
 	      			<div className="col-md-5 col-lg-5 col-sm-5">
 	      				<div className="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-	      					<i class="fa fa-circle" style={{fontSize:'15px'}}>&emsp; Lorum Ipsum Dolor Sit amet</i>
+	      					<i class="fa fa-circle" style={{fontSize:'15px'}}>&emsp;<span style={{fontFamily: 'Sacramento',fontSize: '20px'}}>Lorum Ipsum Dolor Sit amet</span></i>
 						</div><br/><br/>
 						<div className="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-	      					<i class="fa fa-circle" style={{fontSize:'15px'}}>&emsp; Lorum Ipsum Dolor Sit amet</i>
+	      					<i class="fa fa-circle" style={{fontSize:'15px'}}>&emsp;<span style={{fontFamily: 'Sacramento',fontSize: '20px'}}>Lorum Ipsum Dolor Sit amet</span></i>
 						</div><br/><br/>
 						<div className="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-	      					<i class="fa fa-circle" style={{fontSize:'15px'}}>&emsp; Lorum Ipsum Dolor Sit amet</i>
+	      					<i class="fa fa-circle" style={{fontSize:'15px'}}>&emsp;<span style={{fontFamily: 'Sacramento',fontSize: '20px'}}>Lorum Ipsum Dolor Sit amet</span></i>
 						</div>
 					</div>
 
@@ -31,13 +31,13 @@ class Heading7 extends Component {
 					<div className="col-md-5 col-lg-5 col-sm-5">
 
 						<div className="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-	      					<i class="fa fa-circle" style={{fontSize:'15px'}}>&emsp; Lorum Ipsum Dolor Sit amet</i>
+	      					<i class="fa fa-circle" style={{fontSize:'15px'}}>&emsp;<span style={{fontFamily: 'Sacramento',fontSize: '20px'}}>Lorum Ipsum Dolor Sit amet</span></i>
 						</div><br/><br/>
 						<div className="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-	      					<i class="fa fa-circle" style={{fontSize:'15px'}}>&emsp; Lorum Ipsum Dolor Sit amet</i>
+	      					<i class="fa fa-circle" style={{fontSize:'15px'}}>&emsp;<span style={{fontFamily: 'Sacramento',fontSize: '20px'}}>Lorum Ipsum Dolor Sit amet</span></i>
 						</div><br/><br/>
 						<div className="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-	      					<i class="fa fa-circle" style={{fontSize:'15px'}}>&emsp; Lorum Ipsum Dolor Sit amet</i>
+	      					<i class="fa fa-circle" style={{fontSize:'15px'}}>&emsp;<span style={{fontFamily: 'Sacramento',fontSize: '20px'}}>Lorum Ipsum Dolor Sit amet</span></i>
 						</div>
 					</div>
 
