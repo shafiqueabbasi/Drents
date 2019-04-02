@@ -10,6 +10,7 @@ const orderDetailSchema = new Schema({
   userId:{ type:String },
   date:{ type:String },
   amount:{ type:String },
+  reviewId:{type:String}
 });
 
 

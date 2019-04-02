@@ -48,7 +48,8 @@ class CartData extends Component {
 		        email: user.email,
 		        name: user.username,
 		        date: moment().format('LL'),
-		        amount: finalPrice
+		        amount: finalPrice,
+		        reviewId: ''
 			},
 			stripeRes = await HttpUtils.post('orderdetail',obj, user.token);
 	        if(stripeRes.code && stripeRes.code == 200){

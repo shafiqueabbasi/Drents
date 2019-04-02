@@ -67,93 +67,73 @@ class UserProfile extends Component {
 
 	async fetchUserData(){
 		let id = this.props.match.params.value,
-		data = await HttpUtils.post('getprofiledress', {userId: id}),
-		rate = 0;
+		data = await HttpUtils.post('getprofiledress', {userId: id});
 
 		if(data.code && data.code == 200){
-			let dressData = data.dress.length > 0 && data.dress.map((elem) => {
-				return elem._id;
-			}),
-			historyData = [],
-			rentedData = [],
-			rentals = [];
-			data.orderhistory.length > 0 && data.orderhistory.map((elem) => {
-				elem.products.map((el) => {
-					let isUser = el.userId === id;
-					if(isUser && ['Completed', 'Available'].includes(el.rentalStage)){
-						historyData.push({...el, ...{
-							amount: elem.amount,
-							date: elem.date,
-							buyerEmail: elem.email,
-							buyerName: elem.name,
-							buyerId: elem.userId,
-							dataId: elem._id
-						}});
-					}
-					if(isUser && ['Completed', 'Dispatched', ''].includes(el.rentalStage)){
-						rentals.push({...el, ...{
-							amount: elem.amount,
-							date: elem.date,
-							buyerEmail: elem.email,
-							buyerName: elem.name,
-							buyerId: elem.userId,
-							dataId: elem._id
-						}});
-					}
-				});
-				if(elem.userId === id){
-					// rentedData.push(elem.products.filter((elem) => !['Completed', 'Available'].includes(elem.rentalStage)));
-					elem.products.map((el) => {
-						if(['Completed', 'Available'].includes(el.rentalStage)){
-							historyData.push({...el, ...{
-								amount: elem.amount,
-								date: elem.date,
-								buyerEmail: elem.email,
-								buyerName: elem.name,
-								buyerId: elem.userId,
-								dataId: elem._id
-							}});
-						}else if(!['Completed', 'Available'].includes(el.rentalStage)){
-							rentedData.push({...el, ...{
-								amount: elem.amount,
-								date: elem.date,
-								buyerEmail: elem.email,
-								buyerName: elem.name,
-								buyerId: elem.userId,
-								dataId: elem._id
-							}});
-						}
-					})
-				}
-			})
+			this.ratingFunc(data);
+			this.rentedRentals(data, id);
 
 			for(var el in data.profile[0]){
-		        this.setState({ [el]: data.profile[0][el] })
+		        this.setState({ [el]: data.profile[0][el] });
 	        }
-			let orderhistory = _.flatten(historyData),
-			rented = _.flatten(rentedData);
-			if(dressData){
-				data.review.map((elem) => {
-					if(dressData.includes(elem.productId)){
-						rate += +elem.rate
-					}
-				})
-				rate = rate / data.review.length;
-			}
-			if(!dressData){
-				this.props.updateFooter(true)
-			}
+
 			this.setState({
 				profile: data.profile,
-				review: rate,
-				loading: false,
-				dressData,
-				orderhistory: data.orderhistory,
-				userId: id,
-				rentals,
-				rented
+				loading: false,				
+				userId: id,				
 			});
 		}
+	}
+
+	rentedRentals(data, id){
+		let rented = [],
+		rentals = [];
+		data.orderhistory.length > 0 && data.orderhistory.map((elem) => {
+			elem.products.map((el) => {
+				let isUser = el.userId === id;				
+				if(isUser && ['Completed', 'Dispatched', ''].includes(el.rentalStage)){
+					rentals.push(this.easyObject(el, elem));
+				}
+			});
+			if(elem.userId === id){
+				elem.products.map((el) => {
+					if(!['Completed', 'Available'].includes(el.rentalStage)){
+						rented.push(this.easyObject(el, elem));
+					}
+				})
+			}
+		});
+		this.setState({ orderhistory: data.orderhistory, rentals, rented });		
+	}
+
+	ratingFunc(data){
+		let review = 0,
+		dressData = data.dress.length > 0 && data.dress.map((elem) => {
+			return elem._id;
+		});
+		if(dressData){
+			data.review.map((elem) => {
+				if(dressData.includes(elem.productId)){
+					review += +elem.rate
+				}
+			})
+			review = review / data.review.length;
+		}
+		if(!dressData){
+			this.props.updateFooter(true);
+		}
+		this.setState({ review, dressData });
+	}
+
+	easyObject(el, elem){
+		return {...el, ...{
+			amount: elem.amount,
+			date: elem.date,
+			buyerEmail: elem.email,
+			buyerName: elem.name,
+			buyerId: elem.userId,
+			dataId: elem._id
+		}}
 	}
 
 	componentWillUnmount(){

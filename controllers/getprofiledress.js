@@ -7,7 +7,6 @@ exports.getdressProfile = function(req,res,next){
   console.log(req.body, 'req.bodyyyyyy')
   var userId = req.body.userId;
   UploadDress.find({"userId":userId},function(err,allDress){
-    var allDress = allDress;
     if(err){
       return res.status(422).send({error:'No dress data to show'})
     }

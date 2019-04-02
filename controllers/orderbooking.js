@@ -16,7 +16,8 @@ exports.checkoutorder = function(req,res,next){
         email:orderDetails.email,
         name:orderDetails.name,
         date:orderDetails.date,
-        amount:orderDetails.amount
+        amount:orderDetails.amount,
+        reviewId:orderDetails.reviewId
       });
 
       postorderdetail.save(function(err){

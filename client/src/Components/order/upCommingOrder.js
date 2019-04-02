@@ -31,17 +31,18 @@ class UpCommingOrder extends Component {
 		document.getElementById("confirmStatus").click();
 	}
 
-	changeStatus = async (popUp) => {
+	changeStatus = async (popUp, reviewId) => {
 		document.getElementById(popUp).click();
 		let { take, rentals, rented } = this.props,	
 		arr = take ? rentals : rented,
-		obj = this.makeCodeShort(arr, take);			
+		obj = this.makeCodeShort(arr, take, reviewId);			
 		let statusRental = await HttpUtils.post('twiliosms', obj);
 		alert('Your status updated successfully');
 		this.props.filterData();			
 	}
 
-	makeCodeShort(arr, take){
+	makeCodeShort(arr, take, reviewId){
+		console.log(reviewId, 'UpCommingOrder reviewIdddddddddd')
 		const { e, elem} = this.state;
 		let obj = {},
 		msg = `Dress status has changed to ${e}`;		
@@ -53,6 +54,7 @@ class UpCommingOrder extends Component {
 					el.rentedStage = e;
 				}
 				obj = {
+					reviewId,
 					dataId: el.dataId,
 					productId: el._id,
 					rentalStage: el.rentalStage,
@@ -76,12 +78,19 @@ class UpCommingOrder extends Component {
 	    buyer = ['Received', 'Returned'],
 	    seller = ['Dispatched', 'Completed', 'Available'],
 	    status = take ? seller : buyer;
-	    
+	    console.log(arr, 'arrrrrrrrrr')
 	    return (
     	<div>
     		{arr.map((elem) => {
     			let stage = take ? elem.rentalStage : elem.rentedStage,    			
-    			obj = { _id: elem._id};
+    			obj = { 
+    				reviewId: elem.reviewId,
+    				productId: elem._id, 
+    				rentalId: elem.userId, 
+    				rentedId: elem.buyerId,
+    				rentedName: elem.buyerName,
+    				rentalName: elem.userName
+				};
     			
     			return (
     				<div className="row hidden-sm hidden-xs">

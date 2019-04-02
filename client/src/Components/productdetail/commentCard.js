@@ -104,14 +104,37 @@ class CommentCard extends Component {
     //-----------------cloudnary function end ------------------
 
     postReview = async (img) => {
-    	const { name, email, size, wear, msg, rate } = this.state,
-    	obj = {
-    		name, email, size, wear, msg, rate, img,
-    		userId: this.props.user._id,
-    		date: moment().format('LL'),
-    		productId: this.props.obj._id
+    	let { name, email, size, wear, msg, rate } = this.state,
+    	{ reviewId, productId, rentalId, rentedId, rentalName, rentedName } = this.props.obj,
+    	_id = reviewId.length > 0 ? reviewId : '',
+    	obj = {};
+    	if(_id === ''){
+    		obj = {
+	    		rentedEmail: email, 
+	    		rentedSize: size, 
+	    		rentedWear: wear, 
+	    		rentedMsg: msg, 
+	    		rentedRate: rate, 
+	    		rentedImg: img[0], 
+	    		rentedId, rentedName,
+	    		rentedDate: moment().format('LL'),
+	    		productId, _id
+	    	}
+    	}else {
+    		obj = {
+	    		rentalEmail: email, 
+	    		rentalSize: size, 
+	    		rentalWear: wear, 
+	    		rentalMsg: msg, 
+	    		rentalRate: rate, 
+	    		rentalImg: img[0], 
+	    		rentalId, rentalName,
+	    		rentalDate: moment().format('LL'),
+	    		productId, _id
+	    	}
     	}
-    	let res = await HttpUtils.post('postreview',obj, this.props.user.token);
+    	
+    	let res = await HttpUtils.post('postreview',obj, this.props.user.token);    	
     	if(res && res.code && res.code === 200){    		
     		this.setState({
     			loading: false,
@@ -122,11 +145,11 @@ class CommentCard extends Component {
 				wear: '',
 				msg: '',
 				fileList: [],
-				showMsg: res.data
+				showMsg: res.msg,
 			})
 			console.log(this.props.popUp, 'yahan kia aayaaa')
 			if(this.props.popUp !== undefined){
-				this.props.changeStatus(this.props.popUp);
+				this.props.changeStatus(this.props.popUp, res.data);
 			}else {
 				this.props.addReview(obj);
 			}			

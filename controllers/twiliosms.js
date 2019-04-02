@@ -23,7 +23,6 @@ var client = new twilio(accountSid, authToken);
 var data = req.body;
 console.log(data, 'dataaaaaaaaa')
 
-
 checkoutBooking.findOne({
    "_id": data.dataId
 }).then((response) => {
@@ -37,9 +36,10 @@ checkoutBooking.findOne({
             return {...elem, ...obj}
         }
         return elem
-    })
+    });
+    response.reviewId = data.reviewId;
     response.save((err, resp) => {
-        console.log(response, 'kia aay bhaiiiiii')
+        // console.log(response, 'kia aay bhaiiiiii')
         if(resp){       
             res.send({
                 code:200,

@@ -5,15 +5,24 @@ const Schema = mongoose.Schema;
 
 //Define model
 const reviewSchema = new Schema({
-  userId:{ type:String },
-  size:{ type:String },
-  wear:{ type:String},
-  name:{ type:String },
-  rate:{ type:String },
-  msg:{ type:String },
-  img:{ type:Array },
-  email:{ type:String},
-  date:{ type:String },
+  rentedEmail:{ type:String },
+  rentedSize:{ type:String },
+  rentedWear:{ type:String },
+  rentedMsg:{ type:String },
+  rentedRate:{ type:String },
+  rentedImg:{ type:String },
+  rentedId:{ type:String },
+  rentedName:{ type:String },
+  rentedDate:{ type:String },
+  rentalEmail:{ type:String },
+  rentalSize:{ type:String },
+  rentalWear:{ type:String },
+  rentalMsg:{ type:String },
+  rentalRate:{ type:String },
+  rentalImg:{ type:String },
+  rentalId:{ type:String },
+  rentalName:{ type:String },
+  rentalDate:{ type:String },
   productId:{ type:String }
 });
 

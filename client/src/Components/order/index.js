@@ -52,46 +52,18 @@ class Order extends Component {
                   elem.products.map((el) => {
                         let isUser = el.userId === id;
                         if(isUser && ['Completed', 'Available'].includes(el.rentalStage)){
-                              historyData.push({...el, ...{
-                                    amount: elem.amount,
-                                    date: elem.date,
-                                    buyerEmail: elem.email,
-                                    buyerName: elem.name,
-                                    buyerId: elem.userId,
-                                    dataId: elem._id
-                              }});
+                              historyData.push(this.easyObject(el, elem));
                         }
                         if(isUser && ['Completed', 'Dispatched', ''].includes(el.rentalStage)){
-                              rentals.push({...el, ...{
-                                    amount: elem.amount,
-                                    date: elem.date,
-                                    buyerEmail: elem.email,
-                                    buyerName: elem.name,
-                                    buyerId: elem.userId,
-                                    dataId: elem._id
-                              }});
+                              rentals.push(this.easyObject(el, elem));
                         }                             
                   });
                   if(elem.userId === id){
                         elem.products.map((el) => {
                               if(['Completed', 'Available'].includes(el.rentalStage)){
-                                    historyData.push({...el, ...{
-                                          amount: elem.amount,
-                                          date: elem.date,
-                                          buyerEmail: elem.email,
-                                          buyerName: elem.name,
-                                          buyerId: elem.userId,
-                                          dataId: elem._id
-                                    }});
+                                    historyData.push(this.easyObject(el, elem));
                               }else if(!['Completed', 'Available'].includes(el.rentalStage)){
-                                    rented.push({...el, ...{
-                                          amount: elem.amount,
-                                          date: elem.date,
-                                          buyerEmail: elem.email,
-                                          buyerName: elem.name,
-                                          buyerId: elem.userId,
-                                          dataId: elem._id
-                                    }});
+                                    rented.push(this.easyObject(el, elem));
                               }                                   
                         })                            
                   }
@@ -100,6 +72,18 @@ class Order extends Component {
             historyData = _.flatten(historyData);
             rentals = _.flatten(rentals);
             this.setState({ rented, historyData, rentals, loading: false });
+      }
+
+      easyObject(el, elem){
+            return {...el, ...{
+                  amount: elem.amount,
+                  date: elem.date,
+                  buyerEmail: elem.email,
+                  buyerName: elem.name,
+                  buyerId: elem.userId,
+                  dataId: elem._id,
+                  reviewId: elem.reviewId
+            }}
       }
 
       renderWithState(goTo, arr){            
