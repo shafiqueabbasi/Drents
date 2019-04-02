@@ -6,6 +6,7 @@
 }
 .rovil1{
 	padding: 13px;
+  margin-top: -3%;
 
 }
 .rovil2{
@@ -18,7 +19,6 @@
 	padding: 13px;
 	display: inline;
   margin-left: 5%;
-  margin-top: -2%;
 }
 .rovil4{
 	margin-top: 5%;
@@ -30,8 +30,8 @@
 	 color:  black;
 }
 .rovil6{
-	margin-left: -10%;
-    margin-top: 18px;
+	margin-left: -7%;
+    margin-top: 10px;
 }
 .rovil7{
 	 font-family: Qwigley;
@@ -40,9 +40,30 @@
 	 color:  #c2073f;
 }
 
-
-
-
+@media only screen and (min-device-width : 360px) and (max-device-width : 660px){
+  .shut2{
+      padding-left: 0px;
+      margin-top: -4%;
+  } 
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
+  .shut2{
+      padding-left: 0px;
+      margin-top: -4%;
+  } 
+}
+@media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
+  .shut2{
+      padding-left: 0px;
+      margin-top: -4%;
+  } 
+}
+@media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
+  .shut2{
+      padding-left: 0px;
+      margin-top: -4%;
+  } 
+}
 .sami {
   position: relative;
   width: 100%;
