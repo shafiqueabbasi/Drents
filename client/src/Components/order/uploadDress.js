@@ -34,7 +34,7 @@ class UploadDress extends Component {
             'Wedding',
             'Party',
             'Corporate',
-            'Special Ocasion',
+            'Special Occasion',
             'Family Dinner',
             'Causal',
             'Bridal',
