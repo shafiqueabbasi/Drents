@@ -330,6 +330,7 @@
 	text-align: left;
 	color: white;
 	margin: 0px;
+	font-family: crimsontext;
 }
 .tissue2{
 
@@ -343,11 +344,78 @@
 .sung{
 	text-align: left;
 	color: white;
+	font-family: crimsontext;
 }
 .sungg{
 	text-align: center;/**/
 	color: white;
 }
+
+@media only screen and (min-device-width : 360px) and (max-device-width : 660px){
+	.card{
+		font-family: Sacramento;
+		margin-left: -15%;
+		font-size: 27px;
+		color: yellow;
+	}
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
+	.card{
+		font-family: Sacramento;
+		margin-left: -32%;
+		font-size: 27px;
+		color: yellow;
+	}
+}
+@media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
+	.card{
+		font-family: Sacramento;
+		margin-left: -7%;
+		font-size: 27px;
+		color: yellow;
+	}
+}
+@media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
+	.card{
+		font-family: Sacramento;
+		margin-left: -20%;
+		font-size: 27px;
+		color: yellow;
+	}
+}
+
+
+
+
+
+@media only screen and (min-device-width : 360px) and (max-device-width : 660px){
+	.d_size{
+		padding: 0px;
+		margin-left: -10%;
+	}
+}
+
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
+	.d_size{
+		padding: 0px;
+		margin-left: -10%;
+	}
+}
+@media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
+	.d_size{
+		padding: 0px;
+		margin-left: -0%;
+	}
+}
+@media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
+	.d_size{
+		padding: 0px;
+		margin-left: -10%;
+	}
+}
+
 /*.shift{
 	margin-top: 10px;
 }*/
@@ -366,6 +434,7 @@
 	font-size: 17px;
     margin-left: 7px;
     margin-right: 10px;
+    font-family: crimsontext;
 }
 
 .action{
@@ -496,6 +565,7 @@
 .dec{
 		color: white;
 		text-align: left;
+		font-family: crimsontext;
 	}
 @media only screen and (min-device-width : 360px) and (max-device-width : 660px){
 	.trello4{

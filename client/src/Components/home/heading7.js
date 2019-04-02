@@ -13,31 +13,31 @@ class Heading7 extends Component {
 	      			<img src='./images/bar.png' style={{marginTop:'-1%'}}/>
 	      		</div>
 	      		<div className="col-md-12 col-lg-12 col-sm-12">
-	      			<div className="col-md-2 col-lg-2 col-sm-2"></div>
-	      			<div className="col-md-5 col-lg-5 col-sm-5">
+	      			<div className="col-md-2 col-lg-2"></div>
+	      			<div className="col-md-5 col-lg-5 col-sm-6">
 	      				<div className="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-	      					<i class="fa fa-circle" style={{fontSize:'15px'}}>&emsp;<span style={{fontFamily: 'Sacramento',fontSize: '20px'}}>Lorum Ipsum Dolor Sit amet</span></i>
+	      					<i class="fa fa-circle">&emsp;<span style={{fontFamily: 'Sacramento',fontSize: '20px'}}>Lorum Ipsum Dolor Sit amet</span></i>
 						</div><br/><br/>
 						<div className="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-	      					<i class="fa fa-circle" style={{fontSize:'15px'}}>&emsp;<span style={{fontFamily: 'Sacramento',fontSize: '20px'}}>Lorum Ipsum Dolor Sit amet</span></i>
+	      					<i class="fa fa-circle">&emsp;<span style={{fontFamily: 'Sacramento',fontSize: '20px'}}>Lorum Ipsum Dolor Sit amet</span></i>
 						</div><br/><br/>
 						<div className="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-	      					<i class="fa fa-circle" style={{fontSize:'15px'}}>&emsp;<span style={{fontFamily: 'Sacramento',fontSize: '20px'}}>Lorum Ipsum Dolor Sit amet</span></i>
-						</div>
+	      					<i class="fa fa-circle">&emsp;<span style={{fontFamily: 'Sacramento',fontSize: '20px'}}>Lorum Ipsum Dolor Sit amet</span></i>
+						</div><br/><br/>
 					</div>
 
-					<div className="col-md-1 col-lg-1 col-sm-1"></div>
+					<div className="col-md-1 col-lg-1"></div>
 
-					<div className="col-md-5 col-lg-5 col-sm-5">
+					<div className="col-md-5 col-lg-5 col-sm-6">
 
 						<div className="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-	      					<i class="fa fa-circle" style={{fontSize:'15px'}}>&emsp;<span style={{fontFamily: 'Sacramento',fontSize: '20px'}}>Lorum Ipsum Dolor Sit amet</span></i>
+	      					<i class="fa fa-circle">&emsp;<span style={{fontFamily: 'Sacramento',fontSize: '20px'}}>Lorum Ipsum Dolor Sit amet</span></i>
 						</div><br/><br/>
 						<div className="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-	      					<i class="fa fa-circle" style={{fontSize:'15px'}}>&emsp;<span style={{fontFamily: 'Sacramento',fontSize: '20px'}}>Lorum Ipsum Dolor Sit amet</span></i>
+	      					<i class="fa fa-circle">&emsp;<span style={{fontFamily: 'Sacramento',fontSize: '20px'}}>Lorum Ipsum Dolor Sit amet</span></i>
 						</div><br/><br/>
 						<div className="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-	      					<i class="fa fa-circle" style={{fontSize:'15px'}}>&emsp;<span style={{fontFamily: 'Sacramento',fontSize: '20px'}}>Lorum Ipsum Dolor Sit amet</span></i>
+	      					<i class="fa fa-circle">&emsp;<span style={{fontFamily: 'Sacramento',fontSize: '20px'}}>Lorum Ipsum Dolor Sit amet</span></i>
 						</div>
 					</div>
 

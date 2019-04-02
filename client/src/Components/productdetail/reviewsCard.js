@@ -19,7 +19,7 @@ class ReviewsCard extends Component {
                           <div className="col-md-7 row" style={{padding: '0px'}}>
                             <p className="tissue">Size worn:<br/>Rented For:</p>
                           </div>
-                          <div className="col-md-3" style={{padding: '0px',marginLeft: '-10%'}}>
+                          <div className="col-md-3 d_size">
                             <p><span className="dec">{data.size}</span><br/><span className="dec">{data.wear}</span></p>
                           </div>
                       </div><br/>
@@ -28,19 +28,19 @@ class ReviewsCard extends Component {
                     </div>{/*Col md 3 close*/}
                     <div className="col-md-6 tissue2">
                       <div className="row">
-                        <div className="col-md-8 sung" >
-                          <Rating className="col-md-7" 
+                        <div className="col-md-7 sung" >
+                          <Rating className="col-md-8" 
                               emptySymbol="glyphicon glyphicon-star-empty"
                               fullSymbol="glyphicon glyphicon-star"
                               initialRating={data.rate} 
                               readonly
                               style={{color: 'yellow'}}
                           />                          
-                          <span style={{fontFamily: 'Sacramento',marginLeft: '-15%',fontSize: '27px'}}>Ratings</span>
+                          <span className="card">Ratings</span>
                           <span style={{marginLeft:"10px"}}><sub className="dar"></sub></span>
 
                         </div>
-                        <div className="col-md-4 sung"><span>{data.date}</span></div>
+                        <div className="col-md-5 sung"><span>{data.date}</span></div>
                       </div><br/><br/>{/*Inner Row Closed*/}
 
                       <div className="row">
@@ -65,32 +65,39 @@ class ReviewsCard extends Component {
               <div className="row action visible-sm visible-xs">
                 <div className="container">
                   <div className="row">
-                    <h4 className="sungg">{data.name}</h4><br/>
+                    <h4 className="sungg" style={{fontFamily: 'Sacramento',fontSize: '30px'}}>{data.name}</h4><br/>
                      <div className="row">
-                        <div className="col-sm-6 col-xs-6">
+                        <div className="col-sm-3 col-xs-7">
                           <p className="tissue">Size worn:<br/>Rented For:</p>
                         </div>
-                        <div className="col-sm-3 col-xs-3">
+                        <div className="col-sm-2 col-xs-5 d_size">
                           <p><span className="dec">{data.size}</span><br/><span className="dec">{data.wear}</span></p>
                         </div>
-                     </div><br/>
+                        <div className="col-sm-12 col-xs-12">
+                          <p className="tissue">more <br/> detail</p>
+                        </div>
+                        
+                     </div>
+
+                     
 
                     <div className="row">
-                      <div className="col-sm-6 col-xs-6">
+                      <div className="col-sm-6 col-xs-12">
                         <div className="derr">
-                          <Rating className="col-md-7" 
+                          <Rating className="col-md-7 col-xs-8" 
                               emptySymbol="glyphicon glyphicon-star-empty"
                               fullSymbol="glyphicon glyphicon-star"
                               initialRating={data.rate} 
                               readonly
                               style={{color: 'yellow'}}
                           />
+                          <span className="card">Ratings</span>
                           <span style={{marginLeft:"10px"}}><sub className="dar"></sub></span>
                         </div><br/>     
                         <div className="sungg">
                         </div> 
                       </div>
-                      <div className="col-sm-6 col-xs-6">
+                      <div className="col-sm-6 col-xs-12">
                         <div className="col-md-6 sung"><span>{data.date}</span></div>
                       </div><br/><br/><br/>
                       <div className="row"><br/><br/>
