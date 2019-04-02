@@ -104,10 +104,11 @@ class CommentCard extends Component {
     //-----------------cloudnary function end ------------------
 
     postReview = async (img) => {
+    	console.log(this.props.obj, 'iddddddddd')
     	let { name, email, size, wear, msg, rate } = this.state,
     	{ reviewId, productId, rentalId, rentedId, rentalName, rentedName } = this.props.obj,
     	_id = reviewId.length > 0 ? reviewId : '',
-    	obj = {};
+    	obj = {};    	
     	if(_id === ''){
     		obj = {
 	    		rentedEmail: email, 

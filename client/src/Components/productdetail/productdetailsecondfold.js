@@ -57,7 +57,7 @@ class SecondFold extends Component {
                  return <ReviewsCard data={elem}/>
               })}
               <br/>
-              {/*{this.props.user !== undefined && <CommentCard addReview={this.addReview} obj={obj}/>}*/}
+              {this.props.user !== undefined && <CommentCard addReview={this.addReview} obj={obj}/>}
               <br/>
           </div>{/*Container Div Close*/}
       </div>

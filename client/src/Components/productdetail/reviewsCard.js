@@ -52,7 +52,7 @@ class ReviewsCard extends Component {
                        <p className="sung">{data.msg}</p>
                     </div>
                     <div className="col-md-3 shift">
-                        <img src={data.img[0]} style={{width:"90%" , height:"387px",padding: '10%'}}/>
+                        <img src={data.img} style={{width:"90%" , height:"387px",padding: '10%'}}/>
                     </div>{/*Col md 3 close*/}                
                   </div>{/*col-md-12 closed*/}
                 </div>{/*Main Row Div container Closed*/}
@@ -106,7 +106,7 @@ class ReviewsCard extends Component {
                         </div>      
                       </div><br/>{/*row closed*/}
                       <div className="row derr">
-                        <img src={data.img[0]} style={{ height:"290px"}}/> 
+                        <img src={data.img} style={{ height:"290px"}}/> 
                       </div>  
                     </div>{/*Row Closed*/}
                   </div>{/*row closed*/}
