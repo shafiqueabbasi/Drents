@@ -13,37 +13,34 @@ class ReviewsCard extends Component {
                   <div className="col-md-12">
                     <div className="col-md-3">
                       <Link to={`/profile/${data.userId}`}>
-                          <h4 className="tissue">{data.name}</h4><br/>
+                          <h4 className="tissue" style={{fontFamily: 'Sacramento',fontSize: '30px'}}>{data.name}</h4><br/>
                       </Link>
                       <div className="row">
-                          <div className="col-md-7">
+                          <div className="col-md-7 row" style={{padding: '0px'}}>
                             <p className="tissue">Size worn:<br/>Rented For:</p>
                           </div>
-                          <div className="col-md-3">
+                          <div className="col-md-3 d_size">
                             <p><span className="dec">{data.size}</span><br/><span className="dec">{data.wear}</span></p>
                           </div>
                       </div><br/>
-                      <p className="tissue">More Detail</p>
+                      <p className="tissue">more <br/> detail</p>
 
                     </div>{/*Col md 3 close*/}
                     <div className="col-md-6 tissue2">
                       <div className="row">
-                        <div className="col-md-6 sung" >
-                          <Rating className="col-md-7" 
+                        <div className="col-md-7 sung" >
+                          <Rating className="col-md-8" 
                               emptySymbol="glyphicon glyphicon-star-empty"
                               fullSymbol="glyphicon glyphicon-star"
                               initialRating={data.rate} 
                               readonly
                               style={{color: 'yellow'}}
-                          />
-                          {/*<i className="fas fa-star" style={{fontSize :"20px" , "color":'#FFC400'}}></i>
-                          <i className="fas fa-star" style={{fontSize : "20px" , "color":'#FFC400'}}></i>
-                          <i className="fas fa-star" style={{fontSize : "20px" , "color":'#FFC400'}}></i>
-                          <i className="fas fa-star" style={{fontSize : "20px" , "color":'#FFC400'}}></i>
-                          <i className="fas fa-star" style={{fontSize : "20px" , "color":'#FFC400'}}></i>*/}
+                          />                          
+                          <span className="card">Ratings</span>
                           <span style={{marginLeft:"10px"}}><sub className="dar"></sub></span>
+
                         </div>
-                        <div className="col-md-6 sung"><span>{data.date}</span></div>
+                        <div className="col-md-5 sung"><span>{data.date}</span></div>
                       </div><br/><br/>{/*Inner Row Closed*/}
 
                       <div className="row">
@@ -55,7 +52,7 @@ class ReviewsCard extends Component {
                        <p className="sung">{data.msg}</p>
                     </div>
                     <div className="col-md-3 shift">
-                        <img src={data.img[0]} style={{width:"90%" , height:"387px"}}/>
+                        <img src={data.img[0]} style={{width:"90%" , height:"387px",padding: '10%'}}/>
                     </div>{/*Col md 3 close*/}                
                   </div>{/*col-md-12 closed*/}
                 </div>{/*Main Row Div container Closed*/}
@@ -68,32 +65,39 @@ class ReviewsCard extends Component {
               <div className="row action visible-sm visible-xs">
                 <div className="container">
                   <div className="row">
-                    <h4 className="sungg">{data.name}</h4><br/>
+                    <h4 className="sungg" style={{fontFamily: 'Sacramento',fontSize: '30px'}}>{data.name}</h4><br/>
                      <div className="row">
-                        <div className="col-sm-6 col-xs-6">
+                        <div className="col-sm-3 col-xs-7">
                           <p className="tissue">Size worn:<br/>Rented For:</p>
                         </div>
-                        <div className="col-sm-3 col-xs-3">
+                        <div className="col-sm-2 col-xs-5 d_size">
                           <p><span className="dec">{data.size}</span><br/><span className="dec">{data.wear}</span></p>
                         </div>
-                     </div><br/>
+                        <div className="col-sm-12 col-xs-12">
+                          <p className="tissue">more <br/> detail</p>
+                        </div>
+                        
+                     </div>
+
+                     
 
                     <div className="row">
-                      <div className="col-sm-6 col-xs-6">
+                      <div className="col-sm-6 col-xs-12">
                         <div className="derr">
-                          <Rating className="col-md-7" 
+                          <Rating className="col-md-7 col-xs-8" 
                               emptySymbol="glyphicon glyphicon-star-empty"
                               fullSymbol="glyphicon glyphicon-star"
                               initialRating={data.rate} 
                               readonly
                               style={{color: 'yellow'}}
                           />
+                          <span className="card">Ratings</span>
                           <span style={{marginLeft:"10px"}}><sub className="dar"></sub></span>
                         </div><br/>     
                         <div className="sungg">
                         </div> 
                       </div>
-                      <div className="col-sm-6 col-xs-6">
+                      <div className="col-sm-6 col-xs-12">
                         <div className="col-md-6 sung"><span>{data.date}</span></div>
                       </div><br/><br/><br/>
                       <div className="row"><br/><br/>

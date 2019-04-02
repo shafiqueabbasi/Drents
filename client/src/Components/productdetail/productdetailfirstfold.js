@@ -196,12 +196,12 @@ class Productdetailfirstfold extends Component {
 						    <div className="row" style={{marginLeft:'-5%'}}>
 						    	<div className="col-sm-1 visible-sm"></div>
 								<div className="col-md-8 col-sm-7 col-xs-6">
-									<font className="col-md-12" color="#c2073f"><h1 style={{fontFamily:"Qwigley",fontSize: "70px"}}>{elem.productName}</h1></font>
-									<p className="col-md-12 bookedboo">{elem.detailName}</p>
+									<font className="col-lg-12 col-md-12" color="#c2073f"><h1 className="shelterr5">{elem.productName}</h1></font>
+									<p className="col-md-12 col-lg-12 bookedboo">{elem.detailName}</p>
 								</div>
 								<div className="col-md-4 col-sm-4 col-xs-6 roundnround2">
 									<img src={userImage.length > 0 ? userImage : "../images/admin1.jpg"} className="bookedbook"/>
-                                   <span className="" style={{fontFamily: "Qwigley", fontSize: "32px"}}>{elem.userName}</span><br/>
+                                   <span className="" style={{fontFamily: "Qwigley", fontSize: "32px", marginLeft:'-10%'}}>{elem.userName}</span><br/>
                                    <div className="roundnround3">
                                        <Link to={`/profile/${userId}`}><span className="roundnround">View Profile</span></Link>
                                    </div>
@@ -210,22 +210,22 @@ class Productdetailfirstfold extends Component {
 							<div className="row">
 								<div className="col-md-12">
 										<div className="visible-sm col-sm-1"></div>
-									    <div className="col-md-4 col-sm-4 col-xs-3">
+									    <div className="col-lg-6 col-md-7 col-sm-4 col-xs-3">
 									     	 <font color="#c2073f"><h1 className="trello4">{elem.bodyType}</h1></font>
 									    </div>{/*div close*/}
-									    <div className="col-md-2 col-sm-2 col-xs-2"></div>
-									    <div className="col-md-6 col-sm-5" style={{marginTop: "18px"}}>
-									    	<Rate rate={this.state.averageRate} initialRating={this.state.averageRate} readonly classMd="col-md-10" classXS="col-md-2" />
+									    <div className="col-lg-0 col-md-0 col-sm-2 col-xs-2"></div>
+									    <div className="col-lg-6 col-md-5 col-sm-5" style={{marginTop: "20px"}}>
+									    	<Rate rate={this.state.averageRate} initialRating={this.state.averageRate} readonly classMd="col-md-13" classXS="col-md-2" />
 		                       	 		</div>{/*Div close*/}
 			                    </div>{/*Div Close Col-md-12*/}
 							</div>{/*Row Close*/}
                             <div className="row">
                           		<div className="col-md-12">
                           			<div className="visible-sm col-sm-1"></div>
-                          			<div className="col-md-5 col-sm-5 col-xs-6">
+                          			<div className="col-lg-5 col-md-5 col-sm-5 col-xs-6">
                                     	<p className="trello3">${" " + elem.priceDay}</p>
                           			</div>
-                          			<div className="col-md-4 col-sm-4 col-xs-6 name">
+                          			<div className="col-lg-4 col-md-5 col-sm-4 col-xs-6 name">
                                     	<p><span className="hello">Rental Price</span></p>
                           			</div>
                            			<div className="col-md-2">
@@ -293,7 +293,7 @@ class Productdetailfirstfold extends Component {
   										return(
   											<span key={key}>
 			                            		<div className="col-xs-2 flu"><h3>{el}</h3></div>
-			                            		<div className="col-xs-1"></div>
+			                            		<div className="col-xs-0"></div>
 			                            	</span>
   										)
   									})}
@@ -337,9 +337,9 @@ class Productdetailfirstfold extends Component {
                             <div className="row">
                             	{elem.tags && elem.tags.map((el, key) => {
 									return(
-		                            	<div className="col-md-5 col-sm-5 col-xs-6 ulline" key={key}>
+		                            	<div className="col-lg-6 col-md-6 col-sm-5 col-xs-6 ulline" key={key}>
 			                            	 <ul>
-			                            	 <li>{el.name}</li>
+			                            	 <li style={{fontSize:'16px'}}>{el.name}</li>
 			                            	 </ul>
 		                            	</div>
 		                            )
@@ -412,7 +412,7 @@ class Productdetailfirstfold extends Component {
 						                      id="from"
 						                      value={from}
 						                      onChange={this.inputHandleChange}
-					                       	 className="run1"
+					                       	 	className="run1"
 						                  />
 						            </div>
 						            {/*<div className="col-md-2">
@@ -434,8 +434,8 @@ class Productdetailfirstfold extends Component {
 						            <div className="col-md-1 col-sm-1"></div>
                             	</div>
                             </div>
-                            <div className="row">
-                            	<span>{msg}</span>
+                            <div className="row shelter">
+                            	<span className="shelter2">{msg}</span>
                             </div>
                             <br/>
                             {!booked && <div className="row">

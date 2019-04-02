@@ -254,7 +254,9 @@ class UserProfile extends Component {
 										</label>
 									</div>
 								</div>
+
 								<div className="col-md-1 col-lg-1 hidden-sm hidden-xs"></div>
+
 								<div className="visible-sm col-sm-5 hidden-xs sami_1" style={{marginTop: '6%'}}>
 									<img src="../images/admin1.jpg" alt="Avatar" className="image_1"/>
 									<div className={userAvailable ? "overlay_1" : 'nothing'} style={{left: '15px', width: '100%'}}>
@@ -277,14 +279,21 @@ class UserProfile extends Component {
 									</div>
 								</div>
 
-								<div className="col-md-6 col-lg-7 col-sm-7 col-xs-12 rovil3">
+								<div className="col-md-6 col-lg-7 col-sm-6 col-xs-12 rovil3">
 									<div className="row" style={{marginRight:'0px',marginLeft: '0px'}}>
 										<div className="col-md-5 hidden-sm hidden-xs" style={{paddingLeft: '0px'}}>
 											<h2><span className="rovil2">{userName}</span></h2>
 										</div>
 
-										<div className="col-sm-12 visible-sm" style={{paddingLeft: '0px'}}>
-											<h2><span className="rovil2">{userName}</span></h2>
+										<div className="row visible-sm" style={{paddingLeft: '0px'}}>
+											<div className="col-sm-6">
+												<h2><span className="rovil2">{userName}</span></h2>
+											</div>
+											<div className="col-sm-6">												
+												<div className="col-sm-12 visible-sm rovil4">
+													<Rate initialRating={this.state.review} readonly classMd="col-sm-13" rate="4.5" classXS="col-sm-3" />
+												</div>
+											</div>
 										</div>
 
 										<div className="col-xs-12 visible-xs" style={{paddingLeft: '0px'}}>
@@ -292,11 +301,7 @@ class UserProfile extends Component {
 										</div>
 
 										<div className="col-md-5 hidden-sm hidden-xs rovil4">
-											<Rate initialRating={this.state.review} readonly classMd="col-md-8" rate="4.5" classXS="col-md-4" />
-										</div>
-
-										<div className="col-sm-10 visible-sm rovil4">
-											<Rate initialRating={this.state.review} readonly classMd="col-sm-6" rate="4.5" classXS="col-sm-2" />
+											<Rate initialRating={this.state.review} readonly classMd="col-md-10" rate="4.5" classXS="col-md-2" />
 										</div>
 
 										<div className="col-xs-9 visible-xs rovil4" style={{paddingLeft: '0px'}}>
@@ -342,7 +347,7 @@ class UserProfile extends Component {
 										<h4><span className="rovil7">Bio</span></h4>
 									</div>
 
-									<div className="col-md-12" style={{paddingLeft: '0px'}}>
+									<div className="col-md-12 shut2">
 										<h4>Working as a Designer want to rent every thing which is in my wardrobe.</h4>
 									</div>
 
