@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { isMobileOnly, isTablet } from "react-device-detect";
  import './productdetail.css'
 
  class Productdetailtable extends Component {
@@ -50,9 +51,9 @@ import React, { Component } from 'react';
 					</div>
 					<div className="visible-sm visible-xs">
 						<div className="container tablemargin">
-						<h4>Measurements</h4>
+						<h4 style={isMobileOnly ? {marginLeft:'-2%'} : {marginLeft:'3%'}}>Measurements</h4>
                     	<div style={{overflowX:'auto'}}>
-                    		<table className="table table-bordered" style={{width:'84%'}}>
+                    		<table className="table table-bordered" style={isMobileOnly ? {width:'83%' ,marginLeft:'0%'} : {width:'83%' , marginLeft:'3%'}}>
 							    <thead>
 							    <tr>
 							        <th>Size</th>
@@ -91,7 +92,7 @@ import React, { Component } from 'react';
 							    </tbody>
 							</table>
 						</div>
-						<p className="glass">Our Model,lolly is 5'9" and wear a size small.She Has a 32<sup>o</sup> bust
+						<p className="glass" style={isMobileOnly ? {marginLeft:'-2%'} : {marginLeft:'3%'}}>Our Model,lolly is 5'9" and wear a size small.She Has a 32<sup>o</sup> bust
 								,24<sup>o</sup> Waist and 33<sup>o</sup> hips</p>
 						</div>											
                     </div>{/*div close of visible-sm visible-xs*/}

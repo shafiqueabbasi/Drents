@@ -112,11 +112,11 @@
 }
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
 	.sams{
-		    border: 1px solid #c2073f;
-		    height: 47px;
-		    margin-left: 42px;
-		    padding: 0px;
-		    width: 65%;    
+		   border: 1px solid #c2073f;
+    		height: 47px;
+    		margin-left: 58px;
+    		padding: 0px;
+    		width: 67%;  
 	}
 	.name{
 	    margin-top: 12px;
@@ -131,9 +131,8 @@
 	    margin-left: 8%;
 	}
 	.bookedboo{
-		margin-top: -8%;
-		font-size: 16px;
-		margin-left: -3%;
+		margin-top: -10%;
+		font-size: 17px;
 	}
 	.bookedbook{
 		width: 56%;
@@ -150,11 +149,11 @@
 		margin-top: 4px;
 	}
 	.bravoo{
-      	 width: 87%;
-	    background-color: #c2073f;
-	    padding: 0px;
-	    margin-left: 29px;
-	    margin-top: -3%;
+      	width: 67%;
+    	background-color: #c2073f;
+    	padding: 0px;
+    	margin-left: 56px;
+    	margin-top: -2%;
 	}
 	.booked{
       	    width: 63%;
@@ -171,15 +170,15 @@
 	.sams{
 		border: 1px solid #c2073f;
 	    height: 47px;
-	    margin-left: 8px;
+	    margin-left: 24px;
 	    padding: 0px;
 	    width: 97%;  
 	}
 	.name{
-	    margin-top: 22px;
-	    margin-left: -12%;
-	    font-size: 22px;
-	    color: black;
+	    margin-top: 19px;
+    	margin-left: -6%;
+    	font-size: 22px;
+    	color: black;
 	}
 	.trello1{
 		margin-left: -14px;
@@ -188,11 +187,12 @@
 		margin-left: 9%;
 	}
 	.bookedboo{
-		margin-top: -8%;
-		font-size: 16px;
+	    margin-top: -8%;
+    	font-size: 16px;
+    	margin-left: 5%;
 	}
 	.bookedbook{
-	    width: 76%;
+	    width: 85%;
 	    border-radius: 50%;
 	    height: 75px;
 	        border: 3px solid #c2073f;
@@ -208,14 +208,14 @@
 		width: 142%;
 	}
 	.bravoo{
-      	width: 90%;
+      	width: 98%;
 	      background-color: #c2073f;
 	    padding: 0px;
 	    margin-left: 22px;
 	  margin-top: -3%;
 	}
 	.booked{
-      	width: 90%;
+      	width: 97%;
 	      background-color: yellow;
 	    padding: 0px;
 	    margin-left: 22px;
@@ -226,15 +226,15 @@
 	.sams{
 		border: 1px solid #c2073f;
 		height: 47px;
-	    margin-left: 15px;
+	    margin-left: 29px;
 		padding: 0px;
 	    width: 92%;    
 	}
 	.name{
-	   margin-top: 24px;
-	    margin-left: -17%;
-	    font-size: 24px;
-	    color: black;
+	    margin-top: 21px;
+    	margin-left: -14%;
+    	font-size: 24px;
+    	color: black;
 	}
 	.trello1{
 		margin-left: -14px;
@@ -245,9 +245,10 @@
 	.bookedboo{
 		margin-top: -8%;
 		font-size: 16px;
+		margin-left: 4%;
 	}
 	.bookedbook{
-		width: 63%;
+		width: 67%;
 	    border-radius: 50%;
 	    height: 75px;
 	        border: 3px solid #c2073f;
@@ -255,29 +256,37 @@
 	.run1{
 		border: none;
 		margin-top: 4px;
-		width: 142%;
+		width: 143%;
 	}
 	.run2{
 		border: none;
 		margin-top: 4px;
-		width: 142%;
+		width: 143%;
 	}
 	.bravoo{
-  	    width: 87%;
+  	    width: 92%;
 	    background-color: #c2073f;
 	    padding: 0px;
 	    margin-left: 29px;
 	    margin-top: -3%;
 	}
 	.booked{
-      	width: 87%;
+      	width: 92%;
 	    background-color: yellow;
 	    padding: 0px;
 	    margin-left: 29px;
 	    margin-top: -3%;
 	}
 }
-
+.shelter{
+	margin-left: 7%;
+    margin-top: 1%;
+    margin-bottom: -2%;
+}
+.shelter2{
+	    font-size: 16px;
+    font-weight: 600;
+}
 .sam{
 
 	font-size: 20px;
@@ -530,6 +539,11 @@
 		font-size: 45px;
 	    margin-left: 6%;
 	}
+	.shelterr5{
+		font-family: Qwigley;
+		font-size: 60px; 
+		margin-left: 3%;
+	}
 }
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
 	.trello4{
@@ -573,6 +587,11 @@
 		font-size: 45px;
 	    margin-left: 8%;
 	}
+	.shelterr5{
+		font-family: Qwigley;
+		font-size: 60px; 
+		margin-left: 3%;
+	}
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
 	.trello4{
@@ -608,13 +627,18 @@
 	    margin-left: 3%;
 	}
 	.ulline{
-		margin-left: 0px;
+		margin-left: -6px;
 	}
 	.rental1{
 		font-family: Qwigley;
 		color: #c2073f; 
 		font-size: 45px;
-	    margin-left: 6%;
+	    margin-left: 7%;
+	}
+	.shelterr5{
+		font-family: Qwigley;
+		font-size: 48px; 
+		margin-left: 3%;
 	}
 }
 @media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
@@ -658,5 +682,10 @@
 		color: #c2073f; 
 		font-size: 45px;
 	    margin-left: 6%;
+	}
+	.shelterr5{
+		font-family: Qwigley;
+		font-size: 60px; 
+		margin-left: 3%;
 	}
 }
