@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { HttpUtils } from  '../../Service/HttpUtils';
 import CommentCard from '../productdetail/commentCard';
 
+import { connect } from 'react-redux';
+
 class UpCommingOrder extends Component {
 	constructor(props){
 		super(props);
@@ -33,12 +35,14 @@ class UpCommingOrder extends Component {
 
 	changeStatus = async (popUp, reviewId) => {
 		document.getElementById(popUp).click();
+		const { elem } = this.state;
 		let { take, rentals, rented } = this.props,	
 		arr = take ? rentals : rented,
 		obj = this.makeCodeShort(arr, take, reviewId);			
 		let statusRental = await HttpUtils.post('twiliosms', obj);
-		alert('Your status updated successfully');
-		this.props.filterData();			
+		alert('Your status updated successfully');		
+		this.props.filterData();	
+		this.updateStatus(elem._id);		
 	}
 
 	makeCodeShort(arr, take, reviewId){
@@ -71,6 +75,11 @@ class UpCommingOrder extends Component {
 		return obj;
 	}
 
+	async updateStatus(_id){
+		let obj = {_id, bookedFrom: '', bookedTo: '', status: 'Available'},
+		res = await HttpUtils.post('uploaddress', obj, this.props.user.token);
+	}
+
 	render() {		
 	    const { rentals, rented, take } = this.props,
 	    { showReviewBox } = this.state;	 
@@ -91,7 +100,6 @@ class UpCommingOrder extends Component {
     				rentedName: elem.buyerName,
     				rentalName: elem.userName
 				};
-				console.log(obj, 'objjjjjjjjjjjjjjjj')
     			
     			return (
     				<div className="row hidden-sm hidden-xs">
@@ -178,7 +186,7 @@ class UpCommingOrder extends Component {
                                     	<div className="col-md-3">
                                     		<button className="btn btn-sm" 
                                     			style={{color:'black', backgroundColor:'white', width: '100%'}}
-                                    			onClick={(e) => this.changeStatus("confirmStatus")}
+                                    			onClick={(e) => this.changeStatus("confirmStatus", elem.reviewId)}
                                 			>Confirm</button>                                    		
                                     	</div>
                                     	<div className="col-md-3">
@@ -286,7 +294,7 @@ class UpCommingOrder extends Component {
                                     	<div className="col-md-3">
                                     		<button className="btn btn-sm" 
                                     			style={{color:'black', backgroundColor:'white', width: '100%'}}
-                                    			onClick={(e) => this.changeStatus("confirmStatusTab")}
+                                    			onClick={(e) => this.changeStatus("confirmStatusTab", elem.reviewId)}
                                 			>Confirm</button>                                    		
                                     	</div>
                                     	<div className="col-md-3">
@@ -406,7 +414,7 @@ class UpCommingOrder extends Component {
                                     	<div className="col-md-3">
                                     		<button className="btn btn-sm" 
                                     			style={{color:'black', backgroundColor:'white', width: '100%'}}
-                                    			onClick={(e) => this.changeStatus("confirmStatusMobile")}
+                                    			onClick={(e) => this.changeStatus("confirmStatusMobile", elem.reviewId)}
                                 			>Confirm</button>                                    		
                                     	</div>
                                     	<div className="col-md-3">
@@ -435,7 +443,16 @@ class UpCommingOrder extends Component {
     }
 }
 
-export default UpCommingOrder;
+
+function mapStateToProps(state) {
+    const { loggedIn, user } = state.authentication;
+    return {
+        loggedIn, user
+    };
+}
+
+const connectUpCommingOrder = connect(mapStateToProps)(UpCommingOrder);
+export default connectUpCommingOrder;
 
 
 	// async changeStatus(){

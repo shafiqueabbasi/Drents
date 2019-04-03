@@ -67,16 +67,16 @@ class Filterpanel extends Component {
 	    		<div  className="container-fluid">
 	    			<div className="col-md-12 col-sm-12 hidden-xs">
 	    				<div className="col-md-1 col-sm-1"></div>
-	    				<div className="col-md-2 col-sm-2">
+	    				<div className="col-md-2 col-sm-2" style={{padding: 'initial'}}>
 	    					<div className="more">
 	    						<div className="row">
 	    							<h3>Filters</h3><br/>
 	    							<h5 id="Wedding" onClick={this.handleClick} className="lH_filter">Wedding</h5><br/>
 	    							<h5 id="Party" onClick={this.handleClick} className="lH_filter">Party</h5><br/>
 	    							<h5 id="Corporate" onClick={this.handleClick} className="lH_filter">Corporate</h5><br/>
-	    							<h5 id="Special Ocasion" onClick={this.handleClick} className="lH_filter">Special Ocasion</h5><br/>
+	    							<h5 id="Special Ocasion" onClick={this.handleClick} className="" >Special Ocasion</h5><br/>
 	    							<h5 id="Family Dinner" onClick={this.handleClick} className="lH_filter">Family Dinner</h5>
-	    							<div className="col-md-9  col-sm-9" style={{paddingBottom: '15px', margin: '40px 0 20px',borderBottom: '1px solid black'}}></div>
+	    							<div className="col-md-9  col-sm-12" style={{paddingBottom: '15px', margin: '40px 0 20px',borderBottom: '1px solid black'}}></div>
 	    							<div className="row col-md-12" style={{padding: '0px'}}>
 
 	    								<h3>Sort By&emsp;&nbsp;-</h3><br/>
@@ -182,7 +182,7 @@ class Filterpanel extends Component {
 									</div>
 
 
-	    							<div className="col-xs-11" style={{paddingBottom: '15px', margin: '40px 0 20px',borderBottom: '1px solid black'}}></div>
+	    							<div className="col-xs-11" style={{paddingBottom: '15px', margin: '40px 15px 20px',borderBottom: '1px solid black'}}></div>
 	    							<div className="row col-xs-12">
 
 

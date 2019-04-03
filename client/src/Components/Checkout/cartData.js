@@ -97,7 +97,6 @@ class CartData extends Component {
 		const { finalArr, paymentSuccess, msg, finalPrice, price, data, goTo } = this.state,
 		{ loggedIn, user } = this.props,
 		showButton = finalArr && finalArr.length < 1 ? true : loggedIn ? false : true;
-		console.log(showButton, 'ifff')
 		if(goTo){
 			return <Redirect to='/' />
 		}

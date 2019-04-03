@@ -17,7 +17,22 @@ class SecondFold extends Component {
       obj = this.props.location.state.elem;
       console.log(data, 'dataaaaaaaaaaaa')
       if(data.code && data.code == 200){
-          let reviews = data.allreview.filter((elem) => elem.productId == obj._id);
+          // let reviews = data.allreview.filter((elem) => elem.productId == obj._id);
+          let reviews = [];
+          data.allreview.map((elem) => {
+            if(elem.productId == obj._id){
+              reviews.push({
+                userId: elem.rentedId,
+                name: elem.rentedName,
+                size: elem.rentedSize,
+                wear: elem.rentedWear,
+                rate: elem.rentedRate,
+                date: elem.rentedDate,
+                msg: elem.rentedMsg,
+                img: elem.rentedImg                        
+              });
+            }
+          })
           this.setState({ reviews });
           this.props.ratingReview(reviews);
       }
@@ -32,7 +47,7 @@ class SecondFold extends Component {
 
   render() {
     let obj = this.props.location.state.elem;
-    console.log(this.props.user, 'userrrrrr')
+    console.log(obj, 'userrrrrr')
     return (
       <div className="App">
           <div className="container">
@@ -57,7 +72,7 @@ class SecondFold extends Component {
                  return <ReviewsCard data={elem}/>
               })}
               <br/>
-              {this.props.user !== undefined && <CommentCard addReview={this.addReview} obj={obj}/>}
+              {/*this.props.user !== undefined && <CommentCard addReview={this.addReview} obj={obj}/>*/}
               <br/>
           </div>{/*Container Div Close*/}
       </div>

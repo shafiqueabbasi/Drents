@@ -77,8 +77,8 @@ class Profile extends Component {
       	<div>
       		<div className="container-fluid">
       			<div className="col-md-12">
-      				<div className="">
-      					<h1 style={{fontFamily:'Qwigley',fontSize:'200%', color: '#c2073f'}}>Profile</h1>
+      				<div className="col-lg-12 col-md-12 col-sm-12">
+      					<h1 style={{fontFamily:'Sacramento',fontSize:'200%', color: '#c2073f'}}>Profile</h1>
       				</div>
   					<Form onSubmit={this.handleSubmit}>
 						<div className="row">
@@ -91,7 +91,7 @@ class Profile extends Component {
 								value={this.state.email}
 								Change={this.inputHandleChange}
 							/>
-							<div className="col-md-2 col-sm-2"><span className="input"><h3 style={{color: '#c2073f'}}>Change Password</h3></span></div>
+							<div className="col-md-2 col-sm-2"><span className="input"><h3 style={{fontFamily: 'crimsontext',color: '#c2073f'}}>Change Password</h3></span></div>
 							<div className="col-md-4 col-sm-4">
 								<div className="inputBox">
 									<div className="inputText"></div>
@@ -117,13 +117,13 @@ class Profile extends Component {
 								Change={this.inputHandleChange}
 							/>
 						</div>
-						<div className="">
-  							<h1 style={{fontFamily: 'Qwigley',fontSize: '200%', color: '#c2073f'}}>Fil Details</h1>
+						<div className="col-lg-12 col-md-12 col-sm-12">
+  							<h1 style={{fontFamily: 'Sacramento',fontSize: '200%', color: '#c2073f'}}>Fil Details</h1>
   						</div>
 
 						<div className="row">
 							<div className="col-md-2 col-sm-2">
-								<h3 style={{fontSize: '23px',color:'#c2073f'}}>Bio</h3>
+								<h3 style={{fontFamily: 'crimsontext',fontSize: '23px',color:'#c2073f'}}>Bio</h3>
 							</div>
 							<div className="col-md-10 col-sm-10">
 								<div className="form-group">
@@ -209,12 +209,12 @@ class Profile extends Component {
 								/>
 							</div>
 						</div>{/*row closed*/}
-						<div className="">
-  							<h1 style={{fontFamily: 'Qwigley',fontSize: '200%',color: '#c2073f'}}>Our All fit</h1>
+						<div className="col-lg-12 col-md-12 col-sm-12">
+  							<h1 style={{fontFamily: 'Sacramento',fontSize: '200%',color: '#c2073f'}}>Our All fit</h1>
   						</div>
   						<div className="row">
   							<div className="col-md-4 col-sm-4">
-  								<h2 style={{color: '#c2073f'}}>Bust</h2>
+  								<h2 style={{fontFamily: 'crimsontext',color: '#c2073f'}}>Bust</h2>
   								<RadioInput
   									label="Small Bust"
   									for="bust1"
@@ -238,7 +238,7 @@ class Profile extends Component {
 								/>
 							</div>
   							<div className="col-md-4 col-sm-4">
-  								<h2 style={{color: '#c2073f'}}>Hips</h2>
+  								<h2 style={{fontFamily: 'crimsontext',color: '#c2073f'}}>Hips</h2>
   								<RadioInput
   									label="Narrow Hips"
   									for="hips1"
@@ -262,7 +262,7 @@ class Profile extends Component {
   								/>
 							</div>
   							<div className="col-md-4 col-sm-4">
-  								<h2 style={{color: '#c2073f'}}>Torso</h2>
+  								<h2 style={{fontFamily: 'crimsontext',color: '#c2073f'}}>Torso</h2>
   								<RadioInput
 	  								label="Short Torso"
 	  								for="torso1"
@@ -286,7 +286,7 @@ class Profile extends Component {
   								/>
   							</div>
 							<div className="col-md-4 col-sm-4">
-  								<h2 style={{color: '#c2073f'}}>Ribcage</h2>
+  								<h2 style={{fontFamily: 'crimsontext',color: '#c2073f'}}>Ribcage</h2>
   								<RadioInput
 	  								label="Narrow Ribcage"
 	  								for="ribcage1"
@@ -310,7 +310,7 @@ class Profile extends Component {
   								/>
 							</div>
 							<div className="col-md-4 col-sm-4">
-  								<h2 style={{color: '#c2073f'}}>Height</h2>
+  								<h2 style={{fontFamily: 'crimsontext',color: '#c2073f'}}>Height</h2>
   								<RadioInput
 	  								label="Petite"
 	  								for="height1"
