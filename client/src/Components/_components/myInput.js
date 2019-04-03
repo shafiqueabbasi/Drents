@@ -20,7 +20,7 @@ export const RadioInput = props => {
                 style={{marginTop:'0px'}}
             />
           <span className="checkmark"></span>
-          <h4 style={{color: '#c2073f'}}>{props.label}</h4>
+          <h4 style={{fontFamily: 'crimsontext',color: '#c2073f'}}>{props.label}</h4>
         </label>
     )
 }
@@ -111,7 +111,7 @@ export const TextInput = props => {
         <div>
             <div className={props.col}  style={{paddingRight: '0px'}}>
                 <span className="input">
-                    <h4 style={{color: '#c2073f', fontSize: '23px',marginTop: '17%'}}>{props.label}</h4>
+                    <h4 style={{fontFamily: 'crimsontext',color: '#c2073f', fontSize: '23px',marginTop: '17%'}}>{props.label}</h4>
                 </span>
             </div>
             <div className={props.col2} style={props.padding}>
@@ -135,7 +135,7 @@ export const SelectInput = props => {
     return(
         <div>
             <label htmlFor={props.name} className={props.col}  style={{marginTop: '3%'}}>
-                <span className="input" style={{color: '#c2073f', fontWeight: '500'}}>
+                <span className="input" style={{fontFamily: 'crimsontext',color: '#c2073f', fontWeight: '500'}}>
                     {props.label}
                 </span>
             </label>
@@ -176,7 +176,7 @@ export const SelectInput = props => {
 export const Textarea = props => {
     return(
         <div className="col-md-12" style={props.style}>
-            <label htmlFor={props.name} className="col-md-4 col-sm-3" style={{color: '#c2073f',fontWeight: '600'}}>{props.title}</label>
+            <label htmlFor={props.name} className="col-md-4 col-sm-3" style={{fontFamily: 'crimsontext',color: '#c2073f',fontWeight: '500'}}>{props.title}</label>
             <div className="col-md-8 col-sm-9">
                 <textarea
                     required={props.required}
