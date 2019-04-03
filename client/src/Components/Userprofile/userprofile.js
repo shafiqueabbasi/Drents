@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Gallery from '../home/heading4';
+import ReviewsCard from '../productdetail/reviewsCard';
 import { HttpUtils } from  '../../Service/HttpUtils';
 import { Rate } from '../_components/myInput';
 import _ from 'underscore';
@@ -51,7 +52,9 @@ class UserProfile extends Component {
 	            'Formal',
 	            'Heavy Formal',
 			],
-			filterKey: 'SORT BY'
+			filterKey: 'SORT BY',
+			rentalReviews: [],
+			rentedReviews: []
         }
     }
 
@@ -70,7 +73,7 @@ class UserProfile extends Component {
 		data = await HttpUtils.post('getprofiledress', {userId: id});
 
 		if(data.code && data.code == 200){
-			this.ratingFunc(data);
+			this.ratingFunc(data, id);
 			this.rentedRentals(data, id);
 
 			for(var el in data.profile[0]){
@@ -106,14 +109,42 @@ class UserProfile extends Component {
 		this.setState({ orderhistory: data.orderhistory, rentals, rented });		
 	}
 
-	ratingFunc(data){
+	ratingFunc(data, id){
 		let review = 0,
+		rentalReviews = [],
+		rentedReviews = [],
 		dressData = data.dress.length > 0 && data.dress.map((elem) => {
 			return elem._id;
 		});
+		console.log(id, 'dataaaaaaaa')
 		if(dressData){
 			data.review.map((elem) => {
+				console.log(elem, 'elemmmmmmmmmmmmmmmm')
 				if(dressData.includes(elem.productId)){
+					if(elem.rentalId === id){
+						rentalReviews.push({
+							userId: elem.rentedId,
+							name: elem.rentedName,
+							size: elem.rentedSize,
+							wear: elem.rentedWear,
+							rate: elem.rentedRate,
+							date: elem.rentedDate,
+							msg: elem.rentedMsg,
+							img: elem.rentedImg						
+						})
+					}
+					if(elem.rentedId === id){
+						rentedReviews.push({
+							userId: elem.rentalId,
+							name: elem.rentalName,
+							size: elem.rentalSize,
+							wear: elem.rentalWear,
+							rate: elem.rentalRate,
+							date: elem.rentalDate,
+							msg: elem.rentalMsg,
+							img: elem.rentalImg						
+						})
+					}
 					review += +elem.rate
 				}
 			})
@@ -122,7 +153,7 @@ class UserProfile extends Component {
 		if(!dressData){
 			this.props.updateFooter(true);
 		}
-		this.setState({ review, dressData });
+		this.setState({ review, dressData, rentalReviews, rentedReviews });
 	}
 
 	easyObject(el, elem){
@@ -141,13 +172,11 @@ class UserProfile extends Component {
 	}
 
 	onDelete = async (e) => {
-		console.log(e, 'editttttt');
 		 let obj = {
 			 _id:e._id,
 			 archiveStatus:'Achived'
 		 }
 		let res = await HttpUtils.post('uploaddress',obj);
-		console.log(res,'deleteAPI');
 		if(res.code == 200){
 			alert('Dress is deleted from Drent');
 			this.setState({
@@ -231,12 +260,13 @@ class UserProfile extends Component {
 		userName = profile.length > 0 && profile[0].firstName.length > 0 ? profile[0].firstName : user && user.username;
 		let userAvailable = false,
 		arr = rentalTab ? rentals : rented,
+		reviewsArr = rentalTab ? this.state.rentalReviews : this.state.rentedReviews,
 		boo = rentalTab ? true : false;
 		arr = this.filterFunc(arr, filterKey);
 		if(user && user._id && user._id === id){
 			userAvailable = true;
 		}
-
+		console.log(this.state.rentedReviews, this.state.rentalReviews, 'reviewssssssss')
 		return(
 			<div>
 					<div>
@@ -487,6 +517,7 @@ class UserProfile extends Component {
 								<div className="col-md-4"></div>
 							</div>
 							<hr style={{border: '1px solid #c2073f'}}/>
+							{reviewsArr.map((elem) => <ReviewsCard data={elem}/>)}
 						</div>
 
 

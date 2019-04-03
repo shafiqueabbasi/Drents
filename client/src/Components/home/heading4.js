@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 class Heading4 extends Component {
   render() {
   	const { label, hrLine, data, showEditDelete, onDelete, profile, userAvailable } = this.props;
-    console.log(this.props,'proppsssss')
+    
     return (
     	<div className="App">
     		{label && label.length > 0 && <div className="Heading">

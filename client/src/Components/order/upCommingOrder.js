@@ -91,6 +91,7 @@ class UpCommingOrder extends Component {
     				rentedName: elem.buyerName,
     				rentalName: elem.userName
 				};
+				console.log(obj, 'objjjjjjjjjjjjjjjj')
     			
     			return (
     				<div className="row hidden-sm hidden-xs">
