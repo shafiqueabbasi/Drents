@@ -151,7 +151,7 @@ class UserProfile extends Component {
                     }                    
                 }
             })
-            review = review / filterData.length;
+            review = (review / filterData.length).toFixed(1);
         }
         if(!dressData){
             this.props.updateFooter(true);
