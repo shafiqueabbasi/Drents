@@ -110,52 +110,55 @@ class UserProfile extends Component {
 	}
 
 	ratingFunc(data, id){
-		let review = 0,
-		rentalReviews = [],
-		rentedReviews = [],
-		dressData = data.dress.length > 0 && data.dress.map((elem) => {
-			return elem._id;
-		});
-		console.log(id, 'dataaaaaaaa')
-		if(dressData){
-			data.review.map((elem) => {
-				console.log(elem, 'elemmmmmmmmmmmmmmmm')
-				if(dressData.includes(elem.productId)){
-					if(elem.rentalId === id){
-						rentalReviews.push({
-							userId: elem.rentedId,
-							name: elem.rentedName,
-							size: elem.rentedSize,
-							wear: elem.rentedWear,
-							rate: elem.rentedRate,
-							date: elem.rentedDate,
-							msg: elem.rentedMsg,
-							img: elem.rentedImg						
-						})
-					}
-					if(elem.rentedId === id){
-						rentedReviews.push({
-							userId: elem.rentalId,
-							name: elem.rentalName,
-							size: elem.rentalSize,
-							wear: elem.rentalWear,
-							rate: elem.rentalRate,
-							date: elem.rentalDate,
-							msg: elem.rentalMsg,
-							img: elem.rentalImg						
-						})
-					}
-					review += +elem.rate
-				}
-			})
-			review = review / data.review.length;
-		}
-		if(!dressData){
-			this.props.updateFooter(true);
-		}
-		this.setState({ review, dressData, rentalReviews, rentedReviews });
-	}
-
+        let review = 0,
+        rentalReviews = [],
+        rentedReviews = [],
+        dressData = data.dress.length > 0 && data.dress.map((elem) => {
+            return elem._id;
+        }),
+        filterData = data.review.length > 0 && data.review.map((elem) => {
+            if((elem.rentedId === id) || (elem.rentalId === id)){
+                return elem._id
+            }
+        });
+        if(dressData){
+            data.review.map((elem) => {    
+                if(filterData.includes(elem._id)){
+                    if(elem.rentalId === id){
+                        rentalReviews.push({
+                            userId: elem.rentedId,
+                            name: elem.rentedName,
+                            size: elem.rentedSize,
+                            wear: elem.rentedWear,
+                            rate: elem.rentedRate,
+                            date: elem.rentedDate,
+                            msg: elem.rentedMsg,
+                            img: elem.rentedImg                        
+                        });
+                        review += +elem.rentedRate;
+                    }else if(elem.rentedId === id){
+                        rentedReviews.push({
+                            userId: elem.rentalId,
+                            name: elem.rentalName,
+                            size: elem.rentalSize,
+                            wear: elem.rentalWear,
+                            rate: elem.rentalRate,
+                            date: elem.rentalDate,
+                            msg: elem.rentalMsg,
+                            img: elem.rentalImg                        
+                        });
+                        review += +elem.rentalRate;
+                    }                    
+                }
+            })
+            review = review / filterData.length;
+        }
+        if(!dressData){
+            this.props.updateFooter(true);
+        }
+        this.setState({ review, dressData, rentalReviews, rentedReviews });
+    }
+    
 	easyObject(el, elem){
 		return {...el, ...{
 			amount: elem.amount,
@@ -316,18 +319,18 @@ class UserProfile extends Component {
 										</div>
 
 										<div className="row visible-sm" style={{paddingLeft: '0px'}}>
-											<div className="col-sm-6">
+											<div className="col-sm-5">
 												<h2><span className="rovil2">{userName}</span></h2>
 											</div>
-											<div className="col-sm-6">												
+											<div className="col-sm-7">												
 												<div className="col-sm-12 visible-sm rovil4">
-													<Rate initialRating={this.state.review} readonly classMd="col-sm-13" rate="4.5" classXS="col-sm-3" />
+													<Rate initialRating={this.state.review} readonly classMd="col-sm-12" rate="4.5" classXS="col-sm-3" className="" />
 												</div>
 											</div>
 										</div>
 
 										<div className="col-xs-12 visible-xs" style={{paddingLeft: '0px'}}>
-											<h2 style={{textAlign: 'center'}}><span className="rovil2">{userName}</span></h2>
+											<h2><span className="rovil2">{userName}</span></h2>
 										</div>
 
 										<div className="col-md-5 hidden-sm hidden-xs rovil4">
@@ -348,8 +351,8 @@ class UserProfile extends Component {
 											</h4>}
 										</div>
 
-										<div className="col-sm-2 visible-sm" style={{margin: '0px 0px 0px -135px'}}>
-											{userAvailable && <h4 style={{marginLeft:'100%'}}>
+										<div className="col-sm-2 visible-sm" style={{margin: '0px 0px 0px 182px' , marginTop:'-18%'}}>
+											{userAvailable && <h4 style={{marginLeft:'300%'}}>
 												<Link to={{pathname: `/userdetail`, state: { goTo: 'profile', profile }}}>
 													<i className="glyphicon glyphicon-pencil pencilss">
 														<p style={{fontSize: '15px', color: 'gray'}}>Edit</p>
