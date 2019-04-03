@@ -373,7 +373,7 @@ class UserProfile extends Component {
 									</div>
 
 									<div className="rovil1" style={{paddingLeft: '0px'}}>
-										<h4>London</h4>
+										<h4 style={{fontFamily: 'crimsontext'}}>London</h4>
 									</div>
 
 									<div className="rovil1" style={{paddingLeft: '0px'}}>
@@ -381,15 +381,15 @@ class UserProfile extends Component {
 									</div>
 
 									<div className="col-md-12 shut2">
-										<h4>Working as a Designer want to rent every thing which is in my wardrobe.</h4>
+										<h4 style={{fontFamily: 'crimsontext'}}>Working as a Designer want to rent every thing which is in my wardrobe.</h4>
 									</div>
 
 									<div>
 										<div className="col-md-7 col-sm-8" style={{paddingLeft: '0px'}}>
-											<h4>member since 2019-04-18</h4>
+											<h4 style={{fontFamily: 'crimsontext'}}>member since 2019-04-18</h4>
 										</div>
 										<div className="col-md-5 col-sm-4" style={{paddingLeft: '0px'}}>
-											<h4>Size Wear :M</h4>
+											<h4 style={{fontFamily: 'crimsontext'}}>Size Wear :M</h4>
 										</div>
 									</div>
 
@@ -407,7 +407,7 @@ class UserProfile extends Component {
 								<div className="col-md-3 col-sm-3"></div>
 
 								<div className="col-md-2 col-sm-2">
-									<h3 style={rentalTab ? {color: '#c2073f', textDecorationLine: 'underline'} : {color: '#c2073f'}}
+									<h3 style={rentalTab ? {color: '#c2073f', textDecorationLine: 'underline', fontFamily: 'crimsontext'} : {color: '#c2073f', fontFamily: 'crimsontext'}}
 										onClick={() => this.setState({ rentalTab: true, rentedTab: false, filterKey: 'SORT BY'})}>
 										Rentals
 									</h3>
@@ -415,14 +415,14 @@ class UserProfile extends Component {
 
 								<div className="col-md-2 col-sm-2"
 									onClick={() => this.setState({ rentalTab: false, rentedTab: true, filterKey: 'SORT BY'})}>
-									<h3 style={rentedTab ? {color: '#c2073f', textDecorationLine: 'underline'} : {color: '#c2073f'}}>
+									<h3 style={rentedTab ? {color: '#c2073f', textDecorationLine: 'underline', fontFamily: 'crimsontext'} : {color: '#c2073f', fontFamily: 'crimsontext'}}>
 										Rented
 									</h3>
 								</div>
 
 								<div className="col-md-2 col-sm-2">
 									{userAvailable && <Link to={{pathname: `/userdetail`, state: {goTo: 'currentRentals', orderhistory, id }}}>
-										<h3 style={{color: '#c2073f'}}>Orders</h3>
+										<h3 style={{color: '#c2073f', fontFamily: 'crimsontext'}}>Orders</h3>
 									</Link>}
 								</div>
 
@@ -468,8 +468,6 @@ class UserProfile extends Component {
 									    			</li>
 									    		)
 									    	})}
-									    	{/*<li><a href="#">CSS</a></li>
-									    	<li><a href="#">JavaScript</a></li>*/}
 									    </ul>
 									</div>
 
@@ -479,13 +477,17 @@ class UserProfile extends Component {
 								{userAvailable && <div className="visible-sm col-sm-3">&emsp;&emsp;
 									<div className="dropdown">
 									    <button class="btn dropdown-toggle" type="button" data-toggle="dropdown"
-									      style={{background: '#ffffff', color: '#c2073f', borderRadius: '0', border: '1px solid #c2073f'}}>SORT BY &emsp;
+									      style={{background: '#ffffff', color: '#c2073f', borderRadius: '0', border: '1px solid #c2073f'}}>{filterKey} BY &emsp;
 									      <span class="caret"></span></button>
 
 									    <ul class="dropdown-menu">
-									    	<li><a href="#">HTML</a></li>
-									    	<li><a href="#">CSS</a></li>
-									    	<li><a href="#">JavaScript</a></li>
+									    	{filterDresses.map((el) => {
+									    		return (
+									    			<li onClick={() => this.setState({ filterKey: el})}>
+								    					<a>{el}</a>
+									    			</li>
+									    		)
+									    	})}
 									    </ul>
 									</div>
 								</div>}
@@ -493,13 +495,17 @@ class UserProfile extends Component {
 								{userAvailable && <div className="col-xs-6 visible-xs">
 									<div class="dropdown">
 									    <button class="btn dropdown-toggle" type="button" data-toggle="dropdown"
-									      style={{background: '#ffffff', color: '#c2073f', borderRadius: '0', border: '1px solid #c2073f'}}>SORT BY &emsp;
+									      style={{background: '#ffffff', color: '#c2073f', borderRadius: '0', border: '1px solid #c2073f'}}>{filterKey} BY &emsp;
 									      <span class="caret"></span></button>
 
 									    <ul class="dropdown-menu">
-									    	<li><a href="#">HTML</a></li>
-									    	<li><a href="#">CSS</a></li>
-									    	<li><a href="#">JavaScript</a></li>
+									    	{filterDresses.map((el) => {
+									    		return (
+									    			<li onClick={() => this.setState({ filterKey: el})}>
+								    					<a>{el}</a>
+									    			</li>
+									    		)
+									    	})}
 									    </ul>
 									</div>
 								</div>}
@@ -514,7 +520,7 @@ class UserProfile extends Component {
 								<div className="col-md-4"></div>
 
 								<div className="col-md-4">
-									<h3 style={{textAlign: 'center',color: '#c2073f'}}>Comments & Views</h3>
+									<h3 style={{textAlign: 'center', color: '#c2073f', fontFamily: 'crimsontext'}}>Comments & Views</h3>
 								</div>
 
 								<div className="col-md-4"></div>

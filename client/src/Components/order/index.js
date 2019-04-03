@@ -114,22 +114,22 @@ class Order extends Component {
       				<div className="row  hidden-xs hidden-sm">
       					{/*<div className="col-md-1"></div>*/}
       					{goTo == 'currentRentals' && <div className="col-md-4 col-sm-4" style={{textAlign: 'center'}}>
-      						<h4 className="order" onClick={this.renderWithState.bind(this, "currentRentals", orderTabs)} style={{color: '#c2073f'}}>Current Rentals</h4>
+      						<h4 className="order" onClick={this.renderWithState.bind(this, "currentRentals", orderTabs)} style={{fontFamily: 'crimsontext',color: '#c2073f'}}>Current Rentals</h4>
       					</div>}
       					{/*<div className="col-md-1"></div>*/}
       					{goTo == 'currentRentals' && <div className="col-md-4 col-sm-3" style={{textAlign: 'center'}}>
-      						<h4 className="order" onClick={this.renderWithState.bind(this, "currentRented", orderTabs)} style={{color: '##c2073f'}}>Current Rented</h4>
+      						<h4 className="order" onClick={this.renderWithState.bind(this, "currentRented", orderTabs)} style={{fontFamily: 'crimsontext',color: '##c2073f'}}>Current Rented</h4>
       					</div>}
                                     {goTo == 'currentRentals' && <div className="col-md-4 col-sm-3" style={{textAlign: 'center'}}>
-                                          <h4 className="order" onClick={this.renderWithState.bind(this, "orderHis", orderTabs)} style={{color: '##c2073f'}}>Order History</h4>
+                                          <h4 className="order" onClick={this.renderWithState.bind(this, "orderHis", orderTabs)} style={{fontFamily: 'crimsontext',color: '##c2073f'}}>Order History</h4>
                                     </div>}
       					{/*<div className="col-md-1"></div>*/}
       					{goTo == 'profile' && <div className="col-md-6 col-sm-1" style={{textAlign: 'center'}}>
-						      <h4 className="order" onClick={this.renderWithState.bind(this, "profile", arr)} style={{color: '#c2073f'}}>Profile</h4>
+						      <h4 className="order" onClick={this.renderWithState.bind(this, "profile", arr)} style={{fontFamily: 'crimsontext',color: '#c2073f'}}>Profile</h4>
       					</div>}
       					{/*<div className="col-md-2 col-sm-1"></div>*/}
       					{goTo == 'profile' && <div className="col-md-6 col-sm-3" style={{textAlign: 'center'}}>
-      						<h4 className="order" onClick={this.renderWithState.bind(this, "uploadDress", arr)} style={{color: '##c2073f'}}>Upload Dress</h4>
+      						<h4 className="order" onClick={this.renderWithState.bind(this, "uploadDress", arr)} style={{fontFamily: 'crimsontext',color: '##c2073f'}}>Upload Dress</h4>
       					</div>}
       					{/*<div className="col-md-2"></div>*/}
       				</div>
@@ -137,19 +137,19 @@ class Order extends Component {
 
       				<div className="row  visible-sm">      					
                                     {goTo == 'currentRentals' && <div className="col-sm-4" style={{textAlign: 'center'}}>
-                                          <h5 className="order" onClick={this.renderWithState.bind(this, "currentRentals", orderTabs)} style={{color: '#c2073f'}}>Current Rentals</h5>
+                                          <h5 className="order" onClick={this.renderWithState.bind(this, "currentRentals", orderTabs)} style={{fontFamily: 'crimsontext',color: '#c2073f'}}>Current Rentals</h5>
                                     </div>}
       					{goTo == 'profile' && <div className="col-sm-6" style={{textAlign: 'center'}}>
-      						<h5 className="order" onClick={this.renderWithState.bind(this, "profile", arr)} style={{color: '#c2073f'}}>Profile</h5>
+      						<h5 className="order" onClick={this.renderWithState.bind(this, "profile", arr)} style={{fontFamily: 'crimsontext',color: '#c2073f'}}>Profile</h5>
       					</div>}
                                     {goTo == 'currentRentals' && <div className="col-sm-4" style={{textAlign: 'center'}}>
-                                          <h5 className="order" onClick={this.renderWithState.bind(this, "currentRented", orderTabs)} style={{color: '#c2073f'}}>Current Rented</h5>
+                                          <h5 className="order" onClick={this.renderWithState.bind(this, "currentRented", orderTabs)} style={{fontFamily: 'crimsontext',color: '#c2073f'}}>Current Rented</h5>
                                     </div>}
       					{goTo == 'profile' && <div className="col-sm-6" style={{textAlign: 'center'}}>
-      						<h5 className="order" onClick={this.renderWithState.bind(this, "uploadDress", arr)} style={{color: '#c2073f'}}>Upload Dress</h5>
+      						<h5 className="order" onClick={this.renderWithState.bind(this, "uploadDress", arr)} style={{fontFamily: 'crimsontext',color: '#c2073f'}}>Upload Dress</h5>
       					</div>}
                                     {goTo == 'currentRentals' && <div className="col-sm-4" style={{textAlign: 'center'}}>
-                                          <h5 className="order" onClick={this.renderWithState.bind(this, "orderHis", orderTabs)} style={{color: '#c2073f'}}>Order History</h5>
+                                          <h5 className="order" onClick={this.renderWithState.bind(this, "orderHis", orderTabs)} style={{fontFamily: 'crimsontext',color: '#c2073f'}}>Order History</h5>
                                     </div>}
       				</div>
       					<hr className="visible-sm" style={{borderTop:'2px solid #c2073f'}}/>
@@ -159,27 +159,27 @@ class Order extends Component {
 				        	<div className="menu-list">
 				           		{goTo == 'currentRentals' && <ul style={{textAlign: 'center'}}>
       				                	<li onClick={this.renderWithState.bind(this, "currentRentals", orderTabs)}>
-      				                  	<a><i className="fa fa-dashboard fa-lg"></i>Current Rentals</a>
+      				                  	<a style={{fontFamily: 'crimsontext',}}><i className="fa fa-dashboard fa-lg"></i>Current Rentals</a>
       				                	</li>
 				           		</ul>}
                                           {goTo == 'currentRentals' && <ul style={{textAlign: 'center'}}>
                                                 <li onClick={this.renderWithState.bind(this, "currentRented", orderTabs)}>
-                                                      <a><i className="fa fa-dashboard fa-lg"></i>Current Rented</a>
+                                                      <a style={{fontFamily: 'crimsontext',}}><i className="fa fa-dashboard fa-lg"></i>Current Rented</a>
                                                 </li>
                                           </ul>}
 				            	{goTo == 'currentRentals' && <ul style={{textAlign: 'center'}}>
       				                	<li onClick={this.renderWithState.bind(this, "orderHis", orderTabs)}>
-      				                 		<a><i className="fa fa-dashboard fa-lg"></i>Order History</a>
+      				                 		<a style={{fontFamily: 'crimsontext',}}><i className="fa fa-dashboard fa-lg"></i>Order History</a>
       			                  	</li>
 				            	</ul>}
 				            	{goTo == 'profile' && <ul style={{textAlign: 'center'}}>
       				                	<li onClick={this.renderWithState.bind(this, "profile", arr)}>
-      				                		<a><i className="fa fa-dashboard fa-lg"></i> Profile</a>
+      				                		<a style={{fontFamily: 'crimsontext',}}><i className="fa fa-dashboard fa-lg"></i> Profile</a>
       				                	</li>
 				            	</ul>}
 				            	{goTo == 'profile' && <ul style={{textAlign: 'center'}}>
       				                	<li onClick={this.renderWithState.bind(this, "uploadDress", arr)}>
-      				                		<a><i className="fa fa-dashboard fa-lg"></i> Upload Dress</a>
+      				                		<a style={{fontFamily: 'crimsontext',}}><i className="fa fa-dashboard fa-lg"></i> Upload Dress</a>
       				                	</li>
 				            	</ul>}
 				     		</div>
