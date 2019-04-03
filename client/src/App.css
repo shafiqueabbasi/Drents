@@ -238,6 +238,17 @@ letter-spacing: 1px;
   .topmargin{
       margin-top: 50%;
   }
+  .userstar{
+      color: yellow;
+    font-size: 17px;
+    margin-left: 6%;
+    margin-top: -1%;
+  }
+  .userstar_rating{
+      padding: 0; 
+      margin-top:-15%;
+      margin-left: 67%;
+  }
 }
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
   .morebtn{
@@ -262,6 +273,17 @@ letter-spacing: 1px;
   .topmargin{
      
   }
+  .userstar{
+     color: yellow;
+    font-size: 17px;
+    margin-left: -6%;
+    margin-top: 9%;
+  }
+  .userstar_rating{
+      padding: 0; 
+      margin-top:-23%;
+      margin-left: 67%;
+  }
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
   .morebtn{
@@ -285,6 +307,17 @@ letter-spacing: 1px;
   .topmargin{
      
   }
+  .userstar{
+      color: yellow;
+      font-size: 17px;
+      margin-left: -3%; 
+      margin-top: 7%;
+  }
+  .userstar_rating{
+      padding: 0; 
+      margin-top:-23%;
+      margin-left: 67%;
+  }
 }
 @media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
   .morebtn{
@@ -306,6 +339,17 @@ letter-spacing: 1px;
   }
   .topmargin{
       
+  }
+  .userstar{
+      color: yellow;
+      font-size: 17px;
+    margin-left: 13%;
+    margin-top: 0%;
+  }
+  .userstar_rating{
+          padding: 0;
+        margin-top: -14%;
+        margin-left: 55%;
   }
 }
 

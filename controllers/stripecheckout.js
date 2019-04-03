@@ -25,6 +25,7 @@ exports.getApiKey = function(req,res,next){
   var publicKey = String(keys.stripePulishableKey)
   console.log(publicKey,'with string')
   console.log(keys.stripePulishableKey,'without string')
+  
 res.send({
   keys:publicKey
 })

@@ -91,7 +91,6 @@ class UpCommingOrder extends Component {
     				rentedName: elem.buyerName,
     				rentalName: elem.userName
 				};
-				console.log(obj, 'objjjjjjjjjjjjjjjj')
     			
     			return (
     				<div className="row hidden-sm hidden-xs">
@@ -178,7 +177,7 @@ class UpCommingOrder extends Component {
                                     	<div className="col-md-3">
                                     		<button className="btn btn-sm" 
                                     			style={{color:'black', backgroundColor:'white', width: '100%'}}
-                                    			onClick={(e) => this.changeStatus("confirmStatus")}
+                                    			onClick={(e) => this.changeStatus("confirmStatus", elem.reviewId)}
                                 			>Confirm</button>                                    		
                                     	</div>
                                     	<div className="col-md-3">
@@ -286,7 +285,7 @@ class UpCommingOrder extends Component {
                                     	<div className="col-md-3">
                                     		<button className="btn btn-sm" 
                                     			style={{color:'black', backgroundColor:'white', width: '100%'}}
-                                    			onClick={(e) => this.changeStatus("confirmStatusTab")}
+                                    			onClick={(e) => this.changeStatus("confirmStatusTab", elem.reviewId)}
                                 			>Confirm</button>                                    		
                                     	</div>
                                     	<div className="col-md-3">
@@ -406,7 +405,7 @@ class UpCommingOrder extends Component {
                                     	<div className="col-md-3">
                                     		<button className="btn btn-sm" 
                                     			style={{color:'black', backgroundColor:'white', width: '100%'}}
-                                    			onClick={(e) => this.changeStatus("confirmStatusMobile")}
+                                    			onClick={(e) => this.changeStatus("confirmStatusMobile", elem.reviewId)}
                                 			>Confirm</button>                                    		
                                     	</div>
                                     	<div className="col-md-3">

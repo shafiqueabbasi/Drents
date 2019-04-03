@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 class ReviewsCard extends Component {
   render() {
     const { data } = this.props;
-    console.log(data, 'dataaaaaaaaaaaaaa')
+    
     return(
           <div>
             <div className="row dell hidden-xs hidden-sm">

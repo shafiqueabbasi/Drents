@@ -42,6 +42,7 @@ class MainPayment extends Component {
 
   render() {
       const { stripe } = this.state;
+      
       return (
           <StripeProvider stripe={stripe}>
               <div className="example">
