@@ -687,7 +687,18 @@ input[type="file"] {
     .google2{
             margin-right: 0%;
       }
-    }
+      .productStar{
+            color: yellow;
+            font-size: 17px;
+            margin-left: 6%;
+            margin-top: 0%;
+      }
+      .productRating{
+               padding: 0;
+              margin-top: -13%;
+              margin-left: 84%; 
+      }
+  }
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
   .googleapp{
             width : 85%;
@@ -696,6 +707,17 @@ input[type="file"] {
   .google2{
             margin-right: 0%;
     }
+     .productStar{
+            color: yellow;
+            font-size: 17px;
+            margin-left: 0%;
+            margin-top: 0%;
+      }
+      .productRating{
+           padding: 0;
+          margin-top: -12%;
+          margin-left: 34%; 
+      }
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
   .googleapp{
@@ -705,6 +727,16 @@ input[type="file"] {
       .google2{
             margin-right: 2%;
     }
+    .productStar{
+            color: yellow;
+            font-size: 17px;
+            margin-left: -17%;
+      }
+      .productRating{
+               padding: 0;
+              margin-top: -24%;
+              margin-left: 55%;
+      }
 }
 @media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
   .googleapp{
@@ -717,4 +749,15 @@ input[type="file"] {
   .google2{
             margin-right: 2%;
     }
+    .productStar{
+            color: yellow;
+            font-size: 17px;
+            margin-left: 10%;
+            margin-top: 0%;
+      }
+      .productRating{
+            padding: 0;
+            margin-top: -16%;
+            margin-left: 55%; 
+      }
 }

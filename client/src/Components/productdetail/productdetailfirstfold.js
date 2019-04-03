@@ -4,7 +4,8 @@ import Headingf8 from '../home/headingf8';
 import Imagescard from './productdetailimagescard';
 import Table from './productdetailtable';
 import Secondfold from './productdetailsecondfold';
-import { CircleSizes, Rate } from '../_components/myInput';
+import { CircleSizes } from '../_components/myInput';
+import { Rate2 } from '../_components/myInput';
 import './productdetail.css';
 
 import { connect } from 'react-redux';
@@ -167,7 +168,7 @@ class Productdetailfirstfold extends Component {
 	ratingReview = e => {
 		let rateCount = 0;
 		e.map((elem) => {
-			rateCount += +elem.rate
+			rateCount += +elem.rentedRate
 		});
 		let averageRate = rateCount / e.length;
 		averageRate = e.length > 0 ? averageRate : '';
@@ -201,10 +202,13 @@ class Productdetailfirstfold extends Component {
 								</div>
 								<div className="col-md-4 col-sm-4 col-xs-6 roundnround2">
 									<img src={userImage.length > 0 ? userImage : "../images/admin1.jpg"} className="bookedbook"/>
-                                   <span className="" style={{fontFamily: "Qwigley", fontSize: "32px", marginLeft:'-10%'}}>{elem.userName}</span><br/>
-                                   <div className="roundnround3">
+                                   
+                                    <div>
+                                   		<span className="" style={{fontFamily: "Qwigley", fontSize: "32px", marginLeft:'-10%'}}>{elem.userName}</span><br/>
+                                    </div>
+                                    <div className="roundnround3">   
                                        <Link to={`/profile/${userId}`}><span className="roundnround">View Profile</span></Link>
-                                   </div>
+                                   	</div>
 								</div>									 
                             </div>{/* div close*/}
 							<div className="row">
@@ -214,8 +218,8 @@ class Productdetailfirstfold extends Component {
 									     	 <font color="#c2073f"><h1 className="trello4">{elem.bodyType}</h1></font>
 									    </div>{/*div close*/}
 									    <div className="col-lg-0 col-md-0 col-sm-2 col-xs-2"></div>
-									    <div className="col-lg-6 col-md-5 col-sm-5" style={{marginTop: "20px"}}>
-									    	<Rate rate={this.state.averageRate} initialRating={this.state.averageRate} readonly classMd="col-md-13" classXS="col-md-2" />
+									    <div className="col-lg-6 col-md-5 col-sm-5" style={{marginTop: "20px",padding: '0px',}}>
+									    	<Rate2 rate={this.state.averageRate} initialRating={this.state.averageRate} readonly classMd="col-md-9" rate="4.5" classXS="col-md-2" />
 		                       	 		</div>{/*Div close*/}
 			                    </div>{/*Div Close Col-md-12*/}
 							</div>{/*Row Close*/}
