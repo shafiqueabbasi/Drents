@@ -77,7 +77,7 @@ class Filterpanel extends Component {
 	    							<h5 id="Special Ocasion" onClick={this.handleClick} className="lH_filter">Special Ocasion</h5><br/>
 	    							<h5 id="Family Dinner" onClick={this.handleClick} className="lH_filter">Family Dinner</h5>
 	    							<div className="col-md-9  col-sm-9" style={{paddingBottom: '15px', margin: '40px 0 20px',borderBottom: '1px solid black'}}></div>
-	    							<div className="row col-md-12">
+	    							<div className="row col-md-12" style={{padding: '0px'}}>
 
 	    								<h3>Sort By&emsp;&nbsp;-</h3><br/>
 	    								<Filter id="newest" heading="Newest" onChange={this.handleClick}/>
@@ -110,7 +110,7 @@ class Filterpanel extends Component {
 	    							<div className="col-md-7 col-sm-7" style={{paddingBottom: '15px', margin: '40px 0 20px',borderBottom: '1px solid black'}}></div>
 								</div>*/}
 								<div className="row">
-									<div className="row col-md-12 col-sm-12">
+									<div className="row col-md-12 col-sm-12" style={{padding: '0px'}}>
 	    								<h3>Weather&emsp;-</h3><br/>
 	    								<Filter id="Cold Weather" heading="Cold Weather" onChange={this.handleClick}/>
 	    								<Filter id="Warm Weather" heading="Warm Weather" onChange={this.handleClick}/>
@@ -118,7 +118,7 @@ class Filterpanel extends Component {
 									</div>
 								</div>
 								<div className="row">
-									<div className="row col-md-12 col-sm-12">
+									<div className="row col-md-12 col-sm-12" style={{padding: '0px'}}>
 	    								<h3>Sizes&emsp;&nbsp;-</h3><br/>
 	    								<Filter id="XS" heading="X Small" onChange={this.handleClick}/>
 	    								<Filter id="S" heading="Small" onChange={this.handleClick}/>
