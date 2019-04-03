@@ -269,7 +269,7 @@ class UserProfile extends Component {
 		if(user && user._id && user._id === id){
 			userAvailable = true;
 		}
-		console.log(this.state.rentedReviews, this.state.rentalReviews, 'reviewssssssss')
+		
 		return(
 			<div>
 					<div>
@@ -324,7 +324,7 @@ class UserProfile extends Component {
 											</div>
 											<div className="col-sm-7">												
 												<div className="col-sm-12 visible-sm rovil4">
-													<Rate initialRating={this.state.review} readonly classMd="col-sm-12" rate="4.5" classXS="col-sm-3" />
+													<Rate initialRating={review} readonly classMd="col-sm-12" rate={review} classXS="col-sm-3" />
 												</div>
 											</div>
 										</div>
@@ -334,11 +334,11 @@ class UserProfile extends Component {
 										</div>
 
 										<div className="col-md-5 hidden-sm hidden-xs rovil4">
-											<Rate initialRating={this.state.review} readonly classMd="col-md-10" rate="4.5" classXS="col-md-2" />
+											<Rate initialRating={review} readonly classMd="col-md-10" rate={review} classXS="col-md-2" />
 										</div>
 
 										<div className="col-xs-9 visible-xs rovil4" style={{paddingLeft: '0px'}}>
-											<Rate initialRating={this.state.review} readonly classMd="col-xs-10" rate="4.5" classXS="col-xs-2" />
+											<Rate initialRating={review} readonly classMd="col-xs-10" rate={review} classXS="col-xs-2" />
 										</div>
 
 										<div className="col-md-2 hidden-sm hidden-xs rovil6">
