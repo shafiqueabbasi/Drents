@@ -36,7 +36,7 @@ export class Shareholder extends Component {
 	  	return(
 	  		<div>
 	  			<div className="col-md-1 col-sm-4"><span className="input">
-	                <h3 style={{fontSize: '23px', color: '#c2073f'}}>
+	                <h3 style={{fontFamily: 'crimsontext',fontSize: '23px', color: '#c2073f'}}>
 	                    {this.props.label}
 	                </h3></span>
 	            </div>
