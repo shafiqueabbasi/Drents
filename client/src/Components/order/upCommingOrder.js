@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { HttpUtils } from  '../../Service/HttpUtils';
 import CommentCard from '../productdetail/commentCard';
 
+import { connect } from 'react-redux';
+
 class UpCommingOrder extends Component {
 	constructor(props){
 		super(props);
@@ -33,12 +35,14 @@ class UpCommingOrder extends Component {
 
 	changeStatus = async (popUp, reviewId) => {
 		document.getElementById(popUp).click();
+		const { elem } = this.state;
 		let { take, rentals, rented } = this.props,	
 		arr = take ? rentals : rented,
 		obj = this.makeCodeShort(arr, take, reviewId);			
 		let statusRental = await HttpUtils.post('twiliosms', obj);
-		alert('Your status updated successfully');
-		this.props.filterData();			
+		alert('Your status updated successfully');		
+		this.props.filterData();	
+		this.updateStatus(elem._id);		
 	}
 
 	makeCodeShort(arr, take, reviewId){
@@ -69,6 +73,11 @@ class UpCommingOrder extends Component {
 			return el;						
 		})
 		return obj;
+	}
+
+	async updateStatus(_id){
+		let obj = {_id, bookedFrom: '', bookedTo: '', status: 'Available'},
+		res = await HttpUtils.post('uploaddress', obj, this.props.user.token);
 	}
 
 	render() {		
@@ -434,7 +443,16 @@ class UpCommingOrder extends Component {
     }
 }
 
-export default UpCommingOrder;
+
+function mapStateToProps(state) {
+    const { loggedIn, user } = state.authentication;
+    return {
+        loggedIn, user
+    };
+}
+
+const connectUpCommingOrder = connect(mapStateToProps)(UpCommingOrder);
+export default connectUpCommingOrder;
 
 
 	// async changeStatus(){
