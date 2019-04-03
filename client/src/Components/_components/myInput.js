@@ -79,6 +79,25 @@ export const Rate = props => {
     )
 }
 
+export const Rate2 = props => {
+   return(
+       <div className="row">
+           <Rating className={props.classMd ? props.classMd : "col-md-7" + " col-xs-8"}
+               emptySymbol="glyphicon glyphicon-star-empty"
+               fullSymbol="glyphicon glyphicon-star"
+               initialRating={props.initialRating}
+               readonly={props.readonly}
+               className="productStar"
+               onChange={props.onChange}
+           />
+           <div className={props.classXS ? props.classXS : "col-md-5" + " col-xs-4"}
+               className="productRating">
+               <h5>{props.rate}</h5>
+           </div>
+       </div>
+   )
+}
+
 export const ButtonComponent = props => {
     return(
         <div className="col-md-2" style={{textAlign: 'center'}}>
