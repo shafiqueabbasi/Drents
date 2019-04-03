@@ -158,7 +158,7 @@ class UserProfile extends Component {
         }
         this.setState({ review, dressData, rentalReviews, rentedReviews });
     }
-    
+
 	easyObject(el, elem){
 		return {...el, ...{
 			amount: elem.amount,
@@ -324,7 +324,7 @@ class UserProfile extends Component {
 											</div>
 											<div className="col-sm-7">												
 												<div className="col-sm-12 visible-sm rovil4">
-													<Rate initialRating={this.state.review} readonly classMd="col-sm-12" rate="4.5" classXS="col-sm-3" className="" />
+													<Rate initialRating={this.state.review} readonly classMd="col-sm-12" rate="4.5" classXS="col-sm-3" />
 												</div>
 											</div>
 										</div>

@@ -4,11 +4,7 @@
     border: 4px solid #c2073f;
 
 }
-.rovil1{
-	padding: 13px;
-  margin-top: -3%;
 
-}
 
 .rovil3{
 	padding: 13px;
@@ -47,6 +43,10 @@
     margin-top: 5%;
     margin-left: -4%;
   }
+  .rovil1{
+    padding: 13px;
+    margin-top: -3%;
+  }
 }
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
   .shut2{
@@ -64,6 +64,10 @@
     margin-top: 19%;
     margin-left: -15%;
   }
+  .rovil1{
+    padding: 13px;
+    margin-top: -7%;
+  }
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
   .shut2{
@@ -75,10 +79,15 @@
      font-weight: 500;
       font-size: 50px;
      color:  #c2073f;
+        margin-left: 0%;
   } 
   .rovil4{
     margin-top: 5%;
     margin-left: -4%;
+  }
+  .rovil1{
+    padding: 13px;
+    margin-top: -3%;
   }
 }
 @media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
@@ -96,6 +105,10 @@
     margin-top: 5%;
     margin-left: -4%;
   } 
+  .rovil1{
+    padding: 13px;
+    margin-top: -3%;
+  }  
 }
 .sami {
   position: relative;
@@ -104,7 +117,7 @@
   
 }
 .madhere{
-  
+
 }
 .image {
   display: block;

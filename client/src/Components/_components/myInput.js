@@ -68,11 +68,11 @@ export const Rate = props => {
                 fullSymbol="glyphicon glyphicon-star"
                 initialRating={props.initialRating} 
                 readonly={props.readonly}
-                style={{color: 'yellow', fontSize:'17px' , marginLeft:'4%'}}
+                className="userstar"
                 onChange={props.onChange}
             />
             <div className={props.classXS ? props.classXS : "col-md-5" + " col-xs-4"}
-                style={{padding: '0' , marginTop:'-2%' , marginLeft:'-5%'}}>
+                className="userstar_rating">
                 <h5>{props.rate}</h5>
             </div>
         </div>
