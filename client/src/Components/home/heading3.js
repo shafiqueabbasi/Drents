@@ -4,7 +4,7 @@ class Heading3 extends Component {
   render() {
     
     return (
-    	<div className="App" style={{backgroundColor:'#c2073f'}}>
+    	<div className="App mnp" style={{backgroundColor:'#c2073f'}}>
       		<div className="Heading">
         			<h1 className="headings1" style={{marginBottom:'-1%'}}>How It Works</h1>
         			<img src='./images/bar-white.png' style={{marginTop:'-1%'}}/>

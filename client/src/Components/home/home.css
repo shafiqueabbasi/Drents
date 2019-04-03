@@ -1,4 +1,78 @@
 
+
+@media only screen and (min-device-width : 360px) and (max-device-width : 660px){
+	.Banner{
+    	width: 100%;
+	}
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
+	.Banner{
+    	width: 100%;
+	}
+}
+@media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
+	.Banner{
+		width: 103%;
+	}
+}
+@media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
+	.Banner{
+		width: 100%;
+	}
+}
+
+@media only screen and (min-device-width : 360px) and (max-device-width : 660px){
+	.mnp{
+    	width: 100%;
+	}
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
+	.mnp{
+    	width: 100%;
+	}
+}
+@media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
+	.mnp{
+		width: 103%;
+	}
+}
+@media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
+	.mnp{
+		width: 100%;
+	}
+}
+
+@media only screen and (min-device-width : 360px) and (max-device-width : 660px){
+	.mnp3{
+    	width: 100%;
+	}
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
+	.mnp3{
+    	width: 100%;
+	}
+}
+@media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
+	.mnp3{
+		width: 103%;
+		margin-right: 10px;
+		margin-left: 10px;
+	}
+}
+@media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
+	.mnp3{
+		width: 100%;
+	}
+}
+
+
+
+
+
+
+
+
+
 @media only screen and (min-device-width : 360px) and (max-device-width : 660px){
 	.panel2how{
 		    width: 100%;
