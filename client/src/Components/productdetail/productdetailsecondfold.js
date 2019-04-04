@@ -15,7 +15,6 @@ class SecondFold extends Component {
   async componentDidMount(){
       let data = await HttpUtils.get('getreview'),
       obj = this.props.location.state.elem;
-      console.log(data, 'dataaaaaaaaaaaa')
       if(data.code && data.code == 200){
           // let reviews = data.allreview.filter((elem) => elem.productId == obj._id);
           let reviews = [];
@@ -47,7 +46,7 @@ class SecondFold extends Component {
 
   render() {
     let obj = this.props.location.state.elem;
-    console.log(obj, 'userrrrrr')
+    
     return (
       <div className="App">
           <div className="container">

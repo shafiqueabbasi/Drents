@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { HttpUtils } from  '../../Service/HttpUtils';
 import CommentCard from '../productdetail/commentCard';
+import { Rate } from '../_components/myInput';
 
 import { connect } from 'react-redux';
 
@@ -33,25 +34,26 @@ class UpCommingOrder extends Component {
 		document.getElementById("confirmStatus").click();
 	}
 
-	changeStatus = async (popUp, reviewId) => {
+	changeStatus = async (popUp, reviewId, rate) => {
 		document.getElementById(popUp).click();
 		const { elem } = this.state;
 		let { take, rentals, rented } = this.props,	
 		arr = take ? rentals : rented,
-		obj = this.makeCodeShort(arr, take, reviewId);			
+		obj = this.makeCodeShort(arr, take, reviewId, rate);			
 		let statusRental = await HttpUtils.post('twiliosms', obj);
 		alert('Your status updated successfully');		
 		this.props.filterData();	
 		this.updateStatus(elem._id);		
 	}
 
-	makeCodeShort(arr, take, reviewId){
-		console.log(reviewId, 'UpCommingOrder reviewIdddddddddd')
+	makeCodeShort(arr, take, reviewId, rate){
 		const { e, elem} = this.state;
 		let obj = {},
-		msg = `Dress status has changed to ${e}`;		
+		msg = `Dress status has changed to ${e}`;				
 		arr = arr.map((el) => {
 			if(elem._id === el._id){
+				let thisRate  = ['Dispatched', 'Received'],
+				productRate = thisRate.includes(e) ? '' : e === "Returned" ? rate : elem.productRate;
 				if(take){
 					el.rentalStage = e;					
 				}else {
@@ -59,6 +61,7 @@ class UpCommingOrder extends Component {
 				}
 				obj = {
 					reviewId,
+					productRate,
 					dataId: el.dataId,
 					productId: el._id,
 					rentalStage: el.rentalStage,
@@ -87,10 +90,10 @@ class UpCommingOrder extends Component {
 	    buyer = ['Received', 'Returned'],
 	    seller = ['Dispatched', 'Completed', 'Available'],
 	    status = take ? seller : buyer;
-	    console.log(arr, 'arrrrrrrrrr')
+	    
 	    return (
     	<div>
-    		{arr.map((elem) => {
+    		{arr.map((elem, key) => {
     			let stage = take ? elem.rentalStage : elem.rentedStage,    			
     			obj = { 
     				reviewId: elem.reviewId,
@@ -99,10 +102,11 @@ class UpCommingOrder extends Component {
     				rentedId: elem.buyerId,
     				rentedName: elem.buyerName,
     				rentalName: elem.userName
-				};
+				},
+				rating = elem.productRate == undefined || elem.productRate == '' ? 0 : +elem.productRate;
     			
     			return (
-    				<div className="row hidden-sm hidden-xs">
+    				<div key={key} className="row hidden-sm hidden-xs">
 						<div className="col-md-2">
 							<img alt="" src={elem.fileList[0]} style={{width: '117%'}}/>
 						</div>
@@ -113,12 +117,13 @@ class UpCommingOrder extends Component {
 								<h1 style={{fontFamily: 'Qwigley',fontSize: '42px',color: '#c2o72f'}}>{elem.productName}</h1>
 								</div>
 								<div className="col-md-6" style={{paddingTop: '3%'}}>
-									<span class="fa fa-star checked" style={{color: 'yellow'}}></span>
-									<span class="fa fa-star checked" style={{color: 'yellow'}}></span>
-									<span class="fa fa-star checked" style={{color: 'yellow'}}></span>
-									<span class="fa fa-star checked" style={{color: 'yellow'}}></span>
-									<span class="fa fa-star checked" style={{color: 'yellow'}}></span>
-									<span>4.5</span>
+									{/*<span className="fa fa-star checked" style={{color: 'yellow'}}></span>
+									<span className="fa fa-star checked" style={{color: 'yellow'}}></span>
+									<span className="fa fa-star checked" style={{color: 'yellow'}}></span>
+									<span className="fa fa-star checked" style={{color: 'yellow'}}></span>
+									<span className="fa fa-star checked" style={{color: 'yellow'}}></span>
+									<span>4.5</span>*/}
+									<Rate rate={rating == 0 ? '' : rating} initialRating={rating} readonly/>
 								</div>
 								<div className="col-md-2" style={{paddingTop: '3%'}}>
 									<div className="dropdown" style={{textAlign: 'right'}}>
@@ -127,9 +132,9 @@ class UpCommingOrder extends Component {
 										  <span className="caret"></span></button>
 
 										<ul className="dropdown-menu">
-											{status.map((el) => {
+											{status.map((el, k) => {
 												return (
-													<li data-toggle="modal" 
+													<li data-toggle="modal" key={k}
 														data-target="#confirmStatus" 
 														onClick={(e) => this.changeDropdown(e, elem)}
 													>
@@ -207,11 +212,20 @@ class UpCommingOrder extends Component {
     		})}
 
 							{/*<---hidden-sm--->*/}
-			{arr.map((elem) => {
+			{arr.map((elem, key) => {
 				let stage = take ? elem.rentalStage : elem.rentedStage,    			
-    			obj = { _id: elem._id};
+    			obj = { 
+    				reviewId: elem.reviewId,
+    				productId: elem._id, 
+    				rentalId: elem.userId, 
+    				rentedId: elem.buyerId,
+    				rentedName: elem.buyerName,
+    				rentalName: elem.userName
+				},
+				rating = elem.productRate == undefined || elem.productRate == '' ? 0 : +elem.productRate;
+    			
     			return (
-					<div className="visible-sm ">
+					<div key={key} className="visible-sm ">
 						<div className="row">
 							<div className=" col-sm-4">
 								<img alt="" src={elem.fileList[0]} style={{width: '100%'}}/>
@@ -224,24 +238,27 @@ class UpCommingOrder extends Component {
 									</div>
 									<div className="row">
 										<div className="col-sm-4" style={{paddingTop: '4%'}}>
-											<span class="fa fa-star checked" style={{color: 'yellow',fontSize: '70%'}}></span>
-											<span class="fa fa-star checked" style={{color: 'yellow',fontSize: '70%'}}></span>
-											<span class="fa fa-star checked" style={{color: 'yellow',fontSize: '70%'}}></span>
-											<span class="fa fa-star checked" style={{color: 'yellow',fontSize: '70%'}}></span>
-											<span class="fa fa-star checked" style={{color: 'yellow',fontSize: '70%'}}></span>
-											<span style={{fontSize: '70%'}}>4.5</span>
+											{/*<span className="fa fa-star checked" style={{color: 'yellow',fontSize: '70%'}}></span>
+											<span className="fa fa-star checked" style={{color: 'yellow',fontSize: '70%'}}></span>
+											<span className="fa fa-star checked" style={{color: 'yellow',fontSize: '70%'}}></span>
+											<span className="fa fa-star checked" style={{color: 'yellow',fontSize: '70%'}}></span>
+											<span className="fa fa-star checked" style={{color: 'yellow',fontSize: '70%'}}></span>
+											<span style={{fontSize: '70%'}}>4.5</span>*/}
+											<Rate rate={rating == 0 ? '' : rating} initialRating={rating} readonly/>
 										</div>
 
 										<div className="col-sm-2" style={{paddingTop: '4%'}}>
 											<div className="dropdown">
-											<button class="btn dropdown-toggle" type="button" data-toggle="dropdown"
+											<button className="btn dropdown-toggle" type="button" data-toggle="dropdown"
 												 style={{background: '#ffffff', color: '#c2073f', borderRadius: '0', border: '1px solid #c2073f'}}>{stage && stage.length > 0 ? stage : 'Status'} &emsp;&emsp;
-												 <span class="caret"></span></button>
+												 <span className="caret"></span></button>
 
-											<ul class="dropdown-menu">
-												{status.map((el) => {
+											<ul className="dropdown-menu">
+												{status.map((el, k) => {
 												return (
-													<li data-toggle="modal" data-target="#confirmStatusTab" onClick={(e) => this.changeDropdown(e, elem)}>
+													<li data-toggle="modal" key={k}
+													data-target="#confirmStatusTab" 
+													onClick={(e) => this.changeDropdown(e, elem)}>
 														<a>{el}</a>
 													</li>
 												)												
@@ -315,11 +332,20 @@ class UpCommingOrder extends Component {
 				)
     		})}
 				{/*<---hidden-xs--->*/}
-			{arr.map((elem) => {
+			{arr.map((elem, key) => {
 				let stage = take ? elem.rentalStage : elem.rentedStage,    			
-    			obj = { _id: elem._id};
+    			obj = { 
+    				reviewId: elem.reviewId,
+    				productId: elem._id, 
+    				rentalId: elem.userId, 
+    				rentedId: elem.buyerId,
+    				rentedName: elem.buyerName,
+    				rentalName: elem.userName
+				},
+				rating = elem.productRate == undefined || elem.productRate == '' ? 0 : +elem.productRate;
+    			
     			return (
-					<div className="row">
+					<div key={key} className="row">
 						<div className="visible-xs">
 							<div className="col-xs-2"></div>
 								<div className="col-xs-6">
@@ -337,24 +363,27 @@ class UpCommingOrder extends Component {
 								</div>
 								<div className="col-xs-2"></div>
 								<div className="col-xs-10">
-									<span class="fa fa-star checked" style={{color: 'yellow'}}></span>
-									<span class="fa fa-star checked" style={{color: 'yellow'}}></span>
-									<span class="fa fa-star checked" style={{color: 'yellow'}}></span>
-									<span class="fa fa-star checked" style={{color: 'yellow'}}></span>
-									<span class="fa fa-star checked" style={{color: 'yellow'}}></span>
-									<span>4.5</span>
+									{/*<span className="fa fa-star checked" style={{color: 'yellow'}}></span>
+									<span className="fa fa-star checked" style={{color: 'yellow'}}></span>
+									<span className="fa fa-star checked" style={{color: 'yellow'}}></span>
+									<span className="fa fa-star checked" style={{color: 'yellow'}}></span>
+									<span className="fa fa-star checked" style={{color: 'yellow'}}></span>
+									<span>4.5</span>*/}
+									<Rate rate={rating == 0 ? '' : rating} initialRating={rating} readonly/>
 								</div>
 								<div className="col-xs-2"></div>
 								<div className="col-xs-10" style={{paddingTop: '3%'}}>
 									<div className="dropdown">
-										<button class="btn dropdown-toggle" type="button" data-toggle="dropdown"
+										<button className="btn dropdown-toggle" type="button" data-toggle="dropdown"
 										  style={{background: '#ffffff', color: '#c2073f', borderRadius: '0', border: '1px solid #c2073f', textAlign: 'right'}}>{stage && stage.length > 0 ? stage : 'Status'} &emsp;&emsp;
-										  <span class="caret"></span></button>
+										  <span className="caret"></span></button>
 
-										<ul class="dropdown-menu">
-											{status.map((el) => {
+										<ul className="dropdown-menu">
+											{status.map((el, k) => {
 												return (
-													<li data-toggle="modal" data-target="#confirmStatusMobile" onClick={(e) => this.changeDropdown(e, elem)}>
+													<li data-toggle="modal" key={k}
+														data-target="#confirmStatusMobile" 
+														onClick={(e) => this.changeDropdown(e, elem)}>
 														<a>{el}</a>
 													</li>
 												)												
