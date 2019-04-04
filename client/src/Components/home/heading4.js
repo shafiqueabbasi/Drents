@@ -33,8 +33,8 @@ class Heading4 extends Component {
 		    									</div>
 		    								</div>}
 		    								<h2 className="h_dress" style={isMobileOnly ? {color:'#c2073f',width:this.props.widthProps} : {color:'#c2073f',width:''}}>{elem.productName}</h2>
-		    								<h3 className="h_dress" style={isMobileOnly ? {width:this.props.widthProps} : {width:''}}>{elem.detailName}</h3>
-		    								<h3 className="h_dress" style={isMobileOnly ? {width:this.props.widthProps} : {width:''}} >$ {" " + elem.priceDay}</h3>
+		    								<h3 className="h_dress tophead" style={isMobileOnly ? {width:this.props.widthProps} : {width:''}}>{elem.detailName}</h3>
+		    								<h3 className="h_dress tophead" style={isMobileOnly ? {width:this.props.widthProps} : {width:''}} >$ {" " + elem.priceDay}</h3>
 		    							</div>
 			    					</div>
 	    						)
