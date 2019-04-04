@@ -21,7 +21,7 @@ class Headingf8 extends Component {
     }
     
     return (
-    	<div className="">
+    	<div className="mnp2">
     		<div className="hidden-xs">
     			<div id="footer">
     				<div className="col-md-12 col-sm-12 bgc">
