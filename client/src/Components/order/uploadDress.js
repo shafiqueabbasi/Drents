@@ -248,7 +248,6 @@ render() {
     if(goDetail){
         return <Redirect to={{pathname: '/detail', state: {elem, data}}}/>
     }
-    console.log(this.props.user, 'userrrrrrrrrrrrr')
 
     return (
       	<div>

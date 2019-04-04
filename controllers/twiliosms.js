@@ -31,7 +31,8 @@ checkoutBooking.findOne({
         if(elem._id == data.productId){
             let obj = {
                 rentalStage: data.rentalStage,
-                rentedStage: data.rentedStage
+                rentedStage: data.rentedStage,
+                productRate: data.productRate
             }
             return {...elem, ...obj}
         }
@@ -45,61 +46,61 @@ checkoutBooking.findOne({
                 code:200,
                 data:'data updated successfully'
             });
-            data.forEmail.map((elem) => {
-                const mailOptions = {
-                    to : elem.email,
-                    subject : "Drent ",
-                    html : `<html>
-                        <head>
-                            <style>
-                                table {
-                                    font-family: arial, 
-                                    sans-serif;
-                                    border-collapse: collapse;
-                                    width: 100%;
-                                }td, th {
-                                    border: 1px solid #dddddd;
-                                    text-align: left;
-                                    padding: 8px;
-                                }tr:nth-child(even) {
-                                    background-color: #dddddd;
-                                }
-                            </style>
-                        </head>
-                        <body>
-                            <h2>Dress Details</h2>
-                            <table> 
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Message</th>
-                                </tr>
-                                <tr>
-                                    <td>${elem.name}</td>
-                                    <td>${elem.emailTo}</td>
-                                    <td>${elem.msg}</td>
-                                </tr>
-                            </table>
-                        </body>
-                    </html>`
-                };
+            // data.forEmail.map((elem) => {
+            //     const mailOptions = {
+            //         to : elem.email,
+            //         subject : "Drent ",
+            //         html : `<html>
+            //             <head>
+            //                 <style>
+            //                     table {
+            //                         font-family: arial, 
+            //                         sans-serif;
+            //                         border-collapse: collapse;
+            //                         width: 100%;
+            //                     }td, th {
+            //                         border: 1px solid #dddddd;
+            //                         text-align: left;
+            //                         padding: 8px;
+            //                     }tr:nth-child(even) {
+            //                         background-color: #dddddd;
+            //                     }
+            //                 </style>
+            //             </head>
+            //             <body>
+            //                 <h2>Dress Details</h2>
+            //                 <table> 
+            //                     <tr>
+            //                         <th>Name</th>
+            //                         <th>Email</th>
+            //                         <th>Message</th>
+            //                     </tr>
+            //                     <tr>
+            //                         <td>${elem.name}</td>
+            //                         <td>${elem.emailTo}</td>
+            //                         <td>${elem.msg}</td>
+            //                     </tr>
+            //                 </table>
+            //             </body>
+            //         </html>`
+            //     };
 
-                smtpTransport.sendMail(mailOptions, (err, response) => {
-                    if (err) {
-                      console.log(err, 'errrrrrrr')
-                        res.send({
-                            code: 404,
-                            message: 'error'
-                        })
-                    } else {
-                      console.log('ho gai email send')
-                        res.send({
-                            code: 200,
-                            message: 'check your email we have sent you a reset password link'
-                        })
-                    }
-                });
-            })            
+            //     smtpTransport.sendMail(mailOptions, (err, response) => {
+            //         if (err) {
+            //           console.log(err, 'errrrrrrr')
+            //             res.send({
+            //                 code: 404,
+            //                 message: 'error'
+            //             })
+            //         } else {
+            //           console.log('ho gai email send')
+            //             res.send({
+            //                 code: 200,
+            //                 message: 'check your email we have sent you a reset password link'
+            //             })
+            //         }
+            //     });
+            // })            
         }
     })
 }).catch((err) => {

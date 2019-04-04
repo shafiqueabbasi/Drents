@@ -104,7 +104,6 @@ class CommentCard extends Component {
     //-----------------cloudnary function end ------------------
 
     postReview = async (img) => {
-    	console.log(this.props.obj, 'iddddddddd')
     	let { name, email, size, wear, msg, rate } = this.state,
     	{ reviewId, productId, rentalId, rentedId, rentalName, rentedName } = this.props.obj,
     	_id = reviewId.length > 0 ? reviewId : '',
@@ -136,8 +135,13 @@ class CommentCard extends Component {
     	}
     	
     	let res = await HttpUtils.post('postreview',obj, this.props.user.token);    	
-    	if(res && res.code && res.code === 200){    		
-    		this.setState({
+    	if(res && res.code && res.code === 200){    		    		
+			if(this.props.popUp !== undefined){
+				this.props.changeStatus(this.props.popUp, res.data, rate);
+			}else {
+				this.props.addReview(obj);
+			}	
+			this.setState({
     			loading: false,
 				rate: 0,
 				name: '',
@@ -147,13 +151,7 @@ class CommentCard extends Component {
 				msg: '',
 				fileList: [],
 				showMsg: res.msg,
-			})
-			console.log(this.props.popUp, 'yahan kia aayaaa')
-			if(this.props.popUp !== undefined){
-				this.props.changeStatus(this.props.popUp, res.data);
-			}else {
-				this.props.addReview(obj);
-			}			
+			})		
 			setTimeout(() => {
 				this.setState({ showMsg : '' })
 			}, 3000);
@@ -161,7 +159,6 @@ class CommentCard extends Component {
     }
 
 	render(){
-		console.log(this.state.fileList, 'listttttttt')
 		return(
 			<div className="row mouse">
                 <div className="container" style={{padding:"22px"}}>
