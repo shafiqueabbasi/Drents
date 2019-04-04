@@ -21,10 +21,14 @@ exports.checkoutorder = function(req,res,next){
       });
 
       postorderdetail.save(function(err){
-        if(err){ return next(err); }
+        console.log('ssssaaavvveee');
+        if(err){
+          return next(err);
+         }
+         console.log('ssssaaavvveee errrrrr!');
       });
       //Respond to request indicating user was created
-      res.json({
+      res.send({
         code:200,
         data:'order detail saved successfully'
       });
