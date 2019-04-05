@@ -73,7 +73,8 @@ class UpCommingOrder extends Component {
 				};	
 				return el;
 			}				
-			return el;						
+			return el;				
+					
 		})
 		return obj;
 	}
@@ -84,12 +85,22 @@ class UpCommingOrder extends Component {
 	}
 
 	render() {		
-	    const { rentals, rented, take } = this.props,
+	    const { rentals, rented, take, showFooter, hideFooter } = this.props,
 	    { showReviewBox } = this.state;	 
 	    let arr = take ? rentals : rented,
 	    buyer = ['Received', 'Returned'],
 	    seller = ['Dispatched', 'Completed', 'Available'],
 	    status = take ? seller : buyer;
+	    if(arr.length === 0){
+            showFooter();
+            return (
+            	<div style={{textAlign: 'center'}}>
+            		<h3>no dress</h3>
+            	</div>
+        	)
+        }else if(arr.length > 0){
+        	hideFooter();
+        } 
 	    
 	    return (
     	<div>
@@ -480,57 +491,12 @@ function mapStateToProps(state) {
     };
 }
 
-const connectUpCommingOrder = connect(mapStateToProps)(UpCommingOrder);
+function mapDispatchToProps(dispatch) {
+    return {
+        showFooter: () => dispatch({ type: 'SHOW_FOOTER' }),
+        hideFooter: () => dispatch({ type: 'HIDE_FOOTER' })
+    };
+}
+
+const connectUpCommingOrder = connect(mapStateToProps, mapDispatchToProps)(UpCommingOrder);
 export default connectUpCommingOrder;
-
-
-	// async changeStatus(){
-	// 	let { take, rentals, rented } = this.props,
-	// 	{ e, elem } = this.state;
-	// 	document.getElementById("confirmStatus").click();
-	// 	if(take){
-	// 		let obj = {},
-	// 		msg = `Dress status has changed to ${e}`;
-	// 		rentals = rentals.map((el) => {
-	// 			if(elem._id === el._id){					
-	// 				el.rentalStage = e;
-	// 				obj = {
-	// 					dataId: el.dataId,
-	// 					productId: el._id,
-	// 					rentalStage: el.rentalStage,
-	// 					rentedStage: el.rentedStage,
-	// 					forEmail: [
-	// 						{ email: el.buyerEmail, msg, name: el.userName, emailTo: el.userEmail },
-	// 						{ email: el.userEmail, msg, name: el.buyerName, emailTo: el.buyerEmail  }
-	// 					]
-	// 				};	
-	// 				return el;
-	// 			}				
-	// 			return el;						
-	// 		})			
-	// 		let statusRental = await HttpUtils.post('twiliosms', obj);
-	// 		this.props.filterData();
-	// 	}else {
-	// 		let obj = {},
-	// 		msg = `Dress status has changed to ${e}`;
-	// 		rented = rented.map((el) => {
-	// 			if(elem._id === el._id){
-	// 				el.rentedStage = e;	
-	// 				obj = {
-	// 					dataId: el.dataId,
-	// 					productId: el._id,
-	// 					rentalStage: el.rentalStage,
-	// 					rentedStage: el.rentedStage,
-	// 					forEmail: [
-	// 						{ email: el.buyerEmail, msg, name: el.userName, emailTo: el.userEmail },
-	// 						{ email: el.userEmail, msg, name: el.buyerName, emailTo: el.buyerEmail  }
-	// 					]
-	// 				};
-	// 				return el;					
-	// 			}				
-	// 			return el;
-	// 		})
-	// 		let statusRental = await HttpUtils.post('twiliosms', obj);
-	// 		this.props.filterData();
-	// 	}		
-	// }

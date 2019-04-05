@@ -6,12 +6,11 @@ import './headingf8.css';
 class Headingf8 extends Component {
 
   render() {
-    const { showFooter } = this.props;
-    // let str = location.pathname;
-    // if(str.slice(str.indexOf("/") + 1, str.indexOf("/", 1)) == 'reset'){
-    //     return null;
-    // }
-    console.log(this.props.showFooter, 'showFooter 123 456 789 000')
+    const { showFooter, location } = this.props;
+    let str = location.pathname;
+    if(str.slice(str.indexOf("/") + 1, str.indexOf("/", 1)) == 'reset'){
+        return null;
+    }
     
     return (
     	<div className="mnp2">
@@ -114,4 +113,4 @@ function mapStateToProps(state) {
 }
 
 const connectedHeadingf8 = connect(mapStateToProps)(Headingf8);
-export default connectedHeadingf8;
+export default withRouter(connectedHeadingf8);
