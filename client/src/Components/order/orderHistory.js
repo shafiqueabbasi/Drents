@@ -18,6 +18,13 @@ class OrderHistory extends Component {
 
   render() {
     const { historyData } = this.props;
+    if(historyData.length === 0){
+        return (
+          <div style={{textAlign: 'center'}}>
+            <h3>no dress</h3>
+          </div>
+        )
+    }
     
     return (
       	<div>      		      	
