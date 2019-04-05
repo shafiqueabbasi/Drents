@@ -14,7 +14,7 @@ class Headingf8 extends Component {
     console.log(this.props.showFooter, 'showFooter 123 456 789 000')
     
     return (
-    	<div className="">
+    	<div className="mnp2">
     		<div className="hidden-xs">
     			<div id="footer" style={showFooter ? {position: 'Fixed'} : {}}>
     				<div className="col-md-12 col-sm-12 bgc">
