@@ -354,6 +354,37 @@ letter-spacing: 1px;
 }
 
 
+@media only screen and (min-device-width : 360px) and (max-device-width : 660px){
+  .OH{
+   margin-top: -13.5%;
+   margin-left: 52%;
+  }
+
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
+  .OH{
+   margin-top: -19.5%;
+   margin-left: 50%;
+  }
+
+}
+@media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
+  .OH{
+   margin-top: -25.5%;
+   margin-left: 74%;
+  }
+
+}
+@media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
+  .OH{
+   margin-top: -21.5%;
+   margin-left: 74%;
+  }
+
+}
+
+
+
 
 
 .sp_h_1{

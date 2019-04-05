@@ -21,7 +21,7 @@ class OrderHistory extends Component {
                           <h1 style={{fontFamily: 'Qwigley',fontSize: '42px',color: '#c2o72f'}}>{elem.productName}</h1>
                         </div>
                         <div className="col-md-2" style={{padding: '0px',textAlign: 'left'}}>&emsp;&emsp;
-                          <Rate col-md-2 rate={rating == 0 ? '' : rating} initialRating={rating} readonly/>
+                          <Rate OH={true} rate={rating == 0 ? '' : rating} initialRating={rating} readonly/>
                         </div>                        
                       </div>
                       <div className="row">
@@ -67,8 +67,8 @@ class OrderHistory extends Component {
                       <div className="col-sm-4">
                         <h2 style={{fontFamily: 'Qwigley',fontSize: '42px',color: '#c2o72f'}}>{elem.productName}</h2>
                       </div>
-                      <div className="col-sm-4" style={{padding: '0px',marginTop: '3.5%',textAlign: 'left'}}>&emsp;&emsp;&emsp;&emsp;
-                        <Rate rate={rating == 0 ? '' : rating} initialRating={rating} readonly/>
+                      <div className="col-sm-4" style={{padding: '0px',marginTop: '-3.5%',textAlign: 'left'}}>&emsp;&emsp;&emsp;&emsp;
+                        <Rate OH={true}  rate={rating == 0 ? '' : rating} initialRating={rating} readonly/>
                       </div>
                       </div>
                       <div className="row">
@@ -117,23 +117,23 @@ class OrderHistory extends Component {
                     <div className="col-xs-2"></div>
                     <div className="row">
                     <div className="col-xs-"></div>
-                    <div className="col-xs-8">
+                    <div className="col-xs-7">
                       <h2 style={{fontFamily: 'Qwigley',fontSize: '42px'}}>{elem.productName}</h2>
                     </div>
                     <div className="col-xs-3"></div>
                   </div>
 
                   <div className="col-xs-3"></div>
-                  <div className="col-xs-4">
-                    <div className="row">
+                  <div className="col-xs-5" style={{padding: '0px'}}>
+                    <div className="col-xs-12" style={{padding: '0px'}}>
                       <h5 style={{color: '#070707'}}>Size: {elem.sizes.join(", ")}</h5>
                     </div>
                   </div>
                 </div>
 
                 <div className="row">
-                  <div className="col-xs-7" style={{padding: '0px',marginTop: '3.5%',textAlign: 'left'}}>&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <Rate rate={rating == 0 ? '' : rating} initialRating={rating} readonly/>
+                  <div className="col-xs-9" style={{padding: '0px',marginTop: '3.5%',textAlign: 'center'}}>
+                    <Rate OH={true} rate={rating == 0 ? '' : rating} initialRating={rating} readonly/>
                   </div>
                 </div>
                 <div className="row">
