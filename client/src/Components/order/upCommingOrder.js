@@ -264,7 +264,7 @@ class UpCommingOrder extends Component {
 
 							<div className="col-sm-8">
 								<div className="row">
-									<div className="row col-sm-5">
+									<div className="row col-sm-4">
 										<h1 style={{fontFamily: 'Qwigley',fontSize: '41px',color: '#c2o72f'}}>{elem.productName}</h1>
 									</div>
 									<div className="row">
@@ -278,7 +278,7 @@ class UpCommingOrder extends Component {
 											<Rate rate={rating == 0 ? '' : rating} initialRating={rating} readonly/>
 										</div>
 
-										<div className="col-sm-2" style={{paddingTop: '4%'}}>
+										<div className="col-sm-3" style={{paddingTop: '4%'}}>
 											<div className="dropdown">
 											<button className="btn dropdown-toggle" type="button" data-toggle="dropdown"
 												 style={{background: '#ffffff', color: '#c2073f', borderRadius: '0', border: '1px solid #c2073f'}}>{stage && stage.length > 0 ? stage : 'Status'} &emsp;&emsp;
@@ -298,7 +298,7 @@ class UpCommingOrder extends Component {
 										</div>
 									</div>
 								</div>
-								<div className="col-sm-2">
+								<div className="col-sm-5">
 									<div className="row">
 										<h4>Size: {elem.sizes.join(", ")}</h4>
 										<h4>${elem.priceDay}</h4>
@@ -422,8 +422,8 @@ class UpCommingOrder extends Component {
 										</ul>
 									</div>
 								</div>
-								<div className="col-xs-3"></div>
-								<div className="col-xs-4">
+								<div className="col-xs-2"></div>
+								<div className="col-xs-10">
 									<div className="row">
 										<h4>Size: {elem.sizes.join(", ")}</h4>
 										<h4>${elem.priceDay}</h4>

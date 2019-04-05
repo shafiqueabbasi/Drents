@@ -34,17 +34,9 @@ class OrderHistory extends Component {
                         <div className="col-md-4">
                           <h1 style={{fontFamily: 'Qwigley',fontSize: '42px',color: '#c2o72f'}}>{elem.productName}</h1>
                         </div>
-                        <div className="col-md-2" style={{padding: '0px',marginTop: '2.5%',textAlign: 'left'}}>&emsp;&emsp;
-                          {/*<i class="fas fa-star" style={{fontSize :"20px" , "color":'#FFC400'}}></i>
-                          <i class="fas fa-star" style={{fontSize : "20px" , "color":'#FFC400'}}></i>
-                          <i class="fas fa-star" style={{fontSize : "20px" , "color":'#FFC400'}}></i>
-                          <i class="fas fa-star" style={{fontSize : "20px" , "color":'#FFC400'}}></i>
-                          <i class="fas fa-star-half-alt" style={{fontSize : "20px" , "color":'#FFC400'}}></i>*/}
-                          <Rate rate={rating == 0 ? '' : rating} initialRating={rating} readonly/>
-                        </div>
-                        {/*<div className="col-md-1" style={{padding:"0",marginTop: '2.5%'}}>
-                          <h4>4.5</h4>
-                        </div>*/}
+                        <div className="col-md-2" style={{padding: '0px',textAlign: 'left'}}>&emsp;&emsp;
+                          <Rate OH={true} rate={rating == 0 ? '' : rating} initialRating={rating} readonly/>
+                        </div>                        
                       </div>
                       <div className="row">
                         <div className="col-md-6">
@@ -89,13 +81,8 @@ class OrderHistory extends Component {
                       <div className="col-sm-4">
                         <h2 style={{fontFamily: 'Qwigley',fontSize: '42px',color: '#c2o72f'}}>{elem.productName}</h2>
                       </div>
-                      <div className="col-sm-4" style={{padding: '0px',marginTop: '3.5%',textAlign: 'left'}}>&emsp;&emsp;&emsp;&emsp;
-                        {/*<i class="fas fa-star" style={{fontSize :"17px" , "color":'#FFC400'}}></i>
-                        <i class="fas fa-star" style={{fontSize : "17px" , "color":'#FFC400'}}></i>
-                        <i class="fas fa-star" style={{fontSize : "17px" , "color":'#FFC400'}}></i>
-                        <i class="fas fa-star" style={{fontSize : "17px" , "color":'#FFC400'}}></i>
-                        <i class="fas fa-star-half-alt" style={{fontSize : "17px" , "color":'#FFC400'}}></i>*/}
-                        <Rate rate={rating == 0 ? '' : rating} initialRating={rating} readonly/>
+                      <div className="col-sm-4" style={{padding: '0px',marginTop: '-3.5%',textAlign: 'left'}}>&emsp;&emsp;&emsp;&emsp;
+                        <Rate OH={true}  rate={rating == 0 ? '' : rating} initialRating={rating} readonly/>
                       </div>
                       {/*<div className="col-sm-1" style={{padding:"0",marginTop: '3.5%'}}>
                         <h5>4.5</h5>
@@ -147,28 +134,23 @@ class OrderHistory extends Component {
                     <div className="col-xs-2"></div>
                     <div className="row">
                     <div className="col-xs-"></div>
-                    <div className="col-xs-8">
+                    <div className="col-xs-7">
                       <h2 style={{fontFamily: 'Qwigley',fontSize: '42px'}}>{elem.productName}</h2>
                     </div>
                     <div className="col-xs-3"></div>
                   </div>
 
                   <div className="col-xs-3"></div>
-                  <div className="col-xs-4">
-                    <div className="row">
+                  <div className="col-xs-5" style={{padding: '0px'}}>
+                    <div className="col-xs-12" style={{padding: '0px'}}>
                       <h5 style={{color: '#070707'}}>Size: {elem.sizes.join(", ")}</h5>
                     </div>
                   </div>
                 </div>
 
                 <div className="row">
-                  <div className="col-xs-7" style={{padding: '0px',marginTop: '3.5%',textAlign: 'left'}}>&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    {/*<i class="fas fa-star" style={{fontSize :"17px" , "color":'#FFC400'}}></i>
-                    <i class="fas fa-star" style={{fontSize : "17px" , "color":'#FFC400'}}></i>
-                    <i class="fas fa-star" style={{fontSize : "17px" , "color":'#FFC400'}}></i>
-                    <i class="fas fa-star" style={{fontSize : "17px" , "color":'#FFC400'}}></i>
-                    <i class="fas fa-star-half-alt" style={{fontSize : "17px" , "color":'#FFC400'}}></i>*/}
-                    <Rate rate={rating == 0 ? '' : rating} initialRating={rating} readonly/>
+                  <div className="col-xs-9" style={{padding: '0px',marginTop: '3.5%',textAlign: 'center'}}>
+                    <Rate OH={true} rate={rating == 0 ? '' : rating} initialRating={rating} readonly/>
                   </div>
                   {/*<div className="col-xs-5" style={{padding:"0",marginTop: '3.5%'}}>
                     <h5>4.5</h5>
