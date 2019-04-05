@@ -1,7 +1,20 @@
 import React, { Component } from 'react';
 import { Rate } from '../_components/myInput';
+import { footerActions } from '../../_actions';
+import { connect } from 'react-redux';
 
 class OrderHistory extends Component {
+  componentDidMount(){
+      const { historyData, showFooter } = this.props;
+      if(historyData.length == 0){
+          showFooter();
+      }      
+  }
+
+  componentWillUnmount(){
+      this.props.hideFooter();
+  }
+
   render() {
     const { historyData } = this.props;
     
@@ -195,4 +208,14 @@ class OrderHistory extends Component {
   }
 }
 
-export default OrderHistory;
+// export default OrderHistory;
+
+function mapDispatchToProps(dispatch) {
+    return {
+        showFooter: () => dispatch({ type: 'SHOW_FOOTER' }),
+        hideFooter: () => dispatch({ type: 'HIDE_FOOTER' })
+    };
+}
+
+const connectedOrderHistory = connect(null, mapDispatchToProps)(OrderHistory);
+export default connectedOrderHistory;
