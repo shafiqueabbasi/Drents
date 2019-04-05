@@ -20,6 +20,28 @@ class UpCommingOrder extends Component {
 		}
 	}
 
+	componentDidMount(){
+		this.showHideFooter();
+	}
+
+	componentDidUpdate(prevProps, prevState){
+		this.showHideFooter();
+	}
+
+	componentWillUnmount(){
+    	this.props.hideFooter();
+    }
+
+ 	showHideFooter(){
+ 		const { rentals, rented, take, showFooter, hideFooter } = this.props;
+		let arr = take ? rentals : rented;
+		if(arr.length === 0){
+            showFooter();
+        }else if(arr.length > 0){
+        	hideFooter();
+        }
+ 	}
+
 	changeDropdown(e, elem){
 		let text = e.target.innerText;
 		if(['Completed', 'Returned'].includes(text)){
@@ -74,7 +96,7 @@ class UpCommingOrder extends Component {
 				return el;
 			}				
 			return el;				
-					
+
 		})
 		return obj;
 	}
@@ -91,16 +113,14 @@ class UpCommingOrder extends Component {
 	    buyer = ['Received', 'Returned'],
 	    seller = ['Dispatched', 'Completed', 'Available'],
 	    status = take ? seller : buyer;
+	    console.log(arr.length, 'lengthhhhhhhhhh')
 	    if(arr.length === 0){
-            showFooter();
             return (
             	<div style={{textAlign: 'center'}}>
             		<h3>no dress</h3>
             	</div>
         	)
-        }else if(arr.length > 0){
-        	hideFooter();
-        } 
+ 		}
 	    
 	    return (
     	<div>

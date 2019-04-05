@@ -13,7 +13,6 @@ class OrderHistory extends Component {
   }
 
   componentWillUnmount(){
-    // this.props.updateFooter(false)
       this.props.hideFooter();
   }
 
