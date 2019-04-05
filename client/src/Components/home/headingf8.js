@@ -1,20 +1,12 @@
 import React, { Component } from 'react';
 import {withRouter} from 'react-router-dom';
+import { connect } from 'react-redux';
 import './headingf8.css';
 
 class Headingf8 extends Component {
-    state = {
-        showFooter: false
-    }
-
-    componentDidUpdate(prevProps, prevState){
-        if(this.props.showFooter !== prevProps.showFooter){
-            this.setState({ showFooter: this.props.showFooter})
-        }
-    }
 
   render() {
-    const { location } = this.props;
+    const { showFooter, location } = this.props;
     let str = location.pathname;
     if(str.slice(str.indexOf("/") + 1, str.indexOf("/", 1)) == 'reset'){
         return null;
@@ -23,7 +15,7 @@ class Headingf8 extends Component {
     return (
     	<div className="mnp2">
     		<div className="hidden-xs">
-    			<div id="footer">
+    			<div id="footer" style={showFooter ? {position: 'Fixed'} : {}}>
     				<div className="col-md-12 col-sm-12 bgc">
     					<div className="col-md-1"></div>
 
@@ -110,4 +102,15 @@ class Headingf8 extends Component {
   }
 }
 
-export default withRouter(Headingf8);
+// export default withRouter(Headingf8);
+
+function mapStateToProps(state) {
+  console.log(state, 'stateeeee')
+    const { showFooter } = state.footer;
+    return {
+        showFooter
+    };
+}
+
+const connectedHeadingf8 = connect(mapStateToProps)(Headingf8);
+export default withRouter(connectedHeadingf8);

@@ -1,7 +1,22 @@
 import React, { Component } from 'react';
 import { Rate } from '../_components/myInput';
+import { footerActions } from '../../_actions';
+import { connect } from 'react-redux';
 
 class OrderHistory extends Component {
+  componentDidMount(){
+      const { historyData, showFooter } = this.props;
+      if(historyData.length == 0){
+          showFooter();
+      }
+      
+  }
+
+  componentWillUnmount(){
+    // this.props.updateFooter(false)
+      this.props.hideFooter();
+  }
+
   render() {
     const { historyData } = this.props;
     
@@ -70,6 +85,9 @@ class OrderHistory extends Component {
                       <div className="col-sm-4" style={{padding: '0px',marginTop: '-3.5%',textAlign: 'left'}}>&emsp;&emsp;&emsp;&emsp;
                         <Rate OH={true}  rate={rating == 0 ? '' : rating} initialRating={rating} readonly/>
                       </div>
+                      {/*<div className="col-sm-1" style={{padding:"0",marginTop: '3.5%'}}>
+                        <h5>4.5</h5>
+                      </div>*/}
                       </div>
                       <div className="row">
                         <div className="col-sm-6">
@@ -135,6 +153,9 @@ class OrderHistory extends Component {
                   <div className="col-xs-9" style={{padding: '0px',marginTop: '3.5%',textAlign: 'center'}}>
                     <Rate OH={true} rate={rating == 0 ? '' : rating} initialRating={rating} readonly/>
                   </div>
+                  {/*<div className="col-xs-5" style={{padding:"0",marginTop: '3.5%'}}>
+                    <h5>4.5</h5>
+                  </div>*/}
                 </div>
                 <div className="row">
                   <h2 style={{fontFamily: 'Qwigley',fontSize: '130%'}}>&emsp;Rent Used & Returned Succesfully</h2>
@@ -171,4 +192,14 @@ class OrderHistory extends Component {
   }
 }
 
-export default OrderHistory;
+// export default OrderHistory;
+
+function mapDispatchToProps(dispatch) {
+    return {
+        showFooter: () => dispatch({ type: 'SHOW_FOOTER' }),
+        hideFooter: () => dispatch({ type: 'HIDE_FOOTER' })
+    };
+}
+
+const connectedOrderHistory = connect(null, mapDispatchToProps)(OrderHistory);
+export default connectedOrderHistory;

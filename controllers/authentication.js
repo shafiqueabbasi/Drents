@@ -378,9 +378,11 @@ exports.reset = function(req, res, next){
               message: 'password reset link is invalid or has expired'
           });
       }
-      var time = moment(user.resetPasswordExpires).fromNow();
+      let time = moment(user.resetPasswordExpires).fromNow(),
+      sliceTime = (time.slice(time.indexOf(" ")+1, time.length));
       console.log(time,'timeeeeeeee')
-      if (time == 'an hour ago' || time == "a few seconds ago" || (time.slice(time.indexOf(" ")+1, time.length)) == "minutes ago") {
+      if (time == 'an hour ago' || time == "a few seconds ago" || sliceTime == "minutes ago" || sliceTime
+       == "minute ago") {
           res.send({
               code: 200,
               email: user.email,
