@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { HttpUtils } from  '../../Service/HttpUtils';
 import CommentCard from '../productdetail/commentCard';
 import { Rate } from '../_components/myInput';
+import Report from './report';
 
 import { connect } from 'react-redux';
 
@@ -11,6 +12,7 @@ class UpCommingOrder extends Component {
 		this.state = {
 			// rentals: this.props.rentals,
 			// rented: this.props.rented,
+			passToReport: {},
 			showReviewBox: false,
 			e: '',
 			elem: '',
@@ -108,12 +110,11 @@ class UpCommingOrder extends Component {
 
 	render() {		
 	    const { rentals, rented, take, showFooter, hideFooter } = this.props,
-	    { showReviewBox } = this.state;	 
+	    { showReviewBox, passToReport } = this.state;	 
 	    let arr = take ? rentals : rented,
 	    buyer = ['Received', 'Returned'],
 	    seller = ['Dispatched', 'Completed', 'Available'],
 	    status = take ? seller : buyer;
-	    console.log(arr.length, 'lengthhhhhhhhhh')
 	    if(arr.length === 0){
             return (
             	<div style={{textAlign: 'center'}}>
@@ -125,7 +126,8 @@ class UpCommingOrder extends Component {
 	    return (
     	<div>
     		{arr.map((elem, key) => {
-    			let stage = take ? elem.rentalStage : elem.rentedStage,    			
+    			let stage = take ? elem.rentalStage : elem.rentedStage,  
+    			report = take ? '' : 'Report',  			
     			obj = { 
     				reviewId: elem.reviewId,
     				productId: elem._id, 
@@ -177,8 +179,20 @@ class UpCommingOrder extends Component {
 									</div>
 								</div>
 
-							<div className="col-md-12">
-								<h4>Size: {elem.sizes.join(", ")}</h4>
+							<div className="col-md-12 row">
+								<div className={report ? "col-md-10" : "col-md-12"} style={{paddingLeft: '0px'}}>
+									<h4>Size: {elem.sizes.join(", ")}</h4>
+								</div>
+								{report && <div className="col-md-2" style={{textAlign: 'center'}}>
+									{/*<h4>{report}</h4>*/}
+									<Report 
+										ind={key} 
+										data={passToReport} 
+										screen="desktop"
+										onClick={(e) => this.setState({ passToReport: elem })}
+									/>
+								</div>}
+								
 								<h4>${elem.priceDay}</h4>
 							</div><br/><br/><br/>
 
@@ -244,7 +258,8 @@ class UpCommingOrder extends Component {
 
 							{/*<---hidden-sm--->*/}
 			{arr.map((elem, key) => {
-				let stage = take ? elem.rentalStage : elem.rentedStage,    			
+				let stage = take ? elem.rentalStage : elem.rentedStage,  
+				report = take ? '' : 'Report',  			
     			obj = { 
     				reviewId: elem.reviewId,
     				productId: elem._id, 
@@ -268,13 +283,7 @@ class UpCommingOrder extends Component {
 										<h1 style={{fontFamily: 'Qwigley',fontSize: '41px',color: '#c2o72f'}}>{elem.productName}</h1>
 									</div>
 									<div className="row">
-										<div className="col-sm-4" style={{paddingTop: '4%'}}>
-											{/*<span className="fa fa-star checked" style={{color: 'yellow',fontSize: '70%'}}></span>
-											<span className="fa fa-star checked" style={{color: 'yellow',fontSize: '70%'}}></span>
-											<span className="fa fa-star checked" style={{color: 'yellow',fontSize: '70%'}}></span>
-											<span className="fa fa-star checked" style={{color: 'yellow',fontSize: '70%'}}></span>
-											<span className="fa fa-star checked" style={{color: 'yellow',fontSize: '70%'}}></span>
-											<span style={{fontSize: '70%'}}>4.5</span>*/}
+										<div className="col-sm-4" style={{paddingTop: '4%'}}>											
 											<Rate rate={rating == 0 ? '' : rating} initialRating={rating} readonly/>
 										</div>
 
@@ -306,19 +315,14 @@ class UpCommingOrder extends Component {
 								</div>
 								<div className=""></div>
 								<div className="col-sm-2"></div>
-								{/*<div className="col-sm-5">
-									<h4>Order Date</h4>
-									<div className="row">
-										<div className="col-sm-6">
-											<h4>Order</h4>
-											<h4>19/2/19</h4>
-										</div>
-										<div className="col-sm-6">
-											<h4>Return</h4>
-											<h4>21/2/19</h4>
-										</div>
-									</div>
-								</div>*/}
+								{report && <div className="col-sm-5" style={{textAlign: 'center'}}>
+									<Report 
+										ind={key} 
+										data={passToReport} 
+										screen="tab"
+										onClick={(e) => this.setState({ passToReport: elem })}
+									/>
+								</div>}
 							</div>
 						</div>
 						<div className="col-md-12 visible-sm">
@@ -364,7 +368,8 @@ class UpCommingOrder extends Component {
     		})}
 				{/*<---hidden-xs--->*/}
 			{arr.map((elem, key) => {
-				let stage = take ? elem.rentalStage : elem.rentedStage,    			
+				let stage = take ? elem.rentalStage : elem.rentedStage,    	
+				report = take ? '' : 'Report',		
     			obj = { 
     				reviewId: elem.reviewId,
     				productId: elem._id, 
@@ -421,6 +426,17 @@ class UpCommingOrder extends Component {
 											})}	
 										</ul>
 									</div>
+								</div>
+								<div className="col-xs-2"></div>
+								<div className="col-xs-10">
+									{report && <div className="row">
+										<Report 
+											ind={key} 
+											data={passToReport} 
+											screen="mobile"
+											onClick={(e) => this.setState({ passToReport: elem })}
+										/>
+									</div>}
 								</div>
 								<div className="col-xs-2"></div>
 								<div className="col-xs-10">

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Form } from 'antd';
 import ChangePassword from './changePassword';
-import { TextInput, RadioInput, SelectInput } from '../_components/myInput';
+import { Textarea, TextInput, RadioInput, SelectInput } from '../_components/myInput';
 import { HttpUtils } from  '../../Service/HttpUtils';
 import { connect } from 'react-redux';
 import './profile.css';
@@ -12,6 +12,7 @@ class Profile extends Component {
 		email: '',
 		firstName: '',
 		lastName: '',
+		bio: '',
 		inputHeight:'',
 		weight:'',
 		bustSize:'',
@@ -44,16 +45,17 @@ class Profile extends Component {
 	}
 
 	radioHandleChange = (e) => {
-		this.setState({ [e.target.id]: e.target.value })
+		let target = e.target.id.slice(0, e.target.id.length - 1);
+		this.setState({ [target]: e.target.value })
 	}
 
 	handleSubmit = (e) => {
 		e.preventDefault();
 		this.setState({ loading: true });
-		const {email, firstName, lastName, inputHeight, weight, bustSize, height, bodyType,
+		const {email, firstName, lastName, inputHeight, weight, bustSize, height, bodyType, bio,
 			ocassionAttendMost, typicalJeanSize, bust, hips, torso, ribcage, userId, _id} = this.state;
 		let obj = {
-			email, firstName, lastName, inputHeight, weight, bustSize, height, bodyType,
+			email, firstName, lastName, bio, inputHeight, weight, bustSize, height, bodyType,
 			ocassionAttendMost, typicalJeanSize, bust, hips, torso, ribcage, userId,
 			profileId: _id
 		}
@@ -72,7 +74,7 @@ class Profile extends Component {
 
   render() {
     const { getFieldDecorator } = this.props.form;
-
+    
     return (
       	<div>
       		<div className="container-fluid">
@@ -127,11 +129,22 @@ class Profile extends Component {
 							</div>
 							<div className="col-md-10 col-sm-10">
 								<div className="form-group">
-				 					<textarea class="form-control" style={{border: '1px solid #c2073f'}}></textarea>
+				 					<textarea
+					                    required
+					                    id="bio"
+					                    rows="6"
+					                    maxLength="400" 
+					                    className="form-control"
+					                    // placeholder="bio" 
+					                    name="Bio"
+					                    value={this.state.bio} 
+					                    onChange={e => this.setState({bio: e.target.value})}
+					                    style={{border: '1px solid #c2073f'}}
+					                    >
+					                </textarea>
 				 				</div>
-							</div>
+							</div>							
 						</div>
-
 
 						<div className="row">
 	  						<div className="col-md-6" style={{padding: '0px'}}>
@@ -179,7 +192,6 @@ class Profile extends Component {
 									col2="col-md-8 col-sm-4"
 									options={[1,2,3,4,5]}
 									Change={this.inputHandleChange}
-
 								/>
 							</div>
 						</div>{/*row closed*/}
@@ -197,7 +209,7 @@ class Profile extends Component {
 								/>
 							</div>
 							<div className="col-md-6">
-								<b
+								<SelectInput
 									label="Typical Jean Size"
 									id="typicalJeanSize"
 									value={this.state.typicalJeanSize}

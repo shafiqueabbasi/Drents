@@ -796,3 +796,8 @@ input[type="file"] {
 .tophead{
     margin-top: -3%;
 }
+
+
+.button .input .optgroup .select .textAreaFont {
+    color: black !important;
+}

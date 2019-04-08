@@ -7,6 +7,7 @@ const Schema = mongoose.Schema;
 const profileSchema = new Schema({
   firstName:{ type:String },
   lastName:{ type:String },
+  bio:{ type:String },
   email:{ type:String, unique:true },
   inputHeight:{ type:String },
   weight:{ type:String },
