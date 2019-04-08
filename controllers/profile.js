@@ -12,6 +12,7 @@ exports.profileUpload = function(req, res, next){
     const postProfileData = new profile({
       firstName:profileData.firstName,
       lastName:profileData.lastName,
+      bio:profileData.bio,
       email:profileData.email,
       inputHeight:profileData.inputHeight,
       updatedImage:profileData.updatedImage,
@@ -47,6 +48,7 @@ exports.profileUpload = function(req, res, next){
     }//end err
       existingProfile.firstName = profileData.firstName;
       existingProfile.lastName = profileData.lastName;
+      existingProfile.bio = profileData.bio;
       existingProfile.email =  profileData.email;
       existingProfile.inputHeight =profileData.inputHeight;
       existingProfile.weight =profileData.weight;
