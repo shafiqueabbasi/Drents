@@ -52,7 +52,7 @@
 
 }
 .nav{
-  color: #ffffff;
+
   font-size: 15px;
 
 }
@@ -124,7 +124,7 @@
 .p_lapi{
   color: white;
   font-family: crimsontext;
-letter-spacing: 1px;
+  letter-spacing: 1px;
 }
 .zoom {
 
@@ -139,6 +139,7 @@ letter-spacing: 1px;
 }
 .lH_filter{
   line-height: 0px;
+  font-family: crimsontext;
 }
 
 /*.dress1{
@@ -192,10 +193,24 @@ letter-spacing: 1px;
   border-color: 2px solid red !important;
 
 }
-.scrollbar{
+/*.scrollbar{
   height: 275px;
 
   overflow-x: scroll;
+}*/
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
+  .scrollbar{
+    height: 275px;
+
+    overflow-x: scroll;
+  }
+}
+@media only screen and (min-device-width : 360px) and (max-device-width : 640px){
+  .scrollbar{
+    height: 275px;
+
+    overflow-x: scroll;
+  }
 }
 
 
@@ -214,12 +229,12 @@ letter-spacing: 1px;
 }
 
 
-@media only screen and (min-device-width : 360px) and (max-device-width : 660px){
+@media only screen and (min-device-width : 360px) and (max-device-width : 640px){
   .morebtn{
           padding: 0px;
           border-radius: 15px;
-          width: 90%;
-          float: right;
+          width: 50%;
+          
   }
   .h_dress{
       font-family: Qwigley;
@@ -256,7 +271,7 @@ letter-spacing: 1px;
     border-radius: 15px;
     width: 22%;
     float: left;
-    margin-left: 5%;
+    margin-right: 5px;
   }
   .h_dress{
       font-family: Qwigley;
@@ -289,8 +304,8 @@ letter-spacing: 1px;
   .morebtn{
              padding: 0px;
           border-radius: 15px;
-          width: 90%;
-          margin-left: 45%;
+          width: 135%;
+         
   }
   .h_dress{
       font-family: Qwigley;
@@ -323,7 +338,7 @@ letter-spacing: 1px;
   .morebtn{
          border-radius: 15px;
          width: 90%;
-          margin-left: 31%;
+          /*margin-left: 31%;*/
   }
   .h_dress{
       font-family: Qwigley;

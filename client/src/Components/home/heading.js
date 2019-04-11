@@ -28,37 +28,37 @@ class Heading extends Component {
             <div className="container googleapp">
                 <div className="row">
                     <div className="col-md-2 col-sm-6 col-xs-12 google2">
-                          <img src='./images/productdetail/bridal 22 - Copy.jpeg' className="img22" onClick={this.checkingFilter.bind(this,'Causal')}/>
+                          <img src='./images/productdetail/bridalp2.JPG' className="img22" onClick={this.checkingFilter.bind(this,'Causal')}/>
                           <div style={{textAlign: 'center'}}>
                             <h3 className="pichead22">Causal</h3>
                           </div>
                     </div>
                     <div className="col-md-2 col-sm-6 col-xs-12 google2">
-                          <img src='./images/productdetail/bridal - Copy.jpeg' className="img22" onClick={this.checkingFilter.bind(this,'Bridal')} />
+                          <img src='./images/productdetail/partyp1.JPG' className="img22" onClick={this.checkingFilter.bind(this,'Bridal')} />
                           <div style={{textAlign: 'center'}}>
                             <h3 className="pichead22">Bridal</h3>
                           </div>
                     </div>
                     <div className="col-md-2 col-sm-6 col-xs-12 google2">
-                          <img src='./images/productdetail/dress3.jpg' className="img22" onClick={this.checkingFilter.bind(this,'Semi Formal')} />
+                          <img src='./images/productdetail/partyp1.JPG' className="img22" onClick={this.checkingFilter.bind(this,'Semi Formal')} />
                           <div style={{textAlign: 'center'}}>
                             <h3 className="pichead22">Semi Formal</h3>
                           </div>
                     </div>
                     <div className="col-md-2 col-sm-6 col-xs-12 google2">
-                          <img src='./images/productdetail/bridal2.jpeg' className="img22" onClick={this.checkingFilter.bind(this,'Formal')} />
+                          <img src='./images/productdetail/corporatep3.JPG' className="img22" onClick={this.checkingFilter.bind(this,'Formal')} />
                           <div style={{textAlign: 'center'}}>
                             <h3 className="pichead22">Formal</h3>
                           </div>
                     </div>
                     <div className="col-md-2 col-sm-12 col-xs-12 google2">
-                          <img src='./images/productdetail/party.jpg' className="img22" onClick={this.checkingFilter.bind(this,'Heavy Formal')} />
+                          <img src='./images/productdetail/eidp4.JPG' className="img22" onClick={this.checkingFilter.bind(this,'Heavy Formal')} />
                           <div style={{textAlign: 'center'}}>
                             <h3 className="pichead22">Heavy Formal</h3>
                           </div>
                     </div>
                 </div>
-            </div>
+            </div><br/><br/>
 
 
       </div>
