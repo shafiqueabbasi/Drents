@@ -131,7 +131,7 @@
 	    margin-left: 8%;
 	}
 	.bookedboo{
-		margin-top: -10%;
+		margin-top: -3%;
 		font-size: 17px;
 	}
 	.bookedbook{
@@ -358,6 +358,13 @@
 		font-size: 27px;
 		color: yellow;
 	}
+	.newstar{
+		margin-top: 12%;
+	}
+	.newrating{
+		margin-top: 14%;
+    	margin-left: -7%;
+	}
 }
 
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
@@ -367,6 +374,13 @@
 		font-size: 27px;
 		color: yellow;
 	}
+	.newstar{
+		margin-top: 12%;
+	}
+	.newrating{
+		    margin-top: 14%;
+    		margin-left: -16%;
+	}
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
 	.card{
@@ -375,6 +389,14 @@
 		font-size: 27px;
 		color: yellow;
 	}
+	.newstar{
+		margin-top: 12%;
+		margin-left: -9%;
+	}
+	.newrating{
+		margin-top: 16%;
+    	margin-left: -3%;
+	}
 }
 @media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
 	.card{
@@ -382,6 +404,13 @@
 		margin-left: -20%;
 		font-size: 27px;
 		color: yellow;
+	}
+	.newstar{
+		margin-top: 12%;
+	}
+	.newrating{
+		margin-top: 14%;
+    	margin-left: -7%;
 	}
 }
 
@@ -611,8 +640,9 @@
 	}
 	.shelterr5{
 		font-family: Qwigley;
-		font-size: 60px; 
-		margin-left: 3%;
+	    font-size: 30px;
+	    margin-top: 64%;
+	    margin-left: -11%;
 	}
 }
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
@@ -659,8 +689,9 @@
 	}
 	.shelterr5{
 		font-family: Qwigley;
-		font-size: 60px; 
-		margin-left: 3%;
+	    font-size: 60px;
+	    margin-top: 18%;
+	    margin-left: 3%;
 	}
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
@@ -708,7 +739,7 @@
 	.shelterr5{
 		font-family: Qwigley;
 		font-size: 48px; 
-		margin-left: 3%;
+		margin-left: 7%;
 	}
 }
 @media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
@@ -756,6 +787,6 @@
 	.shelterr5{
 		font-family: Qwigley;
 		font-size: 60px; 
-		margin-left: 3%;
+		margin-left: 7%;
 	}
 }
