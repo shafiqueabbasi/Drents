@@ -114,8 +114,8 @@ class Filterpanel extends Component {
 								<div className="row">
 									<div className="row col-md-12 col-sm-12" style={{padding: '0px'}}>
 	    								<h3 style={{fontFamily: 'crimsontext'}}>Weather&emsp;-</h3><br/>
-	    								<Filter id="Cold Weather" heading="Cold Weather" onChange={this.handleClick} style={{fontFamily: 'crimsontext'}}/>
-	    								<Filter id="Warm Weather" heading="Warm Weather" onChange={this.handleClick} style={{fontFamily: 'crimsontext'}}/>
+	    								<Filter id="Cold Weather" heading="Cold Weather" onChange={this.handleClick} />
+	    								<Filter id="Warm Weather" heading="Warm Weather" onChange={this.handleClick} />
 										<div className="col-md-10 col-sm-10" style={{paddingBottom: '15px', margin: '40px 0 20px',borderBottom: '1px solid black'}}></div>
 									</div>
 								</div>
@@ -149,9 +149,11 @@ class Filterpanel extends Component {
 							<div className="col-md-5"></div>
 							<div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 " style={{textAlign: 'center', paddingLeft: '0px'}}><br/>
 								<div className="col-md-4 col-sm-3"></div>
-								<div className="col-md-4 col-sm-6 alert alert-danger">
-    								<strong> No record found.</strong>
-								</div>
+								{this.state.data.length === 0 && 
+									<div className="col-md-4 col-sm-6 alert alert-danger">
+	    								<strong> No record found.</strong>
+									</div>
+								}
 								<div className="col-md-4 col-sm-3"></div>
 							</div>
 						</div>
@@ -285,17 +287,19 @@ class Filterpanel extends Component {
 							<label className="col-xs-12 control-label" style={{textAlign: 'center'}}></label>
 							<div className="col-xs-12 row"></div>
 							{/*{this.state.arr.length > 8 && <ButtonComponent label="More"/>}*/}
-							{this.state.data.length === 0 && <span>
+							{/*{this.state.data.length === 0 && <span>
 								<ButtonComponent
 									className="col-xs-12"
 									label="Find More"
 									onClick={() => this.setState({ data: this.state.arr })}
 								/>
-							</span>}
+							</span>}*/}
 							<div className="col-xs-12" style={{textAlign: 'center'}}><br/>
-								<div className="alert alert-danger">
-    								<strong> No record found.</strong>
-								</div>
+								{this.state.data.length === 0 && 
+									<div className="alert alert-danger">
+	    								<strong> No record found.</strong>
+									</div>
+								}
 							</div>
 						</div>
 	    				</div>
