@@ -6,11 +6,7 @@
 }
 
 
-.rovil3{
-	padding: 13px;
-	display: inline;
-  margin-left: 5%;
-}
+
 
 .rovil5{
 	 font-family: Qwigley;
@@ -47,6 +43,16 @@
     padding: 13px;
     margin-top: -3%;
   }
+  .hbikes{
+      font-family: crimsontext;
+      margin-right: 49%;
+  }
+  .rovil3{
+        padding: 13px;
+      display: inline;
+      margin-left: 5%;
+      margin-top: -2%;
+  }
 }
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
   .shut2{
@@ -68,6 +74,16 @@
     padding: 13px;
     margin-top: -7%;
   }
+  .hbikes{
+      font-family: crimsontext;
+      margin-right: 49%;
+  }
+  .rovil3{
+        padding: 13px;
+      display: inline;
+      margin-left: 5%;
+      margin-top: 5%;
+  }
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
   .shut2{
@@ -87,13 +103,23 @@
   }
   .rovil1{
     padding: 13px;
-    margin-top: -3%;
+    margin-top: -5%;
+  }
+  .hbikes{
+      font-family: crimsontext;
+      margin-right: 49%;
+  }
+  .rovil3{
+        padding: 13px;
+      display: inline;
+      margin-left: 5%;
+      margin-top: -2%;
   }
 }
 @media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
   .shut2{
       padding-left: 0px;
-      margin-top: -4%;
+      margin-top: -2%;
   }
   .rovil2{
      font-family: Qwigley;
@@ -107,8 +133,18 @@
   } 
   .rovil1{
     padding: 13px;
-    margin-top: -3%;
-  }  
+    margin-top: -5%;
+  }
+  .hbikes{
+      font-family: crimsontext;
+      margin-right: 49%;
+  }
+  .rovil3{
+        padding: 13px;
+      display: inline;
+      margin-left: 5%;
+      margin-top: -2%;
+  }
 }
 .sami {
   position: relative;
@@ -120,18 +156,20 @@
 
 }
 .image {
-  display: block;
-  width: 100%;
-  height: 350px;
-  border-radius: 100%; 
+     display: block;
+    width: 75%;
+    height: 265px;
+    border-radius: 100%;
+    margin-top: -2%;
+    margin-left: 15%; 
 }
 
 .overlayChange {
   position: absolute;
-  top: 0%;
-  left: 4%;
-  height: 100%;
-  width: 92%;
+  top: -3%;
+  left: 18%;
+  height: 103%;
+  width: 69%;
   opacity: 0;
   transition: .3s ease;
   background-color: rgba(0, 0, 0, .4);

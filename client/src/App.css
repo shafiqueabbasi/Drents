@@ -314,9 +314,9 @@ letter-spacing: 1px;
       margin-top: 7%;
   }
   .userstar_rating{
-      padding: 0; 
-      margin-top:-9%;
-      margin-left: 24%;
+      padding: 0;
+    margin-top: -20%;
+    margin-left: 57%;
   }
 }
 @media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
@@ -347,10 +347,10 @@ letter-spacing: 1px;
     margin-top: 0%;
   }
   .userstar_rating{
-          padding: 0;
-        margin-top: -7.5%;
-        margin-left: 35%;
-  }
+        padding: 0;
+        margin-top: -13.5%;
+        margin-left: 52%;
+    }
 }
 
 

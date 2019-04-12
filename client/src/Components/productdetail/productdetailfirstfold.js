@@ -235,7 +235,7 @@ class Productdetailfirstfold extends Component {
                             <div className="row">
                           		<div className="col-md-12">
                           			<div className="visible-sm col-sm-1"></div>
-                          			<div className="col-lg-5 col-md-5 col-sm-5 col-xs-6">
+                          			<div className="col-lg-5 col-md-5 col-sm-5 col-xs-7">
                                     	<p className="trello3">${" " + elem.priceDay}</p>
                           			</div>
                           			<div className="col-lg-4 col-md-5 col-sm-4 col-xs-6 name">
@@ -305,7 +305,7 @@ class Productdetailfirstfold extends Component {
   									{elem.sizes && elem.sizes.map((el, key) => {
   										return(
   											<span key={key}>
-			                            		<div className="col-xs-2 flu"><h3>{el}</h3></div>
+			                            		<div className="col-xs-2 flu"><h3 style={{fontSize:'15px'}}>{el}</h3></div>
 			                            		<div className="col-xs-0"></div>
 			                            	</span>
   										)
@@ -331,7 +331,7 @@ class Productdetailfirstfold extends Component {
   									{elem.sizes && elem.sizes.map((el, key) => {
   										return(
   											<span key={key}>
-			                            		<div className="col-sm-2 fluu"><h4 style={{marginTop:'20px'}}>{el}</h4></div>
+			                            		<div className="col-sm-2 fluu"><h4 style={{marginTop:'15px'}}>{el}</h4></div>
 			                            		<div className="col-sm-1"></div>
 		                            		</span>
   										)
@@ -372,6 +372,9 @@ class Productdetailfirstfold extends Component {
                             </div>*/}
                             <div className="row">
                             	<div className="rental1"><h1>Rental Period</h1></div>
+                            </div>
+                            <div className="row">
+                            	<h3 className="rental100">Available From 21-03-2019 To 28-03-2019</h3>
                             </div>
                             {/*<div className="row">
                             	<div className="col-md-4">
