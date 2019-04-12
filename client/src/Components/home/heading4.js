@@ -7,7 +7,7 @@ class Heading4 extends Component {
   	const { label, hrLine, data, showEditDelete, onDelete, profile, userAvailable } = this.props;
     
     return (
-    	<div className="App">
+    	<div className="App"><br/><br/>
     		{label && label.length > 0 && <div className="Heading">
       			<h1 className="headings">{label}</h1>
       			<img src='../images/bar.png' style={{marginTop:'-1%'}}/>

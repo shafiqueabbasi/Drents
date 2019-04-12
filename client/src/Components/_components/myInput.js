@@ -120,7 +120,7 @@ export const Filter = props => {
                 onChange={props.onChange}
             />
             <span className="checkmark"></span>
-            <h5>{props.heading}</h5>
+            <h5 style={{fontFamily:'crimsontext'}}>{props.heading}</h5>
         </label>
     )
 }

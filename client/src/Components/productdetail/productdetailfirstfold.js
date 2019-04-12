@@ -23,6 +23,7 @@ class Productdetailfirstfold extends Component {
 	}
 
 	async componentDidMount(){
+		window.scrollTo(0,0)
 		let cart = await localStorage.getItem('Cart'),
 		{ elem } = this.props.location.state;		
 		if(cart == null){

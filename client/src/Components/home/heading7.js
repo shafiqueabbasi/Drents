@@ -5,7 +5,7 @@ class Heading7 extends Component {
   render() {
     
     return (
-    	<div className="App">
+    	<div className="App"><br/><br/>
     		<div className="container-fluid">
     			<div className="Heading">
     				<div className="container-fluid"></div>
