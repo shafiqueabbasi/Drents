@@ -221,18 +221,6 @@ class Productdetailfirstfold extends Component {
                                    	</div>
 								</div>									 
                             </div>{/* div close*/}
-							<div className="row">
-								<div className="col-md-12">
-										<div className="visible-sm col-sm-1"></div>
-									    <div className="col-lg-6 col-md-7 col-sm-4 col-xs-3">
-									    
-									    </div>{/*div close*/}
-									    <div className="col-lg-0 col-md-0 col-sm-2 col-xs-2"></div>
-									    <div className="col-lg-6 col-md-5 col-sm-5" style={{marginTop: "20px",padding: '0px',}}>
-							
-		                       	 		</div>{/*Div close*/}
-			                    </div>{/*Div Close Col-md-12*/}
-							</div>{/*Row Close*/}
                             <div className="row">
                           		<div className="col-md-12">
                           			<div className="visible-sm col-sm-1"></div>
