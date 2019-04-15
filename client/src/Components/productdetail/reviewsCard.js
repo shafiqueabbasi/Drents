@@ -34,7 +34,7 @@ class ReviewsCard extends Component {
                               fullSymbol="glyphicon glyphicon-star"
                               initialRating={data.rate} 
                               readonly
-                              style={{color: 'yellow'}}
+                              style={{color: 'white'}}
                           />                          
                           <span className="card">Ratings</span>
                           <span style={{marginLeft:"10px"}}><sub className="dar"></sub></span>
@@ -52,7 +52,8 @@ class ReviewsCard extends Component {
                        <p className="sung">{data.msg}</p>
                     </div>
                     <div className="col-md-3 shift">
-                        <img src={data.img} style={{width:"90%" , height:"387px",padding: '10%'}}/>
+                        <img src={data.img} style={{width:"90%" ,padding: '10%'}}/>
+                        
                     </div>{/*Col md 3 close*/}                
                   </div>{/*col-md-12 closed*/}
                 </div>{/*Main Row Div container Closed*/}
@@ -89,7 +90,7 @@ class ReviewsCard extends Component {
                               fullSymbol="glyphicon glyphicon-star"
                               initialRating={data.rate} 
                               readonly
-                              style={{color: 'yellow'}}
+                              style={{color: 'white'}}
                           />
                           <span className="card">Ratings</span>
                           <span style={{marginLeft:"10px"}}><sub className="dar"></sub></span>
@@ -106,7 +107,7 @@ class ReviewsCard extends Component {
                         </div>      
                       </div><br/>{/*row closed*/}
                       <div className="row derr">
-                        <img src={data.img} style={{ height:"290px"}}/> 
+                        <img src={data.img}/> 
                       </div>  
                     </div>{/*Row Closed*/}
                   </div>{/*row closed*/}

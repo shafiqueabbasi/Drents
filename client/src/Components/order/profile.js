@@ -198,13 +198,13 @@ class Profile extends Component {
 						<div className="row">
 							<div className="col-md-6" style={{padding: '0px'}}>
 								<SelectInput
-									label="Occasion Atend Most"
+									label="Event Atend Most"
 									id="ocassionAttendMost"
 									value={this.state.ocassionAttendMost}
 									className="input"
 									col="col-md-4 col-sm-2"
 									col2="col-md-8 col-sm-4"
-									options={[1,2,3,4,5]}
+									options={['Causal','Bridal','Semi Formal','Formal','Heavy Formal']}
 									Change={this.inputHandleChange}
 								/>
 							</div>

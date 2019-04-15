@@ -23,6 +23,7 @@ class Productdetailfirstfold extends Component {
 	}
 
 	async componentDidMount(){
+		window.scrollTo(0,0)
 		let cart = await localStorage.getItem('Cart'),
 		{ elem } = this.props.location.state;		
 		if(cart == null){
@@ -197,8 +198,17 @@ class Productdetailfirstfold extends Component {
 						    <div className="row" style={{marginLeft:'-5%'}}>
 						    	<div className="col-sm-1 visible-sm"></div>
 								<div className="col-md-8 col-sm-7 col-xs-6">
-									<font className="col-lg-12 col-md-12" color="#c2073f"><h1 className="shelterr5">{elem.productName}</h1></font>
-									<p className="col-md-12 col-lg-12 bookedboo">{elem.detailName}</p>
+									<div className="col-sm-6 col-lg-8 col-md-8">
+										<h1 className="shelterr5" style={{color:'#c2073f'}}>{elem.productName}</h1>
+									</div>
+									<div className="col-sm-3 col-lg-2 col-md-2 newstar">
+										<i class="fas fa-star" style={{fontSize:'16px', color:'yellow'}}></i>								
+										
+									</div>
+									<div className="col-sm-3 col-lg-2 col-md-2 newrating">
+										<p style={{fontSize:'15px'}}>4.5</p>	
+									</div>
+									<p className="col-sm-12 col-md-12 col-lg-12 bookedboo">{elem.detailName}</p>					
 								</div>
 								<div className="col-md-4 col-sm-4 col-xs-6 roundnround2">
 									<img src={userImage.length > 0 ? userImage : "../images/admin1.jpg"} className="bookedbook"/>
@@ -211,22 +221,10 @@ class Productdetailfirstfold extends Component {
                                    	</div>
 								</div>									 
                             </div>{/* div close*/}
-							<div className="row">
-								<div className="col-md-12">
-										<div className="visible-sm col-sm-1"></div>
-									    <div className="col-lg-6 col-md-7 col-sm-4 col-xs-3">
-									     	 <font color="#c2073f"><h1 className="trello4">{elem.bodyType}</h1></font>
-									    </div>{/*div close*/}
-									    <div className="col-lg-0 col-md-0 col-sm-2 col-xs-2"></div>
-									    <div className="col-lg-6 col-md-5 col-sm-5" style={{marginTop: "20px",padding: '0px',}}>
-									    	<Rate2 rate={this.state.averageRate} initialRating={this.state.averageRate} readonly classMd="col-md-9" rate="4.5" classXS="col-md-2" />
-		                       	 		</div>{/*Div close*/}
-			                    </div>{/*Div Close Col-md-12*/}
-							</div>{/*Row Close*/}
                             <div className="row">
                           		<div className="col-md-12">
                           			<div className="visible-sm col-sm-1"></div>
-                          			<div className="col-lg-5 col-md-5 col-sm-5 col-xs-6">
+                          			<div className="col-lg-5 col-md-5 col-sm-5 col-xs-7">
                                     	<p className="trello3">${" " + elem.priceDay}</p>
                           			</div>
                           			<div className="col-lg-4 col-md-5 col-sm-4 col-xs-6 name">
@@ -296,7 +294,7 @@ class Productdetailfirstfold extends Component {
   									{elem.sizes && elem.sizes.map((el, key) => {
   										return(
   											<span key={key}>
-			                            		<div className="col-xs-2 flu"><h3>{el}</h3></div>
+			                            		<div className="col-xs-2 flu"><h3 style={{fontSize:'15px'}}>{el}</h3></div>
 			                            		<div className="col-xs-0"></div>
 			                            	</span>
   										)
@@ -322,7 +320,7 @@ class Productdetailfirstfold extends Component {
   									{elem.sizes && elem.sizes.map((el, key) => {
   										return(
   											<span key={key}>
-			                            		<div className="col-sm-2 fluu"><h4 style={{marginTop:'20px'}}>{el}</h4></div>
+			                            		<div className="col-sm-2 fluu"><h4 style={{marginTop:'15px'}}>{el}</h4></div>
 			                            		<div className="col-sm-1"></div>
 		                            		</span>
   										)
@@ -363,6 +361,9 @@ class Productdetailfirstfold extends Component {
                             </div>*/}
                             <div className="row">
                             	<div className="rental1"><h1>Rental Period</h1></div>
+                            </div>
+                            <div className="row">
+                            	<h3 className="rental100">Available From 21-03-2019 To 28-03-2019</h3>
                             </div>
                             {/*<div className="row">
                             	<div className="col-md-4">

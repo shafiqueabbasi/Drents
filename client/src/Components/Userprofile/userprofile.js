@@ -59,6 +59,7 @@ class UserProfile extends Component {
     }
 
     componentDidMount(){
+    	window.scrollTo(0,0);
     	this.fetchUserData();
     }
 
@@ -263,7 +264,7 @@ class UserProfile extends Component {
 		userName = profile.length > 0 && profile[0].firstName.length > 0 ? profile[0].firstName : user && user.username;
 		let userAvailable = false,
 		arr = rentalTab ? rentals : rented,
-		reviewsArr = rentalTab ? this.state.rentalReviews : this.state.rentedReviews,
+		reviewsArr = rentalTab ? this.state.rentalReviews : this.state.rentedReviews, 	
 		boo = rentalTab ? true : false;
 		arr = this.filterFunc(arr, filterKey);
 		if(user && user._id && user._id === id){
@@ -280,7 +281,7 @@ class UserProfile extends Component {
 								<div className="col-md-5 col-lg-5 hidden-sm hidden-xs sami">
 									<img src={updatedImage .length > 0 ? updatedImage : "../images/admin1.jpg"} alt="Avatar" className="image"/>
 									<div className={userAvailable ? "overlayChange" : 'nothing'}>
-										<label className="custom-file-upload samiLabel" style={{margin: '150px 0px 0px 150px'}}>
+										<label className="custom-file-upload samiLabel" style={{margin: '120px 0px 0px 110px'}}>
 											<input type="file" onChange={e => this.handleImage(e)}/>
 											<i class="fas fa-camera" style={{fontSize:'20px',padding: '0 22px 0', cursor: 'pointer'}}></i><br/>
 										    <h5>Add Photo</h5>
@@ -373,11 +374,7 @@ class UserProfile extends Component {
 									</div>
 
 									<div className="rovil1" style={{paddingLeft: '0px'}}>
-										<h4 style={{fontFamily: 'crimsontext'}}>London</h4>
-									</div>
-
-									<div className="rovil1" style={{paddingLeft: '0px'}}>
-										<h4><span className="rovil7">Bio</span></h4>
+										<h4 className="hbikes">London</h4>
 									</div>
 
 									<div className="col-md-12 shut2">
@@ -406,21 +403,21 @@ class UserProfile extends Component {
 							<div className="row" style={{marginLeft: '0px', marginRight: '0px'}}>
 								<div className="col-md-3 col-sm-3"></div>
 
-								<div className="col-md-2 col-sm-2">
+								<div className="col-md-2 col-sm-2" style={{textAlign:'center'}}>
 									<h3 style={rentalTab ? {color: '#c2073f', textDecorationLine: 'underline', fontFamily: 'crimsontext'} : {color: '#c2073f', fontFamily: 'crimsontext'}}
 										onClick={() => this.setState({ rentalTab: true, rentedTab: false, filterKey: 'SORT BY'})}>
 										Rentals
 									</h3>
 								</div>
 
-								<div className="col-md-2 col-sm-2"
+								<div className="col-md-2 col-sm-2"  style={{textAlign:'center'}}
 									onClick={() => this.setState({ rentalTab: false, rentedTab: true, filterKey: 'SORT BY'})}>
 									<h3 style={rentedTab ? {color: '#c2073f', textDecorationLine: 'underline', fontFamily: 'crimsontext'} : {color: '#c2073f', fontFamily: 'crimsontext'}}>
 										Rented
 									</h3>
 								</div>
 
-								<div className="col-md-2 col-sm-2">
+								<div className="col-md-2 col-sm-2" style={{textAlign:'center'}}>
 									{userAvailable && <Link to={{pathname: `/userdetail`, state: {goTo: 'currentRentals', orderhistory, id }}}>
 										<h3 style={{color: '#c2073f', fontFamily: 'crimsontext'}}>Orders</h3>
 									</Link>}
@@ -516,7 +513,7 @@ class UserProfile extends Component {
 
 
 
-							<div className="row">
+							{reviewsArr.length !== 0 && <div className="row">
 								<div className="col-md-4"></div>
 
 								<div className="col-md-4">
@@ -524,8 +521,8 @@ class UserProfile extends Component {
 								</div>
 
 								<div className="col-md-4"></div>
-							</div>
-							<hr style={{border: '1px solid #c2073f'}}/>
+							</div>}
+							{reviewsArr.length !== 0 && <hr style={{border: '1px solid #c2073f'}}/>}
 							{reviewsArr.map((elem) => <ReviewsCard data={elem}/>)}
 						</div>
 
