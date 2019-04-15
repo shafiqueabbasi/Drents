@@ -23,6 +23,7 @@ class Home extends Component {
     }
   async componentDidMount () {
     //console.log(filter, 'propsssssssssssss')
+    window.scrollTo(0,0)
     let data = await HttpUtils.get('getdresses');
     if(data.code && data.code === 200){
       this.setState({ data: data.allDress, loading: false});

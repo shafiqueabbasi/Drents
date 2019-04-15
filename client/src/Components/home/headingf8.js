@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import {withRouter} from 'react-router-dom';
 import { connect } from 'react-redux';
+import { Link, withRouter } from "react-router-dom";
 import './headingf8.css';
 
 class Headingf8 extends Component {
@@ -40,7 +40,7 @@ class Headingf8 extends Component {
     				    </div>
 
                         <div className="col-md-4 col-sm-4" style={{color: '#ffffff',marginTop:'6px'}}>
-    						<a href="#"><img src="../images/Drent-logo-white.png" style={{width: '75%'}}/></a>
+    						<Link to={`/`} ><img src="../images/Drent-logo-white.png" style={{width: '75%'}}/></Link>
     					</div>
                         <div className="row">
                 <div className="col-xs-12 col-sm-12 col-md-12 mt-2 "style={{textAlign:'center',color: '#ffffff',marginTop:'-22px'}}>
@@ -86,7 +86,7 @@ class Headingf8 extends Component {
                         </div>
                         <div className="col-xs-4"></div>
                         <div className="col-xs-4">
-                            <a href="#"><img src="../images/Drent-logo-white.png" style={{width: '120%'}}/></a>
+                            <Link to={`/`} ><img src="../images/Drent-logo-white.png" style={{width: '120%'}}/></Link>
                         </div>
                         <div className="col-xs-12 text-center"style={{color: '#ffffff'}}>
                             <p className="h6 text-white">© Copy All right Reversed.<a className="text-green ml-2" href="https://www.krlcreatives.com" target="_blank">Drent</a></p>

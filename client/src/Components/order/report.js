@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Form, Input } from 'antd';
+import './profile.css'
 
 const { TextArea } = Input;
 
@@ -12,11 +13,11 @@ class Report extends Component {
 	}
 
 	handleSubmit(e){
-		e.preventDefault();	
+		e.preventDefault();
 		const { data, ind } = this.props;
 		this.props.form.validateFieldsAndScroll((err, values) => {
             if (!err) {
-                
+
                 this.resetAll();
             }
         });
@@ -26,7 +27,7 @@ class Report extends Component {
 		const { resetFields } = this.props.form;
 		resetFields();
 		document.getElementById(`${this.props.screen}${this.props.ind}`).click();
-	}	
+	}
 
 	updateProps = (rule, value, callback) => {
 		this.props.onClick();
@@ -35,7 +36,7 @@ class Report extends Component {
 
 	render(){
 		const { getFieldDecorator } = this.props.form;
-		
+
 		return(
 			<div>
 				<h4 data-toggle="modal" data-target={`#${this.props.screen}${this.props.ind}`}>Report</h4>
@@ -43,15 +44,15 @@ class Report extends Component {
 	                <div className="modal-dialog">
 	                    <div className="modal-content">
 		                    <div className="modal-header">
-			                    <button 
-			                    	type="button" 
-			                    	className="close" 
+			                    <button
+			                    	type="button"
+			                    	className="close"
 			                    	onClick={(e) => this.resetAll()}
 		                    	>
 		                    		&times;
 	                    		</button>
-			                    <h4 
-			                    	className="modal-title" 
+			                    <h4
+			                    	className="modal-title"
 			                    	style={{textAlign:'center', color: 'white'}}
 		                    	>
 			                    	Report this dress
@@ -92,9 +93,9 @@ class Report extends Component {
 				                                {getFieldDecorator('message', {
 				                                	rules: [{ required: true, message: 'Please input your Message!', whitespace: true }],
 				                                })(
-				                                	<TextArea rows={4} className="textAreaFont" style={{width: '100%'}}/>
+				                                	<TextArea rows={4} className="textAreaFont"/>
 				                                )}
-				                            </Form.Item>
+				                        </Form.Item>
 				                        </div>
 				                        <div className="col-md-2 col-sm-3 col-xs-1"></div>
 			                    	</div>
@@ -102,18 +103,18 @@ class Report extends Component {
 		                        <div className="row" style={{marginTop: '10px'}}>
 		                        	<div className="col-md-6 col-sm-6"></div>
 		                        	<div className="col-md-3 col-sm-3">
-		                        		<button className="btn btn-sm" 
+		                        		<button className="btn btn-sm"
 		                        			style={{color:'black', backgroundColor:'white', width: '100%'}}
 		                        			onClick={(e) => this.handleSubmit(e)}
-		                    			>Confirm</button>                                    		
+		                    			>Confirm</button>
 		                        	</div>
 		                        	<div className="col-md-3 col-sm-3">
-		                        		<button className="btn btn-sm" 
+		                        		<button className="btn btn-sm"
 		                        			style={{color:'black', backgroundColor:'white', width: '100%'}}
 		                        			onClick={(e) => this.resetAll()}
 		                    			>Cancel</button>
 		                        	</div>
-		                        </div>		                        
+		                        </div>
 		                    </div>
 	                    </div>
 	                </div>

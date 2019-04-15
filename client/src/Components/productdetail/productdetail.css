@@ -10,8 +10,8 @@
      text-align: center;
      border: 2px solid black;
      border-radius: 50%;
-     height: 70px;
-     width: 70px;
+     height: 55px;
+     width: 55px;
      display: inline-block;
      margin-left: 3%;
 }
@@ -19,13 +19,13 @@
 	text-align: center;
      border: 2px solid black;
      border-radius: 50%;
-     height: 70px;
-     width: 70px;
+     height: 55px;
+     width: 55px;
      display: inline-block;
 }
 
 .aroundsize{
-	margin-top: 25px;
+	margin-top: 15px;
 }
 .round{
 	display: inline-block;
@@ -66,7 +66,7 @@
 		margin-left: 1%;
 	}
 	.bookedboo{
-		margin-top: -36%;
+		margin-top: -5%;
 	    font-size: 16px;
 	    margin-left: -8%;
 	}
@@ -131,7 +131,7 @@
 	    margin-left: 8%;
 	}
 	.bookedboo{
-		margin-top: -10%;
+		margin-top: -3%;
 		font-size: 17px;
 	}
 	.bookedbook{
@@ -323,7 +323,6 @@
 
 }
 .dell{
-	height: 450px;
 	background-color: #c2073f;
 }
 .tissue{
@@ -335,7 +334,7 @@
 .tissue2{
 
 	 border-left: 2px solid black;
-	 height: 400px;
+	 /*//height: 400px;*/
 
 }
 .dar{
@@ -356,7 +355,15 @@
 		font-family: Sacramento;
 		margin-left: -15%;
 		font-size: 27px;
-		color: yellow;
+		color: white;
+	}
+	.newstar{
+		margin-top: -40%;
+    	margin-left: 55%;
+	}
+	.newrating{
+		margin-top: -19%;
+    	margin-left: 77%;
 	}
 }
 
@@ -365,7 +372,14 @@
 		font-family: Sacramento;
 		margin-left: -32%;
 		font-size: 27px;
-		color: yellow;
+		color: white;
+	}
+	.newstar{
+		margin-top: 12%;
+	}
+	.newrating{
+		    margin-top: 14%;
+    		margin-left: -16%;
 	}
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
@@ -373,7 +387,15 @@
 		font-family: Sacramento;
 		margin-left: -7%;
 		font-size: 27px;
-		color: yellow;
+		color: white;
+	}
+	.newstar{
+		margin-top: 12%;
+		margin-left: -9%;
+	}
+	.newrating{
+		margin-top: 16%;
+    	margin-left: -3%;
 	}
 }
 @media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
@@ -381,7 +403,14 @@
 		font-family: Sacramento;
 		margin-left: -20%;
 		font-size: 27px;
-		color: yellow;
+		color: white;
+	}
+	.newstar{
+		margin-top: 12%;
+	}
+	.newrating{
+		margin-top: 14%;
+    	margin-left: -7%;
 	}
 }
 
@@ -394,13 +423,21 @@
 		padding: 0px;
 		margin-left: -10%;
 	}
+	.rental100{
+		font-size: 14px;
+	    margin-left: 0%;
+	    margin-top: -5%;
+	}
 }
-
-
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
 	.d_size{
 		padding: 0px;
 		margin-left: -10%;
+	}
+	.rental100{
+		    font-size: 16px;
+		    margin-left: 9%;
+		    margin-top: -2%;
 	}
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
@@ -408,11 +445,20 @@
 		padding: 0px;
 		margin-left: -0%;
 	}
+	.rental100{
+		    font-size: 16px;
+		    margin-left: 7%;
+		    margin-top: -2%;	}
 }
 @media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
 	.d_size{
 		padding: 0px;
 		margin-left: -10%;
+	}
+	.rental100{
+		    font-size: 16px;
+		    margin-left: 7%;
+		    margin-top: -2%;
 	}
 }
 
@@ -611,8 +657,9 @@
 	}
 	.shelterr5{
 		font-family: Qwigley;
-		font-size: 60px; 
-		margin-left: 3%;
+	    font-size: 30px;
+	    margin-top: 64%;
+	    margin-left: -11%;
 	}
 }
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
@@ -659,8 +706,9 @@
 	}
 	.shelterr5{
 		font-family: Qwigley;
-		font-size: 60px; 
-		margin-left: 3%;
+	    font-size: 60px;
+	    margin-top: 18%;
+	    margin-left: 3%;
 	}
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
@@ -708,7 +756,7 @@
 	.shelterr5{
 		font-family: Qwigley;
 		font-size: 48px; 
-		margin-left: 3%;
+		margin-left: 7%;
 	}
 }
 @media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
@@ -756,6 +804,6 @@
 	.shelterr5{
 		font-family: Qwigley;
 		font-size: 60px; 
-		margin-left: 3%;
+		margin-left: 7%;
 	}
 }

@@ -55,22 +55,22 @@ class FirstPage extends Component {
         		  <div className="container-fluid">
         	  	  <div className="col-md-4 col-sm-2">
         			 	  <div className="navbar-header" style={{marginBottom:'-3%'}}>
-        					  <a href="#" className="hidden-sm"><img src="../images/Drent-logo-white.png" style={{margin: '0px 0px 0px -40px', height : '100px'}}/></a>
-                    <a href="#" className="visible-sm"><img src="../images/Drent-logo-white.png" style={{width: '187%'}}/></a>
+        					  <Link to={`/`} className="hidden-sm"><img src="../images/Drent-logo-white.png" style={{height : '100px'}}/></Link>
+                    <Link to={`/`} className="visible-sm"><img src="../images/Drent-logo-white.png" style={{width: '187%'}}/></Link>
         				  </div>
         			  </div>
         		    <div className="container-fluid">
         			    <div className="col-md-8 col-sm-10  container customhover">
         				    <ul className="nav navbar-nav navbar-right customhover">
-        					    <li className="head"><Link to={`/`} className="nav" style={{fontSize:'12px',fontFamily: 'crimsontext'}}>HOME</Link></li>
-          				    <li className="head"><Link to={`/product`} className="nav" style={{fontSize:'12px',marginRight:'-9px',fontFamily: 'crimsontext'}}>PRODUCT</Link></li>
-                      {loggedIn && <li className="head" style={{marginRight: '-28px',fontFamily: 'crimsontext'}}><Link to={`/profile/${userId}`} className="nav" style={{fontSize:'12px'}}>MY PROFILE</Link></li>}
-          				    <li className="head"><Link to={`/detail`} className="nav" style={{fontSize:'12px'}}></Link></li>
-          				    {/*<li className="head"><Link to={`/detail`} className="nav" style={{fontSize:'12px'}}>TESTIMONIALS</Link></li>*/}
-                      {loggedIn && <li className="head" onClick={this.logOut}><a className="nav" style={{fontSize:'12px',fontFamily: 'crimsontext'}}>Log Out</a></li>}
+        					    <li className="head"><Link to={`/`} className="nav" style={{backgroundColor: '#c2073f',color: '#ffffff', fontSize:'15px',fontFamily: 'crimsontext'}}>HOME</Link></li>
+          				    <li className="head"><Link to={`/product`} className="nav" style={{backgroundColor: '#c2073f',color: '#ffffff', fontSize:'15px',marginRight:'-9px',fontFamily: 'crimsontext'}}>PRODUCT</Link></li>
+                      {loggedIn && <li className="head" style={{marginRight: '-28px',fontFamily: 'crimsontext'}}><Link to={`/profile/${userId}`} className="nav" style={{backgroundColor: '#c2073f',color: '#ffffff', fontSize:'15px'}}>MY PROFILE</Link></li>}
+          				    <li className="head"><Link to={`/detail`} className="nav" style={{color: '#ffffff', fontSize:'15px'}}></Link></li>
+          				    {/*<li className="head"><Link to={`/detail`} className="nav" style={{backgroundColor: '#c2073f',color: '#ffffff', fontSize:'15px'}}>TESTIMONIALS</Link></li>*/}
+                      {loggedIn && <li className="head" onClick={this.logOut}><a className="nav" style={{backgroundColor: '#c2073f',color: '#ffffff', fontSize:'15px',fontFamily: 'crimsontext'}}>Log Out</a></li>}
 
                       {!loggedIn && <li className="head">
-                        <a href="#" className="nav" data-toggle="modal" data-target="#SignIn" style={{fontSize:'12px',fontFamily: 'crimsontext'}}>Sign In</a>
+                        <a href="#" className="nav" data-toggle="modal" data-target="#SignIn" style={{backgroundColor: '#c2073f',color: '#ffffff', fontSize:'15px',fontFamily: 'crimsontext'}}>Sign In</a>
                           <div className="modal fade" id="SignIn" role="dialog">
                             <div className="modal-dialog">
                               <div className="modal-content">
@@ -89,7 +89,7 @@ class FirstPage extends Component {
                           </div>
                       </li>}
                       {!loggedIn && <li className="head">
-                        <a href="#" className="nav" data-toggle="modal" data-target="#SignUp" style={{fontSize:'12px',fontFamily: 'crimsontext'}}>Sign Up</a>
+                        <a href="#" className="nav" data-toggle="modal" data-target="#SignUp" style={{backgroundColor: '#c2073f',color: '#ffffff', fontSize:'15px',fontFamily: 'crimsontext'}}>Sign Up</a>
                           <div className="modal fade" id="SignUp" role="dialog">
                             <div className="modal-dialog">
                               <div className="modal-content">
@@ -106,7 +106,7 @@ class FirstPage extends Component {
                           </div>
                       </li>}
                       <li className="head">
-                        <Link to={{pathname: `/checkout`, state: {finalArr}}} className="nav badge">
+                        <Link to={{pathname: `/checkout`, state: {finalArr}}} className="nav badge" style={{background: 'none'}}>
                           <img src="../images/bag.png" style={{marginTop:'-5px'}}/>
                           <span className="badge">
                             {finalArr.length > 0 ? finalArr.length : ''}
@@ -179,10 +179,10 @@ class FirstPage extends Component {
               <div className="col-md-4 col-xs-4">
                 <i onClick={this.openNav} className="fas fa-bars" style={{color:'white',marginLeft:'8px',fontSize:'24px',marginTop:'10px'}}></i>
               </div>
-              <div className="col-md-4 col-xs-4">
-                <img src="../images/Drent-logo-white.png" style={{width:'80%'}} />
+              <div className="col-xs-4">
+                <Link to={`/`}><img src="../images/Drent-logo-white.png" style={{width:'80%'}} /></Link>
               </div>
-              <div className="col-md-4 col-xs-4">
+              <div className="col-xs-4">
                 {/*<i className="fas fa-search"></i>*/}
               </div>
             </div>
