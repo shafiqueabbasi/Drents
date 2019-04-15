@@ -1,3 +1,10 @@
+#message {
+  color:black;
+}
+.textAreaFont{
+  width:100%;
+}
+
 /*#profile-input{
   margin-top: 17px;
   border-top: none;

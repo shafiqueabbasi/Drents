@@ -41,7 +41,7 @@ checkoutBooking.findOne({
     response.reviewId = data.reviewId;
     response.save((err, resp) => {
         // console.log(response, 'kia aay bhaiiiiii')
-        if(resp){       
+        if(resp){
             res.send({
                 code:200,
                 data:'data updated successfully'
@@ -54,7 +54,7 @@ checkoutBooking.findOne({
             //             <head>
             //                 <style>
             //                     table {
-            //                         font-family: arial, 
+            //                         font-family: arial,
             //                         sans-serif;
             //                         border-collapse: collapse;
             //                         width: 100%;
@@ -69,7 +69,7 @@ checkoutBooking.findOne({
             //             </head>
             //             <body>
             //                 <h2>Dress Details</h2>
-            //                 <table> 
+            //                 <table>
             //                     <tr>
             //                         <th>Name</th>
             //                         <th>Email</th>
@@ -100,7 +100,7 @@ checkoutBooking.findOne({
             //             })
             //         }
             //     });
-            // })            
+            // })
         }
     })
 }).catch((err) => {
