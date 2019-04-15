@@ -34,6 +34,7 @@
     "react-bootstrap-daterangepicker": "^4.1.0",
     "react-chips": "^0.8.0",
     "react-color": "^2.17.0",
+    "react-grid-layout": "^0.16.6",
     "react-rating": "^1.6.2",
     "stripe": "^6.15.2",
     "twilio": "^3.29.2",
