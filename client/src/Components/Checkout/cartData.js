@@ -104,9 +104,12 @@ class CartData extends Component {
 		return (
 			<div style={{marginTop:'10%'}}>
 				<div className="hidden-xs">
-					<div className="container" style={{width:'55%' , marginLeft: '19%'}}>
-						<div className="row">
-							<div className="col-md-12 col-sm-12 chainbelt1"><span className="chainbelt">Your Cart</span></div>
+					<div className="container">
+						<div className="row hidden-sm">
+							<div className="col-md-12 chainbelt1"><span className="chainbelt">Your Cart</span></div>
+						</div>
+						<div className="row visible-sm"style={{marginTop: '8%'}}>
+							<div className="col-sm-12 chainbelt1"><span className="chainbelt">Your Cart</span></div>
 						</div>
 						{finalArr && finalArr.map((elem, key) => {
 							return (
@@ -254,7 +257,7 @@ class CartData extends Component {
 				</div>
 				<div className="visible-xs">
 					<div className="container">
-						<div className="row">
+						<div className="row" style={{marginTop: '9%'}}>
 							<div className="col-xs-12 chainbelt1"><span className="chainbelt">Your Cart</span></div>
 						</div>
 						{finalArr && finalArr.map((elem, key) => {
