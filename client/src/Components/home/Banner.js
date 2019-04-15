@@ -5,14 +5,14 @@ class SecondPage extends Component {
 
     return (
     <div>
-      <div className="row App hidden-xs" style={{marginTop: '88px'}}>
+      <div className="row App B_H hidden-xs">
       	<div className="row Banner">
       		<img alt="" src="./images/Banner-2.jpg" style={{width: '100%'}}/>
       	</div>
       </div>
-      <div className="App visible-xs" style={{marginTop:'13%'}}>
+      <div className="App B_H visible-xs">
       	<div className="Banner">
-      		<img alt="" src="./images/mobile-banner.png" style={{width: '100%'}}/>
+      		<img alt="" src="./images/Banner-2.jpg" style={{width: '100%'}}/>
       	</div>
       </div>
     </div>
