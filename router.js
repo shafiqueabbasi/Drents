@@ -13,6 +13,7 @@ const getprofileanddress = require('./controllers/getprofiledress');
 const reviewPost = require('./controllers/reviewModal');
 const requireAuth = passport.authenticate('jwt', { session:false });
 const requireSignin = passport.authenticate('local', {session:false});
+const reportEmail = require('./controllers/reportEmail');
 
 module.exports = function(app){
 
@@ -33,13 +34,13 @@ module.exports = function(app){
   app.post('/changePassword',Authentication.changePassword);
   app.post('/twiliosms',twiliMobileSms.twilioSms);
   //app.post('/changestatus',profileUpload.changeStatus);
-  //get routes
   app.get('/getdresses',getDresses.getdress);
   app.get('/getreview',getReview.getreview);
   app.get('/key',checkout.getApiKey);
   app.get('/verify',Authentication.verifyAccount);
   app.get('/reset',Authentication.reset);
   app.post('/passwordLink',Authentication.changePasswordLink);
+  app.post('/reportemail',reportEmail.sendReportEmail);
 
   //app.get('/getprofile',requireAuth, getprofile.getProfile)
 }
