@@ -22,7 +22,8 @@ const profileSchema = new Schema({
   ribcage:{ type:String },
   height:{ type:String },
   userId:{ type:String },
-  profileId:{ type:String }
+  profileId:{ type:String },
+  createdAt:{ type:String },
 });
 
 

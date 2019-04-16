@@ -9,6 +9,7 @@ const userSchema = new Schema({
   firstname:{type:String},
   lastname:{type:String},
   randomno: {type: String},
+  createdAt: {type: String},
   resetPasswordToken:{type:String},
   resetPasswordExpires:{type:String},
 });

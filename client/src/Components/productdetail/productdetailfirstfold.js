@@ -363,7 +363,7 @@ class Productdetailfirstfold extends Component {
                             	<div className="rental1"><h1>Rental Period</h1></div>
                             </div>
                             <div className="row">
-                            	<h3 className="rental100">Available From 21-03-2019 To 28-03-2019</h3>
+                            	<h3 className="rental100">Available From {elem.from} To {elem.to}</h3>
                             </div>
                             {/*<div className="row">
                             	<div className="col-md-4">

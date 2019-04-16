@@ -28,7 +28,16 @@ class Profile extends Component {
 		_id: '',
 		updatedImage: '',
 		loading: false,
-		showMsg: ''
+		showMsg: '',
+		createdAt: '',
+		sizeWear: [
+			'X Small',
+			'Small',
+			'Medium',
+			'X Large',
+			'Large',
+			'XX Large'
+		]
 	};
 
 	componentDidMount(){
@@ -53,11 +62,11 @@ class Profile extends Component {
 		e.preventDefault();
 		this.setState({ loading: true });
 		const {email, firstName, lastName, inputHeight, weight, bustSize, height, bodyType, bio,
-			ocassionAttendMost, typicalJeanSize, bust, hips, torso, ribcage, userId, _id} = this.state;
+			ocassionAttendMost, typicalJeanSize, bust, hips, torso, ribcage, userId, _id, createdAt} = this.state;
 		let obj = {
 			email, firstName, lastName, bio, inputHeight, weight, bustSize, height, bodyType,
 			ocassionAttendMost, typicalJeanSize, bust, hips, torso, ribcage, userId,
-			profileId: _id
+			profileId: _id, createdAt
 		}
 		this.submit(obj)
 	}
@@ -74,7 +83,7 @@ class Profile extends Component {
 
   render() {
     const { getFieldDecorator } = this.props.form;
-    
+    console.log(this.state.typicalJeanSize, 'sizeeeeeee')
     return (
       	<div>
       		<div className="container-fluid">
@@ -210,13 +219,13 @@ class Profile extends Component {
 							</div>
 							<div className="col-md-6">
 								<SelectInput
-									label="Typical Jean Size"
+									label="Size Wear"
 									id="typicalJeanSize"
 									value={this.state.typicalJeanSize}
 									className="input"
 									col="col-md-4 col-sm-2"
 									col2="col-md-8 col-sm-4"
-									options={[1,2,3,4,5]}
+									options={this.state.sizeWear}
 									Change={this.inputHandleChange}
 								/>
 							</div>
