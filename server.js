@@ -30,7 +30,6 @@ mongoose.connect(configDB.EvenNodeDB,{ useNewUrlParser: true },function(err,db){
   }
 })
 
-
 app.get('/api/hello', (req, res) => {
   res.send({ express: 'Hello From Express' });
 });

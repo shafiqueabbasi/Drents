@@ -46,7 +46,7 @@ class CheckoutForm extends Component {
       return (
           <div className="checkout">
               <CardElement />
-              <button onClick={this.submit}>Send</button>
+              <button onClick={this.submit} style={{marginTop: '6px' , marginLeft: '23px'}}>Send</button>
               {this.state.loader && <div class="loading">Loading&#8230;</div>}
           </div>
       );

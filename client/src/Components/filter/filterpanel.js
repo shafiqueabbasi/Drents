@@ -20,8 +20,10 @@ class Filterpanel extends Component {
         	size: '',
         	label: 'All Products',
         	mainFilterArr: ["Wedding", "Party", "Corporate", "Special Ocasion", "Family Dinner"],
-        	weatherArr: ["Cold Weather", "Warm Weather"],
-        	sizesArr: ["XS", "S", "M", "XL", "L", "XXL"]
+        	weatherArr: ["ColdWeather", "WarmWeather"],
+        	weatherArrM: ["Cold Weather", "Warm Weather"],
+        	sizesArr: ["XS", "S", "M", "XL", "L", "XXL"],
+        	sizesArrM: ["XSM", "SM", "MM", "XLM", "LM", "XXLM"]
         }
     }
 
@@ -32,60 +34,56 @@ class Filterpanel extends Component {
 		if(data.code && data.code === 200){
 			this.setState({ data: data.allDress, arr: data.allDress, loading: false });
 			if(filter && filter !== undefined){
-				this.handleClick(filter);
+				this.handleMainItems(null, filter);
 			}
 		}
 	}
 
-	handleMainItems = (e, item) => {		
-		e.preventDefault();
-		let { filtered, mainFilter, size, weather, weatherArr, sizesArr } = this.state;		
+	handleMainItems = (e, item) => {	
+		if(e !== null){
+			e.preventDefault();			
+		}	
+		let { filtered, mainFilter, size, weather, weatherArr, sizesArr, weatherArrM, sizesArrM } = this.state;		
 		if(item == ''){
-			weatherArr.map((elem) => {
-				document.getElementById(elem).checked = false;
-			})
-			sizesArr.map((elem) => {
-				document.getElementById(elem).checked = false;
-			})
-		}
-		if(filtered.includes(mainFilter)){
-			filtered = filtered.filter((elem) => elem !== mainFilter);
-		}
-		filtered.push(item);					
+			this.uncheckRadio(weatherArr);
+			this.uncheckRadio(sizesArr);
+			this.uncheckRadio(weatherArrM);
+			this.uncheckRadio(sizesArrM);
+		}					
 		this.setState({ 
 			mainFilter: item,
-			filtered, 
 			weather: mainFilter.length > 0 ? weather : '',
 			size: mainFilter.length > 0 ? size : '' 
-		}, () => {
-			this.filteringData();			
+		});
+		this.handleConditions(filtered, mainFilter, item);
+	}
+
+	uncheckRadio(arr){
+		arr.map((elem) => {
+			document.getElementById(elem).checked = false;
 		});
 	}
 
 	handleWeather = (item) => {
-		let { filtered, weather } = this.state;
-		if(filtered.includes(weather)){
-			filtered = filtered.filter((elem) => elem !== weather);
-		}
-		filtered.push(item);
-		this.setState({ weather: item, filtered }, () => {
-			this.filteringData();
-		});		
+		let { filtered, weather } = this.state;	
+		this.setState({ weather: item });
+		this.handleConditions(filtered, weather, item);	
 	}
 
 	handleSize = (item) => {
-		let { filtered, size } = this.state;
-		if(filtered.includes(size)){
-			filtered = filtered.filter((elem) => elem !== size);
-		}
-		filtered.push(item);
-		this.setState({ size: item, filtered }, () => {
-			this.filteringData();
-		});		
+		let { filtered, size } = this.state;		
+		this.setState({ size: item });
+		this.handleConditions(filtered, size, item);
 	}
 
-	onChange = (e) => {
-		console.log(e, 'eeeeeeeeee')
+	handleConditions(filtered, filter, item){
+		if(filtered.includes(filter)){
+			filtered = filtered.filter((elem) => elem !== filter);
+		}
+		filtered.push(item);
+		this.setState({ filtered }, () => {
+			this.filteringData();
+		});
 	}
 
 	filteringData(){
@@ -97,16 +95,16 @@ class Filterpanel extends Component {
 			data = !!mainFilter.length ? arr.filter((elem) => filtered.includes(elem.bodyType)) : data;
 			data = !!weather.length ? data.filter((elem) => filtered.includes(elem.weather)) : data;
 			data = !!size.length ? data.filter((elem) => filtered.some(r => elem.sizes.includes(r))): data;
-			this.setState({ data })
+			this.setState({ data });
 		}
 	}
 
 	handleSort = e => {
 		let { data } = this.state,
 		target = e.target.id;
-		if(target === 'newest'){
+		if(target === 'newest' || target === 'newestM'){
 			data = _.sortBy(data, 'postedOn')
-		}else if(target === 'highAndLow'){
+		}else if(target === 'highAndLow' || target === 'highAndLowM'){
 			// data = _.sortBy(data, 'priceDay')
 			data = this.orderByDate(data, 'priceDay')
 		}else{
@@ -120,19 +118,6 @@ class Filterpanel extends Component {
 		return arr.slice().sort(function (a, b) {
 		    return a[dateProp] < b[dateProp] ? -1 : 1;
 		});
-	}
-
-	deepFiltering(){
-		let { filtered, data, arr } = this.state;
-		if(filtered.length === 0){
-			this.setState({ data: arr });
-		}else {
-			data = arr.filter((elem) => {
-				return filtered.includes(elem.weather) || filtered.includes(elem.bodyType) ||
-				filtered.some(r => elem.sizes.includes(r))
-			})
-			this.setState({ data })
-		}
 	}
 
   	render() {
@@ -158,10 +143,15 @@ class Filterpanel extends Component {
 	    							<div className="row col-md-12" style={{padding: '0px'}}>
 
 	    								<h3 style={{fontFamily: 'crimsontext'}}>Sort By&emsp;&nbsp;-</h3><br/>
-	    								<RadioInput label="Newest" value="Newest" for="newest" name="sortBy" onChange={this.handleSort}/>
-	    								<RadioInput label="High And Low" value="HighandLow" for="highAndLow" name="sortBy" onChange={this.handleSort}/>
-	    								<RadioInput label="Low And High" value="LowandHigh" for="lowAndHigh" name="sortBy" onChange={this.handleSort}/>
-
+	    									<RadioInput 
+									        	label="Newest" 
+									        	value="Newest" 
+									        	for="newest" 
+								        		name="sortBy" 
+								        		onChange={this.handleSort}
+							        		/>
+											<RadioInput label="High and Low" value="highAndLow" for="highAndLow" name="sortBy" onChange={this.handleSort}/>
+											<RadioInput label="Low and High" value="lowAndHigh" for="lowAndHigh" name="sortBy" onChange={this.handleSort}/>
 	    								{/*<Filter id="newest" heading="Newest" onChange={this.handleClick}/>
 	    								<Filter id="high and low" heading="High and Low" onChange={this.handleClick}/>
 	    								<Filter id="low and high" heading="Low and High" onChange={this.handleClick}/>*/}
@@ -190,8 +180,8 @@ class Filterpanel extends Component {
 								<div className="row">
 									<div className="row col-md-12 col-sm-12" style={{padding: '0px'}}>
 	    								<h3 style={{fontFamily: 'crimsontext'}}>Weather&emsp;-</h3><br/>
-	    								<RadioInput label="Cold Weather" for="Cold Weather" name="weather" onChange={(e) => this.handleWeather(e.target.id)} />
-	    								<RadioInput label="Warm Weather" for="Warm Weather" name="weather" onChange={(e) => this.handleWeather(e.target.id)} />
+	    								<RadioInput label="Cold Weather" for="ColdWeather" name="weather" onChange={(e) => this.handleWeather('Cold Weather')} />
+	    								<RadioInput label="Warm Weather" for="WarmWeather" name="weather" onChange={(e) => this.handleWeather('Warm Weather')} />
 										<div className="col-md-10 col-sm-10" style={{paddingBottom: '15px', margin: '40px 0 20px',borderBottom: '1px solid black'}}></div>
 									</div>
 								</div>
@@ -258,6 +248,7 @@ class Filterpanel extends Component {
 											</div>
 											<div id="collapseOne" className="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
 												<div className="panel-body" style={{fontFamily: 'crimsontext'}}>
+													<h4 id="" onClick={(e) => this.handleMainItems(e, "")} style={{fontFamily: 'crimsontext'}}>All Products</h4><br/>
 												    <h4 id="Wedding" onClick={(e) => this.handleMainItems(e, "Wedding")} style={{fontFamily: 'crimsontext'}}>Wedding</h4><br/>
 		    										<h4 id="Party" onClick={(e) => this.handleMainItems(e, "Party")} style={{fontFamily: 'crimsontext'}}>Party</h4><br/>
 		    										<h4 id="Corporate" onClick={(e) => this.handleMainItems(e, "Corporate")} style={{fontFamily: 'crimsontext'}}>Corporate</h4><br/>
@@ -287,12 +278,12 @@ class Filterpanel extends Component {
 											        <RadioInput 
 											        	label="Newest" 
 											        	value="Newest" 
-											        	for="newest" 
+											        	for="newestM" 
 										        		name="sortBy" 
 										        		onChange={this.handleSort}
 									        		/>
-	    											<RadioInput label="High and Low" value="highAndLow" for="highAndLow" name="sortBy" onChange={this.handleSort}/>
-	    											<RadioInput label="Low and High" value="lowAndHigh" for="lowAndHigh" name="sortBy" onChange={this.handleSort}/>
+	    											<RadioInput label="High and Low" value="highAndLow" for="highAndLowM" name="sortBy" onChange={this.handleSort}/>
+	    											<RadioInput label="Low and High" value="lowAndHigh" for="lowAndHighM" name="sortBy" onChange={this.handleSort}/>
 	    											{/*<Slider range min={500} max={500} step={500} defaultValue={[1000, 3000]} onChange={this.onChange} />*/}
 											    </div>
 											</div>
@@ -329,8 +320,8 @@ class Filterpanel extends Component {
 										</div>
 										<div id="collapseThree" className="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
 											<div className="panel-body" style={{fontFamily: 'crimsontext'}}>
-											    <RadioInput id="Cold Weather" label="Cold Weather"  for="coldWeather" name="weather" onChange={(e) => this.handleClick(e.target.id)}/>
-	    										<RadioInput id="Warm Weather" label="Warm Weather"  for="warmWeather" name="weather" onChange={(e) => this.handleClick(e.target.id)}/>
+											    <RadioInput label="Cold Weather" for="Cold Weather" name="weather" onChange={(e) => this.handleWeather(e.target.id)} />
+	    										<RadioInput label="Warm Weather" for="Warm Weather" name="weather" onChange={(e) => this.handleWeather(e.target.id)} />
 											</div>
 										</div>
 									</div>
@@ -349,12 +340,12 @@ class Filterpanel extends Component {
 											</div>
 											<div id="collapseFour" className="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
 											    <div className="panel-body" style={{fontFamily: 'crimsontext'}}>
-											    	<RadioInput id="XS" label="X Small" for="XS" name="sizes" onChange={(e) => this.handleClick(e.target.id)}/>
-	    											<RadioInput id="S" label="Small" for="S" name="sizes" onChange={(e) => this.handleClick(e.target.id)}/>
-	    											<RadioInput id="M" label="Medium" for="M" name="sizes" onChange={(e) => this.handleClick(e.target.id)}/>
-	    											<RadioInput id="XL" label="X Large" for="XL" name="sizes" onChange={(e) => this.handleClick(e.target.id)}/>
-	    											<RadioInput id="L" label="Large" for="L" name="sizes" onChange={(e) => this.handleClick(e.target.id)}/>
-	    											<RadioInput id="XXL" label="XX Large" for="XXL" name="sizes" onChange={(e) => this.handleClick(e.target.id)}/>
+											    	<RadioInput label="X Small" for="XSM" name="sizes" onChange={(e) => this.handleSize('XS')}/>
+				    								<RadioInput label="Small" for="SM" name="sizes" onChange={(e) => this.handleSize('S')}/>
+				    								<RadioInput label="Medium" for="MM" name="sizes" onChange={(e) => this.handleSize('M')}/>
+				    								<RadioInput label="X Large" for="XLM" name="sizes" onChange={(e) => this.handleSize('XL')}/>
+				    								<RadioInput label="Large" for="LM" name="sizes" onChange={(e) => this.handleSize('L')}/>
+				    								<RadioInput label="XX Large" for="XXLM" name="sizes" onChange={(e) => this.handleSize('XXL')}/>
 											    </div>
 											</div>
 										</div>
@@ -364,7 +355,7 @@ class Filterpanel extends Component {
 							</div>
 						</div>
 	    				<div className="col-xs-12">
-	  						<Gallery label={this.state.label} hrLine='false' data={this.state.data}/>
+	  						<Gallery label={mainFilter.length > 0 ? mainFilter : label} hrLine='false' data={this.state.data}/>
 	  						<div className="form-group row">
 							<label className="col-xs-12 control-label" style={{textAlign: 'center'}}></label>
 							<div className="col-xs-12 row"></div>
