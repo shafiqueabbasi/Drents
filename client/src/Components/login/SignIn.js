@@ -30,120 +30,122 @@ class SignIn extends Component {
         this.props.dispatch(userActions.logout());
     }
 
-  handleSubmit = (e) => {
-     e.preventDefault();
-     this.setState({ loader: true })
-     this.props.form.validateFieldsAndScroll((err, values) => {
-       if (!err) {
-         this.props.dispatch(userActions.login(values, 'signin', (token) => {
-          console.log(token, 'tokennnnnnnn')
-          if(typeof(token) == 'string'){
-            this.setState({ err: token, loader: false })
-            setTimeout(() => {
-              this.setState({ err: '', loader: false })
-            }, 4000)
-          }else {
-            localStorage.setItem('user', JSON.stringify(token));
-          }
+    handleSubmit = (e) => {
+        e.preventDefault();
+        this.setState({ loader: true })
+        this.props.form.validateFieldsAndScroll((err, values) => {
+            if (!err) {
+              this.props.dispatch(userActions.login(values, 'signin', (token) => {
+                  if(typeof(token) == 'string'){
+                      this.setState({ err: token, loader: false })
+                      setTimeout(() => {
+                          this.setState({ err: '', loader: false })
+                      }, 4000)
+                  }else {
+                      localStorage.setItem('user', JSON.stringify(token));
+                  }
+              }));
+            }
+        });
+    }
+
+    handleEmail = e => {
+        this.setState({ loader: true })
+        const { setEmail, name, userId } = this.state,
+        obj = {
+            userId, name,
+            email: setEmail
+        }
+        this.props.dispatch(userActions.login(obj, 'socialauth', (token) => {
+            if(typeof(token) == 'string'){
+                this.setState({ err: token, loader: false })
+                setTimeout(() => {
+                    this.setState({ err: '', loader: false })
+                }, 4000)
+            }else {
+                localStorage.setItem('user', JSON.stringify(token));
+            }
         }));
-       }
-     });
-   }
+    }
 
-   handleEmail = e => {
-    this.setState({ loader: true })
-      const { setEmail, name, userId } = this.state,
-      obj = {
-        userId, name,
-        email: setEmail
-      }
-      this.props.dispatch(userActions.login(obj, 'socialauth', (token) => {
-        if(typeof(token) == 'string'){
-          this.setState({ err: token, loader: false })
-          setTimeout(() => {
-            this.setState({ err: '', loader: false })
-          }, 4000)
-        }else {
-          localStorage.setItem('user', JSON.stringify(token));
-        }
-      }));
-   }
+    handleConfirmBlur = (e) => {
+        const value = e.target.value;
+        this.setState({ confirmDirty: this.state.confirmDirty || !!value });
+    }
 
-   handleConfirmBlur = (e) => {
-     const value = e.target.value;
-     this.setState({ confirmDirty: this.state.confirmDirty || !!value });
-   }
     handleforgotpassword = (e) => {
-     e.preventDefault();
-     this.setState({
-       loader:true
-     })
+        e.preventDefault();
+        this.setState({
+           loader:true
+        })
 
-     this.props.form.validateFieldsAndScroll( async (err, values) => {
-        if(!err){
-          console.log(values,'emaiiiiiiillllllllllll');
-          let obj = {
-            email:values.email
-          }
-          let res = await HttpUtils.post('forgotpassword',obj);
-          if(res.code == 403){
-            this.setState({
-              loader:false,
-              errMessage:res.message
-            })
-            setTimeout(() => {
-              this.setState({
-              loader:false,
-              errMessage:''
-            })
-           }, 3000);
-         }//end if code 403
-         else if(res.code == 200){
-           this.setState({
-             loader:false,
-             emailSent:true,
-             errMessage:res.message
-           })
-         }
+        this.props.form.validateFieldsAndScroll( async (err, values) => {
+            if(!err){
+                let obj = {
+                    email:values.email
+                }
+                let res = await HttpUtils.post('forgotpassword',obj);
+                if(res.code == 403){
+                    this.setState({
+                        loader:false,
+                        errMessage:res.message
+                    });
+                    setTimeout(() => {
+                        this.setState({
+                            loader:false,
+                            errMessage:''
+                        });
+                    }, 3000);
+                }//end if code 403
+                else if(res.code == 200){
+                  this.setState({
+                      loader:false,
+                      emailSent:true,
+                      errMessage:res.message
+                  });
+                }
+            }
+        });
+   }
 
+    responseFacebook = response =>{
+        const { clicked } = this.state;
+        if(clicked){
+            if(response && response.id && response.id.length){
+                if(!response.email || response.email == undefined){
+                    this.setState({
+                        showEmailButton: true,
+                        name: response.name,
+                        userId: response.userID
+                    });
+                }else {
+                    this.setState({
+                        name: response.name,
+                        userId: response.userID,
+                        setEmail: response.email
+                    }, () => {
+                        this.handleEmail()
+                    });
+                }
+            }
         }
-     });
-   }
-   responseFacebook = response =>{
-      const { clicked } = this.state;
-      if(clicked){
-        if(response && response.id && response.id.length){
-          if(!response.email || response.email == undefined){
-            this.setState({
-              showEmailButton: true,
-              name: response.name,
-              userId: response.userID
-            })
-          }else {
-              this.setState({
-                name: response.name,
-                userId: response.userID,
-                setEmail: response.email
-              }, () => {
-                this.handleEmail()
-              })
-          }
-        }
-      }
-   }
-   forgotpassword = () => {
-     this.setState({
-       forgotPassword:true
-     })
-   }
-   backSignIn = () => {
-     this.setState({
-       forgotPassword:false
-     })
-   }
-   componentClicked = () =>{
-    this.setState({ clicked: true })
-   }
+    }
+
+    forgotpassword = () => {
+        this.setState({
+            forgotPassword:true
+        })
+    }
+
+    backSignIn = () => {
+        this.setState({
+            forgotPassword:false
+        })
+    }
+
+    componentClicked = () =>{
+        this.setState({ clicked: true })
+    }
 
     responseGoogle = (googleUser) =>{
         let id_token = googleUser.getAuthResponse(),
@@ -154,7 +156,7 @@ class SignIn extends Component {
             name: googleUser.w3.ig,
             setEmail: googleUser.w3.U3
         }, () => {
-          this.handleEmail()
+            this.handleEmail()
         })
     }
 
@@ -165,6 +167,7 @@ class SignIn extends Component {
   render() {
     const { showEmailButton,forgotPassword,errMessage,emailSent } = this.state,
     { getFieldDecorator } = this.props.form;
+    
     return (
       	<div style={{backgroundColor: '#c2073f'}}>
       		<div className="container-fluid">
@@ -218,6 +221,14 @@ class SignIn extends Component {
 		                <span className="highlight"></span>
                     <span onClick={this.forgotpassword}><a style={{color:'white'}}>Forgot Password</a></span>
 		                </div>
+                    {!showEmailButton && <div className="row">
+                      <div className="col-md-4 col-sm-4 col-xs-3"></div>
+                      {!forgotPassword && <div className="col-md-4 col-sm-4 col-xs-6" style={{textAlign: 'center'}}>
+                        <button type="submit" className="login" onClick={this.handleSubmit}>Login</button>
+                      </div>}
+                      <div className="col-md-4 col-sm-4 col-xs-3"></div>
+                    </div>}
+
 		                </Form>}
                     {forgotPassword && <Form onSubmit={this.handleforgotpassword}>
                         <div>
@@ -287,14 +298,7 @@ class SignIn extends Component {
           <div className="col-md-3 col-sm-3 col-xs-3"></div>
         </div>
 
-				{!showEmailButton && <div className="row">
-					<div className="col-md-4 col-sm-4 col-xs-3"></div>
-					{!forgotPassword && <div className="col-md-4 col-sm-4 col-xs-6" style={{textAlign: 'center'}}>
-						<button type="submit" className="login" onClick={this.handleSubmit}>Login</button>
-					</div>}
-					<div className="col-md-4 col-sm-4 col-xs-3"></div>
-				</div>}
-
+				
         {showEmailButton && <div className="row">
           <div className="col-md-3 col-sm-3 col-xs-3"></div>
           <div className="col-md-6 col-sm-6 col-xs-6" style={{textAlign: 'center'}}>
