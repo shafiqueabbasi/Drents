@@ -15,10 +15,11 @@
   font-weight: bold;
 }
 .login{
-	  width: 55%;
+	  /*width: 55%;*/
     /* font-size: 180%; */
     font-weight: 450;
    	color: #c2073f;
+    border-radius: 2px
 }
 /* Shared */
 .loginBtn {

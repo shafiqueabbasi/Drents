@@ -12,7 +12,7 @@ exports.profileUpload = function(req, res, next){
     const postProfileData = new profile({
       firstName:profileData.firstName,
       lastName:profileData.lastName,
-      bio:profileData.bio,
+      bio:profileData.bio,      
       email:profileData.email,
       inputHeight:profileData.inputHeight,
       updatedImage:profileData.updatedImage,
@@ -63,7 +63,7 @@ exports.profileUpload = function(req, res, next){
       existingProfile.ribcage = profileData.ribcage;
       existingProfile.height = profileData.height;
       existingProfile.userId = profileData.userId;
-
+      existingProfile.createdAt = profileData.createdAt;
 
       existingProfile.save(function(err,doc){
      if(err){

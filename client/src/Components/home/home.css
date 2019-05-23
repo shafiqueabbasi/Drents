@@ -1,4 +1,23 @@
-
+@media only screen and (min-device-width : 360px) and (max-device-width : 660px){
+	.B_H{
+    	margin-top: 14%;
+	}
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
+	.B_H{
+    	margin-top: 12%;
+	}
+}
+@media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
+	.B_H{
+		margin-top: 9%;
+	}
+}
+@media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
+	.B_H{
+		margin-top: 5.9%;
+	}
+}
 
 @media only screen and (min-device-width : 360px) and (max-device-width : 660px){
 	.Banner{
@@ -7,7 +26,7 @@
 }
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
 	.Banner{
-    	width: 100%;
+    	width: 104%;
 	}
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){

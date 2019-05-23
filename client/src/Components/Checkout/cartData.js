@@ -104,9 +104,12 @@ class CartData extends Component {
 		return (
 			<div style={{marginTop:'10%'}}>
 				<div className="hidden-xs">
-					<div className="container" style={{width:'55%' , marginLeft: '19%'}}>
-						<div className="row">
-							<div className="col-md-12 col-sm-12 chainbelt1"><span className="chainbelt">Your Cart</span></div>
+					<div className="container">
+						<div className="row hidden-sm">
+							<div className="col-md-12 chainbelt1"><span className="chainbelt">Your Cart</span></div>
+						</div>
+						<div className="row visible-sm"style={{marginTop: '8%'}}>
+							<div className="col-sm-12 chainbelt1"><span className="chainbelt">Your Cart</span></div>
 						</div>
 						{finalArr && finalArr.map((elem, key) => {
 							return (
@@ -138,7 +141,7 @@ class CartData extends Component {
 														<p><span>${elem.priceDay} X {(+elem.rentDay + 1)} Days= </span></p>
 													</div>
 													<div className="col-md-4 col-sm-4 chainbelt7">
-														<p><span>{(+elem.priceDay) * (+elem.rentDay + 1)}</span></p>
+														<p><span>{((+elem.priceDay) * (+elem.rentDay + 1)).toFixed(2)}</span></p>
 													</div>
 												</div>
 												{/*<div className="row chainnbelt10">
@@ -229,7 +232,7 @@ class CartData extends Component {
 					                  <h4 className="modal-title" style={{color:'white',textAlign:'center'}}>Stripe</h4>
 					                </div>
 					                <div className="modal-body">
-					                {!paymentSuccess && <div className="row" style={{border:'1px solid gray',width:'87%',textAlign:'center',marginLeft:'35px',padding:'15px'}}>
+					                {!paymentSuccess && <div className="row househalt">
 										<div className="col-md-12">
 											<StripeData 
 												onError={this.onErrorCard}
@@ -254,7 +257,7 @@ class CartData extends Component {
 				</div>
 				<div className="visible-xs">
 					<div className="container">
-						<div className="row">
+						<div className="row" style={{marginTop: '9%'}}>
 							<div className="col-xs-12 chainbelt1"><span className="chainbelt">Your Cart</span></div>
 						</div>
 						{finalArr && finalArr.map((elem, key) => {
@@ -287,7 +290,7 @@ class CartData extends Component {
 														<p style={{fontSize: '20px'}}><span>${elem.priceDay} X {(+elem.rentDay + 1)} Days= </span></p>
 													</div>
 													<div className="col-xs-2 chainbelt7">
-														<p style={{fontSize: '20px'}}><span>{(+elem.priceDay) * (+elem.rentDay + 1)}</span></p>
+														<p style={{fontSize: '20px'}}><span>{((+elem.priceDay) * (+elem.rentDay + 1)).toFixed(2)}</span></p>
 													</div>
 												</div>
 												{/*<div className="row chainnbelt10">
@@ -309,7 +312,7 @@ class CartData extends Component {
 								</div>
 							)
 						})}
-						<div className="row apex1">
+						{/*<div className="row apex1">
 							<div className="col-xs-2"></div>
 							<div className="col-xs-4">
 								<p><span>Subtotal</span></p>
@@ -317,17 +320,53 @@ class CartData extends Component {
 							<div className="col-xs-4 chainbelt7">
 								<p><span>{price}</span></p>
 							</div>
+						</div>*/}
+						<div className="row apex1">
+							<div className="col-xs-12">
+								<div className="row">
+									<div className="col-xs-9">
+										Net Amount:
+									</div>
+									<div className="col-xs-3" style={{padding: '0px'}}>
+										{price}
+									</div>
+									<div className="col-xs-9">
+										Tax:
+									</div>
+									<div className="col-xs-3" style={{padding: '0px'}}>
+										1.48%
+									</div>
+									<div className="col-xs-9">
+										Drent fee:
+									</div>
+									<div className="col-xs-3" style={{padding: '0px'}}>
+										2%
+									</div>
+									<div className="col-xs-9">
+										Stripe fee:
+									</div>
+									<div className="col-xs-3" style={{padding: '0px'}}>
+										2.9%
+									</div>
+									<div className="col-xs-9">
+										Total:
+									</div>
+									<div className="col-xs-3" style={{padding: '0px'}}>
+										{finalPrice}
+									</div>
+								</div>
+							</div>
 						</div>
-						<div className="row">
+						<div className="row" style={{marginTop: '10px'}}>
 							<div className="col-xs-12 chainbelt1">
-								<button className="btn apex2" data-toggle="modal" data-target="#stripeCard">
+								<button className="btn apex2" data-toggle="modal" data-target="#stripeCardM">
 									<span className="apex3">
 										CHECKOUT
 									</span>
 								</button>
 							</div>
 						</div>
-						<div id="stripeCard" className="modal fade" role="dialog" style={{marginTop:'5%'}}>
+						<div id="stripeCardM" className="modal fade" role="dialog" style={{marginTop:'5%'}}>
 							<div className="modal-dialog">
 								<div className="modal-content" style={{backgroundColor:'white'}}>
 					                <div className="modal-header" style={{background:'#8080808c'}}>
@@ -335,14 +374,23 @@ class CartData extends Component {
 					                  <h4 className="modal-title" style={{color:'white',textAlign:'center'}}>Stripe</h4>
 					                </div>
 					                <div className="modal-body">
-					                <div className="row" style={{border:'1px solid gray',width:'87%',textAlign:'center',marginLeft:'35px',padding:'15px'}}>
-										<div className="col-md-12">
-											<StripeData
-												onError={this.onErrorCard}
-												onChange={this.onSuccessCard}
-											 />
-										</div>
-									</div>
+						                {!paymentSuccess && <div className="row househalt">
+											<div className="col-md-12">
+												<StripeData
+													onError={this.onErrorCard}
+													onChange={this.onSuccessCard}
+													data={data}
+												 />
+											</div>
+											{msg.length > 0 && <div>
+												{msg}
+											</div>}
+										</div>}
+										{paymentSuccess && <div className="row">
+											<div className="col-md-12" style={{textAlign:'center'}}>
+													<img src="../images/paid.gif" style={{width:'20%'}} />
+											</div>
+										</div>}
 					                </div>
 								</div>
 							</div>

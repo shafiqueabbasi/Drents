@@ -102,6 +102,7 @@ exports.signup = function(req, res, next){
   const password = req.body.password;
   const firstname = req.body.firstname;
   const lastname = req.body.lastname;
+  const createdAt = moment().format('L');
 
   if(!email || !password){
     return res.status(422).send({error:'you must provide email and password'})
@@ -121,7 +122,8 @@ exports.signup = function(req, res, next){
         password:password,
         firstname:firstname,
         lastname:lastname,
-        randomno:rand
+        randomno:rand,
+        createdAt
       });
 
       user.save(function(err){
@@ -205,7 +207,8 @@ exports.signup = function(req, res, next){
         firstName: firstname,
         lastName: lastname,
         email: email,
-        userId: user._id
+        userId: user._id,
+        createdAt
       });
 
       postProfileData.save(function(err, doc){

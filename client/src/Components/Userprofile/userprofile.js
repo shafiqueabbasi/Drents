@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import { connect } from 'react-redux';
 import sha1 from "sha1";
 import superagent from "superagent";
+import { isBrowser } from "react-device-detect";
 
 class UserProfile extends Component {
 	constructor(props) {
@@ -18,6 +19,7 @@ class UserProfile extends Component {
         	profile: [],
         	loading: true,
         	updatedImage: '',
+        	bio: '',
         	email: '',
 			firstName: '',
 			lastName: '',
@@ -34,6 +36,7 @@ class UserProfile extends Component {
 			height: '',
 			userId: '',
 			_id: '',
+			createdAt: '',
 			rentals: [],
 			rented: [],
 			rentalTab: true,
@@ -76,7 +79,6 @@ class UserProfile extends Component {
 		if(data.code && data.code == 200){
 			this.ratingFunc(data, id);
 			this.rentedRentals(data, id);
-
 			for(var el in data.profile[0]){
 		        this.setState({ [el]: data.profile[0][el] });
 	        }
@@ -114,17 +116,18 @@ class UserProfile extends Component {
         let review = 0,
         rentalReviews = [],
         rentedReviews = [],
+        filterData = [],
         dressData = data.dress.length > 0 && data.dress.map((elem) => {
             return elem._id;
-        }),
-        filterData = data.review.length > 0 && data.review.map((elem) => {
+        });
+        data.review.length > 0 && data.review.map((elem) => {
             if((elem.rentedId === id) || (elem.rentalId === id)){
-                return elem._id
+                filterData.push(elem._id)
             }
         });
         if(dressData){
             data.review.map((elem) => {    
-                if(filterData.includes(elem._id)){
+                if(filterData.includes(elem._id)){        			               
                     if(elem.rentalId === id){
                         rentalReviews.push({
                             userId: elem.rentedId,
@@ -148,7 +151,7 @@ class UserProfile extends Component {
                             msg: elem.rentalMsg,
                             img: elem.rentalImg                        
                         });
-                        review += +elem.rentalRate;
+                        review += isNaN(+elem.rentalRate) ? 0 : +elem.rentalRate;
                     }                    
                 }
             })
@@ -207,12 +210,12 @@ class UserProfile extends Component {
 		let updatedImage = await this.uploadFile(e).then((result) => {
             return result.body.url
         });
-        const {email, firstName, lastName, inputHeight, weight, bustSize, height, bodyType,
-			ocassionAttendMost, typicalJeanSize, bust, hips, torso, ribcage, userId, _id} = this.state;
+        const {email, bio, firstName, lastName, inputHeight, weight, bustSize, height, bodyType,
+			ocassionAttendMost, typicalJeanSize, bust, hips, torso, ribcage, userId, _id, createdAt} = this.state;
 		let obj = {
-			email, firstName, lastName, inputHeight, weight, bustSize, height, bodyType,
+			email, bio, firstName, lastName, inputHeight, weight, bustSize, height, bodyType,
 			ocassionAttendMost, typicalJeanSize, bust, hips, torso, ribcage, userId, updatedImage,
-			profileId: _id
+			profileId: _id, createdAt
 		}
         let res = await HttpUtils.post('uploadprofile', obj, this.props.user.token);
 		if(res && res.code && res.code == 200){
@@ -258,7 +261,7 @@ class UserProfile extends Component {
     //-----------------cloudnary function end ------------------
 
 	render() {
-		const { profile, review, dressData, orderhistory, updatedImage, rentals, rented, rentalTab, rentedTab, filterDresses, filterKey,archivestatus } = this.state,
+		const { profile, review, dressData, orderhistory, updatedImage, rentals, rented, rentalTab, rentedTab, filterDresses, filterKey, archivestatus, bio, createdAt } = this.state,
 		{ user } = this.props,
 		id = this.props.match.params.value,
 		userName = profile.length > 0 && profile[0].firstName.length > 0 ? profile[0].firstName : user && user.username;
@@ -374,19 +377,19 @@ class UserProfile extends Component {
 									</div>
 
 									<div className="rovil1" style={{paddingLeft: '0px'}}>
-										<h4 className="hbikes">London</h4>
+										{/*<h4 className="hbikes">London</h4>*/}
 									</div>
 
 									<div className="col-md-12 shut2">
-										<h4 style={{fontFamily: 'crimsontext'}}>Working as a Designer want to rent every thing which is in my wardrobe.</h4>
+										<h4 style={isBrowser ? {fontFamily: 'crimsontext', width: '80%'} : {fontFamily: 'crimsontext'}}>{bio.length > 0 ? bio : 'No description added yet'}.</h4>
 									</div>
 
 									<div>
 										<div className="col-md-7 col-sm-8" style={{paddingLeft: '0px'}}>
-											<h4 style={{fontFamily: 'crimsontext'}}>member since 2019-04-18</h4>
+											<h4 style={{fontFamily: 'crimsontext'}}>member since {createdAt}</h4>
 										</div>
 										<div className="col-md-5 col-sm-4" style={{paddingLeft: '0px'}}>
-											<h4 style={{fontFamily: 'crimsontext'}}>Size Wear :M</h4>
+											<h4 style={{fontFamily: 'crimsontext'}}>Size Wear :{this.state.typicalJeanSize}</h4>
 										</div>
 									</div>
 
