@@ -18,10 +18,17 @@ class SecondPage extends Component {
                   <div className="col-xs-1 col-sm-1 col-md-1 col-lg-1">
                     <img src="../images/arrow.png" className="arrowimg"/>
                   </div>
-                  <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                  <div className="col-xs-9 col-sm-3 col-md-2 col-lg-2">
                     <p className="smaltext">SHOW CATALOG</p>
                   </div>
                 </div>
+              </div>
+              <div className="row">
+                <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
+                <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4" style={{textAlign:'center'}}>
+                    <img src="../images/scroll-logo.png" className="scrollimag"/>
+                </div>
+                <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
               </div>
         </div>
     </div>

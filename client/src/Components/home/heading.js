@@ -18,8 +18,18 @@ class Heading extends Component {
       return <Redirect to={{pathname:'/product', state:this.state.filter}} />
     }
     return (
-      <div className="App">
-      		<div className="container">
+      <div className="">
+          <p className="weldrent">Welcome to Drent</p><br/>
+          <p className="subtext">With Drent, you can get your perfect dress at a fraction of the cost!</p>
+      </div>
+    );
+
+  }
+}
+
+export default Heading;
+
+      		{/*<div className="container">
 	            <div className="Heading22">
 	                <h1 className="headings22">Choose Your Occasion</h1>
 	                <img src='../images/bar.png' style={{marginTop:'-1%'}}/>
@@ -58,142 +68,4 @@ class Heading extends Component {
                           </div>
                     </div>
                 </div>
-            </div><br/><br/>
-
-
-      </div>
-    );
-
-  }
-}
-
-export default Heading;
-
-
-
-
-
-
-      	{/*<div className="container-fluid">
-		    <div className="container-fluid">
-		      	<div className="Heading">
-		      		<h1 className="headings">Choose Your Occasion</h1>
-		      		<img alt="" src='./images/bar.png'/>
-		      	</div>
-
-		      	<div className="container-fluid">
-		      		<div className="col-md-12 hidden-sm">
-		      			<div className="col-md-6">
-		      				<div className="col-md-6">
-		      					<div className="row" style={{margin: '0'}}>
-		  							<div className="col-md-12 col-xs-12">
-		  								<img alt="" src="https://res.cloudinary.com/dxk0bmtei/image/upload/v1550646990/admin1_w8m7wf.jpg" className="img"/>
-		  							</div>
-		  							<div className="col-md-12 col-xs-12">
-		  								<div style={{textAlign: 'center'}}>
-		  									<h3 className="pichead">Wedding</h3>
-		  								</div>
-		  							</div>
-		      					</div>
-		      				</div>
-		      				<div className="col-md-6">
-		      					<div className="row" style={{margin: '0'}}>
-		      						<div className="col-md-12 col-sm-12">
-		      							<img alt="" src="https://res.cloudinary.com/dxk0bmtei/image/upload/v1550646990/admin1_w8m7wf.jpg" className="imgs"/>
-		      						</div>
-		      						<div className="col-md-12">
-		      							<div style={{width: '160px', textAlign: 'center'}}>
-		      								<h3 className="pichead">Party</h3>
-		      							</div>
-		      						</div>
-		      					</div>
-		      				</div>
-
-		      			</div>
-		      			<div className="col-md-6">
-
-		      				<div className="col-md-6">
-		      					<div className="row" style={{margin: '0'}}>
-		  							<div className="col-md-12 col-xs-12">
-		  								<img alt="" src="https://res.cloudinary.com/dxk0bmtei/image/upload/v1550646990/admin1_w8m7wf.jpg" className="img"/>
-		  							</div>
-		  							<div className="col-md-12 col-xs-12">
-		  								<div style={{width: '165px',textAlign: 'center'}}>
-		  									<h3 className="pichead">Corporate Event</h3>
-		  								</div>
-		  							</div>
-		      					</div>
-		      				</div>
-		      				<div className="col-md-6">
-		      					<div className="row" style={{margin: '0'}}>
-		      						<div className="col-md-12">
-		      							<img alt="" src="https://res.cloudinary.com/dxk0bmtei/image/upload/v1550646990/admin1_w8m7wf.jpg" className="imgs"/>
-		      						</div>
-		      						<div className="col-md-12">
-		      							<div style={{width: '200px', textAlign: 'center'}}>
-		      								<h3 className="pichead">Spacial Occasion</h3>
-		      							</div>
-		      						</div>
-		      					</div>
-		      				</div>
-		      			</div>
-		      		</div>
-
-		      		<div className="visible-sm">
-		      			<div className="row">
-		      				<div className="col-sm-6">
-		      					<div className="row">
-			      					<div className="col-sm-6">
-			      						<div className="col-sm-12">
-		  									<img alt="" src="https://res.cloudinary.com/dxk0bmtei/image/upload/v1550646990/admin1_w8m7wf.jpg" className="img"/>
-		  								</div>
-		  								<div className="col-sm-12">
-			  								<div style={{width: '165px',textAlign: 'center'}}>
-			  									<h3 className="pichead">Wedding</h3>
-			  								</div>
-		  								</div>
-			      					</div>
-			      					<div className="col-sm-6">
-			      						<div className="col-sm-12">
-		      								<img alt="" src="https://res.cloudinary.com/dxk0bmtei/image/upload/v1550646990/admin1_w8m7wf.jpg" className="imgs"/>
-		      							</div>
-		      							<div className="col-sm-12">
-			      							<div style={{width: '160px', textAlign: 'center'}}>
-			      								<h3 className="pichead">Party</h3>
-			      							</div>
-		      							</div>
-			      					</div>
-		      					</div>
-		      				</div>
-		      				<div className="col-sm-6">
-		      					<div className="row">
-		      						<div className="col-sm-6">
-		      							<div className="col-sm-12">
-		  									<img alt="" src="https://res.cloudinary.com/dxk0bmtei/image/upload/v1550646990/admin1_w8m7wf.jpg" className="img"/>
-		  								</div>
-		  								<div className="col-sm-12">
-			  								<div style={{width: '165px',textAlign: 'center'}}>
-			  									<h3 className="pichead">Corporate Event</h3>
-			  								</div>
-		  								</div>
-		      						</div>
-		      						<div className="col-sm-6">
-		      							<div className="col-sm-12">
-		      								<img alt="" src="https://res.cloudinary.com/dxk0bmtei/image/upload/v1550646990/admin1_w8m7wf.jpg" className="imgs"/>
-		      							</div>
-			      						<div className="col-sm-12">
-			      							<div style={{width: '200px', textAlign: 'center'}}>
-			      								<h3 className="pichead">Spacial Occasion</h3>
-			      							</div>
-			      						</div>
-		      						</div>
-		      					</div>
-		      				</div>
-	      				</div>
-	      			</div>
-		      		</div>
-		      		<div className="col-md-12"><hr/></div>
-				</div>
-			</div>
-
-*/}
+            </div><br/><br/>*/}

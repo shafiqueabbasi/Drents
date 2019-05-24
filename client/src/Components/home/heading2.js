@@ -4,8 +4,18 @@ import './home.css';
 class Heading2 extends Component {
   	render() {
     return (
-    	<div className="App">
-	    		<div className="Heading">
+    	<div>
+	    	ss
+    	</div>
+    	);
+
+  }
+}
+
+export default Heading2;
+
+
+	{/*<div className="Heading">
 	      			<h1 className="headings" style={{fontFamily:'Stalemate cursive'}}>About Drent</h1>
 	      			<img src='./images/bar.png' style={{marginTop:'-1%'}}/>
 	      		</div>
@@ -19,11 +29,4 @@ class Heading2 extends Component {
 	    					<img src="./images/how-work.png" className="panel2how" />
 	    				</div>
 	    			</div>
-	    		</div><br/>
-    	</div>
-    	);
-
-  }
-}
-
-export default Heading2;
+	    		</div><br/>*/}
