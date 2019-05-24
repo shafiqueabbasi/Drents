@@ -32,20 +32,11 @@ class Home extends Component {
   render() {
     const { data,loading } = this.state;
     return (
-      <div className="App" style={{backgroundImage: "url('./images/swrils.png')"}}>
+      <div className="App">
         {/*<Header/>*/}
         {loading && <div className="loading">Loading&#8230;</div>}
         <Banner/>
-        <Heading/>
-        <Heading2/>
-        <Heading3/>
-        <Gallery
-         label="Featured Rentals"
-         data={data.slice(0, 3)}
-         widthProps=''
-             />
-        <Heading7/>
-
+        
         {/*<Headingf8/>*/}
 
       </div>
