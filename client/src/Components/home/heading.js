@@ -18,9 +18,12 @@ class Heading extends Component {
       return <Redirect to={{pathname:'/product', state:this.state.filter}} />
     }
     return (
-      <div className="">
+      <div className="" style={{ backgroundImage: "url('../images/welcome-background-left.png')", 
+      backgroundSize: '',
+      backgroundRepeat: 'no-repeat'
+    }}>
           <p className="weldrent">Welcome to Drent</p><br/>
-          <p className="subtext">With Drent, you can get your perfect dress at a fraction of the cost!</p>
+          <p className="subtext">With Drent, you can get your perfect dress at a fraction of the cost!</p><br/><br/>
       </div>
     );
 

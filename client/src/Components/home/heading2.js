@@ -5,7 +5,43 @@ class Heading2 extends Component {
   	render() {
     return (
     	<div>
-	    	ss
+	    	<div className="container">
+	    		<div className="row">
+	    			<div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+	    				<p className="catetext">SHOP BY CATEGORY</p>
+	    				<p className="bigcatetext">Categories</p>
+	    			</div>
+	    			<div className="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+	    				<div className="row">
+	    					<div className="col-xs-12 col-sm-4 col-md-4 col-lg-4 divpurple">
+	    						<img src="../images/casual-dress-inactive.png" className="dresimage" />
+	    						<p className="casualtext">Casual</p>
+	    						<img src="../images/arrow.png" className="arimag"/>
+	    					</div>
+	    					<div className="col-xs-12 col-sm-4 col-md-4 col-lg-4 divpurple">
+	    						<img src="../images/semi-formal-dress-inactive.png" className="dresimage" />
+	    						<p className="samitext">Semi Formal</p>
+	    						<img src="../images/arrow.png" className="arimag"/>
+	    					</div>
+	    					<div className="col-xs-12 col-sm-4 col-md-4 col-lg-4 divpurple">
+	    						<img src="../images/formal-dress-inactive.png" className="dresimage" />
+	    						<p className="casualtext">Formal</p>
+	    						<img src="../images/arrow.png" className="arimag"/>
+	    					</div>
+	    					<div className="col-xs-12 col-sm-4 col-md-4 col-lg-4 divpurple">
+	    						<img src="../images/casual-dress-inactive.png" className="dresimage" />
+	    						<p className="samitext">Heavy formal</p>
+	    						<img src="../images/arrow.png" className="arimag"/>
+	    					</div>
+	    					<div className="col-xs-12 col-sm-4 col-md-4 col-lg-4 divpurple">
+	    						<img src="../images/semi-formal-dress-inactive.png" className="dresimage" />
+	    						<p className="casualtext">Bridal</p>
+	    						<img src="../images/arrow.png" className="arimag"/>
+	    					</div>
+	    				</div>
+	    			</div>
+	    		</div>
+	    	</div>
     	</div>
     	);
 

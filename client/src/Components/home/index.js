@@ -39,6 +39,7 @@ class Home extends Component {
         <Heading />
         {/*<Headingf8/>*/}
         <Heading2/>
+        <Heading3/>
       </div>
     );
 
