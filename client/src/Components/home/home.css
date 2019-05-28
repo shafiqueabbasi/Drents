@@ -74,7 +74,7 @@
 
 {/*New Banner CSS*/}
 
-@media only screen and (min-device-width : 360px){
+@media only screen and (min-device-width : 320px){
 	.banneralign{
 		margin-top: -30%;
 		background-size: cover;
@@ -367,8 +367,58 @@
 	font-family: Playfair Display;
 	color: #353535;
 }
-.iconimg{
-	height: 100px;
+@media only screen and (min-device-width : 360px){
+	.iconimg{
+		height: 100px;
+	}
+	.iconimg2{
+		height: 100px;
+	}
+	.iconimg3{
+		height: 100px;
+	}
+}
+@media only screen and (min-device-width : 768px){
+	.iconimg{
+	    height: 100px;
+    	margin-left: -35%;
+	}
+	.iconimg2{
+		height: 100px;
+		margin-left: -40%;
+	}
+	.iconimg3{
+		height: 90px;
+		margin-left: -45%;
+	}
+}
+@media only screen and (min-device-width : 1024px){
+	.iconimg{
+		height: 100px;
+    	margin-left: -16%;
+	}
+	.iconimg2{
+	    height: 100px;
+    	margin-left: -22%;
+	}
+	.iconimg3{
+		height: 86px;
+   		 margin-left: -24%;
+	}
+}
+@media only screen and (min-device-width : 1366px){
+	.iconimg{
+		height: 100px;
+		margin-left: -30%;
+	}
+	.iconimg2{
+		height: 100px;
+		margin-left: -41%;
+	}
+	.iconimg3{
+		height: 90px;
+    	margin-left: -40%;
+	}
 }
 .chosedres{
 	font-size: 25px; 
@@ -380,7 +430,29 @@
 	color: #808080;
 }
 
+.imgwidth{
+	height: 280px;
+}
+
 {/*New heading3 panal ENDS*/}
+
+{/*New heading4new panal*/}
+
+.featuredhead{
+	font-size: 40px;
+	font-family: Playfair Display;
+	color: #353535;
+}
+.featuresub{
+	font-size: 12px;
+	font-family: Tajawal;
+	color: #808080;
+	letter-spacing: 5px;
+	margin-left: 2px;
+	margin-bottom: 3px;
+}
+
+{/*New heading4new panal ENDS*/}
 
 @media only screen and (min-device-width : 360px) and (max-device-width : 660px){
 	.mnp{

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './home.css';
 
 class Heading3 extends Component {
   render() {
@@ -7,42 +8,42 @@ class Heading3 extends Component {
     	<div>
       		  <div className="container">
               <div className="row">
-                  <div className="col-xs-12 col-sm-4 col-md-4 col-md-4"></div>
-                  <div className="col-xs-12 col-sm-4 col-md-4 col-md-4">
+                  <div className="col-xs-12 col-sm-3 col-md-4 col-lg-4"></div>
+                  <div className="col-xs-12 col-sm-6 col-md-5 col-lg-4">
                       <p className="howwork">HOW IT WORKS</p>
                       <p className="rentwork">How Drent Works</p>
                       <div className="row">
-                        <div className="col-md-3">
+                        <div className="col-sm-3 col-md-3 col-lg-3">
                             <img src="../images/choose-your-dress-icon.png" className="iconimg" />
                         </div>
-                        <div className="col-md-9">
+                        <div className="col-sm-9 col-md-9 col-lg-9">
                             <p className="chosedres">1.Choose a dress</p>
                             <p className="chosedetail">Browse our catalog of hundreds of available dresses from our users.
                                             Check out the details, confirm the size and move on to the next step.</p>
                         </div>
                       </div>
                       <div className="row">
-                        <div className="col-md-3">
-                            <img src="../images/place-order-icon.png" className="iconimg" />
+                        <div className="col-sm-3 col-md-3 col-lg-3">
+                            <img src="../images/place-order-icon.png" className="iconimg2" />
                         </div>
-                        <div className="col-md-9">
+                        <div className="col-sm-9 col-md-9 col-lg-9">
                             <p className="chosedres">2.Place your order</p>
                             <p className="chosedetail">Browse our catalog of hundreds of available dresses from our users.
                                             Check out the details, confirm the size and move on to the next step.</p>
                         </div>
                       </div>
                       <div className="row">
-                        <div className="col-md-3">
-                            <img src="../images/return-repeat-icon.png" className="iconimg" />
+                        <div className="col-sm-3 col-md-3 col-lg-3">
+                            <img src="../images/return-repeat-icon.png" className="iconimg3" />
                         </div>
-                        <div className="col-md-9">
+                        <div className="col-sm-9 col-md-9 col-lg-9">
                             <p className="chosedres">3.Return and repeat</p>
                             <p className="chosedetail">Browse our catalog of hundreds of available dresses from our users.
                                             Check out the details, confirm the size and move on to the next step.</p>
                         </div>
                       </div>
                   </div>
-                  <div className="col-xs-12 col-sm-4 col-md-4 col-md-4"></div>             
+                  <div className="col-xs-12 col-sm-3 col-md-3 col-md-4"></div>             
               </div>
             </div>	
     	</div>
