@@ -133,7 +133,7 @@
 }
 .lH_filter{
   line-height: 0px;
-  font-family: crimsontext;
+  font-family: Playfair Display;
 }
 
 /*.dress1{
@@ -447,7 +447,7 @@
   /*background-color: #ccc;*/
 }
 
-/* When the radio button is checked, add a blue background */
+ When the radio button is checked, add a blue background 
 .container input:checked ~ .checkmark {
   background-color: #c2073f;
 }
@@ -473,6 +473,8 @@
   border-radius: 50%;
   background: white;
 }
+
+
 .circle1{
   border-radius: 50px;
   border: 1px solid red;

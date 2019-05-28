@@ -8,7 +8,7 @@ class FilterPage extends Component {
   render() {
 
     return (
-		<div className="App" style={{backgroundImage: "url('./images/swrils.png')"}}>
+		<div className="App">
 			<FilterPanel {...this.props}/>
 		</div>
     );

@@ -9,15 +9,14 @@ class Heading4 extends Component {
     return (
     	<div className="App"><br/><br/>
     		{label && label.length > 0 && <div className="Heading">
-      			<h1 className="headings">{label}</h1>
-      			<img src='../images/bar.png' style={{marginTop:'-1%'}}/>
+      			<h1 className="headings" style={{textAlign: 'left', fontFamliy: 'Playfair Display'}}>{label}</h1>
       		</div>}
 	    		<div className="container-fluid">
 	    			<div className="col-md-12 col-sm-12 col-xs-12">
 	    				<div className="row" style={{textAlign:'center'}}>
 	    					{data && data.map((elem, key) => {
 	    						return(
-	    							<div className="col-md-4 col-xs-12 topmargin">
+	    							<div className="col-md-3 col-xs-12 topmargin">
 			    						<Link key={key} to={{pathname: `/detail`, state: {elem, data}}}>
 			    							<img src={elem.fileList[0]} className="zoom" style={{height: '307px'}} />
 		    							</Link>

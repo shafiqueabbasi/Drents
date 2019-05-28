@@ -31,11 +31,6 @@ class UploadDress extends Component {
         previewImage: '',
         fileList: [],
         typeArr: [
-            'Wedding',
-            'Party',
-            'Corporate',
-            'Special Occasion',
-            'Family Dinner',
             'Causal',
             'Bridal',
             'Sami Formal',

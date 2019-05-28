@@ -18,8 +18,8 @@ class Filterpanel extends Component {
         	mainFilter: '',
         	weather: '',
         	size: '',
-        	label: 'All Products',
-        	mainFilterArr: ["Wedding", "Party", "Corporate", "Special Ocasion", "Family Dinner"],
+        	label: 'Dresses avaiable',
+        	mainFilterArr: ["Casual", "Semi Formal", "Formal", "Heavy Formal", "Bridal"],
         	weatherArr: ["ColdWeather", "WarmWeather"],
         	weatherArrM: ["Cold Weather", "Warm Weather"],
         	sizesArr: ["XS", "S", "M", "XL", "L", "XXL"],
@@ -124,7 +124,7 @@ class Filterpanel extends Component {
   		const { size, weather, mainFilter, filtered, label } = this.state;
   		
 	    return (
-	    	<div className="App" style={{marginTop: '90px',backgroundImage: "url('./images/swrils.png')"}}>
+	    	<div className="App">
 	    		{this.state.loading && <div className="loading">Loading&#8230;</div>}
 	    		<div  className="container-fluid">
 	    			<div className="col-md-12 col-sm-12 hidden-xs">
@@ -132,14 +132,48 @@ class Filterpanel extends Component {
 	    				<div className="col-md-2 col-sm-2" style={{padding: 'initial'}}>
 	    					<div className="more">
 	    						<div className="row">
-	    							<h3 style={{fontFamily: 'crimsontext'}}>Filters</h3><br/>
-	    							<h5 id="" onClick={(e) => this.handleMainItems(e, "")} className="lH_filter"><a href="" className="C_P">All Products</a></h5><br/>
-	    							<h5 id="Wedding" onClick={(e) => this.handleMainItems(e, "Wedding")} className="lH_filter"><a href="" className="C_P">Wedding</a></h5><br/>
-	    							<h5 id="Party" onClick={(e) => this.handleMainItems(e, "Party")} className="lH_filter"><a href="" className="C_P">Party</a></h5><br/>
-	    							<h5 id="Corporate" onClick={(e) => this.handleMainItems(e, "Corporate")} className="lH_filter"><a href="" className="C_P">Corporate</a></h5><br/>
-	    							<h5 id="Special Ocasion" onClick={(e) => this.handleMainItems(e, "Special Ocasion")} className="lH_filter" ><a href="" className="C_P">Special Ocasion</a></h5><br/>
-	    							<h5 id="Family Dinner" onClick={(e) => this.handleMainItems(e, "Family Dinner")} className="lH_filter"><a href="" className="C_P">Family Dinner</a></h5>
-	    							<div className="col-md-9  col-sm-12" style={{paddingBottom: '15px', margin: '40px 0 20px',borderBottom: '1px solid black'}}></div>
+	    							<h3 style={{fontFamily: 'crimsontext'}}>Filters<br/><br/>Categories</h3><br/>
+
+
+	    							
+									 
+
+
+
+	    							<label className="container1"><h5 id="Casual" onClick={(e) => this.handleMainItems(e, "Casual")} className="lH_filter"><a href="" className="C_P">Casual</a></h5>
+										<input type="checkbox"></input>
+										<span className="checkmark1"></span>
+									</label><br/>
+
+									<label className="container1"><h5 id="Semi Formal" onClick={(e) => this.handleMainItems(e, "Semi Formal")} className="lH_filter"><a href="" className="C_P">Semi Formal</a></h5>
+										<input type="checkbox"></input>
+										<span className="checkmark1"></span>
+									</label><br/>
+
+									<label className="container1"><h5 id="Formal" onClick={(e) => this.handleMainItems(e, "Formal")} className="lH_filter"><a href="" className="C_P">Formal</a></h5>
+										<input type="checkbox"></input>
+										<span className="checkmark1"></span>
+									</label><br/>
+
+									<label className="container1"><h5 id="Heavy Formal" onClick={(e) => this.handleMainItems(e, "Heavy Formal")} className="lH_filter" ><a href="" className="C_P">Heavy Formal</a></h5>
+										<input type="checkbox"></input>
+										<span className="checkmark1"></span>
+									</label><br/>
+
+									<label className="container1"><h5 id="Bridal" onClick={(e) => this.handleMainItems(e, "Bridal")} className="lH_filter"><a href="" className="C_P">Bridal</a></h5>
+										<input type="checkbox"></input>
+										<span className="checkmark1"></span>
+									</label><br/>
+
+
+	    							{/*<h5 id="" onClick={(e) => this.handleMainItems(e, "")} className="lH_filter"><a href="" className="C_P">All Products</a></h5><br/>
+
+	    							<h5 id="Wedding" onClick={(e) => this.handleMainItems(e, "Wedding")} className="lH_filter"><a href="" className="C_P">Casual</a></h5><br/>
+	    							<h5 id="Party" onClick={(e) => this.handleMainItems(e, "Party")} className="lH_filter"><a href="" className="C_P">Semi Formal</a></h5><br/>
+	    							<h5 id="Corporate" onClick={(e) => this.handleMainItems(e, "Corporate")} className="lH_filter"><a href="" className="C_P">Formal</a></h5><br/>
+	    							<h5 id="Special Ocasion" onClick={(e) => this.handleMainItems(e, "Special Ocasion")} className="lH_filter" ><a href="" className="C_P">Heavy Formal</a></h5><br/>
+	    							<h5 id="Family Dinner" onClick={(e) => this.handleMainItems(e, "Family Dinner")} className="lH_filter"><a href="" className="C_P">Bridal</a></h5>
+	    							<div className="col-md-9  col-sm-12" style={{paddingBottom: '15px', margin: '40px 0 20px',borderBottom: '1px solid black'}}></div>*/}
 	    							<div className="row col-md-12" style={{padding: '0px'}}>
 
 	    								<h3 style={{fontFamily: 'crimsontext'}}>Sort By&emsp;&nbsp;-</h3><br/>
@@ -156,7 +190,7 @@ class Filterpanel extends Component {
 	    								<Filter id="high and low" heading="High and Low" onChange={this.handleClick}/>
 	    								<Filter id="low and high" heading="Low and High" onChange={this.handleClick}/>*/}
 	    								<Slider range min={500} max={500} step={500} defaultValue={[1000, 3000]} onChange={this.onChange} />
-										<div className="col-md-10 col-sm-10" style={{paddingBottom: '15px', margin: '40px 0 20px',borderBottom: '1px solid black'}}></div>
+										{/*<div className="col-md-10 col-sm-10" style={{paddingBottom: '15px', margin: '40px 0 20px',borderBottom: '1px solid black'}}></div>*/}
 									</div>
 								</div>
 
@@ -182,7 +216,7 @@ class Filterpanel extends Component {
 	    								<h3 style={{fontFamily: 'crimsontext'}}>Weather&emsp;-</h3><br/>
 	    								<RadioInput label="Cold Weather" for="ColdWeather" name="weather" onChange={(e) => this.handleWeather('Cold Weather')} />
 	    								<RadioInput label="Warm Weather" for="WarmWeather" name="weather" onChange={(e) => this.handleWeather('Warm Weather')} />
-										<div className="col-md-10 col-sm-10" style={{paddingBottom: '15px', margin: '40px 0 20px',borderBottom: '1px solid black'}}></div>
+										{/*<div className="col-md-10 col-sm-10" style={{paddingBottom: '15px', margin: '40px 0 20px',borderBottom: '1px solid black'}}></div>*/}
 									</div>
 								</div>
 								<div className="row">
@@ -194,7 +228,7 @@ class Filterpanel extends Component {
 	    								<RadioInput label="X Large" for="XL" name="sizes" onChange={(e) => this.handleSize(e.target.id)}/>
 	    								<RadioInput label="Large" for="L" name="sizes" onChange={(e) => this.handleSize(e.target.id)}/>
 	    								<RadioInput label="XX Large" for="XXL" name="sizes" onChange={(e) => this.handleSize(e.target.id)}/>
-										<div className="col-md-10 col-sm-10" style={{paddingBottom: '15px', margin: '40px 0 20px',borderBottom: '1px solid black'}}></div>
+										{/*<div className="col-md-10 col-sm-10" style={{paddingBottom: '15px', margin: '40px 0 20px',borderBottom: '1px solid black'}}></div>*/}
 									</div>
 								</div>
 							</div>
@@ -242,18 +276,18 @@ class Filterpanel extends Component {
 											<div className="panel-heading" role="tab" id="headingTwo">
 												<h3 className="panel-title" style={{fontFamily: 'crimsontext'}}>
 												    <a className="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseTwo">
-												        Filters
+												        Filters<br/>Categories
 												    </a>
 												</h3>
 											</div>
 											<div id="collapseOne" className="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
 												<div className="panel-body" style={{fontFamily: 'crimsontext'}}>
 													<h4 id="" onClick={(e) => this.handleMainItems(e, "")} style={{fontFamily: 'crimsontext'}}>All Products</h4><br/>
-												    <h4 id="Wedding" onClick={(e) => this.handleMainItems(e, "Wedding")} style={{fontFamily: 'crimsontext'}}>Wedding</h4><br/>
-		    										<h4 id="Party" onClick={(e) => this.handleMainItems(e, "Party")} style={{fontFamily: 'crimsontext'}}>Party</h4><br/>
-		    										<h4 id="Corporate" onClick={(e) => this.handleMainItems(e, "Corporate")} style={{fontFamily: 'crimsontext'}}>Corporate</h4><br/>
-		    										<h4 id="Special Ocasion" onClick={(e) => this.handleMainItems(e, "Special Ocasion")} style={{fontFamily: 'crimsontext'}}>Special Ocasion</h4><br/>
-		    										<h4 id="Family Dinner" onClick={(e) => this.handleMainItems(e, "Family Dinner")} style={{fontFamily: 'crimsontext'}}>Family Dinner</h4>
+												    <h4 id="Casual" onClick={(e) => this.handleMainItems(e, "Wedding")} style={{fontFamily: 'crimsontext'}}>Casual</h4><br/>
+		    										<h4 id="Semi Formal" onClick={(e) => this.handleMainItems(e, "Party")} style={{fontFamily: 'crimsontext'}}>Semi Formal</h4><br/>
+		    										<h4 id="Formal" onClick={(e) => this.handleMainItems(e, "Corporate")} style={{fontFamily: 'crimsontext'}}>Formal</h4><br/>
+		    										<h4 id="Heavy Formal" onClick={(e) => this.handleMainItems(e, "Special Ocasion")} style={{fontFamily: 'crimsontext'}}>Heavy Formal</h4><br/>
+		    										<h4 id="Bridal" onClick={(e) => this.handleMainItems(e, "Family Dinner")} style={{fontFamily: 'crimsontext'}}>Bridal</h4>
 												</div>
 											</div>
 										</div>
