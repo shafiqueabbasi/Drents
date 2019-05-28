@@ -74,7 +74,7 @@
 
 {/*New Banner CSS*/}
 
-@media only screen and (min-device-width : 360px) and (max-device-width : 660px){
+@media only screen and (min-device-width : 320px){
 	.banneralign{
 		margin-top: -30%;
 		background-size: cover;
@@ -116,7 +116,7 @@
     	height: 70px;
 	}
 }
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
+@media only screen and (min-device-width : 768px){
 	.banneralign{
 		margin-top: -14%;
 		background-size: cover;
@@ -158,7 +158,7 @@
     	height: 100px;
 	}
 }
-@media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
+@media only screen and (min-device-width : 1024px){
 	.banneralign{		
 		margin-top: -11%;
 	    background-size: cover;
@@ -199,7 +199,7 @@
 		margin-top: 40px;
 	}
 }
-@media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
+@media only screen and (min-device-width : 1366px){
 	.banneralign{
 		margin-top: -9%;
 		background-size: cover;
@@ -261,7 +261,198 @@
 {/*New heading panal ENDS*/}
 
 
+{/*New heading2 panal*/}
 
+.catetext{
+	font-size: 12px;
+	font-family: Tajawal;
+	color: #808080;
+	letter-spacing: 6px;
+	margin-left: 1%;
+    margin-bottom: 1%;
+}
+.bigcatetext{
+	font-size: 45px;
+	font-family: Playfair Display;
+	color: #353535;
+}
+@media only screen and (min-device-width : 360px){
+	.divpurple{
+		    background-color: #463362;
+		    text-align: center;
+		    width: 50%;
+		    margin-left: 20%;
+		    margin-bottom: 11%;
+	}
+	.dresimage{
+		    height: 155px;
+		    width: 60%;
+		    margin-top: 22px;
+		    margin-bottom: 25px;
+	}
+} 
+@media only screen and (min-device-width : 768px){
+	.divpurple{
+		background-color: #463362;
+	    text-align: center;
+	    width: 27%;
+	    margin-left: 5%;
+	}
+	.dresimage{
+		height: 155px;
+	    width: 35%;
+	    margin-top: 22px;
+	    margin-bottom: 25px;
+	}
+} 
+@media only screen and (min-device-width : 1024px){
+	.divpurple{
+		background-color: #463362;
+	    text-align: center;
+	    width: 27%;
+	    margin-left: 5%;
+	}
+	.dresimage{
+		height: 155px;
+	    width: 35%;
+	    margin-top: 22px;
+	    margin-bottom: 25px;
+	}
+} 
+@media only screen and (min-device-width : 1366px){
+	.divpurple{
+		background-color: #463362;
+	    text-align: center;
+	    width: 27%;
+	    margin-left: 5%;
+	}
+	.dresimage{
+		height: 155px;
+	    width: 35%;
+	    margin-top: 22px;
+	    margin-bottom: 25px;
+	}
+} 
+
+.casualtext{
+	color: #ffffff;
+    margin-left: -47%;
+    font-family: playfair display;
+    letter-spacing: 1px;
+}
+.samitext{
+    color: #ffffff;
+    margin-left: -14%;
+    font-family: playfair display;
+    letter-spacing: 0px;
+}
+.arimag{
+	    margin-top: -23%;
+    width: 50%;
+    margin-left: -41%;
+}
+
+{/*New heading2 panal ENDS*/}
+
+{/*New heading3 panal*/}
+
+.howwork{
+	font-size: 12px;
+	font-family: Tajawal;
+	color: #808080;
+	letter-spacing: 6px;
+}
+.rentwork{
+	font-size: 40px;
+	font-family: Playfair Display;
+	color: #353535;
+}
+@media only screen and (min-device-width : 360px){
+	.iconimg{
+		height: 100px;
+	}
+	.iconimg2{
+		height: 100px;
+	}
+	.iconimg3{
+		height: 100px;
+	}
+}
+@media only screen and (min-device-width : 768px){
+	.iconimg{
+	    height: 100px;
+    	margin-left: -35%;
+	}
+	.iconimg2{
+		height: 100px;
+		margin-left: -40%;
+	}
+	.iconimg3{
+		height: 90px;
+		margin-left: -45%;
+	}
+}
+@media only screen and (min-device-width : 1024px){
+	.iconimg{
+		height: 100px;
+    	margin-left: -16%;
+	}
+	.iconimg2{
+	    height: 100px;
+    	margin-left: -22%;
+	}
+	.iconimg3{
+		height: 86px;
+   		 margin-left: -24%;
+	}
+}
+@media only screen and (min-device-width : 1366px){
+	.iconimg{
+		height: 100px;
+		margin-left: -30%;
+	}
+	.iconimg2{
+		height: 100px;
+		margin-left: -41%;
+	}
+	.iconimg3{
+		height: 90px;
+    	margin-left: -40%;
+	}
+}
+.chosedres{
+	font-size: 25px; 
+	font-family: Playfair Display;
+}
+.chosedetail{
+	font-size: 12px;
+	font-family: Tajawal;
+	color: #808080;
+}
+
+.imgwidth{
+	height: 280px;
+}
+
+{/*New heading3 panal ENDS*/}
+
+{/*New heading4new panal*/}
+
+.featuredhead{
+	font-size: 40px;
+	font-family: Playfair Display;
+	color: #353535;
+}
+.featuresub{
+	font-size: 12px;
+	font-family: Tajawal;
+	color: #808080;
+	letter-spacing: 5px;
+	margin-left: 2px;
+	margin-bottom: 3px;
+}
+
+{/*New heading4new panal ENDS*/}
 
 @media only screen and (min-device-width : 360px) and (max-device-width : 660px){
 	.mnp{

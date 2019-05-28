@@ -12,8 +12,8 @@ class Headernew extends Component {
     
     return (
      	<div>
-     		<div className="row navbar">
-     			<div className="container">
+     		<div className="container">
+     			<div className="row navbar">
 	     			<div className="col-sm-2 col-md-2 col-lg-2">
 						<img src="../images/drent-logo.png" style={{height:'45px', marginTop:'25px'}}/>
 	     			</div>
@@ -27,7 +27,7 @@ class Headernew extends Component {
 							    <a href="#">Sign In</a>
 							    <a href="#">Sign Out</a>
 							  </div>
-							</div>
+							</div>	
 	     					<li className="headCart">Cart</li>
 	     				</ul>
 	     			</div>

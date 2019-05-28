@@ -7,6 +7,7 @@ import Heading from './heading';
 import Heading2 from './heading2';
 import Heading3 from './heading3';
 import Gallery from './heading4';
+import Heading4New from './heading4new';
 import Heading5 from './heading5';
 import Heading6 from './heading6';
 import Heading7 from './heading7';
@@ -39,6 +40,8 @@ class Home extends Component {
         <Heading />
         {/*<Headingf8/>*/}
         <Heading2/>
+        <Heading3/>
+        <Heading4New/>
       </div>
     );
 
