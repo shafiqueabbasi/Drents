@@ -78,7 +78,7 @@ class App extends Component {
 			<BrowserRouter>
 	          <div>
                 {/*<HeaderNew />*/}
-	             {/*<Header arr={this.state.arr}/>*/}
+	             <Header arr={this.state.arr}/>
 	              <Route path="/" exact component={Home} />
                 <Route path="/profile/:value" render={props => <UserProfile {...props} updateFooter={this.updateFooter}/>} />
                 <Route path="/product" component={MainPage} />
