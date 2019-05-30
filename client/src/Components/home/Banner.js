@@ -11,7 +11,7 @@ class SecondPage extends Component {
               <img src="../images/drent-purple-header.png" className="banneralign" />
              
               <div className="relationtext container">
-                  <img src="../images/header-welcome-leaf.png"/><br/>  
+                  <img src="../images/header-welcome-leaf.png" className="banerleaf"/><br/>  
                   <p className="weltext">WELCOME</p>
                   <p className="lartext">Luxury <br/>clothing <br/>for rent.</p><br/>
                 <div className="row">

@@ -42,6 +42,7 @@ class Home extends Component {
         <Heading2/>
         <Heading3/>
         <Heading4New/>
+        <Heading5/>
       </div>
     );
 
