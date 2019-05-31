@@ -21,6 +21,7 @@ import { Router, Route, BrowserRouter } from 'react-router-dom';
 import { history } from './_helpers';
 import Header from './Components/home/Header';
 import HeaderNew from './Components/home/HeaderNew';
+import FooterNew from './Components/home/footerNew';
 import Footer from './Components/home/headingf8';
 import MainPage from './Components/filter/index';
 import Product from './Components/productdetail/productdetailfirstfold';
@@ -77,6 +78,9 @@ class App extends Component {
        
 			<BrowserRouter>
 	          <div>
+
+                <HeaderNew />
+	             {/*<Header arr={this.state.arr}/>*/}
                 {/*<HeaderNew />*/}
 	             <Header arr={this.state.arr}/>
 	              <Route path="/" exact component={Home} />
@@ -88,7 +92,7 @@ class App extends Component {
                 <Route path="/checkout" render={props => { return <Checkout {...props} updateCart={this.updateCart}/>}} />
 	              {/* <Footer showFooter={this.state.footer}/>*/}
                {/*<Userprofile/>*/} 
-            
+            	<FooterNew/>
           </div>
         </BrowserRouter>
       </div>

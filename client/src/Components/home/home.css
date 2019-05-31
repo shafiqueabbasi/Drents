@@ -115,6 +115,9 @@
 		margin-top: -48px;
     	height: 70px;
 	}
+	.banerleaf{
+		
+	}
 }
 @media only screen and (min-device-width : 768px){
 	.banneralign{
@@ -157,6 +160,9 @@
 		margin-top: -12px;
     	height: 100px;
 	}
+	.banerleaf{
+		
+	}
 }
 @media only screen and (min-device-width : 1024px){
 	.banneralign{		
@@ -198,13 +204,16 @@
 	.scrollimag{
 		margin-top: 40px;
 	}
+	.banerleaf{
+		
+	}
 }
 @media only screen and (min-device-width : 1366px){
 	.banneralign{
 		margin-top: -9%;
-		background-size: cover;
-		width: 100%;
-		height: 800px;
+	    background-size: cover;
+	    width: 100%;
+	    height: 622px;
 	}
 	.relationtext{
 		position: relative;
@@ -212,18 +221,18 @@
 	    margin-left: 110px;
 	}
 	.lartext{
-		font-size: 100px; 
-		font-family: Playfair Display;
-		color: #ffffff;
-		line-height: 150px;
-		margin-top: -3%;
-		margin-left: -5px;
+		font-size: 79px;
+	    font-family: Playfair Display;
+	    color: #ffffff;
+	    line-height: 119px;
+	    margin-top: -3%;
+	    margin-left: -5px;
 	}
 	.weltext{
-		font-size: 12px;
-		font-family: Tajawal;
-		color: #808080;
-		letter-spacing: 5px;
+		    font-size: 12px;
+		    font-family: Tajawal;
+		    color: #808080;
+		    letter-spacing: 5px;
 	}
 	.smaltext{
 		font-size: 12px;
@@ -233,11 +242,14 @@
 		color: #808080;
 	}
 	.arrowimg{
-		margin-top: -20px;
+		margin-top: -69px;
 	    margin-left: -23%;
 	}
 	.scrollimag{
-		margin-top: 15px;
+		margin-top: -34px;
+	}
+	.banerleaf{
+		margin-top: 15%;
 	}
 }
 {/*New Banner CSS ENDS*/}
@@ -430,13 +442,113 @@
 	color: #808080;
 }
 
-.imgwidth{
-	height: 280px;
-}
 
 {/*New heading3 panal ENDS*/}
 
 {/*New heading4new panal*/}
+@media only screen and (min-device-width : 360px) and (max-device-width : 767px){
+	.imgwidth{
+		height: 280px;
+		position: relative;
+	}
+	.rwmarg{
+
+	}
+	.margimag{
+
+	}
+	.leftimg{
+		
+	}
+	.feainnertext{
+	 	font-size: 31px;
+	 	font-family: playfair display;
+	 	color: #ffffff;
+	}
+	.feainsmaltext{
+		font-size: 12px;
+		font-family: tajawal;
+		color: #808080;
+	}
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
+	.imgwidth{
+		height: 280px;
+		position: relative;
+	}
+	.rwmarg{
+
+	}
+	.margimag{
+
+	}
+	.leftimg{
+		
+	}
+	.feainnertext{
+	 	font-size: 31px;
+	 	font-family: playfair display;
+	 	color: #ffffff;
+	}
+	.feainsmaltext{
+		font-size: 12px;
+		font-family: tajawal;
+		color: #808080;
+	}
+}
+@media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){
+	.imgwidth{
+		height: 250px;
+		position: relative;
+	}
+	.rwmarg{
+		margin-left: -40px;
+	}
+	.margimag{
+		margin-left: 7%;
+	}
+	.leftimg{
+		margin-left: 13%;
+	}
+	.feainnertext{
+	 	font-size: 31px;
+	 	font-family: playfair display;
+	 	color: #ffffff;
+	}
+	.feainsmaltext{
+		font-size: 12px;
+		font-family: tajawal;
+		color: #808080;
+	}
+}
+@media only screen and (min-device-width : 1366px){
+	.imgwidth{
+		height: 280px;
+		position: relative;
+		-webkit-box-shadow: 0 8px 6px -6px black;
+		-moz-box-shadow: 0 8px 6px -6px black;
+		box-shadow: 0 8px 6px -6px black;
+	}
+	.rwmarg{
+
+	}
+	.margimag{
+
+	}
+	.leftimg{
+
+	}
+	.feainnertext{
+	 	font-size: 31px;
+	 	font-family: playfair display;
+	 	color: #ffffff;
+	}
+	.feainsmaltext{
+		font-size: 12px;
+		font-family: tajawal;
+		color: #808080;
+	}
+}
 
 .featuredhead{
 	font-size: 40px;
@@ -452,7 +564,191 @@
 	margin-bottom: 3px;
 }
 
+
+.relat{
+	position: relative;
+}
+.absoul{
+	position: absolute;
+    margin-top: -58%;
+    margin-left: 4%;
+}
+.featarrowtext{
+	font-size: 12px;
+    font-family: Tajawal;
+    letter-spacing: 4px;
+    margin-left: -13%;
+    color: #808080;
+}
+.featarrow{
+	margin-left: -8%;
+	margin-top: -12%;
+}
 {/*New heading4new panal ENDS*/}
+
+{/*New heading5 panal*/}
+
+.benetext{
+	font-size: 12px;
+    font-family: Tajawal;
+    letter-spacing: 4px;
+    color: #808080;
+}
+.whydrenttext{
+	font-size: 40px;
+	font-family: Playfair Display;
+	color: #353535;
+}
+.whydresub{
+    font-size: 30px;
+    line-height: 31px;
+    font-family: Playfair Display;
+}
+.whydresmal{
+	    font-size: 12px;
+    font-family: Tajawal;
+    color: #808080;
+}
+.makemoney{
+	margin-top: 8%;
+	margin-bottom: 15px;
+}
+.payless{
+	margin-top: 5%;
+	margin-bottom: 15px;
+}
+.wearnew{
+	margin-bottom: 15px;
+}
+.whatsnewhead{
+	font-family: Playfair Display;
+	font-size: 20px;
+	color: #ffffff;
+}
+.smaltexthead{
+	font-size: 12px;
+    font-family: Tajawal;
+    color: #808080;
+}
+.divcolour{
+	background-color: #63488a;
+	padding-top: 15px;
+}
+.arrowimage{
+	margin-top: -15px;
+}
+
+{/*New heading5 panal ENDS*/}
+
+{/*New Footer panal*/}
+@media only screen and (min-device-width : 320px){
+	.quickfooter{
+		font-size: 35px;
+		font-family: Playfair Display ;
+		color: #ffffff;
+	}
+}
+@media only screen and (min-device-width : 768px){
+	.quickfooter{
+		font-size: 35px;
+		font-family: Playfair Display ;
+		color: #ffffff;
+	}
+}
+@media only screen and (min-device-width : 1024px){
+	.quickfooter{
+		font-size: 25px;
+		font-family: Playfair Display ;
+		color: #ffffff;
+	}
+}
+@media only screen and (min-device-width : 1366px){
+	.quickfooter{
+		font-size: 35px;
+		font-family: Playfair Display ;
+		color: #ffffff;
+	}
+}
+.footernav{
+	font-size: 12px;
+    font-family: Playfair Display;
+    color: #cb9d6c;
+    margin-right: 14px;
+}
+.footernavpro{
+	font-size: 12px;
+    font-family: Playfair Display;
+    color: #cb9d6c;
+    margin-right: 12px;
+    margin-top: -14px;
+}
+.contmailfoot{
+	font-size: 15px;
+	font-family: Playfair Display;
+	color : #cb9d6c;
+	margin-left: -23%;
+}
+.contnofoot{
+	font-size: 15px;
+	font-family: Playfair Display;
+	color : #cb9d6c;
+}
+.instaicon{
+	margin-left: 14%;
+}
+.scrollfoot{
+	    height: 90px;
+    margin-top: -45px;
+}
+
+.rowpaddmarg{
+    padding-bottom: 48px;
+    margin-top: 3%;
+}
+.copyrightfoot{
+	text-align: center;
+	background-color: #2a1f3b;
+}
+.copytext{
+	color: #ffffff;
+	font-size: 13px;
+	padding-top: 10px;
+}
+.stage{
+	text-align: center;
+}
+{/*New Footer panal ENDS*/}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media only screen and (min-device-width : 360px) and (max-device-width : 660px){
 	.mnp{
