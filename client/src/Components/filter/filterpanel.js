@@ -124,9 +124,9 @@ class Filterpanel extends Component {
   		const { size, weather, mainFilter, filtered, label } = this.state;
   		
 	    return (
-	    	<div className="App">
+	    	<div className="App ">
 	    		{this.state.loading && <div className="loading">Loading&#8230;</div>}
-	    		<div  className="container-fluid">
+	    		<div  className="container-fluid" style={{marginLeft: '-110px'}}>
 	    			<div className="col-md-12 col-sm-12 hidden-xs">
 	    				<div className="col-md-1 col-sm-1"></div>
 	    				<div className="col-md-2 col-sm-2" style={{padding: 'initial'}}>
@@ -134,13 +134,7 @@ class Filterpanel extends Component {
 	    						<div className="row">
 	    							<h3 style={{fontFamily: 'crimsontext'}}>Filters<br/><br/>Categories</h3><br/>
 
-
-	    							
-									 
-
-
-
-	    							<label className="container1"><h5 id="Casual" onClick={(e) => this.handleMainItems(e, "Casual")} className="lH_filter"><a href="" className="C_P">Casual</a></h5>
+									<label className="container1"><h5 id="Casual" onClick={(e) => this.handleMainItems(e, "Casual")} className="lH_filter"><a href="" className="C_P">Casual</a></h5>
 										<input type="checkbox"></input>
 										<span className="checkmark1"></span>
 									</label><br/>
@@ -174,7 +168,7 @@ class Filterpanel extends Component {
 	    							<h5 id="Special Ocasion" onClick={(e) => this.handleMainItems(e, "Special Ocasion")} className="lH_filter" ><a href="" className="C_P">Heavy Formal</a></h5><br/>
 	    							<h5 id="Family Dinner" onClick={(e) => this.handleMainItems(e, "Family Dinner")} className="lH_filter"><a href="" className="C_P">Bridal</a></h5>
 	    							<div className="col-md-9  col-sm-12" style={{paddingBottom: '15px', margin: '40px 0 20px',borderBottom: '1px solid black'}}></div>*/}
-	    							<div className="row col-md-12" style={{padding: '0px'}}>
+	    							<div className="col-md-12" style={{padding: '0px'}}>
 
 	    								<h3 style={{fontFamily: 'crimsontext'}}>Sort By&emsp;&nbsp;-</h3><br/>
 	    									<RadioInput 
@@ -212,7 +206,7 @@ class Filterpanel extends Component {
 	    							<div className="col-md-7 col-sm-7" style={{paddingBottom: '15px', margin: '40px 0 20px',borderBottom: '1px solid black'}}></div>
 								</div>*/}
 								<div className="row">
-									<div className="row col-md-12 col-sm-12" style={{padding: '0px'}}>
+									<div className="col-md-12 col-sm-12" style={{padding: '0px'}}>
 	    								<h3 style={{fontFamily: 'crimsontext'}}>Weather&emsp;-</h3><br/>
 	    								<RadioInput label="Cold Weather" for="ColdWeather" name="weather" onChange={(e) => this.handleWeather('Cold Weather')} />
 	    								<RadioInput label="Warm Weather" for="WarmWeather" name="weather" onChange={(e) => this.handleWeather('Warm Weather')} />
@@ -220,7 +214,7 @@ class Filterpanel extends Component {
 									</div>
 								</div>
 								<div className="row">
-									<div className="row col-md-12 col-sm-12" style={{padding: '0px'}}>
+									<div className="col-md-12 col-sm-12" style={{padding: '0px'}}>
 	    								<h3 style={{fontFamily: 'crimsontext'}}>Sizes&emsp;&nbsp;-</h3><br/>
 	    								<RadioInput label="X Small" for="XS" name="sizes" onChange={(e) => this.handleSize(e.target.id)}/>
 	    								<RadioInput label="Small" for="S" name="sizes" onChange={(e) => this.handleSize(e.target.id)}/>

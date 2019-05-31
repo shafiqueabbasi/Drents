@@ -4,14 +4,16 @@ import { Link } from "react-router-dom";
 
 class Heading4 extends Component {
   render() {
-  	const { label, hrLine, data, showEditDelete, onDelete, profile, userAvailable } = this.props;
+  	const { label, hrLine, data, showEditDelete, onDelete, profile, userAvailable, showDropdown } = this.props;
     
     return (
-    	<div className="App"><br/><br/>
-    		{label && label.length > 0 && <div className="Heading">
+    	<div className="col-md-12 App">
+    		{label && label.length > 0 && <div className="Heading col-md-8">
       			<h1 className="headings" style={{textAlign: 'left', fontFamliy: 'Playfair Display'}}>{label}</h1>
       		</div>}
-	    		<div className="container-fluid">
+    		{showDropdown && <div className="col-md-4">Shafiq</div>}
+
+	    		<div className="container-fluid" style={{marginRight: ''}}>
 	    			<div className="col-md-12 col-sm-12 col-xs-12">
 	    				<div className="row" style={{textAlign:'center'}}>
 	    					{data && data.map((elem, key) => {
