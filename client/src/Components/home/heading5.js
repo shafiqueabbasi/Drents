@@ -5,7 +5,7 @@ class Heading5 extends Component {
     
     return (
      	<div>
-          <div className="row">
+          <div className="row" style={{margin:'0px'}}>
             <div className="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
             <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                 <p className="benetext">BENEFITS</p>
@@ -30,12 +30,12 @@ class Heading5 extends Component {
             <div className="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
           </div>
           <br/><br/><br/><br/><br/><br/>
-          <div className="row">
+          <div className="row" style={{margin:'0px'}}>
               <div className="col-xs-5 col-sm-5 col-md-5 col-lg-5"></div>
               <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                   <p className="benetext">GET ON IT</p>
                   <p className="whydrenttext">What's next?</p><br/>
-                  <div className="row">
+                  <div className="row" style={{margin:'0px'}}>
                       <div className="col-sm-5 col-md-5 col-lg-5 divcolour">
                           <p className="smaltexthead">browse all available dresses and rent the right <br/>one for the next event</p>
                           <p className="whatsnewhead">Rent dresses</p>

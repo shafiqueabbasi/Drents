@@ -530,7 +530,7 @@
 		box-shadow: 0 8px 6px -6px black;
 	}
 	.rwmarg{
-
+		margin: 0px;
 	}
 	.margimag{
 
@@ -703,7 +703,8 @@
 
 .rowpaddmarg{
     padding-bottom: 48px;
-    margin-top: 3%;
+    padding-top: 30px;
+    margin: 0px;
 }
 .copyrightfoot{
 	text-align: center;

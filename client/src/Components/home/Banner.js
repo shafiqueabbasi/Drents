@@ -23,7 +23,7 @@ class SecondPage extends Component {
                   </div>
                 </div>
               </div>
-              <div className="row">
+              <div className="row" style={{margin:'0px'}}>
                 <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
                 <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4" style={{textAlign:'center'}}>
                     <img src="../images/scroll-logo.png" className="scrollimag"/>

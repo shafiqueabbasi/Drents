@@ -78,19 +78,17 @@ class App extends Component {
        
 			<BrowserRouter>
 	          <div>
-
-                <HeaderNew />
-	             {/*<Header arr={this.state.arr}/>*/}
-                
-	              <Route path="/" exact component={Home} />
-                <Route path="/profile/:value" render={props => <UserProfile {...props} updateFooter={this.updateFooter}/>} />
-                <Route path="/product" component={MainPage} />
-                <Route path="/userdetail" component={Profile} />
-                <Route path="/reset/:token" component={ResetPassword} />
-                <Route path="/detail" render={props => { return <Product {...props} updateCart={this.updateCart}/>}} />
-                <Route path="/checkout" render={props => { return <Checkout {...props} updateCart={this.updateCart}/>}} />
-	              {/* <Footer showFooter={this.state.footer}/>*/}
-               {/*<Userprofile/>*/} 
+              <HeaderNew />
+              {/*<Header arr={this.state.arr}/>*/}       
+              <Route path="/" exact component={Home} />
+              <Route path="/profile/:value" render={props => <UserProfile {...props} updateFooter={this.updateFooter}/>} />
+              <Route path="/product" component={MainPage} />
+              <Route path="/userdetail" component={Profile} />
+              <Route path="/reset/:token" component={ResetPassword} />
+              <Route path="/detail" render={props => { return <Product {...props} updateCart={this.updateCart}/>}} />
+              <Route path="/checkout" render={props => { return <Checkout {...props} updateCart={this.updateCart}/>}} />
+              {/* <Footer showFooter={this.state.footer}/>*/}
+              {/*<Userprofile/>*/} 
             	<FooterNew/>
           </div>
         </BrowserRouter>

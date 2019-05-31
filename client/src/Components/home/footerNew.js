@@ -49,7 +49,7 @@ class FooterNew extends Component {
      				</div>
      				<div className="col-sm-2 col-md-2 col-lg-2"></div>
      			</div>
-     			<div className="row copyrightfoot">
+     			<div className="row copyrightfoot" style={{margin:'0px'}}>
      				<p className="copytext">Copyright drent 2019.</p>
      			</div>
      		</footer>

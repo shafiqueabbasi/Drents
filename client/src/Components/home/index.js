@@ -38,7 +38,6 @@ class Home extends Component {
         {loading && <div className="loading">Loading&#8230;</div>}
         <Banner/>
         <Heading />
-        {/*<Headingf8/>*/}
         <Heading2/>
         <Heading3/>
         <Heading4New/>
