@@ -69,9 +69,9 @@
   text-align: center;
 }
 .headings{
- color: #c2073f;
-    font-family: 'Sacramento', cursive !important;
-    margin-bottom: -9px;
+    font-family: Playfair Display;
+    fontSize: 50px;
+    text-align: left;
 }
 .img-circle{
   height: 200px;
@@ -130,7 +130,8 @@
 }
 .lH_filter{
   line-height: 0px;
-  font-family: Playfair Display;
+  font-family: Tajawal;
+  font-size: 15px;
 }
 
 /*.dress1{
@@ -228,8 +229,8 @@
           
   }
   .h_dress{
-      font-family: Qwigley;
-      font-size: 30px;
+      font-family: Playfair Display;
+      font-size: 20px;
       
   }
   .h_btn{
@@ -265,8 +266,8 @@
     margin-right: 5px;
   }
   .h_dress{
-      font-family: Qwigley;
-      font-size: 30px;
+      font-family: Playfair Display;
+      font-size: 20px;
   }
   .h_btn{
       font-family: Qwigley;
@@ -299,8 +300,8 @@
          
   }
   .h_dress{
-      font-family: Qwigley;
-      font-size: 30px;
+      font-family: Playfair Display;
+      font-size: 20px;
   }
   .h_btn{
       font-family: Qwigley;
@@ -332,8 +333,8 @@
           /*margin-left: 31%;*/
   }
   .h_dress{
-      font-family: Qwigley;
-      font-size: 30px;
+      font-family: Playfair Display;
+      font-size: 20px;
   }
   .h_btn{
       font-family: Qwigley;

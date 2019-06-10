@@ -126,13 +126,14 @@ class Filterpanel extends Component {
 	    return (
 	    	<div className="App ">
 	    		{this.state.loading && <div className="loading">Loading&#8230;</div>}
-	    		<div  className="container-fluid" style={{marginLeft: '-110px'}}>
+	    		<div  className="container-fluid" >
 	    			<div className="col-md-12 col-sm-12 hidden-xs">
-	    				<div className="col-md-1 col-sm-1"></div>
-	    				<div className="col-md-2 col-sm-2" style={{padding: 'initial'}}>
+	    				
+	    				<div className="col-md-3 col-sm-3">
 	    					<div className="more">
-	    						<div className="row">
-	    							<h3 style={{fontFamily: 'crimsontext'}}>Filters<br/><br/>Categories</h3><br/>
+	    						<div className="row" style={{paddingLeft:'60px'}}>
+	    							<h3 style={{fontFamily: 'Playfair Display',fontSize: '50px'}}>Filters</h3><br/>
+	    							<h3 style={{fontFamily: 'Playfair Display',fontSize: '35px'}}>Categories</h3><br/>
 
 									<label className="container1"><h5 id="Casual" onClick={(e) => this.handleMainItems(e, "Casual")} className="lH_filter"><a href="" className="C_P">Casual</a></h5>
 										<input type="checkbox"></input>
@@ -170,7 +171,7 @@ class Filterpanel extends Component {
 	    							<div className="col-md-9  col-sm-12" style={{paddingBottom: '15px', margin: '40px 0 20px',borderBottom: '1px solid black'}}></div>*/}
 	    							<div className="col-md-12" style={{padding: '0px'}}>
 
-	    								<h3 style={{fontFamily: 'crimsontext'}}>Sort By&emsp;&nbsp;-</h3><br/>
+	    								<h3 style={{fontFamily: 'Playfair Display',fontSize: '35px'}}>Sort By&emsp;&nbsp;-</h3><br/>
 	    									<RadioInput 
 									        	label="Newest" 
 									        	value="Newest" 
@@ -206,16 +207,16 @@ class Filterpanel extends Component {
 	    							<div className="col-md-7 col-sm-7" style={{paddingBottom: '15px', margin: '40px 0 20px',borderBottom: '1px solid black'}}></div>
 								</div>*/}
 								<div className="row">
-									<div className="col-md-12 col-sm-12" style={{padding: '0px'}}>
-	    								<h3 style={{fontFamily: 'crimsontext'}}>Weather&emsp;-</h3><br/>
+									<div className="col-md-12 col-sm-12" style={{paddingLeft: '60px'}}>
+	    								<h3 style={{fontFamily: 'Playfair Display',fontSize: '35px'}}>Weather&nbsp;&nbsp;&nbsp;-</h3><br/>
 	    								<RadioInput label="Cold Weather" for="ColdWeather" name="weather" onChange={(e) => this.handleWeather('Cold Weather')} />
 	    								<RadioInput label="Warm Weather" for="WarmWeather" name="weather" onChange={(e) => this.handleWeather('Warm Weather')} />
 										{/*<div className="col-md-10 col-sm-10" style={{paddingBottom: '15px', margin: '40px 0 20px',borderBottom: '1px solid black'}}></div>*/}
 									</div>
 								</div>
 								<div className="row">
-									<div className="col-md-12 col-sm-12" style={{padding: '0px'}}>
-	    								<h3 style={{fontFamily: 'crimsontext'}}>Sizes&emsp;&nbsp;-</h3><br/>
+									<div className="col-md-12 col-sm-12" style={{paddingLeft: '60px'}}>
+	    								<h3 style={{fontFamily: 'Playfair Display',fontSize: '35px'}}>Sizes&emsp;&nbsp;-</h3><br/>
 	    								<RadioInput label="X Small" for="XS" name="sizes" onChange={(e) => this.handleSize(e.target.id)}/>
 	    								<RadioInput label="Small" for="S" name="sizes" onChange={(e) => this.handleSize(e.target.id)}/>
 	    								<RadioInput label="Medium" for="M" name="sizes" onChange={(e) => this.handleSize(e.target.id)}/>
@@ -231,6 +232,22 @@ class Filterpanel extends Component {
 	  						<Gallery label={mainFilter.length > 0 ? mainFilter : label} hrLine='false' data={this.state.data}/>
 	  						<div className="form-group row">
 							<label className="col-md-12 col-sm-12 col-xs-12 control-label" style={{textAlign: 'center'}}></label>
+
+
+							<div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 " style={{textAlign: 'center', paddingLeft: '0px'}}><br/>
+								<div className="col-md-2 col-sm-3"></div>
+								{this.state.data.length === 0 && 
+									<div className="col-md-8 col-sm-6">
+	    								<h1 style={{textAlign: 'center', fontFamily: 'Playfair Display'}}>Your filters did not return any result:'(</h1>
+	    								<p style={{textAlign: 'center', fontFamily: 'Tajawal', color: 'gray', opacity: '1'}}>But dont worry, you can change your filters from the filters panel on the Left.</p>
+	    								<h4 style={{textAlign: 'center', fontFamily: 'Playfair Display', color: '#cb9d6c'}}>Show all dresses</h4>
+									</div>
+								}
+								<div className="col-md-2 col-sm-3"></div>
+							</div>
+
+
+
 							<div className="col-md-5 col-sm-5 col-xs-5 row"></div>
 							{/*{this.state.arr.length > 8 && <ButtonComponent label="More"/>}*/}
 							{this.state.data.length === 0 &&
@@ -241,15 +258,7 @@ class Filterpanel extends Component {
 								/>
 							}
 							<div className="col-md-5"></div>
-							<div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 " style={{textAlign: 'center', paddingLeft: '0px'}}><br/>
-								<div className="col-md-4 col-sm-3"></div>
-								{this.state.data.length === 0 && 
-									<div className="col-md-4 col-sm-6 alert alert-danger">
-	    								<strong> No record found.</strong>
-									</div>
-								}
-								<div className="col-md-4 col-sm-3"></div>
-							</div>
+							
 						</div>
 	    				</div>
 	    			</div>
@@ -276,12 +285,12 @@ class Filterpanel extends Component {
 											</div>
 											<div id="collapseOne" className="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
 												<div className="panel-body" style={{fontFamily: 'crimsontext'}}>
-													<h4 id="" onClick={(e) => this.handleMainItems(e, "")} style={{fontFamily: 'crimsontext'}}>All Products</h4><br/>
-												    <h4 id="Casual" onClick={(e) => this.handleMainItems(e, "Wedding")} style={{fontFamily: 'crimsontext'}}>Casual</h4><br/>
-		    										<h4 id="Semi Formal" onClick={(e) => this.handleMainItems(e, "Party")} style={{fontFamily: 'crimsontext'}}>Semi Formal</h4><br/>
-		    										<h4 id="Formal" onClick={(e) => this.handleMainItems(e, "Corporate")} style={{fontFamily: 'crimsontext'}}>Formal</h4><br/>
-		    										<h4 id="Heavy Formal" onClick={(e) => this.handleMainItems(e, "Special Ocasion")} style={{fontFamily: 'crimsontext'}}>Heavy Formal</h4><br/>
-		    										<h4 id="Bridal" onClick={(e) => this.handleMainItems(e, "Family Dinner")} style={{fontFamily: 'crimsontext'}}>Bridal</h4>
+													<h4 id="" onClick={(e) => this.handleMainItems(e, "")} style={{fontFamily: 'crimsontext'}}>Categories</h4><br/>
+												    <h4 id="Casual" onClick={(e) => this.handleMainItems(e, "Wedding")} style={{fontFamily: 'Tajawal'}}>Casual</h4><br/>
+		    										<h4 id="Semi Formal" onClick={(e) => this.handleMainItems(e, "Party")} style={{fontFamily: 'Tajawal'}}>Semi Formal</h4><br/>
+		    										<h4 id="Formal" onClick={(e) => this.handleMainItems(e, "Corporate")} style={{fontFamily: 'Tajawal'}}>Formal</h4><br/>
+		    										<h4 id="Heavy Formal" onClick={(e) => this.handleMainItems(e, "Special Ocasion")} style={{fontFamily: 'Tajawal'}}>Heavy Formal</h4><br/>
+		    										<h4 id="Bridal" onClick={(e) => this.handleMainItems(e, "Family Dinner")} style={{fontFamily: 'Tajawal'}}>Bridal</h4>
 												</div>
 											</div>
 										</div>
@@ -397,8 +406,10 @@ class Filterpanel extends Component {
 							</span>}*/}
 							<div className="col-xs-12" style={{textAlign: 'center'}}><br/>
 								{this.state.data.length === 0 && 
-									<div className="alert alert-danger">
-	    								<strong> No record found.</strong>
+									<div>
+	    								<h1 style={{textAlign: 'center', fontFamily: 'Playfair Display'}}>Your filters did not return any result:'(</h1>
+	    								<p style={{textAlign: 'center', fontFamily: 'Tajawal', color: 'gray', opacity: '1'}}>But dont worry, you can change your filters from the filters panel on the Left.</p>
+	    								<h4 style={{textAlign: 'center', fontFamily: 'Playfair Display', color: '#cb9d6c'}}>Show all dresses</h4>
 									</div>
 								}
 							</div>

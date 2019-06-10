@@ -20,7 +20,7 @@ export const RadioInput = props => {
                 style={{marginTop:'0px'}}
             />
           <span className="checkmark"></span>
-          <h4 style={{fontFamily: 'crimsontext',color: '#c2073f'}}>{props.label}</h4>
+          <h4 style={{fontFamily: 'Tajawal', fontSize: '15px'}}>{props.label}</h4>
         </label>
     )
 }
