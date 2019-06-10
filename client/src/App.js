@@ -21,7 +21,7 @@ import { Router, Route, BrowserRouter } from 'react-router-dom';
 import { history } from './_helpers';
 import Header from './Components/home/Header';
 import HeaderNew from './Components/home/HeaderNew';
-import Header2New from './Components/home/HeaderNew';
+import Header2New from './Components/home/Header2New';
 import FooterNew from './Components/home/footerNew';
 import Footer from './Components/home/headingf8';
 import MainPage from './Components/filter/index';
@@ -80,9 +80,9 @@ class App extends Component {
 			<BrowserRouter>
 	          <div>
 
-                {/*<Header2New />*/}
-	             {/*<Header arr={this.state.arr}/>*/}
                 <Header2New />
+	              {/*<Header arr={this.state.arr}/>*/}
+                {/*<HeaderNew />*/}
 	              <Route path="/" exact component={Home} />
                 <Route path="/profile/:value" render={props => <UserProfile {...props} updateFooter={this.updateFooter}/>} />
                 <Route path="/product" component={MainPage} />

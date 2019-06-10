@@ -27,7 +27,7 @@ class Heading4 extends Component {
 				</div>
     		</div>
 
-	    		<div className="container-fluid" style={{marginRight: ''}}>
+	    		<div className="container-fluid" style={{width: '112%'}}>
 	    			<div className="col-md-12 col-sm-12 col-xs-12">
 	    				<div className="row" style={{textAlign:'center'}}>
 	    					{data && data.map((elem, key) => {

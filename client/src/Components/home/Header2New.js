@@ -7,13 +7,13 @@ import './home.css';
 import { connect } from 'react-redux';
 import { userActions } from '../../_actions';
 
-class Header2new extends Component {
+class Header2New extends Component {
   render() {
     
     return (
-     	<div>
-     		<div className="container-fluid" style={{backgroundColor: '#2a1f3b'}}>
-     			<div className="row navbar">
+     	<div style={{backgroundColor: '#473463'}}>
+     		<div className="HC2 container-fluid">
+     			<div className="row navbar"> 
 	     			<div className="col-sm-2 col-md-2 col-lg-2">
 						<img src="../images/drent-logo.png" style={{height:'45px', marginTop:'25px'}}/>
 	     			</div>
@@ -39,4 +39,4 @@ class Header2new extends Component {
   }
 }
 
-export default Header2new;
+export default Header2New;
