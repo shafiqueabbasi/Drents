@@ -3,6 +3,7 @@ import logo from '../../logo.svg';
 import '../../App.css';
 import Header from './Header';
 import Banner from './Banner';
+import Scrollimage from './scrollimage';
 import Heading from './heading';
 import Heading2 from './heading2';
 import Heading3 from './heading3';
@@ -37,6 +38,7 @@ class Home extends Component {
         {/*<Header/>*/}
         {loading && <div className="loading">Loading&#8230;</div>}
         <Banner/>
+        <Scrollimage/>
         <Heading />
         <Heading2/>
         <Heading3/>

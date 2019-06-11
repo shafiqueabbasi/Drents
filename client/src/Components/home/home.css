@@ -1,7 +1,5 @@
 {/*New Header CSS*/}
-.nav{
-  font-size: 15px;
-}
+
 
 .nav-side-menu {
   overflow: auto;
@@ -64,6 +62,31 @@
   display: block;
 }
 
+@media only screen and (min-device-width : 320px) and (max-device-width : 767px){
+	.nav{
+  		font-size: 15px;
+  		margin-left: 1%;
+	}
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
+	.nav{
+  		font-size: 15px;
+	}
+
+}
+@media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){
+	.nav{
+  		font-size: 15px;
+	}
+
+}
+@media only screen and (min-device-width : 1366px){
+	.nav{
+  		font-size: 15px;
+	}
+
+}
+
 .dropdown-content a:hover {background-color: #ddd;}
 
 .dropdown:hover .dropdown-content {display: block;}
@@ -112,11 +135,26 @@
 	    margin-top: -76px;
 	}
 	.scrollimag{
-		margin-top: -48px;
+	    margin-top: -21px;
     	height: 70px;
+    	-webkit-animation: mover 0.5s infinite  alternate;
+    	animation: mover 0.5s infinite  alternate;
 	}
 	.banerleaf{
 		
+	}
+	.weldrent{
+		text-align: center;
+	    font-size: 33px;
+	    font-family: Playfair Display;
+	    color: #353535;
+	    margin-top: 30px;
+	}
+	.subtext{
+		font-size: 14px;
+		font-family: Tajawal;
+		color: #9b9b9b;
+		text-align: center;
 	}
 }
 @media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
@@ -157,11 +195,25 @@
     	margin-left: -32%;
 	}
 	.scrollimag{
-		margin-top: -12px;
-    	height: 100px;
+		margin-top: 44px;
+    	height: 90px;
+    	-webkit-animation: mover 0.5s infinite  alternate;
+    	animation: mover 0.5s infinite  alternate;
 	}
 	.banerleaf{
 		
+	}
+	.weldrent{
+		text-align: center;
+		font-size: 50px;
+		font-family: Playfair Display;
+		color:#353535;
+	}
+	.subtext{
+		font-size: 15px;
+		font-family: Tajawal;
+		color: #9b9b9b;
+		text-align: center;
 	}
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){
@@ -202,10 +254,24 @@
     	margin-left: -22%;
 	}
 	.scrollimag{
-		margin-top: 40px;
+		margin-top: 26%;
+		-webkit-animation: mover 0.5s infinite  alternate;
+    	animation: mover 0.5s infinite  alternate;
 	}
 	.banerleaf{
 		
+	}
+	.weldrent{
+		text-align: center;
+		font-size: 50px;
+		font-family: Playfair Display;
+		color:#353535;
+	}
+	.subtext{
+		font-size: 15px;
+		font-family: Tajawal;
+		color: #9b9b9b;
+		text-align: center;
 	}
 }
 @media only screen and (min-device-width : 1366px){
@@ -245,29 +311,44 @@
 	    margin-left: -42%;
 	}
 	.scrollimag{
-		margin-top: -34px;
+		margin-top: -3px;
+		    height: 100px;
+		-webkit-animation: mover 0.5s infinite  alternate;
+    	animation: mover 0.5s infinite  alternate;
+
 	}
+	
 	.banerleaf{
 		margin-top: 15%;
 	}
+	.weldrent{
+		text-align: center;
+		font-size: 50px;
+		font-family: Playfair Display;
+		color:#353535;
+	}
+	.subtext{
+		font-size: 15px;
+		font-family: Tajawal;
+		color: #9b9b9b;
+		text-align: center;
+	}
 }
+
 {/*New Banner CSS ENDS*/}
 
-
+@-webkit-keyframes mover {
+		    0% { transform: translateY(0); }
+		    100% { transform: translateY(20px); }
+		}
+@keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(20px); }
+}
 
 {/*New heading panal CSS */}
-.weldrent{
-	text-align: center;
-	font-size: 50px;
-	font-family: Playfair Display;
-	color:#353535;
-}
-.subtext{
-	font-size: 15px;
-	font-family: Tajawal;
-	color: #9b9b9b;
-	text-align: center;
-}
+
+
 
 {/*New heading panal ENDS*/}
 
@@ -282,11 +363,7 @@
 	margin-left: 1%;
     margin-bottom: 1%;
 }
-.bigcatetext{
-	font-size: 45px;
-	font-family: Playfair Display;
-	color: #353535;
-}
+
 @media only screen and (min-device-width : 360px) and (max-device-width : 767px){
 	.divpurple{
 		    background-color: #463362;
@@ -301,6 +378,23 @@
 		    margin-top: 22px;
 		    margin-bottom: 25px;
 	}
+	.casualtext{
+		color: #ffffff;
+	    margin-left: -47%;
+	    font-family: playfair display;
+	    letter-spacing: 1px;
+	}
+	.samitext{
+	    color: #ffffff;
+	    margin-left: -14%;
+	    font-family: playfair display;
+	    letter-spacing: 0px;
+	}
+	.bigcatetext{
+		font-size: 35px;
+		font-family: Playfair Display;
+		color: #353535;
+	}
 } 
 @media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
 	.divpurple{
@@ -310,10 +404,29 @@
 	    margin-left: 5%;
 	}
 	.dresimage{
-		height: 155px;
-	    width: 35%;
-	    margin-top: 22px;
-	    margin-bottom: 25px;
+		    height: 106px;
+		    width: 54%;
+		    margin-top: 22px;
+		    margin-bottom: 25px;
+	}
+	.casualtext{
+		color: #ffffff;
+	    margin-left: -20%;
+	    font-family: playfair display;
+	    letter-spacing: 1px;
+	}
+	.samitext{
+	        color: #ffffff;
+	    margin-left: 0%;
+	    font-family: playfair display;
+	    letter-spacing: 0px;
+	    font-size: 17px;
+	    margin-bottom: 17px;
+	}
+	.bigcatetext{
+		font-size: 45px;
+		font-family: Playfair Display;
+		color: #353535;
 	}
 } 
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){
@@ -329,12 +442,29 @@
 	    margin-top: 22px;
 	    margin-bottom: 25px;
 	}
+	.casualtext{
+		color: #ffffff;
+	    margin-left: -47%;
+	    font-family: playfair display;
+	    letter-spacing: 1px;
+	}
+	.samitext{
+	    color: #ffffff;
+	    margin-left: -14%;
+	    font-family: playfair display;
+	    letter-spacing: 0px;
+	}
+	.bigcatetext{
+		font-size: 45px;
+		font-family: Playfair Display;
+		color: #353535;
+	}
 } 
 @media only screen and (min-device-width : 1366px){
 	.divpurple{
 		background-color: #463362;
 	    text-align: center;
-	    width: 27%;
+	    width: 26%;
 	    margin-left: 5%;
 	}
 	.dresimage{
@@ -343,14 +473,26 @@
 	    margin-top: 22px;
 	    margin-bottom: 25px;
 	}
+	.casualtext{
+		color: #ffffff;
+	    margin-left: -47%;
+	    font-family: playfair display;
+	    letter-spacing: 1px;
+	}
+	.samitext{
+	    color: #ffffff;
+	    margin-left: -14%;
+	    font-family: playfair display;
+	    letter-spacing: 0px;
+	}
+	.bigcatetext{
+		font-size: 45px;
+		font-family: Playfair Display;
+		color: #353535;
+	}
 } 
 
-.casualtext{
-	color: #ffffff;
-    margin-left: -47%;
-    font-family: playfair display;
-    letter-spacing: 1px;
-}
+
 .samitext{
     color: #ffffff;
     margin-left: -14%;
@@ -457,26 +599,80 @@
 
 	}
 	.leftimg{
-		
+		margin-bottom: 35px;
 	}
-	.feainnertext{
+	.pinktext{
 	 	font-size: 31px;
 	 	font-family: playfair display;
 	 	color: #ffffff;
 	}
-	.feainsmaltext{
+	.pinksmaltext{
 		font-size: 12px;
 		font-family: tajawal;
 		color: #808080;
 	}
+	.chiffontext{
+	 	font-size: 31px;
+	 	font-family: playfair display;
+	 	color: #ffffff;
+	 	margin-top: -41px;
+	}
+	.chiffonsmaltext{
+		font-size: 12px;
+		font-family: tajawal;
+		color: #808080;
+	}
+	.blackwhitetext{
+	 	font-size: 31px;
+	 	font-family: playfair display;
+	 	color: #ffffff;
+	 	    margin-top: -24%;
+	}
+	.blackwhitesmaltext{
+		font-size: 12px;
+		font-family: tajawal;
+		color: #808080;
+	}
+	.bridaltext{
+	 	font-size: 31px;
+	 	font-family: playfair display;
+	 	color: #ffffff;
+	 	    margin-top: -24%;
+	}
+	.bridalsmaltext{
+		font-size: 12px;
+		font-family: tajawal;
+		color: #808080;
+	}
+	.prettext{
+	 	font-size: 31px;
+	 	font-family: playfair display;
+	 	color: #ffffff;
+	 	    margin-top: -24%;
+	}
+	.pretsmaltext{
+		font-size: 12px;
+		font-family: tajawal;
+		color: #808080;
+	}
+	.relat{
+		position: relative;
+	}
+	.featarrowtext{
+		font-size: 12px;
+	    font-family: Tajawal;
+	    letter-spacing: 4px;
+	    margin-left: -13%;
+	    color: #808080;
+	}
 }
 @media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
 	.imgwidth{
-		height: 280px;
-		position: relative;
+		height: 200px;
+    	position: relative;
 	}
 	.rwmarg{
-
+		margin-left: -7%;
 	}
 	.margimag{
 
@@ -484,15 +680,81 @@
 	.leftimg{
 		
 	}
-	.feainnertext{
-	 	font-size: 31px;
-	 	font-family: playfair display;
-	 	color: #ffffff;
+	.pinktext{
+	 	font-size: 20px;
+	    font-family: playfair display;
+	    color: #ffffff;
+	    margin-top: -10%;
 	}
-	.feainsmaltext{
+	.pinksmaltext{
 		font-size: 12px;
 		font-family: tajawal;
 		color: #808080;
+	    margin-left: 5%;
+	}
+	.chiffontext{
+	 	font-size: 20px;
+	    font-family: playfair display;
+	    color: #ffffff;
+	    margin-top: -16%;
+	    margin-left: 5%;
+	}
+	.chiffonsmaltext{
+		font-size: 12px;
+		font-family: tajawal;
+		color: #808080;
+	    margin-left: 5%;
+	}
+	.blackwhitetext{
+	 	font-size: 18px;
+	    font-family: playfair display;
+	    color: #ffffff;
+	    margin-top: -8%;
+	    margin-left: 4%;
+	}
+	.blackwhitesmaltext{
+		font-size: 12px;
+		font-family: tajawal;
+		color: #808080;
+	    margin-left: 5%;
+	}
+	.bridaltext{
+ 	    font-size: 20px;
+	    font-family: playfair display;
+	    color: #ffffff;
+	    margin-top: -12%;
+	    margin-left: 5%;
+	}
+	.bridalsmaltext{
+		font-size: 12px;
+		font-family: tajawal;
+		color: #808080;
+	    margin-left: 5%;
+	}
+	.prettext{
+ 	    font-size: 20px;
+	    font-family: playfair display;
+	    color: #ffffff;
+	    margin-top: -13%;
+	    margin-left: 5%;
+	}
+	.pretsmaltext{
+		font-size: 12px;
+		font-family: tajawal;
+		color: #808080;
+	    margin-left: 5%;
+	}
+	.relat{
+		position: relative;
+		margin-right: 6px;
+	}
+	.featarrowtext{
+		font-size: 11px;
+	    font-family: Tajawal;
+	    letter-spacing: 4px;
+	    margin-left: -8%;
+	    color: #808080;
+	    margin-top: 1%;
 	}
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){
@@ -501,7 +763,7 @@
 		position: relative;
 	}
 	.rwmarg{
-		margin-left: -40px;
+		margin-left: -55px;
 	}
 	.margimag{
 		margin-left: 7%;
@@ -509,27 +771,85 @@
 	.leftimg{
 		margin-left: 13%;
 	}
-	.feainnertext{
-	 	font-size: 31px;
+	.pinktext{
+	 	font-size: 24px;
 	 	font-family: playfair display;
 	 	color: #ffffff;
+	 	margin-left: 4%;
 	}
-	.feainsmaltext{
+	.pinksmaltext{
 		font-size: 12px;
 		font-family: tajawal;
 		color: #808080;
+		margin-left: 4%;
+	}
+	.chiffontext{
+	 	font-size: 25px;
+	    font-family: playfair display;
+	    color: #ffffff;
+	    margin-left: 30%;
+	}
+	.chiffonsmaltext{
+		font-size: 12px;
+		font-family: tajawal;
+		color: #808080;
+		margin-left: 30%;
+	}
+	.blackwhitetext{
+	 	    font-size: 25px;
+		    font-family: playfair display;
+		    color: #ffffff;
+		    margin-left: 14%;
+	}
+	.blackwhitesmaltext{
+		font-size: 12px;
+		font-family: tajawal;
+		color: #808080;
+		margin-left: 15%;
+	}
+	.bridaltext{
+	 	font-size: 25px;
+	    font-family: playfair display;
+	    color: #ffffff;
+	    margin-left: 19%;
+	}
+	.bridalsmaltext{
+		font-size: 12px;
+		font-family: tajawal;
+		color: #808080;
+		margin-left: 20%;
+	}
+	.prettext{
+	 	font-size: 25px;
+	 	font-family: playfair display;
+	 	color: #ffffff;
+	 	margin-left: 18%;
+	}
+	.pretsmaltext{
+		font-size: 12px;
+		font-family: tajawal;
+		color: #808080;
+		margin-left: 18%;
+	}
+	.relat{
+		position: relative;
+	}
+	.featarrowtext{
+		font-size: 12px;
+	    font-family: Tajawal;
+	    letter-spacing: 4px;
+	    margin-left: -13%;
+	    color: #808080;
 	}
 }
 @media only screen and (min-device-width : 1366px){
 	.imgwidth{
 		height: 280px;
 		position: relative;
-		-webkit-box-shadow: 0 8px 6px -6px black;
-		-moz-box-shadow: 0 8px 6px -6px black;
-		box-shadow: 0 8px 6px -6px black;
 	}
 	.rwmarg{
 		margin: 0px;
+		margin-left: -1%;
 	}
 	.margimag{
 
@@ -537,15 +857,65 @@
 	.leftimg{
 
 	}
-	.feainnertext{
+	.pinktext{
+	 	font-size: 30px;
+	 	font-family: playfair display;
+	 	color: #ffffff;
+	}
+	.pinksmaltext{
+		font-size: 12px;
+		font-family: tajawal;
+		color: #808080;
+	}
+	.chiffontext{
 	 	font-size: 31px;
 	 	font-family: playfair display;
 	 	color: #ffffff;
 	}
-	.feainsmaltext{
+	.chiffonsmaltext{
 		font-size: 12px;
 		font-family: tajawal;
 		color: #808080;
+	}
+	.blackwhitetext{
+	 	font-size: 30px;
+	 	font-family: playfair display;
+	 	color: #ffffff;
+	}
+	.blackwhitesmaltext{
+		font-size: 12px;
+		font-family: tajawal;
+		color: #808080;
+	}
+	.bridaltext{
+	 	font-size: 30px;
+	 	font-family: playfair display;
+	 	color: #ffffff;
+	}
+	.bridalsmaltext{
+		font-size: 12px;
+		font-family: tajawal;
+		color: #808080;
+	}
+	.prettext{
+	 	font-size: 31px;
+	 	font-family: playfair display;
+	 	color: #ffffff;
+	}
+	.pretsmaltext{
+		font-size: 12px;
+		font-family: tajawal;
+		color: #808080;
+	}
+	.relat{
+		position: relative;
+	}	
+	.featarrowtext{
+		font-size: 12px;
+	    font-family: Tajawal;
+	    letter-spacing: 4px;
+	    margin-left: -13%;
+	    color: #808080;
 	}
 }
 
@@ -564,21 +934,13 @@
 }
 
 
-.relat{
-	position: relative;
-}
+
 .absoul{
 	position: absolute;
     margin-top: -58%;
     margin-left: 4%;
 }
-.featarrowtext{
-	font-size: 12px;
-    font-family: Tajawal;
-    letter-spacing: 4px;
-    margin-left: -13%;
-    color: #808080;
-}
+
 .featarrow{
 	margin-left: -8%;
 	margin-top: -12%;
@@ -586,7 +948,86 @@
 {/*New heading4new panal ENDS*/}
 
 {/*New heading5 panal*/}
-
+@media only screen and (min-device-width : 360px) and (max-device-width : 767px){
+	.whydresub{
+	    font-size: 20px;
+	    line-height: 28px;
+	    font-family: Playfair Display;
+	}
+	.wearnew{
+		margin-bottom: 15px;
+		    height: 95px;
+	}
+	.makemoney{
+		margin-top: 8%;
+	    margin-bottom: 15px;
+	    height: 95px;
+	    margin-left: -15%;
+	}
+	.payless{
+		    margin-top: 5%;
+		    margin-bottom: 15px;
+		    height: 95px;
+		    margin-left: -14px;
+	}
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
+	.whydresub{
+	    font-size: 30px;
+	    line-height: 31px;
+	    font-family: Playfair Display;
+	}
+	.wearnew{
+		margin-bottom: 15px;
+	}
+	.makemoney{
+		margin-top: 8%;
+		margin-bottom: 15px;
+	}
+	.payless{
+		margin-top: 5%;
+		margin-bottom: 15px;
+	}
+}
+@media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){
+	.whydresub{
+	    font-size: 25px;
+	    line-height: 31px;
+	    font-family: Playfair Display;
+	}
+	.wearnew{
+		margin-bottom: 15px;
+		height: 85px;
+	}
+	.makemoney{
+		margin-top: 8%;
+		margin-bottom: 15px;
+		height: 80px;
+	}
+	.payless{
+		margin-top: 5%;
+		margin-bottom: 15px;
+		height: 81px;
+	}
+}
+@media only screen and (min-device-width : 1366px){
+	.whydresub{
+	    font-size: 30px;
+	    line-height: 31px;
+	    font-family: Playfair Display;
+	}
+	.wearnew{
+		margin-bottom: 15px;
+	}
+	.makemoney{
+		margin-top: 8%;
+		margin-bottom: 15px;
+	}
+	.payless{
+		margin-top: 5%;
+		margin-bottom: 15px;
+	}
+}
 .benetext{
 	font-size: 12px;
     font-family: Tajawal;
@@ -598,27 +1039,14 @@
 	font-family: Playfair Display;
 	color: #353535;
 }
-.whydresub{
-    font-size: 30px;
-    line-height: 31px;
-    font-family: Playfair Display;
-}
+
 .whydresmal{
 	    font-size: 12px;
     font-family: Tajawal;
     color: #808080;
 }
-.makemoney{
-	margin-top: 8%;
-	margin-bottom: 15px;
-}
-.payless{
-	margin-top: 5%;
-	margin-bottom: 15px;
-}
-.wearnew{
-	margin-bottom: 15px;
-}
+
+
 .whatsnewhead{
 	font-family: Playfair Display;
 	font-size: 20px;
@@ -640,25 +1068,92 @@
 {/*New heading5 panal ENDS*/}
 
 {/*New Footer panal*/}
-@media only screen and (min-device-width : 320px){
+@media only screen and (min-device-width : 320px) and (max-device-width : 767px){
 	.quickfooter{
 		font-size: 35px;
 		font-family: Playfair Display ;
 		color: #ffffff;
 	}
+	.scrollfoot{
+	    height: 90px;
+   		margin-top: -45px;
+    	animation: mover 0.5s infinite  alternate;
+	}
+	.footernav{
+		font-size: 12px;
+	    font-family: Playfair Display;
+	    color: #cb9d6c;
+	    margin-bottom: 20px;
+	}
+	.contmailfoot{
+		font-size: 15px;
+	    font-family: Playfair Display;
+	    color: #cb9d6c;
+	    margin-left: -9%;
+	}
+	.contnofoot{
+		font-size: 15px;
+		font-family: Playfair Display;
+		color : #cb9d6c;
+		margin-left: -9%;
+	}
 }
-@media only screen and (min-device-width : 768px){
+@media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
 	.quickfooter{
 		font-size: 35px;
 		font-family: Playfair Display ;
 		color: #ffffff;
 	}
+	.scrollfoot{
+	    height: 90px;
+   		margin-top: -58px;
+    	animation: mover 0.5s infinite  alternate;
+	}
+	.footernav{
+		font-size: 12px;
+	    font-family: Playfair Display;
+	    color: #cb9d6c;
+	    margin-right: 14px;
+	}
+	.contmailfoot{
+		font-size: 15px;
+		font-family: Playfair Display;
+		color : #cb9d6c;
+		margin-left: -23%;
+	}
+	.contnofoot{
+		font-size: 15px;
+		font-family: Playfair Display;
+		color : #cb9d6c;
+	}
 }
-@media only screen and (min-device-width : 1024px){
+@media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){
 	.quickfooter{
 		font-size: 25px;
 		font-family: Playfair Display ;
 		color: #ffffff;
+	}
+	.scrollfoot{
+	    height: 90px;
+   		margin-top: -52px;
+    	animation: mover 0.5s infinite  alternate;
+	}
+	.footernav{
+		font-size: 12px;
+	    font-family: Playfair Display;
+	    color: #cb9d6c;
+	    margin-right: 14px;
+	}
+	.contmailfoot{
+		font-size: 15px;
+		font-family: Playfair Display;
+		color : #cb9d6c;
+		margin-left: -23%;
+	}
+	.contnofoot{
+		font-size: 15px;
+		font-family: Playfair Display;
+		color : #cb9d6c;
 	}
 }
 @media only screen and (min-device-width : 1366px){
@@ -667,13 +1162,30 @@
 		font-family: Playfair Display ;
 		color: #ffffff;
 	}
+	.scrollfoot{
+	    height: 90px;
+   		margin-top: -52px;
+    	animation: mover 0.5s infinite  alternate;
+	}	
+	.footernav{
+		font-size: 12px;
+	    font-family: Playfair Display;
+	    color: #cb9d6c;
+	    margin-right: 14px;
+	}
+	.contmailfoot{
+		font-size: 15px;
+		font-family: Playfair Display;
+		color : #cb9d6c;
+		margin-left: -23%;
+	}
+	.contnofoot{
+		font-size: 15px;
+		font-family: Playfair Display;
+		color : #cb9d6c;
+	}
 }
-.footernav{
-	font-size: 12px;
-    font-family: Playfair Display;
-    color: #cb9d6c;
-    margin-right: 14px;
-}
+
 .footernavpro{
 	font-size: 12px;
     font-family: Playfair Display;
@@ -681,24 +1193,12 @@
     margin-right: 12px;
     margin-top: -14px;
 }
-.contmailfoot{
-	font-size: 15px;
-	font-family: Playfair Display;
-	color : #cb9d6c;
-	margin-left: -23%;
-}
-.contnofoot{
-	font-size: 15px;
-	font-family: Playfair Display;
-	color : #cb9d6c;
-}
+
+
 .instaicon{
 	margin-left: 14%;
 }
-.scrollfoot{
-	    height: 90px;
-    margin-top: -45px;
-}
+
 
 .rowpaddmarg{
     padding-bottom: 48px;
