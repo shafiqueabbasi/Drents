@@ -95,6 +95,97 @@
 
 {/*New Header CSS ENDD*/}
 
+
+
+
+
+
+
+
+
+
+
+
+{/*New Header2 CSS*/}
+
+.HC2{
+	padding-left: 5.7%;
+	padding-right: 5.7%;
+}
+.nav{
+  font-size: 15px;
+}
+
+.nav-side-menu {
+  overflow: auto;
+  font-family: verdana;
+  font-size: 12px;
+  font-weight: 200;
+  background-color: #c2073f;
+  position: fixed;
+  top: 0px;
+  width: 300px;
+  height: 100%;
+  color: #e1ffff;
+}
+
+.nav-side-menu ul,
+.nav-side-menu li {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  line-height: 35px;
+  cursor: pointer;
+
+}
+.nav-side-menu li {
+  padding-left: 0px;
+}
+.head{
+  margin-right: 50px;
+  margin-top: 35px;
+  font-size: 15px;
+  font-family: Playfair Display;
+  color: #cb9d6c;
+}
+.headCart{
+	margin-right: 38px;
+    margin-top: 35px;	
+	font-size: 15px;
+   font-family: Playfair Display;
+   color: #cb9d6c;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 90px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: #cb9d6c;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {color: white;}
+
+{/*New Header2 CSS ENDD*/}
+
+
 {/*New Banner CSS*/}
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 767px){
@@ -1349,7 +1440,7 @@ i {
 	border-radius: 0px;
 	width:205px;
 	text-align: left;
-	margin-left: 0px;
+	margin-left: 49%;
 }
 .cloth:hover{
 	color: #9b9b9b;
@@ -1361,6 +1452,7 @@ i {
 	text-align: left;
 	color: #9b9b9b;
 	line-height: 4px;
+	margin-left: 49%;
 }
 
 .cloth2:{

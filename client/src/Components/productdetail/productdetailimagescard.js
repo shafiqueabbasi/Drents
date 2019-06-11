@@ -27,6 +27,10 @@
 			<div>
 				<div className="hidden-xs hidden-sm">
 					<div className="row">
+						
+						<div className="col-md-12">
+							<img alt="" src={this.state.showImg} style={{width:"100%", height:"875px"}}/>
+						</div>
 						<div className="col-md-3 hidden-xs hidden-sm">
 							{data.map((elem) => {
 								return (
@@ -43,9 +47,6 @@
 									</span>
 								)
 							})}
-						</div>
-						<div className="col-md-9">
-							<img alt="" src={this.state.showImg} style={{width:"100%", height:"875px"}}/>
 						</div>
 					</div>
 				</div> 	

@@ -185,16 +185,16 @@ class Productdetailfirstfold extends Component {
 				<div className="">
 					{/*<Header/>*/}
 				</div>
-				<div className="container" style={{marginTop:"130px"}} >
+				<div className="container-fluid" style={{marginTop:'3%', paddingLeft: '5.7%', paddingRight: '5.7%'}} >
 					<div className="row">
-						<div className="col-md-7 hidden-xs hidden-sm">
+						<div className="col-md-4 hidden-xs hidden-sm">
 							<Imagescard data={elem.fileList}/>
                     		<Table />
                     	</div>
                     	<div className="visible-xs visible-sm">
                     		<Imagescard data={elem.fileList}/>
                     	</div>
-						<div className="col-md-5">{/*/*main col-md-5 right possion div deskstop*/}
+						<div className="col-md-4">{/*/*main col-md-5 right possion div deskstop*/}
 						    <div className="row" style={{marginLeft:'-5%'}}>
 						    	<div className="col-sm-1 visible-sm"></div>
 								<div className="col-md-8 col-sm-7 col-xs-6">
