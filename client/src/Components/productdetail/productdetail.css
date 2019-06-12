@@ -6,15 +6,42 @@
 
 
 
-.flu{
-     text-align: center;
-     border: 2px solid black;
-     border-radius: 50%;
-     height: 55px;
-     width: 55px;
+
+
+.flu:first-child{
+     text-align: center!important;
+     
+     background : blue;
+     height: 50px;
+     width: 13%;
      display: inline-block;
      margin-left: 3%;
 }
+
+.flu:nth-child(odd){
+     text-align: center!important;
+     
+     background : rgba(155,155,155,0.3);
+     height: 50px;
+     width: 13%;
+     display: inline-block;
+     margin-left: 3%;
+}
+.flu:nth-child(even){
+     text-align: center!important;
+     
+     background : #473463;
+     height: 50px;
+     width: 13%;
+     display: inline-block;
+     margin-left: 3%;
+}
+
+.flu1{
+	text-align: center!important;
+}
+
+
 .fluu{
 	text-align: center;
      border: 2px solid black;
@@ -25,7 +52,9 @@
 }
 
 .aroundsize{
-	margin-top: 15px;
+	margin: 19px 0px 0px 19px;
+	text-align: center!important;
+	color: #cb9d6c;
 }
 .round{
 	display: inline-block;
@@ -66,6 +95,7 @@
 		margin-left: 1%;
 	}
 	.bookedboo{
+		color: #9b9b9b;
 		margin-top: -5%;
 	    font-size: 16px;
 	    margin-left: -8%;
@@ -133,6 +163,7 @@
 	.bookedboo{
 		margin-top: -3%;
 		font-size: 17px;
+		color: #9b9b9b;
 	}
 	.bookedbook{
 		width: 56%;
@@ -187,6 +218,7 @@
 		margin-left: 9%;
 	}
 	.bookedboo{
+		color: #9b9b9b;
 	    margin-top: -8%;
     	font-size: 16px;
     	margin-left: 5%;
@@ -243,8 +275,9 @@
 		margin-left: 8%;
 	}
 	.bookedboo{
-		margin-top: -8%;
-		font-size: 16px;
+		color: #9b9b9b;
+		font-family: Tajawal;
+		font-size: 30px;
 		margin-left: 4%;
 	}
 	.bookedbook{
@@ -615,17 +648,19 @@
 	}
 @media only screen and (min-device-width : 360px) and (max-device-width : 660px){
 	.trello4{
-		font-family : Qwigley;
+		font-family :  Playfair Display;
 	    margin-left: -7%;
 	    margin-top: 10%;
 	}	
 	.trello3{
+		color: #cb9d6c;
+		font-family: Tajawal;
 		margin-top: 15%;
    		 font-size: 25px;
         margin-left: -4%;
 	}
 	.detail{
-		 font-family: Qwigley;
+		 font-family:  Playfair Display;
 		 color: #c2073f; 
 		 margin-left: -1%;
 	}
@@ -635,12 +670,12 @@
     }
     .fly{
 		margin-left: 6%;
-		font-family: Qwigley;
+		font-family:  Playfair Display;
 		color: #c2073f; 
 		font-size: 35px;
 	}    
 	.detail1{
-		font-family: Qwigley;
+		font-family:  Playfair Display;
 		color: #c2073f; 
 		font-size: 25px;
 		text-align: left;
@@ -650,13 +685,13 @@
 		margin-left: 0px;
 	}
 	.rental1{
-		font-family: Qwigley;
+		font-family:  Playfair Display;
 		color: #c2073f; 
 		font-size: 45px;
 
 	}
 	.shelterr5{
-		font-family: Qwigley;
+		font-family: Playfair Display;
 	    font-size: 30px;
 	    margin-top: 64%;
 	    margin-left: -11%;
@@ -664,17 +699,18 @@
 }
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
 	.trello4{
-		font-family : Qwigley;
+		font-family : Playfair Display;
 	    margin-left: -15%;
 	    margin-top: 10%;
 	}
 	.trello3{
-		margin-top: 4%;
+		font-family: Tajawal;
+		color: #cb9d6c;
     	font-size: 25px;
     	margin-left: -11%;
 	}
 	.detail{
-		 font-family: Qwigley;
+		 font-family: Playfair Display;
 		 color: #c2073f; 
 		 margin-left: 4%;
 	}
@@ -684,12 +720,12 @@
 	}
 	.fly{
 		margin-left: 8%;
-		font-family: Qwigley;
+		font-family: Playfair Display;
 		color: #c2073f; 
 		font-size: 35px;
 	}
 	.detail1{
-		font-family: Qwigley;
+		font-family: Playfair Display;
 		color: #c2073f; 
 		font-size: 25px;
 		text-align: left;
@@ -699,13 +735,13 @@
 		margin-left: 4%;
 	}
 	.rental1{
-		font-family: Qwigley;
+		font-family: Playfair Display;
 		color: #c2073f; 
 		font-size: 45px;
 	    margin-left: 8%;
 	}
 	.shelterr5{
-		font-family: Qwigley;
+		font-family: Playfair Display;
 	    font-size: 60px;
 	    margin-top: 18%;
 	    margin-left: 3%;
@@ -713,17 +749,18 @@
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
 	.trello4{
-		font-family : Qwigley;
+		font-family : Playfair Display;
 	    margin-left: -7%;
 	    margin-top: 10%;
 	}
 	.trello3{
-		margin-top: 15%;
+		font-family: Tajawal;
+		color: #cb9d6c;
    		 font-size: 25px;
         margin-left: -4%;
 	}
 	.detail{
-		 font-family: Qwigley;
+		 font-family: Playfair Display;
 		 color: #c2073f; 
 		 margin-left: -1%;
 	}
@@ -733,12 +770,12 @@
 	}
 	.fly{
 		margin-left: 6%;
-		font-family: Qwigley;
+		font-family: Playfair Display;
 		color: #c2073f; 
 		font-size: 35px;
 	}
 	.detail1{
-		font-family: Qwigley;
+		font-family: Playfair Display;
 		color: #c2073f; 
 		font-size: 25px;
 		text-align: left;
@@ -748,30 +785,31 @@
 		margin-left: -6px;
 	}
 	.rental1{
-		font-family: Qwigley;
+		font-family: Playfair Display;
 		color: #c2073f; 
 		font-size: 45px;
 	    margin-left: 7%;
 	}
 	.shelterr5{
-		font-family: Qwigley;
+		font-family: Playfair Display;
 		font-size: 48px; 
 		margin-left: 7%;
 	}
 }
 @media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
 	.trello4{
-		font-family : Qwigley;
+		font-family : Playfair Display;
 	    margin-left: -7%;
 	    margin-top: 10%;
 	}
 	.trello3{
-		margin-top: 15%;
+		font-family: Tajawal;
+		color: #cb9d6c;
    		 font-size: 25px;
-        margin-left: -4%;
+        margin-left: 12%;
 	}
 	.detail{
-		 font-family: Qwigley;
+		 font-family: Playfair Display;
 		 color: #c2073f; 
 		 margin-left: -1%;
 	}
@@ -781,12 +819,12 @@
 	}
 	.fly{
 		margin-left: 6%;
-		font-family: Qwigley;
+		font-family: Playfair Display;
 		color: #c2073f; 
 		font-size: 35px;
 	}
 	.detail1{
-		font-family: Qwigley;
+		font-family: Playfair Display;
 		color: #c2073f; 
 		font-size: 25px;
 		text-align: left;
@@ -796,14 +834,24 @@
 		margin-left: 0px;
 	}
 	.rental1{
-		font-family: Qwigley;
+		font-family: Playfair Display;
 		color: #c2073f; 
 		font-size: 45px;
 	    margin-left: 6%;
 	}
 	.shelterr5{
-		font-family: Qwigley;
+		font-family: Playfair Display;
 		font-size: 60px; 
 		margin-left: 7%;
 	}
+}
+
+.arrowleft{
+	padding-left: 67%;
+}
+
+.arrowtext{
+	margin-left: 6%;
+	letter-spacing: 6px;
+	color: #9b9b9b;
 }

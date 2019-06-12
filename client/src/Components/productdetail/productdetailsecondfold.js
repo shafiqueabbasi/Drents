@@ -53,13 +53,13 @@ class SecondFold extends Component {
               <div className="col-md-12"><hr/></div>
               <Gallery
                   label="You May Also Like"
-                  data={this.props.location.state.data.slice(0, 3)}
+                  data={this.props.location.state.data.slice(0, 4)}
                   widthProps=''
               />
               <div className="col-md-12"><hr/></div>
               <Gallery
                   label="More Of Weddings" hrLine='true'
-                  data={this.props.location.state.data.slice(2, 5)}
+                  data={this.props.location.state.data.slice(0, 4)}
                    widthProps=''
               />
               <div className="col-md-12"><hr/></div>

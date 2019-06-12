@@ -194,23 +194,49 @@ class Productdetailfirstfold extends Component {
                     	<div className="visible-xs visible-sm">
                     		<Imagescard data={elem.fileList}/>
                     	</div>
-						<div className="col-md-4">{/*/*main col-md-5 right possion div deskstop*/}
+						<div className="col-md-6">{/*/*main col-md-5 right possion div deskstop*/}
 						    <div className="row" style={{marginLeft:'-5%'}}>
 						    	<div className="col-sm-1 visible-sm"></div>
 								<div className="col-md-8 col-sm-7 col-xs-6">
 									<div className="col-sm-6 col-lg-8 col-md-8">
-										<h1 className="shelterr5" style={{color:'#c2073f'}}>{elem.productName}</h1>
+										<h1 className="shelterr5" style={{fontFamily: 'Playfair Display',fontSize: '36px'}}>{elem.productName}</h1>
 									</div>
-									<div className="col-sm-3 col-lg-2 col-md-2 newstar">
+									<div className="col-lg-5 col-md-5 col-sm-5 col-xs-7">
+                                    	<p className="trello3">${" " + elem.priceDay}</p>
+                          			</div>
+
+									{/*<div className="col-sm-3 col-lg-2 col-md-2 newstar">
 										<i class="fas fa-star" style={{fontSize:'16px', color:'yellow'}}></i>								
 										
 									</div>
 									<div className="col-sm-3 col-lg-2 col-md-2 newrating">
 										<p style={{fontSize:'15px'}}>4.5</p>	
-									</div>
-									<p className="col-sm-12 col-md-12 col-lg-12 bookedboo">{elem.detailName}</p>					
+									</div>*/}
+
+									<p className="col-sm-12 col-md-12 col-lg-12 bookedboo">{elem.detailName}</p>
+									
+									{/*<div className="col-sm-12 col-md-12 col-lg-12 arrowleft">
+										<img src="../images/arrow.png"/>
+										<p
+									</div>*/}
+
+
+					               <div className="row">
+					                   <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+					                       <img src="../images/arrow.png" className="arrowleft"/>
+					                   </div>
+					                   <div className="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+					                       <p className="arrowtext">SHOW ALL FEATURED DRESSES</p>
+					                   </div>
+					               </div>
+           							<div className="col-md-12">
+           								<hr/>
+           							</div>
+									 
+
+														
 								</div>
-								<div className="col-md-4 col-sm-4 col-xs-6 roundnround2">
+								{/*<div className="col-md-4 col-sm-4 col-xs-6 roundnround2">
 									<img src={userImage.length > 0 ? userImage : "../images/admin1.jpg"} className="bookedbook"/>
                                    
                                     <div>
@@ -219,17 +245,17 @@ class Productdetailfirstfold extends Component {
                                     <div className="roundnround3">   
                                        <Link to={`/profile/${userId}`}><span className="roundnround">View Profile</span></Link>
                                    	</div>
-								</div>									 
+								</div>*/}									 
                             </div>{/* div close*/}
                             <div className="row">
                           		<div className="col-md-12">
                           			<div className="visible-sm col-sm-1"></div>
-                          			<div className="col-lg-5 col-md-5 col-sm-5 col-xs-7">
+                          			{/*<div className="col-lg-5 col-md-5 col-sm-5 col-xs-7">
                                     	<p className="trello3">${" " + elem.priceDay}</p>
-                          			</div>
-                          			<div className="col-lg-4 col-md-5 col-sm-4 col-xs-6 name">
+                          			</div>*/}
+                          			{/*<div className="col-lg-4 col-md-5 col-sm-4 col-xs-6 name">
                                     	<p><span className="hello">Rental Price</span></p>
-                          			</div>
+                          			</div>*/}
                            			<div className="col-md-2">
                                     	{/*empty div*/}
             						</div>
@@ -267,8 +293,8 @@ class Productdetailfirstfold extends Component {
   								<div className="col-md-12 hidden-xs hidden-sm round">
   									{elem.sizes && elem.sizes.map((el, key) => {
   										return(
-  											<span key={key}>
-  												<div className="col-md-3 flu"><h5 className="aroundsize">{el}</h5></div>
+  											<span key={key} className="flu">
+  												<div className="col-md-3 flu1"><h5 className="aroundsize">{el}</h5></div>
   											</span>
   										)
   									})}
@@ -463,6 +489,36 @@ class Productdetailfirstfold extends Component {
                             	<Table />
                             </div>{/*div close of visible-sm visible-xs*/}
 					    </div>{/*main col-md-5 right possion div deskstop*/}
+
+
+					    <div className="col-md-4">
+					    	<div className="col-md-4 col-sm-4 col-xs-6 roundnround2">
+									<img src={userImage.length > 0 ? userImage : "../images/admin1.jpg"} className="bookedbook"/>
+                                   
+                                    
+                                    
+								</div>
+								<div className="col-md-4">
+                                   		<span className="" style={{fontFamily: 'Playfair Display', fontSize: "32px"}}>{elem.userName}</span><br/>
+
+                                   		<div className="col-sm-3 col-lg-2 col-md-2 newstar">
+                                   		Owner
+										<i class="fas fa-star" style={{fontSize:'16px', color:'#cb9d6c'}}></i>								
+										
+									</div>
+									<div className=" newrating">
+										<p style={{fontSize:'15px'}}>&emsp;4.5/5</p>	
+									</div>
+
+
+                                   		<div className="roundnround3">   
+                                       <Link to={`/profile/${userId}`}><span className="roundnround">View Profile</span></Link>
+                                   	</div>
+                                    </div>
+
+					    </div>
+
+
 					</div>{/*main row*/}
 				</div>{/*main container div*/}
 			<Secondfold {...this.props} ratingReview={this.ratingReview}/>
