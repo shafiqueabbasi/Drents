@@ -68,12 +68,7 @@
   line-height: 4px;
   text-align: center;
 }
-.headings{
-    font-family: Playfair Display;
-    fontSize: 50px;
-    text-align: left;
-    padding-left: 2%;
-}
+
 .img-circle{
   height: 200px;
   width: 200px;
@@ -775,3 +770,5 @@ input[type="file"] {
 .button .input .optgroup .select .textAreaFont {
     color: black !important;
 }
+
+

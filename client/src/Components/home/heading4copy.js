@@ -5,18 +5,15 @@ import { isMobileOnly, isTablet } from "react-device-detect";
 
 class Heading4 extends Component {
   render() {
-  	const { label, hrLine, data, showEditDelete, onDelete, profile, userAvailable, showDropdown,showonhome } = this.props;
+  	const { label, hrLine, data, showEditDelete, onDelete, profile, userAvailable, showDropdown } = this.props;
     
     return (
     	<div className="col-md-12 App">
-    		<div className="row">
-				<p className="featuresub">FEATURED</p>
-			</div>
     		{label && label.length > 0 && <div className="Heading col-md-9 col-sm-10">
       			<h1 className="headings">&nbsp;&nbsp;{label}</h1>
       		</div>}
     		<div className="col-md-3 col-sm-2 row">
-    			{showonhome && <div className="dropdown" style={{marginTop: '20px'}}>
+    			<div className="dropdown" style={{marginTop: '20px'}}>
 
 					<button className="btn dropdown-toggle cloth" type="button" data-toggle="dropdown">Sort by...
 					&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
@@ -27,24 +24,20 @@ class Heading4 extends Component {
 				    	<li className="cloth2"><a href="#" className="cloth3">Price: Low to high</a></li>
 				    	<li className="cloth2"><a href="#" className="cloth3">Price: High to low</a></li>
 				    </ul>
-				</div>}
+				</div>
     		</div>
 
-	    		<div className="container-fluid">
-	    			<div className="col-md-12 col-sm-12 col-xs-12">	    		
-	    				<div className="row rwmarg">
+	    		<div className="container-fluid" style={{width: '112%'}}>
+	    			<div className="col-md-12 col-sm-12 col-xs-12">
+	    				<div className="row" style={{textAlign:'center'}}>
 	    					{data && data.map((elem, key) => {
 	    						return(
-	    							<div className="col-xs-6 col-sm-2 col-md-2 col-lg-2 relat topmargin">
+	    							<div className="col-md-3 col-xs-12 topmargin">
 			    						<Link key={key} to={{pathname: `/detail`, state: {elem, data}}}>
-			    							<img src={elem.fileList[0]} className="imgwidth"/>
-			    							<div className="absoul">
-						    					<p className="pinktext">Pink Floral <br/>Top</p>
-						    					<p className="pinksmaltext">$7/day</p>
-						    				</div>
+			    							<img src={elem.fileList[0]} className="zoom" style={{height: '307px'}} />
 		    							</Link>
-	    								{/*<div>
-	    									{showEditDelete && userAvailable && <div className="row">
+		    							<div>
+		    								{showEditDelete && userAvailable && <div className="row">
 		    									<div className="col-md-6 col-xs-6">
 		    										<Link to={{pathname: `/userdetail`, state: {goTo: 'uploadDress', elem, profile}}}>
 		    											<h2 className="h_btn">Edit</h2>
@@ -57,23 +50,13 @@ class Heading4 extends Component {
 		    								<h2 className="h_dress" style={isMobileOnly ? {width:this.props.widthProps} : {width:''}}>{elem.productName}</h2>
 		    								<h3 className="h_dress tophead" style={isMobileOnly ? {width:this.props.widthProps} : {width:''}}>{elem.detailName}</h3>
 		    								<h3 className="h_dress tophead" style={isMobileOnly ? {width:this.props.widthProps} : {width:''}} >$ {" " + elem.priceDay}</h3>
-		    							</div>*/}
+		    							</div>
 			    					</div>
 	    						)
 	    					})}
 	    				</div>
 	    			</div>
-	    		</div><br/><br/>
-	    		<div className="container hidden-xs">
-	    			<div className="row">
-	    				<div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-	    					<img src="../images/arrow.png" className="featarrow"/>
-	    				</div>
-	    				<div className="col-xs-10 col-sm-10 col-md-10 col-lg-10">
-	    					<p className="featarrowtext">SHOW ALL FEATURED DRESSES</p>
-	    				</div>
-	    			</div>
-	    		</div><br/><br/>
+	    		</div>
     	</div>
     );
 

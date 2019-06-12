@@ -66,18 +66,18 @@ class Heading5 extends Component {
           </div>
           <br/><br/><br/><br/><br/><br/>
           <div className="row" style={{margin:'0px'}}>
-              <div className="col-xs-5 col-sm-5 col-md-5 col-lg-5"></div>
-              <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+              <div className="col-xs-0 col-sm-5 col-md-5 col-lg-5"></div>
+              <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                   <p className="benetext">GET ON IT</p>
                   <p className="whydrenttext">What's next?</p><br/>
                   <div className="row" style={{margin:'0px'}}>
-                      <div className="col-sm-5 col-md-5 col-lg-5 divcolour">
+                      <div className="col-xs-12 col-sm-5 col-md-5 col-lg-5 divcolour">
                           <p className="smaltexthead">browse all available dresses and rent the right <br/>one for the next event</p>
                           <p className="whatsnewhead">Rent dresses</p>
                           <img src="../images/arrow.png" className="arrowimage" />
                       </div>
-                      <div className="col-sm-2 col-md-2 col-lg-2"></div>
-                      <div className="col-sm-5 col-md-5 col-lg-5 divcolour">
+                      <div className="col-xs-0 col-sm-2 col-md-2 col-lg-2"></div>
+                      <div className="col-xs-12 col-sm-5 col-md-5 col-lg-5 divcolour purple_mob">
                           <p className="smaltexthead">Sign up your account and put your dresses <br/>for rent to earn money</p>
                           <p className="whatsnewhead">Make cash</p>
                           <img src="../images/arrow.png" className="arrowimage" />

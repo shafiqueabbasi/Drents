@@ -42,7 +42,11 @@ class Home extends Component {
         <Heading />
         <Heading2/>
         <Heading3/>
-        <Heading4New/>
+        <Gallery label="Featured Rentals"
+        data={data.slice(0, 5)}
+        widthProps=''
+        showonhome={false}
+        />
         <Heading5/>
       </div>
     );

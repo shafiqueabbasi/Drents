@@ -16,7 +16,7 @@ class Heading4New extends Component {
     		<div className="row rwmarg hidden-xs">
     			<div className="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
     			<div className="col-xs-6 col-sm-2 col-md-2 col-lg-2 relat">
-    				<img src="../images/pink-shirt-01.png" className="imgwidth"/>
+    				<img src="../images/pink-shirt-01.png" className="imgwidth "/>
     				<div className="absoul">
     					<p className="pinktext">Pink Floral Top</p>
     					<p className="pinksmaltext">$7/day</p>
@@ -52,10 +52,12 @@ class Heading4New extends Component {
     			</div>
     			<div className="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
     		</div><br/><br/>
+
+
             <div className="row rwmarg visible-xs">
                 <div className="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
                 <div className="col-xs-6 col-sm-2 col-md-2 col-lg-2 relat">
-                    <img src="../images/pink-shirt-01.png" className="imgwidth"/>
+                    <img src="../images/pink-shirt-01.png" className="imgwidth  pinkleft"/>
                     <div className="absoul">
                         <p className="pinktext">Pink Floral Top</p>
                         <p className="pinksmaltext">$7/day</p>
