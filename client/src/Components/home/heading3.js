@@ -13,27 +13,27 @@ class Heading3 extends Component {
                       <p className="howwork">HOW IT WORKS</p>
                       <p className="rentwork">How Drent Works</p>
                       <div className="row">
-                        <div className="col-sm-3 col-md-3 col-lg-3">
+                        <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                             <img src="../images/choose-your-dress-icon.png" className="iconimg" />
                         </div>
-                        <div className="col-sm-9 col-md-9 col-lg-9">
+                        <div className="col-xs-9 col-sm-9 col-md-9 col-lg-9">
                             <p className="chosedres">1.Choose a dress</p>
                             <p className="chosedetail">Browse our catalog of hundreds of available dresses from our users.
                                             Check out the details, confirm the size and move on to the next step.</p>
                         </div>
                       </div>
                       <div className="row">
-                        <div className="col-sm-3 col-md-3 col-lg-3">
+                        <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                             <img src="../images/place-order-icon.png" className="iconimg2" />
                         </div>
-                        <div className="col-sm-9 col-md-9 col-lg-9">
+                        <div className="col-xs-9 col-sm-9 col-md-9 col-lg-9">
                             <p className="chosedres">2.Place your order</p>
                             <p className="chosedetail">Browse our catalog of hundreds of available dresses from our users.
                                             Check out the details, confirm the size and move on to the next step.</p>
                         </div>
                       </div>
                       <div className="row">
-                        <div className="col-sm-3 col-md-3 col-lg-3">
+                        <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                             <img src="../images/return-repeat-icon.png" className="iconimg3" />
                         </div>
                         <div className="col-sm-9 col-md-9 col-lg-9">

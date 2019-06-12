@@ -23,7 +23,8 @@ class Heading extends Component {
       backgroundRepeat: 'no-repeat'
     }}>
           <p className="weldrent">Welcome to Drent</p><br/>
-          <p className="subtext">With Drent, you can get your perfect dress at a fraction of the cost!</p><br/><br/>
+          <p className="subtext hidden-xs">With Drent, you can get your perfect dress at a fraction of the cost!</p><br/><br/>
+          <p className="subtext visible-xs">With Drent, you can get your perfect dress <br/>at a fraction of the cost!</p><br/><br/>      
       </div>
     );
 

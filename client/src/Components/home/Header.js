@@ -9,7 +9,7 @@ import { userActions } from '../../_actions';
 
 class FirstPage extends Component {
   state = {
-      arrCart: [],
+      arrCart: []
   }
 
   async componentDidMount(){
