@@ -31,23 +31,44 @@
 						<div className="col-md-12">
 							<img alt="" src={this.state.showImg} style={{width:"100%", height:"875px"}}/>
 						</div>
-						<div className="col-md-3 hidden-xs hidden-sm">
+					</div>
+					<br/>
+					<div className="row">	
+						{/*<div className="col-md-4 hidden-xs hidden-sm">
+						
 							{data.map((elem) => {
 								return (
-									<span>
-										<img 
-											alt="" 
+									
+										<img
+											alt="image"
 											src={elem} 
 											style={{width:"100%", height:"230px"}} 
 											onClick={
 												() => this.setState({ showImg: elem })
 											}
 										/>
-										<br/><br/>
-									</span>
+										
+									
 								)
 							})}
-						</div>
+						
+						</div>*/}
+						<div className="row" style={{margin:'0px'}}>	
+            			{data.map((elem) => {
+							return (
+							<div className="col-md-3 hidden-xs hidden-sm">
+								<img 
+									alt="" 
+									src={elem} 
+									style={isTablet ? {height:"200px", width:'100%'} : {height:"200px" , width:'100%'}} 
+									onClick={
+										() => this.setState({ showImg: elem })
+									}
+								/>
+							</div>
+							)
+						})}						
+					</div>
 					</div>
 				</div> 	
             	<br/><br/><br/>
