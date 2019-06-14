@@ -6,8 +6,7 @@ class SecondPage extends Component {
 
     return (
     <div>
-        <div>
-            
+        <div>            
               <img src="../images/drent-purple-header.png" className="banneralign" />
 
               <div className="relationtext container">

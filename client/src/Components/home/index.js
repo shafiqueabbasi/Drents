@@ -37,7 +37,7 @@ class Home extends Component {
       <div className="App">
         {/*<Header/>*/}
         {loading && <div className="loading">Loading&#8230;</div>}
-        <Banner/>
+       
         <Scrollimage/>
         <Heading />
         <Heading2/>

@@ -1,5 +1,7 @@
 {/*New Header CSS*/}
+.navbar{
 
+}
 
 .nav-side-menu {
   overflow: auto;
@@ -27,18 +29,25 @@
   padding-left: 0px;
 }
 .head{
-  margin-right: 50px;
+  margin-right: 25px;
+  margin-top: 20px;
+  font-size: 15px;
+  font-family: Playfair Display;
+  color: #cb9d6c;
+}
+.headpro{
+  margin-right: 48px;
   margin-top: 35px;
   font-size: 15px;
   font-family: Playfair Display;
   color: #cb9d6c;
 }
 .headCart{
-	margin-right: 38px;
-    margin-top: 35px;	
-	font-size: 15px;
-   font-family: Playfair Display;
-   color: #cb9d6c;
+	margin-right: 13px;
+    margin-top: -15px;
+    font-size: 15px;
+    font-family: Playfair Display;
+    color: #cb9d6c;
 }
 
 .dropdown {
@@ -83,6 +92,9 @@
 @media only screen and (min-device-width : 1366px){
 	.nav{
   		font-size: 15px;
+  		position: absolute;
+		z-index: 999;
+		background: none;
 	}
 
 }
@@ -112,9 +124,7 @@
 	padding-left: 5.7%;
 	padding-right: 5.7%;
 }
-.nav{
-  font-size: 15px;
-}
+
 
 .nav-side-menu {
   overflow: auto;
@@ -175,11 +185,6 @@
   display: block;
 }
 
-.dropdown-content a:hover {background-color: #ddd;}
-
-.dropdown:hover .dropdown-content {display: block;}
-
-.dropdown:hover .dropbtn {color: white;}
 
 {/*New Header2 CSS ENDD*/}
 
@@ -373,7 +378,7 @@
 	.relationtext{
 		position: absolute;
 	    margin-top: -47%;
-	    margin-left: 61px;
+	    margin-left: 105px;
 	}
 	.lartext{
 	   font-size: 79px;
@@ -1320,7 +1325,7 @@
 	.scrollfoot{
 	    height: 90px;
    		margin-top: -45px;
-    	animation: mover 0.5s infinite  alternate;
+    	
 	}
 	.footernav{
 		font-size: 12px;
@@ -1350,7 +1355,7 @@
 	.scrollfoot{
 	    height: 90px;
    		margin-top: -58px;
-    	animation: mover 0.5s infinite  alternate;
+    	
 	}
 	.footernav{
 		font-size: 12px;
@@ -1379,7 +1384,7 @@
 	.scrollfoot{
 	    height: 90px;
    		margin-top: -52px;
-    	animation: mover 0.5s infinite  alternate;
+    	
 	}
 	.footernav{
 		font-size: 12px;
@@ -1408,7 +1413,7 @@
 	.scrollfoot{
 	    height: 90px;
    		margin-top: -52px;
-    	animation: mover 0.5s infinite  alternate;
+    	
 	}	
 	.footernav{
 		font-size: 12px;
