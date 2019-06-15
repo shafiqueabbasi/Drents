@@ -71,8 +71,8 @@ class Headernew extends Component {
                                 <div className="modal-header">
                                   <button type="button" className="close" data-dismiss="modal">&times;</button>
                                   <div className="row">
-                                      <div className="container">
-                                        <h4 className="modal-title">Sign In</h4>
+                                      <div className="">
+                                        <h4 className="modal-title margmodal">Sign In</h4>
                                       </div>
                                   </div>                                  
                                 </div>
@@ -94,8 +94,8 @@ class Headernew extends Component {
                                 <div className="modal-header">
                                   <button type="button" className="close" data-dismiss="modal">&times;</button>
                                   <div className="row">
-                                      <div className="container">
-                                        <h4 className="modal-title">Sign In</h4>
+                                      <div className="">
+                                        <h4 className="modal-title margmodal">Sign Up</h4>
                                       </div>
                                   </div>
                                 </div>
@@ -107,14 +107,15 @@ class Headernew extends Component {
                             </div>
                           </div>
                       </li>}	
-     					<li className="headCart">
-	                        <Link to={{pathname: `/checkout`, state: {finalArr}}} className="nav" style={{background: 'none'}}>
+     					        <li className="headCart">
+	                        <Link to={{pathname: `/checkout`, state: {finalArr}}} className="nav">
 	                          Cart
 	                          <span>
 	                            {finalArr.length > 0 ? finalArr.length : ''}
 	                          </span>
 	                        </Link>
-                        </li>
+                      </li>
+                 {loggedIn && <li className="headCart"><Link to={`/profile/${userId}`} className="nav">My Profile</Link></li>}     
      				</ul>
      			</div>
  			</div>

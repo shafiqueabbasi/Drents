@@ -138,10 +138,15 @@ class SignUp extends Component {
                                             <button type="submit" className="login" onClick={this.handleSubmit}>Sign up</button>
                                         </div>
                                         
-                                    </div><br/><br/><br/>
+                                    </div><br/>
                   		          </Form>
                   					</div>
             				</div>
+                    <div className="container">
+                        <div className="btnalignup">
+                          <p className="alacountup">I already have an account</p>  
+                        </div>
+                    </div>
     			      </div>
           	</div>
         );

@@ -58,8 +58,20 @@
 .scrolling_form{
      overflow-y: scroll;
     height: 500px;
+    padding-right: 1px;
+
+}
+.scrolling_form::-webkit-scrollbar {
     color: #cb9d6c;
-    ::-webkit-scrollbar: ;
+}
+.alacountup{
+  font-size: 18px;
+  color: #cb9d6c;
+  font-family: playfair display;
+}
+.btnalignup{
+      margin-left: 3%;
+    margin-top: 1%;
 }
 /*<----javascript---->*/
 
@@ -369,15 +381,16 @@
       
   }
   .userstar{
-      color: yellow;
-      font-size: 17px;
-    margin-left: 13%;
-    margin-top: 0%;
+    color: #cb9d6c;
+    font-size: 20px;
+    margin-left: 6%;
+    margin-top: -1%;
+    margin-bottom: 10%;
   }
   .userstar_rating{
         padding: 0;
-        margin-top: -13.5%;
-        margin-left: 52%;
+      margin-top: -14.5%;
+      margin-left: 22%;
     }
 }
 

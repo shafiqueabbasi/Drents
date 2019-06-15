@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import './home.css';
 class SecondPage extends Component {
 
   render() {
@@ -7,7 +7,7 @@ class SecondPage extends Component {
     return (
     <div>
         <div>            
-              <img src="../images/drent-purple-header.png" className="banneralign" />
+           <img src="../images/drent-purple-header.png" className="banneralign"/>
 
               <div className="relationtext container">
                 <div className="row" style={{margin:'0px'}}>
