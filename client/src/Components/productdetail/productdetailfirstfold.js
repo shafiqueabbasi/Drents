@@ -189,12 +189,12 @@ class Productdetailfirstfold extends Component {
 					<div className="row">
 						<div className="col-md-4 hidden-xs hidden-sm">
 							<Imagescard data={elem.fileList}/>
-                    		<Table />
+                    		{/*<Table />*/}
                     	</div>
                     	<div className="visible-xs visible-sm">
                     		<Imagescard data={elem.fileList}/>
                     	</div>
-						<div className="col-md-6">{/*/*main col-md-5 right possion div deskstop*/}
+						<div className="col-md-5">{/*/*main col-md-5 right possion div deskstop*/}
 						    <div className="row" style={{marginLeft:'-5%'}}>
 						    	<div className="col-sm-1 visible-sm"></div>
 								<div className="col-md-8 col-sm-7 col-xs-6">
@@ -213,25 +213,14 @@ class Productdetailfirstfold extends Component {
 										<p style={{fontSize:'15px'}}>4.5</p>	
 									</div>*/}
 
-									<p className="col-sm-12 col-md-12 col-lg-12 bookedboo">{elem.detailName}</p>
+									<p className="col-xs-12 col-sm-12 col-md-12 col-lg-12 bookedboo">{elem.detailName}</p>
 									
 									{/*<div className="col-sm-12 col-md-12 col-lg-12 arrowleft">
 										<img src="../images/arrow.png"/>
 										<p
 									</div>*/}
 
-
-					               <div className="row">
-					                   <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-					                       <img src="../images/arrow.png" className="arrowleft"/>
-					                   </div>
-					                   <div className="col-xs-10 col-sm-10 col-md-10 col-lg-10">
-					                       <p className="arrowtext">SHOW ALL FEATURED DRESSES</p>
-					                   </div>
-					               </div>
-           							<div className="col-md-12">
-           								<hr/>
-           							</div>
+					               
 									 
 
 														
@@ -247,6 +236,19 @@ class Productdetailfirstfold extends Component {
                                    	</div>
 								</div>*/}									 
                             </div>{/* div close*/}
+
+                            <div className="row">
+					                   <div className="col-xs-2 col-sm-2 col-md-1 col-lg-1">
+					                       <img src="../images/arrow.png" className="arrowleft"/>
+					                   </div>
+					                   <div className="col-md-11 col-lg-11 col-sm-11 col-xs-11 rats">
+					                       <p className="arrowtext">SHOW ALL (85) RATINGS & COMMENTS</p>
+					                   </div>
+					               </div>
+           							<div className="row col-md-12">
+           								<hr/>
+           							</div>
+
                             <div className="row">
                           		<div className="col-md-12">
                           			<div className="visible-sm col-sm-1"></div>
@@ -264,21 +266,29 @@ class Productdetailfirstfold extends Component {
                           			</div>
                           		</div>{/*div col-md-12 Close*/}
                             </div>{/*Row Close*/}
-                            <div className="row">
+
+
+
+
+                           {/* <div className="row">
                                 	<div className="col-md-12">
                                 	 	<div className="col-md-6 detail">
                                 	 		<h1>Description</h1>
                                 	 	</div>
                                 	 	<div className="col-md-6"></div>
-                                	</div>{/*Row Col-md-12 Close*/}
-                            </div>{/*Row Close*/}
+                                	</div>
+                            </div>
                     		<div className="row">
 			                    	<div className="col-md-12 drn">
 			                    		<p className="trend">{elem.description}</p>
-		                   			</div>{/*Div col-md-12 Close*/}
-				        	</div>{/*Row Close*/}
+		                   			</div>
+				        	</div>*/}
+
+
+
+
 				        	<div className="row">
-				        		<div className="fly"><h1>Size Available</h1></div>
+				        		<div className="fly"><h1>Size Available</h1></div><br/>
 				        	</div>{/*Div Row Close*/}
 				        	{/*sizes of Deskstop*/}
 
@@ -290,7 +300,7 @@ class Productdetailfirstfold extends Component {
 				        		elementThree="L"
 			        		/>*/}
 							<div className="row">
-  								<div className="col-md-12 hidden-xs hidden-sm round">
+  								<div className="col-md-8 col-sm-12 col-xs-12 round">
   									{elem.sizes && elem.sizes.map((el, key) => {
   										return(
   											<span key={key} className="flu">
@@ -298,6 +308,7 @@ class Productdetailfirstfold extends Component {
   											</span>
   										)
   									})}
+
                             		{/*<div className="col-md-2 flu"><h3>S</h3></div>
                             		<div className="col-md-1"></div>
                             		<div className="col-md-2 flu"><h3>M</h3></div>
@@ -314,7 +325,9 @@ class Productdetailfirstfold extends Component {
 				        		classEight="col-xs-2" elementOne="S" elementTwo="M"
 				        		elementThree="L"
 			        		/>*/}
-                            <div className="row">
+
+			        	{/*ye commit kiya he isko mat kholna*/}
+                            {/*<div className="row">
   								<div className="visible-xs">
   									<div className="col-xs-0"></div>
   									{elem.sizes && elem.sizes.map((el, key) => {
@@ -324,13 +337,17 @@ class Productdetailfirstfold extends Component {
 			                            		<div className="col-xs-0"></div>
 			                            	</span>
   										)
-  									})}
+  									})}*/}
                             		{/*<div className="col-xs-2 flu"><h3>M</h3></div>
                             		<div className="col-xs-1"></div>
                             		<div className="col-xs-2 flu"><h3>L</h3></div>
                             		<div className="col-xs-1"></div>*/}
-                            	</div>
-                            </div>
+                            {/*	</div>
+                            </div>*/}
+                        {/*or yahan tak*/}
+
+
+
                             {/*Sizes For SM*/}
                             {/*<CircleSizes classOne="visible-sm"
 				        		classTwo="col-sm-2" classThree="col-sm-2 flu"
@@ -340,7 +357,9 @@ class Productdetailfirstfold extends Component {
 				        		elementThree="L"
 			        		/>*/}
 
-                            <div className="row">
+
+			        	{/*ye commit kiya he isko mat kholna*/}
+                            {/*<div className="row">
   								<div className="visible-sm">
   									<div className="col-sm-2"></div>
   									{elem.sizes && elem.sizes.map((el, key) => {
@@ -350,14 +369,25 @@ class Productdetailfirstfold extends Component {
 			                            		<div className="col-sm-1"></div>
 		                            		</span>
   										)
-  									})}
+  									})}*/}
                             		{/*<div className="col-sm-2 fluu"><h3>M</h3></div>
                             		<div className="col-sm-2"></div>
                             		<div className="col-sm-2 fluu"><h3>L</h3></div>
                             		<div className="col-sm-0"></div>*/}
-                            	</div>
+                            	{/*</div>
+                            </div>*/}
+                        {/*or yahan tak*/}
+
+                            <div>
+                            <h4 className="showChart">Show size chart</h4>
+
+                            {/*<div className="col-md-4 col-sm-12 col-xs-12">
+								<Table />
+                    		</div>*/}
+
                             </div>
-                            {elem.tags.length > 0 && <div className="row">
+
+                            {/*{elem.tags.length > 0 && <div className="row">
                         		<div className="col-md-2 detail1"><h1>Detail</h1></div>
                         		<div className="col-md-5"></div>
                         		<div className="col-md-5"></div>
@@ -372,7 +402,7 @@ class Productdetailfirstfold extends Component {
 		                            	</div>
 		                            )
 								})}
-                            </div>
+                            </div>*/}
                             {/*<div className="row">
                             	<div className="col-md-5">
 		                        	<ul>
@@ -387,10 +417,17 @@ class Productdetailfirstfold extends Component {
                             </div>*/}
                             <div className="row">
                             	<div className="rental1"><h1>Rental Period</h1></div>
-                            </div>
-                            <div className="row">
-                            	<h3 className="rental100">Available From {elem.from} To {elem.to}</h3>
-                            </div>
+                            </div><br/>
+                            
+
+                            <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 ab">
+                            	<div className="col-lg-3 col-md-4 col-sm-3 col-xs-4 able">{elem.from}</div>
+                            	<div className="col-lg-2 col-md-3 col-sm-2 col-xs-3 able1"> To </div>
+                            	<div className="col-lg-3 col-md-4 col-sm-3 col-xs-4 able">{elem.to}</div>
+                            	<div className="col-lg-3 col-md-3 col-sm-4 col-xs-1"></div>
+                            	
+                            </div><br/><br/><br/><br/><br/>
+
                             {/*<div className="row">
                             	<div className="col-md-4">
                             		<label className="container">
@@ -428,6 +465,7 @@ class Productdetailfirstfold extends Component {
                             		<div className="col-sm-1 sum"><i className="fa fa-calendar sam"></i></div>
                             	</div>
                             </div>*/}
+
                             <div className="row" style={{margin:'0px'}}>
                             	<div className="sams col-md-12 col-xs-12 col-sm-12">
                             		{/*<div className="col-md-2">
@@ -446,11 +484,11 @@ class Productdetailfirstfold extends Component {
 					                       	 	className="run1"
 						                  />
 						            </div>
-						            {/*<div className="col-md-2">
-						                <h3 style={{fontSize: '12px'}}>
+						            <div className="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+						                <h3 class="todate">
 						                    To
 						                </h3>
-						            </div>*/}
+						            </div>
 						            <div className="col-md-5 col-sm-5 col-xs-6 trello2">
 						                  <input
 						                      required
@@ -464,7 +502,8 @@ class Productdetailfirstfold extends Component {
 						            </div>
 						            <div className="col-md-1 col-sm-1"></div>
                             	</div>
-                            </div>
+                            	
+                            </div><br/><br/><br/>
                             <div className="row shelter">
                             	<span className="shelter2">{msg}</span>
                             </div>
@@ -473,48 +512,72 @@ class Productdetailfirstfold extends Component {
                             	<button type="button"
                             		disabled={from && to && !msg ? false : true}
                             		className="btn bravoo"
+                            		style={{opacity: '1'}}
                             		onClick={this.addToCart}
                         		>
-                            		<h3 className="buttonsizeup"><span style={{color:'white'}}>RENT NOW</span></h3>
+                            		<h3 className="buttonsizeup"><span>Rent this dress</span></h3>
                         		</button>
                             </div>}
                             {booked && <div className="row">
                             	<button type="button"
                             		className="btn booked"
                         		>
-                            		<h3 className="buttonsizeup">BOOKED</h3>
+                            		<h3 className="buttonsizeup">Rent this dress</h3>
                         		</button>
                             </div>}
-                            <div className="visible-sm visible-xs">
+                            {/*<div className="visible-sm visible-xs">
                             	<Table />
-                            </div>{/*div close of visible-sm visible-xs*/}
-					    </div>{/*main col-md-5 right possion div deskstop*/}
+                            </div>*/}{/*div close of visible-sm visible-xs*/}
+
+                            <hr/>
+
+                            <div className="row">
+                                <div className="col-md-12">
+                                	<div className="col-md-6 detail">
+                                	 	<h1>Description</h1>
+                                	</div>
+                                	<div className="col-md-6"></div>
+                                </div>{/*Row Col-md-12 Close*/}
+                                <div className="row">
+			                    	<div className="col-md-12 drn">
+			                    		<p className="trend">{elem.description}</p>
+		                   			</div>{/*Div col-md-12 Close*/}
+				        		</div>{/*Row Close*/}
+                            </div>{/*Row Close*/}<br/>
+
+                            <hr/>
+
+                    	</div>{/*main col-md-5 right possion div deskstop*/}
 
 
-					    <div className="col-md-4">
-					    	<div className="col-md-4 col-sm-4 col-xs-6 roundnround2">
-									<img src={userImage.length > 0 ? userImage : "../images/admin1.jpg"} className="bookedbook"/>
-                                   
-                                    
-                                    
-								</div>
-								<div className="col-md-4">
-                                   		<span className="" style={{fontFamily: 'Playfair Display', fontSize: "32px"}}>{elem.userName}</span><br/>
+					    <div className="col-md-3">
+					    	<div className="col-md-5 col-sm-4 col-xs-6 roundnround2">
+								<img src={userImage.length > 0 ? userImage : "../images/admin1.jpg"} className="bookedbook"/>
+                            </div>
+							<div className="col-md-7">
+								<div className="row">
 
-                                   		<div className="col-sm-3 col-lg-2 col-md-2 newstar">
-                                   		Owner
-										<i class="fas fa-star" style={{fontSize:'16px', color:'#cb9d6c'}}></i>								
-										
+	                                <br/><span className="user_Name">{elem.userName}</span><br/>
+
+	                                <div className="col-sm-2 col-lg-5 col-md-5 newstar">
+	                                   	<h5>Owner</h5>
 									</div>
-									<div className=" newrating">
-										<p style={{fontSize:'15px'}}>&emsp;4.5/5</p>	
+									<div className="col-sm-4 col-lg-2 col-md-2 newstar1">
+	                                	<i class="st fas fa-star" style={{fontSize:'16px', color:'#cb9d6c'}}></i>								
 									</div>
-
-
-                                   		<div className="roundnround3">   
-                                       <Link to={`/profile/${userId}`}><span className="roundnround">View Profile</span></Link>
-                                   	</div>
-                                    </div>
+									<div className="col-md-5 col-lg-5 col-sm-5  newrating">
+										<p style={{fontSize:'15px'}}>4.5/5</p>	
+									</div><br/><br/><br/><br/>
+									<div className="row">
+										<div className="col-xs-2 col-sm-2 col-md-4 col-lg-4 clck_pro">
+						                       <img src="../images/arrow.png" className="arrowleft1"/>
+						                </div>
+		                                <div className="col-md-8 col-lg-8 roundnround3" style={{paddingRight: '0px'}}>   
+		                                    <Link to={`/profile/${userId}`}><span className="roundnround">View Profile</span></Link>
+		                                </div>
+	                                </div>
+	                            </div>
+                            </div>
 
 					    </div>
 

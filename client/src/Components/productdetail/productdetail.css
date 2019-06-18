@@ -23,7 +23,7 @@
      
      background : rgba(155,155,155,0.3);
      height: 50px;
-     width: 13%;
+     width: 80px;
      display: inline-block;
      margin-left: 3%;
 }
@@ -32,7 +32,7 @@
      
      background : #473463;
      height: 50px;
-     width: 13%;
+     width: 80px;
      display: inline-block;
      margin-left: 3%;
 }
@@ -45,11 +45,50 @@
 .fluu{
 	text-align: center;
      border: 2px solid black;
-     border-radius: 50%;
+    
      height: 55px;
      width: 55px;
      display: inline-block;
 }
+
+
+
+
+
+.fluu:first-child{
+     text-align: center!important;
+     
+     background : blue;
+     height: 50px;
+     width: 13%;
+     display: inline-block;
+     margin-left: 3%;
+}
+
+.fluu:nth-child(odd){
+     text-align: center!important;
+     
+     background : rgba(155,155,155,0.3);
+     height: 50px;
+     width: 80px;
+     display: inline-block;
+     margin-left: 3%;
+}
+.fluu:nth-child(even){
+     text-align: center!important;
+     
+     background : #473463;
+     height: 50px;
+     width: 80px;
+     display: inline-block;
+     margin-left: 3%;
+}
+
+
+
+
+
+
 
 .aroundsize{
 	margin: 19px 0px 0px 19px;
@@ -61,7 +100,8 @@
 }
 .roundnround{
     font-size: 12px;
-    color: black;
+    color: #9b9b9b;
+    letter-spacing: 5px;
 }
 .roundnround2{
     text-align: center;
@@ -69,16 +109,13 @@
     margin-bottom: -2%;
     margin-left: -3%;
 }
-.roundnround3{
-	margin-top: -11%;
-}
 
 
-@media only screen and (min-device-width : 360px) and (max-device-width : 660px){
+@media only screen and (min-device-width : 360px) and (max-device-width : 640px){
 	.sams{
-		border: 1px solid #c2073f;
+		border: 1px solid #473463;
 	    height: 47px;
-	    margin-left: 0px;
+	    margin-left: 11px;
 	    padding: 0px;
 	    width: 97%;
 	}
@@ -92,7 +129,9 @@
 		margin-left: -15px;
 	}
 	.trello2{
-		margin-left: 1%;
+		padding: 0px;
+	    float: right;
+	    margin-top: -30px;
 	}
 	.bookedboo{
 		color: #9b9b9b;
@@ -101,52 +140,54 @@
 	    margin-left: -8%;
 	}
 	.bookedbook{
-		width: 63%;
+		width: 53%;
 	    border-radius: 50%;
-	    height: 75px;
-	        border: 3px solid #c2073f;
+	    height: 70px;
 	}
 	.run1{
 		border: none;
-		margin-top: 4px;
-		width: 117%;
+		margin-top: 9px;
+		width: 100%;
 	}
 	.run2{
 		border: none;
 		margin-top: 4px;
-		width: 117%;
+		width: 100%;
 	}
 	.bravoo{
-      	width: 98%;
-    	background-color: #c2073f;
+      	width: 89%;
+    	background-color: rgba(155,155,155,0.3);
+    	color: #9b9b9b;
     	padding: 0px;
-    	margin-left: -1px;
+    	margin-left: 25px;
     	margin-top: -11%;
 	}
 	.booked{
       	width: 90%;
-	     background-color: yellow;
+	    background-color: #cb9d6c;
+	    color: #473463;
 	    padding: 0px;
 	    margin-left: 20px;
 	  	margin-top: -3%;
 	}
-	.roundnround2{
-        text-align: center;
-	    margin-top: 18%;
-	    margin-bottom: -2%;
-	    margin-left: -3%;
+	
+	
+
+	.roundnround3{
+		padding-right: 0px;
 	}
+
 	.tablemargin{
 	    margin-left: -9%;
 	}
 }
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
 	.sams{
-		   border: 1px solid #c2073f;
-    		height: 47px;
-    		margin-left: 58px;
-    		padding: 0px;
-    		width: 67%;  
+		border: 1px solid #473463;
+	    height: 50px;
+	    margin-left: 41px;
+	    padding: 0px;
+	    width: 64%; 
 	}
 	.name{
 	    margin-top: 12px;
@@ -155,40 +196,45 @@
     		color: black;
 	}
 	.trello1{
-		margin-left: -2px;
+		margin-left: 3px;
+    	margin-top: 7px;
 	}
 	.trello2{
-	    margin-left: 8%;
+	    margin-left: 57%;
+    	margin-top: -30px;
 	}
 	.bookedboo{
 		margin-top: -3%;
 		font-size: 17px;
 		color: #9b9b9b;
+		margin-left: -3.5%;
 	}
 	.bookedbook{
-		width: 56%;
+		width: 47%;
 	    border-radius: 50%;
-	    height: 105px;
-	    border: 3px solid #c2073f
+	    height: 90px;
 	}
 	.run1{
 		border: none;
-		margin-top: 4px;
+	    margin-top: 3%;
+	    width: 152%;
 	}
 	.run2{
 		border: none;
-		margin-top: 4px;
+		margin-top: 3px;
 	}
 	.bravoo{
-      	width: 67%;
-    	background-color: #c2073f;
+      	width: 61%;
+    	background-color: rgba(155,155,155,0.3);
+    	color: #9b9b9b;
     	padding: 0px;
     	margin-left: 56px;
     	margin-top: -2%;
 	}
 	.booked{
       	    width: 63%;
-		    background-color: yellow;
+		    background-color: #cb9d6c;
+	    	color: #473463;
 		    padding: 0px;
 		    margin-left: 55px;
 		    margin-top: -4%;
@@ -196,14 +242,21 @@
 	.tablemargin{
 	    margin-left: 0px;
 	}
+
+	.roundnround2{
+	    text-align: center;
+	    margin-top: 2%;
+	    margin-bottom: -2%;
+	    margin-left: -3%;
+	}
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
 	.sams{
-		border: 1px solid #c2073f;
-	    height: 47px;
-	    margin-left: 24px;
+		border: 1px solid #473463;
+	    height: 40px;
+	    margin-left: 1.5%;
 	    padding: 0px;
-	    width: 97%;  
+	    width: 83%;  
 	}
 	.name{
 	    margin-top: 19px;
@@ -215,52 +268,67 @@
 		margin-left: -14px;
 	}
 	.trello2{
-		margin-left: 9%;
+		margin-left: 50%;
+		margin-top: -32px;
 	}
 	.bookedboo{
 		color: #9b9b9b;
-	    margin-top: -8%;
     	font-size: 16px;
-    	margin-left: 5%;
+    	padding-left: 7%;
 	}
 	.bookedbook{
-	    width: 85%;
+	    width: 90%;
 	    border-radius: 50%;
-	    height: 75px;
-	        border: 3px solid #c2073f;
+	    height: 53px;
+	    border: none;
 	}
 	.run1{
 		border: none;
-		margin-top: 4px;
-		width: 142%;
+		margin-top: 2%;
+		width: 119%;
 	}
 	.run2{
 		border: none;
 		margin-top: 4px;
-		width: 142%;
+		width: 119%;
 	}
 	.bravoo{
-      	width: 98%;
-	      background-color: #c2073f;
+      	width: 65%;
+	    background-color: #cb9d6c;
+	    color: #473463;
 	    padding: 0px;
-	    margin-left: 22px;
-	  margin-top: -3%;
+	    border-radius: 0px;
+	   
+	    margin-left: 5.3%;
+		margin-top: -3%;
+	}
+
+	.btn bravoo{
+		opacity: 0;
 	}
 	.booked{
       	width: 97%;
-	      background-color: yellow;
+	    background-color: #cb9d6c;
+	    color: #473463;
 	    padding: 0px;
 	    margin-left: 22px;
-	  margin-top: -3%;
+		margin-top: -3%;
+	}
+
+	.roundnround2{
+        text-align: center;
+	    margin-top: 9%;
+	    margin-bottom: -2%;
+	    margin-left: -3%;
 	}
 }
 @media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
 	.sams{
-		border: 1px solid #c2073f;
-		height: 47px;
-	    margin-left: 29px;
+		border: 1px solid #473463;
+		height: 40px;
+	    margin-left: 2.7%;
 		padding: 0px;
-	    width: 92%;    
+	    width: 63%;    
 	}
 	.name{
 	    margin-top: 21px;
@@ -269,10 +337,10 @@
     	color: black;
 	}
 	.trello1{
-		margin-left: -14px;
 	}
 	.trello2{
-		margin-left: 8%;
+		text-align: left;
+
 	}
 	.bookedboo{
 		color: #9b9b9b;
@@ -281,31 +349,36 @@
 		margin-left: 4%;
 	}
 	.bookedbook{
-		width: 67%;
+		width: 55%;
 	    border-radius: 50%;
-	    height: 75px;
-	        border: 3px solid #c2073f;
+	    height: 60px;
 	}
 	.run1{
 		border: none;
-		margin-top: 4px;
-		width: 143%;
+		margin-top: 8px;
+		width: 106%;
+		color: #cb9d6c;
 	}
 	.run2{
 		border: none;
-		margin-top: 4px;
-		width: 143%;
+		margin-top: 8px;
+		width: 106%;
+		color: #cb9d6c;
 	}
 	.bravoo{
-  	    width: 92%;
-	    background-color: #c2073f;
+		border-radius: 0px;
+		height: 50px;
+  	    width: 60%;
+  	    color: #9b9b9b!important;
+	    background-color: rgba(155,155,155,0.3);
 	    padding: 0px;
 	    margin-left: 29px;
 	    margin-top: -3%;
 	}
 	.booked{
       	width: 92%;
-	    background-color: yellow;
+      	background-color: #cb9d6c;
+	    color: #473463;
 	    padding: 0px;
 	    margin-left: 29px;
 	    margin-top: -3%;
@@ -383,24 +456,30 @@
 	color: white;
 }
 
-@media only screen and (min-device-width : 360px) and (max-device-width : 660px){
+@media only screen and (min-device-width : 360px) and (max-device-width : 640px){
 	.card{
 		font-family: Sacramento;
 		margin-left: -15%;
 		font-size: 27px;
 		color: white;
 	}
-	.newstar{
-		margin-top: -40%;
-    	margin-left: 55%;
-	}
+	
 	.newrating{
-		margin-top: -19%;
-    	margin-left: 77%;
+		margin-top: -6%;
+    	margin-left: 70%;
+	}
+	.us{
+		background-color: none !important;
+		font-size: 16px;
+		color: #cb9d6c;
+	}
+	.newstar1{
+		padding-left: 65%;
+    	margin-top: -11%;
 	}
 }
 
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
+@media only screen and (min-device-width : 766px) and (max-device-width : 1024px){
 	.card{
 		font-family: Sacramento;
 		margin-left: -32%;
@@ -408,11 +487,26 @@
 		color: white;
 	}
 	.newstar{
-		margin-top: 12%;
+		margin-top: 2%;
+		padding-left: 4px;
 	}
 	.newrating{
 		    margin-top: 14%;
     		margin-left: -16%;
+	}
+	.newstar1{
+		padding-left: 0px;
+    	margin-top: 15px;
+	}
+
+	.newrating{
+		margin-top: -3%;
+    	margin-left: 3%;
+	}
+	.us{
+		background-color: none !important;
+		font-size: 16px;
+		color: #cb9d6c;
 	}
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
@@ -426,9 +520,20 @@
 		margin-top: 12%;
 		margin-left: -9%;
 	}
+
+	.newstar1{
+		padding-left: 15px;
+    	margin-top: 15px;
+	}
+
 	.newrating{
 		margin-top: 16%;
-    	margin-left: -3%;
+    	margin-left: 0%;
+	}
+	.us{
+		background-color: none !important;
+		font-size: 16px;
+		color: #cb9d6c;
 	}
 }
 @media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
@@ -439,11 +544,19 @@
 		color: white;
 	}
 	.newstar{
-		margin-top: 12%;
+		padding-left: 1px;
+	}
+	.newstar1{
+		padding-top: 3%;
 	}
 	.newrating{
-		margin-top: 14%;
-    	margin-left: -7%;
+		margin-top: 5%;
+    	
+	}
+	.us{
+		background-color: none !important;
+		font-size: 16px;
+		color: #cb9d6c;
 	}
 }
 
@@ -451,7 +564,7 @@
 
 
 
-@media only screen and (min-device-width : 360px) and (max-device-width : 660px){
+@media only screen and (min-device-width : 360px) and (max-device-width : 640px){
 	.d_size{
 		padding: 0px;
 		margin-left: -10%;
@@ -646,7 +759,7 @@
 		text-align: left;
 		font-family: crimsontext;
 	}
-@media only screen and (min-device-width : 360px) and (max-device-width : 660px){
+@media only screen and (min-device-width : 360px) and (max-device-width : 640px){
 	.trello4{
 		font-family :  Playfair Display;
 	    margin-left: -7%;
@@ -655,28 +768,26 @@
 	.trello3{
 		color: #cb9d6c;
 		font-family: Tajawal;
-		margin-top: 15%;
-   		 font-size: 25px;
-        margin-left: -4%;
+        margin-left: -22%;
 	}
 	.detail{
 		 font-family:  Playfair Display;
-		 color: #c2073f; 
+		 color: #353535; 
 		 margin-left: -1%;
 	}
 	.trend{
          font-size: 70%;
-         margin-left: 3%;
+         margin-left: 8.5%;
     }
     .fly{
 		margin-left: 6%;
 		font-family:  Playfair Display;
-		color: #c2073f; 
+		color: #353535; 
 		font-size: 35px;
 	}    
 	.detail1{
 		font-family:  Playfair Display;
-		color: #c2073f; 
+		color: #353535; 
 		font-size: 25px;
 		text-align: left;
 	    margin-left: 3%;
@@ -686,15 +797,20 @@
 	}
 	.rental1{
 		font-family:  Playfair Display;
-		color: #c2073f; 
+		color: #353535; 
 		font-size: 45px;
-
+		margin-left: 23px;
 	}
 	.shelterr5{
 		font-family: Playfair Display;
 	    font-size: 30px;
 	    margin-top: 64%;
 	    margin-left: -11%;
+	}
+	.showChart{
+		color: #cb9d6c;
+		font-family: Playfair Display;
+		padding-left: 3%;
 	}
 }
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
@@ -704,29 +820,30 @@
 	    margin-top: 10%;
 	}
 	.trello3{
-		font-family: Tajawal;
+		font-family: Tajawal !important;
 		color: #cb9d6c;
     	font-size: 25px;
-    	margin-left: -11%;
+    	margin-left: -158%;
+    	margin-top: 70px;
 	}
 	.detail{
 		 font-family: Playfair Display;
-		 color: #c2073f; 
+		 color: #353535; 
 		 margin-left: 4%;
 	}
 	.trend{
          font-size: 70%;
-         margin-left: 6%;
+         margin-left: 8%;
 	}
 	.fly{
 		margin-left: 8%;
 		font-family: Playfair Display;
-		color: #c2073f; 
+		color: #353535; 
 		font-size: 35px;
 	}
 	.detail1{
 		font-family: Playfair Display;
-		color: #c2073f; 
+		color: #353535; 
 		font-size: 25px;
 		text-align: left;
 	    margin-left: 6%;
@@ -736,15 +853,20 @@
 	}
 	.rental1{
 		font-family: Playfair Display;
-		color: #c2073f; 
+		color: #353535; 
 		font-size: 45px;
-	    margin-left: 8%;
+	    margin-left: 7.5%;
 	}
 	.shelterr5{
 		font-family: Playfair Display;
 	    font-size: 60px;
 	    margin-top: 18%;
-	    margin-left: 3%;
+	    margin-left: -9%;
+	}
+	.showChart{
+		color: #cb9d6c;
+		font-family: Playfair Display;
+		padding-left: 6%;
 	}
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
@@ -756,13 +878,15 @@
 	.trello3{
 		font-family: Tajawal;
 		color: #cb9d6c;
-   		 font-size: 25px;
-        margin-left: -4%;
+   		font-size: 25px;
+   		margin-left: -12%;
+    	margin-top: 0px;
 	}
 	.detail{
 		 font-family: Playfair Display;
-		 color: #c2073f; 
+		 color: #353535; 
 		 margin-left: -1%;
+		 padding: 0px;
 	}
 	.trend{
          font-size: 70%;
@@ -771,12 +895,12 @@
 	.fly{
 		margin-left: 6%;
 		font-family: Playfair Display;
-		color: #c2073f; 
+		color: #353535; 
 		font-size: 35px;
 	}
 	.detail1{
 		font-family: Playfair Display;
-		color: #c2073f; 
+		color: #353535; 
 		font-size: 25px;
 		text-align: left;
 	    margin-left: 3%;
@@ -786,14 +910,25 @@
 	}
 	.rental1{
 		font-family: Playfair Display;
-		color: #c2073f; 
+		color: #353535; 
 		font-size: 45px;
-	    margin-left: 7%;
+	    margin-left: 5%;
 	}
 	.shelterr5{
 		font-family: Playfair Display;
 		font-size: 48px; 
-		margin-left: 7%;
+		margin-left: -6%;
+	}
+	.arrowleft{
+	
+		width: 70px;
+	    height: 10px;
+	}
+
+	.showChart{
+		color: #cb9d6c;
+		font-family: Playfair Display;
+		padding-left: 2%;
 	}
 }
 @media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
@@ -810,22 +945,22 @@
 	}
 	.detail{
 		 font-family: Playfair Display;
-		 color: #c2073f; 
+		 color: #353535; 
 		 margin-left: -1%;
 	}
 	.trend{
          font-size: 70%;
-         margin-left: 3%;
+         margin-left: 4%;
 	}
 	.fly{
 		margin-left: 6%;
 		font-family: Playfair Display;
-		color: #c2073f; 
+		color: #353535; 
 		font-size: 35px;
 	}
 	.detail1{
 		font-family: Playfair Display;
-		color: #c2073f; 
+		color: #353535; 
 		font-size: 25px;
 		text-align: left;
 	    margin-left: 3%;
@@ -835,23 +970,333 @@
 	}
 	.rental1{
 		font-family: Playfair Display;
-		color: #c2073f; 
+		color: #353535; 
 		font-size: 45px;
-	    margin-left: 6%;
+	    margin-left: 5%;
 	}
 	.shelterr5{
 		font-family: Playfair Display;
 		font-size: 60px; 
 		margin-left: 7%;
 	}
+	.showChart{
+		color: #cb9d6c;
+		font-family: Playfair Display;
+		padding-left: 2%;
+	}
 }
 
 .arrowleft{
-	padding-left: 67%;
+	padding-left: 20px;
+	width: 70px;
+    height: 10px;
 }
 
 .arrowtext{
-	margin-left: 6%;
-	letter-spacing: 6px;
+	letter-spacing: 5px;
+	color: #9b9b9b;
+	padding-top: 1%;
+	padding-right: 0px;
+    padding-left: 12%;
+    font-size: 10px;
+}
+
+
+
+.sizestable table thead{
+	background-color:rgba(155,155,155,0.3);
 	color: #9b9b9b;
 }
+.sizestable table tbody tr{
+	
+	text-align:center;
+}
+
+.r8clor{
+	border-right: 1px solid rgba(155,155,155,0.3) !important;
+	color: #9b9b9b;
+}
+
+.r8clor1{
+	color: #9b9b9b;
+}
+
+.sizestable table thead tr th{
+	border: none;
+}
+
+.table>tbody>tr>td {
+	border-top: none;
+}
+
+.shadow{
+	margin: 20px; width: 400px; height: 400px;
+-webkit-box-shadow: 4px 2px  rgba(0,0,0,0.09),  -4px 0 2px rgba(0,0,0,0.09);
+-moz-box-shadow: 4px 0 2px rgba(0,0,0,0.09),  -4px 0 2px rgba(0,0,0,0.09);
+box-shadow: 4px 0 2px rgba(0,0,0,0.09),  -4px 0 2px rgba(0,0,0,0.09);
+padding: 5%;
+}
+
+.able{
+	background-color: #473463;
+	color: #cb9d6c;
+	height: 50px;
+	padding: 2.5%;
+	text-align: center;
+}
+
+
+
+@media only screen and (min-device-width : 360px) and (max-device-width : 640px){
+	.arrowleft{
+		padding-left: 2px;
+		width: 43px;
+	    height: 10px;
+	}
+
+	.rats{
+		margin-top: -20px;
+	    margin-left: 15px;
+	}
+
+	.todate{
+		font-size: 12px; 
+		margin-top: 13px;
+		margin-left: -28px; 
+		color: #cb9d6c;
+	}
+	.ab{
+		margin-left: -4px;
+	}
+
+	.able1{
+		background-color: rgba(155,155,155,0.3);
+		text-align: center;
+		color: #cb9d6c;
+		height: 50px;
+		padding-top: 4.5%;
+	}
+
+	.able{
+		background-color: #473463;
+		color: #cb9d6c;
+		height: 50px;
+		padding-top: 4%;
+		padding-left: 0px;
+		padding-right: 0px;
+		text-align: center;
+	}
+
+
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
+	.arrowleft{
+	padding-left: 6px;
+	width: 50px;
+    height: 10px;
+	}
+
+	.able{
+	background-color: #473463;
+	color: #cb9d6c;
+	height: 50px;
+	padding-top: 2.5%;
+	padding-left: 0px;
+	padding-right: 0px;
+	text-align: center;
+}
+
+.able1{
+	background-color: rgba(155,155,155,0.3);
+	text-align: center;
+	color: #cb9d6c;
+	height: 50px;
+	padding-top: 2.5%;
+}
+
+
+.todate{
+	font-size: 12px; 
+	margin-top: 18px;
+	margin-left: 9px; 
+	color: #cb9d6c;
+}
+
+
+}
+@media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
+	.ab{
+		margin-left: 4px !important;
+	}
+
+	.able{
+	background-color: #473463;
+	color: #cb9d6c;
+	height: 50px;
+	padding-top: 4%;
+	padding-left: 0px;
+	padding-right: 0px;
+	text-align: center;
+	margin-left: -3%;
+}
+
+.able1{
+	background-color: rgba(155,155,155,0.3);
+	text-align: center;
+	color: #cb9d6c;
+	height: 50px;
+	padding-top: 3.5%;
+	padding-left: 0px;
+}
+
+	.todate{
+		font-size: 12px; 
+		margin-top: 13px;
+		margin-left: 9px; 
+		color: #cb9d6c;
+	}
+
+}
+@media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
+
+	.todate{
+	font-size: 12px; 
+	margin-top: 13px;
+	margin-left: 9px; 
+	color: #cb9d6c;
+}
+.able1{
+	background-color: rgba(155,155,155,0.3);
+	text-align: center;
+	color: #cb9d6c;
+	height: 50px;
+	padding: 2.5%;
+}
+}
+
+
+
+
+
+@media only screen and (min-device-width : 360px) and (max-device-width : 640px){
+	.user_Name{
+		font-family: Playfair Display;
+		font-size: 20px;
+	}
+
+	.clck_pro{
+		margin-left: 42%
+	}
+
+	.arrowleft1{
+		width: 40px;
+	    height: 10px;
+	}
+
+	.roundnround{
+	    font-size: 11px;
+	    color: #9b9b9b;
+	    letter-spacing: 2px;
+	    padding-left: 10px
+	}
+}
+
+@media only screen and (min-device-width : 766px) and (max-device-width : 1024px){
+	.user_Name{
+		font-family: Playfair Display;
+		font-size: 32px;
+	}
+
+	.arrowleft{
+		padding-left: 6px;
+	    width: 50px;
+	    height: 10px;
+	    margin-left: 41%;
+	}
+
+	.arrowtext{
+		letter-spacing: 5px;
+	    color: #9b9b9b;
+	    padding-left: 18%;
+	    font-size: 10px;
+	    margin-top: -23px;
+	}
+	.clck_pro{
+		margin-left: 29%
+	}
+}
+@media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
+	.user_Name{
+		font-family: Playfair Display;
+		font-size: 32px;
+	}
+
+	.arrowleft1{
+		width: 40px;
+	    height: 10px;
+	}
+
+	.arrowtext{
+		letter-spacing: 5px;
+	    color: #9b9b9b;
+	    padding-left: 12%;
+	    font-size: 10px;
+	    margin-top: 0px;
+	}
+
+	.roundnround{
+	    font-size: 10px;
+	    color: #9b9b9b;
+	    letter-spacing: 2px;
+	}
+
+	.clck_pro{
+		margin-left: -4%
+	}
+}
+@media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
+	.user_Name{
+		font-family: Playfair Display;
+		font-size: 32px;
+	}
+}
+
+
+@media only screen and (min-device-width : 360px) and (max-device-width : 640px){
+
+	.round{
+	display: inline-block;
+	}
+
+	.aroundsize{
+	margin: 15px 14px 0px 19px;
+	text-align: center!important;
+	color: #cb9d6c;
+}
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
+	.aroundsize{
+	margin: 15px 14px 0px 19px;
+	text-align: center!important;
+	color: #cb9d6c;
+	}
+
+	.round{
+		display: inline-block;
+	    margin-left: 21px;
+	}
+	.ab{
+		margin-left: 26px;
+	}
+	
+}
+@media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
+	.round{
+		display: inline-block;
+	    margin-left: 0px;
+	}
+	
+}
+@media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){}

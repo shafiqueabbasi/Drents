@@ -94,6 +94,7 @@ exports.signin = function(req, res, next){
     }
   })
 
+
 }
 
 
@@ -285,10 +286,10 @@ exports.comparePassword = function(req, res, next){
 }
 
 exports.changePassword = function(req, res, next){
-    let email = req.body.email,
-    password = req.body.currentPassword,
-    newPassword = req.body.newPassword;
-  let email = req.body.email;
+    let email = req.body.email;
+    //password = req.body.currentPassword,
+    //newPassword = req.body.newPassword;
+  //let email = req.body.email;
   let password = req.body.currentPassword;
   let newPassword = req.body.newPassword;
 

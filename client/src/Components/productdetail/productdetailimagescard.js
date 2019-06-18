@@ -29,7 +29,7 @@
 					<div className="row">
 						
 						<div className="col-md-12">
-							<img alt="" src={this.state.showImg} style={{width:"100%", height:"875px"}}/>
+							<img alt="" src={this.state.showImg} style={{width:"100%", height:"610px"}}/>
 						</div>
 					</div>
 					<br/>
@@ -60,7 +60,7 @@
 								<img 
 									alt="" 
 									src={elem} 
-									style={isTablet ? {height:"200px", width:'100%'} : {height:"200px" , width:'100%'}} 
+									style={isTablet ? {height:"200px", width:'100%'} : {height:"155px" , width:'100%'}} 
 									onClick={
 										() => this.setState({ showImg: elem })
 									}
