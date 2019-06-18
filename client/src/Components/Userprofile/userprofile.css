@@ -53,6 +53,34 @@
       margin-left: 5%;
       margin-top: -2%;
   }
+  .promembertext{
+      font-size: 20px;
+      font-family: playfair display;
+      color: #353535;
+  }
+  .desctext{
+      font-size: 17px;
+      font-family: playfair display;
+      color: #353535;
+  }
+  .btneditprofile{
+      width: 90%;
+      padding: 15px;
+      font-family: playfair display;
+      font-size: 19px;
+      color: #cb9d6c;
+      background-color: #E2DBDB;
+      border: 0px;
+  }
+  .btneditprofile2{
+      width: 90%;
+      padding: 15px;
+      font-family: playfair display;
+      font-size: 19px;
+      color: #cb9d6c;
+      background-color: #E2DBDB;
+      border: 0px;
+  }
 }
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
   .shut2{
@@ -83,6 +111,34 @@
       display: inline;
       margin-left: 5%;
       margin-top: 5%;
+  }
+  .promembertext{
+      font-size: 20px;
+      font-family: playfair display;
+      color: #353535;
+  }
+  .desctext{
+      font-size: 17px;
+      font-family: playfair display;
+      color: #353535;
+  }
+  .btneditprofile{
+      width: 90%;
+      padding: 15px;
+      font-family: playfair display;
+      font-size: 19px;
+      color: #cb9d6c;
+      background-color: #E2DBDB;
+      border: 0px;
+  }
+  .btneditprofile2{
+      width: 90%;
+      padding: 15px;
+      font-family: playfair display;
+      font-size: 19px;
+      color: #cb9d6c;
+      background-color: #E2DBDB;
+      border: 0px;
   }
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
@@ -115,17 +171,44 @@
       margin-left: 5%;
       margin-top: -2%;
   }
+  .promembertext{
+      font-size: 20px;
+      font-family: playfair display;
+      color: #353535;
+  }
+  .desctext{
+      font-size: 17px;
+      font-family: playfair display;
+      color: #353535;
+  }
+  .btneditprofile{
+      width: 90%;
+      padding: 15px;
+      font-family: playfair display;
+      font-size: 19px;
+      color: #cb9d6c;
+      background-color: #E2DBDB;
+      border: 0px;
+  }
+  .btneditprofile2{
+      width: 90%;
+      padding: 15px;
+      font-family: playfair display;
+      font-size: 19px;
+      color: #cb9d6c;
+      background-color: #E2DBDB;
+      border: 0px;
+  }
 }
 @media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
   .shut2{
       padding-left: 0px;
-      margin-top: -2%;
-  }
+    margin-top: 3%;  }
   .rovil2{
-     font-family: Qwigley;
+     font-family: playfair display;
      font-weight: 500;
-      font-size: 50px;
-     color:  #c2073f;
+      font-size: 35px;
+     color:  #353535;
   }
   .rovil4{
     margin-top: 5%;
@@ -140,10 +223,39 @@
       margin-right: 49%;
   }
   .rovil3{
-        padding: 13px;
-      display: inline;
-      margin-left: 5%;
-      margin-top: -2%;
+        padding: 0px;
+        display: inline;
+        margin-left: -7%;
+        margin-top: -20px;
+  }
+  .promembertext{
+      font-size: 17px;
+      font-family: playfair display;
+      color: #353535;
+      margin-top: 4%;
+  }
+  .desctext{
+          font-size: 14px;
+          font-family: tajawal;
+          color: #353535;
+  }
+  .btneditprofile{
+      width: 90%;
+      padding: 15px;
+      font-family: playfair display;
+      font-size: 19px;
+      color: #cb9d6c;
+      background-color: #E2DBDB;
+      border: 0px;
+  }
+  .btneditprofile2{
+          width: 90%;
+        padding: 16px;
+        font-family: playfair display;
+        font-size: 17px;
+        color: #473463;
+        background-color: #cb9d6c;
+        border: 0px;
   }
 }
 .sami {
@@ -156,24 +268,25 @@
 
 }
 .image {
-     display: block;
-    width: 75%;
-    height: 265px;
+   display: block;
+    width: 45%;
+    height: 160px;
     border-radius: 100%;
-    margin-top: -2%;
-    margin-left: 15%; 
+    margin-top: 1%;
+    margin-left: 17%;
 }
 
 .overlayChange {
-  position: absolute;
-  top: -3%;
-  left: 18%;
-  height: 103%;
-  width: 69%;
-  opacity: 0;
-  transition: .3s ease;
-  background-color: rgba(0, 0, 0, .4);
-  border-radius: 100%;
+    position: absolute;
+    top: 2%;
+    left: 20%;
+    height: 98%;
+    width: 41%;
+    opacity: 0;
+    -webkit-transition: .3s ease;
+    transition: .3s ease;
+    background-color: rgba(0, 0, 0, .4);
+    border-radius: 100%;
   
 }
 

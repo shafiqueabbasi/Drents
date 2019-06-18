@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
-
+import './home.css';
 class SecondPage extends Component {
 
   render() {
 
     return (
     <div>
-        <div>
-            
-              <img src="../images/drent-purple-header.png" className="banneralign" />
+        <div>            
+           <img src="../images/drent-purple-header.png" className="banneralign"/>
 
               <div className="relationtext container">
                 <div className="row" style={{margin:'0px'}}>

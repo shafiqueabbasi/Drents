@@ -3,24 +3,35 @@
   position:relative;
   margin-bottom:20px;
 }
-.group input 				{
-  font-size:18px;
-  padding:7px 7px 5px 2px;
-  display:block;
-  width:100%;
-  border:none;
-  border-bottom:1px solid #ffffff;
-  background-color: #c2073f;
-  color: #ffffff;
-  font-weight: bold;
+.group input 	{
+    font-size: 17px;
+    padding: 7px 7px 5px 2px;
+    display: block;
+    width: 100%;
+    border: 1px solid #e1e1e1;
+    background-color: #e1e1e1;
+    color: #353535;
+    font-family: tajawal;
 }
 .login{
 	  /*width: 55%;*/
     /* font-size: 180%; */
-    font-weight: 450;
-   	color: #c2073f;
-    border-radius: 2px
+    color: black;
+    background-color: #cb9d6c;
+    padding: 12px;
+    width: 100%;
+    font-size: 15px;
+    font-family: playfair display;
+    border: 2px solid #cb9d6c;
 }
+.form_input_style{
+
+    cursor: pointer;
+    height: 20px;
+    width: 100%;
+    background-color: red;
+}
+
 /* Shared */
 .loginBtn {
   box-sizing: border-box;
@@ -106,4 +117,11 @@
 
 ::placeholder { /* Most modern browsers support this now. */
    color:    White;
+}
+
+
+.formtextup{
+  font-family: playfair display;
+  font-size: 15px;
+  color: #9b9b9b;
 }

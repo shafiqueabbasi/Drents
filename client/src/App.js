@@ -76,30 +76,22 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-       
-			<BrowserRouter>
-	          <div>
-
-
-                {/*<Header2New />*/}
-	              <Header arr={this.state.arr}/>
-
-                {/*<HeaderNew arr={this.state.arr} />*/}
-	              
-
-                {/*<HeaderNew />*/}
-	              <Route path="/" exact component={Home} />
+        <BrowserRouter>
+          <div>
+                
+                <Header2New />
+                <Route path="/" exact component={Home} />
                 <Route path="/profile/:value" render={props => <UserProfile {...props} updateFooter={this.updateFooter}/>} />
                 <Route path="/product" component={MainPage} />
                 <Route path="/userdetail" component={Profile} />
                 <Route path="/reset/:token" component={ResetPassword} />
                 <Route path="/detail" render={props => { return <Product {...props} updateCart={this.updateCart}/>}} />
                 <Route path="/checkout" render={props => { return <Checkout {...props} updateCart={this.updateCart}/>}} />
-	              {/* <Footer showFooter={this.state.footer}/>*/}
-               {/*<Userprofile/>*/} 
-            	<FooterNew/>
+                {/* <Footer showFooter={this.state.footer}/>*/}
+                {/*<Userprofile/>*/} 
+
           </div>
-        </BrowserRouter>
+        </BrowserRouter>	
       </div>
     );
   }
@@ -107,3 +99,5 @@ class App extends Component {
 
 export default App;
 
+
+        

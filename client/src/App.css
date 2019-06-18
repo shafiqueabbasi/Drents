@@ -55,15 +55,52 @@
   color:white;
 }
 
+.scrolling_form{
+     overflow-y: scroll;
+    height: 500px;
+    padding-right: 1px;
 
+}
+.scrolling_form::-webkit-scrollbar {
+    color: #cb9d6c;
+}
+.alacountup{
+  font-size: 18px;
+  color: #cb9d6c;
+  font-family: playfair display;
+}
+.btnalignup{
+      margin-left: 3%;
+    margin-top: 1%;
+}
 /*<----javascript---->*/
+
+.modal-title {
+    margin: 0;
+    line-height: 1.42857143;
+    font-size: 40px;
+    margin-bottom: -3%;
+    margin-left: -6px;
+    color: #353535;
+}
+.modal-header .close {
+    /* margin-top: 0px; */
+    font-size: 45px;
+    color: #cb9d6c;
+}
 .modal-backdrop{
   z-index: 0;
 }
 .modal-content{
-  background-color: #c2073f;
+  background-color: #ffffff;
 }
-
+.modal-header{
+  border: none;
+}
+.modal-dialog{
+    width: 400px;
+    margin: 30px auto;
+}
 .Heading{
   line-height: 4px;
   text-align: center;
@@ -344,15 +381,16 @@
       
   }
   .userstar{
-      color: yellow;
-      font-size: 17px;
-    margin-left: 13%;
-    margin-top: 0%;
+    color: #cb9d6c;
+    font-size: 20px;
+    margin-left: 6%;
+    margin-top: -1%;
+    margin-bottom: 10%;
   }
   .userstar_rating{
         padding: 0;
-        margin-top: -13.5%;
-        margin-left: 52%;
+      margin-top: -14.5%;
+      margin-left: 22%;
     }
 }
 
@@ -449,8 +487,8 @@
 /* Create the indicator (the dot/circle - hidden when not checked) */
 .checkmark:after {
   content: "";
-  position: absolute;
-  display: none;
+  /*position: absolute;
+  display: none;*/
 }
 
 /* Show the indicator (dot/circle) when checked */
