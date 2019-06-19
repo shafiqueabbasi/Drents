@@ -6,96 +6,76 @@ import { isMobileOnly, isTablet } from "react-device-detect";
 	render() { 
 		return( 
 			<div>
-					<div className="hidden-xs hidden-sm">
-	                    		<h4>Measurements</h4>
-	                     	    <table className="table table-bordered">
+					<div className="sizestable shadow">
+	                    		<h4 style={{fontFamily: 'Playfair Display'}}>Size Chart</h4>
+	                    		<button type="button" class="close" style={{marginTop: '-9%'}}>x</button>
+	                     	    <table className="table">
 								    <thead>
 								      <tr>
-								        <th>Size</th>
-								        <th>Bust</th>
-								        <th>Hip</th>
-								        <th>Waist</th>
-								        <th>Front length</th>
-								        <th>Back length</th>
+								        <th className="r8clor">Size</th>
+								        <th className="r8clor">Bust</th>
+								        <th className="r8clor">Hip</th>
+								        <th className="r8clor">Waist</th>
+								        <th className="r8clor">Front</th>
+								        <th className="r8clor1">Back</th>
 								      </tr>
 								    </thead>
 								    <tbody>
-								      <tr>
-								        <td>Small</td>
-								        <td>34<sup>o</sup></td>
-								        <td>40<sup>o</sup></td>
-								        <td>26<sup>o</sup></td>
-								        <td>57<sup>o</sup></td>
-								        <td>57<sup>o</sup></td>
+								    <tr>
+								        <td className="r8clor">X Small</td>
+								        <td className="r8clor">39<sup>o</sup></td>
+								        <td className="r8clor">33<sup>o</sup></td>
+								        <td className="r8clor">36<sup>o</sup></td>
+								        <td className="r8clor">23<sup>o</sup></td>
+								        <td className="r8clor1">22<sup>o</sup></td>
 								      </tr>
 								      <tr>
-								        <td>Medium</td>
-								        <td>36<sup>o</sup></td>
-								        <td>42<sup>o</sup></td>
-								        <td>28<sup>o</sup></td>
-								        <td>57<sup>o</sup></td>
-								        <td>57<sup>o</sup></td>
+								        <td className="r8clor">Small</td>
+								        <td className="r8clor">41<sup>o</sup></td>
+								        <td className="r8clor">36<sup>o</sup></td>
+								        <td className="r8clor">38<sup>o</sup></td>
+								        <td className="r8clor">24<sup>o</sup></td>
+								        <td className="r8clor1">23<sup>o</sup></td>
 								      </tr>
 								      <tr>
-								        <td>Large</td>
-								        <td>38<sup>o</sup></td>
-								        <td>46<sup>o</sup></td>
-								        <td>30<sup>o</sup></td>
-								        <td>59<sup>o</sup></td>
-								        <td>59<sup>o</sup></td>
+								        <td className="r8clor">Medium</td>
+								        <td className="r8clor">43<sup>o</sup></td>
+								        <td className="r8clor">36<sup>o</sup></td>
+								        <td className="r8clor">40<sup>o</sup></td>
+								        <td className="r8clor">24<sup>o</sup></td>
+								        <td className="r8clor1">23<sup>o</sup></td>
+								      </tr>
+								      <tr>
+								        <td className="r8clor">Large</td>
+								        <td className="r8clor">45<sup>o</sup></td>
+								        <td className="r8clor">40<sup>o</sup></td>
+								        <td className="r8clor">42<sup>o</sup></td>
+								        <td className="r8clor">25<sup>o</sup></td>
+								        <td className="r8clor1">24<sup>o</sup></td>
+								      </tr>
+								      <tr>
+								        <td className="r8clor">X Large</td>
+								        <td className="r8clor">48<sup>o</sup></td>
+								        <td className="r8clor">43<sup>o</sup></td>
+								        <td className="r8clor">45<sup>o</sup></td>
+								        <td className="r8clor">25<sup>o</sup></td>
+								        <td className="r8clor1">24<sup>o</sup></td>
+								      </tr>
+								      <tr>
+								        <td className="r8clor">XX Large</td>
+								        <td className="r8clor">51<sup>o</sup></td>
+								        <td className="r8clor">46<sup>o</sup></td>
+								        <td className="r8clor">48<sup>o</sup></td>
+								        <td className="r8clor">26<sup>o</sup></td>
+								        <td className="r8clor1">25<sup>o</sup></td>
 								      </tr>
 								    </tbody>
+
 								</table>
-								<p className="glass">Our Model,lolly is 5'9" and wear a size small.She Has a 32<sup>o</sup> bust
-								,24<sup>o</sup> Waist and 33<sup>o</sup> hips</p>    
+								{/*<p className="glass">Our Model,lolly is 5'9" and wear a size small.She Has a 32<sup>o</sup> bust
+								,24<sup>o</sup> Waist and 33<sup>o</sup> hips</p>*/}
 					</div>
-					<div className="visible-sm visible-xs">
-						<div className="container tablemargin">
-						<h4 style={isMobileOnly ? {marginLeft:'-2%'} : {marginLeft:'3%'}}>Measurements</h4>
-                    	<div style={{overflowX:'auto'}}>
-                    		<table className="table table-bordered" style={isMobileOnly ? {width:'83%' ,marginLeft:'0%'} : {width:'83%' , marginLeft:'3%'}}>
-							    <thead>
-							    <tr>
-							        <th>Size</th>
-							        <th>Bust</th>
-							        <th>Hip</th>
-							        <th>Waist</th>
-							        <th>Front length</th>
-							        <th>Back length</th>
-							    </tr>
-							    </thead>
-							    <tbody>
-								    <tr>
-								        <td>Small</td>
-								        <td>34<sup>o</sup></td>
-								        <td>40<sup>o</sup></td>
-								        <td>26<sup>o</sup></td>
-								        <td>57<sup>o</sup></td>
-								        <td>57<sup>o</sup></td>
-								    </tr>
-								      <tr>
-								        <td>Medium</td>
-								        <td>36<sup>o</sup></td>
-								        <td>42<sup>o</sup></td>
-								        <td>28<sup>o</sup></td>
-								        <td>57<sup>o</sup></td>
-								        <td>57<sup>o</sup></td>
-								    </tr>
-								    <tr>
-								        <td>Large</td>
-								        <td>38<sup>o</sup></td>
-								        <td>46<sup>o</sup></td>
-								        <td>30<sup>o</sup></td>
-								        <td>59<sup>o</sup></td>
-								        <td>59<sup>o</sup></td>
-								    </tr>
-							    </tbody>
-							</table>
-						</div>
-						<p className="glass" style={isMobileOnly ? {marginLeft:'-2%'} : {marginLeft:'3%'}}>Our Model,lolly is 5'9" and wear a size small.She Has a 32<sup>o</sup> bust
-								,24<sup>o</sup> Waist and 33<sup>o</sup> hips</p>
-						</div>											
-                    </div>{/*div close of visible-sm visible-xs*/}
+					
 
 
 			</div>

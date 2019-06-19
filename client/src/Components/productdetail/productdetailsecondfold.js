@@ -13,6 +13,7 @@ class SecondFold extends Component {
   }
 
   async componentDidMount(){
+    window.scrollTo(0, 0);
       let data = await HttpUtils.get('getreview'),
       obj = this.props.location.state.elem;
       if(data.code && data.code == 200){
