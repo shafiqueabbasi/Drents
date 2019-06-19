@@ -187,7 +187,7 @@
 	    height: 50px;
 	    margin-left: 41px;
 	    padding: 0px;
-	    width: 64%; 
+	    width: 88%; 
 	}
 	.name{
 	    margin-top: 12px;
@@ -217,14 +217,15 @@
 	.run1{
 		border: none;
 	    margin-top: 3%;
-	    width: 152%;
+	    width: 100%;
 	}
 	.run2{
 		border: none;
 		margin-top: 3px;
+		width: 100%;
 	}
 	.bravoo{
-      	width: 61%;
+      	width: 84%;
     	background-color: rgba(155,155,155,0.3);
     	color: #9b9b9b;
     	padding: 0px;
@@ -328,7 +329,7 @@
 		height: 40px;
 	    margin-left: 2.7%;
 		padding: 0px;
-	    width: 63%;    
+	    width: 87%;    
 	}
 	.name{
 	    margin-top: 21px;
@@ -368,7 +369,7 @@
 	.bravoo{
 		border-radius: 0px;
 		height: 50px;
-  	    width: 60%;
+  	    width: 83%;
   	    color: #9b9b9b!important;
 	    background-color: rgba(155,155,155,0.3);
 	    padding: 0px;
@@ -1075,6 +1076,7 @@ padding: 5%;
 		color: #cb9d6c;
 		height: 50px;
 		padding-top: 4.5%;
+		font-size: 12px;
 	}
 
 	.able{
@@ -1085,6 +1087,8 @@ padding: 5%;
 		padding-left: 0px;
 		padding-right: 0px;
 		text-align: center;
+		font-size: 12px;
+		
 	}
 
 
@@ -1105,6 +1109,7 @@ padding: 5%;
 	padding-left: 0px;
 	padding-right: 0px;
 	text-align: center;
+	font-size: 12px;
 }
 
 .able1{
@@ -1113,6 +1118,7 @@ padding: 5%;
 	color: #cb9d6c;
 	height: 50px;
 	padding-top: 2.5%;
+	font-size: 12px;
 }
 
 
@@ -1139,6 +1145,7 @@ padding: 5%;
 	padding-right: 0px;
 	text-align: center;
 	margin-left: -3%;
+	font-size: 12px;
 }
 
 .able1{
@@ -1148,6 +1155,7 @@ padding: 5%;
 	height: 50px;
 	padding-top: 3.5%;
 	padding-left: 0px;
+	font-size: 12px;
 }
 
 	.todate{
@@ -1166,13 +1174,24 @@ padding: 5%;
 	margin-left: 9px; 
 	color: #cb9d6c;
 }
-.able1{
-	background-color: rgba(155,155,155,0.3);
-	text-align: center;
-	color: #cb9d6c;
-	height: 50px;
-	padding: 2.5%;
-}
+	.able1{
+		background-color: rgba(155,155,155,0.3);
+		text-align: center;
+		color: #cb9d6c;
+		height: 50px;
+		padding: 3.5%;
+		font-size: 12px;
+	}
+	.able{
+		background-color: #473463;
+		color: #cb9d6c;
+		height: 50px;
+		padding-top: 3%;
+		padding-left: 0px;
+		padding-right: 0px;
+		text-align: center;
+		font-size: 12px;
+	}
 }
 
 

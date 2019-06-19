@@ -418,13 +418,16 @@ class Productdetailfirstfold extends Component {
                             <div className="row">
                             	<div className="rental1"><h1>Rental Period</h1></div>
                             </div><br/>
+                            <div className="row">
+                               <h3 className="rental100">Available From {elem.from} To {elem.to}</h3>
+                           </div>
                             
 
                             <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 ab">
+                            	<div className="col-md-3col-sm-4 col-xs-3 able1">Available From</div>
                             	<div className="col-lg-3 col-md-4 col-sm-3 col-xs-4 able">{elem.from}</div>
-                            	<div className="col-lg-2 col-md-3 col-sm-2 col-xs-3 able1"> To </div>
-                            	<div className="col-lg-3 col-md-4 col-sm-3 col-xs-4 able">{elem.to}</div>
-                            	<div className="col-lg-3 col-md-3 col-sm-4 col-xs-1"></div>
+                            	<div className="col-lg-2 col-md-3 col-sm-2 col-xs-2 able1"> To </div>
+                            	<div className="col-lg-3 col-md-4 col-sm-3 col-xs-3 able">{elem.to}</div>
                             	
                             </div><br/><br/><br/><br/><br/>
 
