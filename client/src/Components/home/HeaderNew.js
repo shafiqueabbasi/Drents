@@ -56,8 +56,8 @@ class Headernew extends Component {
      			<div className="col-sm-2 col-md-2 col-lg-2">
 					<img src="../images/drent-logo.png" style={{height:'45px', marginTop:'25px'}}/>
      			</div>
-     			<div className="col-sm-4 col-md-4 col-lg-4 hidden-xs"></div>
-     			<div className="col-sm-6 col-md-6 col-lg-6 hidden-xs">
+     			<div className="col-sm-1 col-md-3 col-lg-4 hidden-xs"></div>
+     			<div className="col-sm-9 col-md-7 col-lg-6 hidden-xs">
      				<ul className="nav navbar-nav navbar-right">
      					<li className="head"><Link to={`/`}>Home</Link></li>
      					<li className="head"><Link to={`/product`} className="nav">Catalog</Link></li>
@@ -74,7 +74,7 @@ class Headernew extends Component {
                                       <div className="">
                                         <h4 className="modal-title margmodal">Sign In</h4>
                                       </div>
-                                  </div>                                  
+                                  </div>
                                 </div>
                                 <div className="modal-body">
                                   <Login />
@@ -106,7 +106,7 @@ class Headernew extends Component {
                               </div>
                             </div>
                           </div>
-                      </li>}	
+                      </li>}
      					        <li className="headCart">
 	                        <Link to={{pathname: `/checkout`, state: {finalArr}}} className="nav">
 	                          Cart
@@ -115,7 +115,7 @@ class Headernew extends Component {
 	                          </span>
 	                        </Link>
                       </li>
-                 {loggedIn && <li className="headCart"><Link to={`/profile/${userId}`} className="nav">My Profile</Link></li>}     
+                 {loggedIn && <li className="headCartpro"><Link to={`/profile/${userId}`} className="nav">My Profile</Link></li>}     
      				</ul>
      			</div>
  			</div>
@@ -123,14 +123,14 @@ class Headernew extends Component {
 
  		{/*Banner of Home*/}
 
- 		<div>            
+ 		<div>
               <img src="../images/drent-purple-header.png" className="banneralign" />
 
               <div className="relationtext container">
                 <div className="row" style={{margin:'0px'}}>
-                  <img src="../images/header-welcome-leaf.png" className="banerleaf"/><br/>  
+                  <img src="../images/header-welcome-leaf.png" className="banerleaf"/><br/>
                 </div>
-                <div className="row" style={{margin:'0px'}}>  
+                <div className="row" style={{margin:'0px'}}>
                   <p className="weltext">WELCOME</p>
                 </div>
                 <div className="row" style={{margin:'0px'}}>
@@ -141,7 +141,7 @@ class Headernew extends Component {
                 </div>
                 <div className="row" style={{margin:'0px'}}>
                     <p className="lartext">for rent.</p>
-                </div> 
+                </div>
                   {/*<p className="lartext"> <br/><br/></p><br/>*/}
                 <div className="row">
                   <div className="col-xs-1 col-sm-1 col-md-1 col-lg-1">
@@ -170,4 +170,3 @@ function mapStateToProps(state) {
 
 const signUpLogin = connect(mapStateToProps)(Headernew);
 export default withRouter(signUpLogin);
-				

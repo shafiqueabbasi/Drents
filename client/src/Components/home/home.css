@@ -49,7 +49,20 @@
     font-family: Playfair Display;
     color: #cb9d6c;
 }
-
+.headCartpro {
+  margin-right: -3%;
+    margin-top: -15px;
+    font-size: 15px;
+    font-family: Playfair Display;
+    color: #cb9d6c;
+}
+.headCartpro a{
+  margin-left: -20%;
+    margin-top: 35px;
+	font-size: 15px;
+   font-family: Playfair Display;
+   color: #cb9d6c;
+}
 .dropdown {
   position: relative;
   display: inline-block;
@@ -169,7 +182,7 @@
 }
 .headCart a{
 	margin-right: 38px;
-    margin-top: 35px;	
+    margin-top: 35px;
 	font-size: 15px;
    font-family: Playfair Display;
    color: #cb9d6c;
@@ -216,7 +229,7 @@
 	    display: none;
 	}
 	.lartext{
-		font-size: 30px; 
+		font-size: 30px;
 		font-family: Playfair Display;
 		color: #ffffff;
 		line-height: 45px;
@@ -339,7 +352,7 @@
 	}
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){
-	.banneralign{		
+	.banneralign{
 	    background-size: cover;
 	    width: 100%;
 	    height: 828px;
@@ -353,7 +366,7 @@
 	    display: none;
 	}
 	.lartext{
-		font-size: 100px; 
+		font-size: 100px;
 		font-family: Playfair Display;
 		color: #ffffff;
 		line-height: 150px;
@@ -455,7 +468,7 @@
     	display: none;
 
 	}
-	
+
 	.banerleaf{
 		margin-top: 15%;
 		display: none;
@@ -536,7 +549,7 @@
 		font-family: Playfair Display;
 		color: #353535;
 	}
-} 
+}
 @media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
 	.divpurple{
 		background-color: #463362;
@@ -569,7 +582,7 @@
 		font-family: Playfair Display;
 		color: #353535;
 	}
-} 
+}
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){
 	.divpurple{
 		background-color: #463362;
@@ -600,7 +613,7 @@
 		font-family: Playfair Display;
 		color: #353535;
 	}
-} 
+}
 @media only screen and (min-device-width : 1366px){
 	.divpurple{
 		background-color: #463362;
@@ -631,7 +644,7 @@
 		font-family: Playfair Display;
 		color: #353535;
 	}
-} 
+}
 
 
 .samitext{
@@ -692,7 +705,7 @@
 		margin-left: -45%;
 	}
 	.purple_mob{
-		
+
 	}
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){
@@ -709,7 +722,7 @@
    		 margin-left: -24%;
 	}
 	.purple_mob{
-		
+
 	}
 }
 @media only screen and (min-device-width : 1366px){
@@ -726,11 +739,11 @@
     	margin-left: -40%;
 	}
 	.purple_mob{
-		
+
 	}
 }
 .chosedres{
-	font-size: 25px; 
+	font-size: 25px;
 	font-family: Playfair Display;
 }
 .chosedetail{
@@ -750,7 +763,7 @@
 		width: 100%;
 	}
 	.rwmarg{
-
+		    margin-top: -40%;	
 	}
 	.margimag{
 
@@ -760,16 +773,17 @@
     	margin-left: 11px;
 	}
 	.pinktext{
-	 	font-size: 31px;
+	 	font-size: 22px;
 	 	font-family: playfair display;
 	 	color: #ffffff;
- 	    margin-top: -22%;
+ 	    margin-top: 2%;
 		margin-left: 3px;
 	}
 	.pinksmaltext{
 		font-size: 12px;
 		font-family: tajawal;
-		color: #808080;
+		color: #8080A2;
+		margin-left: 10%;
 	}
 	.chiffontext{
 	 	font-size: 31px;
@@ -831,8 +845,11 @@
 	}
 	.absoul{
 		position: absolute;
-	    margin-top: -58%;
-	    margin-left: 7%;
+	    margin-top: -70%;
+	    margin-left: 0%;
+	    box-shadow: inset 3px -107px 57px rgba(0,0,0,0.4);
+	    height: 103px;
+	    width: 80%;
 	}
 }
 @media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
@@ -842,13 +859,13 @@
     	width: 100%;
 	}
 	.rwmarg{
-		margin-left: -7%;
+		
 	}
 	.margimag{
 
 	}
 	.leftimg{
-		
+
 	}
 	.pinkleft{
 
@@ -857,12 +874,13 @@
 	 	font-size: 20px;
 	    font-family: playfair display;
 	    color: #ffffff;
-	    margin-top: -10%;
+	    margin-top: 11%;
+    	margin-left: 8%;
 	}
 	.pinksmaltext{
 		font-size: 12px;
 		font-family: tajawal;
-		color: #808080;
+		color: #8080A2;
 	    margin-left: 5%;
 	}
 	.chiffontext{
@@ -919,7 +937,6 @@
 	}
 	.relat{
 		position: relative;
-		margin-right: 6px;
 	}
 	.featarrowtext{
 		font-size: 11px;
@@ -932,7 +949,10 @@
 	.absoul{
 		position: absolute;
 	    margin-top: -58%;
-	    margin-left: 4%;
+	    margin-left: 0%;
+	    box-shadow: inset 3px -110px 42px rgba(0,0,0,0.4);
+        height: 103px;
+   		 width: 83%;
 	}
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){
@@ -943,10 +963,10 @@
 	}
 	.rwmarg{
 		margin-left: 8px;
-    	
+
 	}
 	.pinkleft{
-		
+
 	}
 	.margimag{
 		margin-left: 7%;
@@ -959,6 +979,7 @@
 	 	font-family: playfair display;
 	 	color: #ffffff;
 	 	margin-left: 4%;
+	 	margin-top: 6%;
 	}
 	.pinksmaltext{
 		font-size: 12px;
@@ -1026,8 +1047,11 @@
 	}
 	.absoul{
 		position: absolute;
-	    margin-top: -58%;
-	    margin-left: 4%;
+	    margin-top: -68%;
+    	margin-left: 0%;
+        box-shadow: inset 3px -110px 42px rgba(0,0,0,0.4);
+        height: 107px;
+    	width: 81%;
 	}
 }
 @media only screen and (min-device-width : 1366px){
@@ -1044,21 +1068,24 @@
 
 	}
 	.pinkleft{
-		
+
 	}
 	.leftimg{
 
 	}
 	.pinktext{
 	 	font-size: 25px;
-	 	font-family: playfair display;
-	 	color: #ffffff;
+	    font-family: playfair display;
+	    color: #ffffff;
+	    margin-left: 8%;
+	    margin-top: 20%;
 
 	}
 	.pinksmaltext{
 		font-size: 12px;
 		font-family: tajawal;
-		color: #808080;
+		color: #8080A2;
+	    margin-left: 13%;
 
 	}
 	.chiffontext{
@@ -1103,7 +1130,7 @@
 	}
 	.relat{
 		position: relative;
-	}	
+	}
 	.featarrowtext{
 		font-size: 12px;
 	    font-family: Tajawal;
@@ -1113,8 +1140,11 @@
 	}
 	.absoul{
 		position: absolute;
-	    margin-top: -55%;
-	    margin-left: 6%;
+	    margin-top: -68%;
+    	margin-left: 0%;
+        box-shadow: inset 3px -110px 42px rgba(0,0,0,0.4);
+	    height: 136px;
+	    width: 85%;
 	}
 }
 
@@ -1122,9 +1152,9 @@
 @media only screen and (min-device-width : 360px) and (max-device-width : 767px){
     .headings{
         font-family: Playfair Display;
-        font-Size: 40px;
+        /*font-Size: 40px;*/
         text-align: left;
-        padding-left: 8%;
+        /*padding-left: 8%;*/
     }
     .featuredhead{
 		font-size: 40px;
@@ -1150,9 +1180,9 @@
 @media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
    .headings{
         font-family: Playfair Display;
-        font-Size: 40px;
+        /*font-Size: 40px;*/
         text-align: left;
-        padding-left: 8%;
+        /*padding-left: 8%;*/
     }
     .featuredhead{
 		font-size: 40px;
@@ -1165,7 +1195,7 @@
 	    color: #808080;
 	    letter-spacing: 5px;
 	    margin-bottom: 0px;
-	    margin-left: 10%;
+	    margin-left: 7%;
 	}
 	.cloth{
 		color: #9b9b9b!important;
@@ -1372,7 +1402,7 @@
 	.scrollfoot{
 	    height: 90px;
    		margin-top: -45px;
-    	
+
 	}
 	.footernav{
 		font-size: 12px;
@@ -1402,7 +1432,7 @@
 	.scrollfoot{
 	    height: 90px;
    		margin-top: -58px;
-    	
+
 	}
 	.footernav{
 		font-size: 12px;
@@ -1431,7 +1461,7 @@
 	.scrollfoot{
 	    height: 90px;
    		margin-top: -52px;
-    	
+
 	}
 	.footernav{
 		font-size: 12px;
@@ -1460,8 +1490,8 @@
 	.scrollfoot{
 	    height: 90px;
    		margin-top: -52px;
-    	
-	}	
+
+	}
 	.footernav{
 		font-size: 12px;
 	    font-family: Playfair Display;
@@ -1632,7 +1662,7 @@ i {
   padding: 3px;
   background-color: #dddddd!important;
 
-  
+
 }
 
 .down {

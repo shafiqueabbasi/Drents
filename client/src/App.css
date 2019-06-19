@@ -279,15 +279,15 @@
       margin-top: 50%;
   }
   .userstar{
-      color: yellow;
-    font-size: 17px;
-    margin-left: 6%;
+     color: #cb9d6c;
+    font-size: 20px;
+    margin-left: 8%;
     margin-top: -1%;
   }
   .userstar_rating{
       padding: 0; 
-      margin-top:-15.5%;
-      margin-left: 52%;
+      margin-top: -9%;
+      margin-left: 40%;
   }
 }
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
@@ -314,15 +314,15 @@
      
   }
   .userstar{
-     color: yellow;
-    font-size: 17px;
-    margin-left: -6%;
-    margin-top: 9%;
+    color: #cb9d6c;
+    font-size: 20px;
+    margin-left: 16%;
+    margin-top: -3%;
   }
   .userstar_rating{
       padding: 0; 
-      margin-top:-28%;
-      margin-left: 72%;
+      margin-top: -11%;
+      margin-left: 54%;
   }
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
@@ -348,15 +348,15 @@
      
   }
   .userstar{
-      color: yellow;
-      font-size: 17px;
-      margin-left: -3%; 
-      margin-top: 7%;
+      color: #cb9d6c;
+      font-size: 20px;
+      margin-left: 8%;
+      margin-top: -2%;
   }
   .userstar_rating{
-      padding: 0;
-    margin-top: -20%;
-    margin-left: 57%;
+        padding: 0;
+        margin-top: -7%;
+        margin-left: 35%;
   }
 }
 @media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
