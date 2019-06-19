@@ -36,7 +36,7 @@ class Home extends Component {
     return (
       <div className="App">
         {/*<Header/>*/}
-        {loading && <div className="loading">Loading&#8230;</div>}      
+        {loading && <div className="loading">Loading&#8230;</div>}
         <Scrollimage/>
         <Heading />
         <Heading2/>
@@ -44,6 +44,10 @@ class Home extends Component {
         <Gallery label="Featured Rentals"
         data={data.slice(0, 5)}
         widthProps=''
+        colLg='col-lg-2'
+        imgtextstyle='absoul'
+        imgheadtext='pinktext'
+        margBotom=''
         showonhome={false}
         />
         <Heading5/>

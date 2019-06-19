@@ -6,7 +6,7 @@ import { isMobileOnly, isTablet } from "react-device-detect";
 class Heading4 extends Component {
   render() {
   	const { label, hrLine, data, showEditDelete, onDelete, profile, userAvailable, showDropdown,showonhome } = this.props;
-    
+     console.log(data,'data in gallerys')
     return (
     	<div className="col-md-12 App">
     		<div className="row">
@@ -31,17 +31,19 @@ class Heading4 extends Component {
     		</div>
 
 	    		<div className="container-fluid">
-	    			<div className="col-md-12 col-sm-12 col-xs-12">	    		
+	    			<div className="col-md-12 col-sm-12 col-xs-12">
 	    				<div className="row rwmarg">
 	    					{data && data.map((elem, key) => {
+	    						// console.log(elem,'elem')
 	    						return(
-	    							<div className="col-xs-6 col-sm-2 col-md-2 col-lg-2 relat topmargin">
+	    							<div className={`col-xs-6 col-sm-3 relat topmargin ${this.props.colLg} ${this.props.margBotom}`}>
 			    						<Link key={key} to={{pathname: `/detail`, state: {elem, data}}}>
-			    							<img src={elem.fileList[0]} className="imgwidth"/>
-			    							<div className="absoul">
-						    					<p className="pinktext">Pink Floral <br/>Top</p>
-						    					<p className="pinksmaltext">$7/day</p>
-						    				</div>
+				    							<img src={elem.fileList[0]} className="imgwidth"/>	
+				    							<div className={`${this.props.imgtextstyle}`}>
+							    					<p className={`${this.props.imgheadtext}`}>{elem.productName}</p>
+							    					<p className="pinksmaltext">$ {" " + elem.priceDay}</p>
+							    				</div>
+
 		    							</Link>
 	    								{/*<div>
 	    									{showEditDelete && userAvailable && <div className="row">

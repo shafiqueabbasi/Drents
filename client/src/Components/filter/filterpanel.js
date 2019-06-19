@@ -27,9 +27,9 @@ class Filterpanel extends Component {
         }
     }
 
-	async componentDidMount(){		
+	async componentDidMount(){
 		let filter = this.props.location.state;
-		window.scrollTo(0,0)	
+		window.scrollTo(0,0)
 		let data = await HttpUtils.get('getdresses');
 		if(data.code && data.code === 200){
 			this.setState({ data: data.allDress, arr: data.allDress, loading: false });
@@ -39,21 +39,21 @@ class Filterpanel extends Component {
 		}
 	}
 
-	handleMainItems = (e, item) => {	
+	handleMainItems = (e, item) => {
 		if(e !== null){
-			e.preventDefault();			
-		}	
-		let { filtered, mainFilter, size, weather, weatherArr, sizesArr, weatherArrM, sizesArrM } = this.state;		
+			e.preventDefault();
+		}
+		let { filtered, mainFilter, size, weather, weatherArr, sizesArr, weatherArrM, sizesArrM } = this.state;
 		if(item == ''){
 			this.uncheckRadio(weatherArr);
 			this.uncheckRadio(sizesArr);
 			this.uncheckRadio(weatherArrM);
 			this.uncheckRadio(sizesArrM);
-		}					
-		this.setState({ 
+		}
+		this.setState({
 			mainFilter: item,
 			weather: mainFilter.length > 0 ? weather : '',
-			size: mainFilter.length > 0 ? size : '' 
+			size: mainFilter.length > 0 ? size : ''
 		});
 		this.handleConditions(filtered, mainFilter, item);
 	}
@@ -65,13 +65,13 @@ class Filterpanel extends Component {
 	}
 
 	handleWeather = (item) => {
-		let { filtered, weather } = this.state;	
+		let { filtered, weather } = this.state;
 		this.setState({ weather: item });
-		this.handleConditions(filtered, weather, item);	
+		this.handleConditions(filtered, weather, item);
 	}
 
 	handleSize = (item) => {
-		let { filtered, size } = this.state;		
+		let { filtered, size } = this.state;
 		this.setState({ size: item });
 		this.handleConditions(filtered, size, item);
 	}
@@ -122,13 +122,13 @@ class Filterpanel extends Component {
 
   	render() {
   		const { size, weather, mainFilter, filtered, label } = this.state;
-  		
+
 	    return (
 	    	<div className="App ">
 	    		{this.state.loading && <div className="loading">Loading&#8230;</div>}
 	    		<div  className="container-fluid" >
 	    			<div className="col-md-12 col-sm-12 hidden-xs">
-	    				
+
 	    				<div className="col-md-3 col-sm-3">
 	    					<div className="more">
 	    						<div className="row" style={{paddingLeft:'60px'}}>
@@ -172,11 +172,11 @@ class Filterpanel extends Component {
 	    							<div className="col-md-12" style={{padding: '0px'}}>
 
 	    								<h3 style={{fontFamily: 'Playfair Display',fontSize: '35px'}}>Sort By&emsp;&nbsp;-</h3><br/>
-	    									<RadioInput 
-									        	label="Newest" 
-									        	value="Newest" 
-									        	for="newest" 
-								        		name="sortBy" 
+	    									<RadioInput
+									        	label="Newest"
+									        	value="Newest"
+									        	for="newest"
+								        		name="sortBy"
 								        		onChange={this.handleSort}
 							        		/>
 											<RadioInput label="High and Low" value="highAndLow" for="highAndLow" name="sortBy" onChange={this.handleSort}/>
@@ -229,14 +229,23 @@ class Filterpanel extends Component {
 							</div>
 						</div>
 	    				<div className="col-md-8 col-sm-8">
-	  						<Gallery label={mainFilter.length > 0 ? mainFilter : label} hrLine='false' data={this.state.data}/>
+	  						<Gallery
+									label={mainFilter.length > 0 ? mainFilter : label}
+									hrLine='false'
+									data={this.state.data}
+									colLg='col-md-3'
+									imgtextstyle='absoulFilter'
+									imgheadtext='pinktextFilter'
+									margBotom='margbootom'
+									// data={data}
+								/>
 	  						<div className="form-group row">
 							<label className="col-md-12 col-sm-12 col-xs-12 control-label" style={{textAlign: 'center'}}></label>
 
 
 							<div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 " style={{textAlign: 'center', paddingLeft: '0px'}}><br/>
 								<div className="col-md-2 col-sm-3"></div>
-								{this.state.data.length === 0 && 
+								{this.state.data.length === 0 &&
 									<div className="col-md-8 col-sm-6">
 	    								<h1 style={{textAlign: 'center', fontFamily: 'Playfair Display'}}>Your filters did not return any result:'(</h1>
 	    								<p style={{textAlign: 'center', fontFamily: 'Tajawal', color: 'gray', opacity: '1'}}>But dont worry, you can change your filters from the filters panel on the Left.</p>
@@ -258,7 +267,7 @@ class Filterpanel extends Component {
 								/>
 							}
 							<div className="col-md-5"></div>
-							
+
 						</div>
 	    				</div>
 	    			</div>
@@ -312,11 +321,11 @@ class Filterpanel extends Component {
 											</div>
 											<div id="collapseTwo" className="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
 											    <div className="panel-body" style={{fontFamily: 'crimsontext'}}>
-											        <RadioInput 
-											        	label="Newest" 
-											        	value="Newest" 
-											        	for="newestM" 
-										        		name="sortBy" 
+											        <RadioInput
+											        	label="Newest"
+											        	value="Newest"
+											        	for="newestM"
+										        		name="sortBy"
 										        		onChange={this.handleSort}
 									        		/>
 	    											<RadioInput label="High and Low" value="highAndLow" for="highAndLowM" name="sortBy" onChange={this.handleSort}/>
@@ -405,7 +414,7 @@ class Filterpanel extends Component {
 								/>
 							</span>}*/}
 							<div className="col-xs-12" style={{textAlign: 'center'}}><br/>
-								{this.state.data.length === 0 && 
+								{this.state.data.length === 0 &&
 									<div>
 	    								<h1 style={{textAlign: 'center', fontFamily: 'Playfair Display'}}>Your filters did not return any result:'(</h1>
 	    								<p style={{textAlign: 'center', fontFamily: 'Tajawal', color: 'gray', opacity: '1'}}>But dont worry, you can change your filters from the filters panel on the Left.</p>

@@ -4,7 +4,6 @@ import { Textarea, SelectInput, TextInput } from '../_components/myInput';
 import { HttpUtils } from  '../../Service/HttpUtils';
 import { Shareholder, UploadedImages } from '../productdetail/ColorPicker';
 import SeeChart from './seeChart';
-
 import { SwatchesPicker } from 'react-color';
 import sha1 from "sha1";
 import superagent from "superagent";
