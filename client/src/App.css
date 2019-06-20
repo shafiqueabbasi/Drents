@@ -395,31 +395,146 @@
 }
 
 
-@media only screen and (min-device-width : 360px) and (max-device-width : 660px){
+@media only screen and (min-device-width : 360px) and (max-device-width : 767px){
   .OH{
    margin-top: -13.5%;
    margin-left: 52%;
   }
-
+  .btn_profile{
+      font-family: playfair display;
+      color: #9A88A2;
+      border: none;
+      padding: 15px;
+       font-size: 15px;
+      width: 115%;
+  }
+  .btn_updress{
+      font-family: playfair display;
+      color: #9A88A2;
+      border: none;
+      padding: 15px;
+       font-size: 15px;
+      width: 115%;
+  }
+  .profile_editHead{
+     font-family: playfair display;
+     font-size: 45px;
+     color: #353535;
+  }
+  .rental_btn{
+      font-family: playfair display;
+      color: #9A88A2;
+      border: none;
+      padding: 15px;
+      font-size: 13px;
+      width: 100%;
+  }
 }
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
+@media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
   .OH{
    margin-top: -19.5%;
    margin-left: 50%;
   }
-
+  .btn_profile{
+      font-family: playfair display;
+      color: #9A88A2;
+      border: none;
+      padding: 15px;
+      width: 115%;
+       font-size: 13px;
+  }
+  .btn_updress{
+      font-family: playfair display;
+      color: #9A88A2;
+      border: none;
+      padding: 15px;
+      width: 115%;
+       font-size: 13px;
+  }
+  .profile_editHead{
+     font-family: playfair display;
+     font-size: 45px;
+     color: #353535;
+  }
+  .rental_btn{
+      font-family: playfair display;
+      color: #9A88A2;
+      border: none;
+      padding: 15px;
+      font-size: 13px;
+      width: 100%;
+  }
 }
-@media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
+@media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){
   .OH{
    margin-top: -25.5%;
    margin-left: 74%;
   }
-
+  .btn_profile{
+      font-family: playfair display;
+      color: #9A88A2;
+      border: none;
+      padding: 15px;
+       font-size: 15px;
+      width: 150%;
+      margin-left: 40%;
+  }
+  .btn_updress{
+      font-family: playfair display;
+      color: #9A88A2;
+      border: none;
+      padding: 15px;
+      width: 89%;
+       font-size: 15px;
+      margin-left: 35%;
+  }
+  .profile_editHead{
+     font-family: playfair display;
+     font-size: 43px;
+     color: #353535;
+  }
+  .rental_btn{
+      font-family: playfair display;
+      color: #9A88A2;
+      border: none;
+      padding: 15px;
+      font-size: 13px;
+      width: 100%;
+  }
 }
 @media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
   .OH{
-   margin-top: -21.5%;
-   margin-left: 74%;
+     margin-top: -21.5%;
+     margin-left: 74%;
+  }
+  .btn_profile{
+      font-family: playfair display;
+      color: #9A88A2;
+      border: none;
+      padding: 15px;
+      font-size: 15px;
+      width: 115%;
+  }
+  .btn_updress{
+      font-family: playfair display;
+      color: #9A88A2;
+      border: none;
+      padding: 15px;
+      font-size: 15px;
+      width: 89%;
+  }
+  .profile_editHead{
+     font-family: playfair display;
+     font-size: 45px;
+     color: #353535;
+  }
+  .rental_btn{
+      font-family: playfair display;
+      color: #9A88A2;
+      border: none;
+      padding: 15px;
+      font-size: 13px;
+      width: 100%;
   }
 
 }
@@ -595,6 +710,17 @@
   text-transform: uppercase;
   font-size: 48px;
 }
+.input_form_Profile{
+    font-family: playfair display;
+    color: #9b9b9b;
+    font-size: 15px;
+/*    margin-top: 16%;*/
+}
+.checkbox_form_Profile{
+    font-family: playfair display;
+    color: #9b9b9b;
+    font-size: 15px;
+}
 .inputBox{
   position: relative;
   box-sizing: border-box;
@@ -611,13 +737,62 @@
   position: relative;
   width: 100%;
   height: 50px;
-  background: transparent;
+  background-color: #e1e1e1;
   border: none;
-    outline: none;
-    font-size: 24px;
-    border-bottom: 1px solid rgba(0,0,0,.5);
-
+  outline: none;
+  font-size: 20px;
+  padding: 5px;  
+    /*border-bottom: 1px solid rgba(0,0,0,.5);*/
 }
+@media only screen and (min-device-width : 360px) and (max-device-width : 767px){
+  .textarea_profile{
+    height: 100px !important;
+    width: 88%;
+    background-color: #e1e1e1;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    padding: 8px;
+    margin-left: 2%;
+  }
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
+  .textarea_profile{
+    height: 100px !important;
+    width: 88%;
+    background-color: #e1e1e1;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    padding: 8px;
+    margin-left: 2%;
+  }
+}
+@media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){
+  .textarea_profile{
+      height: 100px !important;
+      width: 88%;
+      background-color: #e1e1e1;
+      border: none;
+      outline: none;
+      font-size: 15px;
+      padding: 8px;
+      margin-left: 2%;
+  }
+}
+@media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
+  .textarea_profile{
+      height: 100px !important;
+      width: 88%;
+      background-color: #e1e1e1;
+      border: none;
+      outline: none;
+      font-size: 15px;
+      padding: 8px;
+      margin-left: 2%;
+  }
+}
+
 .focus .inputText{
   transform: translateY(-30px);
   font-size: 18px;
@@ -625,17 +800,24 @@
   color: #00bcd4;
 
 }
-textarea{
-  height: 100px !important;
-}
-.button{
+
+.buttonsave{
     width: 100%;
-    height: 50px;
+    padding: 5px;
     border: none;
     outline: none;
-    background: #c2073f;
-    color: #fff;
-    font-family: crimsontext;
+    background: rgb(203, 157, 108);
+    color: #353535;
+    font-family: playfair display;
+}
+.buttoncancel{
+     width: 100%;
+    border: none;
+    outline: none;
+    background-color: #e1e1e1;
+    color: rgb(203, 157, 108);
+    font-family: playfair display;
+    padding: 10px;
 }
 
 .disabledButton {

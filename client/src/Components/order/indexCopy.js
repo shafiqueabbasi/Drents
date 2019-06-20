@@ -112,65 +112,35 @@ class Order extends Component {
       		<div className="" style={{marginTop: '110px'}}>
       			<div className="container">
       				<div className="row hidden-xs hidden-sm">
-                                    {goTo == 'currentRentals' && <div className="col-md-2 col-lg-2"></div>}
-
-      					{goTo == 'currentRentals' && <div className="col-md-2 col-lg-2">
-      						<button 
-                                                className="rental_btn" 
-                                                onClick={this.renderWithState.bind(this, "currentRentals", orderTabs)} 
-                                                style={orderTabs[0].currentRentals ? {textAlign: 'center', backgroundColor:'#cb9d6c', color: 'rgb(71, 52, 99)', fontFamily: 'playfair display', fontSize:'13px'} : {textAlign: 'center'}}>
-                                                Current Rentals
-                                          </button>
+      					{/*<div className="col-md-1"></div>*/}
+      					{goTo == 'currentRentals' && <div className="col-md-4" style={orderTabs[0].currentRentals ? {textAlign: 'center', textDecorationLine: 'underline'} : {textAlign: 'center'}}>
+      						<h4 className="order" onClick={this.renderWithState.bind(this, "currentRentals", orderTabs)} style={{fontFamily: 'crimsontext',color: '#c2073f'}}>Current Rentals</h4>
       					</div>}
-
-                                    {goTo == 'currentRentals' && <div className="col-md-1 col-lg-1"></div>}
-
-      					{goTo == 'currentRentals' && <div className="col-md-2 col-lg-2">
-      						<button 
-                                                className="rental_btn" 
-                                                onClick={this.renderWithState.bind(this, "currentRented", orderTabs)} 
-                                                style={orderTabs[1].currentRented ? {textAlign: 'center', backgroundColor:'#cb9d6c', color: 'rgb(71, 52, 99)', fontFamily: 'playfair display', fontSize:'13px'} : {textAlign: 'center'}}>
-                                                Current Rented
-                                          </button>
+      					{/*<div className="col-md-1"></div>*/}
+      					{goTo == 'currentRentals' && <div className="col-md-4" style={orderTabs[1].currentRented ? {textAlign: 'center', textDecorationLine: 'underline'} : {textAlign: 'center'}}>
+      						<h4 className="order" onClick={this.renderWithState.bind(this, "currentRented", orderTabs)} style={{fontFamily: 'crimsontext',color: '##c2073f'}}>Current Rented</h4>
       					</div>}
-
-                                    {goTo == 'currentRentals' && <div className="col-md-1 col-lg-1"></div>}
-
-                                    {goTo == 'currentRentals' && <div className="col-md-2 col-lg-2">
-                                          <button 
-                                                className="rental_btn" 
-                                                onClick={this.renderWithState.bind(this, "orderHis", orderTabs)} 
-                                                style={orderTabs[2].orderHis ? {textAlign: 'center', backgroundColor:'#cb9d6c', color: 'rgb(71, 52, 99)', fontFamily: 'playfair display', fontSize:'13px'} : {textAlign: 'center'}}>
-                                                Order History
-                                          </button>
+                                    {goTo == 'currentRentals' && <div className="col-md-4" style={orderTabs[2].orderHis ? {textAlign: 'center', textDecorationLine: 'underline'} : {textAlign: 'center'}}>
+                                          <h4 className="order" onClick={this.renderWithState.bind(this, "orderHis", orderTabs)} style={{fontFamily: 'crimsontext',color: '##c2073f'}}>Order History</h4>
                                     </div>}
-
-                                    {goTo == 'currentRentals' && <div className="col-md-2 col-lg-2"></div>}
                               </div>
                         </div>            	
-                        <div className="row hidden-xs hidden-sm" style={{margin:'0px'}}>
-                              {goTo == 'profile' && <div className="col-md-3 col-lg-3"></div>}
-                              {goTo == 'profile' && <div className="col-md-3 col-lg-3">
-                                    <p className="profile_editHead">Edit Profile</p>
-                              </div>}    
-					{goTo == 'profile' && <div className="col-md-1 col-lg-1">
-					      <button 
-                                          className="btn_profile" 
-                                          onClick={this.renderWithState.bind(this, "profile", arr)}
-                                           style={arr[0].profile ? {textAlign: 'center', backgroundColor:'#cb9d6c', color: 'rgb(71, 52, 99)', fontFamily: 'playfair display', fontSize:'15px'} : {textAlign: 'center'}}
-                                          >Profile
-                                    </button>
-					</div>}
-					{goTo == 'profile' && <div className="col-md-2 col-lg-2" >
-						<button 
-                                          className="btn_updress" 
-                                          onClick={this.renderWithState.bind(this, "uploadDress", arr)} 
-                                          style={arr[1].uploadDress ? {textAlign: 'center', backgroundColor:'#cb9d6c', color: 'rgb(71, 52, 99)', fontFamily: 'playfair display', fontSize:'15px'} : {textAlign: 'center'}}
-                                          >Upload Dress
-                                    </button>
-					</div>}
-                              {goTo == 'profile' && <div className="col-md-3 col-lg-3"></div>}
-				</div>
+                              <div className="row hidden-xs hidden-sm">
+                                    {goTo == 'profile' && <div className="col-md-3 col-lg-3"></div>}
+                                    {goTo == 'profile' && <div className="col-md-3 col-lg-3">
+                                          <p className="profile_editHead">Edit Profile</p>
+                                    </div>}    
+      					{goTo == 'profile' && <div className="col-md-1 col-lg-1" style={arr[0].profile ? {textAlign: 'center', textDecorationLine: 'underline'} : {textAlign: 'center'}}>
+						      <button className="order" onClick={this.renderWithState.bind(this, "profile", arr)} style={{fontFamily: 'crimsontext',color: '#c2073f'}}>Profile</button>
+      					</div>}
+      					{goTo == 'profile' && <div className="col-md-2 col-lg-2" style={arr[1].uploadDress ? {textAlign: 'center', textDecorationLine: 'underline'} : {textAlign: 'center'}}>
+      						<button className="order" onClick={this.renderWithState.bind(this, "uploadDress", arr)} style={{fontFamily: 'crimsontext',color: '#c2073f'}}>Upload Dress</button>
+      					</div>}
+                                    {goTo == 'profile' && <div className="col-md-3 col-lg-3"></div>}
+      				</div>
+
+				<hr className="hidden-xs hidden-sm" style={{borderTop:'2px solid #c2073f'}}/>
+
                         <div className="container">            
       				<div className="row  visible-sm">      					
                                     {goTo == 'currentRentals' && <div className="col-sm-4" style={orderTabs[0].currentRentals ? {textAlign: 'center', textDecorationLine: 'underline'} : {textAlign: 'center'}}>

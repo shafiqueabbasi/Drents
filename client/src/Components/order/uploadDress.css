@@ -31,8 +31,9 @@
   height: 31px;
   border: none;
   outline: none;
-  background: #c2073f;
-  color: #fff;
+  background-color: rgb(203, 157, 108);
+  color: rgb(71, 52, 99);
+  font-family: "playfair display";
   font-size: 15px;
 }
 #shareholder{
@@ -202,5 +203,76 @@
     -ms-transform: rotate(360deg);
     -o-transform: rotate(360deg);
     transform: rotate(360deg);
+  }
+}
+
+
+
+@media only screen and (min-device-width : 360px) and (max-device-width : 767px){
+    .btn_change_password{
+      font-family: playfair display;
+      font-size: 16px;
+      width: 100%;
+      padding: 14px;
+      color: #353535;
+      background-color: rgb(203, 157, 108);
+  }
+  .date_input{
+    width: 100%;
+    border: none;
+    background-color: rgb(225, 225, 225);
+    padding: 9px;
+    margin-top: -1%;
+  }
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
+    .btn_change_password{
+      font-family: playfair display;
+      font-size: 16px;
+      width: 100%;
+      padding: 14px;
+      color: #353535;
+      background-color: rgb(203, 157, 108);
+  }
+  .date_input{
+    width: 100%;
+    border: none;
+    background-color: rgb(225, 225, 225);
+    padding: 9px;
+    margin-top: -1%;
+  }
+}
+@media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){
+     .btn_change_password{
+      font-family: playfair display;
+      font-size: 16px;
+      width: 100%;
+      padding: 14px;
+      color: #353535;
+      background-color: rgb(203, 157, 108);
+  }
+  .date_input{
+    width: 100%;
+    border: none;
+    background-color: rgb(225, 225, 225);
+    padding: 9px;
+    margin-top: -1%;
+  }
+}
+@media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
+   .btn_change_password{
+      font-family: playfair display;
+      font-size: 16px;
+      width: 100%;
+      padding: 14px;
+      color: #353535;
+      background-color: rgb(203, 157, 108);
+  }
+  .date_input{
+    width: 100%;
+    border: none;
+    background-color: rgb(225, 225, 225);
+    padding: 9px;
+    margin-top: -1%;
   }
 }

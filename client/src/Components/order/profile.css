@@ -4,11 +4,13 @@
 .textAreaFont{
   width:100%;
 }
-.profile_editHead{
-   font-family: playfair display;
-   font-size: 45px;
-   color: #353535;
+.form_heading{
+    font-family: playfair display;
+    font-size: 30px;
+    color: #353535;
+    margin-top: 7%;
 }
+
 
 /*#profile-input{
   margin-top: 17px;
