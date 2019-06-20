@@ -35,42 +35,46 @@ export class Shareholder extends Component {
     render(){
 	  	return(
 	  		<div>
-	  			<div className="col-md-1 col-sm-4"><span className="input">
-	                <h3 style={{fontFamily: 'crimsontext',fontSize: '23px', color: '#c2073f'}}>
+	  			<div className="col-md-6 col-lg-6 col-sm-4"><span className="input">
+	                <h3 className="input_form_Profile">
 	                    {this.props.label}
 	                </h3></span>
 	            </div>
-	            <div className="col-md-5 col-sm-8">
+	            <div className="col-md-10 col-lg-10 col-sm-8">
 	                <div className="inputBox">
 	                    <div className="inputText"></div>
 	                    {this.props.value.map((shareholder, idx) => (
-	                        <div className="shareholder" style={{marginTop: '1%'}}>
+	                        <div className="shareholder" style={{marginTop: '2.5%'}}>
 		                        <input
 		                        	required={this.props.required}
 									type="text"
-									placeholder={`Shareholder #${idx + 1} name`}
+									// placeholder={`Shareholder #${idx + 1} name`}
 									value={shareholder.name}
 									id={this.props.id}
 									onChange={this.handleShareholderNameChange(idx)}
-                                    style={{border: 'none',borderBottom: '1px solid #c2073f'}}
+                                    style={{border: 'none', width: '100%',
+                                                            border: 'none',
+                                                            backgroundColor: 'rgb(225, 225, 225)',
+                                                            padding: '9px',
+                                                            marginTop:'-1%'}}
 		                        />
 		                        <button
 			                        type="button"
 			                        onClick={this.handleRemoveShareholder(idx)}
 			                        className="btn btn-sm"
-	                        		style={{margin:'11px'}}
+	                        		
                         		>
 		                          X
 		                        </button>
 	                        </div>
 	                ))}
-	                <button
-						type="button"
-						onClick={this.handleAddShareholder}
-						className="button_add"
-	                >
-		                Add
-					</button>
+        	                <button
+        						type="button"
+        						onClick={this.handleAddShareholder}
+        						className="button_add"
+        	                >
+        		                Add
+        					</button>
 					</div>
 	            </div>
 	  		</div>

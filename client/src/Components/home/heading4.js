@@ -7,10 +7,7 @@ class Heading4 extends Component {
   render() {
 
   	const { label, hrLine, data, showEditDelete, onDelete, profile, userAvailable, showDropdown,showonhome } = this.props;
-     console.log(data,'data in gallerys')
 
-  	const { label, data, showEditDelete, onDelete, profile, userAvailable, showDropdown,showonhome } = this.props;
-    
 
     return (
     	<div className="col-md-12 App">

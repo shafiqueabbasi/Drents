@@ -96,7 +96,7 @@ class ChangePassword extends Component {
       return(
         <div>
         {/*<!-- Trigger the modal with a button -->*/}
-            <button type="button" className="btn btn-info btn-lg" data-toggle="modal" data-target="#changePassword" style={{marginTop:'28px',fontFamily:'none'}}>Change Password</button>
+            <button type="button" data-toggle="modal" data-target="#changePassword" className="btn btn_change_password">Change Password</button>
 
             {/*<!-- Modal -->*/}
             <div id="changePassword" className="modal fade" role="dialog" style={{marginTop:'5%'}}>

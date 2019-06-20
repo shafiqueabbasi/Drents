@@ -246,315 +246,345 @@ render() {
     return (
       	<div>
           <Form onSubmit={this.handleSubmit}>
-      		<div className="container-fluid">
-      			<div className="col-md-12">
-      				<div className="row">
-                <div className="col-md-1"></div>
-                <div className="row col-md-11" style={{padding: '0px'}}>
-                  <h1 style={{fontFamily: 'Sacramento',fontSize: '200%',color: '#c2073f'}}>Upload Dress</h1>
-                </div>
-      					
-      				</div>
-      				<div className="row">
-                <div className="col-md-6 row">
-      						{/*<TextInput2 
-                      required
-                      label="Product Name" 
-                      id="productName" 
-                      value={this.state.productName} 
-                      className="input"
-                      Change={this.inputHandleChange}
-                    />*/}
-                  <TextInput 
-                      label="Product Name" 
-                      id="productName" 
-                      className="input"
-                      col="col-md-4 col-sm-4"
-                      col2="col-md-8 col-sm-8"
-                     
-                      value={this.state.productName} 
-                      Change={this.inputHandleChange}
-                    />
-                </div>
-                <div className="col-md-6 row">    
-      						<TextInput 
-                      required
-                      
+    		    <div className="container-fluid">
+              <div className="row" style={{margin:'0px'}}>
+                  <div className="col-lg-2 col-md-2 col-sm-1 col-xs-12"></div>
+                  <div className="col-lg-8 col-md-8 col-sm-10 col-xs-12">
+                			<div className="col-md-12">
+                            <div className="row">
+                              <div className="col-md-2 col-sm-2">
+                                  <span class="input">
+                                      <h3 style={{fontFamily: 'crimsontext',fontSize: '23px', color : '#c2073f'}}>
+                                          Pictures
+                                      </h3>
+                                      <p style={{fontSize: '63%'}}>
+                                          File size must not exceed to Mb
+                                      </p>
+                                  </span>
+                              </div>
+                              <div className="col-md-4 col-sm-5" style={{marginTop: '1%'}}>
+                                <label className="labelcustome" id="#bb" style={{background: 'none',color: '#c2073f',fontWeight: '500'}}> Choose File
+                                    <input 
+                                        type="file" 
+                                        id="File" 
+                                        size="60" 
+                                        onChange={e => this.handleImage(e)}
 
-                      label="Detail Name" 
-                      id="detailName" 
-                      className="input"
-                      col="col-md-4 col-sm-4"
-                      col2="col-md-8 col-sm-8"
-                      padding={{padding: '0px'}}
-                      value={this.state.detailName} 
+                                      />
+                                  </label><br/>                                                   
+                              </div>              
+                              <div className="col-md-2"></div>
+                            </div>
+                            <div className="row">
+                                <div className="col-md-12">
+                                    {fileList.length > 0 && <UploadedImages 
+                                        fileList={fileList}
+                                        handlePreview={this.handlePreview}
+                                        deleteImage={this.deleteImage}/>
+                                    }
+                                </div>
+                            </div>
+                            {this.state.imgMsg.length > 0 && <span style={{fontSize:'16px'}}><u>{this.state.imgMsg}</u></span>}          
 
-                      Change={this.inputHandleChange}
-                    />
-				        </div>
-            </div>
-					<div className="row">
-            <div className="col-md-6 col-sm-12 row">
-  						<Textarea 
-                  required
-                  title="Description" 
-                  id="description"
-                  value={this.state.description}
-                  rows="6" style={{border: 'none'}}
-                  className="col-md-12 col-sm-12"
-                  padding={{padding: '0px'}}
-                  maxLength="400" 
-                  onChange={e => this.setState({description: e.target.value})}
-                  style={{paddingLeft: '0px'}}/>
-            </div>
-            <div className="col-md-6 row">                         					
-              <TextInput 
-                  required
-                    label="Price / Day" 
-                    id="priceDay" 
-                    className="input"
-                    col="col-md-4 col-sm-4" 
-                    col2="col-md-8 col-sm-8"
-                    padding={{padding: '0px'}}
-                    value={this.state.priceDay} 
+                            <div className="row" style={{margin: '0px'}}>
+                              <h1 className="form_heading">Basic</h1>
+                            </div>
+                  				<div className="row">
+                            <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <TextInput 
+                                  label="Product Name" 
+                                  id="productName" 
+                                  className="input"
+                                  col="col-lg-6 col-md-6 col-sm-2"
+                                  col2="col-lg-10 col-md-10 col-sm-4"                                
+                                  value={this.state.productName} 
+                                  Change={this.inputHandleChange}
+                                />
+                            </div>
+                            <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6">    
+                  						<TextInput 
+                                  required
+                                  label="Detail Name" 
+                                  id="detailName" 
+                                  className="input"
+                                  col="col-lg-6 col-md-6 col-sm-2"
+                                  col2="col-lg-10 col-md-10 col-sm-4"
+                                  value={this.state.detailName} 
+                                  Change={this.inputHandleChange}
+                                />
+            				        </div>
+                          </div>
+                					<div className="row">
+                            <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                              <SelectInput                   
+                                  label="Body Type" 
+                                  id="bodyType" 
+                                  value={this.state.bodyType} 
+                                  className="input"
+                                  col="col-lg-6 col-md-6 col-sm-2"
+                                  col2="col-lg-10 col-md-10 col-sm-4"
 
+                                  options={this.state.typeArr}
+                                  Change={this.inputHandleChange}
+                                />            						  
+                            </div>
+                            <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6">                         					
+                              <TextInput 
+                                  required
+                                    label="Price / Day" 
+                                    id="priceDay" 
+                                    className="input"
+                                    col="col-lg-6 col-md-6 col-sm-2"
+                                    col2="col-lg-10 col-md-10 col-sm-4"
+                                    value={this.state.priceDay} 
+                                    pattern="^-?[0-9]\d*\.?\d*$"
+                                    Change={this.inputHandleChange}
+                              />
+                            </div>    
+            					    </div>
+                          <div className="row" style={{marginTop: '20px'}}>
+                              <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                <SelectInput 
+                                    label="Weather" 
+                                    id="weather" 
+                                    value={this.state.weather} 
+                                    className="input"
+                                    col="col-lg-6 col-md-6 col-sm-2"
+                                    col2="col-lg-10 col-md-10 col-sm-4"
+                                    options={["Cold Weather", "Warm Weather"]}
+                                    Change={this.inputHandleChange}
+                                />
+                              </div>                                    
+                              <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                  <Shareholder 
+                                        required
+                                        label="Details" 
+                                        id="details" 
+                                        value={this.state.details}
+                                        onChange={this.handleCard}
+                                    />
+                               </div>                               
+                          </div>
+                          <div className="row">                             
+                              <Textarea 
+                                  required
+                                  title="Description" 
+                                  id="description"
+                                  value={this.state.description}
+                                  rows="6" style={{border: 'none'}}
+                                  className="col-md-12 col-sm-12"
+                                  maxLength="400" 
+                                  onChange={e => this.setState({description: e.target.value})}
+                                
+                              />                              
+                          </div>
+                          <div className="row">
+                              <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6">                          
+                                  <div>
+                                      <span className="input">
+                                          <h3 className="input_form_Profile">
+                                            Color Picker
+                                          </h3>
+                                      </span>
+                                  </div>
+                                  <div className="inputBox">
+                                    <div className="inputText"></div>
+                                      <SwatchesPicker 
+                                          required
+                                          color={ background }
+                                          onChangeComplete={ this.handleChangeComplete }
+                                          style = {{height: '20px'}}
+                                      />              
+                                  </div>
+                              </div>  
+                              <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                  <div className="col-md-6 col-lg-6 col-sm-4">
+                                        <span className="input">
+                                          <h3 className="input_form_Profile">
+                                              Sizes Available
+                                          </h3>
+                                        </span>
+                                  </div>
+                                  <div className="col-md-10 col-lg-10 col-sm-8">
+                                    <div className="col-md-6 col-sm-6" style={{marginTop: '5%'}}>                             
+                                        <label className="container">
+                                          <input value='xsmall' type="checkbox" id="XS" required 
+                                            style={{position: 'absolute', opacity: '0', cursor: 'pointer', height: '0', width: '0'}}
+                                            onChange={this.handleSize}
+                                          />
+                                          <span className="checkmark"></span>
+                                          <h4 className="input_form_Profile">X Small</h4>
+                                        </label>
 
-                  pattern="^-?[0-9]\d*\.?\d*$"
-                  Change={this.inputHandleChange}
-                />
-            </div>    
-					</div>
+                                        <label className="container">
+                                          <input value='small' type="checkbox" id="S"
+                                            onChange={this.handleSize}
+                                            style={{position: 'absolute', opacity: '0', cursor: 'pointer', height: '0', width: '0'}}/>
+                                          <span className="checkmark"></span>
+                                          <h4 className="input_form_Profile">Small</h4>
+                                        </label>
 
-          <div className="row" style={{marginTop: '20px'}}>
-            <div className="col-md-6 col-sm-12 row">
-              <SelectInput                   
-                  label="Body Type" 
-                  id="bodyType" 
-                  value={this.state.bodyType} 
-                  className="input"
-                  col="col-md-4 col-sm-4"
-                  col2="col-md-8 col-sm-8"
+                                        <label className="container">
+                                          <input value='Medium' type="checkbox" id="M" required
+                                          onChange={this.handleSize}
+                                           style={{position: 'absolute', opacity: '0', cursor: 'pointer', height: '0', width: '0'}}/>
+                                          <span className="checkmark"></span>
+                                          <h4 className="input_form_Profile">Medium</h4>
+                                        </label>
 
-                  options={this.state.typeArr}
-                  Change={this.inputHandleChange}
-                />
-            </div>    
-            <div className="col-md-2 col-sm-3"><span className="input"><h3 style={{fontFamily: 'crimsontext',fontSize: '23px', color: '#c2073f'}}>Color Picker</h3></span></div>
-            <div className="col-md-4 col-sm-9">
-              <div className="inputBox">
-                  <div className="inputText"></div>
-                  <SwatchesPicker 
-                      required
-                      color={ background }
-                      onChangeComplete={ this.handleChangeComplete }
-                      style = {{height: '20px'}}
-                  />              
+                                    </div>
+                                    <div className="col-md-6 col-sm-6" style={{marginTop: '5%'}}>
+                                          <label className="container">
+                                            <input  type="checkbox" id="XL"
+                                            onChange={this.handleSize}
+                                            style={{position: 'absolute', opacity: '0', cursor: 'pointer', height: '0', width: '0'}}/>
+                                            <span className="checkmark"></span>
+                                            <h4 className="input_form_Profile">X Large</h4>
+                                          </label>
+
+                                          <label className="container">
+                                            <input type="checkbox" id="L"
+                                            onChange={this.handleSize}
+                                            style={{position: 'absolute', opacity: '0', cursor: 'pointer', height: '0', width: '0'}}/>
+                                            <span className="checkmark"></span>
+                                            <h4 className="input_form_Profile">Large</h4>
+                                          </label>
+
+                                          <label className="container">
+                                            <input type="checkbox" id="XXL"
+                                            onChange={this.handleSize}
+                                            style={{position: 'absolute', opacity: '0', cursor: 'pointer', height: '0', width: '0'}}/>
+                                            <span className="checkmark"></span>
+                                            <h4 className="input_form_Profile">XX Large</h4>                  
+                                          </label>
+
+                                          <span className="input_form_Profile" 
+                                              data-toggle="modal" 
+                                              data-target="#chartModal">
+                                              <u>See Chart</u>
+                                          </span>                  
+                                    </div>
+                                    {this.state.sizeMsg.length > 0 && <span style={{fontSize:'16px'}}><u>{this.state.sizeMsg}</u></span>}
+                                  </div>
+                              </div>                    
+                          </div>
+                          <div className="row" style={{margin: '0px'}}>
+                              <h1 className="form_heading">More details</h1>
+                          </div>
+                          <div className="row">
+                            <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                <div className="col-xs-12 col-sm-2 col-md-6 col-lg-6"><span className="input">
+                                    <h3 className="input_form_Profile">
+                                        Available from
+                                    </h3></span>
+                                </div>
+                                <div className="col-xs-12 col-sm-4 col-md-10 col-lg-10" style={{marginTop: '1%'}}>
+                                  <div className="inputBox">
+                                      <div className="inputText"></div>
+                                      <input 
+                                          required
+                                          type="date" 
+                                          id="from" 
+                                          value={this.state.from} 
+                                          onChange={this.inputHandleChange}
+                                          className="date_input"
+                                      />                
+                                  </div>
+                                </div>
+                            </div>
+                            <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                <div className="col-xs-2 col-sm-2 col-md-6 col-lg-6"><span className="input">
+                                    <h3 className="input_form_Profile">
+                                        Available till
+                                    </h3></span>
+                                </div>
+                                <div className="col-xs-10 col-sm-4 col-md-10 col-lg-10" style={{marginTop: '1%'}}>
+                                    <div className="inputBox">
+                                        <div className="inputText"></div>
+                                        <input 
+                                            required
+                                            type="date" 
+                                            id="to" 
+                                            value={this.state.to} 
+                                            onChange={this.inputHandleChange}
+                                            className="date_input"
+                                        />                
+                                    </div>
+                                </div>
+                            </div>                        
+                          </div>
+                          <div className="row">
+                              <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6">        
+                                  <Shareholder 
+                                      label="Tags" 
+                                      id="tags" 
+                                      value={this.state.tags}
+                                      onChange={this.handleCard}
+                                    />
+                              </div>                  
+                              <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                  
+                              </div>
+                          </div>
+                					<div className="row">					
+                           
+                						
+                					</div>
+
+                					
+                          {/* Modal Start */}
+                          <div id="myModal" className="modal fade" role="dialog" style={{marginTop:'5%'}}>
+                            <div className="modal-dialog">
+                              <div className="modal-content" style={{width:'66%'}}>
+                                <div className="modal-header">
+                                  <span className="title" style={{color: 'white', textAlign: 'center'}}>
+                                    Preview
+                                  </span>
+                                  <button type="button" className="close" data-dismiss="modal" style={{color:'white'}}>&times;</button>
+                                </div>
+                                <div className="modal-body">
+                                  <img alt="example" style={{ width: '100%' }} src={previewImage} />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          {/* Modal End */}     
+                          {/* Chart Modal Start */}
+                            <div id="chartModal" className="modal fade" role="dialog" style={{marginTop:'5%'}}>
+                              <div className="modal-dialog">
+                                <div className="modal-content">
+                                  <div className="modal-header">
+                                    <span className="title" style={{color: 'white', textAlign: 'center'}}>
+                                      Measurement
+                                    </span>
+                                    <button type="button" className="close" data-dismiss="modal" style={{color:'white'}}>&times;</button>
+                                  </div>
+                                  <div className="modal-body">
+                                    <SeeChart />
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          {/* Chart Modal End */}     
+                					<div className="row">
+                						<div className="col-md-9 col-sm-8" style={{textAlign: 'right'}}>{this.state.showMsg}</div>
+                						<div className="col-md-3 col-sm-4">
+                							<button type="submit" 
+                                     name="" className="button"
+                                     value="post" 
+                                     disabled={this.state.loader}
+                                     onClick={this.handleSubmit}>
+                                     post
+                                     </button>
+                              {this.state.loader && <div class="loading">Loading&#8230;</div>}
+                						</div>
+                					</div>
+              			</div>
+                  </div>
+                <div className="col-lg-2 col-md-2 col-sm-1 col-xs-12"></div>
               </div>
-            </div>
-          </div>
-
-          <div className="row">
-            <div className="col-md-1 col-sm-2"><span className="input">
-                <h3 style={{fontFamily: 'crimsontext',fontSize: '23px',color: '#c2073f'}}>
-                    From
-                </h3></span>
-            </div>
-            <div className="col-md-4 col-sm-4" style={{marginTop: '1%'}}>
-              <div className="inputBox">
-                  <div className="inputText"></div>
-                  <input 
-                      required
-                      type="date" 
-                      id="from" 
-                      value={this.state.from} 
-                      onChange={this.inputHandleChange}
-                      style={{border: 'none',borderBottom: '1px solid #c2073f'}}
-                  />                
-              </div>
-            </div>
-            <div className="col-md-1 col-sm-2"><span className="input">
-                <h3 style={{fontFamily: 'crimsontext',fontSize: '23px',color: '#c2073f'}}>
-                    To
-                </h3></span>
-            </div>
-            <div className="col-md-4 col-sm-4" style={{marginTop: '1%'}}>
-              <div className="inputBox">
-                  <div className="inputText"></div>
-                  <input 
-                      required
-                      type="date" 
-                      id="to" 
-                      value={this.state.to} 
-                      onChange={this.inputHandleChange}
-                      style={{border: 'none',borderBottom: '1px solid #c2073f'}}
-                  />                
-              </div>
-            </div>
-          </div>
-
-          <div className="row">          
-            <Shareholder 
-                label="Tags" 
-                id="tags" 
-                value={this.state.tags}
-                onChange={this.handleCard}
-              />            
-            <div className="col-md-6 row">
-                <SelectInput 
-                    label="Weather" 
-                    id="weather" 
-                    value={this.state.weather} 
-                    className="input"
-                    col="col-md-4 col-sm-4"
-                    col2="col-md-8 col-sm-8"
-                    options={["Cold Weather", "Warm Weather"]}
-                    Change={this.inputHandleChange}
-                />
-            </div>
-          </div>
-
-					<div className="row">					
-            <Shareholder 
-                required
-                label="Details" 
-                id="details" 
-                value={this.state.details}
-                onChange={this.handleCard}
-            />
-						<div className="col-md-2 col-sm-4"><span className="input"><h3 style={{fontFamily: 'crimsontext',fontSize: '22px',color: '#c2073f' }}>Sizes Available</h3></span></div>
-						<div className="col-md-4 col-sm-8">
-							<div className="col-md-6 col-sm-6" style={{marginTop: '5%'}}>
-								<label className="container">
-									<input value='xsmall' type="checkbox" id="XS" required 
-                    style={{position: 'absolute', opacity: '0', cursor: 'pointer', height: '0', width: '0'}}
-                    onChange={this.handleSize}
-                  />
-									<span className="checkmark"></span>
-									<h4 style={{fontFamily: 'crimsontext',color: '#c2073f'}}>X Small</h4>
-								</label>
-								<label className="container">
-									<input value='small' type="checkbox" id="S"
-                    onChange={this.handleSize}
-                    style={{position: 'absolute', opacity: '0', cursor: 'pointer', height: '0', width: '0'}}/>
-									<span className="checkmark"></span>
-									<h4 style={{fontFamily: 'crimsontext',color: '#c2073f'}}>Small</h4>
-								</label>
-								<label className="container">
-									<input value='Medium' type="checkbox" id="M" required
-                  onChange={this.handleSize}
-                   style={{position: 'absolute', opacity: '0', cursor: 'pointer', height: '0', width: '0'}}/>
-									<span className="checkmark"></span>
-									<h4 style={{fontFamily: 'crimsontext',color: '#c2073f'}}>Medium</h4>
-								</label>
-							</div>
-							<div className="col-md-6 col-sm-6" style={{marginTop: '5%'}}>
-								<label className="container">
-									<input  type="checkbox" id="XL"
-                  onChange={this.handleSize}
-                  style={{position: 'absolute', opacity: '0', cursor: 'pointer', height: '0', width: '0'}}/>
-									<span className="checkmark"></span>
-									<h4 style={{fontFamily: 'crimsontext',color: '#c2073f'}}>X Large</h4>
-								</label>
-								<label className="container">
-									<input type="checkbox" id="L"
-                  onChange={this.handleSize}
-                  style={{position: 'absolute', opacity: '0', cursor: 'pointer', height: '0', width: '0'}}/>
-									<span className="checkmark"></span>
-									<h4 style={{fontFamily: 'crimsontext',color: '#c2073f'}}>Large</h4>
-								</label>
-								<label className="container">
-									<input type="checkbox" id="XXL"
-                  onChange={this.handleSize}
-                  style={{position: 'absolute', opacity: '0', cursor: 'pointer', height: '0', width: '0'}}/>
-									<span className="checkmark"></span>
-									<h4 style={{fontFamily: 'crimsontext',color: '#c2073f'}}>XX Large</h4>									
-								</label>
-                <span style={{fontFamily: 'crimsontext',fontSize:'12px'}} 
-                    data-toggle="modal" 
-                    data-target="#chartModal">
-                    <u>See Chart</u>
-                </span>                  
-							</div>
-              {this.state.sizeMsg.length > 0 && <span style={{fontSize:'16px'}}><u>{this.state.sizeMsg}</u></span>}
-						</div>
-					</div>
-
-					<div className="row">
-						<div className="col-md-2 col-sm-2"><span class="input"><h3 style={{fontFamily: 'crimsontext',fontSize: '23px', color : '#c2073f'}}>Pictures</h3><p style={{fontSize: '63%'}}>File size must not exceed to Mb</p></span></div>
-							<div className="col-md-4 col-sm-5" style={{marginTop: '1%'}}>
-								<label className="labelcustome" id="#bb" style={{background: 'none',color: '#c2073f',fontWeight: '500'}}> Choose File
-    								<input 
-                        type="file" 
-                        id="File" 
-                        size="60" 
-                        onChange={e => this.handleImage(e)}
-
-                      />
-    							</label><br/>		                  	                  					
-							</div>							
-						<div className="col-md-2"></div>
-					</div>
-          <div className="row">
-              <div className="col-md-12">
-                  {fileList.length > 0 && <UploadedImages 
-                      fileList={fileList}
-                      handlePreview={this.handlePreview}
-                      deleteImage={this.deleteImage}/>
-                  }
-              </div>
-          </div>
-          {this.state.imgMsg.length > 0 && <span style={{fontSize:'16px'}}><u>{this.state.imgMsg}</u></span>}          
-
-          {/* Modal Start */}
-          <div id="myModal" className="modal fade" role="dialog" style={{marginTop:'5%'}}>
-            <div className="modal-dialog">
-              <div className="modal-content" style={{width:'66%'}}>
-                <div className="modal-header">
-                  <span className="title" style={{color: 'white', textAlign: 'center'}}>
-                    Preview
-                  </span>
-                  <button type="button" className="close" data-dismiss="modal" style={{color:'white'}}>&times;</button>
-                </div>
-                <div className="modal-body">
-                  <img alt="example" style={{ width: '100%' }} src={previewImage} />
-                </div>
-              </div>
-            </div>
-          </div>
-        {/* Modal End */}     
-        {/* Chart Modal Start */}
-          <div id="chartModal" className="modal fade" role="dialog" style={{marginTop:'5%'}}>
-            <div className="modal-dialog">
-              <div className="modal-content">
-                <div className="modal-header">
-                  <span className="title" style={{color: 'white', textAlign: 'center'}}>
-                    Measurement
-                  </span>
-                  <button type="button" className="close" data-dismiss="modal" style={{color:'white'}}>&times;</button>
-                </div>
-                <div className="modal-body">
-                  <SeeChart />
-                </div>
-              </div>
-            </div>
-          </div>
-        {/* Chart Modal End */}     
-					<div className="row">
-						<div className="col-md-9 col-sm-8" style={{textAlign: 'right'}}>{this.state.showMsg}</div>
-						<div className="col-md-3 col-sm-4">
-							<button type="submit" 
-                     name="" className="button"
-                     value="post" 
-                     disabled={this.state.loader}
-                     onClick={this.handleSubmit}>
-                     post
-                     </button>
-              {this.state.loader && <div class="loading">Loading&#8230;</div>}
-						</div>
-					</div>
-  			</div>
-			</div>
-      </Form>
+      			</div>
+          </Form>
       	</div>
     );
 

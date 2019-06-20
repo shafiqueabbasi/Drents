@@ -20,7 +20,7 @@ export const RadioInput = props => {
                 style={{marginTop:'0px'}}
             />
           <span className="checkmark"></span>
-          <h4 style={{fontFamily: 'Tajawal', fontSize: '15px'}}>{props.label}</h4>
+          <h4 className="checkbox_form_Profile">{props.label}</h4>
         </label>
     )
 }
@@ -128,9 +128,9 @@ export const Filter = props => {
 export const TextInput = props => {
     return(
         <div>
-            <div className={props.col}  style={{paddingRight: '0px'}}>
+            <div className={props.col}  style={{paddingRight: '0px', marginTop:'4%'}}>
                 <span className="input">
-                    <h4 style={{fontFamily: 'crimsontext',color: '#c2073f', fontSize: '23px',marginTop: '17%'}}>{props.label}</h4>
+                    <h4 className="input_form_Profile">{props.label}</h4>
                 </span>
             </div>
             <div className={props.col2} style={props.padding}>
@@ -142,7 +142,7 @@ export const TextInput = props => {
                         value={props.value} 
                         className={props.className}
                         onChange={props.Change}
-                        style={{borderBottom: '1px solid #c2073f'}}
+                        
                     />
                 </div>
             </div>
@@ -153,10 +153,10 @@ export const TextInput = props => {
 export const SelectInput = props => {
     return(
         <div>
-            <label htmlFor={props.name} className={props.col}  style={{marginTop: '3%'}}>
-                <span className="input" style={{fontFamily: 'crimsontext',color: '#c2073f', fontWeight: '500'}}>
+            <label htmlFor={props.name} className={props.col}>
+                <h1 className="input_form_Profile">
                     {props.label}
-                </span>
+                </h1>
             </label>
             <div className={props.col2}>
                 <select required 
@@ -165,7 +165,12 @@ export const SelectInput = props => {
                     name={props.name} 
                     id={props.id} 
                     value={props.value} 
-                    onChange={props.Change} style={{width:'100%',border:'none',borderBottom:'1px solid #c2073f', marginTop:'10px'}}>
+                    onChange={props.Change} style={{width: '100%',
+                        border: 'none',
+                        backgroundColor: '#e1e1e1',
+                        padding: '9px',
+                        marginTop: '-1%'}}>
+                    
                     {props.options && props.options.map((ob)=><option key={ob.id} value={ob}>{ob}</option>)}
                 </select>
             </div>
@@ -195,8 +200,8 @@ export const SelectInput = props => {
 export const Textarea = props => {
     return(
         <div className="col-md-12" style={props.style}>
-            <label htmlFor={props.name} className="col-md-4 col-sm-3" style={{fontFamily: 'crimsontext',color: '#c2073f',fontWeight: '500'}}>{props.title}</label>
-            <div className="col-md-8 col-sm-9">
+            <label htmlFor={props.name} className="col-md-4 col-sm-3 input_form_Profile">{props.title}</label>
+            <div className="col-md-12 col-md-12 col-sm-9">
                 <textarea
                     required={props.required}
                     id={props.id}
@@ -207,7 +212,6 @@ export const Textarea = props => {
                     name={props.name} id={props.name} 
                     value={props.value} 
                     onChange={props.onChange}
-                    style={{border: '1px solid #c2073f'}}
                     >
                 </textarea>
             </div>
