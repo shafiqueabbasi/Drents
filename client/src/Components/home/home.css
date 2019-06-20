@@ -881,7 +881,6 @@
 		font-size: 12px;
 		font-family: tajawal;
 		color: #8080A2;
-	    margin-left: 5%;
 	}
 	.chiffontext{
 	 	font-size: 20px;
@@ -985,7 +984,6 @@
 		font-size: 12px;
 		font-family: tajawal;
 		color: #808080;
-		margin-left: 4%;
 	}
 	.chiffontext{
 	 	font-size: 25px;
@@ -1051,7 +1049,7 @@
     	margin-left: 0%;
         box-shadow: inset 3px -110px 42px rgba(0,0,0,0.4);
         height: 107px;
-    	width: 81%;
+    	width: 87%;
 	}
 }
 @media only screen and (min-device-width : 1366px){
@@ -1085,7 +1083,6 @@
 		font-size: 12px;
 		font-family: tajawal;
 		color: #8080A2;
-	    margin-left: 13%;
 
 	}
 	.chiffontext{
@@ -1144,7 +1141,7 @@
     	margin-left: 0%;
         box-shadow: inset 3px -110px 42px rgba(0,0,0,0.4);
 	    height: 136px;
-	    width: 85%;
+	    width: 87%;
 	}
 }
 
@@ -1195,7 +1192,7 @@
 	    color: #808080;
 	    letter-spacing: 5px;
 	    margin-bottom: 0px;
-	    margin-left: 7%;
+	    margin-left: 6%;
 	}
 	.cloth{
 		color: #9b9b9b!important;
@@ -1210,7 +1207,7 @@
         font-family: Playfair Display;
         font-Size: 40px;
         text-align: left;
-        padding-left: 2%;
+        padding-left: 4%;
     }
     .featuredhead{
 		font-size: 40px;
@@ -1251,7 +1248,7 @@
 	    color: #808080;
 	    letter-spacing: 5px;
 	    margin-bottom: 0px;
-	    margin-left: 10%;
+	    margin-left: 8.6%;
 	}
 	.cloth{
 		color: #9b9b9b!important;
@@ -1335,7 +1332,7 @@
 		height: 81px;
 	}
 }
-@media only screen and (min-device-width : 1366px){
+@media only screen and (min-device-width : 1366px) and (max-width: 1824px){
 	.whydresub{
 	    font-size: 30px;
 	    line-height: 31px;

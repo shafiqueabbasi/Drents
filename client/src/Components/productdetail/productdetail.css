@@ -113,7 +113,7 @@
 
 @media only screen and (min-device-width : 360px) and (max-device-width : 640px){
 	.sams{
-		border: 1px solid #473463;
+		border: none;
 	    height: 47px;
 	    margin-left: 11px;
 	    padding: 0px;
@@ -129,9 +129,9 @@
 		margin-left: -15px;
 	}
 	.trello2{
-		padding: 0px;
 	    float: right;
-	    margin-top: -30px;
+	    margin-top: -64px;
+	    margin-right: -14px;
 	}
 	.bookedboo{
 		color: #9b9b9b;
@@ -145,18 +145,28 @@
 	    height: 70px;
 	}
 	.run1{
+		background-color: #473463;
+		color: #cb9d6c;
 		border: none;
 		margin-top: 9px;
 		width: 100%;
+		height: 50px;
+		padding-left: 6px;
 	}
 	.run2{
+		background-color: #473463;
+		color: #cb9d6c;
+		height: 50px;
 		border: none;
 		margin-top: 4px;
 		width: 100%;
+		height: 50px;
+		padding-left: 6px;
 	}
 	.bravoo{
       	width: 89%;
     	background-color: rgba(155,155,155,0.3);
+    	border-radius: 0px;
     	color: #9b9b9b;
     	padding: 0px;
     	margin-left: 25px;
@@ -166,6 +176,7 @@
       	width: 90%;
 	    background-color: #cb9d6c;
 	    color: #473463;
+	    border-radius: 0px;
 	    padding: 0px;
 	    margin-left: 20px;
 	  	margin-top: -3%;
@@ -183,9 +194,9 @@
 }
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
 	.sams{
-		border: 1px solid #473463;
+		border: none;
 	    height: 50px;
-	    margin-left: 41px;
+	    margin-left: 24px;
 	    padding: 0px;
 	    width: 88%; 
 	}
@@ -200,8 +211,8 @@
     	margin-top: 7px;
 	}
 	.trello2{
-	    margin-left: 57%;
-    	margin-top: -30px;
+	    margin-left: 63%;
+    	margin-top: -63px;
 	}
 	.bookedboo{
 		margin-top: -3%;
@@ -215,14 +226,22 @@
 	    height: 90px;
 	}
 	.run1{
+		background-color: #473463;
+		color: #cb9d6c;
 		border: none;
 	    margin-top: 3%;
 	    width: 100%;
+	    height: 50px;
+	    padding-left: 10px;
 	}
 	.run2{
 		border: none;
 		margin-top: 3px;
 		width: 100%;
+		background-color: #473463;
+		color: #cb9d6c;
+		height: 50px;
+		padding-left: 10px;
 	}
 	.bravoo{
       	width: 84%;
@@ -233,9 +252,10 @@
     	margin-top: -2%;
 	}
 	.booked{
-      	    width: 63%;
+      	    width: 84%;
 		    background-color: #cb9d6c;
 	    	color: #473463;
+	    	border-radius: 0px;
 		    padding: 0px;
 		    margin-left: 55px;
 		    margin-top: -4%;
@@ -253,7 +273,7 @@
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
 	.sams{
-		border: 1px solid #473463;
+		border: none;
 	    height: 40px;
 	    margin-left: 1.5%;
 	    padding: 0px;
@@ -269,8 +289,8 @@
 		margin-left: -14px;
 	}
 	.trello2{
-		margin-left: 50%;
-		margin-top: -32px;
+		margin-left: 55.5%;
+		margin-top: -64px;
 	}
 	.bookedboo{
 		color: #9b9b9b;
@@ -284,19 +304,27 @@
 	    border: none;
 	}
 	.run1{
+		background-color: #473463;
+		color: #cb9d6c;
 		border: none;
 		margin-top: 2%;
-		width: 119%;
+		width: 136%;
+		height: 50px;
+		padding-left: 10px;
 	}
 	.run2{
 		border: none;
+		color: #cb9d6c;
 		margin-top: 4px;
-		width: 119%;
+		width: 136%;
+		background-color: #473463;
+		height: 50px;
+		padding-left: 10px;
 	}
 	.bravoo{
-      	width: 65%;
-	    background-color: #cb9d6c;
-	    color: #473463;
+      	width: 79%;
+	    background-color: rgba(155,155,155,0.3);
+    	color: #9b9b9b;
 	    padding: 0px;
 	    border-radius: 0px;
 	   
@@ -308,9 +336,10 @@
 		opacity: 0;
 	}
 	.booked{
-      	width: 97%;
+      	width: 78.5%;
 	    background-color: #cb9d6c;
 	    color: #473463;
+	    border-radius: 0px;
 	    padding: 0px;
 	    margin-left: 22px;
 		margin-top: -3%;
@@ -325,7 +354,7 @@
 }
 @media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
 	.sams{
-		border: 1px solid #473463;
+		border: none;
 		height: 40px;
 	    margin-left: 2.7%;
 		padding: 0px;
@@ -338,9 +367,10 @@
     	color: black;
 	}
 	.trello1{
+		padding-left: 0px;
 	}
 	.trello2{
-		text-align: left;
+		padding-left: 0px;
 
 	}
 	.bookedboo{
@@ -355,16 +385,24 @@
 	    height: 60px;
 	}
 	.run1{
+		background-color: #473463;
+		color: #cb9d6c;
 		border: none;
 		margin-top: 8px;
 		width: 106%;
+		height: 50px;
 		color: #cb9d6c;
+		padding-left: 10px;
 	}
 	.run2{
 		border: none;
+		color: #cb9d6c;
 		margin-top: 8px;
 		width: 106%;
 		color: #cb9d6c;
+		background-color: #473463;
+		height: 50px;
+		padding-left: 10px;
 	}
 	.bravoo{
 		border-radius: 0px;
@@ -377,9 +415,10 @@
 	    margin-top: -3%;
 	}
 	.booked{
-      	width: 92%;
+      	width: 82.5%;
       	background-color: #cb9d6c;
 	    color: #473463;
+	    border-radius: 0px;
 	    padding: 0px;
 	    margin-left: 29px;
 	    margin-top: -3%;
@@ -478,6 +517,9 @@
 		padding-left: 65%;
     	margin-top: -11%;
 	}
+	.owner{
+		color: #9b9b9b !important;
+	}
 }
 
 @media only screen and (min-device-width : 766px) and (max-device-width : 1024px){
@@ -509,6 +551,9 @@
 		font-size: 16px;
 		color: #cb9d6c;
 	}
+	.owner{
+		color: #9b9b9b !important;
+	}
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
 	.card{
@@ -536,6 +581,9 @@
 		font-size: 16px;
 		color: #cb9d6c;
 	}
+	.owner{
+		color: #9b9b9b !important;
+	}
 }
 @media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
 	.card{
@@ -559,6 +607,9 @@
 		font-size: 16px;
 		color: #cb9d6c;
 	}
+	.owner{
+		color: #9b9b9b !important;
+	}
 }
 
 
@@ -571,9 +622,15 @@
 		margin-left: -10%;
 	}
 	.rental100{
+		font-family: Tajawal;
+		color: #9b9b9b;
 		font-size: 14px;
-	    margin-left: 0%;
+	    margin-left: 3.5%;
 	    margin-top: -5%;
+	}
+	.frm_date{
+		color: #cb9d6c;
+		font-family: Tajawa;
 	}
 }
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
@@ -582,9 +639,15 @@
 		margin-left: -10%;
 	}
 	.rental100{
-		    font-size: 16px;
-		    margin-left: 9%;
-		    margin-top: -2%;
+		font-family: Tajawal;
+		color: #9b9b9b;
+		font-size: 16px;
+		margin-left: 6%;
+		margin-top: -2%;
+	}
+	.frm_date{
+		color: #cb9d6c;
+		font-family: Tajawa;
 	}
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
@@ -593,9 +656,16 @@
 		margin-left: -0%;
 	}
 	.rental100{
-		    font-size: 16px;
-		    margin-left: 7%;
-		    margin-top: -2%;	}
+		font-family: Tajawal;
+		color: #9b9b9b;
+		font-size: 16px;
+		margin-left: 1.5%;
+		margin-top: -2%;	
+	}
+	.frm_date{
+		color: #cb9d6c;
+		font-family: Tajawa;
+	}
 }
 @media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
 	.d_size{
@@ -603,9 +673,15 @@
 		margin-left: -10%;
 	}
 	.rental100{
-		    font-size: 16px;
-		    margin-left: 7%;
-		    margin-top: -2%;
+		font-family: Tajawal;
+		color: #9b9b9b;
+		font-size: 16px;
+		margin-left: 2.6%;
+		margin-top: -2%;
+	}
+	.frm_date{
+		color: #cb9d6c;
+		font-family: Tajawa;
 	}
 }
 
@@ -779,6 +855,7 @@
 	.trend{
          font-size: 70%;
          margin-left: 8.5%;
+         color: #9b9b9b;
     }
     .fly{
 		margin-left: 6%;
@@ -835,6 +912,7 @@
 	.trend{
          font-size: 70%;
          margin-left: 8%;
+        color: #9b9b9b;
 	}
 	.fly{
 		margin-left: 8%;
@@ -892,6 +970,7 @@
 	.trend{
          font-size: 70%;
          margin-left: 3%;
+         color: #9b9b9b;
 	}
 	.fly{
 		margin-left: 6%;
@@ -952,6 +1031,7 @@
 	.trend{
          font-size: 70%;
          margin-left: 4%;
+         color: #9b9b9b;
 	}
 	.fly{
 		margin-left: 6%;
@@ -1062,9 +1142,14 @@ padding: 5%;
 
 	.todate{
 		font-size: 12px; 
-		margin-top: 13px;
-		margin-left: -28px; 
 		color: #cb9d6c;
+		height: 50px;
+		background-color: rgba(155,155,155,0.3);
+		width: 275.5%;
+		margin-left: -138.5%;
+		margin-top: 40%;
+		text-align: center;
+		padding-top: 18px;
 	}
 	.ab{
 		margin-left: -4px;
@@ -1123,10 +1208,16 @@ padding: 5%;
 
 
 .todate{
+
 	font-size: 12px; 
-	margin-top: 18px;
-	margin-left: 9px; 
 	color: #cb9d6c;
+	height: 50px;
+	background-color: rgba(155,155,155,0.3);
+	width: 221.5%;
+	margin-left: -43%;
+	margin-top: 19%;
+	text-align: center;
+	padding-top: 18px;
 }
 
 
@@ -1160,20 +1251,30 @@ padding: 5%;
 
 	.todate{
 		font-size: 12px; 
-		margin-top: 13px;
-		margin-left: 9px; 
 		color: #cb9d6c;
+		height: 50px;
+	    background-color: rgba(155,155,155,0.3);
+	    width: 254.5%;
+	    margin-left: 23%;
+	    margin-top: 46%;
+	    text-align: center;
+	    padding-top: 18px;
 	}
 
 }
 @media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
 
 	.todate{
-	font-size: 12px; 
-	margin-top: 13px;
-	margin-left: 9px; 
-	color: #cb9d6c;
-}
+		font-size: 12px;
+		color: #cb9d6c;
+		height: 50px;
+	    background-color: rgba(155,155,155,0.3);
+	    width: 163.5%;
+	    margin-left: -35%;
+	    margin-top: 15%;
+	    text-align: center;
+	    padding-top: 18px;
+	}
 	.able1{
 		background-color: rgba(155,155,155,0.3);
 		text-align: center;

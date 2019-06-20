@@ -419,17 +419,19 @@ class Productdetailfirstfold extends Component {
                             	<div className="rental1"><h1>Rental Period</h1></div>
                             </div><br/>
                             <div className="row">
-                               <h3 className="rental100">Available From {elem.from} To {elem.to}</h3>
+                            <div className="col-xs-12">
+                               <h3 className="rental100">Available From <span className="frm_date">{elem.from}</span> To <span className="frm_date">{elem.to}</span></h3>
+                           </div>
                            </div>
                             
 
-                            <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 ab">
+                            {/*<div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 ab">
                             	<div className="col-md-3col-sm-4 col-xs-3 able1">Available From</div>
                             	<div className="col-lg-3 col-md-4 col-sm-3 col-xs-4 able">{elem.from}</div>
                             	<div className="col-lg-2 col-md-3 col-sm-2 col-xs-2 able1"> To </div>
                             	<div className="col-lg-3 col-md-4 col-sm-3 col-xs-3 able">{elem.to}</div>
                             	
-                            </div><br/><br/><br/><br/><br/>
+                            </div><br/><br/><br/><br/><br/>*/}
 
                             {/*<div className="row">
                             	<div className="col-md-4">
@@ -563,13 +565,13 @@ class Productdetailfirstfold extends Component {
 	                                <br/><span className="user_Name">{elem.userName}</span><br/>
 
 	                                <div className="col-sm-2 col-lg-5 col-md-5 newstar">
-	                                   	<h5>Owner</h5>
+	                                   	<h5 className="owner">Owner</h5>
 									</div>
 									<div className="col-sm-4 col-lg-2 col-md-2 newstar1">
 	                                	<i class="st fas fa-star" style={{fontSize:'16px', color:'#cb9d6c'}}></i>								
 									</div>
 									<div className="col-md-5 col-lg-5 col-sm-5  newrating">
-										<p style={{fontSize:'15px'}}>4.5/5</p>	
+										<p style={{fontSize:'15px',color: '#9b9b9b'}}>4.5/5</p>	
 									</div><br/><br/><br/><br/>
 									<div className="row">
 										<div className="col-xs-2 col-sm-2 col-md-4 col-lg-4 clck_pro">
