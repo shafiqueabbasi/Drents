@@ -55,7 +55,34 @@
 
 
 
+.fluu:first-child{
+     text-align: center!important;
+     
+     background : blue;
+     height: 50px;
+     width: 13%;
+     display: inline-block;
+     margin-left: 3%;
+}
 
+.fluu:nth-child(odd){
+     text-align: center!important;
+     
+     background : rgba(155,155,155,0.3);
+     height: 50px;
+     width: 80px;
+     display: inline-block;
+     margin-left: 3%;
+}
+.fluu:nth-child(even){
+     text-align: center!important;
+     
+     background : #473463;
+     height: 50px;
+     width: 80px;
+     display: inline-block;
+     margin-left: 3%;
+}
 
 
 
@@ -1403,7 +1430,7 @@ padding: 5%;
 		color: #9b9b9b;
 		letter-spacing: 5px;
 		font-size: 10px;
-		padding-left: 14px;
+		    padding-left: 14px;
     	padding-top: 1%;
 	}
 
