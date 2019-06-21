@@ -259,14 +259,14 @@ class Filterpanel extends Component {
 
 
 								<div className="col-md-5 col-sm-5 col-xs-5 row"></div>
-								{/*{this.state.arr.length > 8 && <ButtonComponent label="More"/>}*/}
+								{/*{/*{this.state.arr.length > 8 && <ButtonComponent label="More"/>}*/}
 								{this.state.data.length === 0 &&
 									<ButtonComponent
 										className="col-md-12"
 										label="Find More"
 										onClick={() => this.setState({ data: this.state.arr })}
 									/>
-								}
+								}*/}
 								<div className="col-md-5"></div>
 
 							</div>
@@ -335,8 +335,9 @@ class Filterpanel extends Component {
 										</div>
 									</div>
 
-
-	    							<div className="col-xs-11" style={{paddingBottom: '15px', margin: '40px 15px 20px',borderBottom: '1px solid black'}}></div>
+									<div className="row">
+	    								<div className="col-xs-10" style={{paddingBottom: '15px', margin: '40px 15px 20px',borderBottom: '1px solid black'}}></div>
+									</div>
 	    							<div className="row col-xs-12">
 
 

@@ -1,11 +1,4 @@
-.C_P{
-  color: black;
 
-}
-.C_P:hover {
-  color: black;
-
-}
 @media only screen and (min-device-width : 360px) and (max-device-width : 767px){
   .absoulFilter{
     position: absolute;
@@ -110,13 +103,14 @@
 .wrapper{
   width:100%;
 }
-.C_P{
-  color: black;
-
+  .C_P{
+  color: #353535;
+  text-decoration: none !important;
 }
-.C_P:hover {
-  color: black;
 
+.C_P a:focus, a:hover {
+  color: #cb9d6c !important;
+  text-decoration: none !important;
 }
 @media(max-width:992px){
  .wrapper{
@@ -289,12 +283,13 @@ background: rgba(155,155,155,0.3);
     font-size: 20px;
   }
   .C_P{
-  color: black;
-
+  color: #353535;
+  text-decoration: none !important;
 }
-.C_P:hover {
-  color: black;
 
+.C_P a:focus, a:hover {
+  color: #cb9d6c !important;
+  text-decoration: none !important;
 }
 .wrapper{
   width:100%;
@@ -476,13 +471,14 @@ background: rgba(155,155,155,0.3);
     font-family: Playfair Display;
     font-size: 25px;
   }
-  .C_P{
-  color: black;
-
+   .C_P{
+  color: #353535;
+  text-decoration: none !important;
 }
-.C_P:hover {
-  color: black;
 
+.C_P a:focus, a:hover {
+  color: #cb9d6c !important;
+  text-decoration: none !important;
 }
 .wrapper{
   width:100%;
@@ -658,13 +654,19 @@ background: rgba(155,155,155,0.3);
     font-size: 35px;
   }
   .C_P{
-  color: black;
-
+  color: #353535;
+  text-decoration: none !important;
 }
-.C_P:hover {
-  color: black;
 
+.C_P a:focus, a:hover {
+  color: #cb9d6c !important;
+  text-decoration: none !important;
 }
+.C_P .selected{
+  color: #cb9d6c !important;
+  text-decoration: none !important;
+}
+
   .wrapper{
   width:100%;
 }

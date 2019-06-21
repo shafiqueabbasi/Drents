@@ -55,34 +55,7 @@
 
 
 
-.fluu:first-child{
-     text-align: center!important;
-     
-     background : blue;
-     height: 50px;
-     width: 13%;
-     display: inline-block;
-     margin-left: 3%;
-}
 
-.fluu:nth-child(odd){
-     text-align: center!important;
-     
-     background : rgba(155,155,155,0.3);
-     height: 50px;
-     width: 80px;
-     display: inline-block;
-     margin-left: 3%;
-}
-.fluu:nth-child(even){
-     text-align: center!important;
-     
-     background : #473463;
-     height: 50px;
-     width: 80px;
-     display: inline-block;
-     margin-left: 3%;
-}
 
 
 
@@ -1420,3 +1393,57 @@ padding: 5%;
 	
 }
 @media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){}
+
+
+@media only screen and (min-device-width : 360px) and (max-device-width : 660px){
+	.back_arrow{
+
+	}
+	.back_arrowtext{
+		color: #9b9b9b;
+		letter-spacing: 5px;
+		font-size: 10px;
+		padding-left: 14px;
+    	padding-top: 1%;
+	}
+
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
+	.back_arrow{
+
+	}
+	.back_arrowtext{
+		color: #9b9b9b;
+		letter-spacing: 5px;
+		font-size: 10px;
+		padding-top: 0.7%;
+	}
+	.back_arrowdresses{
+
+	}
+
+}
+@media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
+	.back_arrow{
+
+	}
+	.back_arrowtext{
+		color: #9b9b9b;
+		letter-spacing: 5px;
+		font-size: 10px;
+	}
+
+}
+@media only screen and (min-device-width : 1366px) and (max-device-width : 1920px){
+	.back_arrow{
+
+	}
+	.back_arrowtext{
+		color: #9b9b9b;
+		letter-spacing: 5px;
+		font-size: 10px;
+		padding-top: 1%;
+	}
+
+}
