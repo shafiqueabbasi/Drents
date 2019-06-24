@@ -8,11 +8,10 @@ class Heading4 extends Component {
 
   	const { label, hrLine, data, showEditDelete, onDelete, profile, userAvailable, showDropdown,showonhome } = this.props;
 
-
     return (
     	<div className="col-md-12 App">
     		<div className="row">
-				<p className="featuresub">FEATURED</p>
+				<p className={`${this.props.featureFilter}`}>FEATURED</p>
 			</div>
     		{label && label.length > 0 && <div className="Heading col-md-9 col-sm-10">
       			<h1 className="headings">&nbsp;&nbsp;{label}</h1>

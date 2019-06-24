@@ -1,11 +1,4 @@
-.C_P{
-  color: black;
 
-}
-.C_P:hover {
-  color: black;
-
-}
 @media only screen and (min-device-width : 360px) and (max-device-width : 767px){
   .absoulFilter{
     position: absolute;
@@ -19,12 +12,22 @@
     margin-top: -22%;
     margin-left: 3px;
   }
+  .margbootom{
+    margin-bottom: 15%;
+  }
+  .featuresub_dresses{
+      font-size: 12px;
+      font-family: Tajawal;
+      color: #808080;
+      letter-spacing: 5px;
+      margin-bottom: 0px;
+      margin-left: 11%;
+    }
 }
 @media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
   .absoulFilter{
 		position: absolute;
-    margin-top: -58%;
-    margin-left: 4%;
+    margin-top: 10%;
 	}
   .pinktextFilter{
     font-size: 20px;
@@ -32,19 +35,38 @@
     color: black;
     margin-top: -10%;
   }
+  .margbootom{
+    margin-bottom: 26%;
+  }
+  .featuresub_dresses{
+      font-size: 12px;
+      font-family: Tajawal;
+      color: #808080;
+      letter-spacing: 5px;
+      margin-bottom: 0px;
+      margin-left: 11%;
+    }
 }
-@media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){
+@media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
   .absoulFilter{
 		position: absolute;
-    margin-top: -58%;
-    margin-left: 4%;
 	}
   .pinktextFilter{
     font-size: 24px;
     font-family: playfair display;
     color:  black;
-    margin-left: 4%;
   }
+  .margbootom{
+    margin-bottom: 20%;
+  }
+  .featuresub_dresses{
+      font-size: 12px;
+      font-family: Tajawal;
+      color: #808080;
+      letter-spacing: 5px;
+      margin-bottom: 0px;
+      margin-left: 11%;
+    }
 }
 @media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
   .absoulFilter{
@@ -56,14 +78,218 @@
     font-family: playfair display;
     color:  black;
   }
-}
-.margbootom{
-  margin-bottom: 15%;
-}
-body{
-/*  padding:50px;*/
- /* background:#fff;*/
+  .margbootom{
+    margin-bottom: 15%;
+  }
+  .featuresub_dresses{
+      font-size: 12px;
+      font-family: Tajawal;
+      color: #808080;
+      letter-spacing: 5px;
+      margin-bottom: 0px;
+      margin-left: 11%;
+    }
 
+}
+
+
+
+
+@media only screen and (min-device-width : 360px) and (max-device-width : 767px){
+  .filter_H{
+    font-family: Playfair Display;
+    font-size: 25px;
+  }
+.wrapper{
+  width:100%;
+}
+  .C_P{
+  color: #353535;
+  text-decoration: none !important;
+}
+
+.C_P a:focus, a:hover {
+  color: #cb9d6c !important;
+  text-decoration: none !important;
+}
+@media(max-width:992px){
+ .wrapper{
+  width:100%;
+}
+
+}
+.panel-heading {
+  padding: 0;
+  border:0;
+}
+.panel-title>a, .panel-title>a:active{
+  display:block;
+  padding:15px;
+  color:#555;
+  font-size:16px;
+  font-weight:bold;
+  word-spacing:3px;
+  text-decoration:none;
+}
+.panel-heading  a:before {
+   font-family: 'Glyphicons Halflings';
+   content: "\e114";
+   float: right;
+   transition: all 0.5s;
+}
+
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+
+}
+
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 8px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+background: rgba(155,155,155,0.3);
+  border-radius: 50%;
+  border: none;
+
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  color: rgba(155,155,155,0.3)!important;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #473463;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  color: #cb9d6c;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+  top: 6px;
+  left: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #cb9d6c;
+}
+
+/*alg*/
+
+/* The container */
+.container1 {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container1 input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark1 {
+  position: absolute;
+  top: -12px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background: rgba(155,155,155,0.3);
+  border-radius: 50%;
+
+
+}
+
+/* On mouse-over, add a grey background color */
+.container1:hover input ~ .checkmark1 {
+  background-color: rgba(155,155,155,0.3);
+}
+
+/* When the checkbox is checked, add a blue background */
+.container1 input:checked ~ .checkmark1 {
+  background-color: #473463;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark1:after {
+  content: "";
+  position: absolute;
+  display: none;
+  color: #cb9d6c;
+}
+
+/* Show the checkmark when checked */
+.container1 input:checked ~ .checkmark1:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container1 .checkmark1:after {
+  top: 6px;
+  left: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #cb9d6c;;
+}
+
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
+  .filter_H{
+    font-family: Playfair Display;
+    font-size: 25px;
+  }
+  .filter_H1{
+    font-family: Playfair Display;
+    font-size: 20px;
+  }
+  .C_P{
+  color: #353535;
+  text-decoration: none !important;
+}
+
+.C_P a:focus, a:hover {
+  color: #cb9d6c !important;
+  text-decoration: none !important;
 }
 .wrapper{
   width:100%;
@@ -76,16 +302,16 @@ body{
 }
 .panel-heading {
   padding: 0;
-	border:0;
+  border:0;
 }
 .panel-title>a, .panel-title>a:active{
-	display:block;
-	padding:15px;
+  display:block;
+  padding:15px;
   color:#555;
   font-size:16px;
   font-weight:bold;
   word-spacing:3px;
-	text-decoration:none;
+  text-decoration:none;
 }
 .panel-heading  a:before {
    font-family: 'Glyphicons Halflings';
@@ -232,4 +458,373 @@ background: rgba(155,155,155,0.3);
   height: 8px;
   border-radius: 50%;
   background: #cb9d6c;;
+}
+
+}
+
+@media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
+  .filter_H{
+    font-family: Playfair Display;
+    font-size: 40px;
+  }
+  .filter_H1{
+    font-family: Playfair Display;
+    font-size: 25px;
+  }
+   .C_P{
+  color: #353535;
+  text-decoration: none !important;
+}
+
+.C_P a:focus, a:hover {
+  color: #cb9d6c !important;
+  text-decoration: none !important;
+}
+.wrapper{
+  width:100%;
+}
+@media(max-width:992px){
+ .wrapper{
+  width:100%;
+}
+
+}
+.panel-heading {
+  padding: 0;
+  border:0;
+}
+.panel-title>a, .panel-title>a:active{
+  display:block;
+  padding:15px;
+  color:#555;
+  font-size:16px;
+  font-weight:bold;
+  word-spacing:3px;
+  text-decoration:none;
+}
+.panel-heading  a:before {
+   font-family: 'Glyphicons Halflings';
+   content: "\e114";
+   float: right;
+   transition: all 0.5s;
+}
+
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+
+}
+
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 8px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+background: rgba(155,155,155,0.3);
+  border-radius: 50%;
+  border: none;
+
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  color: rgba(155,155,155,0.3)!important;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #473463;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  color: #cb9d6c;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+  top: 6px;
+  left: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #cb9d6c;
+}
+
+/*alg*/
+
+/* The container */
+.container1 {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container1 input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark1 {
+  position: absolute;
+  top: -12px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background: rgba(155,155,155,0.3);
+  border-radius: 50%;
+
+
+}
+
+/* On mouse-over, add a grey background color */
+.container1:hover input ~ .checkmark1 {
+  background-color: rgba(155,155,155,0.3);
+}
+
+/* When the checkbox is checked, add a blue background */
+.container1 input:checked ~ .checkmark1 {
+  background-color: #473463;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark1:after {
+  content: "";
+  position: absolute;
+  display: none;
+  color: #cb9d6c;
+}
+
+/* Show the checkmark when checked */
+.container1 input:checked ~ .checkmark1:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container1 .checkmark1:after {
+  top: 6px;
+  left: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #cb9d6c;;
+}
+
+}
+
+@media only screen and (min-device-width : 1366px) and (max-device-width : 1920px){
+  .filter_H{
+    font-family: Playfair Display;
+    font-size: 50px;
+  }
+  .filter_H1{
+    font-family: Playfair Display;
+    font-size: 35px;
+  }
+  .C_P{
+  color: #353535;
+  text-decoration: none !important;
+}
+
+.C_P a:focus, a:hover {
+  color: #cb9d6c !important;
+  text-decoration: none !important;
+}
+.C_P .selected{
+  color: #cb9d6c !important;
+  text-decoration: none !important;
+}
+
+  .wrapper{
+  width:100%;
+}
+@media(max-width:992px){
+ .wrapper{
+  width:100%;
+}
+
+}
+.panel-heading {
+  padding: 0;
+  border:0;
+}
+.panel-title>a, .panel-title>a:active{
+  display:block;
+  padding:15px;
+  color:#555;
+  font-size:16px;
+  font-weight:bold;
+  word-spacing:3px;
+  text-decoration:none;
+}
+.panel-heading  a:before {
+   font-family: 'Glyphicons Halflings';
+   content: "\e114";
+   float: right;
+   transition: all 0.5s;
+}
+
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+
+}
+
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 8px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  border: none;
+
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  color: rgba(155,155,155,0.3)!important;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #473463;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  color: #cb9d6c;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+  top: 6px;
+  left: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #cb9d6c;
+}
+
+/*alg*/
+
+/* The container */
+.container1 {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container1 input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark1 {
+  position: absolute;
+  top: -12px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background: rgba(155,155,155,0.3);
+  border-radius: 50%;
+
+
+}
+
+/* On mouse-over, add a grey background color */
+.container1:hover input ~ .checkmark1 {
+  background-color: rgba(155,155,155,0.3);
+}
+
+/* When the checkbox is checked, add a blue background */
+.container1 input:checked ~ .checkmark1 {
+  background-color: #473463;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark1:after {
+  content: "";
+  position: absolute;
+  display: none;
+  color: #cb9d6c;
+}
+
+/* Show the checkmark when checked */
+.container1 input:checked ~ .checkmark1:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container1 .checkmark1:after {
+  top: 6px;
+  left: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #cb9d6c;;
+}
+
 }

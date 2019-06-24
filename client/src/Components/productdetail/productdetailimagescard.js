@@ -27,7 +27,16 @@
 			<div>
 				<div className="hidden-xs hidden-sm">
 					<div className="row">
-						
+
+						<div className="row col-lg-12 col-md-12 back_arrowdresses">
+							<div className="col-md-4 col-lg-4">
+							    <img src="../images/back-arrow.png" className="back_arrow"/>
+							</div>
+							<div className="">
+								<p className="back_arrowtext">BACK TO ALL DRESSES</p>
+							</div>
+						</div><br/><br/>
+
 						<div className="col-md-12">
 							<img alt="" src={this.state.showImg} style={{width:"100%", height:"610px"}}/>
 						</div>
@@ -75,11 +84,23 @@
             	<div className="visible-sm visible-xs">
 
 	            		<div className="row">
+
+		            		<div className="col-sm-12 col-xs-12">
+								<div className="col-sm-2 col-xs-2">
+								    <img src="../images/back-arrow.png" className="back-arrow"/>
+								</div>
+								<div className="col-sm-10 col-xs-10">
+									<p className="back_arrowtext">BACK TO ALL DRESSES</p>
+								</div>
+							</div>
+
 	            			<div className="col-xs-12 col-sm-12">
-	            				<img alt="" src={this.state.showImg} style={isTablet ? {width:"94%", height:"840px" , marginTop:"-13%"} : {width:"85%", height:"400px", marginTop:'-11%', marginLeft:'4%'}}/>
+	            				<img alt="" src={this.state.showImg} style={isTablet ? {width:"94%", height:"840px"} : {width:"85%", height:"400px", marginTop:'4%', marginLeft:'4%'}}/>
 	            			</div>
 	            		</div>
-				<br />
+						
+						<br />
+						
             		<div className="row" style={{margin:'0px'}}>	
             			{data.map((elem) => {
 							return (

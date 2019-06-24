@@ -48,6 +48,7 @@ class Home extends Component {
         imgtextstyle='absoul'
         imgheadtext='pinktext'
         margBotom=''
+        featureFilter='featuresub'
         showonhome={false}
         />
         <Heading5/>

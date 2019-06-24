@@ -79,7 +79,6 @@ class App extends Component {
         <BrowserRouter>
           <div>
 
-
                 <HeaderNew arr={this.state.arr} />
 
                 <Route path="/" exact component={Home} />
