@@ -200,8 +200,8 @@ export const SelectInput = props => {
 export const Textarea = props => {
     return(
         <div className="col-md-12" style={props.style}>
-            <label htmlFor={props.name} className="col-md-4 col-sm-3 input_form_Profile">{props.title}</label>
-            <div className="col-md-12 col-md-12 col-sm-9">
+            <label htmlFor={props.name} className="col-md-4 col-sm-6 input_form_Profile">{props.title}</label>
+            <div className="col-lg-11 col-md-12 col-sm-12">
                 <textarea
                     required={props.required}
                     id={props.id}

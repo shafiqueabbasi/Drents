@@ -101,8 +101,8 @@ class Profile extends Component {
 										id="firstName"
 										value={this.state.firstName}
 										className="input"
-										col="col-lg-6 col-md-6 col-sm-2"
-										col2="col-lg-10 col-md-10 col-sm-4"
+										col="col-lg-6 col-md-6 col-sm-6"
+										col2="col-lg-10 col-md-10 col-sm-10"
 										Change={this.inputHandleChange}
 									/>
 								</div>	
@@ -112,8 +112,8 @@ class Profile extends Component {
 										id="lastName"
 										value={this.state.lastName}
 										className="input"
-										col="col-lg-6 col-md-6 col-sm-2"
-										col2="col-lg-10 col-md-10 col-sm-4"
+										col="col-lg-6 col-md-6 col-sm-6"
+										col2="col-lg-10 col-md-10 col-sm-10"
 										Change={this.inputHandleChange}
 									/>
 								</div>	
@@ -124,14 +124,14 @@ class Profile extends Component {
 										label="Email"
 										id="email"
 										className="input"
-										col="col-lg-6 col-md-6 col-sm-2"
-										col2="col-lg-10 col-md-10 col-sm-4"
+										col="col-lg-6 col-md-6 col-sm-6"
+										col2="col-lg-10 col-md-10 col-sm-10"
 										value={this.state.email}
 										Change={this.inputHandleChange}
 									/>
 								</div>	
 								<div className="col-xs-12 col-sm-6 col-md-6 col-lg-6">	
-										<div className="col-lg-6 col-md-6 col-sm-2 col-xs-12">
+										<div className="col-lg-6 col-md-6 col-sm-10 col-xs-12">
 											<h3 className="input_form_Profile">Change Password</h3>
 										</div>
 										<div className="col-lg-10 col-md-10 col-sm-10 col-xs-12">
@@ -142,10 +142,10 @@ class Profile extends Component {
 							</div>
 
 							<div className="row">
-								<div className="col-lg-4 col-md-4 col-sm-2">
+								<div className="col-lg-4 col-md-4 col-sm-6">
 									<h3 className="input_form_Profile" style={{paddingLeft:'13px'}}>Bio</h3>
 								</div>
-								<div className="col-lg-12 col-md-12 col-sm-10">
+								<div className="col-lg-12 col-md-12 col-sm-12">
 									<div>
 					 					<textarea
 						                    required
@@ -166,75 +166,75 @@ class Profile extends Component {
 	  						</div>
 
 							<div className="row" style={{margin:'0px'}}>
-		  						<div className="col-md-6" style={{padding: '0px'}}>
+		  						<div className="col-md-6 col-sm-6 col-xs-12" style={{padding: '0px'}}>
 		  							<TextInput
 										label="Height"
 										id="inputHeight"
 										value={this.state.inputHeight}
 										className="input"
-										col="col-lg-6 col-md-6 col-sm-2"
-										col2="col-lg-10 col-md-10 col-sm-4"
+										col="col-lg-6 col-md-6 col-sm-6"
+										col2="col-lg-10 col-md-10 col-sm-10"
 										Change={this.inputHandleChange}
 									/>
 								</div>
-								<div className="col-md-6" style={{padding: '0px'}}>
+								<div className="col-md-6 col-sm-6 col-xs-12" style={{padding: '0px'}}>
 									<TextInput
 										label="Weight"
 										id="weight" 
 										value={this.state.weight}
 										className="input"
-										col="col-lg-6 col-md-6 col-sm-2"
-										col2="col-lg-10 col-md-10 col-sm-4"
+										col="col-lg-6 col-md-6 col-sm-6"
+										col2="col-lg-10 col-md-10 col-sm-10"
 										Change={this.inputHandleChange}
 									/>
 								</div>
 							</div>{/*row closed*/}
 							<div className="row" style={{margin:'0px'}}>
-								<div className="col-md-6" style={{padding: '0px'}}>
+								<div className="col-md-6 col-sm-6 col-xs-12" style={{padding: '0px'}}>
 									<TextInput
 										label="Bust Size"
 										id="bustSize"
 										value={this.state.bustSize}
-										col="col-lg-6 col-md-6 col-sm-2"
-										col2="col-lg-10 col-md-10 col-sm-4"
+										col="col-lg-6 col-md-6 col-sm-6"
+										col2="col-lg-10 col-md-10 col-sm-10"
 										className="input"
 										Change={this.inputHandleChange}
 									/>
 								</div>
-								<div className="col-md-6" style={{padding: '0px'}}>
+								<div className="col-md-6 col-sm-6 col-xs-12" style={{padding: '0px'}}>
 									<SelectInput
 										label="Body Type"
 										id="bodyType"
 										value={this.state.bodyType}
 										className="input"
-										col="col-lg-6 col-md-6 col-sm-2"
-										col2="col-lg-10 col-md-10 col-sm-4"
+										col="col-lg-6 col-md-6 col-sm-6"
+										col2="col-lg-10 col-md-10 col-sm-10"
 										options={[1,2,3,4,5]}
 										Change={this.inputHandleChange}
 									/>
 								</div>
 							</div>{/*row closed*/}
 							<div className="row" style={{margin:'0px'}}>
-								<div className="col-md-6" style={{padding: '0px'}}>
+								<div className="col-md-6 col-sm-6 col-xs-12" style={{padding: '0px'}}>
 									<SelectInput
 										label="Event Atend Most"
 										id="ocassionAttendMost"
 										value={this.state.ocassionAttendMost}
 										className="input"
-										col="col-lg-6 col-md-6 col-sm-2"
-										col2="col-lg-10 col-md-10 col-sm-4"
+										col="col-lg-6 col-md-6 col-sm-6"
+										col2="col-lg-10 col-md-10 col-sm-10"
 										options={['Causal','Bridal','Semi Formal','Formal','Heavy Formal']}
 										Change={this.inputHandleChange}
 									/>
 								</div>
-								<div className="col-md-6" style={{padding: '0px'}}>
+								<div className="col-md-6 col-sm-6 col-xs-12" style={{padding: '0px'}}>
 									<SelectInput
 										label="Size Wear"
 										id="typicalJeanSize"
 										value={this.state.typicalJeanSize}
 										className="input"
-										col="col-lg-6 col-md-6 col-sm-2"
-										col2="col-lg-10 col-md-10 col-sm-4"
+										col="col-lg-6 col-md-6 col-sm-6"
+										col2="col-lg-10 col-md-10 col-sm-10"
 										options={this.state.sizeWear}
 										Change={this.inputHandleChange}
 									/>
@@ -380,7 +380,7 @@ class Profile extends Component {
 								<div className="col-md-2 col-sm-4"></div>
 								<div className="col-md-8 col-sm-4">{this.state.showMsg}</div>
 								<div className="col-md-2 col-sm-4"></div>
-							</div>
+							</div><br/>
 						</Form>
 					</div>
 					<div className="col-xs-12 col-sm-1 col-md-2 col-lg-2"></div>

@@ -70,15 +70,15 @@ class ChangePassword extends Component {
     }
 
     render(){
-      const formItemLayout = {
-      labelCol: {
-        xs: { span: 24 },
-        sm: { span: 8 },
-      },
-      wrapperCol: {
-        xs: { span: 24 },
-        sm: { span: 16 },
-      },
+        const formItemLayout = {
+        labelCol: {
+          xs: { span: 24 },
+          sm: { span: 8 },
+        },
+        wrapperCol: {
+          xs: { span: 24 },
+          sm: { span: 16 },
+        },
     };
     const tailFormItemLayout = {
       wrapperCol: {
@@ -96,109 +96,116 @@ class ChangePassword extends Component {
       return(
         <div>
         {/*<!-- Trigger the modal with a button -->*/}
-            <button type="button" data-toggle="modal" data-target="#changePassword" className="btn btn_change_password">Change Password</button>
+          <button type="button" data-toggle="modal" data-target="#changePassword" className="btn btn_change_password">Change Password</button>
 
             {/*<!-- Modal -->*/}
-            <div id="changePassword" className="modal fade" role="dialog" style={{marginTop:'5%'}}>
+          <div id="changePassword" className="modal fade" role="dialog" style={{marginTop:'5%'}}>
             <div className="modal-dialog">
-
-            {/*<!-- Modal content-->*/}
-              <div className="modal-content">
-                <div className="modal-header">
-                  <button type="button" className="close" data-dismiss="modal" style={{color:'white'}}>&times;</button>
-                  <h4 className="modal-title" style={{color:'white',textAlign:'center'}}>Change Password</h4>
-                </div>
-                <div className="modal-body">
-                  <Form onSubmit={this.comparePasword}>
-                  <div className="row" style={{margin:'0px'}}>
-                      <div className="col-md-5 col-sm-5 col-12">
-                          <label style={{color: 'white'}}>
-                              Current Password
-                          </label>
-                      </div>
-                      <div className="col-md-4 col-sm-4 col-12">
-                        <Form.Item>
-                            {getFieldDecorator('currentPassword', {
-                              rules: [{
-                                required: true, message: 'Please input your current password!',
-                              }, {
-                                validator: this.validateToNextPassword,
-                              }],
-                            })(
-                              <Input type="password" onBlur={(e) => this.comparePasword(e)}/>
-                            )}
-                        </Form.Item>
-                        {!!this.state.msg && <span>{this.state.msg}</span>}
-                      </div>
-                      <div className="col-md-3 col-sm-3 col-12">
-                        {this.state.correct && <Icon 
-                            type="check-circle" theme="twoTone" 
-                            twoToneColor="#52c41a" style={{float: 'right'}}/>}
-                      </div>
-                  </div>
-                  <div className="row" style={{margin:'0px'}}>
-                    <div className="col-md-5 col-sm-5 col-12">
-                      <label style={{color: 'white'}}>
-                        New Password
-                      </label>
+              {/*<!-- Modal content-->*/} 
+                <div className="modal-content">
+                    <div className="modal-header">
+                      <button type="button" className="close" data-dismiss="modal" style={{color:'rgb(203, 157, 108)'}}>&times;</button>
+                      <h4 className="modal-title form_password_head">Change Password</h4>
                     </div>
-                      <div className="col-md-4 col-sm-4 col-12">
-                          <Form.Item>
-                              {getFieldDecorator('newPassword', {
-                                rules: [{
-                                  required: true, message: 'Please input your password!',
-                                }, {
-                                  validator: this.validateToNextPassword,
-                                }],
-                              })(
-                                <Input type="password" />
-                              )}
-                          </Form.Item>
+                      <div className="modal-body">
+                          <Form onSubmit={this.comparePasword}>
+                                <div className="row" style={{margin:'0px'}}>
+                                    <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <label className="input_form_Profile">
+                                            Current Password
+                                        </label>
+                                    </div>
+                                    <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                      <Form.Item>
+                                          {getFieldDecorator('currentPassword', {
+                                            rules: [{
+                                              required: true, message: 'Please input your current password!',
+                                            }, {
+                                              validator: this.validateToNextPassword,
+                                            }],
+                                          })(
+                                            <Input type="password" className="reset_password" onBlur={(e) => this.comparePasword(e)}/>
+                                          )}
+                                      </Form.Item>
+                                      {!!this.state.msg && <span>{this.state.msg}</span>}
+                                    </div>
+                                    <div className="col-md-3 col-sm-3 col-12">
+                                          {this.state.correct && <Icon 
+                                          type="check-circle" theme="twoTone" 
+                                          twoToneColor="#52c41a" style={{float: 'right'}}/>}
+                                    </div>
+                                </div>
+                                <div className="row" style={{margin:'0px'}}>
+                                  <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <label className="input_form_Profile">
+                                      New Password
+                                    </label>
+                                  </div>
+                                    <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <Form.Item>
+                                            {getFieldDecorator('newPassword', {
+                                              rules: [{
+                                                required: true, message: 'Please input your password!',
+                                              }, {
+                                                validator: this.validateToNextPassword,
+                                              }],
+                                            })(
+                                              <Input type="password" className="reset_password" />
+                                            )}
+                                        </Form.Item>
+                                    </div>
+                                </div>
+                                <div className="row" style={{margin:'0px'}}>
+                                  <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <label className="input_form_Profile">
+                                      Confrim Password
+                                    </label>
+                                  </div>
+                                  <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                  <Form.Item>
+                                    {getFieldDecorator('confirm', {
+                                      rules: [{
+                                        required: true, message: 'Please confirm your password!',
+                                      }, {
+                                        validator: this.compareToFirstPassword,
+                                      }],
+                                    })(
+                                      <Input type="password" className="reset_password" onBlur={this.handleConfirmBlur} />
+                                    )}
+                                  </Form.Item>
+                                  </div>
+                                </div>
+                                <div className="row" style={{margin:'0px'}}>
+                                    <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <button 
+                                            type="submit" 
+                                            name="" 
+                                            className="button btn_reset_password"
+                                            value="" 
+                                            onClick={this.changePassword}>
+                                        Reset Password</button>
+                                    </div>
+                                </div>
+                                <div className="row" style={{margin:'0px'}}>
+                                    <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <button 
+                                            type="submit" 
+                                            name="" 
+                                            className="button btn_cancel_password"
+                                            value="" 
+                                            onClick={this.changePassword}>
+                                        Cancel</button>
+                                    </div>
+                                </div>  
+                                {this.state.showMsg && <div className="row" style={{textAlign: 'center', marginTop: '10px'}}>
+                                   Your password has been changed!!!
+                                </div>}
+                          </Form>
                       </div>
-                      <div className="col-md-3 col-sm-3 col-12"></div>
-                  </div>
-                  <div className="row" style={{margin:'0px'}}>
-                  <div className="col-md-5 col-sm-5 col-12">
-                    <label style={{color: 'white'}}>
-                      Confrim Password
-                    </label>
-                  </div>
-                  <div className="col-md-4 col-sm-4 col-12">
-                  <Form.Item>
-                    {getFieldDecorator('confirm', {
-                      rules: [{
-                        required: true, message: 'Please confirm your password!',
-                      }, {
-                        validator: this.compareToFirstPassword,
-                      }],
-                    })(
-                      <Input type="password" onBlur={this.handleConfirmBlur} />
-                    )}
-                  </Form.Item>
-                  </div>
-                  </div>
-                  <div className="row">
-                      <div className="col-md-7 col-sm-8"></div>
-                      <div className="col-md-5 col-sm-4">
-                          <input 
-                              type="submit" 
-                              name="" 
-                              className="button"
-                              style={{backgroundColor: 'black', color: 'white', borderRadius: '50px', marginTop: '20px'}} 
-                              value="Change Password" 
-                              onClick={this.changePassword}
-                          />
-                      </div>
-                  </div>
-                  {this.state.showMsg && <div className="row" style={{textAlign: 'center', marginTop: '10px'}}>
-                      Your password has been changed!!!
-                  </div>}
-                  </Form>
-                </div>
 
-              </div>
+                </div>
             </div>
-            </div>
+          </div>
         </div>
       )
     }

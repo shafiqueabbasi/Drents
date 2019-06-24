@@ -10,6 +10,12 @@
     color: #353535;
     margin-top: 7%;
 }
+.form_password_head{
+    font-family: playfair display;
+    font-size: 30px;
+    color: #353535;
+    margin-left: 3%;
+}
 
 
 /*#profile-input{
