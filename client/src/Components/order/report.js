@@ -39,7 +39,7 @@ class Report extends Component {
 
 		return(
 			<div>
-				<h4 data-toggle="modal" data-target={`#${this.props.screen}${this.props.ind}`}>Report</h4>
+				<h4 className="current_report_tab" data-toggle="modal" data-target={`#${this.props.screen}${this.props.ind}`}>Report</h4>
 				<div className="modal fade" id={`${this.props.screen}${this.props.ind}`} role="dialog">
 	                <div className="modal-dialog">
 	                    <div className="modal-content">
@@ -52,8 +52,7 @@ class Report extends Component {
 		                    		&times;
 	                    		</button>
 			                    <h4
-			                    	className="modal-title"
-			                    	style={{textAlign:'center', color: 'white'}}
+			                    	className="modal-title form_heading_report"
 		                    	>
 			                    	Report this dress
 		                    	</h4>
@@ -61,18 +60,20 @@ class Report extends Component {
 		                    <div className="modal-body" style={{textAlign:'center', color: 'white'}}>
 		                    	<Form onSubmit={(e) => this.handleSubmit(e)}>
 			                    	<div className="row">
-			                    		<div className="col-md-2 col-sm-3 col-xs-1"></div>
-			                    		<div className="col-md-8 col-sm-6 col-xs-10 get_form_inner">
+			                    		<div className="col-lg-1 col-md-1 col-sm-1 col-xs-12"></div>
+			                    		<div className="col-lg-10 col-md-10 col-sm-10 col-xs-12 get_form_inner">
 					                    	<div className="group">
+					                    		<p className="form_text_up">First Name</p>
 					                    		<Form.Item>
 					                                {getFieldDecorator('firstname', {
 					                                	rules: [{ required: true, message: 'Please input your FirstName!', whitespace: true }],
 					                                })(
-					                                	<Input placeholder="FirstName" />
+					                                	<Input placeholder="" />
 					                                )}
 					                            </Form.Item>
 					                    	</div>
 					                    	<div className="group">
+					                    		<p className="form_text_up">Email</p>
 					                            <Form.Item>
 					                                {getFieldDecorator('email', {
 					                                    rules: [{
@@ -83,12 +84,12 @@ class Report extends Component {
 							                                validator: this.updateProps,
 							                            }],
 					                                })(
-					                                   <Input placeholder="Email" />
+					                                   <Input placeholder="" />
 					                                )}
 					                            </Form.Item>
 					                        <span className="highlight"></span>
 					                        </div>
-				                        	<h4 style={{float: 'inherit'}}>Message</h4>
+				                        	<p className="form_text_up">Message</p>
 				                    		<Form.Item>
 				                                {getFieldDecorator('message', {
 				                                	rules: [{ required: true, message: 'Please input your Message!', whitespace: true }],
@@ -97,7 +98,7 @@ class Report extends Component {
 				                                )}
 				                        </Form.Item>
 				                        </div>
-				                        <div className="col-md-2 col-sm-3 col-xs-1"></div>
+				                        <div className="col-lg-1 col-md-1 col-sm-1 col-xs-12"></div>
 			                    	</div>
 		                    	</Form>
 		                        <div className="row" style={{marginTop: '10px'}}>

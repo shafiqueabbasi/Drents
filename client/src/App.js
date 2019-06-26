@@ -78,8 +78,6 @@ class App extends Component {
       <div className="App">
         <BrowserRouter>
           <div>
-                {/* <Header2New />*/}
-                {/*<Header arr={this.state.arr}/>*/}
 
                 <HeaderNew arr={this.state.arr} />
 

@@ -354,10 +354,9 @@ class UserProfile extends Component {
 						<div className="col-md-2 col-sm-2"></div>
 					</div>
 
-					<div className="row">
+					<div className="row" style={{margin:'0px'}}>
 						<div className="col-md-12 col-sm-9 col-xs-6">
 							<div className="row" style={{margin:'0px'}}>
-								{/*<div className="col-md-6"><h2>GALLERY</h2></div>*/}
 								{archivestatus && <div className="alert alert-success alert-dismissible">
 									<a href="#" className="close" data-dismiss="alert" aria-label="close">&times;</a>
 		  						<strong>Success!</strong>Dress Deleted
@@ -368,7 +367,12 @@ class UserProfile extends Component {
 									onDelete={this.onDelete}
 									data={arr}
 									profile={profile}
+									colLg='col-lg-2'
 									widthProps = '265%'
+									imgtextstyle='absoul_userprofile'
+							        imgheadtext='pinktext_userprofile'
+							        margBotom='margbootom_userprofile'
+							        featureFilter='featuresub_userprofile'
 									showonhome={true}
 									userAvailable={userAvailable}
 								/>}
@@ -440,7 +444,7 @@ class UserProfile extends Component {
 
 
 
-					{reviewsArr.length !== 0 && <div className="row">
+					{/*{reviewsArr.length !== 0 && <div className="row">
 						<div className="col-md-4"></div>
 
 						<div className="col-md-4">
@@ -450,7 +454,7 @@ class UserProfile extends Component {
 						<div className="col-md-4"></div>
 					</div>}
 					{reviewsArr.length !== 0 && <hr style={{border: '1px solid #c2073f'}}/>}
-					{reviewsArr.map((elem) => <ReviewsCard data={elem}/>)}
+					{reviewsArr.map((elem) => <ReviewsCard data={elem}/>)}*/}
 				</div>
 
 

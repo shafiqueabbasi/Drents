@@ -10,7 +10,25 @@
     color: #353535;
     margin-top: 7%;
 }
-
+.form_password_head{
+    font-family: playfair display;
+    font-size: 30px;
+    color: #353535;
+    margin-left: 3%;
+}
+.form_text_up{
+  font-family: playfair display;
+  font-size: 15px;
+  color: #9b9b9b;
+  text-align: left;
+}
+.form_heading_report{
+    font-family: playfair display;
+    font-size: 30px;
+    color: #353535;
+    margin-top: 1%;
+    margin-left: -12%;
+}
 
 /*#profile-input{
   margin-top: 17px;

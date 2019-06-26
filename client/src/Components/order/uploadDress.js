@@ -252,28 +252,31 @@ render() {
                   <div className="col-lg-8 col-md-8 col-sm-10 col-xs-12">
                 			<div className="col-md-12">
                             <div className="row">
-                              <div className="col-md-2 col-sm-2">
+                              <div className="col-lg-4 col-md-3 col-sm-3">
                                   <span class="input">
-                                      <h3 style={{fontFamily: 'crimsontext',fontSize: '23px', color : '#c2073f'}}>
+                                      <h3 className="form_heading">
                                           Pictures
                                       </h3>
-                                      <p style={{fontSize: '63%'}}>
-                                          File size must not exceed to Mb
+                                      <p className="input_form_Profile">
+                                          File size must not exceed to MB
                                       </p>
                                   </span>
                               </div>
-                              <div className="col-md-4 col-sm-5" style={{marginTop: '1%'}}>
-                                <label className="labelcustome" id="#bb" style={{background: 'none',color: '#c2073f',fontWeight: '500'}}> Choose File
-                                    <input 
-                                        type="file" 
-                                        id="File" 
-                                        size="60" 
-                                        onChange={e => this.handleImage(e)}
-
+                              <div className="col-lg-3 col-md-4 col-sm-4"></div>
+                              <div className="col-lg-4 col-md-4 col-sm-5" style={{marginTop: '1%'}}>
+                                <label 
+                                  className="labelcustome" 
+                                  id="#bb" >
+                                   Choose File  
+                                      <input 
+                                          type="file" 
+                                          id="File" 
+                                          size="60" 
+                                          onChange={e => this.handleImage(e)}
                                       />
                                   </label><br/>                                                   
                               </div>              
-                              <div className="col-md-2"></div>
+                              <div className="col-lg-2 col-md-4 col-sm-5"></div>
                             </div>
                             <div className="row">
                                 <div className="col-md-12">
@@ -295,8 +298,8 @@ render() {
                                   label="Product Name" 
                                   id="productName" 
                                   className="input"
-                                  col="col-lg-6 col-md-6 col-sm-2"
-                                  col2="col-lg-10 col-md-10 col-sm-4"                                
+                                  col="col-lg-6 col-md-6 col-sm-6"
+                                  col2="col-lg-10 col-md-10 col-sm-12"                                
                                   value={this.state.productName} 
                                   Change={this.inputHandleChange}
                                 />
@@ -307,8 +310,8 @@ render() {
                                   label="Detail Name" 
                                   id="detailName" 
                                   className="input"
-                                  col="col-lg-6 col-md-6 col-sm-2"
-                                  col2="col-lg-10 col-md-10 col-sm-4"
+                                  col="col-lg-6 col-md-6 col-sm-6"
+                                  col2="col-lg-10 col-md-10 col-sm-12"
                                   value={this.state.detailName} 
                                   Change={this.inputHandleChange}
                                 />
@@ -321,8 +324,8 @@ render() {
                                   id="bodyType" 
                                   value={this.state.bodyType} 
                                   className="input"
-                                  col="col-lg-6 col-md-6 col-sm-2"
-                                  col2="col-lg-10 col-md-10 col-sm-4"
+                                  col="col-lg-6 col-md-6 col-sm-6"
+                                  col2="col-lg-10 col-md-10 col-sm-12"
 
                                   options={this.state.typeArr}
                                   Change={this.inputHandleChange}
@@ -334,8 +337,8 @@ render() {
                                     label="Price / Day" 
                                     id="priceDay" 
                                     className="input"
-                                    col="col-lg-6 col-md-6 col-sm-2"
-                                    col2="col-lg-10 col-md-10 col-sm-4"
+                                    col="col-lg-6 col-md-6 col-sm-6"
+                                    col2="col-lg-10 col-md-10 col-sm-12"
                                     value={this.state.priceDay} 
                                     pattern="^-?[0-9]\d*\.?\d*$"
                                     Change={this.inputHandleChange}
@@ -349,8 +352,8 @@ render() {
                                     id="weather" 
                                     value={this.state.weather} 
                                     className="input"
-                                    col="col-lg-6 col-md-6 col-sm-2"
-                                    col2="col-lg-10 col-md-10 col-sm-4"
+                                    col="col-lg-6 col-md-6 col-sm-6"
+                                    col2="col-lg-10 col-md-10 col-sm-12"
                                     options={["Cold Weather", "Warm Weather"]}
                                     Change={this.inputHandleChange}
                                 />
@@ -379,7 +382,7 @@ render() {
                               />                              
                           </div>
                           <div className="row">
-                              <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6">                          
+                              <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">                          
                                   <div>
                                       <span className="input">
                                           <h3 className="input_form_Profile">
@@ -397,15 +400,15 @@ render() {
                                       />              
                                   </div>
                               </div>  
-                              <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                                  <div className="col-md-6 col-lg-6 col-sm-4">
+                              <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                  <div className="col-md-6 col-lg-6 col-sm-6">
                                         <span className="input">
                                           <h3 className="input_form_Profile">
                                               Sizes Available
                                           </h3>
                                         </span>
                                   </div>
-                                  <div className="col-md-10 col-lg-10 col-sm-8">
+                                  <div className="col-md-10 col-lg-10 col-sm-10">
                                     <div className="col-md-6 col-sm-6" style={{marginTop: '5%'}}>                             
                                         <label className="container">
                                           <input value='xsmall' type="checkbox" id="XS" required 
@@ -473,12 +476,12 @@ render() {
                           </div>
                           <div className="row">
                             <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                                <div className="col-xs-12 col-sm-2 col-md-6 col-lg-6"><span className="input">
+                                <div className="col-xs-12 col-sm-8 col-md-6 col-lg-6"><span className="input">
                                     <h3 className="input_form_Profile">
                                         Available from
                                     </h3></span>
                                 </div>
-                                <div className="col-xs-12 col-sm-4 col-md-10 col-lg-10" style={{marginTop: '1%'}}>
+                                <div className="col-xs-12 col-sm-12 col-md-10 col-lg-10" style={{marginTop: '1%'}}>
                                   <div className="inputBox">
                                       <div className="inputText"></div>
                                       <input 
@@ -492,13 +495,13 @@ render() {
                                   </div>
                                 </div>
                             </div>
-                            <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                                <div className="col-xs-2 col-sm-2 col-md-6 col-lg-6"><span className="input">
+                            <div className="col-xs-12 col-sm-8 col-md-6 col-lg-6">
+                                <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6"><span className="input">
                                     <h3 className="input_form_Profile">
                                         Available till
                                     </h3></span>
                                 </div>
-                                <div className="col-xs-10 col-sm-4 col-md-10 col-lg-10" style={{marginTop: '1%'}}>
+                                <div className="col-xs-10 col-sm-12 col-md-10 col-lg-10" style={{marginTop: '1%'}}>
                                     <div className="inputBox">
                                         <div className="inputText"></div>
                                         <input 
@@ -567,10 +570,10 @@ render() {
                             </div>
                           {/* Chart Modal End */}     
                 					<div className="row">
-                						<div className="col-md-9 col-sm-8" style={{textAlign: 'right'}}>{this.state.showMsg}</div>
-                						<div className="col-md-3 col-sm-4">
+                						<div className="col-md-9 col-sm-9" style={{textAlign: 'right'}}>{this.state.showMsg}</div>
+                						<div className="col-md-3 col-sm-3">
                 							<button type="submit" 
-                                     name="" className="button"
+                                     name="" className="button buttonsave"
                                      value="post" 
                                      disabled={this.state.loader}
                                      onClick={this.handleSubmit}>

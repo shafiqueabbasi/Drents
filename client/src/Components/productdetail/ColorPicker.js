@@ -40,7 +40,7 @@ export class Shareholder extends Component {
 	                    {this.props.label}
 	                </h3></span>
 	            </div>
-	            <div className="col-md-10 col-lg-10 col-sm-8">
+	            <div className="col-md-10 col-lg-10 col-sm-12">
 	                <div className="inputBox">
 	                    <div className="inputText"></div>
 	                    {this.props.value.map((shareholder, idx) => (
