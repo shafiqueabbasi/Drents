@@ -31,6 +31,7 @@ class Filterpanel extends Component {
 		let filter = this.props.location.state;
 		window.scrollTo(0,0)
 		let data = await HttpUtils.get('getdresses');
+		console.log(data, 'dataaaaaaaaaaaaaaaa')
 		if(data.code && data.code === 200){
 			this.setState({ data: data.allDress, arr: data.allDress, loading: false });
 			if(filter && filter !== undefined){

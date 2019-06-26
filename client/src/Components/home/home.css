@@ -220,13 +220,12 @@
 		background-size: cover;
 		width: 100%;
 		height: 350px;
-		display: none;
 	}
 	.relationtext{
 		position: relative;
 	    margin-top: -70%;
 	    margin-left: -4px;
-	    display: none;
+
 	}
 	.lartext{
 		font-size: 30px;
@@ -234,7 +233,7 @@
 		color: #ffffff;
 		line-height: 45px;
 		margin-top: -3%;
-		display: none;
+
 
 	}
 	.weltext{
@@ -242,7 +241,7 @@
 		font-family: Tajawal;
 		color: #808080;
 		letter-spacing: 3px;
-		display: none;
+
 	}
 	.smaltext{
 		font-size: 9px;
@@ -251,21 +250,20 @@
 	    margin-left: 20%;
 	    color: #808080;
 	    margin-top: -4px;
-	    display: none;
+
 	}
 	.arrowimg{
 	    margin-top: -33px;
-	    display: none;
-	}
+	 }
 	.scrollimag{
 	    margin-top: -21px;
     	height: 70px;
     	-webkit-animation: mover 0.5s infinite  alternate;
     	animation: mover 0.5s infinite  alternate;
-    	display: none;
+
 	}
 	.banerleaf{
-		display: none;
+		
 	}
 	.weldrent{
 		text-align: center;
@@ -273,14 +271,14 @@
 	    font-family: Playfair Display;
 	    color: #353535;
 	    margin-top: 30px;
-	    display: none;
+	   
 	}
 	.subtext{
 		font-size: 14px;
 		font-family: Tajawal;
 		color: #9b9b9b;
 		text-align: center;
-		display: none;
+		
 	}
 }
 @media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
@@ -289,29 +287,25 @@
 		background-size: cover;
 		width: 100%;
 		height: 580px;
-		display: none;
 	}
 	.relationtext{
 		position: relative;
-	    margin-top: -60%;
+	    margin-top: -62%;
 	    margin-left: 3%;
-	    display: none;
 	}
 	.lartext{
-		font-size: 70px;
+		font-size: 60px;
 	    font-family: Playfair Display;
 	    color: #ffffff;
 	    line-height: 100px;
 	    margin-top: -3%;
 	    margin-left: -5px;
-	    display: none;
 	}
 	.weltext{
 		font-size: 12px;
 		font-family: Tajawal;
 		color: #808080;
 		letter-spacing: 5px;
-		display: none;
 	}
 	.smaltext{
 		font-size: 13px;
@@ -319,118 +313,104 @@
 	    letter-spacing: 3px;
 	    margin-left: 1%;
 	    color: #808080;
-	    display: none;
 	}
 	.arrowimg{
 		margin-top: -18px;
     	margin-left: -32%;
-    	display: none;
 	}
 	.scrollimag{
 		margin-top: 44px;
     	height: 90px;
     	-webkit-animation: mover 0.5s infinite  alternate;
     	animation: mover 0.5s infinite  alternate;
-    	display: none;
 	}
 	.banerleaf{
-		display: none;
 	}
 	.weldrent{
 		text-align: center;
-		font-size: 50px;
+		font-size: 45px;
 		font-family: Playfair Display;
 		color:#353535;
-		display: none;
 	}
 	.subtext{
-		font-size: 15px;
+		font-size: 12px;
 		font-family: Tajawal;
 		color: #9b9b9b;
 		text-align: center;
-		display: none;
 	}
 }
-@media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){
+/*@media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){*/
+@media only screen and (min-width: 1024px)and (max-width: 1366px){
 	.banneralign{
 	    background-size: cover;
 	    width: 100%;
 	    height: 828px;
 	    margin-top: -17%;
-	    display: none;
 	}
 	.relationtext{
-		position: relative;
-	    margin-top: -64%;
-	    margin-left: 35px;
-	    display: none;
+		position: relative !important;
+	    margin-top: -45% !important;
+	    margin-left: 103px !important;
 	}
 	.lartext{
-		font-size: 100px;
+		font-size: 65px !important;
 		font-family: Playfair Display;
 		color: #ffffff;
-		line-height: 150px;
-		margin-top: -3%;
-		margin-left: -5px;
-		display: none;
+		line-height: 118px !important;
+		margin-top: -2% !important;
+		margin-left: -5px !important;
 	}
 	.weltext{
 		font-size: 12px;
 		font-family: Tajawal;
 		color: #808080;
 		letter-spacing: 5px;
-		display: none;
+		margin-left: -3px !important;
 	}
 	.smaltext{
 		font-size: 12px;
 		font-family: Tajawal;
 		letter-spacing: 2px;
-		margin-left: -6%;
 		color: #808080;
-		display: none;
+		margin-top: 1% !important;
 	}
 	.arrowimg{
 		margin-top: -20px;
-    	margin-left: -22%;
-    	display: none;
+    	margin-left: -6% !important;
 	}
 	.scrollimag{
-		margin-top: 26%;
+		margin-top: -6% !important;
 		-webkit-animation: mover 0.5s infinite  alternate;
     	animation: mover 0.5s infinite  alternate;
-    	display: none;
 	}
 	.banerleaf{
-		display: none;
+		margin-top: 15% !important;
+    	margin-left: -7px !important;
 	}
 	.weldrent{
 		text-align: center;
 		font-size: 50px;
 		font-family: Playfair Display;
 		color:#353535;
-		display: none;
 	}
 	.subtext{
 		font-size: 15px;
 		font-family: Tajawal;
 		color: #9b9b9b;
 		text-align: center;
-		display: none;
 	}
 }
-@media only screen and (min-device-width : 1366px){
+@media only screen and (min-width : 1366px) and  (max-width : 1920px){
 	.banneralign{
 		margin-top: -9%;
 	    background-size: cover;
 	    width: 100%;
 	    height: 622px;
-	    display: none;
 		}
 	.relationtext{
 		position: absolute;
-	    margin-top: -47%;
-	    margin-left: 105px;
-	    display: none;
+	    margin-top: -40%;
+	    margin-left: 226px;
 	}
 	.lartext{
 	   font-size: 79px;
@@ -438,14 +418,13 @@
 	    color: #ffffff;
 	    line-height: 95px;
 	    margin-left: -15px;
-	    display: none;
 	}
 	.weltext{
 		    font-size: 12px;
 		    font-family: Tajawal;
 		    color: #808080;
 		    letter-spacing: 5px;
-		    display: none;
+		    margin-left: -15px;
 	}
 	.smaltext{
 		font-size: 12px;
@@ -454,38 +433,32 @@
 	    margin-left: -13%;
 	    color: #808080;
 	    margin-top: 6%;
-	    display: none;
 	}
 	.arrowimg{
-	    margin-left: -42%;
-	    display: none;
+	    margin-left: -22%;
 	}
 	.scrollimag{
 		margin-top: -3px;
 		    height: 100px;
 		-webkit-animation: mover 0.5s infinite  alternate;
     	animation: mover 0.5s infinite  alternate;
-    	display: none;
-
 	}
 
 	.banerleaf{
 		margin-top: 15%;
-		display: none;
+		margin-left: -15px;
 	}
 	.weldrent{
 		text-align: center;
-		font-size: 50px;
+		font-size: 45px;
 		font-family: Playfair Display;
 		color:#353535;
-		display: none;
 	}
 	.subtext{
 		font-size: 15px;
 		font-family: Tajawal;
 		color: #9b9b9b;
 		text-align: center;
-		display: none;
 	}
 }
 
@@ -510,7 +483,7 @@
 {/*New heading2 panal*/}
 
 .catetext{
-	font-size: 12px;
+	font-size: 10px;
 	font-family: Tajawal;
 	color: #808080;
 	letter-spacing: 6px;
@@ -578,7 +551,7 @@
 	    margin-bottom: 17px;
 	}
 	.bigcatetext{
-		font-size: 45px;
+		font-size: 35px;
 		font-family: Playfair Display;
 		color: #353535;
 	}
@@ -783,7 +756,6 @@
 		font-size: 12px;
 		font-family: tajawal;
 		color: #8080A2;
-		margin-left: 10%;
 	}
 	.chiffontext{
 	 	font-size: 31px;
@@ -857,6 +829,7 @@
 		height: 200px;
     	position: relative;
     	width: 100%;
+    	margin-top: 10%;
 	}
 	.rwmarg{
 		
@@ -1149,9 +1122,7 @@
 @media only screen and (min-device-width : 360px) and (max-device-width : 767px){
     .headings{
         font-family: Playfair Display;
-        /*font-Size: 40px;*/
-        text-align: left;
-        /*padding-left: 8%;*/
+        margin-left: -24% !important;
     }
     .featuredhead{
 		font-size: 40px;
@@ -1177,7 +1148,7 @@
 @media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
    .headings{
         font-family: Playfair Display;
-        /*font-Size: 40px;*/
+        font-Size: 35px;
         text-align: left;
         /*padding-left: 8%;*/
     }
@@ -1200,6 +1171,20 @@
 		width:205px;
 		text-align: left;
 		margin-left: 49%;
+	}
+	.whydrenttext {
+	    font-size: 35px !important;
+	    font-family: Playfair Display !important;
+	    color: #353535 !important;
+	}
+	.benefit{
+		margin-left: -15px;
+		padding: 0px;
+	}
+	.rentwork{
+		font-size: 35px;
+	    font-family: Playfair Display;
+	    color: #353535;
 	}
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){

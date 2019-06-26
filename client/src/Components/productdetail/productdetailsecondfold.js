@@ -50,20 +50,23 @@ class SecondFold extends Component {
     
     return (
       <div className="App">
-          <div className="container">
-              <div className="col-md-12"><hr/></div>
+          
+              <div className="col-md-12"></div>
               <Gallery
                   label="You May Also Like"
                   data={this.props.location.state.data.slice(0, 4)}
                   widthProps=''
+                  colLg='col-lg-2'
+                  imgtextstyle=''
+                  imgheadtext='pinktext_detail'
+                  margBotom='margbootom_detail'
+                  featureFilter='featuresub_detail'
               />
-              <div className="col-md-12"><hr/></div>
-              <Gallery
-                  label="More Of Weddings" hrLine='true'
-                  data={this.props.location.state.data.slice(0, 4)}
-                   widthProps=''
-              />
-              <div className="col-md-12"><hr/></div>
+
+          <div className="container">
+
+ 
+          
               {this.state.reviews.length > 0 && <div className="row derr">
                 <h1 className="headings">Comment & Reviews</h1>
                 <img src="../images/bar.png"/>
