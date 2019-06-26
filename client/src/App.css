@@ -1099,6 +1099,16 @@ input[type="file"] {
     font-size: 17px;
     font-family: playfair display;
   }
+  .order_history_command{
+    font-family: playfair display;
+    font-size: 15px;
+    color: #353535;
+    margin-left: -5%;
+  }
+  .orderHistory_sizes{
+      font-size: 13px;
+      font-family: playfair display;
+  }
 }
 @media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
   .current_image{
@@ -1113,7 +1123,7 @@ input[type="file"] {
     margin-left: -30%;
   }
    .current_dress_name{
-      font-size: 25px;
+      font-size: 20px;
       font-family: playfair display;
       color: #353535;
       margin-left: -10%;
@@ -1139,7 +1149,18 @@ input[type="file"] {
   .current_total_price{
     font-size: 17px;
     font-family: playfair display;
-    margin-left: -2%;
+    margin-left: -5%;
+  }
+  .order_history_command{
+    font-family: playfair display;
+    font-size: 15px;
+    color: #353535;
+    margin-left: -7%;
+  }
+  .orderHistory_sizes{
+      font-size: 13px;
+      font-family: playfair display;
+      margin-left: -4%;
   }
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){
@@ -1180,6 +1201,17 @@ input[type="file"] {
     font-family: playfair display;
     margin-left: -2%;
   }
+  .order_history_command{
+    font-family: playfair display;
+    font-size: 15px;
+    color: #353535;
+    margin-left: -5%;
+  }
+  .orderHistory_sizes{
+      font-size: 13px;
+      font-family: playfair display;
+      margin-left: -1%;
+  }
 }
 @media only screen and (min-device-width : 1366px) and (max-device-width : 1920px){
   .current_image{
@@ -1209,15 +1241,25 @@ input[type="file"] {
       font-family: playfair display;
       margin-left: 3%;
   }
+  .orderHistory_sizes{
+      font-size: 13px;
+      font-family: playfair display;
+  }
   .current_dress_price{
     font-size: 20px;
     font-family: playfair display;
-    margin-left: 2%;
+    margin-left: 3%;
   }
   .current_total_price{
     font-size: 17px;
     font-family: playfair display;
-    margin-left: -2%;
+
+  }
+  .order_history_command{
+    font-family: playfair display;
+    font-size: 15px;
+    color: #353535;
+    margin-left: -4%;
   }
 }
 .model_head_text{

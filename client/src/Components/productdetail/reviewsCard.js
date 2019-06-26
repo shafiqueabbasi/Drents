@@ -59,10 +59,6 @@ class ReviewsCard extends Component {
                 </div>{/*Main Row Div container Closed*/}
               </div>{/*Main Row closed*/}
               <br/>
-              
-
-
-              {/*First Panel for Mobile and Tab*/}
               <div className="row action visible-sm visible-xs">
                 <div className="container">
                   <div className="row">
