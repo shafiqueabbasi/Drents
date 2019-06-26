@@ -1,8 +1,4 @@
-import React from 'react';
-// import Picker from 'react-datepicker';
-// import "react-datepicker/dist/react-datepicker.css";
-// import DropZone from 'react-dropzone';
-import Rating from 'react-rating';
+
 
 //text seperate component
 export const RadioInput = props => {
@@ -27,14 +23,14 @@ export const RadioInput = props => {
 
 export const DetailInput = props => {
     return(
-        <div className="form-group_commit">
+        <div className="form-group">
             <label htmlFor="contain">
                 <span className="hell5">
                     {props.label}
                 </span>
             </label>
             <input 
-                className="form-control_commit" 
+                className="form-control" 
                 type="text"
                 id={props.id} 
                 value={props.value} 

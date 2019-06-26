@@ -225,9 +225,8 @@ class CommentCard extends Component {
 									  onChange={this.handleChange}
 								/>                                                                          
 								<div className="row">
-									<div className="col-md-2 col-sm-2 col-xs-2"></div>
-									<div className="col-md-7 col-sm-8 col-xs-2" style={{borderBottom: '1px solid black' , width:'63%'}}></div>
-									<div className="col-md-3 col-sm-2 col-xs-2"></div>
+									
+									<div className="col-md-12 col-sm-8 col-xs-2" style={{borderBottom: '1px solid black' , width:'63%'}}></div>
 								</div>  
 								<Rate rate="5.0 Stunner" initialRating={5} readonly/>
 								<Rate rate="4.0 Good" initialRating={4} readonly/>
@@ -237,7 +236,7 @@ class CommentCard extends Component {
 	                      	</div>{/*Row closed*/}
 							<div className="row">
 								<div className="col-md-12 dam2" >
-									<h4>Upload Pictures Wearing </h4>
+									<h4>Upload Pictures Wearing</h4>
 								</div>
 								<div className="col-md-12" style={{backgroundColor: '#ffffff'}}>
 									<div className="col-md-7" style={{paddingRight:'0'}}>

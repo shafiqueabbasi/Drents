@@ -788,13 +788,20 @@
 }
 }
 .form-group .form-control{
-	border-top-left-radius: 2px;
-	border-bottom-left-radius: 2px;
+/*	border-top-left-radius: 2px;
+	border-bottom-left-radius: 2px;*/
 	
+}
+.form-control_commit{
+	display: block;
+    width: 100%;
+    border: none;
+    background-color: #e1e1e1;
+    color: black;
 }
 
 .mouse{
-	background-color: #c2073f;
+	background-color: #ffffff;
 
 }
 .dell3{
@@ -808,6 +815,8 @@
 .hell5{
 	    font-size: 18px;
 	    font-weight: 600;
+	    font-family: Playfair Display;
+	    color: #9b9b9b;
 }
 .starright{
 	text-align: right;
@@ -815,26 +824,35 @@
 
 @media (max-width: 360px){
 .buttonpost{
-	background-color: #c2073f;
-    border: 2px solid white;
+	background-color: #cb9d6c;
     margin-left: 127px;
     width: 51%  !important;
+    color: #473463 !important;
+    border-radius: 0px;
+    margin-top: 10%;
+    margin-left: 12px;
 }
 }
 @media (max-width: 768px){
 .buttonpost{
-	background-color: #c2073f;
-    border: 2px solid white;
+	background-color: #cb9d6c;
     margin-left: 35px;
     width: 21%;
+    color: #473463 !important;
+    border-radius: 0px;
+    margin-top: 10%;
+    margin-left: 12px;
 }
 }
 @media (max-width: 1600px){
 .buttonpost{
-	background-color: #c2073f;
-    border: 2px solid white;
+	background-color: #cb9d6c;
     margin-left: 0px;
     width: 100%;
+    color: #473463 !important;
+    border-radius: 0px;
+    margin-top: 10%;
+    margin-left: 12px;
 }
 }
 .poststyle{
@@ -845,7 +863,8 @@
 	margin-bottom: 8px;
 }
 .position3{
-	position: absolute;	
+	position: absolute;
+	border-radius: 0px;
 }
 .absolute3{
 	position: relative;
