@@ -1071,7 +1071,7 @@
 		font-size: 12px;
 		font-family: tajawal;
 		color: #8080A2;
-
+		margin-left: 9%;
 	}
 	.chiffontext{
 	 	font-size: 31px;
@@ -1129,7 +1129,7 @@
     	margin-left: 0%;
         box-shadow: inset 3px -110px 42px rgba(0,0,0,0.4);
 	    height: 136px;
-	    width: 87%;
+	    width: 85%;
 	}
 }
 
@@ -1236,7 +1236,7 @@
 	    color: #808080;
 	    letter-spacing: 5px;
 	    margin-bottom: 0px;
-	    margin-left: 8.6%;
+	    margin-left: 9.6%;
 	}
 	.cloth{
 		color: #9b9b9b!important;

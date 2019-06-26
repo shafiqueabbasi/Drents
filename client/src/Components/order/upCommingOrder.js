@@ -141,21 +141,14 @@ class UpCommingOrder extends Component {
     			return (
     				<div key={key} className="row hidden-sm hidden-xs">
 						<div className="col-md-2">
-							<img alt="" src={elem.fileList[0]} style={{width: '117%'}}/>
+							<img alt="" src={elem.fileList[0]} style={{width: '100%'}}/>
 						</div>
 
 						<div className="col-md-10">
-
 								<div className="col-md-4">
 								<h1 style={{fontFamily: 'Qwigley',fontSize: '42px',color: '#c2o72f'}}>{elem.productName}</h1>
 								</div>
 								<div className="col-md-6" style={{paddingTop: '3%'}}>
-									{/*<span className="fa fa-star checked" style={{color: 'yellow'}}></span>
-									<span className="fa fa-star checked" style={{color: 'yellow'}}></span>
-									<span className="fa fa-star checked" style={{color: 'yellow'}}></span>
-									<span className="fa fa-star checked" style={{color: 'yellow'}}></span>
-									<span className="fa fa-star checked" style={{color: 'yellow'}}></span>
-									<span>4.5</span>*/}
 									<Rate rate={rating == 0 ? '' : rating} initialRating={rating} readonly/>
 								</div>
 								<div className="col-md-2" style={{paddingTop: '3%'}}>
@@ -271,7 +264,7 @@ class UpCommingOrder extends Component {
 				rating = elem.productRate == undefined || elem.productRate == '' ? 0 : +elem.productRate;
     			
     			return (
-					<div key={key} className="visible-sm ">
+					<div key={key} className="visible-sm">
 						<div className="row">
 							<div className=" col-sm-4">
 								<img alt="" src={elem.fileList[0]} style={{width: '100%'}}/>

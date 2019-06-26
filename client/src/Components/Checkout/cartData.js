@@ -103,39 +103,63 @@ class CartData extends Component {
 
 		return (
 			<div style={{marginTop:'6%'}}>
-				<div className="hidden-xs">
+				<div className="">
 					<div className="row" style={{margin:'0px'}}>
-						<div className="col-sm-4 col-md-3 col-lg-3"></div>
-						<div className="col-sm-4 col-md-6 col-lg-6">		
-								<div className="row">
-									<div className="col-lg-12 col-md-12 col-sm-12 chainbelt1">Cart</div>
+						<div className="col-xs-12 col-sm-1 col-md-2 col-lg-3"></div>
+						<div className="col-xs-12 col-sm-10 col-md-8 col-lg-6">		
+								<div className="row cart_marg_screen">
+									<div className="col-xs-12 col-lg-3 col-md-3 col-sm-3 chainbelt1">
+										Cart
+									</div>
+									<div className="col-xs-12 col-lg-2 col-md-2 col-sm-2"></div>
+									<div className="col-xs-12 col-lg-3 col-md-3 col-sm-3">
+										<button 
+											className="btn checkout_btn" 
+											disabled={showButton}
+											data-toggle="modal" data-target="#stripeCard">											
+												Checkout
+										</button>	
+									</div>
+									<div className="col-xs-12 col-lg-4 col-md-4 col-sm-4">
+										<button 
+											className="btn btn_browse_dresses"
+										> Browse more dresses
+										</button>	
+									</div>
 								</div><br/>
 								{finalArr && finalArr.map((elem, key) => {
 									return (
 										<div>
 											{/*<div className="row">
 												<div className="col-md-6 col-sm-6 chainbelt3">
-													<p><span className="chainbelt2">Arrival: {elem.from}</span></p>
+													<p><span className="chainbelt2">Arrival: </span></p>
 												</div>
 												<div className="col-md-6 col-sm-6 chainbelt3">
-													<p><span className="chainbelt2">Return: {elem.to}</span></p>
+													<p><span className="chainbelt2">Return: </span></p>
 												</div>
 											</div>*/}
-											<div className="row">
-												<div className="col-lg-2 col-md-2 col-sm-2">
-														<img src="../images/pink-shirt-01.png" style={{width:'100%'}}/>
+											<div className="row cart_marg_screen">
+												<div className="col-xs-12 col-lg-2 col-md-2 col-sm-2">
+														 <img src="../images/pink-shirt-01.png" className="img_of_cart_dress"/>														
 												</div>
-												<div className="col-lg-5 col-md-5 col-sm-5">
-													<p>{elem.productName}</p>
+												<div className="col-xs-12 col-lg-6 col-md-6 col-sm-6">
+													<p className="chainbelt4">{elem.productName}</p>
+													<div className="row" style={{margin:'0px'}}>
+														<div className="col-xs-12 col-lg-5 col-md-5 col-sm-5 cart_dress_date">{elem.from}</div>
+														<div className="col-xs-12 col-lg-2 col-md-2 col-sm-2 cart_dress_date">To</div>
+														<div className="col-xs-12 col-lg-5 col-md-5 col-sm-5 cart_dress_date">{elem.to}</div>
+													</div><br/>
+													<p className="chainbelt4" onClick={this.cancelOrder.bind(this,elem)}>Remove dress</p>
 												</div>
-												<div className="col-lg-4 col-md-4 col-sm-4"></div>
-												<div className="col-lg-1 col-md-1 col-sm-1"></div>
+												<div className="col-xs-6 col-lg-4 col-md-4 col-sm-4 cart_align">
+													${((+elem.priceDay) * (+elem.rentDay + 1)).toFixed(2)}
+												</div>
 											</div>
-											<div className="row">												
+											{/*<div className="row">												
 													<div className="col-lg-10 col-md-10 col-sm-9">
 														<div className="row">
 															<div className="col-lg-4 col-md-6 col-sm-6">
-																<h2><span className="chainbelt4">{elem.productName}</span></h2>
+																<h2><span>{elem.productName}</span></h2>
 															</div>
 															<div className="col-lg-4 col-md-4 col-sm-6 apex5" onClick={this.cancelOrder.bind(this,elem)}>x</div>
 														</div>
@@ -152,7 +176,7 @@ class CartData extends Component {
 																<p><span>{((+elem.priceDay) * (+elem.rentDay + 1)).toFixed(2)}</span></p>
 															</div>
 														</div>
-														{/*<div className="row chainnbelt10">
+														<div className="row chainnbelt10">
 															<div className="col-lg-8 col-md-8 col-sm-8" style={{textAlign: 'center'}}>
 																<button type="submit"
 																	className="btn
@@ -162,13 +186,13 @@ class CartData extends Component {
 																	<span className="chainbelt9">Cancel Order</span>
 																</button>
 															</div>
-														</div>*/}
+														</div>
 													</div>
 													<div className="col-lg-10 col-md-2 col-sm-3"></div>												
-											</div>
+												</div>*/}
 										</div>
 									)
-								})}
+								})}<br/>
 								{/*<div className="row apex1">
 									<div className="col-md-2 col-sm-2"></div>
 									<div className="col-md-4 col-sm-4">
@@ -179,9 +203,34 @@ class CartData extends Component {
 									</div>
 									<div className="col-md-2 col-sm-2"></div>
 								</div>*/}
-								<div className="row apex1">
-									<div className="col-md-6 col-sm-6"></div>
-									<div className="col-md-6 col-sm-6 chainbelt7">
+								<div className="row cart_total_align">
+									<div className="col-xs-12 col-lg-8 col-md-8 col-sm-8"></div>
+									<div className="col-xs-6 col-lg-2 col-md-2 col-sm-2">
+										<p className="cart_total">Net Amount:</p>
+										<br/>
+										<p className="cart_total">Tax:</p>
+										<br/>
+										<p className="cart_total">Drent fee:</p>
+										<br/>
+										<p className="cart_total">Stripe fee:</p>
+										<br/>
+										<p className="cart_total">Total:</p>
+									</div>
+									<div className="col-xs-6 col-lg-2 col-md-2 col-sm-2">
+										<p className="cart_price">{price}</p>
+										<br/>
+										<p className="cart_price">1.48%</p>
+										<br/>
+										<p className="cart_price">2%</p>
+										<br/>
+										<p className="cart_price">2.9%</p>
+										<br/>
+										<p className="cart_price">{finalPrice}</p>
+									</div>
+								</div>
+								{/*<div className="row apex1">
+									<div className="col-lg-7 col-md-7 col-sm-6"></div>
+									<div className="col-lg-5 col-md-5 col-sm-6 chainbelt7">
 										<div className="row">
 											<div className="col-md-6 col-sm-6">
 												Net Amount:
@@ -215,16 +264,22 @@ class CartData extends Component {
 											</div>
 										</div>
 									</div>
-								</div>
+								</div>*/}<br/>
 								<div className="row">
-									<div className="col-md-12 col-sm-12 chainbelt1">
-										<button className="btn apex2" 
+									<div className="col-xs-12 col-xs-12 col-lg-5 col-md-5 col-sm-5"></div>
+									<div className="col-xs-12 col-lg-3 col-md-3 col-sm-3">
+										<button 
+											className="btn checkout_btn" 
 											disabled={showButton}
-											data-toggle="modal" data-target="#stripeCard">
-											<span className="apex3">
-												CHECKOUT
-											</span>
-										</button>
+											data-toggle="modal" data-target="#stripeCard">											
+												Checkout
+										</button>	
+									</div>
+									<div className="col-xs-12 col-lg-4 col-md-4 col-sm-4">
+										<button 
+											className="btn btn_browse_dresses"
+										> Browse more dresses
+										</button>	
 									</div>
 								</div>
 								{!loggedIn && <div className="row">
@@ -260,10 +315,10 @@ class CartData extends Component {
 									</div>
 								</div>
 						</div>
-						<div className="col-sm-4 col-md-3 col-lg-3"></div>
+						<div className="col-sm-1 col-md-2 col-lg-3"></div>
 					</div>	
 				</div>
-				<div className="visible-xs">
+				{/*<div className="visible-xs">
 					<div className="container">
 						<div className="row" style={{marginTop: '9%'}}>
 							<div className="col-xs-12 chainbelt1"><span className="chainbelt">Your Cart</span></div>
@@ -301,7 +356,7 @@ class CartData extends Component {
 														<p style={{fontSize: '20px'}}><span>{((+elem.priceDay) * (+elem.rentDay + 1)).toFixed(2)}</span></p>
 													</div>
 												</div>
-												{/*<div className="row chainnbelt10">
+												<div className="row chainnbelt10">
 													<div className="col-xs-8" style={{textAlign: 'center'}}>
 														<button type="submit"
 															className="btn
@@ -311,7 +366,7 @@ class CartData extends Component {
 															<span className="chainbelt9">Cancel Order</span>
 														</button>
 													</div>
-												</div>*/}
+												</div>
 
 											</div>
 											<div className="col-xs-3"></div>
@@ -320,7 +375,7 @@ class CartData extends Component {
 								</div>
 							)
 						})}
-						{/*<div className="row apex1">
+						<div className="row apex1">
 							<div className="col-xs-2"></div>
 							<div className="col-xs-4">
 								<p><span>Subtotal</span></p>
@@ -328,7 +383,7 @@ class CartData extends Component {
 							<div className="col-xs-4 chainbelt7">
 								<p><span>{price}</span></p>
 							</div>
-						</div>*/}
+						</div>
 						<div className="row apex1">
 							<div className="col-xs-12">
 								<div className="row">
@@ -404,7 +459,7 @@ class CartData extends Component {
 							</div>
 						</div>
 					</div>
-				</div>
+				</div>*/}
 				 
 
 

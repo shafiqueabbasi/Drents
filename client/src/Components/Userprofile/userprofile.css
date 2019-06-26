@@ -555,3 +555,95 @@
 .nothing {
   display: none;
 }
+
+@media only screen and (min-device-width : 360px) and (max-device-width : 767px){
+  .absoul_userprofile{
+    position: absolute;
+    margin-top: -58%;
+    margin-left: 7%;
+  }
+  .pinktext_userprofile{
+    font-size: 31px;
+    font-family: playfair display;
+    color: black;
+    margin-top: -22%;
+    margin-left: 3px;
+  }
+  .margbootom_userprofile{
+    margin-bottom: 15%;
+  }
+  .featuresub_userprofile{
+      font-size: 12px;
+      font-family: Tajawal;
+      color: #808080;
+      letter-spacing: 5px;
+      margin-bottom: 0px;
+      margin-left: 11%;
+    }
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
+   .absoul_userprofile{
+    position: absolute;
+    margin-top: 10%;
+  }
+  .pinktext_userprofile{
+    font-size: 20px;
+    font-family: playfair display;
+    color: black;
+    margin-top: -10%;
+  }
+  .margbootom_userprofile{
+    margin-bottom: 26%;
+  }
+  .featuresub_userprofile{
+      font-size: 12px;
+      font-family: Tajawal;
+      color: #808080;
+      letter-spacing: 5px;
+      margin-bottom: 0px;
+      margin-left: 11%;
+    }
+}
+@media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){
+  .absoul_userprofile{
+    position: absolute;
+  }
+  .pinktext_userprofile{
+    font-size: 24px;
+    font-family: playfair display;
+    color:  black;
+  }
+  .margbootom_userprofile{
+    margin-bottom: 20%;
+  }
+  .featuresub_userprofile{
+      font-size: 12px;
+      font-family: Tajawal;
+      color: #808080;
+      letter-spacing: 5px;
+      margin-bottom: 0px;
+      margin-left: 11%;
+    }
+}
+@media only screen and (min-device-width : 1366px) and (max-device-width : 1920px){
+  .absoul_userprofile{
+      position: absolute;
+      margin-top: 3%;
+  }
+  .pinktext_userprofile{
+      font-size: 25px;
+      font-family: playfair display;
+      color:  black;
+  }
+  .margbootom_userprofile{
+      margin-bottom: 5%;
+  }
+  .featuresub_userprofile{
+      font-size: 12px;
+      font-family: Tajawal;
+      color: #808080;
+      letter-spacing: 5px;
+      margin-bottom: 0px;
+      margin-left: 10%;
+  }
+}
