@@ -77,7 +77,7 @@ class UserProfile extends Component {
 		let id = this.props.match.params.value,
 		data = await HttpUtils.post('getprofiledress', {userId: id});
 
-		 // console.log(data , 'dress data')
+		 console.log(data , 'dress data')
 		if(data.code && data.code == 200){
 			this.ratingFunc(data, id);
 			this.rentedRentals(data, id);

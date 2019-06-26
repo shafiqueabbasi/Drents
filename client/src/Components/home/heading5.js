@@ -7,7 +7,7 @@ class Heading5 extends Component {
      	<div>
           <div className="row hidden-xs" style={{margin:'0px'}}>
             <div className="col-xs-12 col-sm-1 col-md-1 col-lg-1"></div>
-            <div className="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+            <div className="col-xs-12 col-sm-3 col-md-3 col-lg-3 benefit">
                 <p className="benetext">BENEFITS</p>
                 <p className="whydrenttext">Why Drent?</p>
             </div>

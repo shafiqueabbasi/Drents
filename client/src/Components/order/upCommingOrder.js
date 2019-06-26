@@ -198,7 +198,7 @@ class UpCommingOrder extends Component {
 						<div className="col-xs-12 col-sm-1 col-md-2 col-lg-2"></div>
 
 						<div className="modal fade" id="confirmStatus" role="dialog">
-                            <div className="modal-dialog" style={showReviewBox ? {width: '96%'} : {}}>
+                            <div className="modal-dialog" style={showReviewBox ? {width: '72%'} : {}}>
                               <div className="modal-content">
                                 <div className="modal-header">
                                   <button type="button" className="close" data-dismiss="modal">&times;</button>
