@@ -354,7 +354,7 @@ class UserProfile extends Component {
 						<div className="col-md-2 col-sm-2"></div>
 					</div>
 
-					<div className="row">
+					<div className="row" style={{margin:'0px'}}>
 						<div className="col-md-12 col-sm-9 col-xs-6">
 							<div className="row" style={{margin:'0px'}}>
 								{archivestatus && <div className="alert alert-success alert-dismissible">

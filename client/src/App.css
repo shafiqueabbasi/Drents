@@ -1059,5 +1059,196 @@ input[type="file"] {
 .button .input .optgroup .select .textAreaFont {
     color: black !important;
 }
-
+@media only screen and (min-device-width : 360px) and (max-device-width : 767px){
+  .current_image{
+     width: 65%;
+     margin-left: 14%;
+  }
+   .current_dress_name{
+      font-size: 25px;
+      font-family: playfair display;
+      color: #353535;
+  }
+  .current_dropdown{
+    background: rgb(203, 157, 108);
+    color: #353535;
+    border-radius: 0px;
+    border: rgb(203, 157, 108);
+    margin-left: -30%;
+  }
+  .current_btn_status{
+     margin-left: 22%;
+  } 
+  .current_report_tab{
+      font-size: 17px;
+      font-family: playfair display;
+      color: #353535;
+      text-align: left;
+  }
+  .current_sizes{
+      font-size: 13px;
+      font-family: playfair display;
+      margin-left: 5%;
+  }
+  .current_dress_price{
+    font-size: 20px;
+    font-family: playfair display;
+    margin-left: 5%;
+  }
+  .current_total_price{
+    font-size: 17px;
+    font-family: playfair display;
+  }
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
+  .current_image{
+     width: 75%;
+     margin-left: 12%;
+  }
+  .current_dropdown{
+    background: rgb(203, 157, 108);
+    color: #353535;
+    border-radius: 0px;
+    border: rgb(203, 157, 108);
+    margin-left: -30%;
+  }
+   .current_dress_name{
+      font-size: 25px;
+      font-family: playfair display;
+      color: #353535;
+      margin-left: -10%;
+  }
+  .current_btn_status{
+     margin-left: -35%;
+  } 
+  .current_report_tab{
+      font-size: 17px;
+      font-family: playfair display;
+      color: #353535;
+  }
+  .current_sizes{
+      font-size: 13px;
+      font-family: playfair display;
+      margin-left: 3%;
+  }
+  .current_dress_price{
+    font-size: 20px;
+    font-family: playfair display;
+    margin-left: 2%;
+  }
+  .current_total_price{
+    font-size: 17px;
+    font-family: playfair display;
+    margin-left: -2%;
+  }
+}
+@media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){
+  .current_image{
+     width: 75%;
+  }
+  .current_dropdown{
+    background: rgb(203, 157, 108);
+    color: #353535;
+    border-radius: 0px;
+    border: rgb(203, 157, 108);
+  }
+   .current_dress_name{
+      font-size: 25px;
+      font-family: playfair display;
+      color: #353535;
+  }
+  .current_btn_status{
+     margin-left: -35%;
+  } 
+  .current_report_tab{
+      font-size: 17px;
+      font-family: playfair display;
+      color: #353535;
+  }
+  .current_sizes{
+      font-size: 13px;
+      font-family: playfair display;
+      margin-left: 3%;
+  }
+  .current_dress_price{
+    font-size: 20px;
+    font-family: playfair display;
+    margin-left: 2%;
+  }
+  .current_total_price{
+    font-size: 17px;
+    font-family: playfair display;
+    margin-left: -2%;
+  }
+}
+@media only screen and (min-device-width : 1366px) and (max-device-width : 1920px){
+  .current_image{
+     width: 75%;
+  }
+  .current_dropdown{
+    background: rgb(203, 157, 108);
+    color: #353535;
+    border-radius: 0px;
+    border: rgb(203, 157, 108);
+  }
+  .current_dress_name{
+      font-size: 25px;
+      font-family: playfair display;
+      color: #353535;
+  }
+  .current_btn_status{
+     margin-left: -35%;
+  } 
+  .current_report_tab{
+      font-size: 17px;
+      font-family: playfair display;
+      color: #353535;
+  }
+  .current_sizes{
+      font-size: 13px;
+      font-family: playfair display;
+      margin-left: 3%;
+  }
+  .current_dress_price{
+    font-size: 20px;
+    font-family: playfair display;
+    margin-left: 2%;
+  }
+  .current_total_price{
+    font-size: 17px;
+    font-family: playfair display;
+    margin-left: -2%;
+  }
+}
+.model_head_text{
+    text-align: center;
+    color: rgb(53, 53, 53);
+    font-size: 30px;
+    font-family: playfair display;
+}
+.model_body_text{
+    text-align: center;
+    color: rgb(53, 53, 53);
+    font-size: 17px;
+    font-family: playfair display;
+    margin-top: -5%;
+}
+.model_confirm_btn{
+    text-align: center;
+    background-color: rgb(203, 157, 108);
+    color: #353535;
+    font-family: playfair display;
+    font-size: 13px;
+    padding: 5px;
+    width: 100%
+}
+.model_cancel_btn{
+    text-align: center;
+    background-color: #e1e1e1;
+    color: #353535;
+    font-family: playfair display;
+    font-size: 13px;
+    padding: 5px;
+    width: 100%
+}
 
