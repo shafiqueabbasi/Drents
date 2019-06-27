@@ -437,12 +437,7 @@
 }
 
 @media only screen and (min-device-width : 360px) and (max-device-width : 640px){
-	.card{
-		font-family: Sacramento;
-		margin-left: -15%;
-		font-size: 27px;
-		color: white;
-	}
+	
 	
 	.newrating{
 		margin-top: -6%;
@@ -463,12 +458,7 @@
 }
 
 @media only screen and (min-device-width : 766px) and (max-device-width : 1024px){
-	.card{
-		font-family: Sacramento;
-		margin-left: -32%;
-		font-size: 27px;
-		color: white;
-	}
+	
 	.newstar{
 		margin-top: 2%;
 		padding-left: 4px;
@@ -496,12 +486,6 @@
 	}
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
-	.card{
-		font-family: Sacramento;
-		margin-left: -7%;
-		font-size: 27px;
-		color: white;
-	}
 	.newstar{
 		margin-top: 12%;
 		
@@ -526,12 +510,6 @@
 	}
 }
 @media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
-	.card{
-		font-family: Sacramento;
-		margin-left: -20%;
-		font-size: 27px;
-		color: white;
-	}
 	.newstar{
 		padding-left: 1px;
 	}
@@ -1459,7 +1437,12 @@ padding: 5%;
 @media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){}
 
 
-@media only screen and (min-device-width : 360px) and (max-device-width : 660px){
+
+
+
+
+
+@media only screen and (min-device-width : 360px) and (max-device-width : 767px){
 	.back_arrow{
 
 	}
@@ -1470,7 +1453,36 @@ padding: 5%;
 		    padding-left: 14px;
     	padding-top: 1%;
 	}
-
+	.comment_review_heading{
+		font-family: Playfair Display;
+	    font-Size: 30px;
+	    text-align: left;
+	    padding-left: 4%;
+	}
+	.comment_username{
+		text-align: left;
+	    color: #353535;
+	    font-family: playfair display;
+	    font-size: 24px;
+	}
+	.comment_dress_size{
+	    text-align: center;
+	    color: #353535;
+	    font-family: playfair display;
+	    font-size: 15px;
+	    margin: 4px 0px 5px 1px;
+	}
+	.card{
+	    font-family: Sacramento;
+	    margin-left: 50%;
+	    font-size: 25px;
+	    color: #e1e1e1;
+	    margin-top: -10%;
+	}
+	.marg_mobile{
+	    margin-top: 10%;
+		margin-left: -9%;
+	}
 }
 
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
@@ -1486,7 +1498,34 @@ padding: 5%;
 	.back_arrowdresses{
 
 	}
-
+	.comment_review_heading{
+		font-family: Playfair Display;
+	    font-Size: 40px;
+	    text-align: left;
+	    padding-left: 1%;
+	}
+	.comment_username{
+		text-align: left;
+	    color: #353535;
+	    font-family: playfair display;
+	    font-size: 24px;
+	}
+	.comment_dress_size{
+		text-align: left;
+	    color: #353535;
+	    font-family: playfair display;
+	    font-size: 15px;
+	    margin: 4px 0px 5px 1px;
+	}
+	.card{
+		font-family: playfair display;
+	    font-size: 25px;
+	    color: #e1e1e1;
+	    margin-top: -19%;
+	    margin-left: 65%;
+	}
+	.marg_mobile{
+	}
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
 	.back_arrow{
@@ -1497,7 +1536,33 @@ padding: 5%;
 		letter-spacing: 5px;
 		font-size: 10px;
 	}
-
+	.comment_review_heading{
+		font-family: Playfair Display;
+	    font-Size: 40px;
+	    text-align: left;
+	    padding-left: 1%;
+	}
+	.comment_username{
+		text-align: left;
+	    color: #353535;
+	    font-family: playfair display;
+	    font-size: 24px;
+	}
+	.comment_dress_size{
+		text-align: left;
+	    color: #353535;
+	    font-family: playfair display;
+	    font-size: 15px;
+	    margin: 4px 0px 5px 1px;
+	}
+	.card{
+		font-family: playfair display;
+	    font-size: 25px;
+	    color: #e1e1e1;
+	    margin-top: -4%;
+	}
+	.marg_mobile{
+	}
 }
 @media only screen and (min-device-width : 1366px) and (max-device-width : 1920px){
 	.back_arrow{
@@ -1509,5 +1574,37 @@ padding: 5%;
 		font-size: 10px;
 		padding-top: 1%;
 	}
-
+	.comment_review_heading{
+		font-family: Playfair Display;
+	    font-Size: 40px;
+	    text-align: left;
+	    padding-left: 1%;
+	}
+	.comment_username{
+		text-align: left;
+	    color: #353535;
+	    font-family: playfair display;
+	    font-size: 24px;
+	}
+	.comment_dress_size{
+		text-align: left;
+	    color: #353535;
+	    font-family: playfair display;
+	    font-size: 15px;
+        margin: 4px 0px 5px 13px;
+	}
+	.card{
+		font-family: playfair display;
+	    font-size: 25px;
+	    color: #e1e1e1;
+	    margin-top: -4%;
+	}
+	.marg_mobile{
+	}
+}
+.comment_dress_details{
+    font-size: 20px;
+    font-family: playfair display;
+    color: #353535;
+    text-align: left;
 }
