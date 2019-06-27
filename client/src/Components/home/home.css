@@ -3,6 +3,7 @@
 
 }
 
+
 .nav-side-menu {
   overflow: auto;
   font-family: verdana;
@@ -89,6 +90,10 @@
 	.margmodal{
   		margin-left: 7%;
 	}
+	.header2_new_logo{
+		height: 45px;
+	    margin-top: 25px;
+	}
 }
 @media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
 	.nav{
@@ -97,7 +102,10 @@
 	.margmodal{
   		margin-left: 7%;
 	}
-
+	.header2_new_logo{
+		height: 45px;
+	    margin-top: 25px;
+	}
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){
 	.nav{
@@ -106,9 +114,14 @@
 	.margmodal{
   		margin-left: 7%;
 	}
+	.header2_new_logo{
+		height: 45px;
+	    margin-top: 25px;
+	    margin-left: -8%;
+	}
 
 }
-@media only screen and (min-device-width : 1366px){
+@media only screen and (min-device-width : 1366px) and  (max-device-width : 1920px){
 	.nav{
   		font-size: 15px;
   		position: absolute;
@@ -117,6 +130,11 @@
 	}
 	.margmodal{
   		margin-left: 7%;
+	}
+	.header2_new_logo{
+		height: 45px;
+	    margin-top: 25px;
+	    margin-left: -22%;
 	}
 }
 
