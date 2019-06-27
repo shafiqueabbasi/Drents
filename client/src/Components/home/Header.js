@@ -119,23 +119,23 @@ class FirstPage extends Component {
         		  </div>
         	  </div>
             
-            <div id="myNav" className="overlay visible-xs" style={{background:'#c2073fcf'}}>
+            <div id="myNav" className="overlay visible-xs">
               <a href="javascript:void(0)" className="closebtn" onClick={this.closeNav}>&times;</a>
               <div className="overlay-content">
                 <ul className="nav navbar-nav navbar-right customhover">
-                      <li className="head"><Link to={`/`} className="nav" onClick={this.closeNav}>HOME</Link></li>
-                      <li className="head"><Link to={`/product`} className="nav" onClick={this.closeNav}>PRODUCT</Link></li>
-                      {loggedIn &&<li className="head"><Link to={`/profile/${userId}`} className="nav" onClick={this.closeNav}>MY PROFILE</Link></li>}
-                      {loggedIn && <li className="head" onClick={this.logOut}><a className="nav" onClick={this.closeNav}>Log Out</a></li>}
+                      <li className="mob_head"><Link to={`/`} className="nav" onClick={this.closeNav}>Home</Link></li>
+                      <li className="mob_head"><Link to={`/product`} className="nav" onClick={this.closeNav}>Catalog</Link></li>
+                      {loggedIn &&<li className="mob_head"><Link to={`/profile/${userId}`} className="nav" onClick={this.closeNav}>My Profile</Link></li>}
+                      {loggedIn && <li className="mob_head" onClick={this.logOut}><a className="nav" onClick={this.closeNav}>Log Out</a></li>}
 
-                      {!loggedIn && <li className="head">
+                      {!loggedIn && <li className="mob_head">
                         <a href="#" className="nav" data-toggle="modal" data-target="#SignIn1" onClick={this.closeNav}>Sign In</a>
                           <div className="modal fade" id="SignIn1" role="dialog">
                             <div className="modal-dialog">
                               <div className="modal-content">
                                 <div className="modal-header">
                                   <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                  <h4 className="modal-title" style={{textAlign:'center'}}>Sign In</h4>
+                                  <h4 className="modal-title" style={{textAlign:'center',fontSize: '40px'}}>Sign In</h4>
                                 </div>
                                 <div className="modal-body">
                                   <Login />
@@ -154,7 +154,7 @@ class FirstPage extends Component {
                               <div className="modal-content">
                                 <div className="modal-header">
                                   <button type="button" className="close" data-dismiss="modal">&times;</button>
-                                  <h4 className="modal-title" style={{textAlign:'center'}}>Sign Up</h4>
+                                  <h4 className="modal-title" style={{textAlign:'center', paddingLeft: '40px'}}>Sign Up</h4>
                                 </div>
                                 <div className="modal-body">
                                     <SignUp />
@@ -164,14 +164,27 @@ class FirstPage extends Component {
                             </div>
                           </div>
                       </li>}
-                      <li className="head">
+
+
+                      <li className="headCart">
+                          <Link to={{pathname: `/checkout`, state: {finalArr}}} className="nav">
+                            Cart
+                            <span>
+                              {finalArr.length > 0 ? finalArr.length : ''}
+                            </span>
+                          </Link>
+                      </li>
+
+
+
+                      {/*<li className="head">
                         <Link to={{pathname: `/checkout`, state: {finalArr}}} className="nav badge">
                           <img src="../images/bag.png" style={{marginTop:'-5px'}}/>
                           <span className="badge">
                             {finalArr.length > 0 ? finalArr.length : ''}
                           </span>
                         </Link>
-                      </li>
+                      </li>*/}
                     </ul>
               </div>
             </div>

@@ -43,7 +43,6 @@
   color: #cb9d6c;
 }
 .headCart{
-	margin-right: 13px;
     margin-top: -15px;
     font-size: 15px;
     font-family: Playfair Display;
@@ -87,7 +86,6 @@
 @media only screen and (min-device-width : 320px) and (max-device-width : 767px){
 	.nav{
   		font-size: 15px;
-  		margin-left: 1%;
 	}
 	.margmodal{
   		margin-left: 7%;
@@ -181,15 +179,20 @@
 .nav-side-menu li {
   padding-left: 0px;
 }
+
+.mob_head a{
+  font-size: 40px;
+  font-family: Playfair Display;
+  color: #cb9d6c;
+  margin-bottom: 40px;
+}
 .head a{
-  font-size: 15px;
   font-family: Playfair Display;
   color: #cb9d6c;
 }
 .headCart a{
-	margin-right: 38px;
     margin-top: 35px;
-	font-size: 15px;
+	font-size: 40px;
    font-family: Playfair Display;
    color: #cb9d6c;
 }
@@ -1644,15 +1647,13 @@
 
 
 {/*heading4 start*/}
-i {
+/*i {
   border: solid #9b9b9b;
   border-width: 0 3px 3px 0;
   display: inline-block;
   padding: 3px;
   background-color: #dddddd!important;
-
-
-}
+}*/
 
 .down {
   transform: rotate(45deg);
