@@ -80,6 +80,7 @@ class App extends Component {
           <div>
 
                 {/*<Header arr={this.state.arr} />*/}
+              {/*<HeaderNew arr={this.state.arr} />*/}
                 <Header2New arr={this.state.arr} />
 
                 <Route path="/" exact component={Home} />
