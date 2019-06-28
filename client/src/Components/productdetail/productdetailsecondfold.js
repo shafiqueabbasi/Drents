@@ -62,14 +62,13 @@ class SecondFold extends Component {
                   margBotom='margbootom_detail'
                   featureFilter='featuresub_detail'
               />
-
+              <hr/>
           <div className="container">
 
  
           
               {this.state.reviews.length > 0 && <div className="row derr">
-                <h1 className="headings">Comment & Reviews</h1>
-                <img src="../images/bar.png"/>
+                <h1 className="comment_review_heading">Rating & Comments</h1>
               </div>}
               {this.state.reviews.map((elem) => {
                  return <ReviewsCard data={elem}/>
