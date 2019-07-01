@@ -10,7 +10,7 @@ class Heading4 extends Component {
 
     return (
     	<div className="col-md-12 App">
-    		<div className="row">
+    		<div className="row feat">
 				<p className={`${this.props.featureFilter}`}>FEATURED</p>
 			</div>
     		{label && label.length > 0 && <div className="Heading col-md-9 col-sm-10">

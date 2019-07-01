@@ -67,7 +67,7 @@ class Headernew extends Component {
 	     					{!loggedIn && <li className="head">
 		                        <a href="#" className="nav" data-toggle="modal" data-target="#SignIn" >Sign In</a>
 		                          <div className="modal fade" id="SignIn" role="dialog">
-		                            <div className="modal-dialog">
+		                            <div className="modal-dialog  widht_sm">
 		                              <div className="modal-content">
 		                                <div className="modal-header">
 		                                  <button type="button" className="close" data-dismiss="modal">&times;</button>
@@ -90,7 +90,7 @@ class Headernew extends Component {
 		                    {!loggedIn && <li className="head">
 		                        <a href="#" className="nav" data-toggle="modal" data-target="#SignUp">Sign Up</a>
 		                          <div className="modal fade" id="SignUp" role="dialog">
-		                            <div className="modal-dialog">
+		                            <div className="modal-dialog widht_sm">
 		                              <div className="modal-content">
 		                                <div className="modal-header">
 		                                  <button type="button" className="close" data-dismiss="modal">&times;</button>
