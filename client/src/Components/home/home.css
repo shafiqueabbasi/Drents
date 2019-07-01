@@ -1638,18 +1638,27 @@
 		     width: 100%;
     		 margin-top: -10%;
     	}
+    	.feat{
+		margin-top: 5%;
+	}
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
 	.panel2how{
 		     width: 100%;
     		margin-top: -10%;
 	}
+	.feat{
+		margin-top: 5%;
+	}
 }
-@media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
+@media only screen and (min-device-width : 1366px) and (max-device-width : 1920px){
 	.panel2how{
 		    width: 90%;
     		margin-top: -10%;
     		height: 284px;
+	}
+	.feat{
+		margin-top: 3%;
 	}
 }
 
