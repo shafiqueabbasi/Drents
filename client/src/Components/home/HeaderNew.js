@@ -53,7 +53,7 @@ class Headernew extends Component {
     <div>
  		<div className="container">
  			<div className="row navbar ">
-     			<div className="col-sm-2 col-md-2 col-lg-2">
+     			<div className="col-sm-2 col-md-2 col-lg-2 hidden-xs">
 					<img src="../images/drent-logo.png" style={{height:'45px', marginTop:'25px'}}/>
      			</div>
      			<div className="col-sm-1 col-md-3 col-lg-6 hidden-xs"></div>
@@ -66,7 +66,7 @@ class Headernew extends Component {
                       {!loggedIn && <li className="head">
                         <a href="#" className="nav" data-toggle="modal" data-target="#SignIn" >Sign In</a>
                           <div className="modal fade" id="SignIn" role="dialog">
-                            <div className="modal-dialog">
+                            <div className="modal-dialog widht_sm">
                               <div className="modal-content">
                                 <div className="modal-header">
                                   <button type="button" className="close" data-dismiss="modal">&times;</button>
@@ -115,7 +115,7 @@ class Headernew extends Component {
 	                          </span>
 	                        </Link>
                       </li>
-                 {loggedIn && <li className="headCartpro"><Link to={`/profile/${userId}`} className="nav">My Profile</Link></li>}     
+                 {loggedIn && <li className="headCartpro" style={{textAlign:'center'}}><Link to={`/profile/${userId}`} className="nav">My Profile</Link></li>}     
      				</ul>
      			</div>
  			</div>
@@ -191,12 +191,12 @@ class Headernew extends Component {
               </div>
             </div>
 
-            <div className="row visible-xs" style={{background:'linear-gradient(to bottom, #473463 0%, #2a1f3b 100%)'}}>
+            <div className="row visible-xs" style={{background:'linear-gradient(to bottom, #473463 0%, #2a1f3b 100%)', marginTop:'-22%' , marginLeft:'-13%'}}>
               <div className="col-md-4 col-xs-4">
                 <i onClick={this.openNav} className="fas fa-bars" style={{color:'white',marginLeft:'8px',fontSize:'24px',marginTop:'10px'}}></i>
               </div>
               <div className="col-xs-4">
-                <Link to={`/`}><img src="../images/drent-logo.png" style={{height:'45px', marginTop:'25px'}}/></Link>
+                <Link to={`/`}><img src="../images/drent-logo.png" style={{height:'45px'}}/></Link>
               </div>
               <div className="col-xs-4">
                 {/*<i className="fas fa-search"></i>*/}
