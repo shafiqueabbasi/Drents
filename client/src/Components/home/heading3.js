@@ -9,7 +9,7 @@ class Heading3 extends Component {
       		  <div className="container">
               <div className="row">
                   <div className="col-xs-12 col-sm-3 col-md-4 col-lg-4"></div>
-                  <div className="col-xs-12 col-sm-6 col-md-5 col-lg-4">
+                  <div className="col-xs-12 col-sm-6 col-md-5 col-lg-4 div_marg_how">
                       <p className="howwork">HOW IT WORKS</p>
                       <p className="rentwork">How Drent Works</p>
                       <div className="row">
@@ -45,7 +45,7 @@ class Heading3 extends Component {
                   </div>
                   <div className="col-xs-12 col-sm-3 col-md-3 col-md-4"></div>             
               </div>
-            </div>	
+            </div><br/><br/><br/>	
     	</div>
     );
 

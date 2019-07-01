@@ -45,7 +45,7 @@ class Heading2 extends Component {
 	    				</div>	
 	    			</div>
 	    		</div>
-	    	</div>
+	    	</div><br/><br/><br/><br/><br/><br/>
     	</div>
     	);
 
