@@ -15,29 +15,30 @@ import LogIn from './Components/login/SignIn';
 import ResetPassword from './Components/login/resetPassword';
 import SignUp from './Components/login/SignUp';
 import HttpUtils from './Service/HttpUtils';
-
 import { Router, Route, BrowserRouter } from 'react-router-dom';
-
 import { history } from './_helpers';
 import Header from './Components/home/Header';
 import HeaderNew from './Components/home/HeaderNew';
 import Header2New from './Components/home/Header2New';
 import FooterNew from './Components/home/footerNew';
 import Footer from './Components/home/headingf8';
-import MainPage from './Components/filter/index';
+import Catelog from './Components/filter/index';
 import Product from './Components/productdetail/productdetailfirstfold';
 import UserProfile from './Components/Userprofile/userprofile';
 import Checkout from './Components/Checkout/cartData';
+import { browserName } from 'react-device-detect';
 
 class App extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
-  	this.state = {
+    this.state = {
       response: '',
       post: '',
       responseToPost: '',
       arr: [],
-      footer: false
+      footer: false,
+      header : false,
+      header: false
     };
   }
 
@@ -72,29 +73,48 @@ class App extends Component {
   updateFooter = e => {
     this.setState({ footer: e })
   }
+  changingHeader = (val) => {
+    if (val == 'calling true') {
+      this.setState({
+        header: true
+      })
+    }
+    else if (val == 'calling false') {
+      this.setState({
+        header: false
+      })
+    }
+    // console.log('function call')
+    console.log(val)
+  }
 
   render() {
+    console.log(history , 'path')
+    // console.log(browserHistory , ';;;;;;;;')
+    const { header } = this.state
+    console.log(this.state.header, 'aaaaaaa')
     return (
       <div className="App">
         <BrowserRouter>
           <div>
-
-                {/*<Header arr={this.state.arr} />*/}
-              {/*<HeaderNew arr={this.state.arr} />*/}
-                <Header2New arr={this.state.arr} />
-
-                <Route path="/" exact component={Home} />
-                <Route path="/profile/:value" render={props => <UserProfile {...props} updateFooter={this.updateFooter}/>} />
-                <Route path="/product" component={MainPage} />
-                <Route path="/userdetail" component={Profile} />
-                <Route path="/reset/:token" component={ResetPassword} />
-                <Route path="/detail" render={props => { return <Product {...props} updateCart={this.updateCart}/>}} />
-                <Route path="/checkout" render={props => { return <Checkout {...props} updateCart={this.updateCart}/>}} />
-                {/* <Footer showFooter={this.state.footer}/>*/}
-                {/*<Userprofile/>*/} 
-
+                
+            {header ?
+              <Header2New arr={this.state.arr} />
+              :
+              <HeaderNew arr={this.state.arr} />
+            }
+            {/* <Route path="/" exact component={Home} changingHeader={this.changingHeader} /> */}
+            <Route path="/" exact render={props => <Home {...props} changingHeader={this.changingHeader} />} />
+            <Route path="/profile/:value" render={props => <UserProfile {...props} updateFooter={this.updateFooter} changingHeader={this.changingHeader} />} />
+            <Route path="/product" render={props => <Catelog {...props} changingHeader={this.changingHeader} />} />
+            <Route path="/userdetail" component={Profile} />
+            <Route path="/reset/:token" component={ResetPassword} />
+            <Route path="/detail" render={props => { return <Product {...props} updateCart={this.updateCart} /> }} />
+            <Route path="/checkout" render={props => { return <Checkout {...props} updateCart={this.updateCart} changingHeader={this.changingHeader}/> }} />
+            <FooterNew showFooter={this.state.footer}/>
+            {/*<Userprofile/>*/}
           </div>
-        </BrowserRouter>	
+        </BrowserRouter>
       </div>
     );
   }
@@ -103,4 +123,3 @@ class App extends Component {
 export default App;
 
 
-        

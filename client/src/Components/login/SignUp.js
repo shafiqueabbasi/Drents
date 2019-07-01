@@ -63,9 +63,9 @@ class SignUp extends Component {
                 				<div className="col-md-2 col-sm-4 col-xs-3"></div>
               			</div>
             				<div className="row">
-                  					<div className="col-lg-12 col-md-12 col-sm-6 col-xs-8 get_form_inner">
+                  					<div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 get_form_inner">
                   		    			<Form onSubmit={this.handleSubmit}>
-                              			<div className="group">
+                              			<div className="group model_textAlign">
                                         <p className="formtextup">First Name</p>
                                         <Form.Item>
                                             {getFieldDecorator('firstname', {
@@ -76,7 +76,7 @@ class SignUp extends Component {
                                         </Form.Item>
                                         <span className="highlight"></span>
                                     </div>
-                                    <div className="group" style={{padding:'none'}}>
+                                    <div className="group model_textAlign" style={{padding:'none'}}>
                                         <p className="formtextup">LastName</p>
                                         <Form.Item>
                                             {getFieldDecorator('lastname', {
@@ -87,7 +87,7 @@ class SignUp extends Component {
                                         </Form.Item>
                                         <span className="highlight"></span>
                                     </div>
-                                    <div className="group">
+                                    <div className="group model_textAlign">
                                         <p className="formtextup">Email</p>
                                         <Form.Item>
                                              {getFieldDecorator('email', {
@@ -102,7 +102,7 @@ class SignUp extends Component {
                                         </Form.Item>
                                         <span className="highlight"></span>
                                     </div>                            
-                                    <div className="group">
+                                    <div className="group model_textAlign">
                                         <p className="formtextup">Password</p>
                                         <Form.Item>
                                             {getFieldDecorator('password', {
@@ -117,7 +117,7 @@ class SignUp extends Component {
                                         </Form.Item>
                                     <span className="highlight"></span>
                                     </div>
-              							        <div className="group">
+              							        <div className="group model_textAlign">
                                         <p className="formtextup">Retype Password</p>
                                         <Form.Item>
                                             {getFieldDecorator('confirm', {

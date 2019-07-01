@@ -64,13 +64,16 @@ class UserProfile extends Component {
 
     componentDidMount(){
     	window.scrollTo(0,0);
-    	this.fetchUserData();
+		this.fetchUserData();
+		this.props.changingHeader('calling true');
+		console.log('user profile')
     }
 
     componentDidUpdate(prevProps, prevState){
     	if(this.props.match.params.value !== prevProps.match.params.value){
     		this.fetchUserData();
-    	}
+		}
+		
     }
 
 	async fetchUserData(){

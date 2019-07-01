@@ -38,6 +38,7 @@ class Filterpanel extends Component {
 				this.handleMainItems(null, filter);
 			}
 		}
+		this.props.changingHeader('calling true');
 	}
 
 	handleMainItems = (e, item) => {

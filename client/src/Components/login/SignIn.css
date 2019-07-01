@@ -125,3 +125,24 @@
   font-size: 15px;
   color: #9b9b9b;
 }
+
+@media only screen and (min-device-width : 360px) and (max-device-width : 767px){
+  .model_textAlign{
+      text-align: left;
+  }
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
+  .model_textAlign{
+      text-align: left;
+  }
+}
+@media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){
+  .model_textAlign{
+     text-align: left;
+  }
+}
+@media only screen and (min-device-width : 1366px) and (max-device-width : 1920px){
+  .model_textAlign{
+     text-align: left;
+  }
+}
