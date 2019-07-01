@@ -191,7 +191,7 @@ class Headernew extends Component {
               </div>
             </div>
 
-            <div className="row visible-xs" style={{background:'linear-gradient(to bottom, #473463 0%, #2a1f3b 100%)', marginTop:'-22%' , marginLeft:'-13%'}}>
+            <div className="row visible-xs" style={{background:'linear-gradient(to bottom, #473463 0%, #2a1f3b 100%)', marginTop:'-22%' , marginLeft:'-12%', marginBottom:'5%'}}>
               <div className="col-md-4 col-xs-4">
                 <i onClick={this.openNav} className="fas fa-bars" style={{color:'white',marginLeft:'8px',fontSize:'24px',marginTop:'10px'}}></i>
               </div>
