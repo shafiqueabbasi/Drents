@@ -37,11 +37,8 @@ class App extends Component {
       responseToPost: '',
       arr: [],
       footer: false,
-<<<<<<< HEAD
       header : false,
-=======
       header: false
->>>>>>> 782730ddd34b33bff5a7db450e96b4da1a5a120a
     };
   }
 
@@ -100,18 +97,7 @@ class App extends Component {
       <div className="App">
         <BrowserRouter>
           <div>
-                <HeaderNew arr={this.state.arr} />
-
-                <Route path="/" exact component={Home} header = {this.state.header}/>
-                <Route path="/profile/:value" render={props => <UserProfile {...props} updateFooter={this.updateFooter}/>} />
-                <Route path="/product" component={MainPage} />
-                <Route path="/userdetail" component={Profile} />
-                <Route path="/reset/:token" component={ResetPassword} />
-                <Route path="/detail" render={props => { return <Product {...props} updateCart={this.updateCart}/>}} />
-                <Route path="/checkout" render={props => { return <Checkout {...props} updateCart={this.updateCart}/>}} />
-                <FooterNew showFooter={this.state.footer}/>
-                {/*<Userprofile/>*/} 
-=======
+                
             {header ?
               <Header2New arr={this.state.arr} />
               :
@@ -127,7 +113,6 @@ class App extends Component {
             <Route path="/checkout" render={props => { return <Checkout {...props} updateCart={this.updateCart} changingHeader={this.changingHeader}/> }} />
             {/* <Footer showFooter={this.state.footer}/>*/}
             {/*<Userprofile/>*/}
->>>>>>> 782730ddd34b33bff5a7db450e96b4da1a5a120a
           </div>
         </BrowserRouter>
       </div>
