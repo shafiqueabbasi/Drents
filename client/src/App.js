@@ -22,21 +22,26 @@ import HeaderNew from './Components/home/HeaderNew';
 import Header2New from './Components/home/Header2New';
 import FooterNew from './Components/home/footerNew';
 import Footer from './Components/home/headingf8';
-import MainPage from './Components/filter/index';
+import Catelog from './Components/filter/index';
 import Product from './Components/productdetail/productdetailfirstfold';
 import UserProfile from './Components/Userprofile/userprofile';
 import Checkout from './Components/Checkout/cartData';
+import { browserName } from 'react-device-detect';
 
 class App extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
-  	this.state = {
+    this.state = {
       response: '',
       post: '',
       responseToPost: '',
       arr: [],
       footer: false,
+<<<<<<< HEAD
       header : false,
+=======
+      header: false
+>>>>>>> 782730ddd34b33bff5a7db450e96b4da1a5a120a
     };
   }
 
@@ -71,10 +76,26 @@ class App extends Component {
   updateFooter = e => {
     this.setState({ footer: e })
   }
+  changingHeader = (val) => {
+    if (val == 'calling true') {
+      this.setState({
+        header: true
+      })
+    }
+    else if (val == 'calling false') {
+      this.setState({
+        header: false
+      })
+    }
+    // console.log('function call')
+    console.log(val)
+  }
 
   render() {
     console.log(history , 'path')
     // console.log(browserHistory , ';;;;;;;;')
+    const { header } = this.state
+    console.log(this.state.header, 'aaaaaaa')
     return (
       <div className="App">
         <BrowserRouter>
@@ -90,8 +111,25 @@ class App extends Component {
                 <Route path="/checkout" render={props => { return <Checkout {...props} updateCart={this.updateCart}/>}} />
                 <FooterNew showFooter={this.state.footer}/>
                 {/*<Userprofile/>*/} 
+=======
+            {header ?
+              <Header2New arr={this.state.arr} />
+              :
+              <HeaderNew arr={this.state.arr} />
+            }
+            {/* <Route path="/" exact component={Home} changingHeader={this.changingHeader} /> */}
+            <Route path="/" exact render={props => <Home {...props} changingHeader={this.changingHeader} />} />
+            <Route path="/profile/:value" render={props => <UserProfile {...props} updateFooter={this.updateFooter} changingHeader={this.changingHeader} />} />
+            <Route path="/product" render={props => <Catelog {...props} changingHeader={this.changingHeader} />} />
+            <Route path="/userdetail" component={Profile} />
+            <Route path="/reset/:token" component={ResetPassword} />
+            <Route path="/detail" render={props => { return <Product {...props} updateCart={this.updateCart} /> }} />
+            <Route path="/checkout" render={props => { return <Checkout {...props} updateCart={this.updateCart} changingHeader={this.changingHeader}/> }} />
+            {/* <Footer showFooter={this.state.footer}/>*/}
+            {/*<Userprofile/>*/}
+>>>>>>> 782730ddd34b33bff5a7db450e96b4da1a5a120a
           </div>
-        </BrowserRouter>	
+        </BrowserRouter>
       </div>
     );
   }
@@ -100,4 +138,3 @@ class App extends Component {
 export default App;
 
 
-        
