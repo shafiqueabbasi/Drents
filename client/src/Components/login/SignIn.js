@@ -183,7 +183,7 @@ class SignIn extends Component {
 				{!showEmailButton && <div className="row">
 						<div className="col-md-12 col-sm-12 col-xs-12 get_form_inner">
 		    			{!forgotPassword && <Form onSubmit={this.handleSubmit}>
-                			<div className="group">
+                			<div className="group model_textAlign">
                           <p className="formtextup">Email</p>
                           <Form.Item>
                                {getFieldDecorator('email', {
@@ -199,7 +199,7 @@ class SignIn extends Component {
 		                  <span className="highlight"></span>
 		                  </div>
 
-							       <div className="group">
+							       <div className="group model_textAlign">
                           <p className="formtextup">Password</p>
                          <Form.Item>
                              {getFieldDecorator('password', {
@@ -213,7 +213,7 @@ class SignIn extends Component {
                              )}
                          </Form.Item>
 		                <span className="highlight"></span>
-                    <span onClick={this.forgotpassword}><a style={{color:'white'}}>Forgot Password</a></span>
+                    <span><p style={{color:'black'}} onClick={this.forgotpassword}>Forgot Password</p></span>
 		                </div>
                     {!showEmailButton && <div className="row">
                       {!forgotPassword && <div className="col-md-12 col-sm-12 col-xs-12" style={{textAlign: 'center'}}>
@@ -224,7 +224,7 @@ class SignIn extends Component {
 		                </Form>}
                     {forgotPassword && <Form onSubmit={this.handleforgotpassword}>
                         <div>
-                          <div className="group">
+                          <div className="group model_textAlign">
                           <Form.Item>
                                {getFieldDecorator('email', {
                                  rules: [{
@@ -259,7 +259,7 @@ class SignIn extends Component {
         {showEmailButton && <div className="row">          
           <div className="col-md-12 col-sm-12 col-xs-12 get_form_inner">
               <Form onSubmit={this.handleEmail}>
-                  <div className="group">
+                  <div className="group model_textAlign">
                       {/*<Form.Item>
                            {getFieldDecorator('email', {
                              rules: [{

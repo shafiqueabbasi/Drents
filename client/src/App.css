@@ -98,7 +98,7 @@
     border: none;
   }
   .modal-dialog{
-      width: 400px;
+      width: 75%;
       margin: 30px auto;
   }
 }
