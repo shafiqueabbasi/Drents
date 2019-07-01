@@ -52,7 +52,7 @@ class Headernew extends Component {
       return (
      	<div style={{backgroundColor: '#473463'}}>
      		<div className="container-fluid">
-     			<div className="row navbar">
+     			<div className="row navbar hidden-xs">
      				<div className="col-sm-1 col-md-1 col-lg-1 hidden-xs"></div> 
 	     			<div className="col-sm-2 col-md-2 col-lg-2">
 						<img src="../images/drent-logo.png" className="header2_new_logo"/>
@@ -121,6 +121,95 @@ class Headernew extends Component {
 	     				</ul>
 	     			</div>
      			</div>
+
+
+
+     			<div id="myNav" className="overlay visible-xs">
+              <a href="javascript:void(0)" className="closebtn" onClick={this.closeNav}>&times;</a>
+              <div className="overlay-content">
+                <ul className="nav navbar-nav navbar-right customhover">
+                      <li className="mob_head"><Link to={`/`} className="nav" onClick={this.closeNav}>Home</Link></li>
+                      <li className="mob_head"><Link to={`/product`} className="nav" onClick={this.closeNav}>Catalog</Link></li>
+                      {loggedIn &&<li className="mob_head"><Link to={`/profile/${userId}`} className="nav" onClick={this.closeNav}>My Profile</Link></li>}
+                      {loggedIn && <li className="mob_head" onClick={this.logOut}><a className="nav" onClick={this.closeNav}>Log Out</a></li>}
+
+                      {!loggedIn && <li className="mob_head">
+                        <a href="#" className="nav" data-toggle="modal" data-target="#SignIn1" onClick={this.closeNav}>Sign In</a>
+                          <div className="modal fade" id="SignIn1" role="dialog">
+                            <div className="modal-dialog">
+                              <div className="modal-content">
+                                <div className="modal-header">
+                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                  <h4 className="modal-title" style={{textAlign:'center',fontSize: '40px'}}>Sign In</h4>
+                                </div>
+                                <div className="modal-body">
+                                  <Login />
+                                </div>
+                                <div className="modal-footer">
+                                  <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                      </li>}
+                      {!loggedIn && <li className="head">
+                        <a href="#" className="nav" data-toggle="modal" data-target="#SignUp1">Sign Up</a>
+                          <div className="modal fade" id="SignUp1" role="dialog">
+                            <div className="modal-dialog">
+                              <div className="modal-content">
+                                <div className="modal-header">
+                                  <button type="button" className="close" data-dismiss="modal">&times;</button>
+                                  <h4 className="modal-title mob_menu" style={{textAlign:'center', marginLeft: '30px !important'}}>Sign Up</h4>
+                                </div>
+                                <div className="modal-body">
+                                    <SignUp />
+                                </div>
+
+                              </div>
+                            </div>
+                          </div>
+                      </li>}
+
+
+                      <li className="mob_headCart">
+                          <Link to={{pathname: `/checkout`, state: {finalArr}}} className="nav">
+                            Cart
+                            <span>
+                              {finalArr.length > 0 ? finalArr.length : ''}
+                            </span>
+                          </Link>
+                      </li>
+
+
+
+                      {/*<li className="head">
+                        <Link to={{pathname: `/checkout`, state: {finalArr}}} className="nav badge">
+                          <img src="../images/bag.png" style={{marginTop:'-5px'}}/>
+                          <span className="badge">
+                            {finalArr.length > 0 ? finalArr.length : ''}
+                          </span>
+                        </Link>
+                      </li>*/}
+                    </ul>
+              </div>
+            </div>
+
+            <div className="row visible-xs" style={{background:'#c2073f'}}>
+              <div className="col-md-4 col-xs-4">
+                <i onClick={this.openNav} className="fas fa-bars" style={{color:'white',marginLeft:'8px',fontSize:'24px',marginTop:'10px'}}></i>
+              </div>
+              <div className="col-xs-4">
+                <Link to={`/`}><img src="../images/Drent-logo-white.png" style={{width:'80%'}} /></Link>
+              </div>
+              <div className="col-xs-4">
+                {/*<i className="fas fa-search"></i>*/}
+              </div>
+            </div>
+
+
+
+
+
      		</div>
       	</div>
     );

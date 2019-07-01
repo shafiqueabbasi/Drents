@@ -29,7 +29,7 @@
   padding-left: 0px;
 }
 .head{
-  margin-right: 25px;
+  /*margin-right: 25px;*/
   margin-top: 20px;
   font-size: 15px;
   font-family: Playfair Display;
@@ -192,9 +192,17 @@
 }
 .headCart a{
     margin-top: 35px;
-	font-size: 40px;
    font-family: Playfair Display;
    color: #cb9d6c;
+}
+.mob_headCart a{
+	margin-top: 35px;
+	font-size: 40px;
+   font-family: Playfair Display;
+   color: #cb9d6c!important;
+}
+.mob_menu{
+	margin-left: 10px!important;
 }
 
 .dropdown {

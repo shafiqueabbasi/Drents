@@ -154,7 +154,7 @@ class FirstPage extends Component {
                               <div className="modal-content">
                                 <div className="modal-header">
                                   <button type="button" className="close" data-dismiss="modal">&times;</button>
-                                  <h4 className="modal-title" style={{textAlign:'center', paddingLeft: '40px'}}>Sign Up</h4>
+                                  <h4 className="modal-title mob_menu" style={{textAlign:'center', marginLeft: '30px !important'}}>Sign Up</h4>
                                 </div>
                                 <div className="modal-body">
                                     <SignUp />
@@ -166,7 +166,7 @@ class FirstPage extends Component {
                       </li>}
 
 
-                      <li className="headCart">
+                      <li className="mob_headCart">
                           <Link to={{pathname: `/checkout`, state: {finalArr}}} className="nav">
                             Cart
                             <span>

@@ -78,10 +78,7 @@ class App extends Component {
       <div className="App">
         <BrowserRouter>
           <div>
-
-                {/*<Header arr={this.state.arr} />*/}
                 <HeaderNew arr={this.state.arr} />
-
                 <Route path="/" exact component={Home} />
                 <Route path="/profile/:value" render={props => <UserProfile {...props} updateFooter={this.updateFooter}/>} />
                 <Route path="/product" component={MainPage} />
@@ -91,7 +88,6 @@ class App extends Component {
                 <Route path="/checkout" render={props => { return <Checkout {...props} updateCart={this.updateCart}/>}} />
                 {/* <Footer showFooter={this.state.footer}/>*/}
                 {/*<Userprofile/>*/} 
-
           </div>
         </BrowserRouter>	
       </div>
