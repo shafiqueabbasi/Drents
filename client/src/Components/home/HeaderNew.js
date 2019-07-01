@@ -56,8 +56,8 @@ class Headernew extends Component {
      			<div className="col-sm-2 col-md-2 col-lg-2">
 					<img src="../images/drent-logo.png" style={{height:'45px', marginTop:'25px'}}/>
      			</div>
-     			<div className="col-sm-1 col-md-3 col-lg-4 hidden-xs"></div>
-     			<div className="col-sm-9 col-md-7 col-lg-6 hidden-xs">
+     			<div className="col-sm-1 col-md-3 col-lg-6 hidden-xs"></div>
+     			<div className="col-sm-9 col-md-7 col-lg-4 hidden-xs">
      				<ul className="nav navbar-nav navbar-right">
      					<li className="head"><Link to={`/`}>Home</Link></li>
      					<li className="head"><Link to={`/product`} className="nav">Catalog</Link></li>
@@ -89,7 +89,7 @@ class Headernew extends Component {
                       {!loggedIn && <li className="head">
                         <a href="#" className="nav" data-toggle="modal" data-target="#SignUp">Sign Up</a>
                           <div className="modal fade" id="SignUp" role="dialog">
-                            <div className="modal-dialog">
+                            <div className="modal-dialog widht_sm">
                               <div className="modal-content">
                                 <div className="modal-header">
                                   <button type="button" className="close" data-dismiss="modal">&times;</button>

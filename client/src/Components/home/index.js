@@ -30,6 +30,7 @@ class Home extends Component {
     if(data.code && data.code === 200){
       this.setState({ data: data.allDress, loading: false});
     }
+    console.log(this.props.header)
   }
   render() {
     const { data,loading } = this.state;

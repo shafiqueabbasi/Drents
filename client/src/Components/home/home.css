@@ -94,6 +94,9 @@
 		height: 45px;
 	    margin-top: 25px;
 	}
+	.widht_sm{
+
+	}
 }
 @media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
 	.nav{
@@ -105,6 +108,10 @@
 	.header2_new_logo{
 		height: 45px;
 	    margin-top: 25px;
+	}
+	.widht_sm{
+		width: 50%;
+	    margin: 30px auto;
 	}
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){
@@ -118,6 +125,9 @@
 		height: 45px;
 	    margin-top: 25px;
 	    margin-left: -8%;
+	}
+	.widht_sm{
+		
 	}
 
 }
@@ -135,6 +145,9 @@
 		height: 45px;
 	    margin-top: 25px;
 	    margin-left: -22%;
+	}
+	.widht_sm{
+		
 	}
 }
 
@@ -1541,6 +1554,7 @@
 }
 .stage{
 	text-align: center;
+	margin-top: 5%;
 }
 {/*New Footer panal ENDS*/}
 

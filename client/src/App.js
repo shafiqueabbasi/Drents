@@ -15,9 +15,7 @@ import LogIn from './Components/login/SignIn';
 import ResetPassword from './Components/login/resetPassword';
 import SignUp from './Components/login/SignUp';
 import HttpUtils from './Service/HttpUtils';
-
 import { Router, Route, BrowserRouter } from 'react-router-dom';
-
 import { history } from './_helpers';
 import Header from './Components/home/Header';
 import HeaderNew from './Components/home/HeaderNew';
@@ -37,7 +35,8 @@ class App extends Component {
       post: '',
       responseToPost: '',
       arr: [],
-      footer: false
+      footer: false,
+      header : false,
     };
   }
 
@@ -74,19 +73,22 @@ class App extends Component {
   }
 
   render() {
+    console.log(history , 'path')
+    // console.log(browserHistory , ';;;;;;;;')
     return (
       <div className="App">
         <BrowserRouter>
           <div>
                 <HeaderNew arr={this.state.arr} />
-                <Route path="/" exact component={Home} />
+
+                <Route path="/" exact component={Home} header = {this.state.header}/>
                 <Route path="/profile/:value" render={props => <UserProfile {...props} updateFooter={this.updateFooter}/>} />
                 <Route path="/product" component={MainPage} />
                 <Route path="/userdetail" component={Profile} />
                 <Route path="/reset/:token" component={ResetPassword} />
                 <Route path="/detail" render={props => { return <Product {...props} updateCart={this.updateCart}/>}} />
                 <Route path="/checkout" render={props => { return <Checkout {...props} updateCart={this.updateCart}/>}} />
-                {/* <Footer showFooter={this.state.footer}/>*/}
+                <FooterNew showFooter={this.state.footer}/>
                 {/*<Userprofile/>*/} 
           </div>
         </BrowserRouter>	
