@@ -13,45 +13,47 @@ import Heading5 from './heading5';
 import Heading6 from './heading6';
 import Heading7 from './heading7';
 import Headingf8 from './headingf8';
-import { HttpUtils } from  '../../Service/HttpUtils';
+import { HttpUtils } from '../../Service/HttpUtils';
 
 class Home extends Component {
   constructor(props) {
-        super(props);
-        this.state = {
-        	data : [],
-          loading:true
-        }
-    }
-  async componentDidMount () {
-    //console.log(filter, 'propsssssssssssss')
-    window.scrollTo(0,0)
-    let data = await HttpUtils.get('getdresses');
-    if(data.code && data.code === 200){
-      this.setState({ data: data.allDress, loading: false});
+    super(props);
+    this.state = {
+      data: [],
+      loading: true
     }
   }
+  async componentDidMount() {
+    //console.log(filter, 'propsssssssssssss')
+    window.scrollTo(0, 0)
+    let data = await HttpUtils.get('getdresses');
+    if (data.code && data.code === 200) {
+      this.setState({ data: data.allDress, loading: false });
+    }
+    // this.props.changingHeader('calling false')
+    this.props.changingHeader('calling false');
+  }
   render() {
-    const { data,loading } = this.state;
+    const { data, loading } = this.state;
     return (
       <div className="App">
         {/*<Header/>*/}
         {loading && <div className="loading">Loading&#8230;</div>}
-        <Scrollimage/>
+        <Scrollimage />
         <Heading />
-        <Heading2/>
-        <Heading3/>
+        <Heading2 />
+        <Heading3 />
         <Gallery label="Featured Rentals"
-        data={data.slice(0, 5)}
-        widthProps=''
-        colLg='col-lg-2'
-        imgtextstyle='absoul'
-        imgheadtext='pinktext'
-        margBotom=''
-        featureFilter='featuresub'
-        showonhome={false}
+          data={data.slice(0, 5)}
+          widthProps=''
+          colLg='col-lg-2'
+          imgtextstyle='absoul'
+          imgheadtext='pinktext'
+          margBotom=''
+          featureFilter='featuresub'
+          showonhome={false}
         />
-        <Heading5/>
+        <Heading5 />
       </div>
     );
 
