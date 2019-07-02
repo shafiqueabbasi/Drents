@@ -115,7 +115,7 @@ class Headernew extends Component {
 	                          </span>
 	                        </Link>
                       </li>
-                 {loggedIn && <li className="headCartpro" style={{textAlign:'center'}}><Link to={`/profile/${userId}`} className="nav">My Profile</Link></li>}     
+                 {loggedIn && <li className="headCartpro marg_nav" style={{textAlign:'center'}}><Link to={`/profile/${userId}`} className="nav">My Profile</Link></li>}     
      				</ul>
      			</div>
  			</div>

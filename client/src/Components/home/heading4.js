@@ -14,7 +14,7 @@ class Heading4 extends Component {
 				<p className={`${this.props.featureFilter}`}>FEATURED</p>
 			</div>
     		{label && label.length > 0 && <div className="Heading col-md-9 col-sm-10">
-      			<h1 className="headings">&nbsp;&nbsp;{label}</h1>
+      			<h1 className={`${this.props.headLable}`}>&nbsp;&nbsp;{label}</h1>
       		</div>}
     		<div className="col-md-3 col-sm-2 row">
     			{showonhome && <div className="dropdown" style={{marginTop: '20px'}}>
@@ -70,10 +70,10 @@ class Heading4 extends Component {
 	    		<div className="container hidden-xs">
 	    			<div className="row">
 	    				<div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-	    					<img src="../images/arrow.png" className="featarrow"/>
+	    					<img src="../images/arrow.png" className={`${this.props.featureArrow}`}/>
 	    				</div>
 	    				<div className="col-xs-10 col-sm-10 col-md-10 col-lg-10">
-	    					<p className="featarrowtext">SHOW ALL FEATURED DRESSES</p>
+	    					<p className={`${this.props.featText}`}>SHOW ALL FEATURED DRESSES</p>
 	    				</div>
 	    			</div>
 	    		</div><br/><br/><br/><br/>	

@@ -48,6 +48,7 @@ class ResetPassword extends Component {
                 email: response.email
             });
         }
+        this.props.changingHeader('calling true');
     }
 
     compareToFirstPassword = (rule, value, callback) => {

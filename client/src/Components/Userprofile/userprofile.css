@@ -144,12 +144,14 @@
   .shut2{
       padding-left: 0px;
       margin-top: 0%;
+        margin-left: 1%;
   }
   .rovil2{
      font-family: playfair display;
      font-weight: 500;
       font-size: 35px;
      color:  #353535;
+         margin-left: 1%;
   } 
   .rovil4{
     margin-top: 5%;
@@ -173,6 +175,7 @@
       font-size: 20px;
       font-family: playfair display;
       color: #353535;
+      margin-left: 1%;
   }
   .desctext{
       font-size: 17px;

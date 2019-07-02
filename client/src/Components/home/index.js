@@ -55,6 +55,9 @@ class Home extends Component {
           imgheadtext='pinktext'
           margBotom=''
           featureFilter='featuresub'
+          featureArrow='featarrow'
+          featText='featarrowtext'
+          headLable='headings'
           showonhome={false}
         />
         <Heading5 />

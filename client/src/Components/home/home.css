@@ -34,6 +34,14 @@
   font-size: 15px;
   font-family: Playfair Display;
   color: #cb9d6c;
+  margin-left: -1%;
+}
+.head2{
+  margin-right: 20px;
+  margin-top: 20px;
+  font-size: 15px;
+  font-family: Playfair Display;
+  color: #cb9d6c;
 }
 .headpro{
   margin-right: 48px;
@@ -49,12 +57,12 @@
     color: #cb9d6c;
 }
 .headCartpro {
-  margin-right: -3%;
+ 	 margin-right: -3%;
     margin-top: -15px;
     font-size: 15px;
     font-family: Playfair Display;
     color: #cb9d6c;
-    text-align: right;
+    text-align: center;
 }
 .headCartpro a{
   margin-left: -20%;
@@ -99,6 +107,9 @@
 	.widht_sm{
 
 	}
+	.marg_nav{
+
+	}
 }
 @media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
 	.nav{
@@ -114,6 +125,9 @@
 	.widht_sm{
 		width: 50%;
 	    margin: 30px auto;
+	}
+	.marg_nav{
+		
 	}
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){
@@ -131,7 +145,9 @@
 	.widht_sm{
 		
 	}
-
+	.marg_nav{
+		margin-left: 3%;
+	}
 }
 @media only screen and (min-device-width : 1366px) and  (max-device-width : 1920px){
 	.nav{
@@ -150,6 +166,9 @@
 	}
 	.widht_sm{
 		
+	}
+	.marg_nav{
+		margin-left: 3%;
 	}
 }
 
@@ -205,6 +224,10 @@
   font-family: Playfair Display;
   color: #cb9d6c;
 }
+.head2 a{
+  font-family: Playfair Display;
+  color: #cb9d6c;
+}
 .headCart a{
     margin-top: 35px;
    font-family: Playfair Display;
@@ -248,15 +271,15 @@
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 767px){
 	.banneralign{
-		margin-top: -30%;
-		background-size: cover;
-		width: 100%;
-		height: 350px;
+		margin-top: -20%;
+	    background-size: cover;
+	    width: 100%;
+	    height: 380px;
 	}
 	.relationtext{
 		position: relative;
-	    margin-top: -70%;
-	    margin-left: -4px;
+        margin-top: -76%;
+    	margin-left: -4px;
 
 	}
 	.lartext{
@@ -288,7 +311,7 @@
 	    margin-top: -33px;
 	 }
 	.scrollimag{
-	    margin-top: -21px;
+	    margin-top: 12px;
     	height: 70px;
     	-webkit-animation: mover 0.5s infinite  alternate;
     	animation: mover 0.5s infinite  alternate;
@@ -372,16 +395,16 @@
 	}
 }
 /*@media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){*/
-@media only screen and (min-width: 1024px)and (max-width: 1365px){
+@media only screen and (min-device-width: 1024px)and (max-device-width: 1365px){
 	.banneralign{
 	    background-size: cover;
 	    width: 100%;
-	    height: 720px;
+	    height: 760px;
 	    margin-top: -17%;
 	}
 	.relationtext{
 		position: relative !important;
-        margin-top: -59% !important;
+        margin-top: -62% !important;
     	margin-left: 40px !important;
 	}
 	.lartext{
@@ -411,7 +434,7 @@
     	margin-left: -6% !important;
 	}
 	.scrollimag{
-		margin-top: -6% !important;
+		margin-top: 1% !important;
 		-webkit-animation: mover 0.5s infinite  alternate;
     	animation: mover 0.5s infinite  alternate;
 	}
@@ -432,7 +455,7 @@
 		text-align: center;
 	}
 }
-@media only screen and (min-width : 1366px) and  (max-width : 1920px){
+@media only screen and (min-device-width : 1366px) and  (max-device-width : 1920px){
 	.banneralign{
 		margin-top: -9%;
 	    background-size: cover;
@@ -470,7 +493,7 @@
 	    margin-left: -22%;
 	}
 	.scrollimag{
-		margin-top: -3px;
+		margin-top: 0px;
 		    height: 100px;
 		-webkit-animation: mover 0.5s infinite  alternate;
     	animation: mover 0.5s infinite  alternate;
@@ -1062,6 +1085,7 @@
 	    letter-spacing: 4px;
 	    margin-left: -10%;
 	    color: #808080;
+	    margin-top: -34px;
 	}
 	.absoul{
 		position: absolute;
@@ -1163,13 +1187,17 @@
 	    height: 136px;
 	    width: 85%;
 	}
+	.featarrow{
+		margin-top: -12%;
+	}
 }
 
 
 @media only screen and (min-device-width : 360px) and (max-device-width : 767px){
     .headings{
         font-family: Playfair Display;
-        margin-left: -24% !important;
+        text-align: left;
+   		 margin-left: -2%;
     }
     .featuredhead{
 		font-size: 40px;
@@ -1182,7 +1210,7 @@
 	    color: #808080;
 	    letter-spacing: 5px;
 	    margin-bottom: 0px;
-	    margin-left: 10%;
+	    margin-left: 13%;
 	}
 	.cloth{
 		color: #9b9b9b!important;
@@ -1191,12 +1219,16 @@
 		text-align: left;
 		margin-left: 49%;
 	}
+	.featarrow{
+		margin-top: -12%;
+	}
 }
 @media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
    .headings{
         font-family: Playfair Display;
         font-Size: 35px;
         text-align: left;
+        margin-left: -1%;
         /*padding-left: 8%;*/
     }
     .featuredhead{
@@ -1233,13 +1265,16 @@
 	    font-family: Playfair Display;
 	    color: #353535;
 	}
+	.featarrow{
+		margin-top: -12%;
+	}
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){
    .headings{
         font-family: Playfair Display;
         font-Size: 40px;
         text-align: left;
-        padding-left: 2%;
+        padding-left: 17px;
     }
     .featuredhead{
 		font-size: 40px;
@@ -1261,13 +1296,17 @@
 		text-align: left;
 		margin-left: 49%;
 	}
+	.featarrow{
+	    margin-top: -70%;
+    	margin-left: 2%;
+	}
 }
-@media only screen and (min-device-width : 1366px){
+@media only screen and (min-device-width : 1366px) and (max-device-width : 1920px){
    .headings{
         font-family: Playfair Display;
         font-Size: 40px;
         text-align: left;
-        padding-left: 8%;
+       padding-left: 75px;
     }
     .featuredhead{
 		font-size: 40px;
@@ -1289,6 +1328,9 @@
 		text-align: left;
 		margin-left: 49%;
 	}
+	.featarrow{
+	    margin-top: -12%;
+	}
 }
 
 
@@ -1296,9 +1338,7 @@
 
 
 
-.featarrow{
-	margin-top: -12%;
-}
+
 {/*New heading4new panal ENDS*/}
 
 {/*New heading5 panal*/}
@@ -1324,6 +1364,17 @@
 		    height: 95px;
 		    margin-left: -14px;
 	}
+	.benetext{
+		font-size: 12px;
+	    font-family: Tajawal;
+	    letter-spacing: 4px;
+	    color: #808080;
+	}
+	.whydrenttext{
+		font-size: 40px;
+		font-family: Playfair Display;
+		color: #353535;
+	}
 }
 @media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
 	.whydresub{
@@ -1341,6 +1392,17 @@
 	.payless{
 		margin-top: 5%;
 		margin-bottom: 15px;
+	}
+	.benetext{
+		font-size: 12px;
+	    font-family: Tajawal;
+	    letter-spacing: 4px;
+	    color: #808080;
+	}
+	.whydrenttext{
+		font-size: 40px;
+		font-family: Playfair Display;
+		color: #353535;
 	}
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){
@@ -1363,8 +1425,21 @@
 		margin-bottom: 15px;
 		height: 81px;
 	}
+	.benetext{
+		font-size: 12px;
+	    font-family: Tajawal;
+	    letter-spacing: 4px;
+	    color: #808080;
+	    margin-left: -14%;
+	}
+	.whydrenttext{
+		font-size: 40px;
+		font-family: Playfair Display;
+		color: #353535;
+		margin-left: -14%;
+	}
 }
-@media only screen and (min-device-width : 1366px) and (max-width: 1824px){
+@media only screen and (min-device-width : 1366px) and (max-width: 1920px){
 	.whydresub{
 	    font-size: 30px;
 	    line-height: 31px;
@@ -1381,18 +1456,20 @@
 		margin-top: 5%;
 		margin-bottom: 15px;
 	}
+	.benetext{
+		font-size: 12px;
+	    font-family: Tajawal;
+	    letter-spacing: 4px;
+	    color: #808080;
+	}
+	.whydrenttext{
+		font-size: 40px;
+		font-family: Playfair Display;
+		color: #353535;
+	}
 }
-.benetext{
-	font-size: 12px;
-    font-family: Tajawal;
-    letter-spacing: 4px;
-    color: #808080;
-}
-.whydrenttext{
-	font-size: 40px;
-	font-family: Playfair Display;
-	color: #353535;
-}
+
+
 
 .whydresmal{
 	    font-size: 12px;
@@ -1451,10 +1528,14 @@
 		color : #cb9d6c;
 		margin-left: -9%;
 	}
+	.stage{
+		text-align: center;
+		margin-top: 13%;
+	}
 }
 @media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
 	.quickfooter{
-		font-size: 35px;
+		font-size: 18px;
 		font-family: Playfair Display ;
 		color: #ffffff;
 	}
@@ -1473,12 +1554,17 @@
 		font-size: 15px;
 		font-family: Playfair Display;
 		color : #cb9d6c;
-		margin-left: -23%;
+	    margin-left: -30%;
 	}
 	.contnofoot{
 		font-size: 15px;
 		font-family: Playfair Display;
 		color : #cb9d6c;
+		margin-left: -28%;
+	}
+	.stage{
+		text-align: center;
+		margin-top: 13%;
 	}
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){
@@ -1509,6 +1595,10 @@
 		font-family: Playfair Display;
 		color : #cb9d6c;
 	}
+	.stage{
+		text-align: center;
+		margin-top: 7%;
+	}
 }
 @media only screen and (min-device-width : 1366px){
 	.quickfooter{
@@ -1537,6 +1627,10 @@
 		font-size: 15px;
 		font-family: Playfair Display;
 		color : #cb9d6c;
+	}
+	.stage{
+		text-align: center;
+		margin-top: 5%;
 	}
 }
 
@@ -1568,10 +1662,7 @@
 	font-size: 13px;
 	padding-top: 10px;
 }
-.stage{
-	text-align: center;
-	margin-top: 5%;
-}
+
 {/*New Footer panal ENDS*/}
 
 

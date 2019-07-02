@@ -102,7 +102,7 @@ class Profile extends Component {
 										value={this.state.firstName}
 										className="input"
 										col="col-lg-6 col-md-6 col-sm-6"
-										col2="col-lg-10 col-md-10 col-sm-10"
+										col2="col-lg-10 col-md-11 col-sm-10"
 										Change={this.inputHandleChange}
 									/>
 								</div>	
@@ -113,7 +113,7 @@ class Profile extends Component {
 										value={this.state.lastName}
 										className="input"
 										col="col-lg-6 col-md-6 col-sm-6"
-										col2="col-lg-10 col-md-10 col-sm-10"
+										col2="col-lg-10 col-md-11 col-sm-10"
 										Change={this.inputHandleChange}
 									/>
 								</div>	
@@ -125,7 +125,7 @@ class Profile extends Component {
 										id="email"
 										className="input"
 										col="col-lg-6 col-md-6 col-sm-6"
-										col2="col-lg-10 col-md-10 col-sm-10"
+										col2="col-lg-10 col-md-11 col-sm-10"
 										value={this.state.email}
 										Change={this.inputHandleChange}
 									/>
@@ -134,7 +134,7 @@ class Profile extends Component {
 										<div className="col-lg-6 col-md-6 col-sm-10 col-xs-12">
 											<h3 className="input_form_Profile">Change Password</h3>
 										</div>
-										<div className="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+										<div className="col-lg-10 col-md-11 col-sm-10 col-xs-12">
 											
 										    <ChangePassword user={this.props.user.email}/>
 										</div>
@@ -173,7 +173,7 @@ class Profile extends Component {
 										value={this.state.inputHeight}
 										className="input"
 										col="col-lg-6 col-md-6 col-sm-6"
-										col2="col-lg-10 col-md-10 col-sm-10"
+										col2="col-lg-10 col-md-11 col-sm-10"
 										Change={this.inputHandleChange}
 									/>
 								</div>
@@ -184,7 +184,7 @@ class Profile extends Component {
 										value={this.state.weight}
 										className="input"
 										col="col-lg-6 col-md-6 col-sm-6"
-										col2="col-lg-10 col-md-10 col-sm-10"
+										col2="col-lg-10 col-md-11 col-sm-10"
 										Change={this.inputHandleChange}
 									/>
 								</div>
@@ -196,7 +196,7 @@ class Profile extends Component {
 										id="bustSize"
 										value={this.state.bustSize}
 										col="col-lg-6 col-md-6 col-sm-6"
-										col2="col-lg-10 col-md-10 col-sm-10"
+										col2="col-lg-10 col-md-11 col-sm-10"
 										className="input"
 										Change={this.inputHandleChange}
 									/>
@@ -208,7 +208,7 @@ class Profile extends Component {
 										value={this.state.bodyType}
 										className="input"
 										col="col-lg-6 col-md-6 col-sm-6"
-										col2="col-lg-10 col-md-10 col-sm-10"
+										col2="col-lg-10 col-md-11 col-sm-10"
 										options={[1,2,3,4,5]}
 										Change={this.inputHandleChange}
 									/>
@@ -222,7 +222,7 @@ class Profile extends Component {
 										value={this.state.ocassionAttendMost}
 										className="input"
 										col="col-lg-6 col-md-6 col-sm-6"
-										col2="col-lg-10 col-md-10 col-sm-10"
+										col2="col-lg-10 col-md-11 col-sm-10"
 										options={['Causal','Bridal','Semi Formal','Formal','Heavy Formal']}
 										Change={this.inputHandleChange}
 									/>
@@ -234,7 +234,7 @@ class Profile extends Component {
 										value={this.state.typicalJeanSize}
 										className="input"
 										col="col-lg-6 col-md-6 col-sm-6"
-										col2="col-lg-10 col-md-10 col-sm-10"
+										col2="col-lg-10 col-md-11 col-sm-10"
 										options={this.state.sizeWear}
 										Change={this.inputHandleChange}
 									/>
@@ -367,7 +367,7 @@ class Profile extends Component {
 								<div className="col-md-4 col-sm-4"></div>
 							</div>
 							<div className="row"  style={{margin:'0px'}}>
-								<div className="col-lg-6 col-md-6 col-sm-4"></div>
+								<div className="col-lg-5 col-md-5 col-sm-4"></div>
 								<div className="col-lg-3 col-md-3 col-sm-4">
 									<input type="submit" name="" className="buttonsave" value="Save Changes" onClick={this.handleSubmit}/>
 								</div>

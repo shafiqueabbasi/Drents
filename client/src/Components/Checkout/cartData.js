@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import StripeData from '../form/mainpayment';
 import { connect } from 'react-redux';
 import { HttpUtils } from '../../Service/HttpUtils';
+import { Link , Route} from 'react-router-dom';
 import moment from 'moment';
 import { Redirect } from 'react-router';
 import './cartData.css'
@@ -122,10 +123,12 @@ class CartData extends Component {
 										</button>
 								</div>
 								<div className="col-xs-12 col-lg-4 col-md-4 col-sm-4">
-									<button
-										className="btn btn_browse_dresses"
-									> Browse more dresses
+									<Link to={'/product'}>
+										<button
+												className="btn btn_browse_dresses"
+												> Browse more dresses
 										</button>
+									</Link>	
 								</div>
 							</div><br />
 							{finalArr && finalArr.map((elem, key) => {

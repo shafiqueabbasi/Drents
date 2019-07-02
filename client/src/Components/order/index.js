@@ -27,7 +27,8 @@ class Order extends Component {
                   rented: [],
                   rentals: [],
                   historyData: [],
-                  loading: true
+                  loading: true,
+                  profileView:true,
             }
       }
 
@@ -40,6 +41,7 @@ class Order extends Component {
                   this.renderWithState(goTo, orderTabs);
             }
             this.filterDataWithStatus();
+            this.props.changingHeader('calling true');
 
       }
 
@@ -91,6 +93,7 @@ class Order extends Component {
       }
 
       renderWithState(goTo, arr) {
+            console.log(goTo , 'renderWithState')
             arr = arr.map((elem) => {
                   let key = Object.keys(elem)[0];
                   if (key == goTo) {
@@ -104,6 +107,17 @@ class Order extends Component {
             } else {
                   this.setState({ orderTabs: arr });
             }
+            if(goTo == 'profile'){
+            this.setState({
+                  profileView:true
+            })                  
+            }
+            else{
+                 this.setState({
+                  profileView:false
+            })     
+            }
+
       }
 
       render() {
@@ -155,7 +169,11 @@ class Order extends Component {
                               <div className="row" style={{ margin: '0px' }}>
                                     {goTo == 'profile' && <div className="col-sm-2 col-md-2 col-lg-2"></div>}
                                     {goTo == 'profile' && <div className="col-sm-3 col-md-4 col-lg-4">
+                                          {this.state.profileView?
                                           <p className="profile_editHead">Edit Profile</p>
+                                          :
+                                          <p className="upload_editHead">Upload Dress</p>
+                                          }
                                     </div>}
                                     {goTo == 'profile' && <div className="col-sm-2 col-md-1 col-lg-1">
                                           <button

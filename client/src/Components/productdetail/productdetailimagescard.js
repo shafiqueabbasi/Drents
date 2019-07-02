@@ -108,7 +108,7 @@
 								<img 
 									alt="" 
 									src={elem} 
-									style={isTablet ? {height:"230px" , marginLeft:'-3%', width:'8%'} : {height:"70px" , width:'73%'}} 
+									style={isTablet ? {height:"230px" , marginLeft:'-3%', width:'100%'} : {height:"70px" , width:'73%'}} 
 									onClick={
 										() => this.setState({ showImg: elem })
 									}

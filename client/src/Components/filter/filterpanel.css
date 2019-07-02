@@ -2,11 +2,11 @@
 @media only screen and (min-device-width : 360px) and (max-device-width : 767px){
   .absoulFilter{
     position: absolute;
-    margin-top: -58%;
-    margin-left: 7%;
+    margin-top: 25%;
+    margin-left: -4%;
   }
   .pinktextFilter{
-    font-size: 31px;
+    font-size: 23px;
     font-family: playfair display;
     color: black;
     margin-top: -22%;
@@ -23,6 +23,22 @@
       margin-bottom: 0px;
       margin-left: 11%;
     }
+  .featFilterarrow{
+      margin-top: 1%;
+  } 
+  .filterarrowtext{
+      font-size: 12px;
+      font-family: Tajawal;
+      letter-spacing: 4px;
+      margin-left: -13%;
+      color: #808080;
+  }
+  .filterheadlable{
+     font-family: Playfair Display;
+    margin-left: -6% !important;
+    font-size: 30px;
+    text-align: left;
+  }
 }
 @media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
   .absoulFilter{
@@ -46,6 +62,21 @@
       margin-bottom: 0px;
       margin-left: 11%;
     }
+  .featFilterarrow{
+      margin-top: -20%;
+  } 
+  .filterarrowtext{
+      font-size: 12px;
+      font-family: Tajawal;
+      letter-spacing: 4px;
+      margin-left: -7%;
+      color: #808080;
+  }
+  .filterheadlable{
+      font-family: Playfair Display;
+      font-Size: 35px;
+     margin-left: -15%;
+  } 
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
   .absoulFilter{
@@ -65,10 +96,26 @@
       color: #808080;
       letter-spacing: 5px;
       margin-bottom: 0px;
-      margin-left: 11%;
+      margin-left: 66px;
     }
+  .featFilterarrow{
+      margin-top: 1%;
+  }  
+  .filterarrowtext{
+      font-size: 12px;
+      font-family: Tajawal;
+      letter-spacing: 4px;
+      margin-left: -13%;
+      color: #808080;
+  }
+  .filterheadlable{
+       font-family: Playfair Display;
+      font-Size: 40px;
+      text-align: left;
+      padding-left: 3%;
+  }
 }
-@media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
+@media only screen and (min-device-width : 1366px) and (max-device-width : 1920px){
   .absoulFilter{
     position: absolute;
     margin-top: 3%;
@@ -89,7 +136,24 @@
       margin-bottom: 0px;
       margin-left: 11%;
     }
-
+  .featFilterarrow{
+      margin-top: -83%;
+      margin-left: 33%;
+  }  
+  .filterarrowtext{
+     font-size: 12px;
+    font-family: Tajawal;
+    letter-spacing: 4px;
+    margin-left: -6%;
+    color: #808080;
+    margin-top: -6%;
+  }
+  .filterheadlable{
+      font-family: Playfair Display;
+      font-Size: 40px;
+      text-align: left;
+      padding-left: 50px;
+  }
 }
 
 

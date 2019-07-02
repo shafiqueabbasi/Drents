@@ -348,7 +348,7 @@
 }
 
 
-@media only screen and (min-device-width : 360px) and (max-device-width : 640px){
+@media only screen and (min-device-width : 360px) and (max-device-width : 767px){
   .morebtn{
           padding: 0px;
           border-radius: 15px;
@@ -387,7 +387,7 @@
   }
 
 }
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
+@media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
   .morebtn{
          padding: 0px;
     border-radius: 15px;
@@ -413,7 +413,7 @@
   .userstar{
     color: #cb9d6c;
     font-size: 20px;
-    margin-left: 16%;
+    margin-left: 17%;
     margin-top: -3%;
   }
   .userstar_rating{
@@ -424,7 +424,7 @@
        font-family: playfair display;
   }
 }
-@media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
+@media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){
   .morebtn{
              padding: 0px;
           border-radius: 15px;
@@ -454,13 +454,13 @@
   }
   .userstar_rating{
         padding: 0;
-        margin-top: -16%;
-        margin-left: 57%;
+        margin-top: -7%;
+        margin-left: 35%;
         color: #353535;
        font-family: playfair display;
   }
 }
-@media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
+@media only screen and (min-device-width : 1366px) and (max-device-width : 1920px){
   .morebtn{
          border-radius: 15px;
          width: 90%;
@@ -484,14 +484,14 @@
   .userstar{
     color: #cb9d6c;
     font-size: 20px;
-    margin-left: 6%;
+    margin-left: 7%;
     margin-top: -1%;
     margin-bottom: 10%;
   }
   .userstar_rating{
     padding: 0;
-    margin-top: -22.5%;
-    margin-left: 47%;
+    margin-top: -14.5%;
+    margin-left: 26%;
     color: #353535;
     font-family: playfair display;
     }
@@ -525,6 +525,12 @@
      font-size: 45px;
      color: #353535;
   }
+  .upload_editHead{
+     font-family: playfair display;
+    font-size: 25px;
+    color: #353535;
+    margin-left: -12%;
+  }
   .rental_btn{
       font-family: playfair display;
       color: #9A88A2;
@@ -534,6 +540,35 @@
       width: 100%;
       margin-left: -3%;
       margin-top: 7%;
+  }
+  .upload_upimg{
+      font-family: playfair display;
+    font-size: 30px;
+    color: #353535;
+    margin-top: 7%;
+    margin-left: 15%;
+  }
+  .fileText{
+    font-family: playfair display;
+    color: #9b9b9b;
+    font-size: 15px;
+  }
+  .upload_heading_basic{
+        font-family: playfair display;
+      font-size: 30px;
+      color: #353535;
+      margin-top: 7%;
+    margin-left: 5%;
+  }
+   .marg_left_up{
+        margin-left: -8%;
+  }
+  .availablity_head{
+    font-family: playfair display;
+    font-size: 30px;
+    color: #353535;
+    margin-top: 7%;
+    margin-left: 5%;
   }
 }
 @media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
@@ -563,6 +598,12 @@
     color: #353535;
     margin-left: -25%;
   }
+  .upload_editHead{
+    font-family: playfair display;
+    font-size: 25px;
+    color: #353535;
+    margin-left: -11%;
+  }
   .rental_btn{
       font-family: playfair display;
       color: #9A88A2;
@@ -571,6 +612,35 @@
       font-size: 13px;
       width: 152%;
       margin-left: -35%;
+  }
+  .upload_upimg{
+     font-family: playfair display;
+    font-size: 20px;
+    color: #353535;
+    margin-top: 7%;
+    margin-left: 15%;
+  }
+  .fileText{
+    font-family: playfair display;
+    color: #9b9b9b;
+    font-size: 15px;
+    margin-left: 14%
+  }
+  .upload_heading_basic{
+       font-family: playfair display;
+      font-size: 30px;
+      color: #353535;
+      margin-top: 7%;
+      margin-left: 13px;
+  }
+   .marg_left_up{
+ 
+  }
+  .availablity_head{
+    font-family: playfair display;
+    font-size: 30px;
+    color: #353535;
+    margin-top: 7%;
   }
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){
@@ -600,7 +670,13 @@
      font-family: playfair display;
     font-size: 43px;
     color: #353535;
-    margin-left: 6%;
+    margin-left: 7%;
+  }
+  .upload_editHead{
+     font-family: playfair display;
+    font-size: 43px;
+    color: #353535;
+    margin-left: 12%;
   }
   .rental_btn{
       font-family: playfair display;
@@ -610,8 +686,38 @@
       font-size: 13px;
       width: 100%;
   }
+  .upload_upimg{
+      font-family: playfair display;
+      font-size: 30px;
+      color: #353535;
+      margin-top: 7%;
+      margin-left: 5%;
+  }
+  .fileText{
+    font-family: playfair display;
+    color: #9b9b9b;
+    font-size: 15px;
+    margin-left: 6%
+  }
+  .upload_heading_basic{
+        font-family: playfair display;
+      font-size: 30px;
+      color: #353535;
+      margin-top: 7%;
+          margin-left: 2%;
+  }
+   .marg_left_up{
+      margin-left: 2%;
+  }
+  .availablity_head{
+    font-family: playfair display;
+    font-size: 30px;
+    color: #353535;
+    margin-top: 7%;
+    margin-left: 13px;
+  }
 }
-@media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
+@media only screen and (min-device-width : 1366px) and (max-device-width : 1920px){
   .OH{
      margin-top: -21.5%;
      margin-left: 74%;
@@ -631,13 +737,19 @@
       padding: 15px;
       font-size: 15px;
       width: 89%;
-      margin-left: 15%;
+      margin-left: 19%;
   }
   .profile_editHead{
-     font-family: playfair display;
+    font-family: playfair display;
     font-size: 45px;
     color: #353535;
-    margin-left: 5%;
+    margin-left: 23px;
+  }
+  .upload_editHead{
+    font-family: playfair display;
+    font-size: 43px;
+    color: #353535;
+    margin-left: 39px;
   }
   .rental_btn{
       font-family: playfair display;
@@ -647,7 +759,36 @@
       font-size: 13px;
       width: 100%;
   }
-
+  .upload_upimg{
+      font-family: playfair display;
+      font-size: 30px;
+      color: #353535;
+      margin-top: 7%;
+      margin-left: 6%;
+  }
+  .fileText{
+    font-family: playfair display;
+    color: #9b9b9b;
+    font-size: 15px;
+    margin-left: 6%
+  }
+  .upload_heading_basic{
+        font-family: playfair display;
+      font-size: 30px;
+      color: #353535;
+      margin-top: 7%;
+      margin-left: 14px;
+  }  
+  .marg_left_up{
+      margin-left: 2%;
+  }
+  .availablity_head{
+    font-family: playfair display;
+    font-size: 30px;
+    color: #353535;
+    margin-top: 7%;
+    margin-left: 13px;
+  }
 }
 
 
@@ -844,17 +985,59 @@
     transition: .5s;
     opacity: .5;
 }
-.inputBox .input{
-  position: relative;
-  width: 100%;
-  height: 50px;
-  background-color: #e1e1e1;
-  border: none;
-  outline: none;
-  font-size: 20px;
-  padding: 5px;  
-    /*border-bottom: 1px solid rgba(0,0,0,.5);*/
+@media only screen and (min-device-width : 360px) and (max-device-width : 767px){
+      .inputBox .input{
+        position: relative;
+        width: 100%;
+        height: 50px;
+        background-color: #e1e1e1;
+        border: none;
+        outline: none;
+        font-size: 20px;
+        padding: 5px;  
+        /*border-bottom: 1px solid rgba(0,0,0,.5);*/
+    }
 }
+@media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
+    .inputBox .input{
+        position: relative;
+        width: 100%;
+        height: 50px;
+        background-color: #e1e1e1;
+        border: none;
+        outline: none;
+        font-size: 20px;
+        padding: 5px;  
+        /*border-bottom: 1px solid rgba(0,0,0,.5);*/
+    }
+}
+@media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){
+  .inputBox .input{
+        position: relative;
+        width: 100%;
+        height: 50px;
+        background-color: #e1e1e1;
+        border: none;
+        outline: none;
+        font-size: 20px;
+        padding: 5px;  
+        /*border-bottom: 1px solid rgba(0,0,0,.5);*/
+    }
+}
+@media only screen and (min-device-width : 1366px) and (max-device-width : 1920px){
+    .inputBox .input{
+        position: relative;
+        width: 100%;
+        height: 50px;
+        background-color: #e1e1e1;
+        border: none;
+        outline: none;
+        font-size: 20px;
+        padding: 5px;  
+        /*border-bottom: 1px solid rgba(0,0,0,.5);*/
+    }
+}
+
 
 @media only screen and (min-device-width : 360px) and (max-device-width : 767px){
     .Heading {
@@ -924,7 +1107,7 @@
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){
   .textarea_profile{
       height: 100px !important;
-      width: 88%;
+      width: 92%;
       background-color: #e1e1e1;
       border: none;
       outline: none;
@@ -1081,7 +1264,7 @@ input[type="file"] {
   width: 165px;
   color: black;
 }
-@media only screen and (min-device-width : 360px) and (max-device-width : 660px){
+@media only screen and (min-device-width : 360px) and (max-device-width : 767px){
     .googleapp{
         width: 70%;
         margin-left: 21%;
@@ -1100,8 +1283,18 @@ input[type="file"] {
               margin-top: -13%;
               margin-left: 84%; 
       }
+      .order_history_command{
+        font-family: playfair display;
+        font-size: 16px;
+        margin-left: -5%;
+    } 
+    .orderHistory_sizes{
+        font-family: playfair display;
+        font-size: 16px;
+        margin-left: -2%;
+    }
   }
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
+@media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
   .googleapp{
             width : 85%;
             margin-left :  15%;
@@ -1120,8 +1313,18 @@ input[type="file"] {
           margin-top: -12%;
           margin-left: 34%; 
       }
+      .order_history_command{
+        font-family: playfair display;
+        font-size: 16px;
+        margin-left: -7%;
+    } 
+    .orderHistory_sizes{
+        font-family: playfair display;
+        font-size: 16px;
+        margin-left: -4%;
+    }
 }
-@media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
+@media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){
   .googleapp{
             width: 100%;
             margin-left: 3%;
@@ -1139,16 +1342,26 @@ input[type="file"] {
               margin-top: -24%;
               margin-left: 55%;
       }
+      .order_history_command{
+         font-family: playfair display;
+        font-size: 16px;
+        margin-left: -6%;
+    }
+    .orderHistory_sizes{
+        font-family: playfair display;
+        font-size: 16px;
+        margin-left: -2%;
+    } 
 }
-@media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
-  .googleapp{
+@media only screen and (min-device-width : 1366px) and (max-device-width : 1920px){
+    .googleapp{
             width : 85%;
             margin-left :  10%;
             width : 85%;
             margin-left :  11%;
             text-align: center;
-      }
-  .google2{
+    }
+    .google2{
             margin-right: 2%;
     }
     .productStar{
@@ -1156,12 +1369,22 @@ input[type="file"] {
             font-size: 17px;
             margin-left: 10%;
             margin-top: 0%;
-      }
-      .productRating{
+    }
+    .productRating{
             padding: 0;
             margin-top: -16%;
             margin-left: 55%; 
-      }
+    }
+    .order_history_command{
+        font-family: playfair display;
+        font-size: 16px;
+        margin-left: -5%;
+    }  
+    .orderHistory_sizes{
+        font-family: playfair display;
+        font-size: 16px;
+        margin-left: -2%;
+    }
 }
 .tophead{
     margin-top: -3%;
@@ -1180,6 +1403,7 @@ input[type="file"] {
       font-size: 25px;
       font-family: playfair display;
       color: #353535;
+
   }
   .current_dropdown{
     background: rgb(203, 157, 108);
@@ -1225,7 +1449,7 @@ input[type="file"] {
     margin-left: -30%;
   }
    .current_dress_name{
-      font-size: 25px;
+      font-size: 20px;
       font-family: playfair display;
       color: #353535;
       margin-left: -10%;
@@ -1268,6 +1492,7 @@ input[type="file"] {
       font-size: 25px;
       font-family: playfair display;
       color: #353535;
+      margin-left: -3%;
   }
   .current_btn_status{
      margin-left: -35%;
@@ -1307,6 +1532,7 @@ input[type="file"] {
       font-size: 25px;
       font-family: playfair display;
       color: #353535;
+      margin-left: -3%;
   }
   .current_btn_status{
      margin-left: -35%;

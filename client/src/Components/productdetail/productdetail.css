@@ -211,7 +211,7 @@
 	    margin-left: -3%;
 	}
 }
-@media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
+@media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){
 	.sams{
 		border: none;
 	    height: 40px;
@@ -226,11 +226,11 @@
     	color: black;
 	}
 	.trello1{
-		margin-left: -14px;
+		    margin-left: -28px;
 	}
 	.trello2{
-		margin-left: 55.5%;
-		margin-top: -64px;
+		margin-left: 51.5%;
+    	margin-top: -64px;
 	}
 	.bookedboo{
 		color: #9b9b9b;
@@ -238,7 +238,7 @@
     	padding-left: 5% !important;
 	}
 	.bookedbook{
-	    width: 60% !important;
+	    width: 99% !important;
 	    border-radius: 50% !important;
 	    height: 53px !important;
 	    border: none !important;
@@ -292,7 +292,7 @@
 	    margin-left: -3%;
 	}
 }
-@media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
+@media only screen and (min-device-width : 1366px) and (max-device-width : 1920px){
 	.sams{
 		border: none;
 		height: 40px;
@@ -320,7 +320,7 @@
 		margin-left: 4%;
 	}
 	.bookedbook{
-		width: 55%;
+		width: 70%;
 	    border-radius: 50%;
 	    height: 60px;
 	}
@@ -436,46 +436,22 @@
 	color: white;
 }
 
-@media only screen and (min-device-width : 360px) and (max-device-width : 640px){
+@media only screen and (min-device-width : 360px) and (max-device-width : 767px){
 	
-	
-	.newrating{
-		margin-top: -6%;
-    	margin-left: 70%;
-	}
 	.us{
 		background-color: none !important;
 		font-size: 16px;
 		color: #cb9d6c;
 	}
-	.newstar1{
-		padding-left: 65%;
-    	margin-top: -11%;
-	}
+	
 	.owner{
 		color: #9b9b9b !important;
 	}
 }
 
-@media only screen and (min-device-width : 766px) and (max-device-width : 1024px){
+@media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
 	
-	.newstar{
-		margin-top: 2%;
-		padding-left: 4px;
-	}
-	.newrating{
-		    margin-top: 14%;
-    		margin-left: -16%;
-	}
-	.newstar1{
-		padding-left: 0px;
-    	margin-top: 15px;
-	}
-
-	.newrating{
-		margin-top: -3%;
-    	margin-left: 3%;
-	}
+	
 	.us{
 		background-color: none !important;
 		font-size: 16px;
@@ -485,21 +461,8 @@
 		color: #9b9b9b !important;
 	}
 }
-@media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
-	.newstar{
-		margin-top: 12%;
-		
-	}
-
-	.newstar1{
-		padding-left: 12px !important;
-    	margin-top: 15px;
-	}
-
-	.newrating{
-		margin-top: 16% !important;
-    	margin-left: 0%;
-	}
+@media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){
+	
 	.us{
 		background-color: none !important;
 		font-size: 16px;
@@ -509,17 +472,8 @@
 		color: #9b9b9b !important;
 	}
 }
-@media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
-	.newstar{
-		padding-left: 1px;
-	}
-	.newstar1{
-		padding-top: 3%;
-	}
-	.newrating{
-		margin-top: 5%;
-    	
-	}
+@media only screen and (min-device-width : 1366px) and (max-device-width : 1920px){
+
 	.us{
 		background-color: none !important;
 		font-size: 16px;
@@ -1144,7 +1098,7 @@ padding: 5%;
 
 
 
-@media only screen and (min-device-width : 360px) and (max-device-width : 640px){
+@media only screen and (min-device-width : 360px) and (max-device-width : 767px){
 	.arrowleft{
 		padding-left: 2px;
 		width: 43px;
@@ -1191,15 +1145,19 @@ padding: 5%;
 		font-size: 12px;
 		
 	}
-
+	.arrowleft{
+		padding-left: 6px;
+		width: 50px;
+	    height: 10px;
+	}
 
 }
 
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
+@media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
 	.arrowleft{
-	padding-left: 6px;
-	width: 50px;
-    height: 10px;
+		padding-left: 6px;
+		width: 50px;
+	    height: 10px;
 	}
 
 	.able{
@@ -1238,7 +1196,7 @@ padding: 5%;
 
 
 }
-@media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
+@media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){
 	.ab{
 		margin-left: 4px !important;
 	}
@@ -1266,28 +1224,33 @@ padding: 5%;
 }
 
 	.todate{
-		font-size: 12px; 
-		color: #cb9d6c;
-		height: 50px;
-	    background-color: rgba(155,155,155,0.3);
-	    width: 190.5% !important;
-	    margin-left: -50% !important;
-	    margin-top: 19% !important;
-	    text-align: center;
-	    padding-top: 18px;
+			font-size: 12px;
+    		color: #cb9d6c;
+		    height: 50px;
+		    background-color: rgba(155,155,155,0.3);
+		    width: 277.5% !important;
+		    margin-left: 25% !important;
+		    margin-top: 45% !important;
+		    text-align: center;
+		    padding-top: 18px;
+	}
+	.arrowleft{
+		padding-left: 2px;
+		width: 50px;
+	    height: 10px;
 	}
 
 }
-@media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
+@media only screen and (min-device-width : 1366px) and (max-device-width : 1920px){
 
 	.todate{
 		font-size: 12px;
-		color: #cb9d6c;
-		height: 50px;
+	    color: #cb9d6c;
+	    height: 50px;
 	    background-color: rgba(155,155,155,0.3);
-	    width: 163.5%;
-	    margin-left: -35%;
-	    margin-top: 15%;
+	    width: 191.5%;
+	    margin-left: -53%;
+	    margin-top: 21%;
 	    text-align: center;
 	    padding-top: 18px;
 	}
@@ -1309,13 +1272,17 @@ padding: 5%;
 		text-align: center;
 		font-size: 12px;
 	}
+	.arrowleft{
+		width: 84px;
+    	height: 10px;
+	}
 }
 
 
 
 
 
-@media only screen and (min-device-width : 360px) and (max-device-width : 640px){
+@media only screen and (min-device-width : 360px) and (max-device-width : 767px){
 	.user_Name{
 		font-family: Playfair Display;
 		font-size: 20px;
@@ -1338,7 +1305,7 @@ padding: 5%;
 	}
 }
 
-@media only screen and (min-device-width : 766px) and (max-device-width : 1024px){
+@media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
 	.user_Name{
 		font-family: Playfair Display;
 		font-size: 32px;
@@ -1362,7 +1329,7 @@ padding: 5%;
 		margin-left: 29%
 	}
 }
-@media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
+@media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){
 	.user_Name{
 		font-family: Playfair Display;
 		font-size: 32px;
@@ -1374,7 +1341,7 @@ padding: 5%;
 	}
 
 	.arrowtext{
-		letter-spacing: 5px;
+		letter-spacing: 3px;
 	    color: #9b9b9b;
 	    padding-left: 12%;
 	    font-size: 10px;
@@ -1390,10 +1357,17 @@ padding: 5%;
 	.clck_pro{
 	}
 }
-@media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
+@media only screen and (min-device-width : 1366px) and (max-device-width : 1920px){
 	.user_Name{
 		font-family: Playfair Display;
 		font-size: 32px;
+	}
+	.clck_pro{
+	}
+	.roundnround{
+	    font-size: 10px;
+	    color: #9b9b9b;
+	    letter-spacing: 2px;
 	}
 }
 
@@ -1446,6 +1420,20 @@ padding: 5%;
 	.back_arrow{
 
 	}
+	.featureFilterdresses{
+	      font-size: 12px;
+	      font-family: Tajawal;
+	      color: #808080;
+	      letter-spacing: 5px;
+	      margin-bottom: 0px;
+	      margin-left: 11%;
+    }
+    .productheadlable{
+	     font-family: Playfair Display;
+	    margin-left: -6% !important;
+	    font-size: 30px;
+	    text-align: left;
+  	}
 	.back_arrowtext{
 		color: #9b9b9b;
 		letter-spacing: 5px;
@@ -1489,6 +1477,19 @@ padding: 5%;
 	.back_arrow{
 
 	}
+	.featureFilterdresses{
+	      font-size: 12px;
+	      font-family: Tajawal;
+	      color: #808080;
+	      letter-spacing: 5px;
+	      margin-bottom: 0px;
+	      margin-left: 7%;
+    }
+ 	.productheadlable{
+	      font-family: Playfair Display;
+	    font-Size: 35px;
+	    margin-left: -48%;
+  	} 
 	.back_arrowtext{
 		color: #9b9b9b;
 		letter-spacing: 5px;
@@ -1531,9 +1532,23 @@ padding: 5%;
 	.back_arrow{
 
 	}
+	.featureFilterdresses{
+	      font-size: 12px;
+	      font-family: Tajawal;
+	      color: #808080;
+	      letter-spacing: 5px;
+	      margin-bottom: 0px;
+	      margin-left: 9%;
+    }
+    .productheadlable{
+	       font-family: Playfair Display;
+	      font-Size: 40px;
+	      text-align: left;
+	      padding-left: 51%;
+  	}
 	.back_arrowtext{
 		color: #9b9b9b;
-		letter-spacing: 5px;
+		letter-spacing: 4px;
 		font-size: 10px;
 	}
 	.comment_review_heading{
@@ -1568,6 +1583,20 @@ padding: 5%;
 	.back_arrow{
 
 	}
+	.featureFilterdresses{
+	      font-size: 12px;
+	      font-family: Tajawal;
+	      color: #808080;
+	      letter-spacing: 5px;
+	      margin-bottom: 0px;
+	      margin-left: 103px;
+    }
+    .productheadlable{
+      font-family: Playfair Display;
+      font-Size: 40px;
+      text-align: left;
+      padding-left: 50px;
+  	}
 	.back_arrowtext{
 		color: #9b9b9b;
 		letter-spacing: 5px;
@@ -1608,3 +1637,107 @@ padding: 5%;
     color: #353535;
     text-align: left;
 }
+@media only screen and (min-device-width : 360px) and (max-device-width : 767px){
+	.marg_left_product{
+
+	}
+	.productarrowtext{
+		font-size: 12px;
+      font-family: Tajawal;
+      letter-spacing: 4px;
+      margin-left: -13%;
+      color: #808080;
+	}
+	.newrating{
+		margin-top: -6%;
+    	margin-left: 70%;
+	}
+	
+	.newstar1{
+		padding-left: 65%;
+    	margin-top: -11%;
+	}
+	.newstar{
+		margin-top: 2%;
+		padding-left: 4px;
+	}
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
+	.marg_left_product{
+		
+	}
+	.productarrowtext{
+		font-size: 12px;
+      font-family: Tajawal;
+      letter-spacing: 4px;
+	    margin-left: -8%;
+	    color: #808080;
+	    margin-top: 1px;
+	}
+	.newstar{
+		margin-top: 2%;
+		padding-left: 4px;
+	}
+	.newrating{
+		    margin-top: 14%;
+    		margin-left: -16%;
+	}
+	.newstar1{
+		padding-left: 0px;
+    	margin-top: 15px;
+	}
+}
+@media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){
+	.marg_left_product{
+		margin-left: 29%;
+	}
+	.productarrowtext{
+		font-size: 12px;
+      font-family: Tajawal;
+      letter-spacing: 4px;
+	    margin-left: -10%;
+	    color: #808080;
+	    margin-top: 1%;
+	}
+	.newstar{
+		margin-top: 12%;
+		
+	}
+
+	.newstar1{
+		padding-left: 12px !important;
+    	margin-top: 22px;
+	}
+
+	.newrating{
+		margin-top: -17% !important;
+    	margin-left: 14%;
+	}
+}
+@media only screen and (min-device-width : 1366px) and (max-device-width : 1920px){
+	.marg_left_product{
+		    margin-left: 28%;
+	}
+	.productarrowtext{
+		font-size: 12px;
+	    font-family: Tajawal;
+	    letter-spacing: 4px;
+	    margin-left: -7%;
+	    color: #808080;
+	    margin-top: -6%;
+
+	}
+	.newstar{
+		padding-left: 1px;
+	}
+	.newstar1{
+		padding-top: 8%;
+	}
+	.newrating{
+		    margin-top: -12%;
+    		margin-left: 15%;
+    	
+	}
+}
+
+

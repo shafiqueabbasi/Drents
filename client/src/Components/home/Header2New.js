@@ -60,11 +60,11 @@ class Headernew extends Component {
 	     			<div className="col-sm-0 col-md-0 col-lg-4 hidden-xs"></div>
 	     			<div className="col-sm-9 col-md-8 col-lg-5 hidden-xs">
 	     				<ul className="nav navbar-nav navbar-right">
-	     					<li className="head"><Link to={`/`}>Home</Link></li>
-	     					<li className="head"><Link to={`/product`} className="nav">Catalog</Link></li>
-	     					{loggedIn && <li className="head" onClick={this.logOut}><a className="nav">Log Out</a></li>}
+	     					<li className="head2"><Link to={`/`}>Home</Link></li>
+	     					<li className="head2"><Link to={`/product`} className="nav">Catalog</Link></li>
+	     					{loggedIn && <li className="head2" onClick={this.logOut}><a className="nav">Log Out</a></li>}
 
-	     					{!loggedIn && <li className="head">
+	     					{!loggedIn && <li className="head2">
 		                        <a href="#" className="nav" data-toggle="modal" data-target="#SignIn" >Sign In</a>
 		                          <div className="modal fade" id="SignIn" role="dialog">
 		                            <div className="modal-dialog  widht_sm">
@@ -87,7 +87,7 @@ class Headernew extends Component {
 		                            </div>
 		                          </div>
 		                    </li>}
-		                    {!loggedIn && <li className="head">
+		                    {!loggedIn && <li className="head2">
 		                        <a href="#" className="nav" data-toggle="modal" data-target="#SignUp">Sign Up</a>
 		                          <div className="modal fade" id="SignUp" role="dialog">
 		                            <div className="modal-dialog widht_sm">
@@ -116,7 +116,7 @@ class Headernew extends Component {
 		                          </span>
 		                        </Link>
 	                        </li>
-	                        {loggedIn && <li className="headCartpro"><Link to={`/profile/${userId}`} className="nav">My Profile</Link></li>}
+	                        {loggedIn && <li className="headCartpro marg_nav"><Link to={`/profile/${userId}`} className="nav">My Profile</Link></li>}
 
 	     				</ul>
 	     			</div>

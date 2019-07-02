@@ -39,10 +39,10 @@ class FooterNew extends Component {
      				<div className="col-sm-3 col-md-3 col-lg-3">
      					<p className="quickfooter">Contact</p>
      					<div className="col-sm-12 col-md-12 col-lg-12">	
-		     				<div className="col-sm-6 col-md-6 col-lg-6">	
+		     				<div className="col-sm-12 col-md-6 col-lg-6">	
 		     					<p className="contmailfoot">info@drent.com</p>
 		     				</div>
-		     				<div className="col-sm-6 col-md-6 col-lg-6">	
+		     				<div className="col-sm-12 col-md-6 col-lg-6">	
 		     					<p className="contnofoot">+ 92 345 1248612</p>
 		     				</div>	
 		     			</div>		

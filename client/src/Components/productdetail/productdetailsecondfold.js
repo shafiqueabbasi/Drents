@@ -50,23 +50,24 @@ class SecondFold extends Component {
     
     return (
       <div className="App">
-          
-              <div className="col-md-12"></div>
+          <div className="row" style={{margin:'0px'}}>
+            <div className="col-xs-12 col-sm-12 col-md-3 col-lg-4"></div>
+            <div className="col-xs-12 col-sm-12 col-md-9 col-lg-8 marg_left_product">
               <Gallery
                   label="You May Also Like"
                   data={this.props.location.state.data.slice(0, 4)}
                   widthProps=''
-                  colLg='col-lg-2'
-                  imgtextstyle=''
-                  imgheadtext='pinktext_detail'
-                  margBotom='margbootom_detail'
-                  featureFilter='featuresub_detail'
+                  colLg='col-lg-3'
+                  imgtextstyle='absoulFilter'
+                  imgheadtext='pinktextFilter'
+                  margBotom='margbootom'
+                  featureFilter='featureFilterdresses'
+                  featureArrow='featFilterarrow'
+                  featText='productarrowtext'
+                  headLable='productheadlable'
               />
               <hr/>
-          <div className="container">
-
- 
-          
+              <br/>        
               {this.state.reviews.length > 0 && <div className="row derr">
                 <h1 className="comment_review_heading">Rating & Comments</h1>
               </div>}
@@ -76,7 +77,8 @@ class SecondFold extends Component {
               <br/>
               {/*this.props.user !== undefined && <CommentCard addReview={this.addReview} obj={obj}/>*/}
               <br/>
-          </div>{/*Container Div Close*/}
+            </div>
+          </div>              
       </div>
     );
 

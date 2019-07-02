@@ -252,17 +252,17 @@ render() {
                   <div className="col-lg-8 col-md-8 col-sm-10 col-xs-12">
                 			<div className="col-md-12">
                             <div className="row">
-                              <div className="col-lg-4 col-md-3 col-sm-3">
+                              <div className="col-lg-4 col-md-6 col-sm-3">
                                   <span class="input">
-                                      <h3 className="form_heading">
+                                      <h3 className="upload_upimg">
                                           Pictures
                                       </h3>
-                                      <p className="input_form_Profile">
+                                      <p className="fileText">
                                           File size must not exceed to MB
                                       </p>
                                   </span>
                               </div>
-                              <div className="col-lg-3 col-md-4 col-sm-4"></div>
+                              <div className="col-lg-3 col-md-1 col-sm-4"></div>
                               <div className="col-lg-4 col-md-4 col-sm-5" style={{marginTop: '1%'}}>
                                 <label 
                                   className="labelcustome" 
@@ -290,7 +290,7 @@ render() {
                             {this.state.imgMsg.length > 0 && <span style={{fontSize:'16px'}}><u>{this.state.imgMsg}</u></span>}          
 
                             <div className="row" style={{margin: '0px'}}>
-                              <h1 className="form_heading">Basic</h1>
+                              <h1 className="upload_heading_basic">Basic</h1>
                             </div>
                   				<div className="row">
                             <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6">
@@ -299,7 +299,7 @@ render() {
                                   id="productName" 
                                   className="input"
                                   col="col-lg-6 col-md-6 col-sm-6"
-                                  col2="col-lg-10 col-md-10 col-sm-12"                                
+                                  col2="col-lg-10 col-md-12 col-sm-12"                                
                                   value={this.state.productName} 
                                   Change={this.inputHandleChange}
                                 />
@@ -311,7 +311,7 @@ render() {
                                   id="detailName" 
                                   className="input"
                                   col="col-lg-6 col-md-6 col-sm-6"
-                                  col2="col-lg-10 col-md-10 col-sm-12"
+                                  col2="col-lg-10 col-md-12 col-sm-12"
                                   value={this.state.detailName} 
                                   Change={this.inputHandleChange}
                                 />
@@ -325,7 +325,7 @@ render() {
                                   value={this.state.bodyType} 
                                   className="input"
                                   col="col-lg-6 col-md-6 col-sm-6"
-                                  col2="col-lg-10 col-md-10 col-sm-12"
+                                  col2="col-lg-10 col-md-12 col-sm-12"
 
                                   options={this.state.typeArr}
                                   Change={this.inputHandleChange}
@@ -338,7 +338,7 @@ render() {
                                     id="priceDay" 
                                     className="input"
                                     col="col-lg-6 col-md-6 col-sm-6"
-                                    col2="col-lg-10 col-md-10 col-sm-12"
+                                    col2="col-lg-10 col-md-12 col-sm-12"
                                     value={this.state.priceDay} 
                                     pattern="^-?[0-9]\d*\.?\d*$"
                                     Change={this.inputHandleChange}
@@ -353,7 +353,7 @@ render() {
                                     value={this.state.weather} 
                                     className="input"
                                     col="col-lg-6 col-md-6 col-sm-6"
-                                    col2="col-lg-10 col-md-10 col-sm-12"
+                                    col2="col-lg-10 col-md-12 col-sm-12"
                                     options={["Cold Weather", "Warm Weather"]}
                                     Change={this.inputHandleChange}
                                 />
@@ -375,14 +375,14 @@ render() {
                                   id="description"
                                   value={this.state.description}
                                   rows="6" style={{border: 'none'}}
-                                  className="col-md-12 col-sm-12"
+                                  className="col-md-12 col-sm-12 col-xs-12"
                                   maxLength="400" 
                                   onChange={e => this.setState({description: e.target.value})}
                                 
                               />                              
                           </div>
                           <div className="row">
-                              <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">                          
+                              <div className="col-xs-12 col-sm-12 col-md-5 col-lg-5 marg_left_up">                          
                                   <div>
                                       <span className="input">
                                           <h3 className="input_form_Profile">
@@ -472,7 +472,7 @@ render() {
                               </div>                    
                           </div>
                           <div className="row" style={{margin: '0px'}}>
-                              <h1 className="form_heading">More details</h1>
+                              <h1 className="availablity_head">More details</h1>
                           </div>
                           <div className="row">
                             <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6">
@@ -481,7 +481,7 @@ render() {
                                         Available from
                                     </h3></span>
                                 </div>
-                                <div className="col-xs-12 col-sm-12 col-md-10 col-lg-10" style={{marginTop: '1%'}}>
+                                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-10" style={{marginTop: '1%'}}>
                                   <div className="inputBox">
                                       <div className="inputText"></div>
                                       <input 
@@ -495,13 +495,13 @@ render() {
                                   </div>
                                 </div>
                             </div>
-                            <div className="col-xs-12 col-sm-8 col-md-6 col-lg-6">
+                            <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                 <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6"><span className="input">
                                     <h3 className="input_form_Profile">
                                         Available till
                                     </h3></span>
                                 </div>
-                                <div className="col-xs-10 col-sm-12 col-md-10 col-lg-10" style={{marginTop: '1%'}}>
+                                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-10" style={{marginTop: '1%'}}>
                                     <div className="inputBox">
                                         <div className="inputText"></div>
                                         <input 
@@ -523,6 +523,8 @@ render() {
                                       id="tags" 
                                       value={this.state.tags}
                                       onChange={this.handleCard}
+                                      col="col-lg-6 col-md-6 col-sm-6"
+                                      col2="col-lg-10 col-md-12 col-sm-12"
                                     />
                               </div>                  
                               <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6">
@@ -570,7 +572,7 @@ render() {
                             </div>
                           {/* Chart Modal End */}     
                 					<div className="row">
-                						<div className="col-md-9 col-sm-9" style={{textAlign: 'right'}}>{this.state.showMsg}</div>
+                						<div className="col-md-8 col-sm-9" style={{textAlign: 'right'}}>{this.state.showMsg}</div>
                 						<div className="col-md-3 col-sm-3">
                 							<button type="submit" 
                                      name="" className="button buttonsave"

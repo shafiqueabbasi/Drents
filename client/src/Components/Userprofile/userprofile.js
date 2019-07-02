@@ -405,7 +405,7 @@ class UserProfile extends Component {
 
 						</div>}
 
-						{userAvailable && <div className="visible-sm col-sm-3">&emsp;&emsp;
+						{/*{userAvailable && <div className="visible-sm col-sm-3">&emsp;&emsp;
 							<div className="dropdown">
 							    <button class="btn dropdown-toggle" type="button" data-toggle="dropdown"
 							      style={{background: '#ffffff', color: '#c2073f', borderRadius: '0', border: '1px solid #c2073f'}}>{filterKey} BY &emsp;
@@ -421,9 +421,9 @@ class UserProfile extends Component {
 							    	})}
 							    </ul>
 							</div>
-						</div>}
+						</div>}*/}
 
-						{userAvailable && <div className="col-xs-6 visible-xs">
+						{/*{userAvailable && <div className="col-xs-6 visible-xs">
 							<div class="dropdown">
 							    <button class="btn dropdown-toggle" type="button" data-toggle="dropdown"
 							      style={{background: '#ffffff', color: '#c2073f', borderRadius: '0', border: '1px solid #c2073f'}}>{filterKey} BY &emsp;
@@ -439,7 +439,7 @@ class UserProfile extends Component {
 							    	})}
 							    </ul>
 							</div>
-						</div>}
+						</div>}*/}
 
 
 
