@@ -76,7 +76,7 @@ class Heading4 extends Component {
 	    					<p className="featarrowtext">SHOW ALL FEATURED DRESSES</p>
 	    				</div>
 	    			</div>
-	    		</div><br/><br/>
+	    		</div><br/><br/><br/><br/>	
     	</div>
     );
 

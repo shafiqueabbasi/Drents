@@ -385,6 +385,7 @@
       color: #353535;
        font-family: playfair display;
   }
+
 }
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
   .morebtn{
@@ -854,6 +855,15 @@
   padding: 5px;  
     /*border-bottom: 1px solid rgba(0,0,0,.5);*/
 }
+
+@media only screen and (min-device-width : 360px) and (max-device-width : 767px){
+    .Heading {
+      line-height: 4px;
+      text-align: right;
+    }
+}
+
+
 @media only screen and (min-device-width : 360px) and (max-device-width : 767px){
   .textarea_profile{
     height: 100px !important;

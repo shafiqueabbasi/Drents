@@ -57,7 +57,7 @@ class Headernew extends Component {
 	     			<div className="col-sm-2 col-md-2 col-lg-2">
 						<img src="../images/drent-logo.png" className="header2_new_logo"/>
 	     			</div>
-	     			<div className="col-sm-0 col-md-1 col-lg-4 hidden-xs"></div>
+	     			<div className="col-sm-0 col-md-0 col-lg-4 hidden-xs"></div>
 	     			<div className="col-sm-9 col-md-8 col-lg-5 hidden-xs">
 	     				<ul className="nav navbar-nav navbar-right">
 	     					<li className="head"><Link to={`/`}>Home</Link></li>
@@ -190,12 +190,12 @@ class Headernew extends Component {
               </div>
             </div>
 
-            <div className="row visible-xs" style={{background:'#c2073f'}}>
+            <div className="row visible-xs" style={{background:'linear-gradient(to bottom, #473463 0%, #2a1f3b 100%)', marginTop:'1%' , marginLeft:'-9%' ,marginBottom:'5%'}}>
               <div className="col-md-4 col-xs-4">
                 <i onClick={this.openNav} className="fas fa-bars" style={{color:'white',marginLeft:'8px',fontSize:'24px',marginTop:'10px'}}></i>
               </div>
               <div className="col-xs-4">
-                <Link to={`/`}><img src="../images/Drent-logo-white.png" style={{width:'80%'}} /></Link>
+                <Link to={`/`}><img src="../images/drent-logo.png" style={{height:'45px'}}/></Link>
               </div>
               <div className="col-xs-4">
                 {/*<i className="fas fa-search"></i>*/}

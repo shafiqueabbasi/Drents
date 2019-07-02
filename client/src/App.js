@@ -109,7 +109,11 @@ class App extends Component {
             <Route path="/product" render={props => <Catelog {...props} changingHeader={this.changingHeader} />} />
             <Route path="/userdetail" component={Profile} />
             <Route path="/reset/:token" component={ResetPassword} />
+
+            <Route path="/detail" render={props => { return <Product {...props} updateCart={this.updateCart} changingHeader={this.changingHeader} /> }} />
+
             <Route path="/detail" render={props => { return <Product {...props} updateCart={this.updateCart} changingHeader={this.changingHeader}/> }} />
+
             <Route path="/checkout" render={props => { return <Checkout {...props} updateCart={this.updateCart} changingHeader={this.changingHeader}/> }} />
             <FooterNew showFooter={this.state.footer}/>
             {/*<Userprofile/>*/}

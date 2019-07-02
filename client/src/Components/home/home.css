@@ -54,6 +54,7 @@
     font-size: 15px;
     font-family: Playfair Display;
     color: #cb9d6c;
+    text-align: right;
 }
 .headCartpro a{
   margin-left: -20%;
@@ -694,6 +695,9 @@
 	.purple_mob{
 		margin-top: 7%;
 	}
+	.div_marg_how{
+		
+	}
 }
 @media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
 	.iconimg{
@@ -710,6 +714,9 @@
 	}
 	.purple_mob{
 
+	}
+	.div_marg_how{
+		
 	}
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){
@@ -728,22 +735,28 @@
 	.purple_mob{
 
 	}
+	.div_marg_how{
+		    padding-left: 3%;
+	}
 }
-@media only screen and (min-device-width : 1366px){
+@media only screen and (min-device-width : 1366px) and (max-device-width: 1920px){
 	.iconimg{
 		height: 100px;
-		margin-left: -30%;
+/*		margin-left: -30%;*/
 	}
 	.iconimg2{
 		height: 100px;
-		margin-left: -41%;
+		margin-left: -3%;
 	}
 	.iconimg3{
 		height: 90px;
-    	margin-left: -40%;
+    	margin-left: -7%;
 	}
 	.purple_mob{
 
+	}
+	.div_marg_how{
+		margin-left: 2%;
 	}
 }
 .chosedres{
@@ -963,7 +976,7 @@
 	.imgwidth{
 		height: 250px;
 		position: relative;
-		width: 100%;
+		width: 85%;
 		margin-bottom: 15%;
 	}
 	.rwmarg{
@@ -1056,7 +1069,7 @@
     	margin-left: 0%;
         box-shadow: inset 3px -110px 42px rgba(0,0,0,0.4);
         height: 107px;
-    	width: 87%;
+    	width: 74%;
 	}
 }
 @media only screen and (min-device-width : 1366px) and (max-device-width: 1920px){
@@ -1399,7 +1412,7 @@
     color: #808080;
 }
 .divcolour{
-	background-color: #63488a;
+ background-color: #634873;;
 	padding-top: 15px;
 }
 .arrowimage{
@@ -1649,6 +1662,10 @@
 		    width: 100%;
     		margin-top: 3%;
 	}
+	.feat{
+		margin-top: 10%;
+	}
+
 }
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
 	.panel2how{

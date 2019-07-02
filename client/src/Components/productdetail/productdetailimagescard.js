@@ -95,7 +95,7 @@
 							</div>
 
 	            			<div className="col-xs-12 col-sm-12">
-	            				<img alt="" src={this.state.showImg} style={isTablet ? {width:"94%", height:"840px"} : {width:"85%", height:"400px", marginTop:'4%', marginLeft:'4%'}}/>
+	            				<img alt="" src={this.state.showImg} style={isTablet ? {width:"94%", height:"840px"} : {width:"92%", height:"400px", marginTop:'4%', marginLeft:'4%'}}/>
 	            			</div>
 	            		</div>
 						
@@ -108,7 +108,7 @@
 								<img 
 									alt="" 
 									src={elem} 
-									style={isTablet ? {height:"230px" , marginLeft:'-3%', width:'86%'} : {height:"70px" , width:'73%'}} 
+									style={isTablet ? {height:"230px" , marginLeft:'-3%', width:'8%'} : {height:"70px" , width:'73%'}} 
 									onClick={
 										() => this.setState({ showImg: elem })
 									}
