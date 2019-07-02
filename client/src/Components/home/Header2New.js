@@ -116,14 +116,12 @@ class Headernew extends Component {
 		                          </span>
 		                        </Link>
 	                        </li>
+
 	                        {loggedIn && <li className="headCartpro marg_nav"><Link to={`/profile/${userId}`} className="nav">My Profile</Link></li>}
 
 	     				</ul>
 	     			</div>
      			</div>
-
-
-
      			<div id="myNav" className="overlay visible-xs">
               <a href="javascript:void(0)" className="closebtn" onClick={this.closeNav}>&times;</a>
               <div className="overlay-content">
@@ -205,11 +203,6 @@ class Headernew extends Component {
                 {/*<i className="fas fa-search"></i>*/}
               </div>
             </div>
-
-
-
-
-
      		</div>
       	</div>
     );
