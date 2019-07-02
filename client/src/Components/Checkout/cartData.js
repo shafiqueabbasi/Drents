@@ -280,10 +280,12 @@ class CartData extends Component {
 										</button>
 								</div>
 								<div className="col-xs-12 col-lg-4 col-md-4 col-sm-4">
-									<button
-										className="btn btn_browse_dresses"
-									> Browse more dresses
+									<Link to={'/product'}>
+										<button
+												className="btn btn_browse_dresses"
+												> Browse more dresses
 										</button>
+									</Link>
 								</div>
 							</div>
 							{!loggedIn && <div className="row">

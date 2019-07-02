@@ -376,6 +376,9 @@ class UserProfile extends Component {
 							        imgheadtext='pinktext_userprofile'
 							        margBotom='margbootom_userprofile'
 							        featureFilter='featuresub_userprofile'
+							        featureArrow='featarrow_userprofile'
+							        featText='featarrowtext_userprofile'
+							        headLable='headings_userprofile'
 									showonhome={true}
 									userAvailable={userAvailable}
 								/>}

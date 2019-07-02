@@ -138,7 +138,7 @@ class Filterpanel extends Component {
 	    							<h3 className="filter_H1">Categories</h3><br/>
 
 									<label className="container1"><h5 id="Casual" onClick={(e) => this.handleMainItems(e, "Casual")} className="lH_filter"><a href="" className="C_P">Casual</a></h5>
-										<input type="checkbox"></input>
+										<input type="checkbox" id='Casual'></input>
 										<span className="checkmark1"></span>
 									</label><br/>
 
@@ -264,8 +264,8 @@ class Filterpanel extends Component {
 
 
 								<div className="col-md-5 col-sm-5 col-xs-5 row"></div>
-								{/*{/*{this.state.arr.length > 8 && <ButtonComponent label="More"/>}*/}
-								{this.state.data.length === 0 &&
+								{/*{this.state.arr.length > 8 && <ButtonComponent label="More"/>}*/}
+								{/*{this.state.data.length === 0 &&
 									<ButtonComponent
 										className="col-md-12"
 										label="Find More"
@@ -376,20 +376,6 @@ class Filterpanel extends Component {
 										<div className="col-xs-12" style={{paddingBottom: '15px', margin: '40px 0 20px',borderBottom: '1px solid black'}}></div>
 									</div>
 								</div>
-								{/*<div className="row">
-									<h3>Colors&emsp;&emsp;&nbsp;-</h3><br/>
-									<div className="circle">
-	    								<a href=""><div className="circle1"></div></a>&nbsp;
-	    								<a href=""><div className="circle2"></div></a>&nbsp;
-	    								<a href=""><div className="circle3"></div></a>
-	    							</div>
-	    							<div className="circle">
-	    								<a href=""><div className="circle4"></div></a>&nbsp;
-	    								<a href=""><div className="circle5"></div></a>&nbsp;
-	    								<a href=""><div className="circle6"></div></a>
-	    							</div>
-	    							<div className="col-xs-12" style={{paddingBottom: '15px', margin: '40px 0 20px',borderBottom: '1px solid black'}}></div>
-								</div>*/}
 								<div className="row">
 									<div className="row col-xs-12">
 									<div className="panel panel-default">

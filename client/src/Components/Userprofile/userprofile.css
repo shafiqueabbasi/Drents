@@ -583,6 +583,21 @@
       margin-bottom: 0px;
       margin-left: 11%;
     }
+  .featarrow_userprofile{
+    margin-top: -12%;
+  }  
+  .featarrowtext_userprofile{
+      font-size: 12px;
+      font-family: Tajawal;
+      letter-spacing: 4px;
+      margin-left: -13%;
+      color: #808080;
+  }
+  .headings_userprofile{
+        font-family: Playfair Display;
+        text-align: left;
+        margin-left: -2%;
+    }
 }
 @media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
    .absoul_userprofile{
@@ -606,6 +621,24 @@
       margin-bottom: 0px;
       margin-left: 11%;
     }
+  .featarrow_userprofile{
+    margin-top: -12%;
+  }
+  .featarrowtext_userprofile{
+      font-size: 11px;
+      font-family: Tajawal;
+      letter-spacing: 4px;
+      margin-left: -8%;
+      color: #808080;
+      margin-top: 1%;
+  }
+  .headings_userprofile{
+        font-family: Playfair Display;
+        font-Size: 35px;
+        text-align: left;
+        margin-left: -1%;
+        /*padding-left: 8%;*/
+    }
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){
   .absoul_userprofile{
@@ -617,7 +650,7 @@
     color:  black;
   }
   .margbootom_userprofile{
-    margin-bottom: 20%;
+    margin-bottom: 10%;
   }
   .featuresub_userprofile{
       font-size: 12px;
@@ -625,7 +658,25 @@
       color: #808080;
       letter-spacing: 5px;
       margin-bottom: 0px;
-      margin-left: 11%;
+      margin-left: 7%;
+    }
+  .featarrow_userprofile{
+      margin-top: -70%;
+      margin-left: 12%;
+  }  
+  .featarrowtext_userprofile{
+     font-size: 12px;
+      font-family: Tajawal;
+      letter-spacing: 4px;
+      margin-left: -8%;
+      color: #808080;
+      margin-top: -35px;
+  }
+  .headings_userprofile{
+        font-family: Playfair Display;
+        font-Size: 40px;
+        text-align: left;
+        padding-left: 17px;
     }
 }
 @media only screen and (min-device-width : 1366px) and (max-device-width : 1920px){
@@ -647,6 +698,23 @@
       color: #808080;
       letter-spacing: 5px;
       margin-bottom: 0px;
-      margin-left: 10%;
+      margin-left: 122px;
   }
+  .featarrow_userprofile{
+      margin-top: -12%;
+      padding-left: 8%;
+  }
+  .featarrowtext_userprofile{
+      font-size: 12px;
+      font-family: Tajawal;
+      letter-spacing: 4px;
+      margin-left: -10%;
+      color: #808080;
+  }
+  .headings_userprofile{
+        font-family: Playfair Display;
+        font-Size: 40px;
+        text-align: left;
+       padding-left: 68px;
+    }
 }
