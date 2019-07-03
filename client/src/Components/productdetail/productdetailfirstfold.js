@@ -19,7 +19,8 @@ class Productdetailfirstfold extends Component {
 		arr: [],
 		booked: false,
 		averageRate: '',
-		userImage: ''
+		userImage: '',
+		review:''
 	}
 
 	async componentDidMount() {
@@ -168,19 +169,20 @@ class Productdetailfirstfold extends Component {
 	}
 
 	ratingReview = e => {
+		console.log(e.length)
 		let rateCount = 0;
 		e.map((elem) => {
 			rateCount += +elem.rentedRate
 		});
 		let averageRate = rateCount / e.length;
 		averageRate = e.length > 0 ? averageRate : '';
-		this.setState({ averageRate });
+		this.setState({ averageRate , review:e });
 	}
 
 	render() {
 		const { elem, data } = this.props.location.state,
 			{ from, to, msg, booked, userImage, userId } = this.state;
-
+			console.log(this.state.review.length , 'ratingReview')
 		return (
 			<div className="App">
 				<div className="">
@@ -237,15 +239,18 @@ class Productdetailfirstfold extends Component {
                                    	</div>
 								</div>*/}
 							</div>{/* div close*/}
-
+							{this.state.review.length > 4 &&
 							<div className="row">
 								<div className="col-xs-2 col-sm-2 col-md-1 col-lg-1">
 									<img src="../images/arrow.png" className="arrowleft" />
 								</div>
-								<div className="col-md-11 col-lg-11 col-sm-11 col-xs-11 rats">
-									<p className="arrowtext">SHOW ALL (85) RATINGS & COMMENTS</p>
-								</div>
+								<Link to={`/detail`} className="scroll-to">
+									<div className="col-md-11 col-lg-11 col-sm-11 col-xs-11 rats">
+										<p className="arrowtext">SHOW ALL (85) RATINGS & COMMENTS</p>
+									</div>
+								</Link>	
 							</div>
+							}
 							<div className="row col-md-12">
 								<hr />
 							</div>

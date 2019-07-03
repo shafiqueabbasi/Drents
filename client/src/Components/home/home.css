@@ -118,6 +118,9 @@
 	.margmodal{
   		margin-left: 7%;
 	}
+	.head_color_2{
+		background-color: #473463;
+	}
 	.header2_new_logo{
 		height: 45px;
 	    margin-top: 25px;
@@ -136,6 +139,9 @@
 	}
 	.margmodal{
   		margin-left: 7%;
+	}
+	.head_color_2{
+		background-color: #473463;
 	}
 	.header2_new_logo{
 		height: 45px;
@@ -158,6 +164,9 @@
 	}
 	.margmodal{
   		margin-left: 7%;
+	}
+	.head_color_2{
+		background-color: #473463;
 	}
 	.header2_new_logo{
 		height: 45px;
@@ -998,12 +1007,12 @@
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){
 	.imgwidth{
 		height: 250px;
-		position: relative;
-		width: 85%;
-		margin-bottom: 15%;
+	    position: relative;
+	    width: 100%;
+	    margin-bottom: 15%;
 	}
 	.rwmarg{
-		margin-left: 8px;
+		margin-left: -21px;
 
 	}
 	.pinkleft{
@@ -1089,11 +1098,11 @@
 	}
 	.absoul{
 		position: absolute;
-        margin-top: -59%;
-    	margin-left: 0%;
-        box-shadow: inset 3px -110px 42px rgba(0,0,0,0.4);
-        height: 107px;
-    	width: 74%;
+	    margin-top: -80%;
+	    margin-left: 0%;
+	    box-shadow: inset 3px -110px 42px rgba(0,0,0,0.4);
+	    height: 107px;
+	    width: 81%;
 	}
 }
 @media only screen and (min-device-width : 1366px) and (max-device-width: 1920px){
@@ -1104,7 +1113,7 @@
 	}
 	.rwmarg{
 		margin: 0px;
-    	margin-left: 5%;
+    	margin-left: 43px;
 	}
 	.margimag{
 

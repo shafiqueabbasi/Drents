@@ -50,7 +50,7 @@ class Home extends Component {
         <Gallery label="Featured Rentals"
           data={data.slice(0, 5)}
           widthProps=''
-          colLg='col-lg-2'
+          colLg='col-md-2 col-lg-2'
           imgtextstyle='absoul'
           imgheadtext='pinktext'
           margBotom=''
@@ -58,6 +58,8 @@ class Home extends Component {
           featureArrow='featarrow'
           featText='featarrowtext'
           headLable='headings'
+          tpmrgin='topmargin'
+          rowmainmargin='rwmarg'
           showonhome={false}
         />
         <Heading5 />

@@ -18,7 +18,7 @@ class Filterpanel extends Component {
         	mainFilter: '',
         	weather: '',
         	size: '',
-        	label: 'Dresses avaiable',
+        	label: 'Dresses available',
         	mainFilterArr: ["Casual", "Semi Formal", "Formal", "Heavy Formal", "Bridal"],
         	weatherArr: ["ColdWeather", "WarmWeather"],
         	weatherArrM: ["Cold Weather", "Warm Weather"],
@@ -232,17 +232,19 @@ class Filterpanel extends Component {
 						</div>
 	    				<div className="col-lg-9 col-md-9 col-sm-8">
 	  						<Gallery
-									label={mainFilter.length > 0 ? mainFilter : label}
-									hrLine='false'
-									data={this.state.data}
-									colLg='col-md-3'
-									imgtextstyle='absoulFilter'
-									imgheadtext='pinktextFilter'
-									margBotom='margbootom'
-									featureFilter='featuresub_dresses'
-									featureArrow='featFilterarrow'
-									featText='filterarrowtext'
-									headLable='filterheadlable'
+								label={mainFilter.length > 0 ? mainFilter : label}
+								hrLine='false'
+								data={this.state.data}
+								colLg='col-md-3'
+								imgtextstyle='absoulFilter'
+								imgheadtext='pinktextFilter'
+								margBotom='margbootom'
+								featureFilter='featuresub_dresses'
+								featureArrow='featFilterarrow'
+								featText='filterarrowtext'
+								headLable='filterheadlable'
+								tpmrgin='divTopmargin'
+      							rowmainmargin='row_Marg'
 									// data={data}
 								/>
 	  						<div className="form-group row">

@@ -33,11 +33,11 @@ class Heading4 extends Component {
 
 	    		<div className="container-fluid">
 	    			<div className="col-md-12 col-sm-12 col-xs-12">
-	    				<div className="row rwmarg">
+	    				<div className={`row ${this.props.rowmainmargin}`}>
 	    					{data && data.map((elem, key) => {
 	    						// console.log(elem,'elem')
 	    						return(
-	    							<div className={`col-xs-6 col-sm-3 relat topmargin ${this.props.colLg} ${this.props.margBotom}`}>
+	    							<div className={`col-xs-6 col-sm-3 relat ${this.props.tpmrgin} ${this.props.colLg} ${this.props.margBotom}`}>
 			    						<Link key={key} to={{pathname: `/detail`, state: {elem, data}}}>
 				    							<img src={elem.fileList[0]} className="imgwidth"/>	
 				    							<div className={`${this.props.imgtextstyle}`}>
@@ -73,7 +73,7 @@ class Heading4 extends Component {
 	    					<img src="../images/arrow.png" className={`${this.props.featureArrow}`}/>
 	    				</div>
 	    				<div className="col-xs-10 col-sm-10 col-md-10 col-lg-10">
-	    					<p className={`${this.props.featText}`}>SHOW ALL FEATURED DRESSES</p>
+	    					<Link to={`/product`}><p className={`${this.props.featText}`}>SHOW ALL FEATURED DRESSES</p></Link>
 	    				</div>
 	    			</div>
 	    		</div><br/><br/><br/><br/>	

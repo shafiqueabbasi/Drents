@@ -47,7 +47,9 @@ class SecondFold extends Component {
 
   render() {
     let obj = this.props.location.state.elem;
-    
+    console.log(this.state.reviews.length , 'length')
+    console.log(this.state.reviews , 'state')
+
     return (
       <div className="App">
           <div className="row" style={{margin:'0px'}}>
@@ -65,9 +67,16 @@ class SecondFold extends Component {
                   featureArrow='featFilterarrow'
                   featText='productarrowtext'
                   headLable='productheadlable'
+                  tpmrgin='proTopmargin'
+                  rowmainmargin='row_ProMarg'
               />
+            </div>
+          </div>
+          <div className="row" style={{margin:'0px'}}>
+            <div className="col-xs-12 col-sm-12 col-md-3 col-lg-4"></div>
+            <div className="col-xs-12 col-sm-12 col-md-9 col-lg-8 marg_left_review">    
               <hr/>
-              <br/>        
+                     
               {this.state.reviews.length > 0 && <div className="row derr">
                 <h1 className="comment_review_heading">Rating & Comments</h1>
               </div>}

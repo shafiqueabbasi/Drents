@@ -48,9 +48,8 @@ class Headernew extends Component {
       if(str.slice(str.indexOf("/") + 1, str.indexOf("/", 1)) == 'reset'){
         return null;
       }
-
       return (
-     	<div style={{backgroundColor: '#473463'}}>
+     	<div className="head_color_2">
      		<div className="container-fluid">
      			<div className="row navbar hidden-xs">
      				<div className="col-sm-1 col-md-1 col-lg-1 hidden-xs"></div> 
@@ -192,8 +191,8 @@ class Headernew extends Component {
               </div>
             </div>
 
-            <div className="row visible-xs" style={{background:'linear-gradient(to bottom, #473463 0%, #2a1f3b 100%)', marginTop:'1%' , marginLeft:'-9%' ,marginBottom:'5%'}}>
-              <div className="col-md-4 col-xs-4">
+            <div className="row visible-xs" style={{background:'linear-gradient(to bottom, #473463 0%, #2a1f3b 100%)' , marginLeft:'-9%' ,marginBottom:'5%'}}>
+              <div className="col-xs-3">
                 <i onClick={this.openNav} className="fas fa-bars" style={{color:'white',marginLeft:'8px',fontSize:'24px',marginTop:'10px'}}></i>
               </div>
               <div className="col-xs-4">

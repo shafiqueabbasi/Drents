@@ -91,7 +91,7 @@ export const Rate2 = props => {
                onChange={props.onChange}
            />
            <div className={props.classXS ? props.classXS : "col-md-5" + " col-xs-4"}
-               className="productRating">
+                className={props.OH ? "productRating OH" : "productRating"}>
                <h5>{props.rate}</h5>
            </div>
        </div>

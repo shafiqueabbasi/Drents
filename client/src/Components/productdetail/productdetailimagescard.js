@@ -1,5 +1,6 @@
  import React, { Component } from 'react';
  import { isMobileOnly, isTablet } from "react-device-detect";
+ import { Link } from "react-router-dom";
  import './productdetail.css'
 
  class Productdetailimagescard extends Component {
@@ -33,7 +34,7 @@
 							    <img src="../images/back-arrow.png" className="back_arrow"/>
 							</div>
 							<div className="">
-								<p className="back_arrowtext">BACK TO ALL DRESSES</p>
+								<Link to={`/product`}><p className="back_arrowtext">BACK TO ALL DRESSES</p></Link>
 							</div>
 						</div><br/><br/>
 
@@ -90,7 +91,7 @@
 								    <img src="../images/back-arrow.png" className="back-arrow"/>
 								</div>
 								<div className="col-sm-10 col-xs-10">
-									<p className="back_arrowtext">BACK TO ALL DRESSES</p>
+									<Link to={`/product`}><p className="back_arrowtext">BACK TO ALL DRESSES</p></Link>
 								</div>
 							</div>
 

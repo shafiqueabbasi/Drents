@@ -39,6 +39,12 @@
     font-size: 30px;
     text-align: left;
   }
+  .divTopmargin{
+      margin-top: 50%;
+  }
+  .row_Marg{
+        margin-top: -40%; 
+  }
 }
 @media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
   .absoulFilter{
@@ -77,6 +83,12 @@
       font-Size: 35px;
      margin-left: -15%;
   } 
+  .divTopmargin{
+     
+  }
+  .row_Marg{
+    
+  }
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
   .absoulFilter{
@@ -113,6 +125,12 @@
       font-Size: 40px;
       text-align: left;
       padding-left: 3%;
+  }
+  .divTopmargin{
+       margin-left: 0px;
+  }
+  .row_Marg{
+    margin-left: 6px;
   }
 }
 @media only screen and (min-device-width : 1366px) and (max-device-width : 1920px){
@@ -153,6 +171,13 @@
       font-Size: 40px;
       text-align: left;
       padding-left: 50px;
+  }
+  .divTopmargin{
+          margin-left: 0px;
+  }
+  .row_Marg{
+      margin: 0px;
+      margin-left: 43px;
   }
 }
 

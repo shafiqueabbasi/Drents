@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 import './home.css';
 
 class Heading2 extends Component {
@@ -15,33 +16,43 @@ class Heading2 extends Component {
 	    			</div>
 	    			<div className="col-xs-12 col-sm-8 col-md-8 col-lg-8">
 	    				<div className="row">
-	    					<div className="col-xs-6 col-sm-4 col-md-4 col-lg-4 divpurple">
-	    						<img src="../images/casual-dress-inactive.png" className="dresimage" />
-	    						<p className="casualtext">Casual</p>
-	    						<img src="../images/arrow.png" className="arimag"/>
-	    					</div>
-	    					<div className="col-xs-6 col-sm-4 col-md-4 col-lg-4 divpurple">
-	    						<img src="../images/semi-formal-dress-inactive.png" className="dresimage" />
-	    						<p className="samitext">Semi Formal</p>
-	    						<img src="../images/arrow.png" className="arimag"/>
-	    					</div>
-	    					<div className="col-xs-6 col-sm-4 col-md-4 col-lg-4 divpurple">
-	    						<img src="../images/formal-dress-inactive.png" className="dresimage" />
-	    						<p className="casualtext">Formal</p>
-	    						<img src="../images/arrow.png" className="arimag"/>
-	    					</div>
+	    					<Link to="/product"> 
+		    					<div className="col-xs-6 col-sm-4 col-md-4 col-lg-4 divpurple">
+		    						<img src="../images/casual-dress-inactive.png" className="dresimage" />
+		    						<p className="casualtext">Casual</p>
+		    						<img src="../images/arrow.png" className="arimag"/>
+		    					</div>
+	    					</Link>
+	    					<Link to="/product">
+		    					<div className="col-xs-6 col-sm-4 col-md-4 col-lg-4 divpurple">
+		    						<img src="../images/semi-formal-dress-inactive.png" className="dresimage" />
+		    						<p className="samitext">Semi Formal</p>
+		    						<img src="../images/arrow.png" className="arimag"/>
+		    					</div>
+	    					</Link>
+	    					<Link to="/product">
+		    					<div className="col-xs-6 col-sm-4 col-md-4 col-lg-4 divpurple">
+		    						<img src="../images/formal-dress-inactive.png" className="dresimage" />
+		    						<p className="casualtext">Formal</p>
+		    						<img src="../images/arrow.png" className="arimag"/>
+		    					</div>
+	    					</Link>
 	    				</div><br/>	
-	    				<div className="row">	
-	    					<div className="col-xs-6 col-sm-4 col-md-4 col-lg-4 divpurple">
-	    						<img src="../images/casual-dress-inactive.png" className="dresimage" />
-	    						<p className="samitext">Heavy formal</p>
-	    						<img src="../images/arrow.png" className="arimag"/>
-	    					</div>
-	    					<div className="col-xs-6 col-sm-4 col-md-4 col-lg-4 divpurple">
-	    						<img src="../images/semi-formal-dress-inactive.png" className="dresimage" />
-	    						<p className="casualtext">Bridal</p>
-	    						<img src="../images/arrow.png" className="arimag"/>
-	    					</div>
+	    				<div className="row">
+	    					<Link to="/product">	
+		    					<div className="col-xs-6 col-sm-4 col-md-4 col-lg-4 divpurple">
+		    						<img src="../images/casual-dress-inactive.png" className="dresimage" />
+		    						<p className="samitext">Heavy formal</p>
+		    						<img src="../images/arrow.png" className="arimag"/>
+		    					</div>
+	    					</Link>
+	    					<Link to="/product">
+		    					<div className="col-xs-6 col-sm-4 col-md-4 col-lg-4 divpurple">
+		    						<img src="../images/semi-formal-dress-inactive.png" className="dresimage" />
+		    						<p className="casualtext">Bridal</p>
+		    						<img src="../images/arrow.png" className="arimag"/>
+		    					</div>
+	    					</Link>
 	    				</div>	
 	    			</div>
 	    		</div>
