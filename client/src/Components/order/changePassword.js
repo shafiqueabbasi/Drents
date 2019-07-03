@@ -158,7 +158,7 @@ class ChangePassword extends Component {
                                 <div className="row" style={{margin:'0px'}}>
                                   <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <label className="input_form_Profile">
-                                      Confrim Password
+                                      Confirm Password
                                     </label>
                                   </div>
                                   <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
