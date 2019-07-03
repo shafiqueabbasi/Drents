@@ -140,7 +140,7 @@
 	.header2_new_logo{
 		height: 45px;
 	    margin-top: 25px;
-	    margin-left: -8%;
+	    margin-left: -30%;
 	}
 	.widht_sm{
 		
@@ -548,7 +548,7 @@
 
 @media only screen and (min-device-width : 360px) and (max-device-width : 767px){
 	.divpurple{
-		    background-color: #463362;
+	        background: linear-gradient(to right, rgb(71, 52, 99) 0%, rgb(42, 31, 59) 100%);
 		     text-align: center;
 		    width: 45%;
 		    margin-left: 3%;
@@ -580,7 +580,7 @@
 }
 @media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
 	.divpurple{
-		background-color: #463362;
+	    background: linear-gradient(to right, rgb(71, 52, 99) 0%, rgb(42, 31, 59) 100%);
 	    text-align: center;
 	    width: 27%;
 	    margin-left: 5%;
@@ -613,7 +613,7 @@
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){
 	.divpurple{
-		background-color: #463362;
+	    background: linear-gradient(to right, rgb(71, 52, 99) 0%, rgb(42, 31, 59) 100%);
 	    text-align: center;
 	    width: 27%;
 	    margin-left: 5%;
@@ -644,7 +644,7 @@
 }
 @media only screen and (min-device-width : 1366px){
 	.divpurple{
-		background-color: #463362;
+	    background: linear-gradient(to right, rgb(71, 52, 99) 0%, rgb(42, 31, 59) 100%);
 	    text-align: center;
 	    width: 26%;
 	    margin-left: 5%;
