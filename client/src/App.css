@@ -970,7 +970,17 @@
 }
 .checkbox_form_Profile{
     font-family: playfair display;
-    color: #9b9b9b;
+    color: #353535;
+    font-size: 15px;
+}
+.checkbox_form_Profile:hover {
+    font-family: playfair display;
+    color: #cb9d6c;
+    font-size: 15px;
+}
+.checkbox_form_Profile::-moz-selection {
+    font-family: playfair display;
+    color: #cb9d6c !important;
     font-size: 15px;
 }
 .inputBox{

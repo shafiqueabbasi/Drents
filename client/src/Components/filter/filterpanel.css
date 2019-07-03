@@ -189,23 +189,23 @@
     font-family: Playfair Display;
     font-size: 25px;
   }
-.wrapper{
-  width:100%;
-}
+  .wrapper{
+    width:100%;
+  }
   .C_P{
-  color: #353535;
-  text-decoration: none !important;
-}
+    color: #353535;
+    text-decoration: none !important;
+  }
 
-.C_P a:focus, a:hover {
-  color: #cb9d6c !important;
-  text-decoration: none !important;
+  .C_P a:focus, a:hover {
+    color: #cb9d6c !important;
+    text-decoration: none !important;
+  }
 }
 @media(max-width:992px){
- .wrapper{
-  width:100%;
-}
-
+  .wrapper{
+    width:100%;
+  }
 }
 .panel-heading {
   padding: 0;
@@ -263,7 +263,7 @@ background: rgba(155,155,155,0.3);
 
 /* When the radio button is checked, add a blue background */
 .container input:checked ~ .checkmark {
-  background-color: #473463;
+  background-color: #473463 !important;
 }
 
 /* Create the indicator (the dot/circle - hidden when not checked) */
@@ -360,7 +360,7 @@ background: rgba(155,155,155,0.3);
   background: #cb9d6c;;
 }
 
-}
+
 
 @media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
   .filter_H{
@@ -653,7 +653,7 @@ background: rgba(155,155,155,0.3);
 /* Style the indicator (dot/circle) */
 .container .checkmark:after {
   top: 6px;
-  left: 6px;
+  left: 6checkmark1px;
   width: 8px;
   height: 8px;
   border-radius: 50%;
@@ -808,7 +808,7 @@ background: rgba(155,155,155,0.3);
   left: 0;
   height: 20px;
   width: 20px;
-  border: none;
+  border: 2px solid #ccc !important;
 
 }
 
@@ -820,6 +820,7 @@ background: rgba(155,155,155,0.3);
 /* When the radio button is checked, add a blue background */
 .container input:checked ~ .checkmark {
   background-color: #473463;
+  border: 2px solid #473463 !important;
 }
 
 /* Create the indicator (the dot/circle - hidden when not checked) */
@@ -837,8 +838,8 @@ background: rgba(155,155,155,0.3);
 
 /* Style the indicator (dot/circle) */
 .container .checkmark:after {
-  top: 6px;
-  left: 6px;
+  top: 4.4px;
+  left: 4px;
   width: 8px;
   height: 8px;
   border-radius: 50%;
@@ -914,6 +915,14 @@ background: rgba(155,155,155,0.3);
   height: 8px;
   border-radius: 50%;
   background: #cb9d6c;;
+}
+.withStyleCheckBox{
+  top: 6px;
+  left: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #cb9d6c;
 }
 
 }

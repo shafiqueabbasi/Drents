@@ -129,16 +129,16 @@ class Filterpanel extends Component {
 	    	<div className="App ">
 	    		{this.state.loading && <div className="loading">Loading&#8230;</div>}
 	    		<div  className="container-fluid" >
-	    			<div className="col-lg-12 col-md-12 col-sm-12 hidden-xs">
+	    			<div className="col-md-12 col-sm-12 hidden-xs">
 
-	    				<div className="col-lg-3 col-md-3 col-sm-4">
+	    				<div className="col-md-3 col-sm-4">
 	    					<div className="more">
 	    						<div className="row" style={{paddingLeft:'60px'}}>
 	    							<h3 className="filter_H">Filters</h3>
 	    							<h3 className="filter_H1">Categories</h3><br/>
 
 									<label className="container1"><h5 id="Casual" onClick={(e) => this.handleMainItems(e, "Casual")} className="lH_filter"><a href="" className="C_P">Casual</a></h5>
-										<input type="checkbox" id='Casual'></input>
+										<input type="checkbox"></input>
 										<span className="checkmark1"></span>
 									</label><br/>
 
@@ -230,7 +230,7 @@ class Filterpanel extends Component {
 								</div>
 							</div>
 						</div>
-	    				<div className="col-lg-9 col-md-9 col-sm-8">
+	    				<div className="col-md-8 col-sm-8">
 	  						<Gallery
 								label={mainFilter.length > 0 ? mainFilter : label}
 								hrLine='false'
@@ -266,8 +266,8 @@ class Filterpanel extends Component {
 
 
 								<div className="col-md-5 col-sm-5 col-xs-5 row"></div>
-								{/*{this.state.arr.length > 8 && <ButtonComponent label="More"/>}*/}
-								{/*{this.state.data.length === 0 &&
+								{/*{/*{this.state.arr.length > 8 && <ButtonComponent label="More"/>}*/}
+								{this.state.data.length === 0 &&
 									<ButtonComponent
 										className="col-md-12"
 										label="Find More"
@@ -378,6 +378,20 @@ class Filterpanel extends Component {
 										<div className="col-xs-12" style={{paddingBottom: '15px', margin: '40px 0 20px',borderBottom: '1px solid black'}}></div>
 									</div>
 								</div>
+								{/*<div className="row">
+									<h3>Colors&emsp;&emsp;&nbsp;-</h3><br/>
+									<div className="circle">
+	    								<a href=""><div className="circle1"></div></a>&nbsp;
+	    								<a href=""><div className="circle2"></div></a>&nbsp;
+	    								<a href=""><div className="circle3"></div></a>
+	    							</div>
+	    							<div className="circle">
+	    								<a href=""><div className="circle4"></div></a>&nbsp;
+	    								<a href=""><div className="circle5"></div></a>&nbsp;
+	    								<a href=""><div className="circle6"></div></a>
+	    							</div>
+	    							<div className="col-xs-12" style={{paddingBottom: '15px', margin: '40px 0 20px',borderBottom: '1px solid black'}}></div>
+								</div>*/}
 								<div className="row">
 									<div className="row col-xs-12">
 									<div className="panel panel-default">
@@ -425,19 +439,7 @@ class Filterpanel extends Component {
 							</div>
 						</div>
 	    				<div className="col-xs-12">
-	  						<Gallery 
-	  								label={mainFilter.length > 0 ? mainFilter : label} 
-	  								hrLine='false' 
-	  								data={this.state.data} 
-	  								colLg='col-xs-6'
-									imgtextstyle='absoulFilter'
-									imgheadtext='pinktextFilter'
-									margBotom='margbootom'
-									featureFilter='featuresub_dresses'
-									featureArrow='featFilterarrow'
-									featText='filterarrowtext'
-									headLable='filterheadlable'
-  								/>
+	  						<Gallery label={mainFilter.length > 0 ? mainFilter : label} hrLine='false' data={this.state.data} />
 	  						<div className="form-group row">
 							<label className="col-xs-12 control-label" style={{textAlign: 'center'}}></label>
 							<div className="col-xs-12 row"></div>
