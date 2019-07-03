@@ -139,7 +139,7 @@ class Filterpanel extends Component {
 
 									<label className="container1"><h5 id="Casual" onClick={(e) => this.handleMainItems(e, "Casual")} className="lH_filter"><a href="" className="C_P">Casual</a></h5>
 										<input type="checkbox" id='Casual'></input>
-										<span className="checkmark1"></span>
+										<span className="checkmark1" id="Casual" onClick={(e) => this.handleMainItems(e, "Casual")}></span>
 									</label><br/>
 
 									<label className="container1"><h5 id="Semi Formal" onClick={(e) => this.handleMainItems(e, "Semi Formal")} className="lH_filter"><a href="" className="C_P">Semi Formal</a></h5>
