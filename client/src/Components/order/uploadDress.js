@@ -265,7 +265,7 @@ render() {
                               <div className="col-lg-3 col-md-1 col-sm-4"></div>
                               <div className="col-lg-4 col-md-4 col-sm-5" style={{marginTop: '1%'}}>
                                 <label 
-                                  className="labelcustome" 
+                                  className="label_custome" 
                                   id="#bb" >
                                    Choose File  
                                       <input 

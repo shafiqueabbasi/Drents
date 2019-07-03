@@ -58,6 +58,27 @@ class Filterpanel extends Component {
 			size: mainFilter.length > 0 ? size : ''
 		});
 		this.handleConditions(filtered, mainFilter, item);
+		console.log(item)
+		if(item == 'Casual'){
+			console.log('true')
+			document.getElementById('casual').click();
+		}
+		else if(item == 'Semi Formal'){
+			document.getElementById('semi Formal').click();
+		}
+		else if(item == 'Formal'){
+			document.getElementById('formal').click();
+		}
+		else if(item == 'Heavy Formal'){
+			document.getElementById('heavy').click();
+		}
+		else if(item == 'Formal'){
+			document.getElementById('formal').click();
+		}
+		else if(item == 'Bridal'){
+			document.getElementById('bridal').click();
+		}
+		
 	}
 
 	uncheckRadio(arr){
@@ -136,33 +157,36 @@ class Filterpanel extends Component {
 	    						<div className="row" style={{paddingLeft:'60px'}}>
 	    							<h3 className="filter_H">Filters</h3>
 	    							<h3 className="filter_H1">Categories</h3><br/>
+	    							
+	    							<div>
+	    								<label className="container1"><h5 id="Casual" onClick={(e) => this.handleMainItems(e, "Casual")} className="lH_filter">
+	    								<a href="" className="C_P">Casual</a></h5>
+											<input type="checkbox"></input>
+											<span className="checkmark1" id='casual' ></span>
+										</label>
+	    							</div>
 
-									<label className="container1"><h5 id="Casual" onClick={(e) => this.handleMainItems(e, "Casual")} className="lH_filter"><a href="" className="C_P">Casual</a></h5>
-										<input type="checkbox"></input>
-										<span className="checkmark1"></span>
-									</label><br/>
+									<br/>
 
 									<label className="container1"><h5 id="Semi Formal" onClick={(e) => this.handleMainItems(e, "Semi Formal")} className="lH_filter"><a href="" className="C_P">Semi Formal</a></h5>
 										<input type="checkbox"></input>
-										<span className="checkmark1"></span>
+										<span className="checkmark1" id='semi Formal'></span>
 									</label><br/>
 
 									<label className="container1"><h5 id="Formal" onClick={(e) => this.handleMainItems(e, "Formal")} className="lH_filter"><a href="" className="C_P">Formal</a></h5>
 										<input type="checkbox"></input>
-										<span className="checkmark1"></span>
+										<span className="checkmark1" id='formal'></span>
 									</label><br/>
 
 									<label className="container1"><h5 id="Heavy Formal" onClick={(e) => this.handleMainItems(e, "Heavy Formal")} className="lH_filter" ><a href="" className="C_P">Heavy Formal</a></h5>
 										<input type="checkbox"></input>
-										<span className="checkmark1"></span>
+										<span className="checkmark1" id='heavy'></span>
 									</label><br/>
 
 									<label className="container1"><h5 id="Bridal" onClick={(e) => this.handleMainItems(e, "Bridal")} className="lH_filter"><a href="" className="C_P">Bridal</a></h5>
 										<input type="checkbox"></input>
-										<span className="checkmark1"></span>
+										<span className="checkmark1" id='bridal'></span>
 									</label><br/>
-
-
 	    							{/*<h5 id="" onClick={(e) => this.handleMainItems(e, "")} className="lH_filter"><a href="" className="C_P">All Products</a></h5><br/>
 
 	    							<h5 id="Wedding" onClick={(e) => this.handleMainItems(e, "Wedding")} className="lH_filter"><a href="" className="C_P">Casual</a></h5><br/>
@@ -266,14 +290,7 @@ class Filterpanel extends Component {
 
 
 								<div className="col-md-5 col-sm-5 col-xs-5 row"></div>
-								{/*{/*{this.state.arr.length > 8 && <ButtonComponent label="More"/>}*/}
-								{this.state.data.length === 0 &&
-									<ButtonComponent
-										className="col-md-12"
-										label="Find More"
-										onClick={() => this.setState({ data: this.state.arr })}
-									/>
-								}*/}
+								
 								<div className="col-md-5"></div>
 
 							</div>

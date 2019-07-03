@@ -1079,6 +1079,17 @@
       font-family: playfair display;
       padding: 13px;
   }
+    .label_custome{
+      color: rgb(203, 157, 108);
+      border: none;
+      width: 100%;
+      text-align: center;
+      margin-top: 2%;
+      background-color: #e1e1e1;
+      font-size: 15px;
+      font-family: playfair display;
+      padding: 13px;
+  }
   .upload_dress_mb{
     font-family: playfair display;
     color: #9b9b9b;
@@ -1113,6 +1124,18 @@
     font-family: playfair display;
     padding: 13px;
     margin-left: 28%;
+  }
+   .label_custome{
+     color: rgb(203, 157, 108);
+    border: none;
+    width: 52%;
+    text-align: center;
+    margin-top: 1%;
+    background-color: #e1e1e1;
+    font-size: 15px;
+    font-family: playfair display;
+    padding: 13px;
+    margin-left: 31%;
   }
   .upload_dress_mb{
     font-family: playfair display;
@@ -1149,6 +1172,18 @@
       padding: 13px;
       margin-left: 1%;
   }
+  .label_custome{
+      color: rgb(203, 157, 108);
+      border: none;
+      width: 100%;
+      text-align: center;
+      margin-top: 2%;
+      background-color: #e1e1e1;
+      font-size: 15px;
+      font-family: playfair display;
+      padding: 13px;
+      margin-left: 15%;
+  }
   .upload_dress_mb{
     font-family: playfair display;
     color: #9b9b9b;
@@ -1183,6 +1218,18 @@
       font-family: playfair display;
       padding: 13px;
       margin-left: 15%;
+  }
+  .label_custome{
+      color: rgb(203, 157, 108);
+      border: none;
+      width: 70%;
+      text-align: center;
+      margin-top: 2%;
+      background-color: #e1e1e1;
+      font-size: 15px;
+      font-family: playfair display;
+      padding: 13px;
+      margin-left: 29%;
   }
   .upload_dress_mb{
     font-family: playfair display;
