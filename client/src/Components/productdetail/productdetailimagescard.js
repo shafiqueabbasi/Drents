@@ -37,9 +37,8 @@
 								<Link to={`/product`}><p className="back_arrowtext">BACK TO ALL DRESSES</p></Link>
 							</div>
 						</div><br/><br/>
-
 						<div className="col-md-12">
-							<img alt="" src={this.state.showImg} style={{width:"100%", height:"610px"}}/>
+							<img alt="" src={this.state.showImg} style={{width:"100%", height:"610px" , marginTop:'-4%'}}/>
 						</div>
 					</div>
 					<br/>
@@ -88,7 +87,7 @@
 
 		            		<div className="col-sm-12 col-xs-12">
 								<div className="col-sm-2 col-xs-2">
-								    <img src="../images/back-arrow.png" className="back-arrow"/>
+								    <img src="../images/back-arrow.png" className="back_arrow"/>
 								</div>
 								<div className="col-sm-10 col-xs-10">
 									<Link to={`/product`}><p className="back_arrowtext">BACK TO ALL DRESSES</p></Link>

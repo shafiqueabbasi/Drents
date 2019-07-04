@@ -51,7 +51,7 @@
 }
 
 
-@media only screen and (min-device-width : 360px) and (max-device-width : 640px){
+@media only screen and (min-device-width : 360px) and (max-device-width : 767px){
 	.sams{
 		border: none;
 	    height: 47px;
@@ -75,9 +75,9 @@
 	}
 	.bookedboo{
 		color: #9b9b9b;
-		margin-top: -5%;
+	    margin-top: 0%;
 	    font-size: 16px;
-	    margin-left: -8%;
+	    margin-left: -3%;
 	}
 	.bookedbook{
 		width: 53%;
@@ -137,7 +137,7 @@
 	    margin-bottom: 7%;
 	}
 }
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
+@media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
 	.sams{
 		border: none;
 	    height: 50px;
@@ -239,13 +239,13 @@
 		    margin-left: -28px;
 	}
 	.trello2{
-		margin-left: 51.5%;
+	    margin-left: 52.5%;
     	margin-top: -64px;
 	}
 	.bookedboo{
 		color: #9b9b9b;
     	font-size: 16px;
-    	padding-left: 5% !important;
+    	padding-left: 4% !important;
 	}
 	.bookedbook{
 	    width: 99% !important;
@@ -286,7 +286,7 @@
 		opacity: 0;
 	}
 	.booked{
-      	width: 78.5%;
+      	width: 80.5%;
 	    background-color: #cb9d6c;
 	    color: #473463;
 	    border-radius: 0px;
@@ -331,7 +331,7 @@
 	.bookedboo{
 		color: #9b9b9b;
 		font-family: Tajawal;
-		font-size: 30px;
+		font-size: 20px;
 		margin-left: 4%;
 	}
 	.bookedbook{
@@ -370,13 +370,13 @@
 	    margin-top: -3%;
 	}
 	.booked{
-      	width: 82.5%;
-      	background-color: #cb9d6c;
-	    color: #473463;
-	    border-radius: 0px;
-	    padding: 0px;
-	    margin-left: 29px;
-	    margin-top: -3%;
+      	    width: 81.5%;
+		    background-color: #cb9d6c;
+		    color: #473463;
+		    border-radius: 0px;
+		    padding: 0px;
+		    margin-left: 27px;
+		    margin-top: -3%;
 	}
 	.shelter{
 		margin-left: 3%;
@@ -463,6 +463,11 @@
 	.owner{
 		color: #9b9b9b !important;
 	}
+	.cl_03_marg{
+		
+	}
+	.main_promargin{
+	}
 }
 
 @media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
@@ -476,6 +481,11 @@
 	.owner{
 		color: #9b9b9b !important;
 	}
+	.cl_03_marg{
+
+	}
+	.main_promargin{
+	}
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){
 	
@@ -486,6 +496,12 @@
 	}
 	.owner{
 		color: #9b9b9b !important;
+	}
+	.cl_03_marg{
+		margin-left: -8%;
+	}
+	.main_promargin{
+		margin-top: 5%;
 	}
 }
 @media only screen and (min-device-width : 1366px) and (max-device-width : 1920px){
@@ -498,7 +514,16 @@
 	.owner{
 		color: #9b9b9b !important;
 	}
+	.cl_03_marg{
+		margin-left: -2%;
+	}
+	.main_promargin{
+		margin-top: 5%;
+	}
 }
+
+
+
 
 {/*Home Gallery CALL ON DETAIL*/}
 @media only screen and (min-device-width : 360px) and (max-device-width : 767px){
@@ -636,7 +661,7 @@
 		font-family: Tajawal;
 		color: #9b9b9b;
 		font-size: 16px;
-		margin-left: 1.5%;
+		margin-left: 2.5%;
 		margin-top: -2%;	
 	}
 	.frm_date{
@@ -879,7 +904,7 @@
 		text-align: left;
 		font-family: crimsontext;
 	}
-@media only screen and (min-device-width : 360px) and (max-device-width : 640px){
+@media only screen and (min-device-width : 360px) and (max-device-width : 767px){
 	.trello4{
 		font-family :  Playfair Display;
 	    margin-left: -7%;
@@ -887,8 +912,9 @@
 	}	
 	.trello3{
 		color: #cb9d6c;
-		font-family: Tajawal;
-        margin-left: -22%;
+	    font-family: Tajawal;
+	    margin-left: -7%;
+	    margin-top: 5%;
 	}
 	.detail{
 		 font-family:  Playfair Display;
@@ -923,10 +949,10 @@
 		margin-left: 23px;
 	}
 	.shelterr5{
-		font-family: Playfair Display;
-	    font-size: 30px;
-	    margin-top: 64%;
-	    margin-left: -11%;
+		    font-family: Playfair Display;
+		    font-size: 35px;
+		    margin-top: 15%;
+		    margin-left: -4%;
 	}
 	.showChart{
 		color: #cb9d6c;
@@ -934,18 +960,19 @@
 		padding-left: 3%;
 	}
 }
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
+@media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
 	.trello4{
 		font-family : Playfair Display;
 	    margin-left: -15%;
 	    margin-top: 10%;
 	}
 	.trello3{
-		font-family: Tajawal !important;
-		color: #cb9d6c;
-    	font-size: 25px;
-    	margin-left: -158%;
-    	margin-top: 110px;
+	    font-family: Tajawal !important;
+	    color: #cb9d6c;
+	    font-size: 25px;
+	    margin-left: -11%;
+	    margin-top: 6%;
+
 	}
 	.detail{
 		 font-family: Playfair Display;
@@ -981,9 +1008,9 @@
 	}
 	.shelterr5{
 		font-family: Playfair Display;
-	    font-size: 60px;
+	    font-size: 45px;
 	    margin-top: 18%;
-	    margin-left: -9%;
+	    margin-left: -5%;
 	}
 	.showChart{
 		color: #cb9d6c;
@@ -991,7 +1018,7 @@
 		padding-left: 6%;
 	}
 }
-@media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
+@media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){
 	.trello4{
 		font-family : Playfair Display;
 	    margin-left: -7%;
@@ -1001,7 +1028,7 @@
 		font-family: Tajawal;
 		color: #cb9d6c;
    		font-size: 25px;
-   		margin-left: -12%;
+   		margin-left: -2%;
     	margin-top: 0px;
 	}
 	.detail{
@@ -1035,12 +1062,12 @@
 		font-family: Playfair Display;
 		color: #353535; 
 		font-size: 45px;
-	    margin-left: 5%;
+	    margin-left: 6%;
 	}
 	.shelterr5{
 		font-family: Playfair Display;
-		font-size: 48px; 
-		margin-left: -6%;
+	    font-size: 30px;
+	    margin-left: 0%;
 	}
 	.arrowleft{
 	
@@ -1051,10 +1078,10 @@
 	.showChart{
 		color: #cb9d6c;
 		font-family: Playfair Display;
-		padding-left: 2%;
+		padding-left: 3%;
 	}
 }
-@media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
+@media only screen and (min-device-width : 1366px) and (max-device-width : 1920px){
 	.trello4{
 		font-family : Playfair Display;
 	    margin-left: -7%;
@@ -1100,13 +1127,13 @@
 	}
 	.shelterr5{
 		font-family: Playfair Display;
-		font-size: 60px; 
-		margin-left: 7%;
+	    font-size: 37px;
+	    margin-left: 4%;
 	}
 	.showChart{
 		color: #cb9d6c;
 		font-family: Playfair Display;
-		padding-left: 2%;
+		padding-left: 3%;
 	}
 }
 
@@ -1303,7 +1330,7 @@ padding: 5%;
 		    background-color: rgba(155,155,155,0.3);
 		    width: 277.5% !important;
 		    margin-left: 25% !important;
-		    margin-top: 45% !important;
+		    margin-top: 7% !important;
 		    text-align: center;
 		    padding-top: 18px;
 	}
@@ -1323,7 +1350,7 @@ padding: 5%;
 	    background-color: rgba(155,155,155,0.3);
 	    width: 191.5%;
 	    margin-left: -53%;
-	    margin-top: 21%;
+	    margin-top: 20%;
 	    text-align: center;
 	    padding-top: 18px;
 	}
@@ -1445,7 +1472,7 @@ padding: 5%;
 }
 
 
-@media only screen and (min-device-width : 360px) and (max-device-width : 640px){
+@media only screen and (min-device-width : 360px) and (max-device-width : 767px){
 
 	.round{
 	display: inline-block;
@@ -1458,7 +1485,7 @@ padding: 5%;
 }
 }
 
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
+@media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
 	.aroundsize{
 	margin: 15px 14px 0px 19px;
 	text-align: center!important;
@@ -1474,14 +1501,19 @@ padding: 5%;
 	}
 	
 }
-@media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
+@media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){
 	.round{
 		display: inline-block;
 	    margin-left: 0px;
 	}
 	
 }
-@media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){}
+@media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
+	.round{
+		display: inline-block;
+	    margin-left: 6px;
+	}
+}
 
 
 
@@ -1546,7 +1578,7 @@ padding: 5%;
 	}
 }
 
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
+@media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
 	.back_arrow{
 
 	}
@@ -1601,9 +1633,9 @@ padding: 5%;
 	.marg_mobile{
 	}
 }
-@media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
+@media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){
 	.back_arrow{
-
+		    margin-top: -13%;
 	}
 	.featureFilterdresses{
 	      font-size: 12px;
@@ -1611,13 +1643,13 @@ padding: 5%;
 	      color: #808080;
 	      letter-spacing: 5px;
 	      margin-bottom: 0px;
-	      margin-left: 9%;
+	      margin-left: 10%;
     }
     .productheadlable{
-	       font-family: Playfair Display;
-	      font-Size: 40px;
-	      text-align: left;
-	      padding-left: 51%;
+          font-family: Playfair Display;
+	    font-Size: 40px;
+	    text-align: left;
+	    padding-left: 4%;
   	}
 	.back_arrowtext{
 		color: #9b9b9b;
@@ -1654,7 +1686,7 @@ padding: 5%;
 }
 @media only screen and (min-device-width : 1366px) and (max-device-width : 1920px){
 	.back_arrow{
-
+		margin-top: -9%;
 	}
 	.featureFilterdresses{
 	      font-size: 12px;
@@ -1674,7 +1706,6 @@ padding: 5%;
 		color: #9b9b9b;
 		letter-spacing: 5px;
 		font-size: 10px;
-		padding-top: 1%;
 	}
 	.comment_review_heading{
 		font-family: Playfair Display;
@@ -1864,10 +1895,10 @@ padding: 5%;
 		padding-left: 1px;
 	}
 	.newstar1{
-		padding-top: 8%;
+		padding-top: 6%;
 	}
 	.newrating{
-		    margin-top: -12%;
+		    margin-top: -13%;
     		margin-left: 15%;
     	
 	}

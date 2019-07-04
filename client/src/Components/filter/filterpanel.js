@@ -41,7 +41,7 @@ class Filterpanel extends Component {
 		this.props.changingHeader('calling true');
 	}
 
-	handleMainItems = (e, item) => {
+	handleMainItems = (e, item , checkDevice) => {
 		if(e !== null){
 			e.preventDefault();
 		}
@@ -58,26 +58,43 @@ class Filterpanel extends Component {
 			size: mainFilter.length > 0 ? size : ''
 		});
 		this.handleConditions(filtered, mainFilter, item);
-		console.log(item)
-		if(item == 'Casual'){
-			console.log('true')
-			document.getElementById('casual').click();
+		// console.log(checkDevice)
+
+		if(checkDevice == 'forMbl'){
+			if(item == 'Casual'){
+			document.getElementById('casual2').click();
+			}
+			else if(item == 'Semi Formal'){
+				document.getElementById('semi Formal2').click();
+			}
+			else if(item == 'Formal'){
+				document.getElementById('formal2').click();
+			}
+			else if(item == 'Heavy Formal'){
+				document.getElementById('heavy2').click();
+			}
+			else if(item == 'Bridal'){
+				document.getElementById('bridal2').click();
+			}
 		}
-		else if(item == 'Semi Formal'){
-			document.getElementById('semi Formal').click();
+		else if(checkDevice == 'forDektop'){
+			if(item == 'Casual'){
+			document.getElementById('casual1').click();
+			}
+			else if(item == 'Semi Formal'){
+				document.getElementById('semi Formal1').click();
+			}
+			else if(item == 'Formal'){
+				document.getElementById('formal1').click();
+			}
+			else if(item == 'Heavy Formal'){
+				document.getElementById('heavy1').click();
+			}
+			else if(item == 'Bridal'){
+				document.getElementById('bridal1').click();
+			}
 		}
-		else if(item == 'Formal'){
-			document.getElementById('formal').click();
-		}
-		else if(item == 'Heavy Formal'){
-			document.getElementById('heavy').click();
-		}
-		else if(item == 'Formal'){
-			document.getElementById('formal').click();
-		}
-		else if(item == 'Bridal'){
-			document.getElementById('bridal').click();
-		}
+		
 		
 	}
 
@@ -158,34 +175,30 @@ class Filterpanel extends Component {
 	    							<h3 className="filter_H">Filters</h3>
 	    							<h3 className="filter_H1">Categories</h3><br/>
 	    							
-	    							<div>
-	    								<label className="container1"><h5 id="Casual" onClick={(e) => this.handleMainItems(e, "Casual")} className="lH_filter">
-	    								<a href="" className="C_P">Casual</a></h5>
-											<input type="checkbox"></input>
-											<span className="checkmark1" id='casual' ></span>
-										</label>
-	    							</div>
-
-									<br/>
-
-									<label className="container1"><h5 id="Semi Formal" onClick={(e) => this.handleMainItems(e, "Semi Formal")} className="lH_filter"><a href="" className="C_P">Semi Formal</a></h5>
+    								<label className="container1"><h5 id="Casual" onClick={(e) => this.handleMainItems(e, "Casual" , 'forDektop')} className="lH_filter">
+    								<a href="" className="C_P">Casual</a></h5>
 										<input type="checkbox"></input>
-										<span className="checkmark1" id='semi Formal'></span>
+										<span className="checkmark1" id='casual1' ></span>
 									</label><br/>
 
-									<label className="container1"><h5 id="Formal" onClick={(e) => this.handleMainItems(e, "Formal")} className="lH_filter"><a href="" className="C_P">Formal</a></h5>
+									<label className="container1"><h5 id="Semi Formal" onClick={(e) => this.handleMainItems(e, "Semi Formal", 'forDektop')} className="lH_filter"><a href="" className="C_P">Semi Formal</a></h5>
 										<input type="checkbox"></input>
-										<span className="checkmark1" id='semi Formal'></span>
+										<span className="checkmark1" id='semi Formal1'></span>
 									</label><br/>
 
-									<label className="container1"><h5 id="Heavy Formal" onClick={(e) => this.handleMainItems(e, "Heavy Formal")} className="lH_filter" ><a href="" className="C_P">Heavy Formal</a></h5>
+									<label className="container1"><h5 id="Formal" onClick={(e) => this.handleMainItems(e, "Formal", 'forDektop')} className="lH_filter"><a href="" className="C_P">Formal</a></h5>
 										<input type="checkbox"></input>
-										<span className="checkmark1" id='heavy'></span>
+										<span className="checkmark1" id='formal1'></span>
 									</label><br/>
 
-									<label className="container1"><h5 id="Bridal" onClick={(e) => this.handleMainItems(e, "Bridal")} className="lH_filter"><a href="" className="C_P">Bridal</a></h5>
+									<label className="container1"><h5 id="Heavy Formal" onClick={(e) => this.handleMainItems(e, "Heavy Formal", 'forDektop')} className="lH_filter" ><a href="" className="C_P">Heavy Formal</a></h5>
 										<input type="checkbox"></input>
-										<span className="checkmark1" id='bridal'></span>
+										<span className="checkmark1" id='heavy1'></span>
+									</label><br/>
+
+									<label className="container1"><h5 id="Bridal" onClick={(e) => this.handleMainItems(e, "Bridal", 'forDektop')} className="lH_filter"><a href="" className="C_P">Bridal</a></h5>
+										<input type="checkbox"></input>
+										<span className="checkmark1" id='bridal1'></span>
 									</label><br/>
 	    							{/*<h5 id="" onClick={(e) => this.handleMainItems(e, "")} className="lH_filter"><a href="" className="C_P">All Products</a></h5><br/>
 
@@ -321,29 +334,29 @@ class Filterpanel extends Component {
 												<div className="panel-body" style={{fontFamily: 'crimsontext'}}>
 
 
-												<label className="container1"><h5 id="Casual" onClick={(e) => this.handleMainItems(e, "Casual")} className="lH_filter"><a href="" className="C_P">Casual</a></h5>
+												<label className="container1"><h5 id="Casual" onClick={(e) => this.handleMainItems(e, "Casual" ,'forMbl')} className="lH_filter"><a href="" className="C_P">Casual</a></h5>
 													<input type="checkbox"></input>
-													<span className="checkmark1"  id='casual'></span>
+													<span className="checkmark1" id='casual2'></span>
 												</label><br/>
 												
-												<label className="container1"><h5 id="Semi Formal" onClick={(e) => this.handleMainItems(e, "Semi Formal")} className="lH_filter"><a href="" className="C_P">Semi Formal</a></h5>
+												<label className="container1"><h5 id="Semi Formal" onClick={(e) => this.handleMainItems(e, "Semi Formal" , 'forMbl')} className="lH_filter"><a href="" className="C_P">Semi Formal</a></h5>
 													<input type="checkbox"></input>
-													<span className="checkmark1" id='semi Formal'></span>
+													<span className="checkmark1" id='semi Formal2'></span>
 												</label><br/>
 
-												<label className="container1"><h5 id="Formal" onClick={(e) => this.handleMainItems(e, "Formal")} className="lH_filter"><a href="" className="C_P">Formal</a></h5>
+												<label className="container1"><h5 id="Formal" onClick={(e) => this.handleMainItems(e, "Formal" ,'forMbl')} className="lH_filter"><a href="" className="C_P">Formal</a></h5>
 													<input type="checkbox"></input>
-													<span className="checkmark1" id='semi Formal'></span>
+													<span className="checkmark1" id='formal2'></span>
 												</label><br/>
 
-												<label className="container1"><h5 id="Heavy Formal" onClick={(e) => this.handleMainItems(e, "Heavy Formal")} className="lH_filter" ><a href="" className="C_P">Heavy Formal</a></h5>
+												<label className="container1"><h5 id="Heavy Formal" onClick={(e) => this.handleMainItems(e, "Heavy Formal" , 'forMbl')} className="lH_filter" ><a href="" className="C_P">Heavy Formal</a></h5>
 													<input type="checkbox"></input>
-													<span className="checkmark1" id='heavy'></span>
+													<span className="checkmark1" id='heavy2'></span>
 												</label><br/>
 
-												<label className="container1"><h5 id="Bridal" onClick={(e) => this.handleMainItems(e, "Bridal")} className="lH_filter"><a href="" className="C_P">Bridal</a></h5>
+												<label className="container1"><h5 id="Bridal" onClick={(e) => this.handleMainItems(e, "Bridal" , 'forMbl')} className="lH_filter"><a href="" className="C_P">Bridal</a></h5>
 													<input type="checkbox"></input>
-													<span className="checkmark1" id='bridal'></span>
+													<span className="checkmark1" id='bridal2'></span>
 												</label><br/>
 
 
@@ -456,7 +469,21 @@ class Filterpanel extends Component {
 							</div>
 						</div>
 	    				<div className="col-xs-12">
-	  						<Gallery label={mainFilter.length > 0 ? mainFilter : label} hrLine='false' data={this.state.data} />
+	  						<Gallery 
+	  							label={mainFilter.length > 0 ? mainFilter : label} 
+	  							hrLine='false' 
+	  							data={this.state.data}
+	  							colLg='col-xs-6'
+								imgtextstyle='absoulFilter'
+								imgheadtext='pinktextFilter'
+								margBotom='margbootom'
+								featureFilter='featuresub_dresses'
+								featureArrow='featFilterarrow'
+								featText='filterarrowtext'
+								headLable='filterheadlable'
+								tpmrgin='divTopmargin'
+      							rowmainmargin='row_Marg'
+	  							 />
 	  						<div className="form-group row">
 							<label className="col-xs-12 control-label" style={{textAlign: 'center'}}></label>
 							<div className="col-xs-12 row"></div>

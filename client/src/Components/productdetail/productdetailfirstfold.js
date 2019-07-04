@@ -189,7 +189,7 @@ class Productdetailfirstfold extends Component {
 					{/*<Header/>*/}
 				</div>
 				<div className="container-fluid" style={{ marginTop: '3%', paddingLeft: '5.7%', paddingRight: '5.7%' }} >
-					<div className="row">
+					<div className="row main_promargin">
 						<div className="col-md-4 hidden-xs hidden-sm">
 							<Imagescard data={elem.fileList} />
 							{/*<Table />*/}
@@ -200,9 +200,9 @@ class Productdetailfirstfold extends Component {
 						<div className="col-md-5">{/*/*main col-md-5 right possion div deskstop*/}
 							<div className="row" style={{ marginLeft: '-5%' }}>
 								<div className="col-sm-1 visible-sm"></div>
-								<div className="col-md-8 col-sm-7 col-xs-6">
-									<div className="col-sm-6 col-lg-8 col-md-8">
-										<h1 className="shelterr5" style={{ fontFamily: 'Playfair Display', fontSize: '36px' }}>{elem.productName}</h1>
+								<div className="col-lg-8 col-md-12 col-sm-7 col-xs-12">
+									<div className="col-sm-12 col-lg-12 col-md-12">
+										<h1 className="shelterr5">{elem.productName}</h1>
 									</div>
 									<div className="col-lg-5 col-md-5 col-sm-5 col-xs-7">
 										<p className="trello3">${" " + elem.priceDay}</p>
@@ -306,7 +306,7 @@ class Productdetailfirstfold extends Component {
 				        		elementThree="L"
 			        		/>*/}
 							<div className="row">
-								<div className="col-md-8 col-sm-12 col-xs-12 round">
+								<div className="col-lg-8 col-md-12 col-sm-12 col-xs-12 round">
 									{elem.sizes && elem.sizes.map((el, key) => {
 										return (
 											<span key={key} className="flu">
@@ -561,7 +561,7 @@ class Productdetailfirstfold extends Component {
 						</div>{/*main col-md-5 right possion div deskstop*/}
 
 
-						<div className="col-md-3">
+						<div className="col-md-3 cl_03_marg">
 							<div className="col-md-5 col-sm-4 col-xs-6 roundnround2">
 								<img src={userImage.length > 0 ? userImage : "../images/admin1.jpg"} className="bookedbook" />
 							</div>
