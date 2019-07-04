@@ -61,7 +61,7 @@ export class Shareholder extends Component {
 		                        <button
 			                        type="button"
 			                        onClick={this.handleRemoveShareholder(idx)}
-			                        className="btn btn-sm"
+			                        className="btn btn-sm cross_btn"
 	                        		
                         		>
 		                          X

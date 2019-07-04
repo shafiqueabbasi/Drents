@@ -26,16 +26,7 @@
   border-right: none;
   border-bottom: 1px solid black;
 }
-.button_add{
-  width: 22%;
-  height: 31px;
-  border: none;
-  outline: none;
-  background-color: rgb(203, 157, 108);
-  color: rgb(71, 52, 99);
-  font-family: "playfair display";
-  font-size: 15px;
-}
+
 #shareholder{
   margin-top: 17px;
   border-top: none;
@@ -224,6 +215,20 @@
     padding: 9px;
     margin-top: -1%;
   }
+    .button_add{
+        width: 22%;
+        height: 31px;
+        border: none;
+        outline: none;
+        background-color: rgb(203, 157, 108);
+        color: rgb(71, 52, 99);
+        font-family: "playfair display";
+        font-size: 15px;
+        margin-top: 2%;
+    }
+    .cross_btn{
+      margin-top: 2%;
+    }
 }
 @media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
     .btn_change_password{
@@ -240,7 +245,21 @@
     background-color: rgb(225, 225, 225);
     padding: 9px;
     margin-top: -1%;
-  }
+  }   
+      .button_add{
+        width: 22%;
+        height: 31px;
+        border: none;
+        outline: none;
+        background-color: rgb(203, 157, 108);
+        color: rgb(71, 52, 99);
+        font-family: "playfair display";
+        font-size: 15px;
+        margin-top: 2%;
+    }
+    .cross_btn{
+      margin-top: 2%;
+    }
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){
      .btn_change_password{
@@ -258,8 +277,22 @@
     padding: 9px;
     margin-top: -1%;
   }
+  .button_add{
+        width: 22%;
+        height: 31px;
+        border: none;
+        outline: none;
+        background-color: rgb(203, 157, 108);
+        color: rgb(71, 52, 99);
+        font-family: "playfair display";
+        font-size: 15px;
+        margin-top: 2%;
+    }
+    .cross_btn{
+      margin-top: 2%;
+    }
 }
-@media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
+@media only screen and (min-device-width : 1366px) and (max-device-width : 1920px){
    .btn_change_password{
       font-family: playfair display;
       font-size: 16px;
@@ -275,6 +308,20 @@
     padding: 9px;
     margin-top: -1%;
   }
+    .button_add{
+        width: 22%;
+        height: 31px;
+        border: none;
+        outline: none;
+        background-color: rgb(203, 157, 108);
+        color: rgb(71, 52, 99);
+        font-family: "playfair display";
+        font-size: 15px;
+        margin-top: 2%; 
+    }
+    .cross_btn{
+      margin-top: 2%;
+    }
 }
 
 .btn_reset_password{
