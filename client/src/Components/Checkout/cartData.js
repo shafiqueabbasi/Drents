@@ -294,9 +294,9 @@ class CartData extends Component {
 							<div id="stripeCard" className="modal fade" role="dialog" style={{ marginTop: '5%' }}>
 								<div className="modal-dialog">
 									<div className="modal-content" style={{ backgroundColor: 'white' }}>
-										<div className="modal-header" style={{ background: '#8080808c' }}>
-											<button type="button" className="close" data-dismiss="modal" style={{ color: 'white' }}>&times;</button>
-											<h4 className="modal-title" style={{ color: 'white', textAlign: 'center' }}>Stripe</h4>
+										<div className="modal-header" style={{ background: '#8080808' }}>
+											<button type="button" className="close" data-dismiss="modal" style={{ color: '#cb9d6c' }}>&times;</button>
+											<h4 className="modal-title stripe_head">Stripe</h4>
 										</div>
 										<div className="modal-body">
 											{!paymentSuccess && <div className="row househalt">

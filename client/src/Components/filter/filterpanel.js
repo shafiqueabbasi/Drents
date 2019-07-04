@@ -485,6 +485,7 @@ class Filterpanel extends Component {
 								headLable='filterheadlable'
 								tpmrgin='divTopmargin'
       							rowmainmargin='row_Marg'
+      							hoVerUp=''
 	  							 />
 	  						<div className="form-group row">
 							<label className="col-xs-12 control-label" style={{textAlign: 'center'}}></label>

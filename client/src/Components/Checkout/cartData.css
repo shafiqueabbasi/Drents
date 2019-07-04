@@ -56,6 +56,7 @@
 .chainnbelt10{
 	margin-top: 2%;
 }
+
 .apex1{
 	    margin-top: 2%;
 }
@@ -97,7 +98,7 @@
 		border: 1px solid gray;
 		width: 87%;
 		text-align: center;
-		margin-left: 20px;
+		margin-left: 13px;
 		padding: 15px;
 	}
 	.cart_marg_screen{
@@ -134,13 +135,18 @@
 	    font-size: 30px;
 	    font-family: playfair display;
 	}
+	.stripe_head{
+		 color: #cb9d6c;
+	    margin-left: 10%;
+	    text-align: center;
+	}
 }
 @media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
 	.househalt{
 		border: 1px solid gray;
 		width: 87%;
 		text-align:center;
-		margin-left:35px;
+		margin-left:38px;
 		padding:15px;
 	}
 	.cart_marg_screen{
@@ -172,14 +178,19 @@
 	    font-size: 15px;
 	    font-family: playfair display;
 	}
-
+	.stripe_head{
+	     color: #cb9d6c;
+	    margin-left: 2%;
+	    text-align: center;
+	    font-size: 27px;
+	}
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){
 	.househalt{
 		border: 1px solid gray;
 		width: 87%;
 		text-align:center;
-		margin-left:35px;
+		margin-left:23px;
 		padding:15px;
 	}
 	.cart_marg_screen{
@@ -211,15 +222,19 @@
 	    font-size: 15px;
 	    font-family: playfair display;
 	}
-
+	.stripe_head{
+		 color: #cb9d6c;
+	    margin-left: 8%;
+	    text-align: center;
+	}
 }
 @media only screen and (min-device-width : 1366px) and (max-device-width : 1920px){
 	.househalt{
 		border: 1px solid gray;
-		width: 87%;
-		text-align:center;
-		margin-left:35px;
-		padding:15px;
+	    width: 87%;
+	    text-align: center;
+	    margin-left: 22px;
+	    padding: 15px;
 	}
 	.cart_marg_screen{
 		margin: 0px;
@@ -249,6 +264,11 @@
 		color: #9b9b9b;
 	    font-size: 15px;
 	    font-family: playfair display;
+	}
+	.stripe_head{
+		 color: #cb9d6c;
+	    margin-left: 8%;
+	    text-align: center;
 	}
 
 }

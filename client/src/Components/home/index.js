@@ -61,6 +61,7 @@ class Home extends Component {
           tpmrgin='topmargin'
           rowmainmargin='rwmarg'
           imgSmalltext='pinksmaltext'
+          hoVerUp='feat_hoverUp'
           showonhome={false}
         />
         <Heading5 />
