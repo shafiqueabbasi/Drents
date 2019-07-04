@@ -5,7 +5,10 @@ class Heading3 extends Component {
   render() {
     
     return (
-    	<div>
+    	<div  style={{ backgroundImage: "url('../images/welcome-background-left.png')", 
+            backgroundSize: '',
+            backgroundRepeat: 'no-repeat',
+      }}>
       		  <div className="container">
               <div className="row">
                   <div className="col-xs-12 col-sm-3 col-md-4 col-lg-4"></div>

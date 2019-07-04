@@ -28,14 +28,7 @@
 .nav-side-menu li {
   padding-left: 0px;
 }
-.head{
-  /*margin-right: 25px;*/
-  margin-top: 20px;
-  font-size: 15px;
-  font-family: Playfair Display;
-  color: #cb9d6c;
-  margin-left: -1%;
-}
+
 .head2{
   margin-right: 20px;
   margin-top: 20px;
@@ -110,6 +103,14 @@
 	.marg_nav{
 
 	}
+	.head{
+	  margin-right: 25px;
+	  margin-top: 20px;
+	  font-size: 15px;
+	  font-family: Playfair Display;
+	  color: #cb9d6c;
+	  margin-left: -1%;
+	}
 }
 @media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
 	.nav{
@@ -132,6 +133,14 @@
 	.marg_nav{
 		
 	}
+	.head{
+	  margin-right: 25px;
+	  margin-top: 20px;
+	  font-size: 15px;
+	  font-family: Playfair Display;
+	  color: #cb9d6c;
+	  margin-left: -1%;
+	}
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){
 	.nav{
@@ -153,6 +162,14 @@
 	}
 	.marg_nav{
 		margin-left: 3%;
+	}
+	.head{
+	  margin-right: 12px;
+	  margin-top: 20px;
+	  font-size: 15px;
+	  font-family: Playfair Display;
+	  color: #cb9d6c;
+	  margin-left: -1%;
 	}
 }
 @media only screen and (min-device-width : 1366px) and  (max-device-width : 1920px){
@@ -178,6 +195,14 @@
 	}
 	.marg_nav{
 		margin-left: 3%;
+	}
+	.head{
+	  margin-right: 13px;
+	  margin-top: 20px;
+	  font-size: 15px;
+	  font-family: Playfair Display;
+	  color: #cb9d6c;
+	  margin-left: -1%;
 	}
 }
 
