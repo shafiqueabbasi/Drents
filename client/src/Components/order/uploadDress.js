@@ -562,7 +562,7 @@ render() {
                                     <span className="title" style={{color: 'white', textAlign: 'center'}}>
                                       Measurement
                                     </span>
-                                    <button type="button" className="close" data-dismiss="modal" style={{color:'white'}}>&times;</button>
+                                    <button type="button" className="close" data-dismiss="modal" style={{color:'#cb9d6c'}}>&times;</button>
                                   </div>
                                   <div className="modal-body">
                                     <SeeChart />

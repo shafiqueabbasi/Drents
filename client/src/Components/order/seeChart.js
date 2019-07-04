@@ -13,7 +13,7 @@ class SeeChart extends Component {
 						</div>
 						<div className="col-md-7 col-sm-7"></div>
 						<div className="col-md-1 col-sm-1">
-							<a href="#" class="close" data-dismiss="alert" style={{fontSize: '160%'}}>-</a>
+							<a href="#" class="close" data-dismiss="alert" style={{fontSize: '160%'}}></a>
 						</div>
 					</div>
 					    <table class="table table-striped" style={{width:'0px'}}>
