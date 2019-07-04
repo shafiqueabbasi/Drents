@@ -1,6 +1,6 @@
 import { AsyncStorage } from '@callstack/async-storage'
 
-const BASE_URL = 'https://drent1.herokuapp.com/';
+const BASE_URL = 'https://drent1.herokuapp.com';
 //const BASE_URL = 'https://drent1.herokuapp.com';
 
 
