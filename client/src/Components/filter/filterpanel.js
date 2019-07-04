@@ -175,7 +175,7 @@ class Filterpanel extends Component {
 
 									<label className="container1"><h5 id="Formal" onClick={(e) => this.handleMainItems(e, "Formal")} className="lH_filter"><a href="" className="C_P">Formal</a></h5>
 										<input type="checkbox"></input>
-										<span className="checkmark1" id='formal'></span>
+										<span className="checkmark1" id='semi Formal'></span>
 									</label><br/>
 
 									<label className="container1"><h5 id="Heavy Formal" onClick={(e) => this.handleMainItems(e, "Heavy Formal")} className="lH_filter" ><a href="" className="C_P">Heavy Formal</a></h5>
@@ -323,27 +323,27 @@ class Filterpanel extends Component {
 
 												<label className="container1"><h5 id="Casual" onClick={(e) => this.handleMainItems(e, "Casual")} className="lH_filter"><a href="" className="C_P">Casual</a></h5>
 													<input type="checkbox"></input>
-													<span className="checkmark1"></span>
+													<span className="checkmark1"  id='casual'></span>
 												</label><br/>
-
+												
 												<label className="container1"><h5 id="Semi Formal" onClick={(e) => this.handleMainItems(e, "Semi Formal")} className="lH_filter"><a href="" className="C_P">Semi Formal</a></h5>
 													<input type="checkbox"></input>
-													<span className="checkmark1"></span>
+													<span className="checkmark1" id='semi Formal'></span>
 												</label><br/>
 
 												<label className="container1"><h5 id="Formal" onClick={(e) => this.handleMainItems(e, "Formal")} className="lH_filter"><a href="" className="C_P">Formal</a></h5>
 													<input type="checkbox"></input>
-													<span className="checkmark1"></span>
+													<span className="checkmark1" id='semi Formal'></span>
 												</label><br/>
 
 												<label className="container1"><h5 id="Heavy Formal" onClick={(e) => this.handleMainItems(e, "Heavy Formal")} className="lH_filter" ><a href="" className="C_P">Heavy Formal</a></h5>
 													<input type="checkbox"></input>
-													<span className="checkmark1"></span>
+													<span className="checkmark1" id='heavy'></span>
 												</label><br/>
 
 												<label className="container1"><h5 id="Bridal" onClick={(e) => this.handleMainItems(e, "Bridal")} className="lH_filter"><a href="" className="C_P">Bridal</a></h5>
 													<input type="checkbox"></input>
-													<span className="checkmark1"></span>
+													<span className="checkmark1" id='bridal'></span>
 												</label><br/>
 
 
