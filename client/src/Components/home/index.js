@@ -60,6 +60,7 @@ class Home extends Component {
           headLable='headings'
           tpmrgin='topmargin'
           rowmainmargin='rwmarg'
+          imgSmalltext='pinksmaltext'
           showonhome={false}
         />
         <Heading5 />

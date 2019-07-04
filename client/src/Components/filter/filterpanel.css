@@ -46,6 +46,12 @@
         margin-top: -40%; 
         margin-left: -13%;
   }
+  .pinksmaltext_filter{
+    font-size: 12px;
+    font-family: tajawal;
+    color: #8080A2;
+    margin-left: 3%;
+  }
 }
 @media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
   .absoulFilter{
@@ -90,6 +96,12 @@
   .row_Marg{
     
   }
+  .pinksmaltext_filter{
+    font-size: 12px;
+    font-family: tajawal;
+    color: #8080A2;
+    margin-left: 0%;
+  }
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){
   .absoulFilter{
@@ -133,6 +145,12 @@
   }
   .row_Marg{
     margin-left: 6px;
+  }
+  .pinksmaltext_filter{
+    font-size: 12px;
+    font-family: tajawal;
+    color: #808080;
+    margin-left: 0%;
   }
 }
 @media only screen and (min-device-width : 1366px) and (max-device-width : 1920px){
@@ -179,6 +197,12 @@
   .row_Marg{
       margin: 0px;
       margin-left: 43px;
+  }
+  .pinksmaltext_filter{
+    font-size: 12px;
+    font-family: tajawal;
+    color: #8080A2;
+    margin-left: 1%;
   }
 }
 

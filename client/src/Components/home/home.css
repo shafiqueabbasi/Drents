@@ -557,7 +557,7 @@
 
 @media only screen and (min-device-width : 360px) and (max-device-width : 767px){
 	.divpurple{
-	        background: linear-gradient(to right, rgb(71, 52, 99) 0%, rgb(42, 31, 59) 100%);
+	        /*background: linear-gradient(to right, rgb(71, 52, 99) 0%, rgb(42, 31, 59) 100%);*/
 		     text-align: center;
 		    width: 45%;
 		    margin-left: 3%;
@@ -589,7 +589,7 @@
 }
 @media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
 	.divpurple{
-	    background: linear-gradient(to right, rgb(71, 52, 99) 0%, rgb(42, 31, 59) 100%);
+/*	    background: linear-gradient(to right, rgb(71, 52, 99) 0%, rgb(42, 31, 59) 100%);*/
 	    text-align: center;
 	    width: 27%;
 	    margin-left: 5%;
@@ -622,7 +622,7 @@
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){
 	.divpurple{
-	    background: linear-gradient(to right, rgb(71, 52, 99) 0%, rgb(42, 31, 59) 100%);
+	   /* background: linear-gradient(to right, rgb(71, 52, 99) 0%, rgb(42, 31, 59) 100%);*/
 	    text-align: center;
 	    width: 27%;
 	    margin-left: 5%;
@@ -651,9 +651,9 @@
 		color: #353535;
 	}
 }
-@media only screen and (min-device-width : 1366px){
+@media only screen and (min-device-width : 1366px) and (max-device-width : 1920px){
 	.divpurple{
-	    background: linear-gradient(to right, rgb(71, 52, 99) 0%, rgb(42, 31, 59) 100%);
+	    /*background: linear-gradient(to right, rgb(71, 52, 99) 0%, rgb(42, 31, 59) 100%);*/
 	    text-align: center;
 	    width: 26%;
 	    margin-left: 5%;
@@ -807,7 +807,7 @@
 {/*New heading4new panal*/}
 @media only screen and (min-device-width : 360px) and (max-device-width : 767px){
 	.imgwidth{
-		height: 256px;
+		height: 225px;
 		position: relative;
 		width: 100%;
 	}
@@ -822,16 +822,17 @@
     	margin-left: 11px;
 	}
 	.pinktext{
-	 	font-size: 22px;
-	 	font-family: playfair display;
-	 	color: #ffffff;
- 	    margin-top: 2%;
-		margin-left: 3px;
+ 	    font-size: 22px;
+	    font-family: playfair display;
+	    color: #ffffff;
+	    margin-top: 105%;
+	    margin-left: 11px;
 	}
 	.pinksmaltext{
 		font-size: 12px;
 		font-family: tajawal;
 		color: #8080A2;
+		margin-left: 10%;
 	}
 	.chiffontext{
 	 	font-size: 31px;
@@ -892,11 +893,11 @@
     	margin-left: 11px;
 	}
 	.absoul{
-		position: absolute;
-	    margin-top: -70%;
+	    position: absolute;
+	    margin-top: -150%;
 	    margin-left: 0%;
-	    box-shadow: inset 3px -107px 57px rgba(0,0,0,0.4);
-	    height: 103px;
+	    box-shadow: inset 0px -109px 42px rgba(0,0,0,0.6);
+	    height: 225px;
 	    width: 80%;
 	}
 }
@@ -923,8 +924,8 @@
 	 	font-size: 20px;
 	    font-family: playfair display;
 	    color: #ffffff;
-	    margin-top: 11%;
-    	margin-left: 8%;
+	    margin-top: 84%;
+	    margin-left: 8%;
 	}
 	.pinksmaltext{
 		font-size: 12px;
@@ -997,11 +998,11 @@
 	}
 	.absoul{
 		position: absolute;
-	    margin-top: -58%;
+	    margin-top: -113%;
 	    margin-left: 0%;
-	    box-shadow: inset 3px -110px 42px rgba(0,0,0,0.4);
-        height: 103px;
-   		 width: 83%;
+	    box-shadow: inset 0px -92px 42px rgba(0,0,0,0.6);
+	    height: 200px;
+	    width: 83%;
 	}
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){
@@ -1025,11 +1026,11 @@
 		margin-left: 13%;
 	}
 	.pinktext{
-	 	font-size: 24px;
-	 	font-family: playfair display;
-	 	color: #ffffff;
-	 	margin-left: 4%;
-	 	margin-top: 6%;
+	 	font-size: 22px;
+	    font-family: playfair display;
+	    color: #ffffff;
+	    margin-left: 10%;
+	    margin-top: 113%;
 	}
 	.pinksmaltext{
 		font-size: 12px;
@@ -1098,10 +1099,10 @@
 	}
 	.absoul{
 		position: absolute;
-	    margin-top: -80%;
+	    margin-top: -167%;
 	    margin-left: 0%;
-	    box-shadow: inset 3px -110px 42px rgba(0,0,0,0.4);
-	    height: 107px;
+	    box-shadow: inset 0px -109px 42px rgba(0,0,0,0.6);
+	    height: 250px;
 	    width: 81%;
 	}
 }
@@ -1129,7 +1130,7 @@
 	    font-family: playfair display;
 	    color: #ffffff;
 	    margin-left: 8%;
-	    margin-top: 20%;
+        margin-top: 100%;
 
 	}
 	.pinksmaltext{
@@ -1190,17 +1191,29 @@
 	}
 	.absoul{
 		position: absolute;
-	    margin-top: -68%;
+        margin-top: -138%;
     	margin-left: 0%;
-        box-shadow: inset 3px -110px 42px rgba(0,0,0,0.4);
-	    height: 136px;
+        box-shadow: inset 0px -109px 42px rgba(0,0,0,0.6);
+	    height: 280px;
 	    width: 85%;
 	}
 	.featarrow{
 		margin-top: -12%;
 	}
 }
-
+.div_hoverUp{
+	background: linear-gradient(to right, rgb(71, 52, 99) 0%, rgb(42, 31, 59) 100%);
+}
+.div_hoverUp:hover{
+	margin-top: -2%;
+	background-color: #634873;
+	box-shadow: -1px 17px 32px rgba(0,0,0,0.3);
+	/*animation: mover 0.5s infinite  alternate;*/
+}
+.feat_hoverUp:hover{
+	margin-top: -6%;
+	box-shadow: -1px 17px 32px rgba(0,0,0,0.3);
+}
 
 @media only screen and (min-device-width : 360px) and (max-device-width : 767px){
     .headings{

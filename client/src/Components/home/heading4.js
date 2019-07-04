@@ -39,12 +39,13 @@ class Heading4 extends Component {
 	    						return(
 	    							<div className={`col-xs-6 col-sm-3 relat ${this.props.tpmrgin} ${this.props.colLg} ${this.props.margBotom}`}>
 			    						<Link key={key} to={{pathname: `/detail`, state: {elem, data}}}>
+			    							<div className="feat_hoverUp">
 				    							<img src={elem.fileList[0]} className="imgwidth"/>	
 				    							<div className={`${this.props.imgtextstyle}`}>
 							    					<p className={`${this.props.imgheadtext}`}>{elem.productName}</p>
-							    					<p className="pinksmaltext">$ {" " + elem.priceDay}</p>
+							    					<p className={`${this.props.imgSmalltext}`}>$ {" " + elem.priceDay}</p>
 							    				</div>
-
+							    			</div>	
 		    							</Link>
 	    								{/*<div>
 	    									{showEditDelete && userAvailable && <div className="row">

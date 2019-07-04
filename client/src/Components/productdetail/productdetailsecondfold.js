@@ -62,6 +62,7 @@ class SecondFold extends Component {
                   colLg='col-lg-3'
                   imgtextstyle='absoulFilter'
                   imgheadtext='pinktextFilter'
+                  imgSmalltext='pinksmaltext_pro'
                   margBotom='margbootom'
                   featureFilter='featureFilterdresses'
                   featureArrow='featFilterarrow'

@@ -17,21 +17,21 @@ class Heading2 extends Component {
 	    			<div className="col-xs-12 col-sm-8 col-md-8 col-lg-8">
 	    				<div className="row">
 	    					<Link to="/product"> 
-		    					<div className="col-xs-6 col-sm-4 col-md-4 col-lg-4 divpurple">
+		    					<div className="col-xs-6 col-sm-4 col-md-4 col-lg-4 divpurple div_hoverUp">
 		    						<img src="../images/casual-dress-inactive.png" className="dresimage" />
 		    						<p className="casualtext">Casual</p>
 		    						<img src="../images/arrow.png" className="arimag"/>
 		    					</div>
 	    					</Link>
 	    					<Link to="/product">
-		    					<div className="col-xs-6 col-sm-4 col-md-4 col-lg-4 divpurple">
+		    					<div className="col-xs-6 col-sm-4 col-md-4 col-lg-4 divpurple div_hoverUp">
 		    						<img src="../images/semi-formal-dress-inactive.png" className="dresimage" />
 		    						<p className="samitext">Semi Formal</p>
 		    						<img src="../images/arrow.png" className="arimag"/>
 		    					</div>
 	    					</Link>
 	    					<Link to="/product">
-		    					<div className="col-xs-6 col-sm-4 col-md-4 col-lg-4 divpurple">
+		    					<div className="col-xs-6 col-sm-4 col-md-4 col-lg-4 divpurple div_hoverUp">
 		    						<img src="../images/formal-dress-inactive.png" className="dresimage" />
 		    						<p className="casualtext">Formal</p>
 		    						<img src="../images/arrow.png" className="arimag"/>
@@ -40,14 +40,14 @@ class Heading2 extends Component {
 	    				</div><br/>	
 	    				<div className="row">
 	    					<Link to="/product">	
-		    					<div className="col-xs-6 col-sm-4 col-md-4 col-lg-4 divpurple">
+		    					<div className="col-xs-6 col-sm-4 col-md-4 col-lg-4 divpurple div_hoverUp">
 		    						<img src="../images/casual-dress-inactive.png" className="dresimage" />
 		    						<p className="samitext">Heavy formal</p>
 		    						<img src="../images/arrow.png" className="arimag"/>
 		    					</div>
 	    					</Link>
 	    					<Link to="/product">
-		    					<div className="col-xs-6 col-sm-4 col-md-4 col-lg-4 divpurple">
+		    					<div className="col-xs-6 col-sm-4 col-md-4 col-lg-4 divpurple div_hoverUp">
 		    						<img src="../images/semi-formal-dress-inactive.png" className="dresimage" />
 		    						<p className="casualtext">Bridal</p>
 		    						<img src="../images/arrow.png" className="arimag"/>

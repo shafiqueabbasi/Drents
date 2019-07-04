@@ -275,13 +275,14 @@ class Filterpanel extends Component {
 								colLg='col-md-3'
 								imgtextstyle='absoulFilter'
 								imgheadtext='pinktextFilter'
+								imgSmalltext='pinksmaltext_filter'
 								margBotom='margbootom'
 								featureFilter='featuresub_dresses'
 								featureArrow='featFilterarrow'
 								featText='filterarrowtext'
 								headLable='filterheadlable'
 								tpmrgin='divTopmargin'
-      							rowmainmargin='row_Marg'
+      							rowmainmargin='row_Marg'   							
 									// data={data}
 								/>
 	  						<div className="form-group row">
@@ -476,6 +477,7 @@ class Filterpanel extends Component {
 	  							colLg='col-xs-6'
 								imgtextstyle='absoulFilter'
 								imgheadtext='pinktextFilter'
+								imgSmalltext='pinksmaltext_filter'
 								margBotom='margbootom'
 								featureFilter='featuresub_dresses'
 								featureArrow='featFilterarrow'

@@ -1784,6 +1784,12 @@ padding: 5%;
 	.textarea_of_comment{
 		width: 96%;
 	}
+	 .pinksmaltext_pro{
+	    font-size: 12px;
+	    font-family: tajawal;
+	    color: #8080A2;
+	    margin-left: 3%;
+  }
 }
 @media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
 	.marg_left_product{
@@ -1828,6 +1834,12 @@ padding: 5%;
 	.textarea_of_comment{
 		width: 66%;
 	}
+	 .pinksmaltext_pro{
+	    font-size: 12px;
+	    font-family: tajawal;
+	    color: #8080A2;
+	    margin-left: 2%;
+  	}
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){
 	.marg_left_product{
@@ -1874,6 +1886,12 @@ padding: 5%;
 	.textarea_of_comment{
 		width: 84%;
 	}
+	.pinksmaltext_pro{
+	    font-size: 12px;
+	    font-family: tajawal;
+	    color: #808080;
+	    margin-left: 0%;
+  	}
 }
 @media only screen and (min-device-width : 1366px) and (max-device-width : 1920px){
 	.marg_left_product{
@@ -1919,6 +1937,12 @@ padding: 5%;
 	.textarea_of_comment{
 		width: 96%;
 	}
+	 .pinksmaltext_pro{
+	    font-size: 12px;
+	    font-family: tajawal;
+	    color: #8080A2;
+	    margin-left: 0%;
+  }
 }
 
 
