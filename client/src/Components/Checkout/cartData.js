@@ -153,7 +153,7 @@ class CartData extends Component {
 													<div className="col-xs-12 col-lg-2 col-md-2 col-sm-2 cart_dress_date">To</div>
 													<div className="col-xs-12 col-lg-5 col-md-5 col-sm-5 cart_dress_date">{elem.to}</div>
 												</div><br />
-												<p className="chainbelt4" onClick={this.cancelOrder.bind(this, elem)}>Remove dress</p>
+												<button className="chainbelt4" onClick={this.cancelOrder.bind(this, elem)} style={{background:'none', border:'none'}}>Remove dress</button>
 											</div>
 											<div className="col-xs-6 col-lg-4 col-md-4 col-sm-4 cart_align">
 												${((+elem.priceDay) * (+elem.rentDay + 1)).toFixed(2)}
