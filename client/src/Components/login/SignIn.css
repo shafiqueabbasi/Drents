@@ -95,7 +95,7 @@
 }
 .loginBtn--google:hover,
 .loginBtn--google:focus {
-  background:White;
+  background:#BB3F30;
 }
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
     color:    White;

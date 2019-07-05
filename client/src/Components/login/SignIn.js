@@ -7,6 +7,7 @@ import { HttpUtils } from "../../Service/HttpUtils";
 import { connect } from 'react-redux';
 import FacebookLogin from 'react-facebook-login';
 import { GoogleLogin } from 'react-google-login-component';
+import SignUp from './SignUp';
 // import $ from 'jquery';
 import './SignIn.css'
 
@@ -23,13 +24,22 @@ class SignIn extends Component {
           loader: false,
           forgotPassword:false,
           errMessage:'',
-          emailSent:false
+          emailSent:false,
+          createNaccount:false,
 
         }
         // reset login status
         this.props.dispatch(userActions.logout());
     }
+    createAndAccount = () => {
+        // this.setState({
+        //   createNaccount:true
+        // })
+        //console.log('awais')
+        // document.getElementById('closeSignInModal').click();
 
+        // document.getElementById('SignUp').click();
+    }
     handleSubmit = (e) => {
         e.preventDefault();
         this.setState({ loader: true })
@@ -41,7 +51,8 @@ class SignIn extends Component {
                       setTimeout(() => {
                           this.setState({ err: '', loader: false })
                       }, 4000)
-                  }else {
+                  }
+                  else {
                       localStorage.setItem('user', JSON.stringify(token));
                   }
               }));
@@ -330,16 +341,16 @@ class SignIn extends Component {
 					</div>
 				</div>}<br/>
         {!showEmailButton && <div className="row">
-          {!forgotPassword && <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <p  className="alacountup" style={{textAlign:'center'}}>Reset Password</p>
+          {!forgotPassword && <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12" style={{textAlign:'center'}}>
+            <button className="btn alacountup" style={{textAlign:'center', background:'none'}}>Reset Password</button>
           </div>}
         </div>}
         {this.state.loader && <div class="loading">Loading&#8230;</div>}
         </div>
         <br/>
 				{!showEmailButton && <div className="row">
-					{!forgotPassword && <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-						<p className="alacountup" style={{textAlign:'center'}}>Create an Account</p>
+					{!forgotPassword && <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12" style={{textAlign:'center'}}>
+						<button className="btn alacountup" style={{textAlign:'center', background:'none'}} onClick = {this.createAndAccount}>Create an Account</button>
 					</div>}
 				</div>}
         {this.state.loader && <div class="loading">Loading&#8230;</div>}

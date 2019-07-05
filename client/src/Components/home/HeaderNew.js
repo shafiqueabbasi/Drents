@@ -40,6 +40,8 @@ class Headernew extends Component {
   render() {
       const { loggedIn, arr, user, location } = this.props,
       { arrCart } = this.state;
+      console.log(loggedIn ,'loggedIn')
+
       let finalArr = arr.length > 0 ? arr : arrCart,
       userId = user && user._id ? user._id : '';
       //console.log(this.props, 'bhai jaaannnn bhai jaannn')
@@ -80,7 +82,7 @@ class Headernew extends Component {
                                   <Login />
                                 </div>
                                 <div className="modal-footer">
-                                  <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
+                                  <button type="button" className="btn btn-default" data-dismiss="modal" id='closeSignInModal'>Close</button>
                                 </div>
                               </div>
                             </div>
