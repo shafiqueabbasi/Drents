@@ -22,13 +22,7 @@ class Heading extends Component {
       backgroundSize: '',
       backgroundRepeat: 'no-repeat'
     }}>
-          <div className="row" style={{margin:'0px'}}>
-                <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
-                <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4" style={{textAlign:'center'}}>
-                    <img src="../images/scroll-logo.png" className="scrollimag"/>
-                </div>
-                <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
-          </div><br/><br/><br/>
+          
           <p className="weldrent">Welcome to Drent</p><br/>
           <p className="subtext hidden-xs">With Drent, you can get your perfect dress at a fraction of the cost!</p><br/><br/>
           <p className="subtext visible-xs">With Drent, you can get your perfect dress <br/>at a fraction of the cost!</p><br/><br/> <br/><br/>     

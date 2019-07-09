@@ -109,6 +109,10 @@
       width: 75%;
       margin: 30px auto;
   }
+  .drent_loGo{
+      height: 45px;
+      margin-top: 25px;
+  }
 }
 @media only screen and (min-device-width : 786px) and (max-device-width : 1023px){
   .modal-title {
@@ -136,6 +140,11 @@
   .modal-dialog{
       width: 45%;
       margin: 30px auto;
+  }
+  .drent_loGo{
+      height: 30px;
+      margin-top: 29%;
+      margin-left: 18%;
   }
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){
@@ -165,6 +174,11 @@
       width: 400px;
       margin: 30px auto;
   }
+  .drent_loGo{
+      height: 45px;
+      margin-top: 25px;
+      margin-left: 10%;
+  }
 }
 @media only screen and (min-device-width : 1366px) and (max-device-width : 1920px){
   .modal-title {
@@ -192,6 +206,11 @@
   .modal-dialog{
       width: 400px;
       margin: 30px auto;
+  }
+  .drent_loGo{
+      height: 45px;
+      margin-top: 25px;
+      margin-left: -9%;
   }
 }
 

@@ -310,6 +310,10 @@
 	    width: 100%;
 	    height: 380px;
 	}
+	.banner_prOo{
+		width: 100%;
+		margin-top: -14%;
+	}
 	.relationtext{
 		position: relative;
         margin-top: -76%;
@@ -377,6 +381,10 @@
 		width: 100%;
 		height: 580px;
 	}
+	.banner_prOo{
+		width: 100%;
+		margin-top: -14%;
+	}
 	.relationtext{
 		position: relative;
 	    margin-top: -62%;
@@ -434,6 +442,10 @@
 	    width: 100%;
 	    height: 860px;
 	    margin-top: -9%;
+	}
+	.banner_prOo{
+		width: 100%;
+		margin-top: -9%;
 	}
 	.relationtext{
 		position: relative;
@@ -497,6 +509,10 @@
 	    height: 860px;
 	    margin-top: -9%;
 	}
+	.banner_prOo{
+		width: 100%;
+		margin-top: -9%;
+	}
 	.relationtext{
 		position: relative;
 	    margin-top: -66%;
@@ -531,7 +547,7 @@
     	margin-left: -6%;
 	}
 	.scrollimag{
-		margin-top: 29%;
+		margin-top: -17%;
 		-webkit-animation: mover 0.5s infinite  alternate;
     	animation: mover 0.5s infinite  alternate;
 	}
@@ -590,7 +606,7 @@
 	    margin-left: -22%;
 	}
 	.scrollimag{
-		margin-top: 0px;
+		margin-top: -14%;
 		    height: 100px;
 		-webkit-animation: mover 0.5s infinite  alternate;
     	animation: mover 0.5s infinite  alternate;

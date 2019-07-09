@@ -56,7 +56,7 @@ class Headernew extends Component {
  		<div className="container">
  			<div className="row navbar ">
      			<div className="col-sm-2 col-md-2 col-lg-2 hidden-xs">
-					<img src="../images/drent-logo.png" style={{height:'45px', marginTop:'25px'}}/>
+					<img src="../images/drent-logo.png" className="drent_loGo"/>
      			</div>
      			<div className="col-sm-1 col-md-3 col-lg-5 hidden-xs"></div>
      			<div className="col-sm-9 col-md-7 col-lg-5 hidden-xs">
@@ -212,7 +212,7 @@ class Headernew extends Component {
 
  		{/*Banner of Home*/}
 
- 		<div>
+		      <div className="visible-xs">
               <img src="../images/drent-purple-header.png" className="banneralign" />
 
               <div className="relationtext container">
@@ -241,8 +241,17 @@ class Headernew extends Component {
                   </div>
                 </div>
               </div>
-        </div>
-
+          </div>
+          <div className="hidden-xs">
+              <img src="../images/ipadpro-banner.png" className="banner_prOo" />
+          </div>
+          <div className="row" style={{margin:'0px'}}>
+                <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
+                <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4" style={{textAlign:'center'}}>
+                    <img src="../images/scroll-logo.png" className="scrollimag"/>
+                </div>
+                <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
+          </div><br/><br/><br/>
   	</div>
     );
 
