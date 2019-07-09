@@ -115,7 +115,7 @@ class App extends Component {
             {/* <Route path="/detail" render={props => { return <Product {...props} updateCart={this.updateCart} changingHeader={this.changingHeader}/> }} /> */}
 
             <Route path="/checkout" render={props => { return <Checkout {...props} updateCart={this.updateCart} changingHeader={this.changingHeader}/> }} />
-            <FooterNew showFooter={this.state.footer}/>
+            <FooterNew showFooter={this.state.footer} arr={this.state.arr}/>
             {/*<Userprofile/>*/}
           </div>
         </BrowserRouter>

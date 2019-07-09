@@ -1,12 +1,57 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import  './mobileheader.css';
+import Login from '../login/SignIn';
 import { Link, withRouter } from "react-router-dom";
+import SignUp from '../login/SignUp';
 import './home.css';
+import { connect } from 'react-redux';
+import { userActions } from '../../_actions';
 
 class FooterNew extends Component {
+ state = {
+      arrCart: [],
+  }
+
+  async componentDidMount(){
+      let cart = await localStorage.getItem('Cart');
+      if(cart == null){
+          this.setState({ arrCart : [] })
+      }else {
+          let arrCart = JSON.parse(cart);
+          this.setState({ arrCart });
+      }
+  }
+
+  openNav = ()=>{
+      console.log(document.getElementById("myNav"))
+     document.getElementById("myNav").style.width = "100%";
+
+  }
+
+  closeNav = () =>{
+      document.getElementById("myNav").style.width = "0%";
+  }
+
+  logOut = () => {
+      this.props.dispatch(userActions.logout())
+      this.props.history.push('/')
+  }
+
   render() {
-    
-    return (
+      const { loggedIn, arr, user, location } = this.props,
+      { arrCart } = this.state;
+      console.log(loggedIn ,'loggedIn')
+
+      let finalArr = arr.length > 0 ? arr : arrCart,
+      userId = user && user._id ? user._id : '';
+      //console.log(this.props, 'bhai jaaannnn bhai jaannn')
+      //console.log(location,'location')
+      let str = location.pathname;
+      if(str.slice(str.indexOf("/") + 1, str.indexOf("/", 1)) == 'reset'){
+        return null;
+      }
+
+      return (
      	<div>
      		<footer style={{backgroundColor:'#473463'}}>
      			<div className="stage">
@@ -17,16 +62,63 @@ class FooterNew extends Component {
      				<div className="col-sm-2 col-md-2 col-lg-2">
      					<p className="quickfooter">Quick Links</p>
      					<ul className="nav navbar-nav">
-	     					<li className="footernav">Home</li>
-	     					<li className="footernav">Catalog</li>
-	     					<div className="dropdown">
-							  <li className="footernavpro dropbtn">My Profile</li>
-							  <div className="dropdown-content">
-							    <a href="#">Sign In</a>
-							    <a href="#">Sign Out</a>
-							  </div>
-							</div>	
-	     					<li className="footernav">Cart</li>
+	     					<li className="footernav"><Link to={`/`}>Home</Link></li>
+	     					<li className="footernav"><Link to={`/product`}>Catalog</Link></li>
+					   {loggedIn && <li className="footernav" onClick={this.logOut}><a className="nav">Log Out</a></li>}
+
+                       {!loggedIn && <li className="footernav">
+                        <a href="#" className="nav" data-toggle="modal" data-target="#SignIn" >Sign In</a>
+                          <div className="modal fade" id="SignIn" role="dialog">
+                            <div className="modal-dialog widht_sm">
+                              <div className="modal-content">
+                                <div className="modal-header">
+                                  <button type="button" className="close" data-dismiss="modal">&times;</button>
+                                  <div className="row">
+                                      <div className="">
+                                        <h4 className="modal-title margmodal">Sign In</h4>
+                                      </div>
+                                  </div>
+                                </div>
+                                <div className="modal-body">
+                                  <Login />
+                                </div>
+                                <div className="modal-footer">
+                                  <button type="button" className="btn btn-default" data-dismiss="modal" id='closeSignInModal'>Close</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                       </li>}
+                       {!loggedIn && <li className="footernav">
+                        <a href="#" className="nav" data-toggle="modal" data-target="#SignUp">Sign Up</a>
+                          <div className="modal fade" id="SignUp" role="dialog">
+                            <div className="modal-dialog widht_sm">
+                              <div className="modal-content">
+                                <div className="modal-header">
+                                  <button type="button" className="close" data-dismiss="modal">&times;</button>
+                                  <div className="row">
+                                      <div className="">
+                                        <h4 className="modal-title margmodal">Sign Up</h4>
+                                      </div>
+                                  </div>
+                                </div>
+                                <div className="modal-body scrolling_form">
+                                    <SignUp />
+                                </div>
+
+                              </div>
+                            </div>
+                          </div>
+                       </li>}
+                        <li className="footernav">
+                            <Link to={{pathname: `/checkout`, state: {finalArr}}} className="nav">
+                              Cart
+                              <span>
+                                {finalArr.length > 0 ? finalArr.length : ''}
+                              </span>
+                            </Link>
+                        </li>
+                    {loggedIn && <li className="footernav marg_nav" style={{textAlign:'center'}}><Link to={`/profile/${userId}`} className="nav">My Profile</Link></li>} 
 	     				</ul>
      				</div>
      				<div className="col-sm-1 col-md-1 col-lg-1"></div>
@@ -48,10 +140,10 @@ class FooterNew extends Component {
 		     			</div>		
      				</div>
      				<div className="col-sm-2 col-md-2 col-lg-2"></div>
-     			</div>
-     			<div className="row copyrightfoot" style={{margin:'0px'}}>
-     				<p className="copytext">Copyright drent 2019.</p>
-     			</div>
+         			</div>
+         			<div className="row copyrightfoot" style={{margin:'0px'}}>
+         				<p className="copytext">Copyright drent 2019.</p>
+         			</div>
      		</footer>
      	</div>
     );
@@ -59,4 +151,12 @@ class FooterNew extends Component {
   }
 }
 
-export default FooterNew;
+function mapStateToProps(state) {
+    const { loggedIn, user } = state.authentication;
+    return {
+        loggedIn, user
+    };
+}
+
+const signUpLogin = connect(mapStateToProps)(FooterNew);
+export default withRouter(signUpLogin);
