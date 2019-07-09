@@ -1504,11 +1504,11 @@
 		position: relative;
 	}
 	.featarrowtext{
-	    font-size: 12px;
+        font-size: 12px;
 	    font-family: Tajawal;
 	    letter-spacing: 4px;
-	    margin-left: -19%;
-	    color: #808080;
+	    margin-left: -12%;
+	    color: grey;
 	    margin-top: -9px;
 	}
 	.absoul{
@@ -1737,7 +1737,7 @@
 	}
 	.featarrow{
 	    margin-top: -22%;
-    	margin-left: -52%;
+    	margin-left: -9%;
 	}
 }
 @media only screen and (min-device-width : 1366px) and (max-device-width : 1920px){
