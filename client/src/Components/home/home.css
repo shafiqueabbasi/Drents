@@ -298,6 +298,10 @@
   display: block;
 }
 
+.drent_lo{
+	height: 35px;
+    margin: 25% 0px 16% 20%;
+}
 
 {/*New Header2 CSS ENDD*/}
 
@@ -416,7 +420,7 @@
     	margin-left: -32%;
 	}
 	.scrollimag{
-		margin-top: 44px;
+		margin-top: -25%;
     	height: 90px;
     	-webkit-animation: mover 0.5s infinite  alternate;
     	animation: mover 0.5s infinite  alternate;
@@ -1013,14 +1017,14 @@
 		box-shadow: -1px 17px 32px rgba(0,0,0,0.3);
 	}
 }
-@media only screen and (min-device-width : 414px) and (max-device-width : 768px){
+@media only screen and (min-device-width : 414px) and (max-device-width : 514px){
 	.imgwidth{
 		height: 225px;
 		position: relative;
 		width: 100%;
 	}
 	.rwmarg{
-		    margin-top: -40%;	
+		 
 	}
 	.margimag{
 
@@ -1103,6 +1107,206 @@
 	.absoul{
 	    position: absolute;
 	    margin-top: -127%;
+	    margin-left: 0%;
+	    box-shadow: inset 0px -109px 42px rgba(0,0,0,0.6);
+	    height: 225px;
+	    width: 83%;
+	}
+	.feat_hoverUp:hover{
+		margin-top: -6%;
+		box-shadow: -1px 17px 32px rgba(0,0,0,0.3);
+	}
+}
+@media only screen and (min-device-width : 514px) and (max-device-width : 614px){
+	.imgwidth{
+		height: 225px;
+		position: relative;
+		width: 100%;
+	}
+	.rwmarg{
+		 
+	}
+	.margimag{
+
+	}
+	.leftimg{
+		margin-bottom: 35px;
+    	margin-left: 11px;
+	}
+	.pinktext{
+ 	    font-size: 22px;
+	    font-family: playfair display;
+	    color: #ffffff;
+        margin-top: 75%;
+    	margin-left: 19px;
+	}
+	.pinksmaltext{
+		font-size: 12px;
+		font-family: tajawal;
+		color: #8080A2;
+		margin-left: 10%;
+	}
+	.chiffontext{
+	 	font-size: 31px;
+	 	font-family: playfair display;
+	 	color: #ffffff;
+	 	margin-top: -41px;
+	}
+	.chiffonsmaltext{
+		font-size: 12px;
+		font-family: tajawal;
+		color: #808080;
+	}
+	.blackwhitetext{
+	 	font-size: 31px;
+	 	font-family: playfair display;
+	 	color: #ffffff;
+	 	    margin-top: -24%;
+	}
+	.blackwhitesmaltext{
+		font-size: 12px;
+		font-family: tajawal;
+		color: #808080;
+	}
+	.bridaltext{
+	 	font-size: 31px;
+	 	font-family: playfair display;
+	 	color: #ffffff;
+	 	    margin-top: -24%;
+	}
+	.bridalsmaltext{
+		font-size: 12px;
+		font-family: tajawal;
+		color: #808080;
+	}
+	.prettext{
+	 	font-size: 31px;
+	 	font-family: playfair display;
+	 	color: #ffffff;
+	 	    margin-top: -24%;
+	}
+	.pretsmaltext{
+		font-size: 12px;
+		font-family: tajawal;
+		color: #808080;
+	}
+	.relat{
+		position: relative;
+	}
+	.featarrowtext{
+		font-size: 12px;
+	    font-family: Tajawal;
+	    letter-spacing: 4px;
+	    margin-left: -13%;
+	    color: #808080;
+	}
+	.pinkleft{
+	    margin-bottom: 35px;
+    	margin-left: 11px;
+	}
+	.absoul{
+        position: absolute;
+	    margin-top: -99%;
+	    margin-left: 0%;
+	    box-shadow: inset 0px -109px 42px rgba(0,0,0,0.6);
+	    height: 225px;
+	    width: 86%;
+	}
+	.feat_hoverUp:hover{
+		margin-top: -6%;
+		box-shadow: -1px 17px 32px rgba(0,0,0,0.3);
+	}
+}
+@media only screen and (min-device-width : 614px) and (max-device-width : 768px){
+	.imgwidth{
+		height: 225px;
+		position: relative;
+		width: 93%;
+	}
+	.rwmarg{
+		 
+	}
+	.margimag{
+
+	}
+	.leftimg{
+		margin-bottom: 35px;
+    	margin-left: 11px;
+	}
+	.pinktext{
+ 	    font-size: 22px;
+	    font-family: playfair display;
+	    color: #ffffff;
+        margin-top: 63%;
+    	margin-left: 22px;
+	}
+	.pinksmaltext{
+		font-size: 12px;
+		font-family: tajawal;
+		color: #8080A2;
+		margin-left: 10%;
+	}
+	.chiffontext{
+	 	font-size: 31px;
+	 	font-family: playfair display;
+	 	color: #ffffff;
+	 	margin-top: -41px;
+	}
+	.chiffonsmaltext{
+		font-size: 12px;
+		font-family: tajawal;
+		color: #808080;
+	}
+	.blackwhitetext{
+	 	font-size: 31px;
+	 	font-family: playfair display;
+	 	color: #ffffff;
+	 	    margin-top: -24%;
+	}
+	.blackwhitesmaltext{
+		font-size: 12px;
+		font-family: tajawal;
+		color: #808080;
+	}
+	.bridaltext{
+	 	font-size: 31px;
+	 	font-family: playfair display;
+	 	color: #ffffff;
+	 	    margin-top: -24%;
+	}
+	.bridalsmaltext{
+		font-size: 12px;
+		font-family: tajawal;
+		color: #808080;
+	}
+	.prettext{
+	 	font-size: 31px;
+	 	font-family: playfair display;
+	 	color: #ffffff;
+	 	    margin-top: -24%;
+	}
+	.pretsmaltext{
+		font-size: 12px;
+		font-family: tajawal;
+		color: #808080;
+	}
+	.relat{
+		position: relative;
+	}
+	.featarrowtext{
+		font-size: 12px;
+	    font-family: Tajawal;
+	    letter-spacing: 4px;
+	    margin-left: -13%;
+	    color: #808080;
+	}
+	.pinkleft{
+	    margin-bottom: 35px;
+    	margin-left: 11px;
+	}
+	.absoul{
+	    position: absolute;
+	    margin-top: -81%;
 	    margin-left: 0%;
 	    box-shadow: inset 0px -109px 42px rgba(0,0,0,0.6);
 	    height: 225px;
@@ -1244,8 +1448,8 @@
 	 	font-size: 22px;
 	    font-family: playfair display;
 	    color: #ffffff;
-	    margin-left: 10%;
-        margin-top: 95%;
+	    margin-left: 9%;
+	    margin-top: 87%;
 	}
 	.pinksmaltext{
 		font-size: 12px;
@@ -1305,20 +1509,20 @@
 		position: relative;
 	}
 	.featarrowtext{
-		font-size: 12px;
+	    font-size: 12px;
 	    font-family: Tajawal;
 	    letter-spacing: 4px;
-	    margin-left: -10%;
+	    margin-left: -19%;
 	    color: #808080;
-	    margin-top: -7px;
+	    margin-top: -9px;
 	}
 	.absoul{
 	    position: absolute;
-	    margin-top: -124%;
+	    margin-top: -111%;
 	    margin-left: 0%;
 	    box-shadow: inset 0px -109px 42px rgba(0,0,0,0.6);
 	    height: 250px;
-	    width: 86%;
+	    width: 87%;
 	}
 	.feat_hoverUp:hover{
 		margin-top: -6%;
@@ -1540,7 +1744,7 @@
 	}
 	.featarrow{
 	    margin-top: -22%;
-    	margin-left: -7%;
+    	margin-left: -52%;
 	}
 }
 @media only screen and (min-device-width : 1366px) and (max-device-width : 1920px){
@@ -1830,6 +2034,9 @@
 	    margin-left: -5%;
 	    text-align: left;
 	}
+	.nav_marg_header{
+
+	}
 }
 @media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
 	.quickfooter{
@@ -1877,6 +2084,9 @@
 	    margin-left: -30%;
 	    text-align: center;
 	}
+	.nav_marg_header{
+
+	}
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){
 	.quickfooter{
@@ -1921,6 +2131,9 @@
 	    font-family: Playfair Display;
 	    color: #cb9d6c;
 	    margin-left: -30%;
+	}
+	.nav_marg_header{
+		margin-left: 24%
 	}
 }
 @media only screen and (min-device-width : 1366px) and (max-device-width: 1920px){
@@ -1967,6 +2180,9 @@
 	    color: #cb9d6c;
 	    margin-left: -30%;
 	    text-align: center;
+	}
+	.nav_marg_header{
+
 	}
 }
 

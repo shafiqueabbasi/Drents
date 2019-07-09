@@ -57,7 +57,7 @@ class Headernew extends Component {
 						<img src="../images/drent-logo.png" className="header2_new_logo"/>
 	     			</div>
 	     			<div className="col-sm-0 col-md-0 col-lg-4 hidden-xs"></div>
-	     			<div className="col-sm-9 col-md-8 col-lg-5 hidden-xs">
+	     			<div className="col-sm-9 col-md-8 col-lg-5 hidden-xs nav_marg_header">
 	     				<ul className="nav navbar-nav navbar-right">
 	     					<li className="head2"><Link to={`/`}>Home</Link></li>
 	     					<li className="head2"><Link to={`/product`} className="nav">Catalog</Link></li>

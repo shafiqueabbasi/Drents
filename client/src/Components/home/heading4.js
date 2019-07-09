@@ -17,7 +17,7 @@ class Heading4 extends Component {
       			<h1 className={`${this.props.headLable}`}>&nbsp;&nbsp;{label}</h1>
       		</div>}
     		<div className="col-md-3 col-sm-2 row">
-    			{showonhome && <div className="dropdown" style={{marginTop: '20px'}}>
+    			{showonhome && <div className="dropdown" style={{marginTop: '20px', marginBottom:'20px'}}>
 
 					<button className="btn dropdown-toggle cloth" type="button" data-toggle="dropdown">Sort by...
 					&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;

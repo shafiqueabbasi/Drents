@@ -289,7 +289,7 @@ class CartData extends Component {
 								</div>
 							</div>
 							{!loggedIn && <div className="row">
-								<h3 style={{ textAlign: 'center' }}>Login First for CHECKOUT!!</h3>
+								<h3 className="cart_login_text">Login First for CHECKOUT!!</h3>
 							</div>}
 							<div id="stripeCard" className="modal fade" role="dialog" style={{ marginTop: '5%' }}>
 								<div className="modal-dialog">

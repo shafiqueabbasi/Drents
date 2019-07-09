@@ -474,11 +474,11 @@
       margin-top: -2%;
   }
   .userstar_rating{
-        padding: 0;
-        margin-top: -7%;
-        margin-left: 35%;
-        color: #353535;
-       font-family: playfair display;
+           padding: 0;
+          margin-top: -5%;
+          margin-left: 26%;
+          color: #353535;
+          font-family: playfair display;
   }
 }
 @media only screen and (min-device-width : 1366px) and (max-device-width : 1920px){
@@ -697,7 +697,7 @@
      font-family: playfair display;
     font-size: 43px;
     color: #353535;
-    margin-left: 12%;
+    margin-left: 9%;
   }
   .rental_btn{
       font-family: playfair display;
@@ -1028,6 +1028,9 @@
         padding: 5px;  
         /*border-bottom: 1px solid rgba(0,0,0,.5);*/
     }
+    .marg_top_mobile{
+        
+    }
 }
 @media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
     .inputBox .input{
@@ -1040,6 +1043,9 @@
         font-size: 20px;
         padding: 5px;  
         /*border-bottom: 1px solid rgba(0,0,0,.5);*/
+    }
+    .marg_top_mobile{
+            margin-top: 110px;
     }
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){
@@ -1054,6 +1060,9 @@
         padding: 5px;  
         /*border-bottom: 1px solid rgba(0,0,0,.5);*/
     }
+    .marg_top_mobile{
+            margin-top: 110px;
+    }
 }
 @media only screen and (min-device-width : 1366px) and (max-device-width : 1920px){
     .inputBox .input{
@@ -1066,6 +1075,9 @@
         font-size: 20px;
         padding: 5px;  
         /*border-bottom: 1px solid rgba(0,0,0,.5);*/
+    }
+    .marg_top_mobile{
+            margin-top: 110px;
     }
 }
 

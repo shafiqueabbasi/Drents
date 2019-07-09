@@ -55,9 +55,12 @@ class Headernew extends Component {
     <div>
  		<div className="container">
  			<div className="row navbar ">
-     			<div className="col-sm-2 col-md-2 col-lg-2 hidden-xs">
-					<img src="../images/drent-logo.png" className="drent_loGo"/>
+     			<div className="col-md-2 col-lg-2 hidden-xs hidden-sm">
+  					<img src="../images/drent-logo.png" className="drent_loGo"/>
      			</div>
+          <div className="col-sm-2 visible-sm">
+            <img src="../images/drent-logo.png" className="drent_lo"/>
+          </div>
      			<div className="col-sm-1 col-md-3 col-lg-5 hidden-xs"></div>
      			<div className="col-sm-9 col-md-7 col-lg-5 hidden-xs">
      				<ul className="nav navbar-nav navbar-right">

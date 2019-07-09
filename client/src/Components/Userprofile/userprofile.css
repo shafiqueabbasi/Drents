@@ -172,9 +172,9 @@
       margin-right: 49%;
   }
   .rovil3{
-         padding: 13px;
+        padding: 13px;
         display: inline;
-        margin-left: -14%;
+        margin-left: -8%;
         margin-top: -3%;
   }
   .promembertext{
@@ -380,7 +380,7 @@
         border-radius: 100%;
     }
     .mac_user_margin{
-          margin-left: -1%;
+             margin-left: -2%;
     }
     .alignset{
         margin-top: 21px;
@@ -582,8 +582,8 @@
     font-size: 31px;
     font-family: playfair display;
     color: black;
-    margin-top: -22%;
-    margin-left: 3px;
+    margin-top: 70%;
+    margin-left: -10px;
   }
   .margbootom_userprofile{
     margin-bottom: 15%;
@@ -609,8 +609,14 @@
   .headings_userprofile{
         font-family: Playfair Display;
         text-align: left;
-        margin-left: -2%;
+        margin-left: -6%;
     }
+  .pink_smal_text_user{
+      font-size: 12px;
+      font-family: tajawal;
+      color: #808080;
+          margin-left: -7%;
+  }  
 }
 @media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
    .absoul_userprofile{
@@ -652,6 +658,11 @@
         margin-left: -1%;
         /*padding-left: 8%;*/
     }
+  .pink_smal_text_user{
+      font-size: 12px;
+      font-family: tajawal;
+      color: #808080;
+  }   
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1365px){
   .absoul_userprofile{
@@ -671,19 +682,19 @@
       color: #808080;
       letter-spacing: 5px;
       margin-bottom: 0px;
-      margin-left: 7%;
+      margin-left: 6%;
     }
   .featarrow_userprofile{
       margin-top: -70%;
-      margin-left: 12%;
+      margin-left: -1%;
   }  
   .featarrowtext_userprofile{
      font-size: 12px;
-      font-family: Tajawal;
-      letter-spacing: 4px;
-      margin-left: -8%;
-      color: #808080;
-      margin-top: -35px;
+    font-family: Tajawal;
+    letter-spacing: 4px;
+    margin-left: -10%;
+    color: #808080;
+    margin-top: -48px;
   }
   .headings_userprofile{
         font-family: Playfair Display;
@@ -691,6 +702,11 @@
         text-align: left;
         padding-left: 17px;
     }
+   .pink_smal_text_user{
+      font-size: 12px;
+      font-family: tajawal;
+      color: #808080;
+  }  
 }
 @media only screen and (min-device-width : 1366px) and (max-device-width : 1920px){
   .absoul_userprofile{
@@ -730,4 +746,9 @@
         text-align: left;
        padding-left: 68px;
     }
+    .pink_smal_text_user{
+      font-size: 12px;
+      font-family: tajawal;
+      color: #8080A2;
+  } 
 }

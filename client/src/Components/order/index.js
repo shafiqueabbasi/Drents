@@ -127,7 +127,7 @@ class Order extends Component {
             return (
                   <div>
                         {this.state.loading && <div className="loading">Loading&#8230;</div>}
-                        <div className="" style={{ marginTop: '110px' }}>
+                        <div className="marg_top_mobile">
                               <div className="container">
                                     <div className="row">
                                           {goTo == 'currentRentals' && <div className="col-sm-2 col-md-2 col-lg-2"></div>}

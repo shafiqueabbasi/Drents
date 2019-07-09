@@ -358,7 +358,7 @@ class UserProfile extends Component {
 					</div>
 
 					<div className="row" style={{margin:'0px'}}>
-						<div className="col-md-12 col-sm-9 col-xs-6">
+						<div className="col-md-12 col-sm-9 col-xs-12">
 							<div className="row" style={{margin:'0px'}}>
 								{archivestatus && <div className="alert alert-success alert-dismissible">
 									<a href="#" className="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -380,6 +380,7 @@ class UserProfile extends Component {
 							        featureArrow='featarrow_userprofile'
 							        featText='featarrowtext_userprofile'
 							        headLable='headings_userprofile'
+							        imgSmalltext='pink_smal_text_user'
 									showonhome={true}
 									userAvailable={userAvailable}
 								/>}

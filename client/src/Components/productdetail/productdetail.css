@@ -239,8 +239,8 @@
 		    margin-left: -28px;
 	}
 	.trello2{
-	    margin-left: 52.5%;
-    	margin-top: -64px;
+	    margin-left: 48%;
+    	margin-top: -65px;
 	}
 	.bookedboo{
 		color: #9b9b9b;
@@ -250,7 +250,7 @@
 	.bookedbook{
 	    width: 99% !important;
 	    border-radius: 50% !important;
-	    height: 53px !important;
+	    height: 75px !important;
 	    border: none !important;
 	}
 	.run1{
@@ -258,7 +258,7 @@
 		color: #cb9d6c;
 		border: none;
 		margin-top: 2%;
-		width: 136%;
+		width: 115%;
 		height: 50px;
 		padding-left: 10px;
 	}
@@ -1324,15 +1324,15 @@ padding: 5%;
 }
 
 	.todate{
-			font-size: 12px;
-    		color: #cb9d6c;
-		    height: 50px;
-		    background-color: rgba(155,155,155,0.3);
-		    width: 277.5% !important;
-		    margin-left: 25% !important;
-		    margin-top: 7% !important;
-		    text-align: center;
-		    padding-top: 18px;
+		font-size: 12px;
+	    color: #cb9d6c;
+	    height: 51px;
+	    background-color: rgba(155,155,155,0.3);
+	    width: 167.5% !important;
+	    margin-left: -23% !important;
+	    margin-top: 7% !important;
+	    text-align: center;
+	    padding-top: 18px;
 	}
 	.arrowleft{
 		padding-left: 2px;
@@ -1863,15 +1863,15 @@ padding: 5%;
 
 	.newstar1{
 		padding-left: 12px !important;
-    	margin-top: 22px;
+    	margin-top: 27px;
 	}
 
 	.newrating{
-		margin-top: -17% !important;
+		margin-top: -12% !important;
     	margin-left: 14%;
 	}
     .proTopmargin{
-       margin-left: -10px;
+       margin-left: -2px;
   	}
   	.row_ProMarg{
     	    margin-left: 20px;
