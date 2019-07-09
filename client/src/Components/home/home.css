@@ -574,7 +574,11 @@
 	    background-size: cover;
 	    width: 100%;
 	    height: 622px;
-		}
+	}
+	.banner_prOo{
+		width: 100%;
+		margin-top: -9%;
+	}
 	.relationtext{
 		position: absolute;
 	   margin-top: -47%;
