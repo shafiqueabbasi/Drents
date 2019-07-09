@@ -913,7 +913,7 @@
 {/*New heading3 panal ENDS*/}
 
 {/*New heading4new panal*/}
-@media only screen and (min-device-width : 360px) and (max-device-width : 767px){
+@media only screen and (min-device-width : 360px) and (max-device-width : 414px){
 	.imgwidth{
 		height: 225px;
 		position: relative;
@@ -1007,6 +1007,106 @@
 	    box-shadow: inset 0px -109px 42px rgba(0,0,0,0.6);
 	    height: 225px;
 	    width: 80%;
+	}
+	.feat_hoverUp:hover{
+		margin-top: -6%;
+		box-shadow: -1px 17px 32px rgba(0,0,0,0.3);
+	}
+}
+@media only screen and (min-device-width : 414px) and (max-device-width : 768px){
+	.imgwidth{
+		height: 225px;
+		position: relative;
+		width: 100%;
+	}
+	.rwmarg{
+		    margin-top: -40%;	
+	}
+	.margimag{
+
+	}
+	.leftimg{
+		margin-bottom: 35px;
+    	margin-left: 11px;
+	}
+	.pinktext{
+ 	    font-size: 22px;
+	    font-family: playfair display;
+	    color: #ffffff;
+	    margin-top: 105%;
+	    margin-left: 11px;
+	}
+	.pinksmaltext{
+		font-size: 12px;
+		font-family: tajawal;
+		color: #8080A2;
+		margin-left: 10%;
+	}
+	.chiffontext{
+	 	font-size: 31px;
+	 	font-family: playfair display;
+	 	color: #ffffff;
+	 	margin-top: -41px;
+	}
+	.chiffonsmaltext{
+		font-size: 12px;
+		font-family: tajawal;
+		color: #808080;
+	}
+	.blackwhitetext{
+	 	font-size: 31px;
+	 	font-family: playfair display;
+	 	color: #ffffff;
+	 	    margin-top: -24%;
+	}
+	.blackwhitesmaltext{
+		font-size: 12px;
+		font-family: tajawal;
+		color: #808080;
+	}
+	.bridaltext{
+	 	font-size: 31px;
+	 	font-family: playfair display;
+	 	color: #ffffff;
+	 	    margin-top: -24%;
+	}
+	.bridalsmaltext{
+		font-size: 12px;
+		font-family: tajawal;
+		color: #808080;
+	}
+	.prettext{
+	 	font-size: 31px;
+	 	font-family: playfair display;
+	 	color: #ffffff;
+	 	    margin-top: -24%;
+	}
+	.pretsmaltext{
+		font-size: 12px;
+		font-family: tajawal;
+		color: #808080;
+	}
+	.relat{
+		position: relative;
+	}
+	.featarrowtext{
+		font-size: 12px;
+	    font-family: Tajawal;
+	    letter-spacing: 4px;
+	    margin-left: -13%;
+	    color: #808080;
+	}
+	.pinkleft{
+	    margin-bottom: 35px;
+    	margin-left: 11px;
+	}
+	.absoul{
+	    position: absolute;
+	    margin-top: -127%;
+	    margin-left: 0%;
+	    box-shadow: inset 0px -109px 42px rgba(0,0,0,0.6);
+	    height: 225px;
+	    width: 83%;
 	}
 	.feat_hoverUp:hover{
 		margin-top: -6%;
@@ -1700,7 +1800,7 @@
 		font-size: 12px;
 	    font-family: Playfair Display;
 	    color: #cb9d6c;
-	    margin-bottom: 20px;
+	    margin-bottom: 0px;
 	}
 	.contmailfoot{
 		font-size: 15px;
@@ -1724,12 +1824,11 @@
 	    margin: 0px;
 	}
 	.footernav a {
-	    margin-right: -20px;
 	    font-size: 15px;
 	    font-family: Playfair Display;
 	    color: #cb9d6c;
-	    margin-left: -30%;
-	    text-align: center;
+	    margin-left: -5%;
+	    text-align: left;
 	}
 }
 @media only screen and (min-device-width : 768px) and (max-device-width : 1023px){
