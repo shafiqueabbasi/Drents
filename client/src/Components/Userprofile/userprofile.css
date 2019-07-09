@@ -24,7 +24,7 @@
 	 color:  #c2073f;
 }
 
-@media only screen and (min-device-width : 360px) and (max-device-width : 660px){
+@media only screen and (min-device-width : 360px) and (max-device-width : 767px){
   .shut2{
       padding-left: 0px;
       margin-top: -4%;
@@ -80,6 +80,9 @@
       color: #cb9d6c;
       background-color: #E2DBDB;
       border: 0px;
+  }
+  .roww_userProfile{
+
   }
 }
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
@@ -138,6 +141,9 @@
       color: #cb9d6c;
       background-color: #E2DBDB;
       border: 0px;
+  }
+  .roww_userProfile{
+      
   }
 }
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1366px){
@@ -200,8 +206,11 @@
       background-color: #E2DBDB;
       border: 0px;
   }
+  .roww_userProfile{
+      margin-left: 7px;
+  }
 }
-@media only screen and (min-device-width : 1366px) and (max-device-width : 1600px){
+@media only screen and (min-device-width : 1366px) and (max-device-width : 1920px){
   .shut2{
       padding-left: 0px;
     margin-top: 3%;  }
@@ -257,6 +266,10 @@
         color: #473463;
         background-color: #cb9d6c;
         border: 0px;
+  }
+  .roww_userProfile{
+      margin: 0px;
+      margin-left: 60px;
   }
 }
 .sami {

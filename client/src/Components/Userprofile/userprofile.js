@@ -376,6 +376,7 @@ class UserProfile extends Component {
 							        imgheadtext='pinktext_userprofile'
 							        margBotom='margbootom_userprofile'
 							        featureFilter='featuresub_userprofile'
+							        rowmainmargin='roww_userProfile'
 							        featureArrow='featarrow_userprofile'
 							        featText='featarrowtext_userprofile'
 							        headLable='headings_userprofile'
