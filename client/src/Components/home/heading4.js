@@ -39,13 +39,22 @@ class Heading4 extends Component {
 	    						return(
 	    							<div className={`col-xs-6 col-sm-3 relat ${this.props.tpmrgin} ${this.props.colLg} ${this.props.margBotom}`}>
 			    						<Link key={key} to={{pathname: `/detail`, state: {elem, data}}}>
-			    							<div className={`${this.props.hoVerUp}`}>
+			    							<div className={`${this.props.hoVerUp} posi_absoul`}>
+			    								<div className="shadow_head">
 				    							<img src={elem.fileList[0]} className="imgwidth"/>	
+				    							</div>
 				    							<div className={`${this.props.imgtextstyle}`}>
-							    					<p className={`${this.props.imgheadtext}`}>{elem.productName}</p>
-							    					<p className={`${this.props.imgSmalltext}`}>$ {" " + elem.priceDay}</p>
+							    					
 							    				</div>
-							    			</div>	
+							    			</div>
+							    			<div className="row" style={{margin:'0px'}}>
+			    								<div className="col-md-2 col-lg-2"></div>
+			    								<div className="col-md-12 col-lg-12 stylinggg">
+			    									<br/>
+		    										<p className={`${this.props.imgheadtext}`}>{elem.productName}</p>
+							    					<p className={`${this.props.imgSmalltext}`}>$ {" " + elem.priceDay}</p>
+			    								</div>
+	    									</div>	
 		    							</Link>
 	    								{/*<div>
 	    									{showEditDelete && userAvailable && <div className="row">
@@ -63,6 +72,7 @@ class Heading4 extends Component {
 		    								<h3 className="h_dress tophead" style={isMobileOnly ? {width:this.props.widthProps} : {width:''}} >$ {" " + elem.priceDay}</h3>
 		    							</div>*/}
 			    					</div>
+			    					
 	    						)
 	    					})}
 	    				</div>

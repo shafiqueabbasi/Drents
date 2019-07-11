@@ -304,7 +304,6 @@
 }
 
 {/*New Header2 CSS ENDD*/}
-
 {/*New Banner CSS*/}
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 767px){
@@ -921,7 +920,13 @@
 	.imgwidth{
 		height: 225px;
 		position: relative;
-		width: 100%;
+		width: 89%;
+	}
+	.stylinggg{
+		-moz-box-shadow: inset 6px -76px 62px 12px rgba(0, 0, 0, 0.6);
+	    -webkit-box-shadow: inset 6px -76px 62px 12px rgba(0, 0, 0, 0.6);
+	    box-shadow: inset 6px -76px 62px 12px rgba(0, 0, 0, 0.6);
+	    height: 225px;
 	}
 	.rwmarg{
 		    margin-top: -40%;	
@@ -938,13 +943,11 @@
 	    font-family: playfair display;
 	    color: #ffffff;
 	    margin-top: 105%;
-	    margin-left: 11px;
 	}
 	.pinksmaltext{
 		font-size: 12px;
 		font-family: tajawal;
 		color: #8080A2;
-		margin-left: 10%;
 	}
 	.chiffontext{
 	 	font-size: 31px;
@@ -1020,7 +1023,13 @@
 	.imgwidth{
 		height: 225px;
 		position: relative;
-		width: 100%;
+		width: 89%;
+	}
+	.stylinggg{
+		-moz-box-shadow: inset 6px -76px 62px 12px rgba(0, 0, 0, 0.6);
+	    -webkit-box-shadow: inset 6px -76px 62px 12px rgba(0, 0, 0, 0.6);
+	    box-shadow: inset 6px -76px 62px 12px rgba(0, 0, 0, 0.6);
+	    height: 225px;
 	}
 	.rwmarg{
 		 
@@ -1037,13 +1046,11 @@
 	    font-family: playfair display;
 	    color: #ffffff;
 	    margin-top: 105%;
-	    margin-left: 11px;
 	}
 	.pinksmaltext{
 		font-size: 12px;
 		font-family: tajawal;
 		color: #8080A2;
-		margin-left: 10%;
 	}
 	.chiffontext{
 	 	font-size: 31px;
@@ -1119,7 +1126,13 @@
 	.imgwidth{
 		height: 225px;
 		position: relative;
-		width: 100%;
+		width: 89%;
+	}
+	.stylinggg{
+		-moz-box-shadow: inset 6px -76px 62px 12px rgba(0, 0, 0, 0.6);
+	    -webkit-box-shadow: inset 6px -76px 62px 12px rgba(0, 0, 0, 0.6);
+	    box-shadow: inset 6px -76px 62px 12px rgba(0, 0, 0, 0.6);
+	    height: 225px;
 	}
 	.rwmarg{
 		 
@@ -1136,13 +1149,11 @@
 	    font-family: playfair display;
 	    color: #ffffff;
         margin-top: 75%;
-    	margin-left: 19px;
 	}
 	.pinksmaltext{
 		font-size: 12px;
 		font-family: tajawal;
 		color: #8080A2;
-		margin-left: 10%;
 	}
 	.chiffontext{
 	 	font-size: 31px;
@@ -1218,7 +1229,13 @@
 	.imgwidth{
 		height: 225px;
 		position: relative;
-		width: 93%;
+		width: 89%;
+	}
+	.stylinggg{
+		-moz-box-shadow: inset 6px -76px 62px 12px rgba(0, 0, 0, 0.6);
+	    -webkit-box-shadow: inset 6px -76px 62px 12px rgba(0, 0, 0, 0.6);
+	    box-shadow: inset 6px -76px 62px 12px rgba(0, 0, 0, 0.6);
+	    height: 225px;
 	}
 	.rwmarg{
 		 
@@ -1235,13 +1252,11 @@
 	    font-family: playfair display;
 	    color: #ffffff;
         margin-top: 63%;
-    	margin-left: 22px;
 	}
 	.pinksmaltext{
 		font-size: 12px;
 		font-family: tajawal;
 		color: #8080A2;
-		margin-left: 10%;
 	}
 	.chiffontext{
 	 	font-size: 31px;
@@ -1317,8 +1332,15 @@
 	.imgwidth{
 		height: 200px;
     	position: relative;
-    	width: 100%;
+    	width: 91%;
     	margin-top: 10%;
+	}
+	.stylinggg{
+		-moz-box-shadow: inset 6px -76px 62px 12px rgba(0, 0, 0, 0.6);
+	    -webkit-box-shadow: inset 6px -76px 62px 12px rgba(0, 0, 0, 0.6);
+	    box-shadow: inset 6px -76px 62px 12px rgba(0, 0, 0, 0.6);
+	    height: 200px;
+	    margin-top: 10%;
 	}
 	.rwmarg{
 		
@@ -1424,7 +1446,14 @@
 	.imgwidth{
 		height: 250px;
 	    position: relative;
-	    width: 100%;
+	    width: 92%;
+	}
+	.stylinggg{
+		-moz-box-shadow: inset 6px -76px 62px 12px rgba(0, 0, 0, 0.6);
+	    -webkit-box-shadow: inset 6px -76px 62px 12px rgba(0, 0, 0, 0.6);
+	    box-shadow: inset 6px -76px 62px 12px rgba(0, 0, 0, 0.6);
+	    height: 250px;
+
 	}
 	.rwmarg{
 		margin-left: -21px;
@@ -1444,7 +1473,7 @@
 	    font-family: playfair display;
 	    color: #ffffff;
 	    margin-left: 9%;
-	    margin-top: 87%;
+	    margin-top: 110%;
 	}
 	.pinksmaltext{
 		font-size: 12px;
@@ -1527,7 +1556,13 @@
 	.imgwidth{
 		height: 280px;
 		position: relative;
-		    width: 100%;
+		    width: 92%;
+	}
+	.stylinggg{
+		-moz-box-shadow: inset 6px -76px 62px 12px rgba(0, 0, 0, 0.6);
+	    -webkit-box-shadow: inset 6px -76px 62px 12px rgba(0, 0, 0, 0.6);
+	    box-shadow: inset 6px -76px 62px 12px rgba(0, 0, 0, 0.6);
+	    height: 280px;
 	}
 	.rwmarg{
 		margin: 0px;
@@ -1547,7 +1582,7 @@
 	    font-family: playfair display;
 	    color: #ffffff;
 	    margin-left: 8%;
-        margin-top: 100%;
+        margin-top: 105%;
 
 	}
 	.pinksmaltext{
@@ -1603,7 +1638,7 @@
 		font-size: 12px;
 	    font-family: Tajawal;
 	    letter-spacing: 4px;
-	    margin-left: -13%;
+        margin-left: -10%;
 	    color: #808080;
 	}
 	.absoul{
@@ -1612,9 +1647,6 @@
     	margin-left: 0%;
 	    height: 280px;
 	    width: 85%;
-	}
-	.featarrow{
-		margin-top: -12%;
 	}
 	.feat_hoverUp:hover{
 		margin-top: -6%;
@@ -1631,6 +1663,9 @@
 	/*animation: mover 0.5s infinite  alternate;*/
 }
 
+.posi_absoul{
+	position: absolute;
+}
 
 @media only screen and (min-device-width : 360px) and (max-device-width : 767px){
     .headings{

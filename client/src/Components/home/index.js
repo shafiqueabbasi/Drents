@@ -47,22 +47,23 @@ class Home extends Component {
         <Heading />
         <Heading2 />
         <Heading3 />
-        <Gallery label="Featured Rentals"
-          data={data.slice(0, 5)}
-          widthProps=''
-          colLg='col-md-2 col-lg-2'
-          imgtextstyle='absoul'
-          imgheadtext='pinktext'
-          margBotom=''
-          featureFilter='featuresub'
-          featureArrow='featarrow'
-          featText='featarrowtext'
-          headLable='headings'
-          tpmrgin='topmargin'
-          rowmainmargin='rwmarg'
-          imgSmalltext='pinksmaltext'
-          hoVerUp='feat_hoverUp'
-          showonhome={false}
+        <Gallery 
+            label="Featured Rentals"
+            data={data.slice(0, 5)}
+            widthProps=''
+            colLg='col-md-2 col-lg-2'
+            imgtextstyle='absoul'
+            imgheadtext='pinktext'
+            margBotom=''
+            featureFilter='featuresub'
+            featureArrow='featarrow'
+            featText='featarrowtext'
+            headLable='headings'
+            tpmrgin='topmargin'
+            rowmainmargin='rwmarg'
+            imgSmalltext='pinksmaltext'
+            hoVerUp='feat_hoverUp'
+            showonhome={false}
         />
         <Heading5 />
       </div>

@@ -325,7 +325,7 @@
 		padding-left: 0px;
 	}
 	.trello2{
-		padding-left: 0px;
+		padding-left: 2px;
 
 	}
 	.bookedboo{
@@ -1349,8 +1349,8 @@ padding: 5%;
 	    height: 50px;
 	    background-color: rgba(155,155,155,0.3);
 	    width: 191.5%;
-	    margin-left: -53%;
-	    margin-top: 20%;
+	    margin-left: -41%;
+	    margin-top: 16%;
 	    text-align: center;
 	    padding-top: 18px;
 	}
