@@ -76,7 +76,7 @@
       margin-left: 11%;
     }
   .featFilterarrow{
-      margin-top: -20%;
+      margin-top: -290%;
   } 
   .filterarrowtext{
       font-size: 12px;
@@ -84,6 +84,7 @@
       letter-spacing: 4px;
       margin-left: -7%;
       color: #808080;
+      margin-top: -21%;
   }
   .filterheadlable{
       font-family: Playfair Display;
@@ -125,6 +126,7 @@
     }
   .featFilterarrow{
       margin-left: 11%;
+      margin-top: -196%;
   }  
   .filterarrowtext{
       font-size: 12px;
@@ -132,7 +134,7 @@
       letter-spacing: 4px;
       margin-left: -7%;
       color: #808080;
-      margin-top: 1%;
+      margin-top: -16%;
   }
   .filterheadlable{
        font-family: Playfair Display;
@@ -176,6 +178,7 @@
     }
   .featFilterarrow{
       margin-left: 33%;
+      margin-top: -80%;
   }  
   .filterarrowtext{
      font-size: 12px;

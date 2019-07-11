@@ -62,7 +62,10 @@ class Home extends Component {
             tpmrgin='topmargin'
             rowmainmargin='rwmarg'
             imgSmalltext='pinksmaltext'
-            hoVerUp=''
+            hoVerUp='posi_absoul'
+            alignRoww='row'
+            colLgMd='col-md-12 col-lg-12'
+            styClass='stylinggg'
             showonhome={false}
         />
         <Heading5 />

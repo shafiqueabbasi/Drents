@@ -39,7 +39,7 @@ class Heading4 extends Component {
 	    						return(
 	    							<div className={`col-xs-6 col-sm-3 relat ${this.props.tpmrgin} ${this.props.colLg} ${this.props.margBotom}`}>
 			    						<Link key={key} to={{pathname: `/detail`, state: {elem, data}}}>
-			    							<div className={`${this.props.hoVerUp} posi_absoul`}>
+			    							<div className={`${this.props.hoVerUp}`}>
 			    								<div className="shadow_head">
 				    							<img src={elem.fileList[0]} className="imgwidth"/>	
 				    							</div>
@@ -47,9 +47,8 @@ class Heading4 extends Component {
 							    					
 							    				</div>
 							    			</div>
-							    			<div className="row" style={{margin:'0px'}}>
-			    								<div className="col-md-2 col-lg-2"></div>
-			    								<div className="col-md-12 col-lg-12 stylinggg">
+							    			<div className={`{this.props.alignRoww}`} style={{margin:'0px'}}>
+			    								<div className={`${this.props.colLgMd} ${this.props.styClass}`}>
 			    									<br/>
 		    										<p className={`${this.props.imgheadtext}`}>{elem.productName}</p>
 							    					<p className={`${this.props.imgSmalltext}`}>$ {" " + elem.priceDay}</p>
