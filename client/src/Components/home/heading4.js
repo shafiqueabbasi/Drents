@@ -47,7 +47,7 @@ class Heading4 extends Component {
 							    					
 							    				</div>
 							    			</div>
-							    			<div className={`{this.props.alignRoww}`} style={{margin:'0px'}}>
+							    			<div className={`${this.props.alignRoww}`} style={{margin:'0px'}}>
 			    								<div className={`${this.props.colLgMd} ${this.props.styClass}`}>
 			    									<br/>
 		    										<p className={`${this.props.imgheadtext}`}>{elem.productName}</p>
