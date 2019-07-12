@@ -144,7 +144,7 @@ class CartData extends Component {
 											</div>*/}
 										<div className="row cart_marg_screen">
 											<div className="col-xs-12 col-lg-2 col-md-2 col-sm-2">
-												<img src="../images/pink-shirt-01.png" className="img_of_cart_dress" />
+												<img src={elem.fileList[0]} className="img_of_cart_dress" />
 											</div>
 											<div className="col-xs-12 col-lg-6 col-md-6 col-sm-6">
 												<p className="chainbelt4">{elem.productName}</p>
